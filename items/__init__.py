@@ -1,3 +1,5 @@
+from typing import Dict
+
 from ..base_classes import ItemDef
 from ..id import net_id
 from ..levels import all_levels
@@ -75,7 +77,7 @@ goal_items = {
 }
 
 junk_items = {
-    "Nothing": ItemDef("Nothing", net_id(0), "goal", {}, silent=True),
+    "Nothing": ItemDef("Nothing", net_id(0), "filler", {}, silent=True),
 }
 
 weapons = {
@@ -306,7 +308,7 @@ abilities = {
     ),
 }
 
-all_items = {
+all_items: Dict[str, ItemDef] = {
     **junk_items,
     **goal_items,
     **weapons,

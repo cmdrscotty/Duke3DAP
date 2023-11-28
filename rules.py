@@ -82,6 +82,7 @@ class Rules(object):
 
             def __call__(self, state: CollectionState) -> bool:
                 # something based on world, whatever
+                return True
                 return state.has("Jetpack", 0, self.fuel)
 
         self.jetpack = CanJetPack

@@ -59,7 +59,7 @@ def generate_ap_config():
         "game_id": D3DWorld.build_game_id,
         "episodes": {},
         "locations": {},
-        "items": {}
+        "items": {},
     }
 
     # level metadata
@@ -84,7 +84,9 @@ def generate_ap_config():
                     "name": short_name,
                 }
                 if location.sprite_type:
-                    level_locations[category][str(location.game_id)]["type"] = location.sprite_type
+                    level_locations[category][str(location.game_id)][
+                        "type"
+                    ] = location.sprite_type
             ap_config["locations"][level.prefix] = level_locations
 
         ap_config["episodes"][f"E{episode.volumenum + 1}"] = episode_data

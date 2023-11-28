@@ -53,6 +53,9 @@ class D3DLevel(object):
         self.world: Optional["D3DWorld"] = None
         self.prefix = f"E{self.volumenum + 1}L{self.levelnum + 1}"
         self.locations: Dict[str, LocationDef] = self._make_locations()
+        self.used_locations: Set[
+            str
+        ] = set()  # locations actually filled in make_region
 
     def _make_locations(self) -> Dict[str, LocationDef]:
         ret = {}
@@ -67,10 +70,17 @@ class D3DLevel(object):
             )
         return ret
 
-    def set_world(self, world: "D3DWorld"):
+    def create_region(self, world: "D3DWorld") -> Region:
         self.world = world
+        self.used_locations = set()
+        ret = self.main_region()
+        self.world = None
+        return ret
 
-    def make_region(self) -> Region:
+    def main_region(self) -> Region:
+        """
+        To be implemented by each level
+        """
         raise NotImplementedError
 
     def region(self, name: str, hint: Optional[str] = None) -> Region:
@@ -84,10 +94,17 @@ class D3DLevel(object):
             region.locations.append(
                 D3DLocation(self.world.player, location, None, region)
             )
+            self.used_locations.add(location)
 
     def add_locations(self, locations: List[str], region: Region):
         for loc in locations:
             self.add_location(loc, region)
+
+    def get_location(self, name) -> Optional[Location]:
+        try:
+            return self.world.multiworld.get_location(name, self.world.player)
+        except KeyError:
+            return None
 
     @staticmethod
     def _resolve_rule_type(rules: Union[RULETYPE, List[RULETYPE]]) -> Optional[Rule]:

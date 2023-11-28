@@ -48,7 +48,7 @@ class E1L1(D3DLevel):
         {"name": "Exit", "id": 0, "type": "exit"},
     ]
 
-    def make_region(self) -> Region:
+    def main_region(self) -> Region:
         r = self.rules
         ret = self.region(f"{self.prefix} {self.name}")
         self.add_locations(
@@ -69,7 +69,7 @@ class E1L1(D3DLevel):
             ],
             ret,
         )
-        self.restrict(ret.locations.get("E1L1 Vent Holo Duke"), r.explosives)
+        self.restrict(self.get_location("E1L1 Vent Holo Duke"), r.explosives)
 
         apartment = self.region(f"Apartments")
         self.add_locations(
