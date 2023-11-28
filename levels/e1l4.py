@@ -1,0 +1,71 @@
+from BaseClasses import Region
+
+from ..base_classes import D3DLevel
+
+
+class E1L4(D3DLevel):
+    name = "Toxic Dump"
+    levelnum = 3
+    volumenum = 0
+    keys = {"Blue", "Red"}
+    location_defs = [
+        {"name": "Gear Room Secret Scuba Gear", "id": 59, "type": "sprite"},
+        {"name": "Gear Room Secret Armor", "id": 60, "type": "sprite"},
+        {"name": "Canyon Steroids", "id": 67, "type": "sprite"},
+        {
+            "name": "Secret Alcove Holo Duke outside Submarine",
+            "id": 86,
+            "type": "sprite",
+        },
+        {"name": "Red Key Card", "id": 210, "type": "sprite"},
+        {"name": "Blue Key Card", "id": 247, "type": "sprite"},
+        {"name": "Guard Tower Chaingun", "id": 274, "type": "sprite"},
+        {"name": "MP Sewage Chaingun", "id": 293, "type": "sprite", "mp": True},
+        {"name": "Toxic Waste Belt Scuba Gear", "id": 294, "type": "sprite"},
+        {"name": "Sewage Atomic Health", "id": 301, "type": "sprite"},
+        {"name": "Gear Room Medkit", "id": 625, "type": "sprite"},
+        {"name": "Underwater Canyon Night Vision Goggles", "id": 626, "type": "sprite"},
+        {"name": "Submarine Return Cave Atomic Health", "id": 741, "type": "sprite"},
+        {"name": "Sewage Protective Boots", "id": 899, "type": "sprite"},
+        {"name": "MP Waterfall Shotgun", "id": 905, "type": "sprite", "mp": True},
+        {"name": "Underwater Canyon Chaingun", "id": 913, "type": "sprite"},
+        {"name": "Underwater Gate RPG", "id": 929, "type": "sprite"},
+        {"name": "Underwater Scuba Gear", "id": 957, "type": "sprite"},
+        {"name": "RPG near Blue Key Card", "id": 962, "type": "sprite"},
+        {"name": "Underwater Secret Pipebombs 1", "id": 969, "type": "sprite"},
+        {"name": "Underwater Secret Pipebombs 2", "id": 970, "type": "sprite"},
+        {"name": "Underwater Secret Atomic Health", "id": 971, "type": "sprite"},
+        {"name": "Right Cylinder Atomic Health", "id": 987, "type": "sprite"},
+        {"name": "Underwater Medkit", "id": 988, "type": "sprite"},
+        {"name": "Cylinders Armor", "id": 991, "type": "sprite"},
+        {"name": "Underwater Hallway Holo Duke", "id": 1013, "type": "sprite"},
+        {"name": "Underwater Canyon Pipebombs", "id": 1014, "type": "sprite"},
+        {"name": "Canyon Secret Scuba Gear", "id": 1050, "type": "sprite"},
+        {"name": "Submarine Medkit", "id": 1060, "type": "sprite"},
+        {"name": "Submarine Atomic Health", "id": 1061, "type": "sprite"},
+        {"name": "Submarine Armor", "id": 1062, "type": "sprite"},
+        {"name": "Shotgun near Red Key Card", "id": 1069, "type": "sprite"},
+        {"name": "Left Cylinder Atomic Health 2", "id": 1070, "type": "sprite"},
+        {"name": "Left Cylinder Atomic Health 1", "id": 1071, "type": "sprite"},
+        {"name": "Canyon Dark Cave Shotgun", "id": 1074, "type": "sprite"},
+        {"name": "Canyon Dark Cave Medkit", "id": 1075, "type": "sprite"},
+        {"name": "Sewage Secret Alcove Atomic Health 1", "id": 1079, "type": "sprite"},
+        {"name": "Sewage Secret Alcove Atomic Health 2", "id": 1080, "type": "sprite"},
+        {"name": "Canyon RPG", "id": 1085, "type": "sprite"},
+        {"name": "Submarine Return Cave 1", "id": 88, "type": "sector"},
+        {"name": "Submarine Return Cave 2", "id": 89, "type": "sector"},
+        {"name": "Submarine Return Cave 3", "id": 90, "type": "sector"},
+        {"name": "Waterfall Secret Teleporter", "id": 184, "type": "sector"},
+        {"name": "Underwater Secret Cave", "id": 267, "type": "sector"},
+        {"name": "Guard Tower", "id": 274, "type": "sector"},
+        {"name": "Secret Alcove near Blue Key Card", "id": 330, "type": "sector"},
+        {"name": "Sewage Secret Alcove", "id": 331, "type": "sector"},
+        {"name": "Toxic Waste Belt Hidden Alcove", "id": 418, "type": "sector"},
+        {"name": "Canyon Secret Wall", "id": 421, "type": "sector"},
+        {"name": "Top of Submarine", "id": 430, "type": "sector"},
+        {"name": "Left Cylinder", "id": 435, "type": "sector"},
+        {"name": "Canyon Dark Cave", "id": 453, "type": "sector"},
+        {"name": "Secret Exit", "id": 465, "type": "sector"},
+        {"name": "Exit", "id": 0, "type": "exit"},
+        {"name": "Secret Exit", "id": 6, "type": "exit"},
+    ]

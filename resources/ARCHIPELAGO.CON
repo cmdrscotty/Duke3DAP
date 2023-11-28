@@ -1,0 +1,55 @@
+/*
+Generic game logic for Archipelago support
+
+This defines new sprites and actors for interacting with
+archipelago from the game worlds.
+
+This logic is game independent.
+
+Sprites and quotes 5120 - 5375 are reserved for AP usage.
+*/
+
+define AP_ITEM 5120
+define AP_PROG 5140
+define AP_PROCESSOR 5200
+
+define AP_RETRIEVEDISTANCE 844
+
+// Template quote for Item receive message displays
+definequote 5120 Received Item
+
+state apitem
+  ifapcollected
+    {
+      killit
+    }
+  else
+  {
+    fall
+    ifp pshrunk nullop
+    else
+      ifp palive
+        ifpdistl AP_RETRIEVEDISTANCE
+          ifcanseetarget
+      {
+        palfrom 16 0 32
+        apcollect
+        killit
+      }
+  }
+ends
+
+actor AP_ITEM
+  state apitem
+enda
+
+actor AP_PROG
+  state apitem
+enda
+
+actor AP_PROCESSOR
+  ifp palive
+    {
+      approcessqueue
+    }
+enda
