@@ -167,6 +167,10 @@ class D3DLevel(object):
                 ret.append(f"{self.prefix} {color} Key Card")
         return ret
 
+    @property
+    def map(self) -> str:
+        return f"{self.prefix} Automap"
+
 
 class D3DEpisode(object):
     name: str

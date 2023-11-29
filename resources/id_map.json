@@ -465,9 +465,9 @@
     "First Aid Kit": 309,
     "Protective Boots": 310,
     "Jump": 350,
-    "Dive": 350,
-    "Crouch": 350,
-    "Sprint": 350,
+    "Dive": 351,
+    "Crouch": 352,
+    "Sprint": 353,
     "E1L1 Automap": 1600,
     "E1L1 Unlock": 1700,
     "E1L1 Red Key Card": 1800,
@@ -507,5 +507,5 @@
     "E2L3 Blue Key Card": 1816,
     "E2L3 Yellow Key Card": 1817
   },
-  "checksum": "27bb9784bd82e0e59384ed96e665eb1e51a73e162c8b8374c94d241066d4ad74"
+  "checksum": "59329b66b49e5ba359c3965d3a64b8f7de3eb194f7ac266a7a353808946e1614"
 }

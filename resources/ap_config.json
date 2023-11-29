@@ -2,7 +2,7 @@
   "game": "Duke3D",
   "name": "Duke Nukem 3D",
   "game_id": 1,
-  "checksum": "27bb9784bd82e0e59384ed96e665eb1e51a73e162c8b8374c94d241066d4ad74",
+  "checksum": "59329b66b49e5ba359c3965d3a64b8f7de3eb194f7ac266a7a353808946e1614",
   "episodes": {
     "E1": {
       "name": "L.A. Meltdown",
@@ -2212,6 +2212,27 @@
       ]
     },
     "350": {
+      "name": "Jump",
+      "type": "ability",
+      "persistent": true,
+      "unique": true,
+      "enables": "jump"
+    },
+    "351": {
+      "name": "Dive",
+      "type": "ability",
+      "persistent": true,
+      "unique": true,
+      "enables": "dive"
+    },
+    "352": {
+      "name": "Crouch",
+      "type": "ability",
+      "persistent": true,
+      "unique": true,
+      "enables": "crouch"
+    },
+    "353": {
       "name": "Sprint",
       "type": "ability",
       "persistent": true,

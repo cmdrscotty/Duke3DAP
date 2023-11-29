@@ -69,7 +69,7 @@ class E1L1(D3DLevel):
             ],
             ret,
         )
-        self.restrict(self.get_location("E1L1 Vent Holo Duke"), r.explosives)
+        self.restrict(self.get_location("E1L1 Vent Holo Duke"), r.jump & r.explosives)
 
         apartment = self.region(f"Apartments")
         self.add_locations(
@@ -139,7 +139,7 @@ class E1L1(D3DLevel):
         self.connect(
             exit_ledge, behind_screen, r.difficulty("medium")
         )  # Can just walk off the ledge
-        self.connect(ret, behind_screen, r.can_jump & r.explosives)
+        self.connect(ret, behind_screen, (r.can_jump & r.explosives) | r.jetpack(50))
 
         top_of_building = self.region(f"Top of Building")
         self.add_locations(["Jetpack above Exit"], top_of_building)

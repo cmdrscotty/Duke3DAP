@@ -10,6 +10,7 @@ from .base_classes import D3DItem, D3DLevel, LocationDef
 from .id import GAME_ID, local_id, net_id
 from .items import all_items, item_groups
 from .levels import all_levels
+from .options import Duke3DOptions
 from .rules import Rules
 
 with io.open(Path(__file__).parent / "resources" / "id_map.json", "r") as id_file:
@@ -30,15 +31,20 @@ class D3DWorld(World):
     location_name_to_id = {
         name: net_id(loc_id) for name, loc_id in game_ids["locations"].items()
     }
-    item_groups = item_groups
+    item_name_groups = item_groups
     id_checksum = game_ids["checksum"]
+    options_dataclass = Duke3DOptions
+    options: Duke3DOptions
 
     def __init__(self, world: MultiWorld, player: int):
         self.included_levels: List[D3DLevel] = [all_levels[0]]
         self.rules = Rules(world, player)
         self.used_locations: Set[str] = set()
         # Add the id checksum of our location and item ids for consistency check with clients
-        self.slot_data: Dict[str, Any] = {"checksum": self.id_checksum}
+        self.slot_data: Dict[str, Any] = {
+            "checksum": self.id_checksum,
+            "settings": {},
+        }
 
         super().__init__(world, player)
 
@@ -58,9 +64,21 @@ class D3DWorld(World):
             return False
         return not location.mp_only
 
+    def get_option(self, option_name: str) -> int:
+        return getattr(self.multiworld, option_name)[self.player].value
+
     def generate_early(self) -> None:
         # Initial level unlocks
         self.multiworld.start_inventory[self.player].value["E1L1 Unlock"] = 1
+        for level in self.included_levels:
+            if self.get_option("area_maps") == self.options.area_maps.option_start_with:
+                self.multiworld.start_inventory[self.player].value[level.map] = 1
+        self.slot_data["settings"]["difficulty"] = self.get_option("difficulty")
+        if self.get_option("unlock_abilities"):
+            self.slot_data["settings"]["lock_crouch"] = True
+            self.slot_data["settings"]["lock_jump"] = True
+            self.slot_data["settings"]["lock_run"] = True
+            self.slot_data["settings"]["lock_dive"] = True
 
     def create_regions(self):
         self.used_locations = set()
@@ -77,14 +95,33 @@ class D3DWorld(World):
             self.item_name_to_id[level.unlock] for level in self.included_levels
         ]
 
-        # ToDo dynamically determine goal count here somehow
+        goal_exits = self.get_option("goal") in {
+            self.options.goal.option_beat_all_levels,
+            self.options.goal.option_both,
+        }
+        goal_secrets = self.get_option("goal") in {
+            self.options.goal.option_collect_all_secrets,
+            self.options.goal.option_both,
+        }
+        goal_counts = {"Exit": 0, "Secret": 0}
+        for level in self.included_levels:
+            for location in level.locations.values():
+                if location.name not in self.used_locations:
+                    continue
+                if goal_exits and location.type == "exit":
+                    goal_counts["Exit"] += 1
+                elif goal_secrets and location.type == "sector":
+                    goal_counts["Secret"] += 1
+
+        # ToDo apply some dynamic percent scaling via slider?
+
         self.slot_data["goal"] = {
-            self.item_name_to_id["Exit"]: 1,
-            self.item_name_to_id["Secret"]: 8,
+            self.item_name_to_id["Exit"]: goal_counts["Exit"],
+            self.item_name_to_id["Secret"]: goal_counts["Secret"],
         }
         self.multiworld.completion_condition[self.player] = self.rules.count(
-            "Exit", 1
-        ) & self.rules.count("Secret", 8)
+            "Exit", goal_counts["Exit"]
+        ) & self.rules.count("Secret", goal_counts["Secret"])
 
     def create_item(self, item: str) -> D3DItem:
         item_def = all_items.get(item)
@@ -97,18 +134,47 @@ class D3DWorld(World):
         )
         return D3DItem(item, classification, self.item_name_to_id[item], self.player)
 
+    def get_filler_item_name(self) -> str:
+        return "Nothing"
+
+    def create_junk(self, count: int) -> List[D3DItem]:
+        # ToDo actually do some balanced filling here of useful junk
+        return [self.create_item(self.get_filler_item_name()) for _ in range(count)]
+
+    def create_item_list(self, item_list: List[str]) -> List[D3DItem]:
+        return [self.create_item(item) for item in item_list]
+
     def create_items(self):
-        itempool = []
+        itempool = []  # Absolutely mandatory progression items
+        useful_items = (
+            []
+        )  # Stuff that should be in the world if there's enough locations
         used_locations = self.used_locations.copy()
         # Place goal items and level key cards
+        goal_exits = self.get_option("goal") in {
+            self.options.goal.option_beat_all_levels,
+            self.options.goal.option_both,
+        }
+        goal_secrets = self.get_option("goal") in {
+            self.options.goal.option_collect_all_secrets,
+            self.options.goal.option_both,
+        }
         for level in self.included_levels:
             for location in level.locations.values():
-                if location.name in self.used_locations and location.type == "exit":
+                if (
+                    goal_exits
+                    and location.name in self.used_locations
+                    and location.type == "exit"
+                ):
                     self.multiworld.get_location(
                         location.name, self.player
                     ).place_locked_item(self.create_item("Exit"))
                     used_locations.remove(location.name)
-                elif location.name in self.used_locations and location.type == "sector":
+                elif (
+                    goal_secrets
+                    and location.name in self.used_locations
+                    and location.type == "sector"
+                ):
                     self.multiworld.get_location(
                         location.name, self.player
                     ).place_locked_item(self.create_item("Secret"))
@@ -116,15 +182,25 @@ class D3DWorld(World):
             itempool += [self.create_item(item) for item in level.items]
             if level.unlock not in self.multiworld.start_inventory[self.player].value:
                 itempool.append(self.create_item(level.unlock))
+            if self.get_option("area_maps") == self.options.area_maps.option_unlockable:
+                useful_items.append(self.create_item(level.map))
+
+        if self.get_option("unlock_abilities"):
+            itempool += self.create_item_list(
+                ["Jump", "Sprint", "Crouch", "Scuba Gear"]
+            )
 
         # Add prog items and stuff
-        # ToDo actual logic and filling
+        # ToDo actual logic for filling
+        itempool += self.create_item_list(["Jetpack", "Jetpack Capacity", "RPG"])
+
+        useful_items += self.create_item_list(["Shotgun"])
+
+        # Add as much useful stuff as can fit
+        itempool.extend(useful_items[: len(used_locations) - len(itempool)])
 
         # Add filler
-        itempool += [
-            self.create_item("Nothing")
-            for _ in range(len(used_locations) - len(itempool))
-        ]
+        itempool += self.create_junk(len(used_locations) - len(itempool))
 
         self.multiworld.itempool += itempool
 

@@ -1,3 +1,5 @@
+import functools
+import math
 from typing import Callable, Union
 
 from BaseClasses import CollectionState, MultiWorld
@@ -59,6 +61,16 @@ class Rules(object):
 
         self.has = HasRule
 
+        class HasGroupRule(Rule):
+            def __init__(self, prop: str):
+                self.prop = prop
+
+            def __call__(self, state: CollectionState) -> bool:
+                # something based on world, whatever
+                return state.has_group(self.prop, player)
+
+        self.has_group = HasGroupRule
+
         class CountRule(Rule):
             def __init__(self, prop: str, count: int):
                 self.prop = prop
@@ -70,20 +82,35 @@ class Rules(object):
 
         self.count = CountRule
 
+        class CountGroupRule(Rule):
+            def __init__(self, prop: str, count: int):
+                self.prop = prop
+                self.count = count
+
+            def __call__(self, state: CollectionState) -> bool:
+                # something based on world, whatever
+                return state.has_group(self.prop, player, self.count)
+
+        self.count_group = CountGroupRule
+
         # ToDo make conditional on world settings if these are even in the pool
         self.can_jump = HasRule("Jump")
         self.can_crouch = HasRule("Crouch")
-        self.can_dive = HasRule("Dive")
+        self.can_dive = (
+            HasRule("Dive") | HasRule("Scuba Gear") | HasRule("Progressive Scuba Gear")
+        )
         self.can_sprint = HasRule("Sprint")
 
         class CanJetPack(Rule):
             def __init__(self, fuel: int):
                 self.fuel = fuel
+                # ToDo make the fuel per upgrade configurable
+                self.required = math.ceil(self.fuel / 100.0)
 
             def __call__(self, state: CollectionState) -> bool:
-                # something based on world, whatever
-                return True
-                return state.has("Jetpack", 0, self.fuel)
+                return state.has("Jetpack", player) and state.has_group(
+                    "Jetpack", player, self.required
+                )
 
         self.jetpack = CanJetPack
 
@@ -100,7 +127,10 @@ class Rules(object):
 
         self.difficulty = Difficulty
 
-        self.explosives = self.has("RPG") | self.has("Pipebombs") | self.has("Tripmine")
+        self.explosives = self.has_group("Explosives")
+        # This is technically not correct because some of them provide more capacity, so this is stricter than it
+        # needs to be for now, ToDo
+        self.explosives_count = functools.partial(self.count_group, prop="Explosives")
 
         # Glitched logic stuff
         self.glitched = RuleFalse()

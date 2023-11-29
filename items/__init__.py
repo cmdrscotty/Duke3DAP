@@ -348,7 +348,7 @@ weapons = {
     ),
 }
 
-item_groups["explosives"] = {
+item_groups["Explosives"] = {
     "RPG",
     "Pipebomb",
     "Devastator",
@@ -470,6 +470,8 @@ inventory_items = {
     ),
 }
 
+item_groups["Jetpack"] = {"Jetpack", "Jetpack Capacity", "Progressive Jetpack"}
+
 abilities = {
     "Jump": ItemDef(
         "Jump",
@@ -482,7 +484,7 @@ abilities = {
     ),
     "Dive": ItemDef(
         "Dive",
-        net_id(350),
+        net_id(351),
         "ability",
         {"enables": "dive"},
         persistent=True,
@@ -491,7 +493,7 @@ abilities = {
     ),
     "Crouch": ItemDef(
         "Crouch",
-        net_id(350),
+        net_id(352),
         "ability",
         {"enables": "crouch"},
         persistent=True,
@@ -500,7 +502,7 @@ abilities = {
     ),
     "Sprint": ItemDef(
         "Sprint",
-        net_id(350),
+        net_id(353),
         "ability",
         {"enables": "run"},
         persistent=True,
