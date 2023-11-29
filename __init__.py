@@ -38,9 +38,7 @@ class D3DWorld(World):
         self.rules = Rules(world, player)
         self.used_locations: Set[str] = set()
         # Add the id checksum of our location and item ids for consistency check with clients
-        self.slot_data: Dict[str, Any] = {
-            "checksum": self.id_checksum
-        }
+        self.slot_data: Dict[str, Any] = {"checksum": self.id_checksum}
 
         super().__init__(world, player)
 
@@ -75,7 +73,9 @@ class D3DWorld(World):
         self.slot_data["locations"] = [
             self.location_name_to_id[loc] for loc in self.used_locations
         ]
-        self.slot_data["levels"] = [self.item_name_to_id[level.unlock] for level in self.included_levels]
+        self.slot_data["levels"] = [
+            self.item_name_to_id[level.unlock] for level in self.included_levels
+        ]
 
         # ToDo dynamically determine goal count here somehow
         self.slot_data["goal"] = {

@@ -2,7 +2,7 @@
   "game": "Duke3D",
   "name": "Duke Nukem 3D",
   "game_id": 1,
-  "checksum": "3232cf2240177ef19f5aeea26948584513ba44df0b3ca0efff27a8aa92cd9810",
+  "checksum": "27bb9784bd82e0e59384ed96e665eb1e51a73e162c8b8374c94d241066d4ad74",
   "episodes": {
     "E1": {
       "name": "L.A. Meltdown",
@@ -1890,6 +1890,216 @@
       "weaponnum": 11,
       "ammo": 2
     },
+    "222": {
+      "name": "Shotgun Capacity",
+      "type": "ammo",
+      "persistent": true,
+      "weaponnum": 2,
+      "capacity": 10,
+      "ammo": 5
+    },
+    "223": {
+      "name": "Chaingun Capacity",
+      "type": "ammo",
+      "persistent": true,
+      "weaponnum": 3,
+      "capacity": 50,
+      "ammo": 25
+    },
+    "224": {
+      "name": "RPG Capacity",
+      "type": "ammo",
+      "persistent": true,
+      "weaponnum": 4,
+      "capacity": 5,
+      "ammo": 2
+    },
+    "225": {
+      "name": "Pipebomb Capacity",
+      "type": "ammo",
+      "persistent": true,
+      "weaponnum": 5,
+      "capacity": 3,
+      "ammo": 1
+    },
+    "226": {
+      "name": "Shrinker Capacity",
+      "type": "ammo",
+      "persistent": true,
+      "weaponnum": 6,
+      "capacity": 3,
+      "ammo": 1
+    },
+    "227": {
+      "name": "Devastator Capacity",
+      "type": "ammo",
+      "persistent": true,
+      "weaponnum": 7,
+      "capacity": 20,
+      "ammo": 10
+    },
+    "228": {
+      "name": "Devastator Capacity",
+      "type": "ammo",
+      "persistent": true,
+      "weaponnum": 8,
+      "capacity": 1,
+      "ammo": 1
+    },
+    "229": {
+      "name": "Freezethrower Capacity",
+      "type": "ammo",
+      "persistent": true,
+      "weaponnum": 9,
+      "capacity": 40,
+      "ammo": 20
+    },
+    "231": {
+      "name": "Expander Capacity",
+      "type": "ammo",
+      "persistent": true,
+      "weaponnum": 11,
+      "capacity": 3,
+      "ammo": 2
+    },
+    "242": {
+      "name": "Progressive Shotgun",
+      "type": "progressive",
+      "persistent": true,
+      "silent": true,
+      "items": [
+        202,
+        222
+      ]
+    },
+    "243": {
+      "name": "Progressive Chaingun",
+      "type": "progressive",
+      "persistent": true,
+      "silent": true,
+      "items": [
+        203,
+        223
+      ]
+    },
+    "244": {
+      "name": "Progressive RPG",
+      "type": "progressive",
+      "persistent": true,
+      "silent": true,
+      "items": [
+        204,
+        224
+      ]
+    },
+    "245": {
+      "name": "Progressive Pipebomb",
+      "type": "progressive",
+      "persistent": true,
+      "silent": true,
+      "items": [
+        205,
+        225
+      ]
+    },
+    "246": {
+      "name": "Progressive Shrinker",
+      "type": "progressive",
+      "persistent": true,
+      "silent": true,
+      "items": [
+        206,
+        226
+      ]
+    },
+    "247": {
+      "name": "Progressive Devastator",
+      "type": "progressive",
+      "persistent": true,
+      "silent": true,
+      "items": [
+        207,
+        227
+      ]
+    },
+    "248": {
+      "name": "Progressive Tripmine",
+      "type": "progressive",
+      "persistent": true,
+      "silent": true,
+      "items": [
+        208,
+        228
+      ]
+    },
+    "249": {
+      "name": "Progressive Freezethrower",
+      "type": "progressive",
+      "persistent": true,
+      "silent": true,
+      "items": [
+        209,
+        229
+      ]
+    },
+    "251": {
+      "name": "Progressive Expander",
+      "type": "progressive",
+      "persistent": true,
+      "silent": true,
+      "items": [
+        211,
+        231
+      ]
+    },
+    "262": {
+      "name": "Shotgun Ammo",
+      "type": "ammo",
+      "weaponnum": 2,
+      "ammo": 10
+    },
+    "263": {
+      "name": "Chaingun Ammo",
+      "type": "ammo",
+      "weaponnum": 3,
+      "ammo": 100
+    },
+    "264": {
+      "name": "RPG Ammo",
+      "type": "ammo",
+      "weaponnum": 4,
+      "ammo": 10
+    },
+    "265": {
+      "name": "Pipebomb Ammo",
+      "type": "ammo",
+      "weaponnum": 5,
+      "ammo": 5
+    },
+    "266": {
+      "name": "Shrinker Ammo",
+      "type": "ammo",
+      "weaponnum": 6,
+      "ammo": 10
+    },
+    "267": {
+      "name": "Tripmines",
+      "type": "ammo",
+      "weaponnum": 8,
+      "ammo": 3
+    },
+    "269": {
+      "name": "Freezethrower Ammo",
+      "type": "ammo",
+      "weaponnum": 9,
+      "ammo": 50
+    },
+    "271": {
+      "name": "Expander Ammo",
+      "type": "ammo",
+      "weaponnum": 11,
+      "ammo": 5
+    },
     "300": {
       "name": "Steroids",
       "type": "inventory",
@@ -1906,7 +2116,7 @@
       "max_capacity": 100
     },
     "302": {
-      "name": "Scube Gear",
+      "name": "Scuba Gear",
       "type": "inventory",
       "persistent": true,
       "unique": true,

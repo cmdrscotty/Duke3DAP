@@ -92,7 +92,12 @@ class D3DLevel(object):
         location = f"{self.prefix} {location}"
         if self.world.use_location(self.locations.get(location)):
             region.locations.append(
-                D3DLocation(self.world.player, location, self.world.location_name_to_id[location], region)
+                D3DLocation(
+                    self.world.player,
+                    location,
+                    self.world.location_name_to_id[location],
+                    region,
+                )
             )
             self.used_locations.add(location)
 
