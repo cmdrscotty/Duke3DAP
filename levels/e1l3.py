@@ -7,7 +7,7 @@ class E1L3(D3DLevel):
     name = "Death Row"
     levelnum = 2
     volumenum = 0
-    keys = {"Blue", "Red", "Yellow"}
+    keys = ["Blue", "Red", "Yellow"]
     location_defs = [
         {"name": "Control Room Secret Atomic Health", "id": 48, "type": "sprite"},
         {"name": "Control Room Vent Armor", "id": 79, "type": "sprite"},

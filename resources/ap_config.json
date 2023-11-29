@@ -1,6 +1,8 @@
 {
-  "game": "Duke Nukem 3D",
+  "game": "Duke3D",
+  "name": "Duke Nukem 3D",
   "game_id": 1,
+  "checksum": "3232cf2240177ef19f5aeea26948584513ba44df0b3ca0efff27a8aa92cd9810",
   "episodes": {
     "E1": {
       "name": "L.A. Meltdown",
@@ -1801,7 +1803,7 @@
   "items": {
     "0": {
       "name": "Nothing",
-      "type": "goal",
+      "type": "filler",
       "silent": true
     },
     "100": {
@@ -2156,11 +2158,11 @@
       "volumenum": 0
     },
     "1801": {
-      "name": "E1L2 Yellow Key Card",
+      "name": "E1L2 Blue Key Card",
       "type": "key",
       "persistent": true,
       "unique": true,
-      "flags": 4,
+      "flags": 1,
       "levelnum": 1,
       "volumenum": 0
     },
@@ -2174,20 +2176,20 @@
       "volumenum": 0
     },
     "1803": {
-      "name": "E1L2 Blue Key Card",
-      "type": "key",
-      "persistent": true,
-      "unique": true,
-      "flags": 1,
-      "levelnum": 1,
-      "volumenum": 0
-    },
-    "1804": {
-      "name": "E1L3 Yellow Key Card",
+      "name": "E1L2 Yellow Key Card",
       "type": "key",
       "persistent": true,
       "unique": true,
       "flags": 4,
+      "levelnum": 1,
+      "volumenum": 0
+    },
+    "1804": {
+      "name": "E1L3 Blue Key Card",
+      "type": "key",
+      "persistent": true,
+      "unique": true,
+      "flags": 1,
       "levelnum": 2,
       "volumenum": 0
     },
@@ -2201,29 +2203,29 @@
       "volumenum": 0
     },
     "1806": {
-      "name": "E1L3 Blue Key Card",
+      "name": "E1L3 Yellow Key Card",
       "type": "key",
       "persistent": true,
       "unique": true,
-      "flags": 1,
+      "flags": 4,
       "levelnum": 2,
       "volumenum": 0
     },
     "1807": {
-      "name": "E1L4 Red Key Card",
-      "type": "key",
-      "persistent": true,
-      "unique": true,
-      "flags": 2,
-      "levelnum": 3,
-      "volumenum": 0
-    },
-    "1808": {
       "name": "E1L4 Blue Key Card",
       "type": "key",
       "persistent": true,
       "unique": true,
       "flags": 1,
+      "levelnum": 3,
+      "volumenum": 0
+    },
+    "1808": {
+      "name": "E1L4 Red Key Card",
+      "type": "key",
+      "persistent": true,
+      "unique": true,
+      "flags": 2,
       "levelnum": 3,
       "volumenum": 0
     },
@@ -2237,20 +2239,20 @@
       "volumenum": 0
     },
     "1810": {
-      "name": "E1L6 Red Key Card",
-      "type": "key",
-      "persistent": true,
-      "unique": true,
-      "flags": 2,
-      "levelnum": 5,
-      "volumenum": 0
-    },
-    "1811": {
       "name": "E1L6 Blue Key Card",
       "type": "key",
       "persistent": true,
       "unique": true,
       "flags": 1,
+      "levelnum": 5,
+      "volumenum": 0
+    },
+    "1811": {
+      "name": "E1L6 Red Key Card",
+      "type": "key",
+      "persistent": true,
+      "unique": true,
+      "flags": 2,
       "levelnum": 5,
       "volumenum": 0
     },
@@ -2264,20 +2266,20 @@
       "volumenum": 0
     },
     "1813": {
-      "name": "E2L1 Red Key Card",
-      "type": "key",
-      "persistent": true,
-      "unique": true,
-      "flags": 2,
-      "levelnum": 0,
-      "volumenum": 1
-    },
-    "1814": {
       "name": "E2L1 Blue Key Card",
       "type": "key",
       "persistent": true,
       "unique": true,
       "flags": 1,
+      "levelnum": 0,
+      "volumenum": 1
+    },
+    "1814": {
+      "name": "E2L1 Red Key Card",
+      "type": "key",
+      "persistent": true,
+      "unique": true,
+      "flags": 2,
       "levelnum": 0,
       "volumenum": 1
     },
@@ -2291,20 +2293,20 @@
       "volumenum": 1
     },
     "1816": {
-      "name": "E2L3 Yellow Key Card",
-      "type": "key",
-      "persistent": true,
-      "unique": true,
-      "flags": 4,
-      "levelnum": 2,
-      "volumenum": 1
-    },
-    "1817": {
       "name": "E2L3 Blue Key Card",
       "type": "key",
       "persistent": true,
       "unique": true,
       "flags": 1,
+      "levelnum": 2,
+      "volumenum": 1
+    },
+    "1817": {
+      "name": "E2L3 Yellow Key Card",
+      "type": "key",
+      "persistent": true,
+      "unique": true,
+      "flags": 4,
       "levelnum": 2,
       "volumenum": 1
     }

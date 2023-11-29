@@ -7,7 +7,7 @@ class E1L7(D3DLevel):
     name = "Faces of Death"
     levelnum = 6
     volumenum = 0
-    keys = {"Blue"}
+    keys = ["Blue"]
     location_defs = [
         {"name": "MP Side Room Devastator", "id": 0, "type": "sprite", "mp": True},
         {"name": "MP Side Room RPG", "id": 1, "type": "sprite", "mp": True},

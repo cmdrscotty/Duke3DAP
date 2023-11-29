@@ -7,7 +7,7 @@ class E1L4(D3DLevel):
     name = "Toxic Dump"
     levelnum = 3
     volumenum = 0
-    keys = {"Blue", "Red"}
+    keys = ["Blue", "Red"]
     location_defs = [
         {"name": "Gear Room Secret Scuba Gear", "id": 59, "type": "sprite"},
         {"name": "Gear Room Secret Armor", "id": 60, "type": "sprite"},

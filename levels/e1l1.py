@@ -7,7 +7,7 @@ class E1L1(D3DLevel):
     name = "Hollywood Holocaust"
     levelnum = 0
     volumenum = 0
-    keys = {"Red"}
+    keys = ["Red"]
     location_defs = [
         {"name": "Exit Ledge Night Vision Goggles", "id": 25, "type": "sprite"},
         {"name": "Bachelor RPG", "id": 26, "type": "sprite"},

@@ -7,7 +7,7 @@ class E2L1(D3DLevel):
     name = "Spaceport"
     levelnum = 0
     volumenum = 1
-    keys = {"Blue", "Red"}
+    keys = ["Blue", "Red"]
     location_defs = [
         {
             "name": "Night Vision Goggles behind Red Key Card",

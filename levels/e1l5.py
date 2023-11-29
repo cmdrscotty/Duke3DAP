@@ -7,7 +7,7 @@ class E1L5(D3DLevel):
     name = "The Abyss"
     levelnum = 4
     volumenum = 0
-    keys = {"Blue"}
+    keys = ["Blue"]
     location_defs = [
         {"name": "Battlelord Medkit", "id": 4, "type": "sprite"},
         {"name": "Battlelord Atomic Health 1", "id": 11, "type": "sprite"},

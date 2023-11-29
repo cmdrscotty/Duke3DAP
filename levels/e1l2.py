@@ -7,7 +7,7 @@ class E1L2(D3DLevel):
     name = "Red Light District"
     levelnum = 1
     volumenum = 0
-    keys = {"Blue", "Red", "Yellow"}
+    keys = ["Blue", "Red", "Yellow"]
     location_defs = [
         {"name": "Blue Key Card", "id": 27, "type": "sprite"},
         {"name": "Sewers Jetpack", "id": 51, "type": "sprite"},

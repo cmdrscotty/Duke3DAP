@@ -7,7 +7,7 @@ class E1L6(D3DLevel):
     name = "Launch Facility"
     levelnum = 5
     volumenum = 0
-    keys = {"Blue", "Red"}
+    keys = ["Blue", "Red"]
     location_defs = [
         {"name": "Rocket Jetpack", "id": 0, "type": "sprite"},
         {"name": "Toxic Waste Pool Shotgun", "id": 123, "type": "sprite"},

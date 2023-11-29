@@ -24,12 +24,23 @@ class D3DWorld(World):
     game = "Duke3D"
     build_game_id = GAME_ID
     game_full_name = "Duke Nukem 3D"
+    item_name_to_id = {
+        name: net_id(loc_id) for name, loc_id in game_ids["items"].items()
+    }
+    location_name_to_id = {
+        name: net_id(loc_id) for name, loc_id in game_ids["locations"].items()
+    }
+    item_groups = item_groups
+    id_checksum = game_ids["checksum"]
 
     def __init__(self, world: MultiWorld, player: int):
         self.included_levels: List[D3DLevel] = [all_levels[0]]
         self.rules = Rules(world, player)
         self.used_locations: Set[str] = set()
-        self.slot_data: Dict[str, Any] = {}
+        # Add the id checksum of our location and item ids for consistency check with clients
+        self.slot_data: Dict[str, Any] = {
+            "checksum": self.id_checksum
+        }
 
         super().__init__(world, player)
 
@@ -40,15 +51,6 @@ class D3DWorld(World):
     @classmethod
     def net_id(cls, short_id: int) -> int:
         return net_id(short_id)
-
-    item_name_to_id = {
-        name: net_id(loc_id) for name, loc_id in game_ids["items"].items()
-    }
-    location_name_to_id = {
-        name: net_id(loc_id) for name, loc_id in game_ids["locations"].items()
-    }
-    item_groups = item_groups
-    id_checksum = game_ids["checksum"]
 
     def use_location(self, location: Optional[LocationDef] = None) -> bool:
         """
@@ -149,7 +151,7 @@ class D3DWorld(World):
             },
             "slot_data": self.slot_data,
             "location_to_item": {
-                self.location_name_to_id[location.name]: location.item.code
+                location.address: location.item.code
                 for location in self.multiworld.get_filled_locations(self.player)
             },
             "start_inventory": [

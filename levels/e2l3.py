@@ -7,7 +7,7 @@ class E2L3(D3DLevel):
     name = "Warp Factor"
     levelnum = 2
     volumenum = 1
-    keys = {"Blue", "Yellow"}
+    keys = ["Blue", "Yellow"]
     location_defs = [
         {"name": "Engine Room Atomic Health", "id": 9, "type": "sprite"},
         {"name": "Engine Room Shotgun", "id": 10, "type": "sprite"},

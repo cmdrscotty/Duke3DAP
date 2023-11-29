@@ -47,7 +47,7 @@ class D3DLevel(object):
     levelnum: int
     volumenum: int
     location_defs: List[dict]
-    keys: Set[str]
+    keys: List[str]
 
     def __init__(self):
         self.world: Optional["D3DWorld"] = None
@@ -92,7 +92,7 @@ class D3DLevel(object):
         location = f"{self.prefix} {location}"
         if self.world.use_location(self.locations.get(location)):
             region.locations.append(
-                D3DLocation(self.world.player, location, None, region)
+                D3DLocation(self.world.player, location, self.world.location_name_to_id[location], region)
             )
             self.used_locations.add(location)
 

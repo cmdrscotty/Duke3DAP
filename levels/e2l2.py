@@ -7,7 +7,7 @@ class E2L2(D3DLevel):
     name = "Incubator"
     levelnum = 1
     volumenum = 1
-    keys = {"Yellow"}
+    keys = ["Yellow"]
     location_defs = [
         {"name": "MP Underwater Jetpack", "id": 34, "type": "sprite", "mp": True},
         {"name": "Overgrown Passage Jetpack", "id": 67, "type": "sprite"},
