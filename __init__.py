@@ -124,7 +124,7 @@ class D3DWorld(World):
         for level in self.included_levels:
             level_region = level.create_region(self)
             self.used_locations |= level.used_locations
-            menu_region.connect(level_region, self.rules.level(level))
+            menu_region.connect(level_region, None, self.rules.level(level))
         self.slot_data["locations"] = [
             self.location_name_to_id[loc] for loc in self.used_locations
         ]
