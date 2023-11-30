@@ -9,7 +9,7 @@ from worlds.AutoWorld import World
 from .base_classes import D3DItem, D3DLevel, LocationDef
 from .id import GAME_ID, local_id, net_id
 from .items import all_items, item_groups
-from .levels import all_levels
+from .levels import all_episodes
 from .options import Duke3DOptions
 from .rules import Rules
 
@@ -37,14 +37,15 @@ class D3DWorld(World):
     options: Duke3DOptions
 
     def __init__(self, world: MultiWorld, player: int):
-        self.included_levels: List[D3DLevel] = [all_levels[0]]
-        self.rules = Rules(world, player)
+        self.included_levels: List[D3DLevel] = []
+        self.starting_levels: List[D3DLevel] = []
         self.used_locations: Set[str] = set()
         # Add the id checksum of our location and item ids for consistency check with clients
         self.slot_data: Dict[str, Any] = {
             "checksum": self.id_checksum,
             "settings": {},
         }
+        self.rules: Optional[Rules] = None
 
         super().__init__(world, player)
 
@@ -62,14 +63,41 @@ class D3DWorld(World):
         """
         if location is None:
             return False
-        return not location.mp_only
+        if location.mp_only and not self.get_option("include_mp_items"):
+            return False
+        if (
+            location.type == "sector"
+            and self.get_option("goal") == self.options.goal.option_beat_all_levels
+            and not self.get_option("include_secrets")
+        ):
+            return False
+        return True
 
-    def get_option(self, option_name: str) -> int:
+    def get_option(self, option_name: str) -> Any:
         return getattr(self.multiworld, option_name)[self.player].value
 
+    def include_episode(self, episode_shorthand: str):
+        """
+        Adds levels for a selected episode option
+        """
+        episode_id = int(episode_shorthand[-1]) - 1
+        episode = all_episodes[episode_id]
+        self.included_levels += episode.levels
+        if len(episode.levels) > 0:
+            self.starting_levels.append(episode.levels[0])
+
     def generate_early(self) -> None:
+        # Configure rules
+        self.rules = Rules(self)
+
+        # Generate level pool
+        for episode_option in ("episode1", "episode2", "episode3", "episode4"):
+            if self.get_option(episode_option):
+                self.include_episode(episode_option)
+
         # Initial level unlocks
-        self.multiworld.start_inventory[self.player].value["E1L1 Unlock"] = 1
+        for level in self.starting_levels:
+            self.multiworld.start_inventory[self.player].value[level.unlock] = 1
         for level in self.included_levels:
             if self.get_option("area_maps") == self.options.area_maps.option_start_with:
                 self.multiworld.start_inventory[self.player].value[level.map] = 1
@@ -134,6 +162,9 @@ class D3DWorld(World):
         )
         return D3DItem(item, classification, self.item_name_to_id[item], self.player)
 
+    def create_event(self, event_name: str) -> D3DItem:
+        return D3DItem(event_name, ItemClassification.progression, None, self.player)
+
     def get_filler_item_name(self) -> str:
         return "Nothing"
 
@@ -179,6 +210,12 @@ class D3DWorld(World):
                         location.name, self.player
                     ).place_locked_item(self.create_item("Secret"))
                     used_locations.remove(location.name)
+            # create and fill event items
+            for event in level.events:
+                prefixed_event = f"{level.prefix} {event}"
+                self.multiworld.get_location(
+                    prefixed_event, self.player
+                ).place_locked_item(self.create_event(prefixed_event))
             itempool += [self.create_item(item) for item in level.items]
             if level.unlock not in self.multiworld.start_inventory[self.player].value:
                 itempool.append(self.create_item(level.unlock))
@@ -187,12 +224,21 @@ class D3DWorld(World):
 
         if self.get_option("unlock_abilities"):
             itempool += self.create_item_list(
-                ["Jump", "Sprint", "Crouch", "Scuba Gear"]
+                [
+                    "Jump",
+                    "Sprint",
+                    "Crouch",
+                    "Scuba Gear",
+                    "Scuba Gear Capacity",
+                    "Scuba Gear Capacity",
+                ]
             )
 
         # Add prog items and stuff
         # ToDo actual logic for filling
-        itempool += self.create_item_list(["Jetpack", "Jetpack Capacity", "RPG"])
+        itempool += self.create_item_list(
+            ["Jetpack", "Jetpack Capacity", "RPG", "Pipebomb", "Tripmine"]
+        )
 
         useful_items += self.create_item_list(["Shotgun"])
 

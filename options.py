@@ -41,9 +41,58 @@ class Goal(Choice):
     default = 2
 
 
+class IncludeSecrets(Toggle):
+    """Include secret areas into the location pool. This only has an effect if **goal** is set to *beat_all_levels*"""
+
+    display_name = "Include Secrets as Locations"
+    default = False
+
+
+class IncludeMultiplayerItems(Toggle):
+    """Add location checks for multiplayer only item spawns"""
+
+    display_name = "Use Multiplayer Only Items"
+    default = False
+
+
+# ToDo find a way to generate this dynamically from the episodes list
+class Episode1(Toggle):
+    """Include Episode 1: Hollywood Holocaust in the randomizer"""
+
+    display_name = "Use Episode 1"
+    default = True
+
+
+class Episode2(Toggle):
+    """Include Episode 2: Lunar Apocalypse in the randomizer"""
+
+    display_name = "Use Episode 2"
+    default = False
+
+
+class Episode3(Toggle):
+    """Include Episode 3: Shrapnel City in the randomizer"""
+
+    display_name = "Use Episode 3"
+    default = False
+
+
+class Episode4(Toggle):
+    """Include Episode 4: Hollywood Holocaust in the randomizer"""
+
+    display_name = "The Birth"
+    default = False
+
+
 @dataclass
 class Duke3DOptions(PerGameCommonOptions):
     difficulty: Difficulty
     unlock_abilities: UnlockAbilities
     area_maps: AreaMaps
     goal: Goal
+    include_mp_items: IncludeMultiplayerItems
+    include_secrets: IncludeSecrets
+    episode1: Episode1
+    episode2: Episode2
+    episode3: Episode3
+    episode4: Episode4

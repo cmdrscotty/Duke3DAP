@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING, Any, Dict, List, Optional, Set, Union
 
 from BaseClasses import Entrance, Item, Location, Region
 
-from .rules import RULETYPE, LambdaRule, Rule, Rules
+from .rules import RULETYPE, LambdaRule, Rule, Rules, RuleTrue
 
 if TYPE_CHECKING:
     from ..d3d import D3DWorld
@@ -15,6 +15,17 @@ class D3DItem(Item):
 
 class D3DLocation(Location):
     game = "Duke3D"
+
+    def __init__(
+        self,
+        player: int,
+        name: str = "",
+        address: Optional[int] = None,
+        parent: Optional[Region] = None,
+    ):
+        super().__init__(player, name, address, parent)
+        if address is None:
+            self.event = True
 
 
 @dataclass(frozen=True)
@@ -48,6 +59,7 @@ class D3DLevel(object):
     volumenum: int
     location_defs: List[dict]
     keys: List[str]
+    events: List[str] = []
 
     def __init__(self):
         self.world: Optional["D3DWorld"] = None
@@ -81,16 +93,37 @@ class D3DLevel(object):
         """
         To be implemented by each level
         """
-        raise NotImplementedError
+        # Default implementations: everything available in the start region
+        # This is wildly incorrect logically, but helps play the levels for configuring the logic
+        ret = self.region(self.name)
+        self.add_locations([x["name"] for x in self.location_defs], ret)
+        return ret
 
-    def region(self, name: str, hint: Optional[str] = None) -> Region:
-        return Region(
+    def region(
+        self,
+        name: str,
+        locations: Optional[List[str]] = None,
+        hint: Optional[str] = None,
+    ) -> Region:
+        ret = Region(
             f"{self.prefix} {name}", self.world.player, self.world.multiworld, hint
         )
+        if locations:
+            self.add_locations(locations, ret)
+        return ret
 
-    def add_location(self, location: str, region: Region):
-        location = f"{self.prefix} {location}"
-        if self.world.use_location(self.locations.get(location)):
+    def add_location(self, name: str, region: Region):
+        location = f"{self.prefix} {name}"
+        if name in self.events:
+            region.locations.append(
+                D3DLocation(
+                    self.world.player,
+                    location,
+                    None,
+                    region,
+                )
+            )
+        elif self.world.use_location(self.locations.get(location)):
             region.locations.append(
                 D3DLocation(
                     self.world.player,
@@ -107,12 +140,18 @@ class D3DLevel(object):
 
     def get_location(self, name) -> Optional[Location]:
         try:
-            return self.world.multiworld.get_location(name, self.world.player)
+            return self.world.multiworld.get_location(
+                f"{self.prefix} {name}", self.world.player
+            )
         except KeyError:
             return None
 
     @staticmethod
-    def _resolve_rule_type(rules: Union[RULETYPE, List[RULETYPE]]) -> Optional[Rule]:
+    def _resolve_rule_type(
+        rules: Optional[Union[RULETYPE, List[RULETYPE]]] = None
+    ) -> Optional[Rule]:
+        if rules is None:
+            return RuleTrue()
         if not isinstance(rules, List):
             rules = [rules]
         if not rules:
@@ -127,7 +166,10 @@ class D3DLevel(object):
         return rule
 
     def connect(
-        self, start: Region, end: Region, rules: Union[RULETYPE, List[RULETYPE]]
+        self,
+        start: Region,
+        end: Region,
+        rules: Optional[Union[RULETYPE, List[RULETYPE]]] = None,
     ):
         start.connect(end, None, self._resolve_rule_type(rules))
 
@@ -170,6 +212,9 @@ class D3DLevel(object):
     @property
     def map(self) -> str:
         return f"{self.prefix} Automap"
+
+    def event(self, name: str) -> Rule:
+        return self.world.rules.has(f"{self.prefix} {name}")
 
 
 class D3DEpisode(object):

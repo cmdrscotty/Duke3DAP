@@ -50,8 +50,8 @@ class E1L1(D3DLevel):
 
     def main_region(self) -> Region:
         r = self.rules
-        ret = self.region(f"{self.prefix} {self.name}")
-        self.add_locations(
+        ret = self.region(
+            self.name,
             [
                 "MP Start Shotgun",
                 "Cinema Armor",
@@ -67,12 +67,11 @@ class E1L1(D3DLevel):
                 "MP Entrance Chaingun",
                 "Vent Holo Duke",
             ],
-            ret,
         )
-        self.restrict(self.get_location("E1L1 Vent Holo Duke"), r.jump & r.explosives)
+        self.restrict(self.get_location("Vent Holo Duke"), r.jump & r.explosives)
 
-        apartment = self.region(f"Apartments")
-        self.add_locations(
+        apartment = self.region(
+            "Apartments",
             [
                 "Billboard RPG",
                 "Outside Ledge Atomic Health",
@@ -81,12 +80,11 @@ class E1L1(D3DLevel):
                 "Secret: Behind Poster",
                 "Secret: Below Billboard",
             ],
-            apartment,
         )
         self.connect(ret, apartment, r.jump)
 
-        cinema_ledges = self.region(f"Cinema Ledges")
-        self.add_locations(
+        cinema_ledges = self.region(
+            "Cinema Ledges",
             [
                 "Elevator Night Vision",
                 "Elevator Pipebombs",
@@ -94,19 +92,17 @@ class E1L1(D3DLevel):
                 "Projector Secret RPG",
                 "Secret: Projector Hidden Room",
             ],
-            cinema_ledges,
         )
         self.connect(ret, cinema_ledges, r.jump)
 
-        exit_ledge = self.region(f"Exit Ledge")
-        self.add_locations(
+        exit_ledge = self.region(
+            "Exit Ledge",
             [
                 "Exit Ledge Night Vision Goggles",
                 "Exit",
                 "MP Exit Shotgun",
                 "MP Red Door Pipebombs",
             ],
-            exit_ledge,
         )
         self.connect(
             ret,
@@ -114,8 +110,8 @@ class E1L1(D3DLevel):
             (r.difficulty("medium") & r.jump) | r.jetpack(50) | self.red_key,
         )
 
-        bachelor_secret = self.region(f"Bachelor Apartment")
-        self.add_locations(
+        bachelor_secret = self.region(
+            "Bachelor Apartment",
             [
                 "Bachelor RPG",
                 "Bachelor Pipebombs",
@@ -123,18 +119,16 @@ class E1L1(D3DLevel):
                 "Bachelor Chaingun",
                 "Secret: Bachelor Apartment",
             ],
-            bachelor_secret,
         )
         self.connect(exit_ledge, bachelor_secret, r.jump)
 
-        behind_screen = self.region(f"Behind the Screen")
-        self.add_locations(
+        behind_screen = self.region(
+            "Behind the Screen",
             [
                 "Secret: Behind the Screen",
                 "Jetpack behind Screen",
                 "MP Chaingun behind Screen",
             ],
-            behind_screen,
         )
         self.connect(
             exit_ledge, behind_screen, r.difficulty("medium")

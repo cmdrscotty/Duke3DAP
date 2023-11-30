@@ -2,7 +2,7 @@
   "game": "Duke3D",
   "name": "Duke Nukem 3D",
   "game_id": 1,
-  "checksum": "59329b66b49e5ba359c3965d3a64b8f7de3eb194f7ac266a7a353808946e1614",
+  "checksum": "b038822e5aa9ec181cb0a9f94207cc6fc9bf926b5f0c61291ffc0ff8f2e42b09",
   "episodes": {
     "E1": {
       "name": "L.A. Meltdown",
@@ -37,11 +37,6 @@
           "name": "Launch Facility",
           "levelnum": 5,
           "unlock": 1705
-        },
-        "E1L7": {
-          "name": "Faces of Death",
-          "levelnum": 6,
-          "unlock": 1706
         }
       }
     },
@@ -52,17 +47,17 @@
         "E2L1": {
           "name": "Spaceport",
           "levelnum": 0,
-          "unlock": 1707
+          "unlock": 1706
         },
         "E2L2": {
           "name": "Incubator",
           "levelnum": 1,
-          "unlock": 1708
+          "unlock": 1707
         },
         "E2L3": {
           "name": "Warp Factor",
           "levelnum": 2,
-          "unlock": 1709
+          "unlock": 1708
         }
       }
     },
@@ -415,7 +410,7 @@
         },
         "160": {
           "id": 62,
-          "name": "Electric Chair Medkit"
+          "name": "Gallery Medkit"
         },
         "185": {
           "id": 63,
@@ -443,7 +438,7 @@
         },
         "413": {
           "id": 69,
-          "name": "MP Outside Medkit"
+          "name": "MP Courtyard Medkit"
         },
         "485": {
           "id": 70,
@@ -451,15 +446,15 @@
         },
         "488": {
           "id": 71,
-          "name": "Outside Hidden Tunnel Atomic Health 1"
+          "name": "Courtyard Tunnel Atomic Health 1"
         },
         "489": {
           "id": 72,
-          "name": "Outside Hidden Tunnel Atomic Health 2"
+          "name": "Courtyard Tunnel Atomic Health 2"
         },
         "490": {
           "id": 73,
-          "name": "Outside Hidden Tunnel Atomic Health 3"
+          "name": "Courtyard Tunnel Atomic Health 3"
         },
         "504": {
           "id": 74,
@@ -516,7 +511,7 @@
         },
         "847": {
           "id": 87,
-          "name": "Outside Pipebombs"
+          "name": "Courtyard Pipebombs"
         },
         "851": {
           "id": 88,
@@ -546,7 +541,7 @@
       "sectors": {
         "76": {
           "id": 1816,
-          "name": "Outside Hidden Tunnel"
+          "name": "Courtyard Tunnel"
         },
         "296": {
           "id": 1817,
@@ -803,15 +798,19 @@
         "453": {
           "id": 1838,
           "name": "Canyon Dark Cave"
+        },
+        "465": {
+          "id": 1839,
+          "name": "Secret Exit Area"
         }
       },
       "exits": {
         "0": {
-          "id": 1704,
+          "id": 1703,
           "name": "Exit"
         },
         "6": {
-          "id": 1703,
+          "id": 1704,
           "name": "Secret Exit"
         }
       }
@@ -1037,27 +1036,27 @@
       },
       "sectors": {
         "7": {
-          "id": 1839,
+          "id": 1840,
           "name": "Red Waterfall Passage"
         },
         "21": {
-          "id": 1840,
+          "id": 1841,
           "name": "Dancing Shaman"
         },
         "257": {
-          "id": 1841,
+          "id": 1842,
           "name": "Top of Spaceship"
         },
         "354": {
-          "id": 1842,
+          "id": 1843,
           "name": "Fire Pit Hidden Wall"
         },
         "440": {
-          "id": 1843,
+          "id": 1844,
           "name": "Fire Pit Teleporter"
         },
         "441": {
-          "id": 1844,
+          "id": 1845,
           "name": "Secret Fire Pit Ledge"
         }
       },
@@ -1193,19 +1192,19 @@
       },
       "sectors": {
         "218": {
-          "id": 1845,
+          "id": 1846,
           "name": "Sewer Computers"
         },
         "224": {
-          "id": 1846,
+          "id": 1847,
           "name": "Toxic Waste Pool"
         },
         "277": {
-          "id": 1847,
+          "id": 1848,
           "name": "Dark Room Ceiling Vent"
         },
         "327": {
-          "id": 1848,
+          "id": 1849,
           "name": "Gate Room Wall"
         }
       },
@@ -1216,275 +1215,148 @@
         }
       }
     },
-    "E1L7": {
-      "sprites": {
-        "0": {
-          "id": 217,
-          "name": "MP Side Room Devastator"
-        },
-        "1": {
-          "id": 218,
-          "name": "MP Side Room RPG"
-        },
-        "21": {
-          "id": 219,
-          "name": "Waterfall 2 Atomic Health"
-        },
-        "22": {
-          "id": 220,
-          "name": "Waterfall 2 Armor"
-        },
-        "23": {
-          "id": 221,
-          "name": "Waterfall 1 Armor"
-        },
-        "24": {
-          "id": 222,
-          "name": "Waterfall 1 Atomic Health"
-        },
-        "97": {
-          "id": 223,
-          "name": "Side Room Atomic Health 1"
-        },
-        "98": {
-          "id": 224,
-          "name": "Side Room Atomic Health 2"
-        },
-        "107": {
-          "id": 225,
-          "name": "Side Room Armor"
-        },
-        "108": {
-          "id": 226,
-          "name": "Side Room Holo Duke"
-        },
-        "109": {
-          "id": 227,
-          "name": "Center Atomic Health"
-        },
-        "110": {
-          "id": 228,
-          "name": "Center Armor"
-        },
-        "111": {
-          "id": 229,
-          "name": "Center Protective Boots"
-        },
-        "112": {
-          "id": 230,
-          "name": "Center Night Vision Goggles"
-        },
-        "113": {
-          "id": 231,
-          "name": "Center Steroids"
-        },
-        "122": {
-          "id": 232,
-          "name": "Side Room Tripmine 2"
-        },
-        "127": {
-          "id": 233,
-          "name": "Side Room Pipebombs"
-        },
-        "179": {
-          "id": 234,
-          "name": "Main Room Shotgun"
-        },
-        "231": {
-          "id": 235,
-          "name": "Main Room Devastator"
-        },
-        "232": {
-          "id": 236,
-          "name": "Main Room Freezethrower"
-        },
-        "233": {
-          "id": 237,
-          "name": "Main Room Chaingun"
-        },
-        "234": {
-          "id": 238,
-          "name": "Main Room RPG"
-        },
-        "235": {
-          "id": 239,
-          "name": "Main Room Jetpack"
-        },
-        "236": {
-          "id": 240,
-          "name": "Main Room Tripmine 1"
-        },
-        "237": {
-          "id": 241,
-          "name": "Main Room Tripmine 2"
-        },
-        "238": {
-          "id": 242,
-          "name": "Main Room Shrinker"
-        },
-        "248": {
-          "id": 243,
-          "name": "Main Room Pipebombs"
-        },
-        "302": {
-          "id": 244,
-          "name": "Blue Key Card"
-        }
-      },
-      "sectors": {
-        "110": {
-          "id": 1849,
-          "name": "Behind Waterfall 1"
-        },
-        "111": {
-          "id": 1850,
-          "name": "Behind Waterfall 2"
-        }
-      },
-      "exits": {}
-    },
     "E2L1": {
       "sprites": {
         "31": {
-          "id": 245,
+          "id": 217,
           "name": "Night Vision Goggles behind Red Key Card"
         },
         "40": {
-          "id": 246,
+          "id": 218,
           "name": "Vent Pipebombs"
         },
         "54": {
-          "id": 247,
+          "id": 219,
           "name": "Armor near Shrinker"
         },
         "58": {
-          "id": 248,
+          "id": 220,
           "name": "Secret Shrinker"
         },
         "60": {
-          "id": 249,
+          "id": 221,
           "name": "MP Underwater Passage Freezethrower"
         },
         "69": {
-          "id": 250,
+          "id": 222,
           "name": "Middle Floor Jetpack"
         },
         "81": {
-          "id": 251,
+          "id": 223,
           "name": "Attic Night Vision Goggles"
         },
         "110": {
-          "id": 252,
+          "id": 224,
           "name": "Underwater Jetpack"
         },
         "155": {
-          "id": 253,
+          "id": 225,
           "name": "Bottom Floor Medkit"
         },
         "156": {
-          "id": 254,
+          "id": 226,
           "name": "Start Shotgun"
         },
         "165": {
-          "id": 255,
+          "id": 227,
           "name": "Bottom Floor Scuba Gear"
         },
         "180": {
-          "id": 256,
+          "id": 228,
           "name": "Blue Key Card"
         },
         "235": {
-          "id": 257,
+          "id": 229,
           "name": "Middle Floor Pipebombs"
         },
         "276": {
-          "id": 258,
+          "id": 230,
           "name": "Underwater Atomic Health 1"
         },
         "277": {
-          "id": 259,
+          "id": 231,
           "name": "Underwater Atomic Health 2"
         },
         "280": {
-          "id": 260,
+          "id": 232,
           "name": "Bottom Floor Armor"
         },
         "289": {
-          "id": 261,
+          "id": 233,
           "name": "Top Floor Atomic Health"
         },
         "318": {
-          "id": 262,
+          "id": 234,
           "name": "Red Key Card"
         },
         "367": {
-          "id": 263,
+          "id": 235,
           "name": "Bottom Floor Holo Duke"
         },
         "373": {
-          "id": 264,
+          "id": 236,
           "name": "Space Shuttle RPG"
         },
         "374": {
-          "id": 265,
+          "id": 237,
           "name": "Chaingun behind Red Key Card"
         },
         "385": {
-          "id": 266,
+          "id": 238,
           "name": "MP Attic Tripbomb 1"
         },
         "386": {
-          "id": 267,
+          "id": 239,
           "name": "MP Attic Tripbomb 2"
         },
         "387": {
-          "id": 268,
+          "id": 240,
           "name": "MP Attic Tripbomb 3"
         },
         "396": {
-          "id": 269,
+          "id": 241,
           "name": "MP Start Armor"
         },
         "399": {
-          "id": 270,
+          "id": 242,
           "name": "Top Floor Devastator"
         },
         "420": {
-          "id": 271,
+          "id": 243,
           "name": "Middle Room Atomic Health"
         },
         "422": {
-          "id": 272,
+          "id": 244,
           "name": "Space Shuttle Steroids"
         },
         "448": {
-          "id": 273,
+          "id": 245,
           "name": "Start Hidden Wall Atomic Health"
         }
       },
       "sectors": {
         "4": {
-          "id": 1851,
+          "id": 1850,
           "name": "Top Floor"
         },
         "275": {
-          "id": 1852,
+          "id": 1851,
           "name": "Hidden Alcove near Start"
         },
         "304": {
-          "id": 1853,
+          "id": 1852,
           "name": "Underwater Passage"
         },
         "321": {
-          "id": 1854,
+          "id": 1853,
           "name": "Ventilation Shaft"
         },
         "334": {
-          "id": 1855,
+          "id": 1854,
           "name": "Shrinker Room"
         },
         "354": {
-          "id": 1856,
+          "id": 1855,
           "name": "Hidden Wall near Start"
         }
       },
@@ -1498,137 +1370,137 @@
     "E2L2": {
       "sprites": {
         "34": {
-          "id": 274,
+          "id": 246,
           "name": "MP Underwater Jetpack"
         },
         "67": {
-          "id": 275,
+          "id": 247,
           "name": "Overgrown Passage Jetpack"
         },
         "69": {
-          "id": 276,
+          "id": 248,
           "name": "Wall Panel Freezethrower"
         },
         "82": {
-          "id": 277,
+          "id": 249,
           "name": "Underwater Devastator"
         },
         "99": {
-          "id": 278,
+          "id": 250,
           "name": "Drone Alcove Atomic Health"
         },
         "103": {
-          "id": 279,
+          "id": 251,
           "name": "Hidden Screen Room Armor"
         },
         "130": {
-          "id": 280,
+          "id": 252,
           "name": "MP Freezethrower behind Yellow Door"
         },
         "132": {
-          "id": 281,
+          "id": 253,
           "name": "EDF Logo Medkit"
         },
         "133": {
-          "id": 282,
+          "id": 254,
           "name": "Pool Steroids"
         },
         "134": {
-          "id": 283,
+          "id": 255,
           "name": "Pool Medkit"
         },
         "171": {
-          "id": 284,
+          "id": 256,
           "name": "Hidden Screen Room Pipebombs"
         },
         "179": {
-          "id": 285,
+          "id": 257,
           "name": "Armory RPG"
         },
         "225": {
-          "id": 286,
+          "id": 258,
           "name": "Pipebombs behind Turret"
         },
         "264": {
-          "id": 287,
+          "id": 259,
           "name": "Scuba Gear"
         },
         "266": {
-          "id": 288,
+          "id": 260,
           "name": "Force Field Control Atomic Health 1"
         },
         "267": {
-          "id": 289,
+          "id": 261,
           "name": "Force Filed Control Atomic Health 2"
         },
         "268": {
-          "id": 290,
+          "id": 262,
           "name": "Force Field Control Chaingun"
         },
         "285": {
-          "id": 291,
+          "id": 263,
           "name": "Medkit"
         },
         "325": {
-          "id": 292,
+          "id": 264,
           "name": "Steroids"
         },
         "390": {
-          "id": 293,
+          "id": 265,
           "name": "Armory Tripbomb 1"
         },
         "391": {
-          "id": 294,
+          "id": 266,
           "name": "Armory Tripbomb 2"
         },
         "392": {
-          "id": 295,
+          "id": 267,
           "name": "Armory Tripbomb 3"
         },
         "410": {
-          "id": 296,
+          "id": 268,
           "name": "Wall Panel Holo Duke"
         },
         "432": {
-          "id": 297,
+          "id": 269,
           "name": "Cupboard Night Vision Goggles"
         },
         "524": {
-          "id": 298,
+          "id": 270,
           "name": "Yellow Key Card"
         },
         "525": {
-          "id": 299,
+          "id": 271,
           "name": "Start Shotgun"
         },
         "549": {
-          "id": 300,
+          "id": 272,
           "name": "Pipebombs behind Yellow Door"
         },
         "579": {
-          "id": 301,
+          "id": 273,
           "name": "Overgrown Passage Shrinker"
         }
       },
       "sectors": {
         "142": {
-          "id": 1857,
+          "id": 1856,
           "name": "EDF Logo"
         },
         "153": {
-          "id": 1858,
+          "id": 1857,
           "name": "Force Field Control Wall"
         },
         "155": {
-          "id": 1859,
+          "id": 1858,
           "name": "Hidden Screen Room 1"
         },
         "156": {
-          "id": 1860,
+          "id": 1859,
           "name": "Hidden Screen Room 2"
         },
         "248": {
-          "id": 1861,
+          "id": 1860,
           "name": "Wall Panel"
         }
       },
@@ -1642,153 +1514,153 @@
     "E2L3": {
       "sprites": {
         "9": {
-          "id": 302,
+          "id": 274,
           "name": "Engine Room Atomic Health"
         },
         "10": {
-          "id": 303,
+          "id": 275,
           "name": "Engine Room Shotgun"
         },
         "13": {
-          "id": 304,
+          "id": 276,
           "name": "MP Drone Room Holo Duke"
         },
         "14": {
-          "id": 305,
+          "id": 277,
           "name": "Blue Key Card"
         },
         "47": {
-          "id": 306,
+          "id": 278,
           "name": "Main Room Shrinker"
         },
         "61": {
-          "id": 307,
+          "id": 279,
           "name": "Engine Room Armor"
         },
         "91": {
-          "id": 308,
+          "id": 280,
           "name": "MP Control Room Jetpack"
         },
         "96": {
-          "id": 309,
+          "id": 281,
           "name": "Ready Room Medkit"
         },
         "135": {
-          "id": 310,
+          "id": 282,
           "name": "Control Room Devastator"
         },
         "162": {
-          "id": 311,
+          "id": 283,
           "name": "Engine Room Tripbomb"
         },
         "177": {
-          "id": 312,
+          "id": 284,
           "name": "Start Chaingun"
         },
         "182": {
-          "id": 313,
+          "id": 285,
           "name": "Wall Panel Freezethrower"
         },
         "226": {
-          "id": 314,
+          "id": 286,
           "name": "Wall Panel Pipebombs"
         },
         "274": {
-          "id": 315,
+          "id": 287,
           "name": "Reactor Atomic Health 1"
         },
         "275": {
-          "id": 316,
+          "id": 288,
           "name": "Reactor Atomic Health 2"
         },
         "284": {
-          "id": 317,
+          "id": 289,
           "name": "Control Room Medkit"
         },
         "316": {
-          "id": 318,
+          "id": 290,
           "name": "Yellow Key Card"
         },
         "496": {
-          "id": 319,
+          "id": 291,
           "name": "Control Room Holo Duke"
         },
         "694": {
-          "id": 320,
+          "id": 292,
           "name": "Conveyor Night Vision Goggles"
         },
         "695": {
-          "id": 321,
+          "id": 293,
           "name": "Control Room Steroids"
         },
         "699": {
-          "id": 322,
+          "id": 294,
           "name": "Engine Room Burrowed Atomic Health 1"
         },
         "725": {
-          "id": 323,
+          "id": 295,
           "name": "Drone Room Medkit"
         },
         "766": {
-          "id": 324,
+          "id": 296,
           "name": "Engine Room Burrowed Atomic Health 2"
         },
         "767": {
-          "id": 325,
+          "id": 297,
           "name": "Engine Room Burrowed Atomic Health 3"
         },
         "768": {
-          "id": 326,
+          "id": 298,
           "name": "Main Room Shotgun"
         },
         "772": {
-          "id": 327,
+          "id": 299,
           "name": "Control Room RPG"
         },
         "782": {
-          "id": 328,
+          "id": 300,
           "name": "Left Wing RPG"
         },
         "799": {
-          "id": 329,
+          "id": 301,
           "name": "MP Control Room Armor"
         },
         "801": {
-          "id": 330,
+          "id": 302,
           "name": "MP Main Room Chaingun"
         },
         "817": {
-          "id": 331,
+          "id": 303,
           "name": "Really Ready Room Devastator"
         },
         "818": {
-          "id": 332,
+          "id": 304,
           "name": "Really Ready Room Freezethrower"
         },
         "819": {
-          "id": 333,
+          "id": 305,
           "name": "Bridge Chaingun"
         },
         "820": {
-          "id": 334,
+          "id": 306,
           "name": "Bridge Pipebombs"
         },
         "821": {
-          "id": 335,
+          "id": 307,
           "name": "Bridge RPG"
         },
         "822": {
-          "id": 336,
+          "id": 308,
           "name": "Bridge Atomic Health"
         }
       },
       "sectors": {
         "42": {
-          "id": 1862,
+          "id": 1861,
           "name": "Bridge"
         },
         "297": {
-          "id": 1863,
+          "id": 1862,
           "name": "Ready Room"
         }
       },
@@ -2288,14 +2160,6 @@
       "volumenum": 0
     },
     "1606": {
-      "name": "E1L7 Automap",
-      "type": "automap",
-      "persistent": true,
-      "unique": true,
-      "levelnum": 6,
-      "volumenum": 0
-    },
-    "1607": {
       "name": "E2L1 Automap",
       "type": "automap",
       "persistent": true,
@@ -2303,7 +2167,7 @@
       "levelnum": 0,
       "volumenum": 1
     },
-    "1608": {
+    "1607": {
       "name": "E2L2 Automap",
       "type": "automap",
       "persistent": true,
@@ -2311,13 +2175,21 @@
       "levelnum": 1,
       "volumenum": 1
     },
-    "1609": {
+    "1608": {
       "name": "E2L3 Automap",
       "type": "automap",
       "persistent": true,
       "unique": true,
       "levelnum": 2,
       "volumenum": 1
+    },
+    "1609": {
+      "name": "E1L7 Automap",
+      "type": "automap",
+      "persistent": true,
+      "unique": true,
+      "levelnum": 6,
+      "volumenum": 0
     },
     "1700": {
       "name": "E1L1 Unlock",
@@ -2356,25 +2228,25 @@
       "unique": true
     },
     "1706": {
-      "name": "E1L7 Unlock",
-      "type": "map",
-      "persistent": true,
-      "unique": true
-    },
-    "1707": {
       "name": "E2L1 Unlock",
       "type": "map",
       "persistent": true,
       "unique": true
     },
-    "1708": {
+    "1707": {
       "name": "E2L2 Unlock",
       "type": "map",
       "persistent": true,
       "unique": true
     },
-    "1709": {
+    "1708": {
       "name": "E2L3 Unlock",
+      "type": "map",
+      "persistent": true,
+      "unique": true
+    },
+    "1709": {
+      "name": "E1L7 Unlock",
       "type": "map",
       "persistent": true,
       "unique": true
@@ -2488,15 +2360,6 @@
       "volumenum": 0
     },
     "1812": {
-      "name": "E1L7 Blue Key Card",
-      "type": "key",
-      "persistent": true,
-      "unique": true,
-      "flags": 1,
-      "levelnum": 6,
-      "volumenum": 0
-    },
-    "1813": {
       "name": "E2L1 Blue Key Card",
       "type": "key",
       "persistent": true,
@@ -2505,7 +2368,7 @@
       "levelnum": 0,
       "volumenum": 1
     },
-    "1814": {
+    "1813": {
       "name": "E2L1 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -2514,7 +2377,7 @@
       "levelnum": 0,
       "volumenum": 1
     },
-    "1815": {
+    "1814": {
       "name": "E2L2 Yellow Key Card",
       "type": "key",
       "persistent": true,
@@ -2523,7 +2386,7 @@
       "levelnum": 1,
       "volumenum": 1
     },
-    "1816": {
+    "1815": {
       "name": "E2L3 Blue Key Card",
       "type": "key",
       "persistent": true,
@@ -2532,7 +2395,7 @@
       "levelnum": 2,
       "volumenum": 1
     },
-    "1817": {
+    "1816": {
       "name": "E2L3 Yellow Key Card",
       "type": "key",
       "persistent": true,
@@ -2540,6 +2403,15 @@
       "flags": 4,
       "levelnum": 2,
       "volumenum": 1
+    },
+    "1817": {
+      "name": "E1L7 Blue Key Card",
+      "type": "key",
+      "persistent": true,
+      "unique": true,
+      "flags": 1,
+      "levelnum": 6,
+      "volumenum": 0
     }
   }
 }

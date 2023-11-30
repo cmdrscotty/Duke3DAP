@@ -65,3 +65,102 @@ class E1L2(D3DLevel):
         {"name": "Sewers", "id": 218, "type": "sector"},
         {"name": "Exit", "id": 0, "type": "exit"},
     ]
+
+    def main_region(self) -> Region:
+        r = self.rules
+        ret = self.region(self.name)
+
+        streets = self.region(
+            "Streets",
+            [
+                "Pornography Store Shelves",
+                "Pornography Store Shelves Armor",
+                "Pornography Store Shelves Pipebombs",
+                "Pornography Store Shotgun",
+                "Pornography Store Dark Area",
+                "Dark Area Atomic Health",
+                "Video Booth Steroids",
+                "Chaingun near Blue Key Card",
+                "Blue Key Card",
+            ],
+        )
+        self.connect(ret, streets, r.can_crouch)
+
+        streets_ledge = self.region(
+            "Streets Ledge",
+            [
+                "MP Outside Ledge Jetpack",
+                "Outside Ledge Armor",
+                "Pornography Store Atomic Health",
+                "Pornography Store Corner Holo Duke",
+                "Pornography Store Corner",
+            ],
+        )
+        self.connect(streets, streets_ledge, r.jump)
+
+        strip_club = self.region(
+            "Strip Club",
+            [
+                "Strip Club Entrance Shotgun",
+                "Sewers",
+                "Sewers Steroids",
+                "Sewers Pipebombs",
+                "Sewers Atomic Health",
+                "Sewers Night Vision Goggles",
+                "Sewers Holo Duke",
+                "Sewers Jetpack",
+                "MP Steroids outside Strip Floor",
+                "MP Bar RPG",
+                "Red Key Card",
+            ],
+        )
+        self.restrict(self.get_location("Red Key Card"), r.can_crouch)
+        self.connect(streets, strip_club, self.yellow_key)
+
+        construction_site = self.region(
+            "Construction Site", ["Construction Site Medkit", "Yellow Key Card"]
+        )
+        self.connect(
+            streets, construction_site, (self.blue_key | r.glitched) & r.jump
+        )  # Can press button from outside
+
+        self.connect(construction_site, strip_club, r.explosives)
+        # Can't survive pipe bomb or RPG explosion going up from the sewer
+        self.connect(
+            strip_club,
+            construction_site,
+            r.difficulty("medium")
+            & (
+                (r.has_group("Devastator") & r.jetpack(50))
+                | r.has_group("Tripmine") & r.jetpack(100)
+            ),
+        )
+
+        dance_floor = self.region(
+            "Dance Floor",
+            [
+                "Strip Club Vents",
+                "Vent Atomic Health",
+                "Vent Pipebombs",
+                "Behind Strippers",
+                "Strippers Chaingun",
+                "Hidden Ledge behind Curtains",
+                "Night Vision Goggles behind Curtains",
+                "Attic Medkit",
+                "Attic Hidden Compartment",
+                "Exit",
+            ],
+        )
+        # Can't do anything in this without jumping, but does not require crouch to enter the vent
+        self.connect(strip_club, dance_floor, self.red_key & r.jump)
+        # Need to be able to run or jetpack to reach ledge
+        self.restrict(
+            self.get_location("Hidden Ledge behind Curtains"),
+            r.can_sprint | r.jetpack(50),
+        )
+        self.restrict(
+            self.get_location("Night Vision Goggles behind Curtains"),
+            r.can_sprint | r.jetpack(50),
+        )
+
+        return ret

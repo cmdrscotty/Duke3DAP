@@ -14,7 +14,7 @@ from .e2l3 import E2L3
 class E1(D3DEpisode):
     name = "L.A. Meltdown"
     volumenum = 0
-    levels = [E1L1(), E1L2(), E1L3(), E1L4(), E1L5(), E1L6(), E1L7()]
+    levels = [E1L1(), E1L2(), E1L3(), E1L4(), E1L5(), E1L6()]
 
 
 class E2(D3DEpisode):
@@ -36,4 +36,6 @@ class E4(D3DEpisode):
 
 
 all_episodes = [E1(), E2(), E3(), E4()]
-all_levels = [level for ep in all_episodes for level in ep.levels]
+all_levels = [level for ep in all_episodes for level in ep.levels] + [
+    E1L7()
+]  # E1L7 is a weird special case

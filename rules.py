@@ -1,8 +1,11 @@
 import functools
 import math
-from typing import Callable, Union
+from typing import Callable, Union, TYPE_CHECKING
 
 from BaseClasses import CollectionState, MultiWorld
+
+if TYPE_CHECKING:
+    from . import D3DWorld
 
 
 class Rule(object):
@@ -50,7 +53,12 @@ class RuleFalse(Rule):
 
 
 class Rules(object):
-    def __init__(self, world: MultiWorld, player: int):
+    def __init__(self, world: "D3DWorld"):
+        player = world.player
+
+        self.true = RuleTrue()
+        self.false = RuleFalse()
+
         class HasRule(Rule):
             def __init__(self, prop: str):
                 self.prop = prop
@@ -93,13 +101,23 @@ class Rules(object):
 
         self.count_group = CountGroupRule
 
-        # ToDo make conditional on world settings if these are even in the pool
-        self.can_jump = HasRule("Jump")
-        self.can_crouch = HasRule("Crouch")
-        self.can_dive = (
-            HasRule("Dive") | HasRule("Scuba Gear") | HasRule("Progressive Scuba Gear")
-        )
-        self.can_sprint = HasRule("Sprint")
+        if world.get_option("unlock_abilities"):
+            self.can_jump = HasRule("Jump")
+            self.can_crouch = HasRule("Crouch")
+            self.can_dive = (
+                HasRule("Dive")
+                | HasRule("Scuba Gear")
+                | HasRule("Progressive Scuba Gear")
+            )
+            self.can_sprint = HasRule("Sprint")
+        else:
+            self.can_jump = self.true
+            self.can_crouch = self.true
+            self.can_sprint = self.true
+            self.can_dive = self.true
+        self.can_shrink = (
+            self.true
+        )  # Might make this an ability at some point, a bit narrow in scope
 
         class CanJetPack(Rule):
             def __init__(self, fuel: int):
@@ -117,6 +135,21 @@ class Rules(object):
         self.jump = self.can_jump | self.jetpack(50)
         """Any simple jump sequence that doesn't consume a lot of jetpack"""
 
+        class CanDiveTo(Rule):
+            def __init__(self, fuel: int):
+                self.fuel = fuel
+                # ToDo make the fuel per upgrade configurable
+                self.required = math.ceil(self.fuel / 200.0)
+
+            def __call__(self, state: CollectionState) -> bool:
+                return state.has_group("Scuba Gear", player, self.required)
+
+        if world.get_option("unlock_abilities"):
+            self.dive = lambda fuel: self.can_dive & CanDiveTo(fuel)
+            """For chained sequences of dives, where scuba capacity matters for accessibility"""
+        else:
+            self.dive = lambda x: self.true
+
         class Difficulty(Rule):
             def __init__(self, difficulty: str):
                 self.difficulty = difficulty
@@ -130,7 +163,7 @@ class Rules(object):
         self.explosives = self.has_group("Explosives")
         # This is technically not correct because some of them provide more capacity, so this is stricter than it
         # needs to be for now, ToDo
-        self.explosives_count = functools.partial(self.count_group, prop="Explosives")
+        self.explosives_count = lambda count: self.count_group("Explosives", count)
 
         # Glitched logic stuff
         self.glitched = RuleFalse()

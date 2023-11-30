@@ -348,6 +348,10 @@ weapons = {
     ),
 }
 
+item_groups["RPG"] = {"RPG", "Progressive RPG"}
+item_groups["Pipebomb"] = {"Pipebomb", "Progressive Pipebomb"}
+item_groups["Devastator"] = {"Devastator", "Progressive Devastator"}
+item_groups["Tripmine"] = {"Tripmine", "Progressive Tripmine"}
 item_groups["Explosives"] = {
     "RPG",
     "Pipebomb",
@@ -471,6 +475,11 @@ inventory_items = {
 }
 
 item_groups["Jetpack"] = {"Jetpack", "Jetpack Capacity", "Progressive Jetpack"}
+item_groups["Scuba Gear"] = {
+    "Scuba Gear",
+    "Scuba Gear Capacity",
+    "Progressive Scuba Gear",
+}
 
 abilities = {
     "Jump": ItemDef(

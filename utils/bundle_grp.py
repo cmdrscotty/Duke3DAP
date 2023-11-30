@@ -52,15 +52,15 @@ def update_ids():
     with io.open(ID_MAP, "w") as out_file:
         out_file.write(json.dumps(all_ids, indent=2))
 
-    return all_ids["checksum"]
+    return all_ids
 
 
-def generate_ap_config(checksum: str):
+def generate_ap_config(all_ids: dict):
     ap_config = {
         "game": D3DWorld.game,
         "name": D3DWorld.game_full_name,
         "game_id": D3DWorld.build_game_id,
-        "checksum": checksum,
+        "checksum": all_ids["checksum"],
         "episodes": {},
         "locations": {},
         "items": {},
@@ -84,7 +84,7 @@ def generate_ap_config(checksum: str):
                 short_name = location.name[len(level.prefix) + 1 :]
                 category = location.type + "s"
                 level_locations[category][str(location.game_id)] = {
-                    "id": local_id(D3DWorld.location_name_to_id[location.name]),
+                    "id": local_id(all_ids["locations"][location.name]),
                     "name": short_name,
                 }
                 if location.sprite_type:
@@ -117,8 +117,8 @@ def generate_ap_config(checksum: str):
 
 def bundle_grp(target: Path):
     # update ids for consistency
-    checksum = update_ids()
-    generate_ap_config(checksum)
+    all_ids = update_ids()
+    generate_ap_config(all_ids)
     out = ZipFile(target, "w")
     for dep in DEPENDENCIES:
         out.write(dep, dep.name)
