@@ -1,6 +1,6 @@
 import functools
 import math
-from typing import Callable, Union, TYPE_CHECKING
+from typing import TYPE_CHECKING, Callable, Union
 
 from BaseClasses import CollectionState, MultiWorld
 

@@ -86,3 +86,147 @@ class E1L5(D3DLevel):
         {"name": "Secret Fire Pit Ledge", "id": 441, "type": "sector"},
         {"name": "Exit", "id": 0, "type": "exit"},
     ]
+    events = ["Earthquake", "Canyon Explosion"]
+
+    def main_region(self) -> Region:
+        r = self.rules
+        ret = self.region(
+            self.name,
+            [
+                "Start RPG",
+                "Start Shotgun",
+                "Start Protective Boots",
+                "MP Start Chaingun",
+                "Blue Key Card",
+                "Canyon Chaingun",
+                "Toxic River Medkit",
+                "Toxic River Holo Duke",
+                "Toxic River Protective Boots",
+                "Earthquake Night Vision Goggles",
+            ],
+        )
+        self.restrict("Blue Key Card", r.jump)  # It's juust out of reach
+        self.restrict("Earthquake Night Vision Goggles", r.jump)
+
+        blue_gate = self.region("Beyond Blue Key Gate", ["Pipebombs near Blue Gate"])
+        self.connect(
+            ret,
+            blue_gate,
+            self.blue_key
+            | (r.glitched & r.difficulty("medium") & r.crouch_jump)
+            | r.jetpack(50),
+        )
+
+        fault_trigger = self.region(
+            "Earthquake Trigger",
+            [
+                "Earthquake",
+                "Secret Fire Pit Night Vision Goggles",
+                "Secret Fire Pit Medkit",
+            ],
+        )
+        self.connect(
+            blue_gate, fault_trigger, r.jump
+        )  # jetpack also gets here without blue key by above logic
+
+        beyond_fault = self.region(
+            "After Earthquake",
+            [
+                "Earthquake Atomic Health 1",
+                "Earthquake Atomic Health 2",
+                "Ruins Staircase Shotgun",
+                "MP Fire Place RPG",
+                "Fire Place Medkit",
+                "MP Ruins Staircase Atomic Health",
+                "MP Ruins Staircase Armor",
+                "Fire Pit Steroids",
+                "Fire Pit Hidden Wall",
+                "Fire Pit Pipe Bombs",
+                "Fire Pit Atomic Health",
+                "Fire Pit Teleporter",
+                "MP Shrinker Room Steroids",
+                "Bottom of Ruins Protective Boots",
+                "MP Bottom of Ruins Shotgun",
+            ],
+        )
+        self.connect(fault_trigger, beyond_fault, self.event("Earthquake"))
+
+        small_ledges = self.region(
+            "Ledges after Earthquake",
+            [
+                "MP Ruins Staircase Atomic Health",
+                "MP Ruins Staircase Armor",
+                "Secret Fire Pit Atomic Health 1",
+                "Secret Fire Pit Atomic Health 2",
+                "MP Secret Fire Pit Armor",
+                "Secret Fire Pit Ledge",
+                "Fire Pit RPG",
+                "Waterfall Chaingun",
+                "Canyon Explosion",
+                "Fire Pit Night Vision Goggles",
+                "MP Fire Pit Jetpack",
+            ],
+        )
+        # always have like 20 jetpack left from earthquake at this point, should all be fine
+        self.connect(beyond_fault, small_ledges, r.jump)
+        # Would get stuck in the room afterward otherwise
+        self.restrict("Canyon Explosion", r.can_shrink | r.crouch_jump)
+
+        # anything beyond here on pure jetpack uses 50 fuel to get to the red canyon area and make progress
+        # it might be possible in just 50 to get here, but that seems a harsh requirement
+        red_waterfall = self.region(
+            "Red Waterfall",
+            [
+                "Red Waterfall Cave Protective Boots",
+                "Red Waterfall Pipe Bombs",
+                "Dancing Shaman Atomic Health 1",
+                "Dancing Shaman Atomic Health 2",
+                "Dancing Shaman Atomic Health 3",
+                "Dancing Shaman",
+                "Red Waterfall Passage",
+            ],
+        )
+        self.connect(beyond_fault, red_waterfall, r.can_jump | r.jetpack(100))
+        self.restrict("Red Waterfall Passage", r.explosives)
+
+        ship_entrance = self.region(
+            "Ship Entrance",
+            [
+                "MP Cracked Wall Bottom Pipebombs",
+                "Cracked Wall Bottom Atomic Health",
+                "Cracked Wall Middle Atomic Health",
+                "Cracked Wall Protective Boots",
+                "Cracked Wall Medkit",
+                "Cracked Wall End Atomic Health",
+                "Canyon Pillars RPG",
+                "Spaceship Entrance Armor",
+                "Top of Spaceship",
+                "Top of Spaceship Atomic Health",
+            ],
+        )
+        self.connect(
+            beyond_fault,
+            ship_entrance,
+            self.event("Canyon Explosion") & (r.can_jump | r.jetpack(100)),
+        )
+
+        spaceship = self.region(
+            "Spaceship",
+            [
+                "Spaceship Shaft RPG",
+                "Spaceship Shaft Chaingun",
+                "Battlelord Medkit",
+                "Battlelord Atomic Health 1",
+                "Battlelord Atomic Health 2",
+                "Battlelord Jetpack",
+                "Battlelord Armor",
+                "Exit",
+            ],
+        )
+        self.connect(ship_entrance, spaceship)
+        # Not sure if the Exit button clip works on Rednukem or is only in Megaton physics
+        self.restrict(
+            "Exit", r.has_group("RPG")
+        )  # Enough RPG Ammo for a kill in the room, ToDo better logic
+
+        return ret

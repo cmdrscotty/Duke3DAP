@@ -68,7 +68,7 @@ class E1L1(D3DLevel):
                 "Vent Holo Duke",
             ],
         )
-        self.restrict(self.get_location("Vent Holo Duke"), r.jump & r.explosives)
+        self.restrict("Vent Holo Duke", r.jump & r.explosives)
 
         apartment = self.region(
             "Apartments",

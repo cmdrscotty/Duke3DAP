@@ -88,10 +88,8 @@ class E1L4(D3DLevel):
         )
         # Can get out of the submarine in just 150 units. Relevant to note for later dive logic
         self.connect(ret, submarine, r.can_dive)
-        self.restrict(
-            self.get_location("Secret Alcove Holo Duke outside Submarine"), r.jump
-        )
-        self.restrict(self.get_location("Secret Alcove near Blue Key Card"), r.jump)
+        self.restrict("Secret Alcove Holo Duke outside Submarine", r.jump)
+        self.restrict("Secret Alcove near Blue Key Card", r.jump)
 
         submarine_secret = self.region(
             "Submarine Secret",
@@ -155,7 +153,7 @@ class E1L4(D3DLevel):
             flooded_area,
             (
                 (r.can_shrink & self.red_key)
-                | (r.glitched & r.crouch_jump)
+                | r.crouch_jump
                 # dive capacity logic, need 150 to exit sub at start
                 & (
                     r.dive(500)
@@ -182,8 +180,8 @@ class E1L4(D3DLevel):
             ],
         )
         self.connect(flooded_area, canyon_far, r.can_sprint or r.jump)
-        self.restrict(self.get_location("Canyon Secret Scuba Gear"), r.can_crouch)
-        self.restrict(self.get_location("Canyon Secret Wall"), r.can_crouch)
+        self.restrict("Canyon Secret Scuba Gear", r.can_crouch)
+        self.restrict("Canyon Secret Wall", r.can_crouch)
 
         canyon_return1 = self.region(
             "Canyon Return Path 1", ["Submarine Return Cave 1"]
@@ -233,7 +231,7 @@ class E1L4(D3DLevel):
             "Top of Waterfall", ["Waterfall Secret Teleporter"]
         )
         self.connect(deep_water, top_of_waterfall, third_dive)
-        self.restrict(self.get_location("Waterfall Secret Teleporter"), r.explosives)
+        self.restrict("Waterfall Secret Teleporter", r.explosives)
 
         moving_platforms = self.region("Moving Platforms", ["Underwater Gate RPG"])
         self.connect(top_of_waterfall, moving_platforms)

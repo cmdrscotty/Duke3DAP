@@ -175,9 +175,11 @@ class D3DLevel(object):
 
     def restrict(
         self,
-        spot: Optional[Union[Location, Entrance]],
+        spot: Optional[Union[Location, Entrance, str]],
         rules: Union[RULETYPE, List[RULETYPE]],
     ):
+        if isinstance(spot, str):
+            return self.restrict(self.get_location(spot), rules)
         if spot is not None:
             spot.access_rule = self._resolve_rule_type(rules)
 

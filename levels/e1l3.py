@@ -96,7 +96,7 @@ class E1L3(D3DLevel):
             ],
         )
         self.connect(ret, hallway, r.jump)
-        self.restrict(self.get_location("Behind Bed"), r.can_crouch)
+        self.restrict("Behind Bed", r.can_crouch)
 
         altar = self.region(
             "Chapel Altar",

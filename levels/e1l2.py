@@ -114,7 +114,7 @@ class E1L2(D3DLevel):
                 "Red Key Card",
             ],
         )
-        self.restrict(self.get_location("Red Key Card"), r.can_crouch)
+        self.restrict("Red Key Card", r.can_crouch)
         self.connect(streets, strip_club, self.yellow_key)
 
         construction_site = self.region(
@@ -155,11 +155,11 @@ class E1L2(D3DLevel):
         self.connect(strip_club, dance_floor, self.red_key & r.jump)
         # Need to be able to run or jetpack to reach ledge
         self.restrict(
-            self.get_location("Hidden Ledge behind Curtains"),
+            "Hidden Ledge behind Curtains",
             r.can_sprint | r.jetpack(50),
         )
         self.restrict(
-            self.get_location("Night Vision Goggles behind Curtains"),
+            "Night Vision Goggles behind Curtains",
             r.can_sprint | r.jetpack(50),
         )
 

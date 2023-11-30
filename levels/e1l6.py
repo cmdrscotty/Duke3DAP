@@ -45,3 +45,82 @@ class E1L6(D3DLevel):
         {"name": "Gate Room Wall", "id": 327, "type": "sector"},
         {"name": "Exit", "id": 0, "type": "exit"},
     ]
+
+    def main_region(self) -> Region:
+        r = self.rules
+        ret = self.region(
+            self.name,
+            [
+                "MP Start Jetpack",
+                # can just walk off
+                "MP Start Steroids",
+                "Start Protective Boots",
+                "Start Armor",
+                "Spiral Chaingun",
+                "MP Spiral Holo Duke",
+                "Blue Key Card",
+                "Dark Room Pipebombs 1",
+                "Dark Room Pipebombs 2",
+                "Dark Room RPG",
+                "Dark Room Medkit",
+                "Dark Room Atomic Health",
+            ],
+        )
+        self.restrict("Dark Room Atomic Health", r.can_sprint | r.jump)
+
+        waste_pool = self.region(
+            "Toxic Waste Pool",
+            [
+                "Toxic Waste Pool",
+                "Toxic Waste Pool Shotgun",
+                "Toxic Waste Pool Atomic Health 1",
+                "Toxic Waste Pool Atomic Health 2",
+                "MP Toxic Waste Pool RPG",
+            ],
+        )
+        self.connect(ret, waste_pool, r.can_dive)
+
+        vent = self.region(
+            "Dark Room Vent", ["Dark Room Ceiling Vent", "Vent Pipebombs"]
+        )
+        # Plenty of lizard troopers to jump on
+        self.connect(ret, vent, r.jetpack(50) | (r.difficulty("medium") & r.can_jump))
+
+        launch_pad = self.region(
+            "Launch Pad",
+            [
+                "MP Gate Room Shotgun",
+                "Red Key Card",
+                "Gate Room Wall",
+                "Gate Room Armor",
+                "Outside Rocket Night Vision Goggles",
+                "Rocket Jetpack",
+                "MP Rocket Chaingun",
+            ],
+        )
+        self.connect(ret, launch_pad, self.blue_key | r.crouch_jump)
+
+        launch_room = self.region(
+            "Launch Room", ["Launch Room Steroids", "Launch Room Holo Duke"]
+        )
+        self.connect(launch_pad, launch_room, r.can_crouch)
+
+        rocket_pit = self.region("Rocket Pit", ["MP Rocket Pit Pipebombs", "Exit"])
+        # Need to get out of the launch room again. Might be possible to activate this from outside somehow?
+        self.connect(launch_room, rocket_pit, self.red_key & r.jump)
+
+        sewer_ledge = self.region(
+            "Sewer Ledge",
+            [
+                "Sewer Computers",
+                "Sewer Computers Atomic Health 1",
+                "Sewer Computers Atomic Health 2",
+                "Sewer Computers Atomic Health 3",
+                "Sewer Protective Boots",
+            ],
+        )
+        self.connect(
+            rocket_pit, sewer_ledge, r.jump
+        )  # Just out of reach again, might be able to clip up
+
+        return ret

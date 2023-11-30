@@ -78,6 +78,12 @@ goal_items = {
 
 junk_items = {
     "Nothing": ItemDef("Nothing", net_id(0), "filler", {}, silent=True),
+    "Pity Heal": ItemDef(
+        "Pity Heal",
+        net_id(403),
+        "health",
+        {"heal": 1},
+    ),
 }
 
 weapons = {
@@ -520,6 +526,14 @@ abilities = {
     ),
 }
 
+healing_items = {
+    "Atomic Health": ItemDef(
+        "Atomic Health", net_id(400), "health", {"heal": 50, "capacity": 200}
+    ),
+    "Medpak": ItemDef("Medpak", net_id(401), "health", {"heal": 30}),
+    "Bandage": ItemDef("Bandage", net_id(402), "health", {"heal": 10}),
+}
+
 all_items: Dict[str, ItemDef] = {
     **junk_items,
     **goal_items,
@@ -527,4 +541,5 @@ all_items: Dict[str, ItemDef] = {
     **inventory_items,
     **abilities,
     **dynamic_level_items,
+    **healing_items,
 }
