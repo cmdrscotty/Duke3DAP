@@ -60,6 +60,7 @@ class D3DLevel(object):
     location_defs: List[dict]
     keys: List[str]
     events: List[str] = []
+    must_dive: bool = False  # If the level has locations locked behind diving. Determines progression status for Scuba
 
     def __init__(self):
         self.world: Optional["D3DWorld"] = None

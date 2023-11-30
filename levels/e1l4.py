@@ -70,6 +70,7 @@ class E1L4(D3DLevel):
         {"name": "Secret Exit", "id": 6, "type": "exit"},
     ]
     events = ["Underwater Gate"]
+    must_dive = True
 
     def main_region(self) -> Region:
         r = self.rules

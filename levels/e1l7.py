@@ -44,6 +44,7 @@ class E1L7(D3DLevel):
         {"name": "Behind Waterfall 1", "id": 110, "type": "sector"},
         {"name": "Behind Waterfall 2", "id": 111, "type": "sector"},
     ]
+    must_dive = True
 
     def main_region2(self) -> Region:
         r = self.rules

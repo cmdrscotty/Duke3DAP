@@ -45,6 +45,7 @@ class E1L6(D3DLevel):
         {"name": "Gate Room Wall", "id": 327, "type": "sector"},
         {"name": "Exit", "id": 0, "type": "exit"},
     ]
+    must_dive = True
 
     def main_region(self) -> Region:
         r = self.rules

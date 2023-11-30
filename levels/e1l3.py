@@ -74,6 +74,7 @@ class E1L3(D3DLevel):
         {"name": "Exit", "id": 0, "type": "exit"},
     ]
     events = ["Unlock Cell Blocks"]
+    must_dive = True
 
     def main_region(self) -> Region:
         r = self.rules

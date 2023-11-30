@@ -1,8 +1,7 @@
-import functools
 import math
 from typing import TYPE_CHECKING, Callable, Union
 
-from BaseClasses import CollectionState, MultiWorld
+from BaseClasses import CollectionState
 
 if TYPE_CHECKING:
     from . import D3DWorld
@@ -13,9 +12,19 @@ class Rule(object):
         raise NotImplementedError
 
     def __or__(self, other: "Rule") -> "Rule":
+        # short circuit
+        if isinstance(other, RuleTrue):
+            return other
+        if isinstance(other, RuleFalse):
+            return self
         return LambdaRule(lambda state: self(state) or other(state))
 
     def __and__(self, other: "Rule") -> "Rule":
+        # short circuit
+        if isinstance(other, RuleTrue):
+            return self
+        if isinstance(other, RuleFalse):
+            return other
         return LambdaRule(lambda state: self(state) and other(state))
 
 
@@ -151,12 +160,15 @@ class Rules(object):
             self.dive = lambda x: self.true
 
         class Difficulty(Rule):
+            difficulty_map = {"easy": 0, "medium": 1, "hard": 2, "extreme": 3}
+
             def __init__(self, difficulty: str):
                 self.difficulty = difficulty
 
             def __call__(self, state: CollectionState) -> bool:
-                # something based on world, whatever
-                return True
+                return self.difficulty_map.get(self.difficulty, 0) <= world.get_option(
+                    "difficulty"
+                )
 
         self.difficulty = Difficulty
 
@@ -166,7 +178,10 @@ class Rules(object):
         self.explosives_count = lambda count: self.count_group("Explosives", count)
 
         # Glitched logic stuff
-        self.glitched = RuleFalse()
+        if world.get_option("glitch_logic"):
+            self.glitched = RuleTrue()
+        else:
+            self.glitched = RuleFalse()
         # Most clips require run speed
         self.crouch_jump = (
             self.glitched & self.can_jump & self.can_crouch & self.can_sprint

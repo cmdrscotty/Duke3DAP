@@ -87,6 +87,19 @@ junk_items = {
 }
 
 weapons = {
+    "Pistol Capacity": ItemDef(
+        "Pistol Capacity",
+        net_id(221),
+        "ammo",
+        {"weaponnum": 1, "capacity": 20, "ammo": 10},
+        persistent=True,
+    ),
+    "Pistol Ammo": ItemDef(
+        "Pistol Ammo",
+        net_id(261),
+        "ammo",
+        {"weaponnum": 1, "ammo": 30},
+    ),
     "Shotgun": ItemDef(
         "Shotgun",
         net_id(202),
@@ -274,7 +287,7 @@ weapons = {
         progression=True,
     ),
     "Tripmine Capacity": ItemDef(
-        "Devastator Capacity",
+        "Tripmine Capacity",
         net_id(228),
         "ammo",
         {"weaponnum": 8, "capacity": 1, "ammo": 1},
@@ -405,7 +418,7 @@ inventory_items = {
         "Scuba Gear",
         net_id(302),
         "inventory",
-        {"invnum": 2, "capacity": 100},
+        {"invnum": 2, "capacity": 400},
         persistent=True,
         unique=True,
         progression=True,
@@ -414,7 +427,7 @@ inventory_items = {
         "Scuba Gear Capacity",
         net_id(322),
         "invcapacity",
-        {"invnum": 2, "capacity": 100},
+        {"invnum": 2, "capacity": 400},
         persistent=True,
     ),
     "Progressive Scuba Gear": ItemDef(
