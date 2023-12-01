@@ -224,3 +224,4 @@ class D3DEpisode(object):
     name: str
     volumenum: int
     levels: List[D3DLevel]
+    maxlevel: int

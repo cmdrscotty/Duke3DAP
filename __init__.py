@@ -91,7 +91,7 @@ class D3DWorld(World):
         """
         episode_id = int(episode_shorthand[-1]) - 1
         episode = all_episodes[episode_id]
-        self.included_levels += episode.levels
+        self.included_levels += episode.levels[: episode.maxlevel]
         if len(episode.levels) > 0:
             self.starting_levels.append(episode.levels[0])
 

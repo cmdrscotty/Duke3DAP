@@ -1,0 +1,73 @@
+from BaseClasses import Region
+
+from ..base_classes import D3DLevel
+
+
+class E2L4(D3DLevel):
+    name = "Fusion Station"
+    levelnum = 3
+    volumenum = 1
+    keys = ["Red"]
+    location_defs = [
+        {"id": 3, "mp": True, "name": "MP 3 Freezethrower", "type": "sprite"},
+        {"id": 13, "mp": True, "name": "MP 13 Armor", "type": "sprite"},
+        {"id": 18, "mp": True, "name": "MP 18 Night Vision Goggles", "type": "sprite"},
+        {"id": 19, "mp": True, "name": "MP 19 Night Vision Goggles", "type": "sprite"},
+        {"id": 20, "mp": True, "name": "MP 20 Night Vision Goggles", "type": "sprite"},
+        {"id": 46, "mp": True, "name": "MP 46 Chaingun", "type": "sprite"},
+        {"id": 54, "name": "54 Holo Duke", "type": "sprite"},
+        {"id": 111, "mp": True, "name": "MP 111 Atomic Health", "type": "sprite"},
+        {"id": 135, "mp": True, "name": "MP 135 Tripbomb", "type": "sprite"},
+        {"id": 136, "mp": True, "name": "MP 136 Tripbomb", "type": "sprite"},
+        {"id": 139, "mp": True, "name": "MP 139 Protective Boots", "type": "sprite"},
+        {"id": 142, "mp": True, "name": "MP 142 Atomic Health", "type": "sprite"},
+        {"id": 143, "mp": True, "name": "MP 143 Atomic Health", "type": "sprite"},
+        {"id": 158, "mp": True, "name": "MP 158 Devastator", "type": "sprite"},
+        {"id": 159, "mp": True, "name": "MP 159 Atomic Health", "type": "sprite"},
+        {"id": 167, "mp": True, "name": "MP 167 Medkit", "type": "sprite"},
+        {"id": 210, "mp": True, "name": "MP 210 Armor", "type": "sprite"},
+        {"id": 253, "mp": True, "name": "MP 253 Jetpack", "type": "sprite"},
+        {"id": 696, "mp": True, "name": "MP 696 Atomic Health", "type": "sprite"},
+        {"id": 715, "mp": True, "name": "MP 715 Shotgun", "type": "sprite"},
+        {"id": 718, "mp": True, "name": "MP 718 Medkit", "type": "sprite"},
+        {"id": 720, "mp": True, "name": "MP 720 Tripbomb", "type": "sprite"},
+        {
+            "id": 721,
+            "mp": True,
+            "name": "MP 721 Night Vision Goggles",
+            "type": "sprite",
+        },
+        {"id": 722, "mp": True, "name": "MP 722 Chaingun", "type": "sprite"},
+        {"id": 739, "mp": True, "name": "MP 739 Shrinker", "type": "sprite"},
+        {"id": 750, "mp": True, "name": "MP 750 Pipebombs", "type": "sprite"},
+        {"id": 751, "mp": True, "name": "MP 751 Pipebombs", "type": "sprite"},
+        {"id": 756, "mp": True, "name": "MP 756 RPG", "type": "sprite"},
+        {"id": 759, "name": "759 Jetpack", "type": "sprite"},
+        {"id": 760, "name": "760 Jetpack", "type": "sprite"},
+        {"id": 761, "name": "761 Jetpack", "type": "sprite"},
+        {"id": 762, "name": "762 Jetpack", "type": "sprite"},
+        {"id": 790, "mp": True, "name": "MP 790 Atomic Health", "type": "sprite"},
+        {"id": 791, "mp": True, "name": "MP 791 Atomic Health", "type": "sprite"},
+        {"id": 792, "mp": True, "name": "MP 792 Pipebombs", "type": "sprite"},
+        {"id": 793, "mp": True, "name": "MP 793 Pipebombs", "type": "sprite"},
+        {"id": 835, "mp": True, "name": "MP 835 Shotgun", "type": "sprite"},
+        {"id": 836, "name": "836 RPG", "type": "sprite"},
+        {"id": 837, "name": "837 Devastator", "type": "sprite"},
+        {"id": 838, "mp": True, "name": "MP 838 Tripbomb", "type": "sprite"},
+        {"id": 839, "mp": True, "name": "MP 839 Tripbomb", "type": "sprite"},
+        {"id": 867, "name": "867 Pipebombs", "type": "sprite"},
+        {"id": 870, "name": "870 Protective Boots", "type": "sprite"},
+        {"id": 871, "name": "871 Protective Boots", "type": "sprite"},
+        {"id": 872, "name": "872 Protective Boots", "type": "sprite"},
+        {"id": 873, "name": "873 Protective Boots", "type": "sprite"},
+        {"id": 874, "mp": True, "name": "MP 874 Steroids", "type": "sprite"},
+        {"id": 875, "mp": True, "name": "MP 875 Steroids", "type": "sprite"},
+        {"id": 317, "name": "Secret 1", "type": "sector"},
+        {"id": 374, "name": "Secret 2", "type": "sector"},
+        {"id": 378, "name": "Secret 3", "type": "sector"},
+        {"id": 384, "name": "Secret 4", "type": "sector"},
+        {"id": 405, "name": "Secret 5", "type": "sector"},
+        {"id": 409, "name": "Secret 6", "type": "sector"},
+        {"id": 416, "name": "Secret 7", "type": "sector"},
+        {"id": 0, "name": "Exit", "type": "exit"},
+    ]
