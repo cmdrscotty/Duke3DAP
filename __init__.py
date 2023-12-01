@@ -285,7 +285,7 @@ class D3DWorld(World):
             self.create_item("Jetpack Capacity") for _ in range(required_cnt - 1)
         ]
         # Fill pool with capacity up to total amount
-        useful_list = [self.create_item("Jetpack")] + [
+        useful_list = [
             self.create_item("Jetpack Capacity")
             for _ in range(total_cnt - len(required_list))
         ]
@@ -313,7 +313,7 @@ class D3DWorld(World):
             self.create_item("Scuba Gear Capacity") for _ in range(required_cnt - 1)
         ]
         # Fill pool with capacity up to total amount
-        useful_list = [self.create_item("Scuba Gear")] + [
+        useful_list = [
             self.create_item("Scuba Gear Capacity")
             for _ in range(total_cnt - len(required_list))
         ]
@@ -355,7 +355,7 @@ class D3DWorld(World):
             self.create_item("Steroids Capacity") for _ in range(required_cnt - 1)
         ]
         # Fill pool with capacity up to total amount
-        useful_list = [self.create_item("Steroids")] + [
+        useful_list = [
             self.create_item("Steroids Capacity")
             for _ in range(total_cnt - len(required_list))
         ]

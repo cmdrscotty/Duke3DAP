@@ -102,13 +102,6 @@ class E1L2(D3DLevel):
             "Strip Club",
             [
                 "Strip Club Entrance Shotgun",
-                "Sewers",
-                "Sewers Steroids",
-                "Sewers Pipebombs",
-                "Sewers Atomic Health",
-                "Sewers Night Vision Goggles",
-                "Sewers Holo Duke",
-                "Sewers Jetpack",
                 "MP Steroids outside Strip Floor",
                 "MP Bar RPG",
                 "Red Key Card",
@@ -117,14 +110,31 @@ class E1L2(D3DLevel):
         self.restrict("Red Key Card", r.can_crouch)
         self.connect(streets, strip_club, self.yellow_key)
 
+        sewers = self.region(
+            "Sewers",
+            [
+                "Sewers",
+                "Sewers Steroids",
+                "Sewers Pipebombs",
+                "Sewers Atomic Health",
+                "Sewers Night Vision Goggles",
+                "Sewers Holo Duke",
+                "Sewers Jetpack",
+            ],
+        )
+        self.connect(strip_club, sewers, self.yellow_key)
+
         construction_site = self.region(
             "Construction Site", ["Construction Site Medkit", "Yellow Key Card"]
         )
         self.connect(
-            streets, construction_site, (self.blue_key | r.glitched) & r.jump
+            streets,
+            construction_site,
+            (self.blue_key | (r.glitched & r.can_crouch)) & r.jump,
         )  # Can press button from outside
 
-        self.connect(construction_site, strip_club, r.explosives)
+        # Can get to sewers, but the unlock for the door is on the other side only, so no connection to strip club
+        self.connect(construction_site, sewers, r.explosives)
         # Can't survive pipe bomb or RPG explosion going up from the sewer
         self.connect(
             strip_club,

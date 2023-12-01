@@ -139,6 +139,8 @@ class E1L4(D3DLevel):
             ],
         )
         self.connect(facility, cylinders, r.jump)
+        # Can't touch the sector with just jetpack
+        self.restrict("Left Cylinder", r.can_jump)
 
         flooded_area = self.region(
             "Flooded Area",
@@ -212,7 +214,6 @@ class E1L4(D3DLevel):
                 "Gear Room Secret Scuba Gear",
                 "Gear Room Secret Armor",
                 "MP Waterfall Shotgun",
-                "Underwater Gate RPG",
                 "Underwater Canyon Pipebombs",
             ],
         )
@@ -272,4 +273,5 @@ class E1L4(D3DLevel):
         # respect scuba use up to here on this return path from teleporter
         self.connect(top_of_sewer, moving_platforms, second_dive)
         self.connect(moving_platforms, top_of_waterfall, r.jetpack(100))
+        self.connect(top_of_waterfall, deep_water, second_dive)
         return ret
