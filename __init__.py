@@ -123,6 +123,7 @@ class D3DWorld(World):
             self.slot_data["settings"]["lock_jump"] = True
             self.slot_data["settings"]["lock_run"] = True
             self.slot_data["settings"]["lock_dive"] = True
+        self.slot_data["settings"]["no_save"] = not self.get_option("allow_saving")
 
     def create_regions(self):
         self.used_locations = set()

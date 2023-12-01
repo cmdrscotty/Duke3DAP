@@ -40,6 +40,13 @@ class UnlockAbilities(Toggle):
     default = True
 
 
+class AllowSaving(Toggle):
+    """Enables saving to store mid level progress. If disabled, levels always have to be played from the start"""
+
+    display_name = "Allow Saving"
+    default = True
+
+
 class AreaMaps(Choice):
     """Select if full game maps are available"""
 
@@ -149,6 +156,7 @@ class Duke3DOptions(PerGameCommonOptions):
     glitch_logic: GlitchLogic
     skill_level: SkillLevel
     unlock_abilities: UnlockAbilities
+    allow_saving: AllowSaving
     area_maps: AreaMaps
     goal: Goal
     goal_percentage: GoalPercentage
