@@ -131,8 +131,9 @@ class Rules(object):
         class CanJetPack(Rule):
             def __init__(self, fuel: int):
                 self.fuel = fuel
-                # ToDo make the fuel per upgrade configurable
-                self.required = math.ceil(self.fuel / 100.0)
+                self.required = math.ceil(
+                    self.fuel / float(world.fuel_per_pickup["Jetpack"])
+                )
 
             def __call__(self, state: CollectionState) -> bool:
                 return state.has("Jetpack", player) and state.has_group(
@@ -147,8 +148,9 @@ class Rules(object):
         class CanDiveTo(Rule):
             def __init__(self, fuel: int):
                 self.fuel = fuel
-                # ToDo make the fuel per upgrade configurable
-                self.required = math.ceil(self.fuel / 200.0)
+                self.required = math.ceil(
+                    self.fuel / float(world.fuel_per_pickup["Scuba Gear"])
+                )
 
             def __call__(self, state: CollectionState) -> bool:
                 return state.has_group("Scuba Gear", player, self.required)

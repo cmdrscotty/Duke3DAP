@@ -387,7 +387,11 @@ inventory_items = {
         "Steroids",
         net_id(300),
         "inventory",
-        {"invnum": 0, "capacity": 40},
+        {
+            "invnum": 0,
+            "capacity": 40,
+            "dynamic": True,
+        },  # use capacity from slot data if configured
         persistent=True,
         unique=True,
         progression=True,
@@ -396,7 +400,11 @@ inventory_items = {
         "Steroids Capacity",
         net_id(320),
         "invcapacity",
-        {"invnum": 0, "capacity": 40},
+        {
+            "invnum": 0,
+            "capacity": 40,
+            "dynamic": True,
+        },  # use capacity from slot data if configured
         persistent=True,
     ),
     "Progressive Steroids": ItemDef(
@@ -418,7 +426,11 @@ inventory_items = {
         "Scuba Gear",
         net_id(302),
         "inventory",
-        {"invnum": 2, "capacity": 400},
+        {
+            "invnum": 2,
+            "capacity": 400,
+            "dynamic": True,
+        },  # use capacity from slot data if configured
         persistent=True,
         unique=True,
         progression=True,
@@ -427,7 +439,11 @@ inventory_items = {
         "Scuba Gear Capacity",
         net_id(322),
         "invcapacity",
-        {"invnum": 2, "capacity": 400},
+        {
+            "invnum": 2,
+            "capacity": 400,
+            "dynamic": True,
+        },  # use capacity from slot data if configured
         persistent=True,
     ),
     "Progressive Scuba Gear": ItemDef(
@@ -450,7 +466,11 @@ inventory_items = {
         "Jetpack",
         net_id(304),
         "inventory",
-        {"invnum": 4, "capacity": 100},
+        {
+            "invnum": 4,
+            "capacity": 100,
+            "dynamic": True,
+        },  # use capacity from slot data if configured
         persistent=True,
         unique=True,
         progression=True,
@@ -459,7 +479,11 @@ inventory_items = {
         "Jetpack Capacity",
         net_id(324),
         "invcapacity",
-        {"invnum": 4, "capacity": 100},
+        {
+            "invnum": 4,
+            "capacity": 100,
+            "dynamic": True,
+        },  # use capacity from slot data if configured
         persistent=True,
         progression=True,
     ),

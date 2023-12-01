@@ -47,14 +47,8 @@ class D3DWorld(World):
             "settings": {},
         }
         self.rules: Optional[Rules] = None
-
-        # difficulty settings
-        # ToDo propagate these as settings via slot_data so they can be configured
-        self.fuel_per_pickup = {
-            "Jetpack": 100,
-            "Scuba Gear": 400,
-            "Steroids": 40,
-        }
+        # Filled later from options
+        self.fuel_per_pickup: Dict[str, int] = {}
 
         super().__init__(world, player)
 
@@ -96,6 +90,19 @@ class D3DWorld(World):
             self.starting_levels.append(episode.levels[0])
 
     def generate_early(self) -> None:
+        # difficulty settings
+        self.fuel_per_pickup = {
+            "Jetpack": self.get_option("fuel_per_jetpack"),
+            "Scuba Gear": self.get_option("fuel_per_scuba_gear"),
+            "Steroids": self.get_option("fuel_per_steroids"),
+        }
+        self.slot_data["invinc"] = {
+            # Index by invnum so they can be matched in-game
+            0: self.fuel_per_pickup["Steroids"],
+            2: self.fuel_per_pickup["Scuba Gear"],
+            4: self.fuel_per_pickup["Jetpack"],
+        }
+
         # Configure rules
         self.rules = Rules(self)
 

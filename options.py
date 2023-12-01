@@ -116,6 +116,33 @@ class Episode4(Toggle):
     default = False
 
 
+class FuelPerJetpack(NamedRange):
+    """Amount of fuel provided by each Jetpack collectible"""
+
+    display_name = "Fuel per Jetpack"
+    range_start = 25
+    range_end = 250
+    default = 100
+
+
+class FuelPerScubaGear(NamedRange):
+    """Amount of fuel provided by each Scuba Gear collectible"""
+
+    display_name = "Fuel per Scuba Gear"
+    range_start = 100
+    range_end = 800
+    default = 400
+
+
+class FuelPerSteroids(NamedRange):
+    """Amount of fuel provided by each Steroids collectible"""
+
+    display_name = "Fuel per Steroids"
+    range_start = 10
+    range_end = 100
+    default = 40
+
+
 @dataclass
 class Duke3DOptions(PerGameCommonOptions):
     difficulty: Difficulty
@@ -131,3 +158,6 @@ class Duke3DOptions(PerGameCommonOptions):
     episode2: Episode2
     episode3: Episode3
     episode4: Episode4
+    fuel_per_jetpack: FuelPerJetpack
+    fuel_per_scuba_gear: FuelPerScubaGear
+    fuel_per_steroids: FuelPerSteroids
