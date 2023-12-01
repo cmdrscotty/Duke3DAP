@@ -96,7 +96,7 @@ class D3DWorld(World):
             "Scuba Gear": self.get_option("fuel_per_scuba_gear"),
             "Steroids": self.get_option("fuel_per_steroids"),
         }
-        self.slot_data["invinc"] = {
+        self.slot_data["settings"]["invinc"] = {
             # Index by invnum so they can be matched in-game
             0: self.fuel_per_pickup["Steroids"],
             2: self.fuel_per_pickup["Scuba Gear"],

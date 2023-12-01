@@ -15,8 +15,10 @@ define AP_PROCESSOR 5200
 
 define AP_RETRIEVEDISTANCE 844
 
-// Template quote for Item receive message displays
-definequote 5120 Received Item
+// Template quote for all AP Messages
+// The actual message text is pulled dynamically at runtime, just need to define
+// An identifier for it
+definequote 5120 AP Message Dummy
 
 state apitem
   ifapcollected
