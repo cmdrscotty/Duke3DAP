@@ -2,7 +2,7 @@
   "game": "Duke3D",
   "name": "Duke Nukem 3D",
   "game_id": 1,
-  "checksum": "3f820313e7a379a143b39a5fbb3d3eb41538b0047f3ff1ccb5275f4b1e771a9a",
+  "checksum": "39b1e9dcb06249ae46648cb9981d066cdcdc98c520f3fc227c8fc331b2fd4191",
   "episodes": {
     "E1": {
       "name": "L.A. Meltdown",
@@ -79,29 +79,29 @@
           "levelnum": 5,
           "unlock": 1712
         },
-        "E7L2": {
+        "E2L7": {
           "name": "Lunar Reactor",
-          "levelnum": 1,
+          "levelnum": 6,
           "unlock": 1713
         },
-        "E8L2": {
+        "E2L8": {
           "name": "Dark Side",
-          "levelnum": 1,
+          "levelnum": 7,
           "unlock": 1714
         },
-        "E9L2": {
+        "E2L9": {
           "name": "Overlord",
-          "levelnum": 1,
+          "levelnum": 8,
           "unlock": 1715
         },
-        "E10L2": {
+        "E2L10": {
           "name": "Spin Cycle",
-          "levelnum": 1,
+          "levelnum": 9,
           "unlock": 1716
         },
-        "E11L2": {
+        "E2L11": {
           "name": "Lunatic Fringe",
-          "levelnum": 1,
+          "levelnum": 10,
           "unlock": 1717
         }
       }
@@ -2491,7 +2491,7 @@
         }
       }
     },
-    "E7L2": {
+    "E2L7": {
       "sprites": {
         "5": {
           "id": 443,
@@ -2671,7 +2671,7 @@
         }
       }
     },
-    "E8L2": {
+    "E2L8": {
       "sprites": {
         "42": {
           "id": 478,
@@ -2947,7 +2947,7 @@
         }
       }
     },
-    "E9L2": {
+    "E2L9": {
       "sprites": {
         "7": {
           "id": 537,
@@ -3103,7 +3103,7 @@
         }
       }
     },
-    "E10L2": {
+    "E2L10": {
       "sprites": {
         "36": {
           "id": 569,
@@ -3198,7 +3198,7 @@
         }
       }
     },
-    "E11L2": {
+    "E2L11": {
       "sprites": {
         "28": {
           "id": 590,
@@ -7500,44 +7500,44 @@
       "volumenum": 1
     },
     "1613": {
-      "name": "E7L2 Automap",
+      "name": "E2L7 Automap",
       "type": "automap",
       "persistent": true,
       "unique": true,
-      "levelnum": 1,
-      "volumenum": 6
+      "levelnum": 6,
+      "volumenum": 1
     },
     "1614": {
-      "name": "E8L2 Automap",
+      "name": "E2L8 Automap",
       "type": "automap",
       "persistent": true,
       "unique": true,
-      "levelnum": 1,
-      "volumenum": 7
+      "levelnum": 7,
+      "volumenum": 1
     },
     "1615": {
-      "name": "E9L2 Automap",
+      "name": "E2L9 Automap",
       "type": "automap",
       "persistent": true,
       "unique": true,
-      "levelnum": 1,
-      "volumenum": 8
+      "levelnum": 8,
+      "volumenum": 1
     },
     "1616": {
-      "name": "E10L2 Automap",
+      "name": "E2L10 Automap",
       "type": "automap",
       "persistent": true,
       "unique": true,
-      "levelnum": 1,
-      "volumenum": 9
+      "levelnum": 9,
+      "volumenum": 1
     },
     "1617": {
-      "name": "E11L2 Automap",
+      "name": "E2L11 Automap",
       "type": "automap",
       "persistent": true,
       "unique": true,
-      "levelnum": 1,
-      "volumenum": 10
+      "levelnum": 10,
+      "volumenum": 1
     },
     "1618": {
       "name": "E3L1 Automap",
@@ -7794,31 +7794,31 @@
       "unique": true
     },
     "1713": {
-      "name": "E7L2 Unlock",
+      "name": "E2L7 Unlock",
       "type": "map",
       "persistent": true,
       "unique": true
     },
     "1714": {
-      "name": "E8L2 Unlock",
+      "name": "E2L8 Unlock",
       "type": "map",
       "persistent": true,
       "unique": true
     },
     "1715": {
-      "name": "E9L2 Unlock",
+      "name": "E2L9 Unlock",
       "type": "map",
       "persistent": true,
       "unique": true
     },
     "1716": {
-      "name": "E10L2 Unlock",
+      "name": "E2L10 Unlock",
       "type": "map",
       "persistent": true,
       "unique": true
     },
     "1717": {
-      "name": "E11L2 Unlock",
+      "name": "E2L11 Unlock",
       "type": "map",
       "persistent": true,
       "unique": true
@@ -8145,49 +8145,49 @@
       "volumenum": 1
     },
     "1821": {
-      "name": "E7L2 Red Key Card",
+      "name": "E2L7 Red Key Card",
       "type": "key",
       "persistent": true,
       "unique": true,
       "flags": 2,
-      "levelnum": 1,
-      "volumenum": 6
+      "levelnum": 6,
+      "volumenum": 1
     },
     "1822": {
-      "name": "E8L2 Red Key Card",
+      "name": "E2L8 Red Key Card",
       "type": "key",
       "persistent": true,
       "unique": true,
       "flags": 2,
-      "levelnum": 1,
-      "volumenum": 7
+      "levelnum": 7,
+      "volumenum": 1
     },
     "1823": {
-      "name": "E9L2 Red Key Card",
+      "name": "E2L9 Red Key Card",
       "type": "key",
       "persistent": true,
       "unique": true,
       "flags": 2,
-      "levelnum": 1,
-      "volumenum": 8
+      "levelnum": 8,
+      "volumenum": 1
     },
     "1824": {
-      "name": "E10L2 Red Key Card",
+      "name": "E2L10 Red Key Card",
       "type": "key",
       "persistent": true,
       "unique": true,
       "flags": 2,
-      "levelnum": 1,
-      "volumenum": 9
+      "levelnum": 9,
+      "volumenum": 1
     },
     "1825": {
-      "name": "E11L2 Red Key Card",
+      "name": "E2L11 Red Key Card",
       "type": "key",
       "persistent": true,
       "unique": true,
       "flags": 2,
-      "levelnum": 1,
-      "volumenum": 10
+      "levelnum": 10,
+      "volumenum": 1
     },
     "1826": {
       "name": "E3L1 Red Key Card",

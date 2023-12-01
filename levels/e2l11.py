@@ -5,8 +5,8 @@ from ..base_classes import D3DLevel
 
 class E2L11(D3DLevel):
     name = "Lunatic Fringe"
-    levelnum = 1
-    volumenum = 10
+    levelnum = 10
+    volumenum = 1
     keys = ["Red"]
     location_defs = [
         {"id": 28, "mp": True, "name": "MP 28 Shrinker", "type": "sprite"},

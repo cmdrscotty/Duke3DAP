@@ -5,8 +5,8 @@ from ..base_classes import D3DLevel
 
 class E2L7(D3DLevel):
     name = "Lunar Reactor"
-    levelnum = 1
-    volumenum = 6
+    levelnum = 6
+    volumenum = 1
     keys = ["Red"]
     location_defs = [
         {"id": 5, "mp": True, "name": "MP 5 Steroids", "type": "sprite"},

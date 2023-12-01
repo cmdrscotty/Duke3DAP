@@ -5,8 +5,8 @@ from ..base_classes import D3DLevel
 
 class E2L10(D3DLevel):
     name = "Spin Cycle"
-    levelnum = 1
-    volumenum = 9
+    levelnum = 9
+    volumenum = 1
     keys = ["Red"]
     location_defs = [
         {"id": 36, "mp": True, "name": "MP 36 Shrinker", "type": "sprite"},

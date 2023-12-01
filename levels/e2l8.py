@@ -5,8 +5,8 @@ from ..base_classes import D3DLevel
 
 class E2L8(D3DLevel):
     name = "Dark Side"
-    levelnum = 1
-    volumenum = 7
+    levelnum = 7
+    volumenum = 1
     keys = ["Red"]
     location_defs = [
         {"id": 42, "mp": True, "name": "MP 42 Pipebombs", "type": "sprite"},
