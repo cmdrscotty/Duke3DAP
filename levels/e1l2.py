@@ -122,7 +122,8 @@ class E1L2(D3DLevel):
                 "Sewers Jetpack",
             ],
         )
-        self.connect(strip_club, sewers, self.yellow_key)
+        # One way connection only
+        self.connect(strip_club, sewers, r.true)
 
         construction_site = self.region(
             "Construction Site", ["Construction Site Medkit", "Yellow Key Card"]

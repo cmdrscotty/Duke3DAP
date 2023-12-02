@@ -1,5 +1,7 @@
+import binascii
 import io
 import json
+import sys
 from hashlib import sha256
 from pathlib import Path
 from zipfile import ZipFile
@@ -115,15 +117,43 @@ def generate_ap_config(all_ids: dict):
         out_file.write(json.dumps(ap_config, indent=2))
 
 
-def bundle_grp(target: Path):
+GRP_INFO_TEMPLATE = """grpinfo
+{
+    name "Duke Nukem 3D Randomizer for Archipelago"
+    scriptname "DUKE3DAP.CON"
+    size {size}
+    crc {crc32}
+    // AP + Duke Nukem 3D
+    flags 0x00100001
+    dependency DUKE15_CRC
+}
+"""
+
+
+def bundle_grp(target: Path, file_name: str):
     # update ids for consistency
     all_ids = update_ids()
     generate_ap_config(all_ids)
-    out = ZipFile(target, "w")
+    grp_zip_loc = target / f'{file_name}.zip'
+    out = ZipFile(grp_zip_loc, "w")
     for dep in DEPENDENCIES:
         out.write(dep, dep.name)
+    out.close()
+
+    # Update grpinfo file as well
+    grpinfo_loc = target / f'{file_name}.grpinfo'
+    grp_size = grp_zip_loc.stat().st_size
+    with io.open(grp_zip_loc, "rb") as zip_file:
+        grp_crc = binascii.crc32(zip_file.read()) & 0xFFFFFFFF
+    grp_info = GRP_INFO_TEMPLATE.replace("{size}", str(grp_size)).replace("{crc32}", f'{grp_crc:#08x}')
+    with io.open(grpinfo_loc, "w", encoding="utf-8") as grpinfo_file:
+        grpinfo_file.write(grp_info)
 
 
 # run as -m worlds.duke3d.utils.bundle_grp from Archipelago root dir for imports to work
+# Can provide an output directory as command line parameter for convenience
 if __name__ == "__main__":
-    bundle_grp(BASE_DIR / "resources" / "DUKE3DAP.zip")
+    out_dir = BASE_DIR / "resources"
+    if len(sys.argv) > 1:
+        out_dir = Path(sys.argv[1])
+    bundle_grp(out_dir, "DUKE3DAP")

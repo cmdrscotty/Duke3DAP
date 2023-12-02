@@ -71,7 +71,7 @@ class E3L1(D3DLevel):
         self.restrict("Secret Hallway Sign", r.jump)
         self.restrict("Hallway Armor", r.jump)
         self.restrict("Secret Hallway Wall", r.explosives)
-        self.region(
+        self.restrict(
             "Secret Geisha Wall", r.jump | r.can_crouch
         )  # Can crouch into the wall from the sign
 

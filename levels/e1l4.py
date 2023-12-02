@@ -236,7 +236,8 @@ class E1L4(D3DLevel):
         self.restrict("Waterfall Secret Teleporter", r.explosives)
 
         moving_platforms = self.region("Moving Platforms", ["Underwater Gate RPG"])
-        self.connect(top_of_waterfall, moving_platforms)
+        # Drops down a waterfall, one-way only this way around
+        self.connect(top_of_waterfall, moving_platforms, r.true)
 
         top_of_sewer = self.region(
             "Sewers Top",

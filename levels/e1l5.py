@@ -223,7 +223,8 @@ class E1L5(D3DLevel):
                 "Exit",
             ],
         )
-        self.connect(ship_entrance, spaceship)
+        # Big drop, can't get back
+        self.connect(ship_entrance, spaceship, r.true)
         # Not sure if the Exit button clip works on Rednukem or is only in Megaton physics
         self.restrict(
             "Exit", r.has_group("RPG")

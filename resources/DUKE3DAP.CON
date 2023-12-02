@@ -16,6 +16,8 @@ Ideally, none of those should really exist in the gameworld, but some of
 them might be spawned unexpectedly or double as ammo pickups.
 
 Ensure all of them only provide ammunition and don't unlock weapon slots.
+
+ToDo modify so they behave like vanilla if no AP world is loaded
 */
 
 define PISTOLAMMOAMOUNT         12

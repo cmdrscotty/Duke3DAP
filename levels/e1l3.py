@@ -201,9 +201,9 @@ class E1L3(D3DLevel):
         dock = self.region("Submarine Dock")
         self.add_locations(["Submarine Gate Scuba Gear"], cell_blocks)
         # Can shoot pipebombs to get to dock area, no explosive unlocks necessary!
-        self.connect(cell_blocks, dock)
+        self.connect(cell_blocks, dock, r.true)
         # Can just walk in from the sub area
-        self.connect(dock, courtyard)
+        self.connect(dock, courtyard, r.true)
         # Don't think this does anything yet, but better mark it down if we ever find an early sub clip or something
         self.connect(courtyard, control_room, self.yellow_key)
 
