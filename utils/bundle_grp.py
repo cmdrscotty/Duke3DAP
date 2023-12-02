@@ -124,6 +124,6 @@ def bundle_grp(target: Path):
         out.write(dep, dep.name)
 
 
-# run as -m worlds.d3d.utils.bundle_grp from Archipelago root dir for imports to work
+# run as -m worlds.duke3d.utils.bundle_grp from Archipelago root dir for imports to work
 if __name__ == "__main__":
     bundle_grp(BASE_DIR / "resources" / "DUKE3DAP.zip")

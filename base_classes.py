@@ -6,7 +6,7 @@ from BaseClasses import Entrance, Item, Location, Region
 from .rules import RULETYPE, LambdaRule, Rule, Rules, RuleTrue
 
 if TYPE_CHECKING:
-    from ..d3d import D3DWorld
+    from ..duke3d import D3DWorld
 
 
 class D3DItem(Item):

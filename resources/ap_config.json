@@ -2,7 +2,7 @@
   "game": "Duke3D",
   "name": "Duke Nukem 3D",
   "game_id": 1,
-  "checksum": "da2e9d9532e4430595a2536e7eae9ca523c8bc4426db88ed82f841488875b961",
+  "checksum": "79caadc5fb839767ef2ed26084ebfd58ea9999a6ab71e75cd763b8b29cffb579",
   "episodes": {
     "E1": {
       "name": "L.A. Meltdown",
@@ -3301,153 +3301,153 @@
       "sprites": {
         "78": {
           "id": 610,
-          "name": "78 Jetpack"
+          "name": "Booth Jetpack"
         },
         "115": {
           "id": 611,
-          "name": "115 Chaingun"
+          "name": "Start Ledge Chaingun"
         },
         "116": {
           "id": 612,
-          "name": "116 Atomic Health"
+          "name": "Start Ledge Atomic Health"
         },
         "161": {
           "id": 613,
-          "name": "161 Atomic Health"
+          "name": "Sushi Belt Atomic Health"
         },
         "305": {
           "id": 614,
-          "name": "305 Freezethrower"
+          "name": "Sushi Belt Freezethrower"
         },
         "308": {
           "id": 615,
-          "name": "308 Atomic Health"
+          "name": "Start Pit Atomic Health"
         },
         "309": {
           "id": 616,
-          "name": "309 Pipebombs"
+          "name": "Start Pit Pipebombs"
         },
         "389": {
           "id": 617,
-          "name": "389 Steroids"
+          "name": "Sushi Belt Steroids"
         },
         "452": {
           "id": 618,
-          "name": "452 Blue Key Card"
+          "name": "Blue Key Card"
         },
         "457": {
           "id": 619,
-          "name": "457 Red Key Card"
+          "name": "Red Key Card"
         },
         "492": {
           "id": 620,
-          "name": "492 Shotgun"
+          "name": "Booth Shotgun"
         },
         "497": {
           "id": 621,
-          "name": "497 Shrinker"
+          "name": "Hallway Poster Shrinker"
         },
         "499": {
           "id": 622,
-          "name": "499 Steroids"
+          "name": "Booth Backroom Steroids"
         },
         "500": {
           "id": 623,
-          "name": "500 Medkit"
+          "name": "Booth Medkit"
         },
         "524": {
           "id": 624,
-          "name": "524 RPG"
+          "name": "Karaoke RPG"
         },
         "536": {
           "id": 625,
-          "name": "536 Jetpack"
+          "name": "Stove Jetpack"
         },
         "543": {
           "id": 626,
-          "name": "543 Pipebombs"
+          "name": "Start Pool Pipebombs"
         },
         "561": {
           "id": 627,
-          "name": "561 Atomic Health"
+          "name": "Sink Atomic Health"
         },
         "564": {
           "id": 628,
-          "name": "564 Armor"
+          "name": "Kitchen Armor"
         },
         "569": {
           "id": 629,
-          "name": "569 Tripbomb"
+          "name": "Kitchen Vent Tripbomb"
         },
         "570": {
           "id": 630,
-          "name": "570 Night Vision Goggles"
+          "name": "Sushi Belt Night Vision Goggles"
         },
         "574": {
           "id": 631,
-          "name": "MP 574 Shotgun"
+          "name": "MP Garage Door Shotgun"
         },
         "575": {
           "id": 632,
-          "name": "MP 575 Chaingun"
+          "name": "MP Booth Chaingun"
         },
         "577": {
           "id": 633,
-          "name": "MP 577 Medkit"
+          "name": "MP Garage Pool Medkit"
         },
         "608": {
           "id": 634,
-          "name": "608 Devastator"
+          "name": "Start Devastator"
         },
         "609": {
           "id": 635,
-          "name": "609 Holo Duke"
+          "name": "Start Pool Holo Duke"
         },
         "624": {
           "id": 636,
-          "name": "624 Pipebombs"
+          "name": "Sushi Belt Cupboard Pipebombs"
         },
         "632": {
           "id": 637,
-          "name": "632 Scuba Gear"
+          "name": "Garage Door Scuba Gear"
         },
         "636": {
           "id": 638,
-          "name": "636 Armor"
+          "name": "Hallway Armor"
         },
         "656": {
           "id": 639,
-          "name": "656 Night Vision Goggles"
+          "name": "Night Vision Goggles behind Urn"
         }
       },
       "sectors": {
         "135": {
           "id": 1902,
-          "name": "Secret 1"
+          "name": "Secret Geisha Wall"
         },
         "137": {
           "id": 1903,
-          "name": "Secret 2"
+          "name": "Secret Hallway Sign"
         },
         "161": {
           "id": 1904,
-          "name": "Secret 3"
+          "name": "Secret Sushi Belt Wall"
         },
         "287": {
           "id": 1905,
-          "name": "Secret 4"
+          "name": "Secret Wine Cabinet"
         },
         "332": {
           "id": 1906,
-          "name": "Secret 5"
+          "name": "Secret Sushi Belt Cupboard"
         },
         "338": {
           "id": 1907,
-          "name": "Secret 6"
+          "name": "Secret Hallway Wall"
         },
         "344": {
           "id": 1908,
-          "name": "Secret 7"
+          "name": "Secret Hallway Poster"
         }
       },
       "exits": {
@@ -8225,6 +8225,15 @@
       "volumenum": 2
     },
     "1827": {
+      "name": "E3L1 Blue Key Card",
+      "type": "key",
+      "persistent": true,
+      "unique": true,
+      "flags": 1,
+      "levelnum": 0,
+      "volumenum": 2
+    },
+    "1828": {
       "name": "E3L2 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8233,7 +8242,7 @@
       "levelnum": 1,
       "volumenum": 2
     },
-    "1828": {
+    "1829": {
       "name": "E3L3 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8242,7 +8251,7 @@
       "levelnum": 2,
       "volumenum": 2
     },
-    "1829": {
+    "1830": {
       "name": "E3L4 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8251,7 +8260,7 @@
       "levelnum": 3,
       "volumenum": 2
     },
-    "1830": {
+    "1831": {
       "name": "E3L5 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8260,7 +8269,7 @@
       "levelnum": 4,
       "volumenum": 2
     },
-    "1831": {
+    "1832": {
       "name": "E3L6 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8269,7 +8278,7 @@
       "levelnum": 5,
       "volumenum": 2
     },
-    "1832": {
+    "1833": {
       "name": "E3L7 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8278,7 +8287,7 @@
       "levelnum": 6,
       "volumenum": 2
     },
-    "1833": {
+    "1834": {
       "name": "E3L8 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8287,7 +8296,7 @@
       "levelnum": 7,
       "volumenum": 2
     },
-    "1834": {
+    "1835": {
       "name": "E3L9 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8296,7 +8305,7 @@
       "levelnum": 8,
       "volumenum": 2
     },
-    "1835": {
+    "1836": {
       "name": "E3L10 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8305,7 +8314,7 @@
       "levelnum": 9,
       "volumenum": 2
     },
-    "1836": {
+    "1837": {
       "name": "E3L11 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8314,7 +8323,7 @@
       "levelnum": 10,
       "volumenum": 2
     },
-    "1837": {
+    "1838": {
       "name": "E4L1 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8323,7 +8332,7 @@
       "levelnum": 0,
       "volumenum": 3
     },
-    "1838": {
+    "1839": {
       "name": "E4L2 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8332,7 +8341,7 @@
       "levelnum": 1,
       "volumenum": 3
     },
-    "1839": {
+    "1840": {
       "name": "E4L3 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8341,7 +8350,7 @@
       "levelnum": 2,
       "volumenum": 3
     },
-    "1840": {
+    "1841": {
       "name": "E4L4 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8350,7 +8359,7 @@
       "levelnum": 3,
       "volumenum": 3
     },
-    "1841": {
+    "1842": {
       "name": "E4L5 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8359,7 +8368,7 @@
       "levelnum": 4,
       "volumenum": 3
     },
-    "1842": {
+    "1843": {
       "name": "E4L6 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8368,7 +8377,7 @@
       "levelnum": 5,
       "volumenum": 3
     },
-    "1843": {
+    "1844": {
       "name": "E4L7 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8377,7 +8386,7 @@
       "levelnum": 6,
       "volumenum": 3
     },
-    "1844": {
+    "1845": {
       "name": "E4L8 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8386,7 +8395,7 @@
       "levelnum": 7,
       "volumenum": 3
     },
-    "1845": {
+    "1846": {
       "name": "E4L9 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8395,7 +8404,7 @@
       "levelnum": 8,
       "volumenum": 3
     },
-    "1846": {
+    "1847": {
       "name": "E4L10 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8404,7 +8413,7 @@
       "levelnum": 9,
       "volumenum": 3
     },
-    "1847": {
+    "1848": {
       "name": "E4L11 Red Key Card",
       "type": "key",
       "persistent": true,

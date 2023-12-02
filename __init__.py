@@ -4,6 +4,12 @@ import math
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set, Tuple
 
+# Compatibility across Python versions
+try:
+    from importlib.resources import files
+except ImportError:
+    from importlib_resources import files  # noqa
+
 from BaseClasses import ItemClassification, MultiWorld, Region
 from worlds.AutoWorld import World
 
@@ -13,8 +19,9 @@ from .items import all_items, item_groups
 from .levels import all_episodes
 from .options import Duke3DOptions
 from .rules import Rules
+from . import resources
 
-with io.open(Path(__file__).parent / "resources" / "id_map.json", "r") as id_file:
+with files(resources).joinpath("id_map.json").open() as id_file:
     game_ids = json.load(id_file)
 
 
