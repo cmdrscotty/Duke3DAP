@@ -7,44 +7,159 @@ class E3L1(D3DLevel):
     name = "Raw Meat"
     levelnum = 0
     volumenum = 2
-    keys = ["Red"]
+    keys = ["Red", "Blue"]
     location_defs = [
-        {"id": 78, "name": "78 Jetpack", "type": "sprite"},
-        {"id": 115, "name": "115 Chaingun", "type": "sprite"},
-        {"id": 116, "name": "116 Atomic Health", "type": "sprite"},
-        {"id": 161, "name": "161 Atomic Health", "type": "sprite"},
-        {"id": 305, "name": "305 Freezethrower", "type": "sprite"},
-        {"id": 308, "name": "308 Atomic Health", "type": "sprite"},
-        {"id": 309, "name": "309 Pipebombs", "type": "sprite"},
-        {"id": 389, "name": "389 Steroids", "type": "sprite"},
-        {"id": 452, "name": "452 Blue Key Card", "type": "sprite"},
-        {"id": 457, "name": "457 Red Key Card", "type": "sprite"},
-        {"id": 492, "name": "492 Shotgun", "type": "sprite"},
-        {"id": 497, "name": "497 Shrinker", "type": "sprite"},
-        {"id": 499, "name": "499 Steroids", "type": "sprite"},
-        {"id": 500, "name": "500 Medkit", "type": "sprite"},
-        {"id": 524, "name": "524 RPG", "type": "sprite"},
-        {"id": 536, "name": "536 Jetpack", "type": "sprite"},
-        {"id": 543, "name": "543 Pipebombs", "type": "sprite"},
-        {"id": 561, "name": "561 Atomic Health", "type": "sprite"},
-        {"id": 564, "name": "564 Armor", "type": "sprite"},
-        {"id": 569, "name": "569 Tripbomb", "type": "sprite"},
-        {"id": 570, "name": "570 Night Vision Goggles", "type": "sprite"},
-        {"id": 574, "mp": True, "name": "MP 574 Shotgun", "type": "sprite"},
-        {"id": 575, "mp": True, "name": "MP 575 Chaingun", "type": "sprite"},
-        {"id": 577, "mp": True, "name": "MP 577 Medkit", "type": "sprite"},
-        {"id": 608, "name": "608 Devastator", "type": "sprite"},
-        {"id": 609, "name": "609 Holo Duke", "type": "sprite"},
-        {"id": 624, "name": "624 Pipebombs", "type": "sprite"},
-        {"id": 632, "name": "632 Scuba Gear", "type": "sprite"},
-        {"id": 636, "name": "636 Armor", "type": "sprite"},
-        {"id": 656, "name": "656 Night Vision Goggles", "type": "sprite"},
-        {"id": 135, "name": "Secret 1", "type": "sector"},
-        {"id": 137, "name": "Secret 2", "type": "sector"},
-        {"id": 161, "name": "Secret 3", "type": "sector"},
-        {"id": 287, "name": "Secret 4", "type": "sector"},
-        {"id": 332, "name": "Secret 5", "type": "sector"},
-        {"id": 338, "name": "Secret 6", "type": "sector"},
-        {"id": 344, "name": "Secret 7", "type": "sector"},
+        {"id": 78, "name": "Booth Jetpack", "type": "sprite"},
+        {"id": 115, "name": "Start Ledge Chaingun", "type": "sprite"},
+        {"id": 116, "name": "Start Ledge Atomic Health", "type": "sprite"},
+        {"id": 161, "name": "Sushi Belt Atomic Health", "type": "sprite"},
+        {"id": 305, "name": "Sushi Belt Freezethrower", "type": "sprite"},
+        {"id": 308, "name": "Start Pit Atomic Health", "type": "sprite"},
+        {"id": 309, "name": "Start Pit Pipebombs", "type": "sprite"},
+        {"id": 389, "name": "Sushi Belt Steroids", "type": "sprite"},
+        {"id": 452, "name": "Blue Key Card", "type": "sprite"},
+        {"id": 457, "name": "Red Key Card", "type": "sprite"},
+        {"id": 492, "name": "Booth Shotgun", "type": "sprite"},
+        {"id": 497, "name": "Hallway Poster Shrinker", "type": "sprite"},
+        {"id": 499, "name": "Booth Backroom Steroids", "type": "sprite"},
+        {"id": 500, "name": "Booth Medkit", "type": "sprite"},
+        {"id": 524, "name": "Karaoke RPG", "type": "sprite"},
+        {"id": 536, "name": "Stove Jetpack", "type": "sprite"},
+        {"id": 543, "name": "Start Pool Pipebombs", "type": "sprite"},
+        {"id": 561, "name": "Sink Atomic Health", "type": "sprite"},
+        {"id": 564, "name": "Kitchen Armor", "type": "sprite"},
+        {"id": 569, "name": "Kitchen Vent Tripbomb", "type": "sprite"},
+        {"id": 570, "name": "Sushi Belt Night Vision Goggles", "type": "sprite"},
+        {"id": 574, "mp": True, "name": "MP Garage Door Shotgun", "type": "sprite"},
+        {"id": 575, "mp": True, "name": "MP Booth Chaingun", "type": "sprite"},
+        {"id": 577, "mp": True, "name": "MP Garage Pool Medkit", "type": "sprite"},
+        {"id": 608, "name": "Start Devastator", "type": "sprite"},
+        {"id": 609, "name": "Start Pool Holo Duke", "type": "sprite"},
+        {"id": 624, "name": "Sushi Belt Cupboard Pipebombs", "type": "sprite"},
+        {"id": 632, "name": "Garage Door Scuba Gear", "type": "sprite"},
+        {"id": 636, "name": "Hallway Armor", "type": "sprite"},
+        {"id": 656, "name": "Night Vision Goggles behind Urn", "type": "sprite"},
+        {"id": 135, "name": "Secret Geisha Wall", "type": "sector"},
+        {"id": 137, "name": "Secret Hallway Sign", "type": "sector"},
+        {"id": 161, "name": "Secret Sushi Belt Wall", "type": "sector"},
+        {"id": 287, "name": "Secret Wine Cabinet", "type": "sector"},
+        {"id": 332, "name": "Secret Sushi Belt Cupboard", "type": "sector"},
+        {"id": 338, "name": "Secret Hallway Wall", "type": "sector"},
+        {"id": 344, "name": "Secret Hallway Poster", "type": "sector"},
         {"id": 0, "name": "Exit", "type": "exit"},
     ]
+    events = ["Backrooms Switch"]
+    must_dive = True
+
+    def main_region(self) -> Region:
+        r = self.rules
+        ret = self.region(
+            self.name,
+            [
+                "Start Devastator",
+                "Booth Jetpack",
+                "Booth Shotgun",
+                "Booth Medkit",
+                "MP Booth Chaingun",
+                "Night Vision Goggles behind Urn",
+                "Secret Hallway Sign",
+                "Hallway Armor",
+                "Secret Hallway Wall",
+                "Secret Geisha Wall",
+            ],
+        )
+        self.restrict("Secret Hallway Sign", r.jump)
+        self.restrict("Hallway Armor", r.jump)
+        self.restrict("Secret Hallway Wall", r.explosives)
+        self.region(
+            "Secret Geisha Wall", r.jump | r.can_crouch
+        )  # Can crouch into the wall from the sign
+
+        start_ledge = self.region(
+            "Start Ledge", ["Start Ledge Chaingun", "Start Ledge Atomic Health"]
+        )
+        self.connect(ret, start_ledge, r.can_sprint | r.jump)
+
+        start_pool = self.region(
+            "Start Pool", ["Start Pool Holo Duke", "Start Pool Pipebombs"]
+        )
+        self.connect(ret, start_pool, r.can_dive)
+
+        starting_ledges = self.region(
+            "Start Pit",
+            [
+                "Start Pit Atomic Health",
+                "Start Pit Pipebombs",
+                "Secret Hallway Poster",
+                "Hallway Poster Shrinker",
+            ],
+        )
+        self.connect(
+            ret, starting_ledges, r.jump
+        )  # Might be able to wiggle around the corner to the pit?
+
+        booth_backroom = self.region(
+            "Booth Backroom", ["Backrooms Switch", "Booth Backroom Steroids"]
+        )
+        self.connect(
+            ret, booth_backroom, r.can_crouch & r.jump
+        )  # can get in with just jetpack but we're stuck then
+
+        hatch_room = self.region(
+            "Hatching Room",
+            ["Blue Key Card", "MP Garage Door Shotgun", "Garage Door Scuba Gear"],
+        )
+        self.connect(ret, hatch_room, self.event("Backrooms Switch"))
+
+        garage_pool = self.region(
+            "Garage Pool", ["MP Garage Pool Medkit", "Red Key Card"]
+        )
+        self.connect(hatch_room, garage_pool, r.can_dive)
+        # clipping from here to the kitchen sink was a EDuke32 only bug, I think
+
+        club_room = self.region(
+            "Club Room",
+            [
+                "Karaoke RPG",
+                "Secret Sushi Belt Wall",
+                "Sushi Belt Freezethrower",
+                "Sushi Belt Night Vision Goggles",
+                "Kitchen Armor",
+                "Secret Wine Cabinet",
+            ],
+        )
+        # don't think the easy wall sign clip works without steroids
+        # but the teleporter to the karaoke stage can be survived without steroids, it's just quite precise
+        self.connect(
+            ret,
+            club_room,
+            self.blue_key
+            | (r.crouch_jump & r.steroids)
+            | (r.difficulty("medium") & r.crouch_jump),
+        )
+
+        sushi_belt_cupboard = self.region(
+            "Sushi Belt Cupboard",
+            ["Secret Sushi Belt Cupboard", "Sushi Belt Cupboard Pipebombs"],
+        )
+        self.connect(club_room, sushi_belt_cupboard, r.can_crouch)
+
+        kitchen_ledges = self.region(
+            "Kitchen Ledges",
+            [
+                "Sushi Belt Atomic Health",
+                "Sushi Belt Steroids",
+                "Stove Jetpack",
+                "Sink Atomic Health",
+                "Kitchen Vent Tripbomb",
+            ],
+        )
+        self.connect(
+            club_room, kitchen_ledges, r.jump
+        )  # there might be a way to clip up the ledges
+
+        garage = self.region("Garage", ["Exit"])
+        # clip to here from the pool only works in Megaton, I think
+        self.connect(club_room, garage, self.red_key)
+        self.restrict("Exit", r.jump)
+        return ret

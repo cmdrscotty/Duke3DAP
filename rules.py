@@ -161,6 +161,8 @@ class Rules(object):
         else:
             self.dive = lambda x: self.true
 
+        self.steroids = HasGroupRule("Steroids")
+
         class Difficulty(Rule):
             difficulty_map = {"easy": 0, "medium": 1, "hard": 2, "extreme": 3}
 

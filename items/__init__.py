@@ -518,6 +518,7 @@ inventory_items = {
 }
 
 item_groups["Jetpack"] = {"Jetpack", "Jetpack Capacity", "Progressive Jetpack"}
+item_groups["Steroids"] = {"Steroids", "Steroids Jetpack"}
 item_groups["Scuba Gear"] = {
     "Scuba Gear",
     "Scuba Gear Capacity",
