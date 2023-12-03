@@ -11,9 +11,9 @@ class E4L7(D3DLevel):
     location_defs = [
         {"id": 8, "name": "Crusher Scuba Gear", "type": "sprite"},
         {"id": 29, "name": "Blue Holo Duke", "type": "sprite"},
-        {"id": 34, "name": "Front Upper Freezethrower", "type": "sprite"},
+        {"id": 34, "name": "Crate Freezethrower", "type": "sprite"},
         {"id": 35, "mp": True, "name": "MP Blue Apt. Jetpack", "type": "sprite"},
-        {"id": 37, "name": "37 Pipebombs", "type": "sprite"},
+        {"id": 37, "name": "Blue Apt. Pipebombs", "type": "sprite"},
         {"id": 83, "name": "Front Upper Armor", "type": "sprite"},
         {"id": 84, "name": "Front Upper Atomic Health", "type": "sprite"},
         {"id": 110, "name": "Crusher RPG", "type": "sprite"},
@@ -28,7 +28,7 @@ class E4L7(D3DLevel):
         {"id": 195, "name": "Blue Secret Shrinker", "type": "sprite"},
         {"id": 207, "mp": True, "name": "MP Outside Shotgun", "type": "sprite"},
         {"id": 216, "name": "Blue Atomic Health", "type": "sprite"},
-        {"id": 245, "name": "Blue Secret Night Vision Goggles", "type": "sprite"},
+        {"id": 245, "name": "Blue Night Vision Goggles", "type": "sprite"},
         {"id": 322, "name": "Blue Medkit", "type": "sprite"},
         {"id": 331, "name": "Front Steroids", "type": "sprite"},
         {"id": 365, "mp": True, "name": "MP Blue Jetpack", "type": "sprite"},
@@ -59,9 +59,9 @@ class E4L7(D3DLevel):
             [
                 "Front Upper Armor",
                 "Front Upper Atomic Health",
-                "Front Upper Freezethrower",
                 "Front Upper Blue Key Card",
                 "Crate Secret",
+                "Crate Freezethrower",
             ],
         )
         self.connect(ret, front_upper, r.jump)
@@ -79,6 +79,7 @@ class E4L7(D3DLevel):
                 "Blue Apt. Secret",
                 "Blue Apt. RPG",
                 "MP Blue Apt. Jetpack",
+                "Blue Apt. Pipebombs",
             ],
         )
         # One way, cant go back without crouching
@@ -88,17 +89,26 @@ class E4L7(D3DLevel):
         blue_dive = self.region(
             "Blue Dive Area",
             [
-                "Blue Secret Shrinker",
-                "Blue Secret",
-                "Blue Secret Night Vision Goggles",
+                "Blue Night Vision Goggles",
                 "Cola Tripbomb 1",
                 "Cola Tripbomb 2",
             ],
         )
         # Crouchjump through window skips dive and jetpack requirement
-        self.connect(blue_key_area, blue_dive, (r.can_dive & r.jetpack(50)) |
+        self.connect(blue_key_area, blue_dive, r.can_dive |
                      r.crouch_jump)
         
+        blue_secret = self.region(
+            "Blue Secret",
+            [
+                "Blue Secret Shrinker",
+                "Blue Secret",
+            ],
+        )
+        # Clip on top of trashcan and strafe around to secret
+        self.connect(blue_dive, blue_secret, r.jump |
+                     (r.difficulty("Hard")))
+
         dive_crusher = self.region(
             "Dive Crusher",
             [
