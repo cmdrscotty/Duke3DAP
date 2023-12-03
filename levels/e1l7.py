@@ -46,7 +46,7 @@ class E1L7(D3DLevel):
     ]
     must_dive = True
 
-    def main_region2(self) -> Region:
+    def main_region(self) -> Region:
         r = self.rules
         ret = self.region(
             self.name,

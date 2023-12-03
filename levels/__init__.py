@@ -65,7 +65,7 @@ class E2(D3DEpisode):
         E2L10(),
         E2L11(),
     ]
-    maxlevel = 0
+    maxlevel = 5
     bosslevel = 8
 
 

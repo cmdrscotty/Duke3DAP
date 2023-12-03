@@ -163,18 +163,12 @@ class Rules(object):
 
         self.steroids = HasGroupRule("Steroids")
 
-        class Difficulty(Rule):
-            difficulty_map = {"easy": 0, "medium": 1, "hard": 2, "extreme": 3}
-
-            def __init__(self, difficulty: str):
-                self.difficulty = difficulty
-
-            def __call__(self, state: CollectionState) -> bool:
-                return self.difficulty_map.get(self.difficulty, 0) <= world.get_option(
-                    "difficulty"
-                )
-
-        self.difficulty = Difficulty
+        difficulty_map = {"easy": 0, "medium": 1, "hard": 2, "extreme": 3}
+        self.difficulty = (
+            lambda difficulty: self.true
+            if difficulty_map.get(difficulty, 0) <= world.get_option("difficulty")
+            else self.false
+        )
 
         self.explosives = self.has_group("Explosives")
         # This is technically not correct because some of them provide more capacity, so this is stricter than it
