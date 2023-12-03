@@ -28,7 +28,7 @@ class E4L2(D3DLevel):
         {"id": 417, "name": "Kitchen Shotgun", "type": "sprite"},
         {"id": 418, "name": "Kitchen Corner Chaingun", "type": "sprite"},
         {"id": 423, "name": "Outside Steroids", "type": "sprite"},
-        {"id": 563, "mp": True, "name": "Outside Sign Holo Duke", "type": "sprite"},
+        {"id": 563, "mp": True, "name": "MP Outside Sign Holo Duke", "type": "sprite"},
         {"id": 595, "name": "Slaughterhouse Devastator", "type": "sprite"},
         {"id": 663, "name": "Outside Sign Shrinker", "type": "sprite"},
         {"id": 664, "name": "Outside Sign Blue Key Card", "type": "sprite"},
@@ -56,7 +56,7 @@ class E4L2(D3DLevel):
             "Outside Sign",
             [
                 "Outside Sign Shrinker",
-                "Outside Sign Holo Duke",
+                "MP Outside Sign Holo Duke",
                 "Outside Sign Blue Key Card",
             ],
         )
