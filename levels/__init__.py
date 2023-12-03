@@ -46,6 +46,7 @@ class E1(D3DEpisode):
     volumenum = 0
     levels = [E1L1(), E1L2(), E1L3(), E1L4(), E1L5(), E1L6(), E1L7()]
     maxlevel = 6
+    bosslevel = 5
 
 
 class E2(D3DEpisode):
@@ -65,6 +66,7 @@ class E2(D3DEpisode):
         E2L11(),
     ]
     maxlevel = 0
+    bosslevel = 8
 
 
 class E3(D3DEpisode):
@@ -83,7 +85,8 @@ class E3(D3DEpisode):
         E3L10(),
         E3L11(),
     ]
-    maxlevel = 3
+    maxlevel = 11
+    bosslevel = 8
 
 
 class E4(D3DEpisode):
@@ -103,6 +106,7 @@ class E4(D3DEpisode):
         E4L11(),
     ]
     maxlevel = 0
+    bosslevel = 9
 
 
 all_episodes = [E1(), E2(), E3(), E4()]

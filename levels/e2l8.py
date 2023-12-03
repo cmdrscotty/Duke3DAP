@@ -76,5 +76,5 @@ class E2L8(D3DLevel):
         {"id": 713, "name": "Secret 6", "type": "sector"},
         {"id": 726, "name": "Secret 7", "type": "sector"},
         {"id": 0, "name": "Exit", "type": "exit"},
-        {"id": 10, "name": "Secret Exit", "type": "exit"},
+        {"id": 11, "name": "Secret Exit", "type": "exit"},
     ]

@@ -61,16 +61,16 @@ class E1L3(D3DLevel):
         {"name": "Control Room Chaingun", "id": 899, "type": "sprite"},
         {"name": "Chapel Window Steroids", "id": 902, "type": "sprite"},
         {"name": "MP Cell Block 02 Jetpack", "id": 903, "type": "sprite", "mp": True},
-        {"name": "Courtyard Tunnel", "id": 76, "type": "sector"},
-        {"name": "Electric Chair", "id": 296, "type": "sector"},
-        {"name": "Chapel Rafters", "id": 304, "type": "sector"},
-        {"name": "Chapel Window", "id": 317, "type": "sector"},
-        {"name": "Behind Bed", "id": 379, "type": "sector"},
-        {"name": "Submarine Engine Room", "id": 387, "type": "sector"},
-        {"name": "Submarine Gate Hidden Alcove", "id": 393, "type": "sector"},
-        {"name": "Breakable Canyon Wall", "id": 401, "type": "sector"},
-        {"name": "Control Room Right Alcove", "id": 424, "type": "sector"},
-        {"name": "Control Room Left Alcove", "id": 426, "type": "sector"},
+        {"name": "Secret Courtyard Tunnel", "id": 76, "type": "sector"},
+        {"name": "Secret Electric Chair", "id": 296, "type": "sector"},
+        {"name": "Secret Chapel Rafters", "id": 304, "type": "sector"},
+        {"name": "Secret Chapel Window", "id": 317, "type": "sector"},
+        {"name": "Secret Behind Bed", "id": 379, "type": "sector"},
+        {"name": "Secret Submarine Engine Room", "id": 387, "type": "sector"},
+        {"name": "Secret Submarine Gate Hidden Alcove", "id": 393, "type": "sector"},
+        {"name": "Secret Breakable Canyon Wall", "id": 401, "type": "sector"},
+        {"name": "Secret Control Room Right Alcove", "id": 424, "type": "sector"},
+        {"name": "Secret Control Room Left Alcove", "id": 426, "type": "sector"},
         {"name": "Exit", "id": 0, "type": "exit"},
     ]
     events = ["Unlock Cell Blocks"]
@@ -80,8 +80,10 @@ class E1L3(D3DLevel):
         r = self.rules
         ret = self.region(self.name)
 
-        electric_chair = self.region("Electric Chair")
-        self.add_locations(["Electric Chair", "Electric Chair Shotgun"], electric_chair)
+        electric_chair = self.region("Secret Electric Chair")
+        self.add_locations(
+            ["Secret Electric Chair", "Electric Chair Shotgun"], electric_chair
+        )
         self.connect(ret, electric_chair, r.can_crouch)
 
         hallway = self.region(
@@ -92,16 +94,16 @@ class E1L3(D3DLevel):
                 "Hanged Monk Atomic Health",
                 "Chapel Rafters Atomic Health",
                 "Chapel Rafters Armor",
-                "Chapel Rafters",
-                "Behind Bed",
+                "Secret Chapel Rafters",
+                "Secret Behind Bed",
             ],
         )
         self.connect(ret, hallway, r.jump)
-        self.restrict("Behind Bed", r.can_crouch)
+        self.restrict("Secret Behind Bed", r.can_crouch)
 
         altar = self.region(
             "Chapel Altar",
-            ["Chapel Window Steroids", "Chapel Window", "Chapel Chaingun"],
+            ["Chapel Window Steroids", "Secret Chapel Window", "Chapel Chaingun"],
         )
         self.connect(hallway, altar, r.jump)
 
@@ -151,9 +153,9 @@ class E1L3(D3DLevel):
         control_room_ledges = self.region(
             "Control Room Top Ledges",
             [
-                "Control Room Left Alcove",
+                "Secret Control Room Left Alcove",
                 "Control Room Secret Pipebombs",
-                "Control Room Right Alcove",
+                "Secret Control Room Right Alcove",
                 "Control Room Secret Atomic Health",
                 "Control Room Chaingun",
             ],
@@ -168,7 +170,7 @@ class E1L3(D3DLevel):
         courtyard_ledge = self.region(
             "Courtyard Ledge",
             [
-                "Courtyard Tunnel",
+                "Secret Courtyard Tunnel",
                 "Courtyard Tunnel Atomic Health 1",
                 "Courtyard Tunnel Atomic Health 2",
                 "Courtyard Tunnel Atomic Health 3",
@@ -180,7 +182,7 @@ class E1L3(D3DLevel):
         courtyard_canyon = self.region(
             "Courtyard Canyon",
             [
-                "Breakable Canyon Wall",
+                "Secret Breakable Canyon Wall",
                 "Breakable Canyon Wall Steroids",
             ],
         )
@@ -210,7 +212,7 @@ class E1L3(D3DLevel):
         dock_secret = self.region(
             "Submarine Dock Door Secret",
             [
-                "Submarine Gate Hidden Alcove",
+                "Secret Submarine Gate Hidden Alcove",
                 "Submarine Gate Hidden Night Vision Goggles",
             ],
         )
@@ -220,7 +222,7 @@ class E1L3(D3DLevel):
             "Submarine",
             [
                 "Underwater Pipebombs",
-                "Submarine Engine Room",
+                "Secret Submarine Engine Room",
                 "Submarine Engine Room Medkit",
                 "Exit",
             ],

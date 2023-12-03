@@ -30,7 +30,7 @@ class D3DWorld(World):
     Duke Nukem 3D Randomizer
     """
 
-    game = "Duke3D"
+    game = "Duke Nukem 3D"
     build_game_id = GAME_ID
     game_full_name = "Duke Nukem 3D"
     item_name_to_id = {

@@ -145,7 +145,7 @@ class E3L4(D3DLevel):
             ],
         )
         self.connect(tower, broken_billboard, r.can_jump | r.can_sprint)
-        self.connect(ret, broken_billboard, r.jetpack(100))
+        self.connect(ret, broken_billboard, r.jetpack(100) | r.crouch_jump)
         self.restrict("Billboard Shrinker", r.can_jump | r.jetpack(100))
 
         office_building = self.region(

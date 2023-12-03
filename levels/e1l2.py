@@ -55,14 +55,14 @@ class E1L2(D3DLevel):
             "type": "sprite",
             "mp": True,
         },
-        {"name": "Strip Club Vents", "id": 91, "type": "sector"},
-        {"name": "Hidden Ledge behind Curtains", "id": 107, "type": "sector"},
-        {"name": "Pornography Store Corner", "id": 158, "type": "sector"},
-        {"name": "Pornography Store Shelves", "id": 161, "type": "sector"},
-        {"name": "Pornography Store Dark Area", "id": 172, "type": "sector"},
-        {"name": "Behind Strippers", "id": 177, "type": "sector"},
-        {"name": "Attic Hidden Compartment", "id": 187, "type": "sector"},
-        {"name": "Sewers", "id": 218, "type": "sector"},
+        {"name": "Secret Strip Club Vents", "id": 91, "type": "sector"},
+        {"name": "Secret Hidden Ledge behind Curtains", "id": 107, "type": "sector"},
+        {"name": "Secret Pornography Store Corner", "id": 158, "type": "sector"},
+        {"name": "Secret Pornography Store Shelves", "id": 161, "type": "sector"},
+        {"name": "Secret Pornography Store Dark Area", "id": 172, "type": "sector"},
+        {"name": "Secret Behind Strippers", "id": 177, "type": "sector"},
+        {"name": "Secret Attic Hidden Compartment", "id": 187, "type": "sector"},
+        {"name": "Secret Sewers", "id": 218, "type": "sector"},
         {"name": "Exit", "id": 0, "type": "exit"},
     ]
 
@@ -73,11 +73,11 @@ class E1L2(D3DLevel):
         streets = self.region(
             "Streets",
             [
-                "Pornography Store Shelves",
+                "Secret Pornography Store Shelves",
                 "Pornography Store Shelves Armor",
                 "Pornography Store Shelves Pipebombs",
                 "Pornography Store Shotgun",
-                "Pornography Store Dark Area",
+                "Secret Pornography Store Dark Area",
                 "Dark Area Atomic Health",
                 "Video Booth Steroids",
                 "Chaingun near Blue Key Card",
@@ -93,7 +93,7 @@ class E1L2(D3DLevel):
                 "Outside Ledge Armor",
                 "Pornography Store Atomic Health",
                 "Pornography Store Corner Holo Duke",
-                "Pornography Store Corner",
+                "Secret Pornography Store Corner",
             ],
         )
         self.connect(streets, streets_ledge, r.jump)
@@ -113,7 +113,7 @@ class E1L2(D3DLevel):
         sewers = self.region(
             "Sewers",
             [
-                "Sewers",
+                "Secret Sewers",
                 "Sewers Steroids",
                 "Sewers Pipebombs",
                 "Sewers Atomic Health",
@@ -147,15 +147,15 @@ class E1L2(D3DLevel):
         dance_floor = self.region(
             "Dance Floor",
             [
-                "Strip Club Vents",
+                "Secret Strip Club Vents",
                 "Vent Atomic Health",
                 "Vent Pipebombs",
-                "Behind Strippers",
+                "Secret Behind Strippers",
                 "Strippers Chaingun",
-                "Hidden Ledge behind Curtains",
+                "Secret Hidden Ledge behind Curtains",
                 "Night Vision Goggles behind Curtains",
                 "Attic Medkit",
-                "Attic Hidden Compartment",
+                "Secret Attic Hidden Compartment",
                 "Exit",
             ],
         )
@@ -163,7 +163,7 @@ class E1L2(D3DLevel):
         self.connect(strip_club, dance_floor, self.red_key & r.jump)
         # Need to be able to run or jetpack to reach ledge
         self.restrict(
-            "Hidden Ledge behind Curtains",
+            "Secret Hidden Ledge behind Curtains",
             r.can_sprint | r.jetpack(50),
         )
         self.restrict(

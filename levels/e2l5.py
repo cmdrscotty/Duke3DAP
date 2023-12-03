@@ -41,5 +41,5 @@ class E2L5(D3DLevel):
         {"id": 225, "name": "Secret 3", "type": "sector"},
         {"id": 238, "name": "Secret 4", "type": "sector"},
         {"id": 0, "name": "Exit", "type": "exit"},
-        {"id": 9, "name": "Secret Exit", "type": "exit"},
+        {"id": 10, "name": "Secret Exit", "type": "exit"},
     ]

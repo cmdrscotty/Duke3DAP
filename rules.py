@@ -199,3 +199,22 @@ class Rules(object):
 
         # General Stuff
         self.level = lambda level_cls: HasRule(level_cls.unlock)
+
+        # Boss kill logic, difficulty dependant
+        self.can_kill_boss_1 = (
+            self.rpg
+        )  # Enough RPG Ammo for a kill in the room, ToDo better logic
+        self.can_kill_boss_2 = self.true
+        # can jump on goal post and have boss suicide on splash damage, or blimp spawns enough ammo
+        self.can_kill_boss_3 = (
+            self.rpg
+            | self.devastator
+            | (
+                self.difficulty("medium")
+                & (
+                    (self.can_jump & (self.can_sprint | self.steroids))
+                    | self.jetpack(50)
+                )
+            )
+        )
+        self.can_kill_boss_4 = self.true

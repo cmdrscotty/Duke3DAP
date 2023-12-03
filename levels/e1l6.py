@@ -39,10 +39,10 @@ class E1L6(D3DLevel):
         {"name": "Launch Room Holo Duke", "id": 697, "type": "sprite"},
         {"name": "Gate Room Armor", "id": 707, "type": "sprite"},
         {"name": "MP Start Jetpack", "id": 726, "type": "sprite", "mp": True},
-        {"name": "Sewer Computers", "id": 218, "type": "sector"},
-        {"name": "Toxic Waste Pool", "id": 224, "type": "sector"},
-        {"name": "Dark Room Ceiling Vent", "id": 277, "type": "sector"},
-        {"name": "Gate Room Wall", "id": 327, "type": "sector"},
+        {"name": "Secret Sewer Computers", "id": 218, "type": "sector"},
+        {"name": "Secret Toxic Waste Pool", "id": 224, "type": "sector"},
+        {"name": "Secret Dark Room Ceiling Vent", "id": 277, "type": "sector"},
+        {"name": "Secret Gate Room Wall", "id": 327, "type": "sector"},
         {"name": "Exit", "id": 0, "type": "exit"},
     ]
     must_dive = True
@@ -70,9 +70,9 @@ class E1L6(D3DLevel):
         self.restrict("Dark Room Atomic Health", r.can_sprint | r.jump)
 
         waste_pool = self.region(
-            "Toxic Waste Pool",
+            "Secret Toxic Waste Pool",
             [
-                "Toxic Waste Pool",
+                "Secret Toxic Waste Pool",
                 "Toxic Waste Pool Shotgun",
                 "Toxic Waste Pool Atomic Health 1",
                 "Toxic Waste Pool Atomic Health 2",
@@ -82,7 +82,7 @@ class E1L6(D3DLevel):
         self.connect(ret, waste_pool, r.can_dive)
 
         vent = self.region(
-            "Dark Room Vent", ["Dark Room Ceiling Vent", "Vent Pipebombs"]
+            "Dark Room Vent", ["Secret Dark Room Ceiling Vent", "Vent Pipebombs"]
         )
         # Plenty of lizard troopers to jump on
         self.connect(ret, vent, r.jetpack(50) | (r.difficulty("medium") & r.can_jump))
@@ -92,7 +92,7 @@ class E1L6(D3DLevel):
             [
                 "MP Gate Room Shotgun",
                 "Red Key Card",
-                "Gate Room Wall",
+                "Secret Gate Room Wall",
                 "Gate Room Armor",
                 "Outside Rocket Night Vision Goggles",
                 "Rocket Jetpack",
@@ -113,7 +113,7 @@ class E1L6(D3DLevel):
         sewer_ledge = self.region(
             "Sewer Ledge",
             [
-                "Sewer Computers",
+                "Secret Sewer Computers",
                 "Sewer Computers Atomic Health 1",
                 "Sewer Computers Atomic Health 2",
                 "Sewer Computers Atomic Health 3",

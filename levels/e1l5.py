@@ -78,11 +78,11 @@ class E1L5(D3DLevel):
         {"name": "Fire Pit Atomic Health", "id": 1046, "type": "sprite"},
         {"name": "Secret Fire Pit Atomic Health 1", "id": 1047, "type": "sprite"},
         {"name": "Secret Fire Pit Atomic Health 2", "id": 1048, "type": "sprite"},
-        {"name": "Red Waterfall Passage", "id": 7, "type": "sector"},
-        {"name": "Dancing Shaman", "id": 21, "type": "sector"},
-        {"name": "Top of Spaceship", "id": 257, "type": "sector"},
-        {"name": "Fire Pit Hidden Wall", "id": 354, "type": "sector"},
-        {"name": "Fire Pit Teleporter", "id": 440, "type": "sector"},
+        {"name": "Secret Red Waterfall Passage", "id": 7, "type": "sector"},
+        {"name": "Secret Dancing Shaman", "id": 21, "type": "sector"},
+        {"name": "Secret Top of Spaceship", "id": 257, "type": "sector"},
+        {"name": "Secret Fire Pit Hidden Wall", "id": 354, "type": "sector"},
+        {"name": "Secret Fire Pit Teleporter", "id": 440, "type": "sector"},
         {"name": "Secret Fire Pit Ledge", "id": 441, "type": "sector"},
         {"name": "Exit", "id": 0, "type": "exit"},
     ]
@@ -140,10 +140,10 @@ class E1L5(D3DLevel):
                 "MP Ruins Staircase Atomic Health",
                 "MP Ruins Staircase Armor",
                 "Fire Pit Steroids",
-                "Fire Pit Hidden Wall",
+                "Secret Fire Pit Hidden Wall",
                 "Fire Pit Pipe Bombs",
                 "Fire Pit Atomic Health",
-                "Fire Pit Teleporter",
+                "Secret Fire Pit Teleporter",
                 "MP Shrinker Room Steroids",
                 "Bottom of Ruins Protective Boots",
                 "MP Bottom of Ruins Shotgun",
@@ -182,12 +182,12 @@ class E1L5(D3DLevel):
                 "Dancing Shaman Atomic Health 1",
                 "Dancing Shaman Atomic Health 2",
                 "Dancing Shaman Atomic Health 3",
-                "Dancing Shaman",
-                "Red Waterfall Passage",
+                "Secret Dancing Shaman",
+                "Secret Red Waterfall Passage",
             ],
         )
         self.connect(beyond_fault, red_waterfall, r.can_jump | r.jetpack(100))
-        self.restrict("Red Waterfall Passage", r.explosives)
+        self.restrict("Secret Red Waterfall Passage", r.explosives)
 
         ship_entrance = self.region(
             "Ship Entrance",
@@ -200,7 +200,7 @@ class E1L5(D3DLevel):
                 "Cracked Wall End Atomic Health",
                 "Canyon Pillars RPG",
                 "Spaceship Entrance Armor",
-                "Top of Spaceship",
+                "Secret Top of Spaceship",
                 "Top of Spaceship Atomic Health",
             ],
         )
@@ -226,8 +226,6 @@ class E1L5(D3DLevel):
         # Big drop, can't get back
         self.connect(ship_entrance, spaceship, r.true)
         # Not sure if the Exit button clip works on Rednukem or is only in Megaton physics
-        self.restrict(
-            "Exit", r.rpg
-        )  # Enough RPG Ammo for a kill in the room, ToDo better logic
+        self.restrict("Exit", r.can_kill_boss_1)
 
         return ret

@@ -41,8 +41,8 @@ class E1L7(D3DLevel):
         {"name": "Water Tank Shrinker", "id": 238, "type": "sprite"},
         {"name": "Main Room Pipebombs", "id": 248, "type": "sprite"},
         {"name": "Blue Key Card", "id": 302, "type": "sprite"},
-        {"name": "Behind Waterfall 1", "id": 110, "type": "sector"},
-        {"name": "Behind Waterfall 2", "id": 111, "type": "sector"},
+        {"name": "Secret Behind Waterfall 1", "id": 110, "type": "sector"},
+        {"name": "Secret Behind Waterfall 2", "id": 111, "type": "sector"},
     ]
     must_dive = True
 
@@ -71,8 +71,8 @@ class E1L7(D3DLevel):
         waterfall = self.region(
             "Waterfall Secrets",
             [
-                "Behind Waterfall 1",
-                "Behind Waterfall 2",
+                "Secret Behind Waterfall 1",
+                "Secret Behind Waterfall 2",
                 "Waterfall 1 Armor",
                 "Waterfall 2 Armor",
                 "Waterfall 1 Atomic Health",
