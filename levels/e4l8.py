@@ -7,7 +7,7 @@ class E4L8(D3DLevel):
     name = "Critical Mass"
     levelnum = 7
     volumenum = 3
-    keys = ["Red"]
+    keys = ["Red", "Blue", "Yellow"]
     location_defs = [
         {"id": 313, "name": "313 Night Vision Goggles", "type": "sprite"},
         {"id": 323, "mp": True, "name": "MP 323 Jetpack", "type": "sprite"},

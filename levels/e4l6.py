@@ -7,7 +7,7 @@ class E4L6(D3DLevel):
     name = "Going Postal"
     levelnum = 5
     volumenum = 3
-    keys = ["Red"]
+    keys = ["Red", "Blue", "Yellow"]
     location_defs = [
         {"id": 25, "name": "Firetruck Protective Boots", "type": "sprite"},
         {"id": 26, "name": "Firetruck Devastator", "type": "sprite"},

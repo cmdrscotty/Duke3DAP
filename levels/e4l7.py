@@ -7,7 +7,7 @@ class E4L7(D3DLevel):
     name = "XXX-Stacy"
     levelnum = 6
     volumenum = 3
-    keys = ["Red"]
+    keys = ["Red", "Blue"]
     location_defs = [
         {"id": 8, "name": "Crusher Scuba Gear", "type": "sprite"},
         {"id": 29, "name": "Blue Holo Duke", "type": "sprite"},
