@@ -557,6 +557,7 @@ class D3DWorld(World):
                 self.item_name_to_id[item]
                 for item in self.multiworld.start_inventory[self.player].value.keys()
             ],
+            "seed": str(self.multiworld.seed)
         }
 
         with io.open(
