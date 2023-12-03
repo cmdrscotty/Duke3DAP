@@ -13,13 +13,13 @@ except ImportError:
 from BaseClasses import ItemClassification, MultiWorld, Region
 from worlds.AutoWorld import World
 
+from . import resources
 from .base_classes import D3DItem, D3DLevel, LocationDef
 from .id import GAME_ID, local_id, net_id
 from .items import all_items, item_groups
 from .levels import all_episodes
 from .options import Duke3DOptions
 from .rules import Rules
-from . import resources
 
 with files(resources).joinpath("id_map.json").open() as id_file:
     game_ids = json.load(id_file)

@@ -33,8 +33,8 @@ class E2L6(D3DLevel):
         {"id": 545, "name": "545 Freezethrower", "type": "sprite"},
         {"id": 549, "name": "549 Medkit", "type": "sprite"},
         {"id": 551, "name": "551 Chaingun", "type": "sprite"},
-        {"id": 567, "name": "567 Tripbomb", "type": "sprite"},
-        {"id": 568, "name": "568 Tripbomb", "type": "sprite"},
+        {"id": 567, "name": "567 Tripmine", "type": "sprite"},
+        {"id": 568, "name": "568 Tripmine", "type": "sprite"},
         {"id": 607, "name": "607 Night Vision Goggles", "type": "sprite"},
         {"id": 608, "name": "608 Night Vision Goggles", "type": "sprite"},
         {

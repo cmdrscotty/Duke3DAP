@@ -191,5 +191,11 @@ class Rules(object):
             self.glitched & self.can_jump & self.can_crouch & self.can_sprint
         )
 
+        # Some simplifications for progressive items
+        self.rpg = self.has_group("RPG")
+        self.pipebomb = self.has_group("Pipebomb")
+        self.devastator = self.has_group("Devastator")
+        self.tripmine = self.has_group("Tripmine")
+
         # General Stuff
         self.level = lambda level_cls: HasRule(level_cls.unlock)

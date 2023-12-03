@@ -11,9 +11,9 @@ class E3L10(D3DLevel):
     location_defs = [
         {"id": 0, "name": "0 Shotgun", "type": "sprite"},
         {"id": 3, "name": "3 Shotgun", "type": "sprite"},
-        {"id": 13, "name": "13 Tripbomb", "type": "sprite"},
-        {"id": 14, "name": "14 Tripbomb", "type": "sprite"},
-        {"id": 15, "name": "15 Tripbomb", "type": "sprite"},
+        {"id": 13, "name": "13 Tripmine", "type": "sprite"},
+        {"id": 14, "name": "14 Tripmine", "type": "sprite"},
+        {"id": 15, "name": "15 Tripmine", "type": "sprite"},
         {"id": 16, "name": "16 Armor", "type": "sprite"},
         {"id": 17, "name": "17 Night Vision Goggles", "type": "sprite"},
         {"id": 18, "name": "18 Medkit", "type": "sprite"},

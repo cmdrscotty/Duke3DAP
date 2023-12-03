@@ -141,10 +141,7 @@ class E1L2(D3DLevel):
             strip_club,
             construction_site,
             r.difficulty("medium")
-            & (
-                (r.has_group("Devastator") & r.jetpack(50))
-                | r.has_group("Tripmine") & r.jetpack(100)
-            ),
+            & ((r.devastator & r.jetpack(50)) | r.tripmine & r.jetpack(100)),
         )
 
         dance_floor = self.region(

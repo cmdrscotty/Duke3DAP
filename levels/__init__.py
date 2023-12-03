@@ -83,7 +83,7 @@ class E3(D3DEpisode):
         E3L10(),
         E3L11(),
     ]
-    maxlevel = 1
+    maxlevel = 3
 
 
 class E4(D3DEpisode):

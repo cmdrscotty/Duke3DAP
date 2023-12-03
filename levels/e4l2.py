@@ -9,15 +9,15 @@ class E4L2(D3DLevel):
     volumenum = 3
     keys = ["Red"]
     location_defs = [
-        {"id": 59, "name": "59 Tripbomb", "type": "sprite"},
+        {"id": 59, "name": "59 Tripmine", "type": "sprite"},
         {"id": 75, "name": "75 RPG", "type": "sprite"},
         {"id": 98, "name": "98 Pipebombs", "type": "sprite"},
         {"id": 101, "name": "101 Steroids", "type": "sprite"},
         {"id": 102, "name": "102 Medkit", "type": "sprite"},
         {"id": 125, "name": "125 Freezethrower", "type": "sprite"},
         {"id": 140, "name": "140 Pipebombs", "type": "sprite"},
-        {"id": 150, "name": "150 Tripbomb", "type": "sprite"},
-        {"id": 151, "name": "151 Tripbomb", "type": "sprite"},
+        {"id": 150, "name": "150 Tripmine", "type": "sprite"},
+        {"id": 151, "name": "151 Tripmine", "type": "sprite"},
         {"id": 198, "name": "198 Red Key Card", "type": "sprite"},
         {"id": 217, "name": "217 Armor", "type": "sprite"},
         {"id": 354, "name": "354 Armor", "type": "sprite"},

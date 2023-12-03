@@ -18,7 +18,7 @@ class E2L3(D3DLevel):
         {"name": "MP Control Room Jetpack", "id": 91, "type": "sprite", "mp": True},
         {"name": "Ready Room Medkit", "id": 96, "type": "sprite"},
         {"name": "Control Room Devastator", "id": 135, "type": "sprite"},
-        {"name": "Engine Room Tripbomb", "id": 162, "type": "sprite"},
+        {"name": "Engine Room Tripmine", "id": 162, "type": "sprite"},
         {"name": "Start Chaingun", "id": 177, "type": "sprite"},
         {"name": "Wall Panel Freezethrower", "id": 182, "type": "sprite"},
         {"name": "Wall Panel Pipebombs", "id": 226, "type": "sprite"},

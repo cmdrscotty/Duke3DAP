@@ -19,7 +19,7 @@ class E2L11(D3DLevel):
         {"id": 102, "name": "102 Atomic Health", "type": "sprite"},
         {"id": 104, "name": "104 Pipebombs", "type": "sprite"},
         {"id": 109, "name": "109 Steroids", "type": "sprite"},
-        {"id": 111, "name": "111 Tripbomb", "type": "sprite"},
+        {"id": 111, "name": "111 Tripmine", "type": "sprite"},
         {"id": 112, "name": "112 Medkit", "type": "sprite"},
         {"id": 113, "mp": True, "name": "MP 113 Shrinker", "type": "sprite"},
         {"id": 115, "name": "115 Chaingun", "type": "sprite"},

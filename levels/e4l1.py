@@ -9,15 +9,15 @@ class E4L1(D3DLevel):
     volumenum = 3
     keys = ["Red"]
     location_defs = [
-        {"id": 4, "name": "4 Tripbomb", "type": "sprite"},
+        {"id": 4, "name": "4 Tripmine", "type": "sprite"},
         {"id": 47, "name": "47 Freezethrower", "type": "sprite"},
         {"id": 53, "name": "53 Night Vision Goggles", "type": "sprite"},
         {"id": 54, "name": "54 Holo Duke", "type": "sprite"},
         {"id": 56, "name": "56 Pipebombs", "type": "sprite"},
         {"id": 135, "name": "135 Red Key Card", "type": "sprite"},
         {"id": 136, "name": "136 Blue Key Card", "type": "sprite"},
-        {"id": 149, "name": "149 Tripbomb", "type": "sprite"},
-        {"id": 150, "name": "150 Tripbomb", "type": "sprite"},
+        {"id": 149, "name": "149 Tripmine", "type": "sprite"},
+        {"id": 150, "name": "150 Tripmine", "type": "sprite"},
         {"id": 151, "name": "151 Pipebombs", "type": "sprite"},
         {"id": 152, "mp": True, "name": "MP 152 Steroids", "type": "sprite"},
         {"id": 170, "name": "170 Atomic Health", "type": "sprite"},

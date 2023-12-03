@@ -134,18 +134,20 @@ def bundle_grp(target: Path, file_name: str):
     # update ids for consistency
     all_ids = update_ids()
     generate_ap_config(all_ids)
-    grp_zip_loc = target / f'{file_name}.zip'
+    grp_zip_loc = target / f"{file_name}.zip"
     out = ZipFile(grp_zip_loc, "w")
     for dep in DEPENDENCIES:
         out.write(dep, dep.name)
     out.close()
 
     # Update grpinfo file as well
-    grpinfo_loc = target / f'{file_name}.grpinfo'
+    grpinfo_loc = target / f"{file_name}.grpinfo"
     grp_size = grp_zip_loc.stat().st_size
     with io.open(grp_zip_loc, "rb") as zip_file:
         grp_crc = binascii.crc32(zip_file.read()) & 0xFFFFFFFF
-    grp_info = GRP_INFO_TEMPLATE.replace("{size}", str(grp_size)).replace("{crc32}", f'{grp_crc:#08x}')
+    grp_info = GRP_INFO_TEMPLATE.replace("{size}", str(grp_size)).replace(
+        "{crc32}", f"{grp_crc:#08x}"
+    )
     with io.open(grpinfo_loc, "w", encoding="utf-8") as grpinfo_file:
         grpinfo_file.write(grp_info)
 
