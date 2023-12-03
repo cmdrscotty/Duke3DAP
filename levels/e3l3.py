@@ -64,6 +64,7 @@ class E3L3(D3DLevel):
         {"id": 259, "name": "Secret Hard Hat Area", "type": "sector"},
         {"id": 0, "name": "Exit", "type": "exit"},
     ]
+    must_dive = True
 
     def main_region(self) -> Region:
         r = self.rules
