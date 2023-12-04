@@ -60,6 +60,7 @@ class E4L2(D3DLevel):
                 "Blue Key Card",
             ],
         )
+        self.connect(ret, outside_sign, r.jump)
 
         kitchen_secret = self.region(
             "Kitchen Vent",

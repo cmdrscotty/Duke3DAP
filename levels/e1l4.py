@@ -97,7 +97,7 @@ class E1L4(D3DLevel):
             [
                 "Secret Top of Submarine",
                 "Submarine Medkit",
-                "Submarine Atomic Health)",
+                "Submarine Atomic Health",
                 "Submarine Armor",
             ],
         )

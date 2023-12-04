@@ -46,6 +46,7 @@ class E4L8(D3DLevel):
         {"id": 240, "name": "Secret Blue Upper", "type": "sector"},
         {"id": 0, "name": "Exit", "type": "exit"},
     ]
+    must_dive = True
 
     def main_region(self) -> Region:
         r = self.rules

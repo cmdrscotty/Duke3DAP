@@ -109,7 +109,8 @@ class E4L11(D3DLevel):
                 "Vent Secret Atomic Health",
             ],
         )
-        self.connect(vent_entrance, vent_secret, r.jetpack(50))
+        # 50ish for the vent and 25 for the no jump entrance to here
+        self.connect(vent_entrance, vent_secret, r.jetpack(75))
 
         blue_key_area = self.region(
             "Blue Key Area",
@@ -126,14 +127,22 @@ class E4L11(D3DLevel):
         blue_upper = self.region(
             "Blue Upper Area",
             [
+                "Blue Holo Duke",
+            ],
+        )
+        self.connect(blue_key_area, blue_upper, r.jump)
+
+        secret_symbol = self.region(
+            "Secret Symbol",
+            [
                 "Secret Symbol",
                 "Symbol Atomic Health",
-                "Blue Holo Duke",
                 "Secret Corner",
                 "Corner Steroids",
             ],
         )
-        self.connect(blue_key_area, blue_upper, r.jump)
+        # jetpack can't get onto the ledge for the trigger
+        self.connect(blue_key_area, secret_symbol, r.can_jump)
 
         hidden_wall = self.region(
             "Blue Hidden Wall",
@@ -157,7 +166,7 @@ class E4L11(D3DLevel):
             blue_key_area,
             elevator_drop,
             r.difficulty("hard")
-            | r.jetpack
+            | r.jetpack(50)
             | r.difficulty("medium") & (r.jump | r.jetpack),
         )
 

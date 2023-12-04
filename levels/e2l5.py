@@ -17,7 +17,7 @@ class E2L5(D3DLevel):
             "name": "MP Center Room Freezethrower",
             "type": "sprite",
         },
-        {"id": 94, "name": "Slime Room Pipebombs", "type": "sprite"},
+        {"id": 94, "name": "Slime Room Pipebombs 1", "type": "sprite"},
         {"id": 95, "name": "Monitors Tripmine 1", "type": "sprite"},
         {"id": 96, "name": "Monitors Tripmine 2", "type": "sprite"},
         {"id": 97, "mp": True, "name": "MP Center Room Pipebombs", "type": "sprite"},
@@ -75,7 +75,7 @@ class E2L5(D3DLevel):
         )
 
         blastdoor_secret = self.region(
-            "Blastdoor Hole", ["Blastdoor Hole", "Blastdoor Hole Atomic Health"]
+            "Blastdoor Hole", ["Secret Blastdoor Hole", "Blastdoor Hole Atomic Health"]
         )
         # can't get a clip with only jetpack to work
         self.connect(
@@ -115,7 +115,7 @@ class E2L5(D3DLevel):
         self.connect(ret, center_room, self.blue_key | (r.crouch_jump & r.steroids))
 
         center_room_top = self.region(
-            "Center Room Top", ["Center Room Pipebombs", "MP Exit RPG", "Exit"]
+            "Center Room Top", ["MP Center Room Pipebombs", "MP Exit RPG", "Exit"]
         )
         # Can hop onto an enemy jumping off the ledge, but this is giga cursed to time
         self.connect(

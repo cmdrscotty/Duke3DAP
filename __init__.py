@@ -138,6 +138,15 @@ class D3DWorld(World):
         self.multiworld.regions.append(menu_region)
         for level in self.included_levels:
             level_region = level.create_region(self)
+            # debug find missing locations
+            # for loc in level.location_defs:
+            #     loc_name = f'{level.prefix} {loc["name"]}'
+            #     if loc_name not in level.used_locations:
+            #         print(f"Missing location {loc_name}")
+            #         menu_region.add_locations(
+            #             {loc_name: self.location_name_to_id[loc_name]}
+            #         )
+            #         self.used_locations.add(loc_name)
             self.used_locations |= level.used_locations
             menu_region.connect(level_region, None, self.rules.level(level))
         self.slot_data["locations"] = [
@@ -486,7 +495,7 @@ class D3DWorld(World):
         # ToDo support progressive items via toggle
         # Add progression items
         # Need access to at least 3 explosive weapons for some checks, and they might all have max capacity 1 (!)
-        itempool += self.create_item_list(["RPG", "Pipebomb", "Tripmine"])
+        itempool += self.create_item_list(["RPG", "Pipebomb", "Tripmine", "Devastator"])
         # Get progression inventory based on difficulty settings
         required, useful = self.generate_jetpack()
         itempool += required

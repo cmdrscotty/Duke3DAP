@@ -57,14 +57,14 @@ class E4L9(D3DLevel):
         {"id": 1058, "name": "Yellow Atomic Health", "type": "sprite"},
         {"id": 1081, "name": "Yellow Protective Boots", "type": "sprite"},
         {"id": 1082, "name": "Yellow Steroids", "type": "sprite"},
-        {"id": 1111, "name": "1111 Atomic Health", "type": "sprite"},
+        {"id": 1111, "name": "Yellow Water Tank Atomic Health", "type": "sprite"},
         {"id": 1118, "name": "Yellow Underwater Atomic Health", "type": "sprite"},
         {"id": 1173, "mp": True, "name": "MP Yellow Jetpack", "type": "sprite"},
         {"id": 1181, "name": "Dive Secret Chaingun", "type": "sprite"},
         {"id": 1182, "name": "Dive Secret Steroids", "type": "sprite"},
         {"id": 1183, "name": "Dive Secret Night Vision Goggles", "type": "sprite"},
         {"id": 1184, "name": "Dive Secret Armor", "type": "sprite"},
-        {"id": 1185, "name": "1185 Shotgun", "type": "sprite"},
+        {"id": 1185, "name": "TV Timed Shotgun", "type": "sprite"},
         {"id": 347, "name": "Secret Crate", "type": "sector"},
         {"id": 718, "name": "Secret TV", "type": "sector"},
         {"id": 761, "name": "Secret Captains Cabin", "type": "sector"},
@@ -126,11 +126,15 @@ class E4L9(D3DLevel):
             ],
         )
         self.connect(ship_deck, upper_deck, r.jump)
+        # Can't get up there with just jetpack, but it might be possible to just grab it anyway at the right angle
+        self.restrict("Crate Freezethrower", r.can_jump)
 
         blue_key_area = self.region(
             "Blue Key Area",
             [
                 "Barracks Steroids",
+                "Red Key Card",
+                "Captains Armor",
             ],
         )
         self.connect(upper_deck, blue_key_area, self.blue_key)
@@ -140,7 +144,6 @@ class E4L9(D3DLevel):
             [
                 "Secret Kitchen",
                 "Kitchen Medkit",
-                "Captains Armor",
             ],
         )
         self.connect(blue_key_area, blue_key_lower, r.can_crouch)
@@ -149,11 +152,13 @@ class E4L9(D3DLevel):
             "Blue Key Upper Area",
             [
                 "Captains Night Vision Goggles",
-                "Red Key Card",
                 "Secret Captains Cabin",
                 "Captains Shrinker",
                 "Captains Atomic Health 1",
                 "Captains Atomic Health 2",
+                "Secret TV",
+                "TV Chaingun",
+                "TV Timed Shotgun",
             ],
         )
         self.connect(blue_key_area, blue_key_upper, r.jump)
@@ -173,7 +178,6 @@ class E4L9(D3DLevel):
                 "Big Crate Pipebombs 1",
                 "Big Crate Pipebombs 2",
                 "Big Crate Armor",
-                "Fire Atomic Health",
                 "Next to Crusher Chaingun",
                 "Next to Crusher Shotgun",
                 "Yellow Key Card",
@@ -210,7 +214,12 @@ class E4L9(D3DLevel):
                 "Yellow Underwater Atomic Health",
             ],
         )
-        self.connect(yellow_key_area, yellow_underwater, r.can_dive)
+        # Takes 70ish HP to get there on the slime
+        self.connect(
+            yellow_key_area,
+            yellow_underwater,
+            r.difficulty("hard") & r.can_dive & r.can_crouch & r.can_sprint,
+        )
 
         yellow_upper = self.region(
             "Yellow Upper Area",
@@ -219,14 +228,29 @@ class E4L9(D3DLevel):
                 "Yellow Upper Pipebombs",
             ],
         )
-        self.connect(yellow_key_area, yellow_upper, r.can_dive | r.jetpack(50))
+        # Takes 80ish HP to get there on the slime, we can barely survive this path
+        self.connect(
+            yellow_key_area,
+            yellow_upper,
+            r.jetpack(50)
+            | (
+                r.difficulty("hard")
+                & r.can_dive
+                & r.can_crouch
+                & r.can_sprint
+                & r.can_jump
+            ),
+        )
+        self.connect(yellow_upper, yellow_underwater, r.can_dive)
 
         yellow_final = self.region(
             "Yellow Final Area",
             [
                 "MP Yellow Final Jetpack",
+                "Yellow Water Tank Atomic Health",
                 "Exit",
             ],
         )
+        # even the slime dive route only uses 20 scuba, so no need to count here
         self.connect(yellow_upper, yellow_final, r.can_dive)
         return ret

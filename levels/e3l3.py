@@ -9,7 +9,7 @@ class E3L3(D3DLevel):
     volumenum = 2
     keys = ["Blue", "Red", "Yellow"]
     location_defs = [
-        {"id": 1, "mp": True, "name": "MP 1 Jetpack", "type": "sprite"},
+        {"id": 1, "mp": True, "name": "MP Exit Jetpack", "type": "sprite"},
         {"id": 23, "name": "Water Surface Night Vision Goggles", "type": "sprite"},
         {"id": 24, "name": "Canyon Night Vision Goggles", "type": "sprite"},
         {"id": 42, "mp": True, "name": "MP Canyon Pillars Jetpack", "type": "sprite"},

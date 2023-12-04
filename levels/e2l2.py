@@ -33,7 +33,7 @@ class E2L2(D3DLevel):
             "type": "sprite",
         },  # Unused beta room of the map
         {"name": "Force Field Control Atomic Health 1", "id": 266, "type": "sprite"},
-        {"name": "Force Filed Control Atomic Health 2", "id": 267, "type": "sprite"},
+        {"name": "Force Field Control Atomic Health 2", "id": 267, "type": "sprite"},
         {"name": "Force Field Control Chaingun", "id": 268, "type": "sprite"},
         {
             "name": "Beta Medkit",
@@ -70,7 +70,7 @@ class E2L2(D3DLevel):
             self.name,
             [
                 "Start Shotgun",
-                "Hidden Screen Room Pipebombs"
+                "Hidden Screen Room Pipebombs",
                 "EDF Logo Medkit",  # Can just grab this through the wall!
                 "Armory Tripmine 1",
                 "Armory Tripmine 2",
@@ -78,7 +78,7 @@ class E2L2(D3DLevel):
                 "Secret Wall Panel",
                 "Wall Panel Freezethrower",
                 "Wall Panel Holo Duke",
-                "Force Field Control Atomic Health 1"
+                "Force Field Control Atomic Health 1",
                 "Force Field Control Atomic Health 2",
                 "Force Field Control Chaingun",
                 "Secret Force Field Control Wall",

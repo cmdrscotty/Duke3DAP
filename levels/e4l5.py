@@ -25,7 +25,7 @@ class E4L5(D3DLevel):
         {"id": 260, "name": "Upstairs RPG", "type": "sprite"},
         {"id": 264, "name": "Upstairs Medkit", "type": "sprite"},
         {"id": 266, "name": "Bookshelf Atomic Health", "type": "sprite"},
-        {"id": 267, "name": "Red Steroids", "type": "sprite"},
+        {"id": 267, "name": "Red Area Steroids", "type": "sprite"},
         {"id": 268, "name": "Poster Medkit", "type": "sprite"},
         {"id": 363, "name": "Blue Key Card", "type": "sprite"},
         {"id": 441, "name": "Telephone Atomic Health", "type": "sprite"},
@@ -152,7 +152,7 @@ class E4L5(D3DLevel):
             "Red Key Area",
             [
                 "Red Area Steroids",
-                "Red Area Yellow Key Card",
+                "Yellow Key Card",
             ],
         )
         self.connect(past_car, red_key_area, self.red_key)

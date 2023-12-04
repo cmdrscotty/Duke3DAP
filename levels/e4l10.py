@@ -10,8 +10,8 @@ class E4L10(D3DLevel):
     keys = ["Red", "Blue", "Yellow"]
     location_defs = [
         {"id": 29, "name": "R-Side Dive Jetpack", "type": "sprite"},
-        {"id": 150, "name": "R-Side Protective Boots", "type": "sprite"},
-        {"id": 151, "name": "L-Side Protective Boots", "type": "sprite"},
+        {"id": 150, "name": "DukeTag R-Side Protective Boots", "type": "sprite"},
+        {"id": 151, "name": "DukeTag L-Side Protective Boots", "type": "sprite"},
         {"id": 260, "name": "Yellow Dive Atomic Health 1", "type": "sprite"},
         {"id": 297, "mp": True, "name": "MP Start Shotgun 1", "type": "sprite"},
         {"id": 298, "mp": True, "name": "MP Start Shotgun 2", "type": "sprite"},
@@ -30,13 +30,13 @@ class E4L10(D3DLevel):
         {"id": 388, "mp": True, "name": "MP Center Devastator 1", "type": "sprite"},
         {"id": 424, "name": "Red Medkit", "type": "sprite"},
         {"id": 453, "name": "R-Side RPG", "type": "sprite"},
-        {"id": 561, "name": "561 Jetpack", "type": "sprite"},
+        {"id": 561, "name": "DukeTag R-Side Jetpack", "type": "sprite"},
         {"id": 579, "name": "L-Side RPG", "type": "sprite"},
         {"id": 613, "mp": True, "name": "MP Lobby Shotgun 4", "type": "sprite"},
         {"id": 614, "mp": True, "name": "MP Lobby Shotgun 1", "type": "sprite"},
         {"id": 615, "name": "Lobby Shotgun Shotgun 1", "type": "sprite"},
         {"id": 616, "mp": True, "name": "MP Lobby Shotgun 3", "type": "sprite"},
-        {"id": 624, "name": "L-Side Jetpack", "type": "sprite"},
+        {"id": 624, "name": "DukeTag L-Side Jetpack", "type": "sprite"},
         {"id": 669, "mp": True, "name": "MP Center Devastator 2", "type": "sprite"},
         {"id": 686, "name": "Lobby Pipebombs 1", "type": "sprite"},
         {"id": 701, "mp": True, "name": "MP Lobby Shotgun 5", "type": "sprite"},
@@ -128,7 +128,7 @@ class E4L10(D3DLevel):
                 "Blue Key Card",
             ],
         )
-        self.connect(ret, lside_dive, r.dive(1000))
+        self.connect(ret, lside_dive, r.jump & r.can_dive)
 
         blue_key_room = self.region(
             "Blue Key Room",
@@ -144,16 +144,17 @@ class E4L10(D3DLevel):
                 "R-Side Protective Boots",
                 "R-Side RPG",
                 "R-Side Devastator",
-                "Secret R-Side Vent",
-                "R-Side Vent Pipebombs",
             ],
         )
+        # 22 jetpack until here minimum
         self.connect(blue_key_room, rside)
 
         rside_upper = self.region(
             "Right Side Upper",
             [
                 "R-Side Armor",
+                "Secret R-Side Vent",
+                "R-Side Vent Pipebombs",
             ],
         )
         self.connect(rside, rside_upper, r.jump)
@@ -181,7 +182,8 @@ class E4L10(D3DLevel):
                 "Yellow Key Card",
             ],
         )
-        self.connect(rside, red_key_room, r.jetpack & self.red_key)
+        # 33 jetpack to here
+        self.connect(rside, red_key_room, r.jump & self.red_key)
 
         rside_dive = self.region(
             "Red Dive",
@@ -192,7 +194,7 @@ class E4L10(D3DLevel):
                 "R-Side Dive Armor",
             ],
         )
-        self.connect(rside, rside_dive, r.dive(1000))
+        self.connect(rside, rside_dive, r.jump & r.can_dive)
 
         yellow_key_room = self.region(
             "Yellow Key Room",
@@ -200,10 +202,19 @@ class E4L10(D3DLevel):
                 "Yellow Steroids",
             ],
         )
+        # 44 jetpack to here minimum on a no jump route
         self.connect(
             red_key_room,
             yellow_key_room,
-            self.yellow_key & r.jetpack(150) | (r.crouch_jump & r.steroids),
+            self.yellow_key
+            & (
+                r.can_jump
+                | r.jetpack(300)
+                | (r.can_sprint & r.jetpack(250))
+                | (r.difficulty("hard") & r.jetpack(200))
+                | (r.difficulty("hard") & r.can_sprint & r.jetpack(150))
+            )
+            | (r.crouch_jump & r.steroids),
         )
 
         yellow_dive = self.region(
@@ -218,13 +229,14 @@ class E4L10(D3DLevel):
                 "Exit",
             ],
         )
-        # 30 RPG Ammo required, 1600 Scuba is cutting it close
-        self.connect(yellow_key_room, yellow_dive, r.dive(1800) & r.has_group("RPG"))
+        # Don't need to touch water before getting here
+        self.connect(yellow_key_room, yellow_dive, r.can_dive)
+        self.restrict("Exit", r.can_kill_boss_4)
         # Unreachable DukeTag MP Locations at the Start:
         # {"id": 933, "name": "DukeTag RPG 1", "type": "sprite"},
         # {"id": 934, "name": "DukeTag RPG 2", "type": "sprite"},
-        # R-Side MP Only {"id": 150, "name": "R-Side Protective Boots", "type": "sprite"},
-        # R-Side MP Only
-        # L-Side MP Only {"id": 151, "name": "L-Side Protective Boots", "type": "sprite"},
-        # L-Side MP Only {"id": 624, "name": "L-Side Jetpack", "type": "sprite"},
+        # R-Side MP Only {"id": 150, "name": "DukeTag R-Side Protective Boots", "type": "sprite"},
+        # R-Side MP Only {"id": 561, "name": "DukeTag R-Side Jetpack", "type": "sprite"},
+        # L-Side MP Only {"id": 151, "name": "DukeTag L-Side Protective Boots", "type": "sprite"},
+        # L-Side MP Only {"id": 624, "name": "DukeTag L-Side Jetpack", "type": "sprite"},
         return ret

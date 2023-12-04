@@ -156,7 +156,7 @@ class E4L3(D3DLevel):
                 "Blue Vent Atomic Health",
                 "Blue Top Crate RPG",
                 "MP Blue Vent Shrinker",
-                "MP Blue Seal Chaingun",
+                "MP Seal Chaingun",
                 "Yellow Key Card",
             ],
         )

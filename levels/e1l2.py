@@ -50,11 +50,11 @@ class E1L2(D3DLevel):
         {"name": "Pornography Store Atomic Health", "id": 822, "type": "sprite"},
         {"name": "Construction Site Medkit", "id": 823, "type": "sprite"},
         {
-            "name": "MP Outside Ledge Spawn Pipebombs",
+            "name": "MP DukeTag Outside Ledge Spawn Pipebombs",
             "id": 824,
             "type": "sprite",
             "mp": True,
-        },
+        },  # This appears inaccessible in single player
         {"name": "Secret Strip Club Vents", "id": 91, "type": "sector"},
         {"name": "Secret Hidden Ledge behind Curtains", "id": 107, "type": "sector"},
         {"name": "Secret Pornography Store Corner", "id": 158, "type": "sector"},
@@ -80,6 +80,8 @@ class E1L2(D3DLevel):
                 "Secret Pornography Store Dark Area",
                 "Dark Area Atomic Health",
                 "Video Booth Steroids",
+                "Video Booth RPG",
+                "Toilets Night Vision Goggles",
                 "Chaingun near Blue Key Card",
                 "Blue Key Card",
             ],

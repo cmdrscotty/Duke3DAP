@@ -108,7 +108,8 @@ class E3L2(D3DLevel):
         bank_secrets = self.region(
             "Bank Entrance Secrets",
             [
-                "Bank Phone Holo Duke" "Secret Bank Phone",
+                "Bank Phone Holo Duke",
+                "Secret Bank Phone",
                 "Secret Bank Painting",
                 "Bank Painting Jetpack",
             ],

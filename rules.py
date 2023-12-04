@@ -211,4 +211,6 @@ class Rules(object):
                 )
             )
         )
-        self.can_kill_boss_4 = self.true
+        # 30 RPG Ammo required. Giving the player some scuba gear requirement for this check as air can be tight
+        # Also requiring devastator access. Will need to figure out ammo later as the fight doesn't provide any
+        self.can_kill_boss_4 = self.dive(400) & self.rpg & self.devastator

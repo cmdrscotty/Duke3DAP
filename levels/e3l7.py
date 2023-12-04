@@ -53,7 +53,7 @@ class E3L7(D3DLevel):
         self.connect(ret, start_ledges, r.jump)
 
         pool = self.region(
-            "Pool", ["Pool Shotgun", "Pool Shrinker", "Pool Medkit" "Blue Key Card"]
+            "Pool", ["Pool Shotgun", "Pool Shrinker", "Pool Medkit", "Blue Key Card"]
         )
         self.connect(start_ledges, pool, r.can_dive)
 
@@ -81,7 +81,8 @@ class E3L7(D3DLevel):
                 "Building Night Vision Goggles",
                 "Building Steroids",
                 "Wine Rack Medkit",
-                "Secret Wine Rack" "Secret Painting",
+                "Secret Wine Rack",
+                "Secret Painting",
             ],
         )
         self.connect(plaza, plaza_ledges, r.jump)
