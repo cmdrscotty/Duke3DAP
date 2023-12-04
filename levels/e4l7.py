@@ -14,6 +14,12 @@ class E4L7(D3DLevel):
         {"id": 34, "name": "Crate Freezethrower", "type": "sprite"},
         {"id": 35, "mp": True, "name": "MP Blue Apt. Jetpack", "type": "sprite"},
         {"id": 37, "name": "Blue Apt. Pipebombs", "type": "sprite"},
+        {
+            "name": "Printer Trashcan Pipebombs",
+            "id": 39,
+            "type": "sprite",
+            "sprite_type": "trashcan",
+        },
         {"id": 83, "name": "Front Upper Armor", "type": "sprite"},
         {"id": 84, "name": "Front Upper Atomic Health", "type": "sprite"},
         {"id": 110, "name": "Crusher RPG", "type": "sprite"},
@@ -34,6 +40,12 @@ class E4L7(D3DLevel):
         {"id": 365, "mp": True, "name": "MP Blue Jetpack", "type": "sprite"},
         {"id": 372, "name": "Red Key Card", "type": "sprite"},
         {"id": 420, "name": "Blue Shotgun", "type": "sprite"},
+        {
+            "name": "Blue Apt. Trashcan Devastator",
+            "id": 528,
+            "type": "sprite",
+            "sprite_type": "trashcan",
+        },
         {"id": 591, "name": "Blue Apt. RPG", "type": "sprite"},
         {"id": 65, "name": "Secret Blue Area", "type": "sector"},
         {"id": 232, "name": "Secret Crate", "type": "sector"},
@@ -53,6 +65,7 @@ class E4L7(D3DLevel):
                 "Front Chaingun",
                 "Front Steroids",
                 "MP Front Jetpack",
+                "Printer Trashcan Pipebombs",
             ],
         )
 
@@ -79,6 +92,7 @@ class E4L7(D3DLevel):
                 "Blue Devastator",
                 "Blue Atomic Health",
                 "Secret Blue Appartment",
+                "Blue Apt. Trashcan Devastator",
                 "Blue Apt. RPG",
                 "MP Blue Apt. Jetpack",
                 "Blue Apt. Pipebombs",

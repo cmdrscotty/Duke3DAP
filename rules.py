@@ -195,10 +195,10 @@ class Rules(object):
         self.level = lambda level_cls: HasRule(level_cls.unlock)
 
         # Boss kill logic, difficulty dependant
-        self.can_kill_boss_1 = (
-            self.rpg
-        )  # Enough RPG Ammo for a kill in the room, ToDo better logic
-        self.can_kill_boss_2 = self.true
+        self.can_kill_boss_1 = self.rpg  # Enough RPG Ammo for a kill in the room
+        self.can_kill_boss_2 = (
+            self.rpg & self.devastator
+        )  # Should have enough ammo in the room, I think?
         # can jump on goal post and have boss suicide on splash damage, or blimp spawns enough ammo
         self.can_kill_boss_3 = (
             self.rpg
