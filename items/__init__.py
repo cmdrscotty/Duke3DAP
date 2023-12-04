@@ -457,6 +457,7 @@ inventory_items = {
             "capacity": 400,
         },  # use capacity from slot data if configured
         persistent=True,
+        progression=True,
     ),
     "Progressive Scuba Gear": ItemDef(
         "Progressive Scuba Gear",
