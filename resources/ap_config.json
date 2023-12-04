@@ -2,7 +2,7 @@
   "game": "Duke Nukem 3D",
   "name": "Duke Nukem 3D",
   "game_id": 1,
-  "checksum": "4eb9875c248e8d49c7ed338e355c4797fdb97b0386d944a291a135d85db6f91f",
+  "checksum": "8d72edb7ca65eb2db52048e61e808a5385dc8b7ebba71a5d526e26cf99f2c420",
   "episodes": {
     "E1": {
       "name": "L.A. Meltdown",
@@ -6981,6 +6981,12 @@
       "persistent": true,
       "silent": true
     },
+    "102": {
+      "name": "Boss",
+      "type": "goal",
+      "persistent": true,
+      "silent": true
+    },
     "202": {
       "name": "Shotgun",
       "type": "weapon",
@@ -7046,7 +7052,7 @@
       "ammo": 20
     },
     "211": {
-      "name": "Microwave Expander",
+      "name": "Expander",
       "type": "weapon",
       "persistent": true,
       "unique": true,

@@ -74,6 +74,15 @@ goal_items = {
         persistent=True,
         progression=True,
     ),
+    "Boss": ItemDef(
+        "Boss",
+        net_id(102),
+        "goal",
+        {},
+        silent=True,
+        persistent=True,
+        progression=True,
+    ),
 }
 
 junk_items = {
@@ -336,8 +345,8 @@ weapons = {
         "ammo",
         {"weaponnum": 9, "ammo": 50},
     ),
-    "Microwave Expander": ItemDef(
-        "Microwave Expander",
+    "Expander": ItemDef(
+        "Expander",
         net_id(211),
         "weapon",
         {"weaponnum": 11, "ammo": 2},

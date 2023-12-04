@@ -48,6 +48,7 @@ class E3L9(D3DLevel):
         {"id": 107, "name": "Floor Atomic Health 4", "type": "sprite"},
         {"id": 0, "name": "Exit", "type": "exit"},
     ]
+    has_boss = True
 
     def main_region(self) -> Region:
         r = self.rules

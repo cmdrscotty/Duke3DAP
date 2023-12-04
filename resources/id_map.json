@@ -1608,6 +1608,7 @@
     "Pity Heal": 403,
     "Exit": 100,
     "Secret": 101,
+    "Boss": 102,
     "Pistol Capacity": 221,
     "Pistol Ammo": 261,
     "Shotgun": 202,
@@ -1642,7 +1643,7 @@
     "Freezethrower Capacity": 229,
     "Progressive Freezethrower": 249,
     "Freezethrower Ammo": 269,
-    "Microwave Expander": 211,
+    "Expander": 211,
     "Expander Capacity": 231,
     "Progressive Expander": 251,
     "Expander Ammo": 271,
@@ -1827,5 +1828,5 @@
     "Bandage": 402,
     "Ego Boost": 403
   },
-  "checksum": "4eb9875c248e8d49c7ed338e355c4797fdb97b0386d944a291a135d85db6f91f"
+  "checksum": "8d72edb7ca65eb2db52048e61e808a5385dc8b7ebba71a5d526e26cf99f2c420"
 }

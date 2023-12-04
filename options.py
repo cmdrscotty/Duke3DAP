@@ -15,8 +15,7 @@ class SkillLevel(Choice):
 
 
 class Difficulty(Choice):
-    """Randomizer difficulty. Higher levels offer less resources and require harder tricks in logic
-    such as jumping on enemies or better use of jetpack and scuba gear fuel"""
+    """Randomizer difficulty. Higher levels offer less resources and worse items in the pool"""
 
     display_name = "Difficulty"
     option_easy = 0
@@ -26,8 +25,20 @@ class Difficulty(Choice):
     default = 1
 
 
+class LogicDifficulty(Choice):
+    """Trick difficulty for logic. Higher levels require harder tricks such as jumping on enemies or
+    better use of jetpack and scuba gear fuel"""
+
+    display_name = "Logic Difficulty"
+    option_easy = 0
+    option_medium = 1
+    option_hard = 2
+    option_extreme = 3
+    default = 1
+
+
 class GlitchLogic(Toggle):
-    """Include glitches in the logic. Higher difficulty settings may require more complicated glitches."""
+    """Include glitches in the logic. Higher logic difficulty settings may require more complicated glitches."""
 
     display_name = "Include Glitches"
     default = False
@@ -48,7 +59,7 @@ class AllowSaving(Toggle):
 
 
 class AreaMaps(Choice):
-    """Select if full game maps are available"""
+    """Select if full game maps are available in the in-game map view"""
 
     display_name = "Area Maps"
     option_none = 0
@@ -61,10 +72,11 @@ class Goal(Choice):
     """Choose the goal of the game"""
 
     display_name = "Goal"
-    option_beat_all_levels = 0
-    option_collect_all_secrets = 1
-    option_both = 2
-    default = 2
+    option_beat_all_bosses = 0
+    option_beat_all_levels = 1
+    option_collect_all_secrets = 2
+    option_all = 3
+    default = 3
 
 
 class GoalPercentage(NamedRange):
@@ -81,7 +93,8 @@ class GoalPercentage(NamedRange):
 
 
 class IncludeSecrets(Toggle):
-    """Include secret areas into the location pool. This only has an effect if **goal** is set to *beat_all_levels*"""
+    """Include secret areas into the location pool. This only has an effect if they are not already
+    included as goal locations"""
 
     display_name = "Include Secrets as Locations"
     default = False
@@ -106,21 +119,21 @@ class Episode2(Toggle):
     """Include Episode 2: Lunar Apocalypse in the randomizer"""
 
     display_name = "Use Episode 2"
-    default = False
+    default = True
 
 
 class Episode3(Toggle):
     """Include Episode 3: Shrapnel City in the randomizer"""
 
     display_name = "Use Episode 3"
-    default = False
+    default = True
 
 
 class Episode4(Toggle):
     """Include Episode 4: Hollywood Holocaust in the randomizer"""
 
     display_name = "The Birth"
-    default = False
+    default = True
 
 
 class FuelPerJetpack(NamedRange):
@@ -153,6 +166,7 @@ class FuelPerSteroids(NamedRange):
 @dataclass
 class Duke3DOptions(PerGameCommonOptions):
     difficulty: Difficulty
+    logic_difficulty: LogicDifficulty
     glitch_logic: GlitchLogic
     skill_level: SkillLevel
     unlock_abilities: UnlockAbilities

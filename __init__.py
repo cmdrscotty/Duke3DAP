@@ -18,7 +18,7 @@ from .base_classes import D3DItem, D3DLevel, LocationDef
 from .id import GAME_ID, local_id, net_id
 from .items import all_items, item_groups
 from .levels import all_episodes
-from .options import Duke3DOptions
+from .options import Duke3DOptions, Difficulty
 from .rules import Rules
 
 with files(resources).joinpath("id_map.json").open() as id_file:
@@ -51,7 +51,7 @@ class D3DWorld(World):
         # Add the id checksum of our location and item ids for consistency check with clients
         self.slot_data: Dict[str, Any] = {
             "checksum": self.id_checksum,
-            "settings": {"dynamic": {}},
+            "settings": {"dynamic": {}, "maximum": {}},
         }
         self.rules: Optional[Rules] = None
         # Filled later from options
@@ -77,7 +77,11 @@ class D3DWorld(World):
             return False
         if (
             location.type == "sector"
-            and self.get_option("goal") == self.options.goal.option_beat_all_levels
+            and self.get_option("goal")
+            in (
+                self.options.goal.option_beat_all_levels,
+                self.options.goal.option_beat_all_bosses,
+            )
             and not self.get_option("include_secrets")
         ):
             return False
@@ -185,13 +189,16 @@ class D3DWorld(World):
 
         goal_exits = self.get_option("goal") in {
             self.options.goal.option_beat_all_levels,
-            self.options.goal.option_both,
+            self.options.goal.option_all,
         }
         goal_secrets = self.get_option("goal") in {
             self.options.goal.option_collect_all_secrets,
-            self.options.goal.option_both,
+            self.options.goal.option_all,
         }
-        goal_counts = {"Exit": 0, "Secret": 0}
+        goal_bosses = (
+            self.get_option("goal") == self.options.goal.option_beat_all_bosses
+        )
+        goal_counts = {"Exit": 0, "Secret": 0, "Boss": 0}
         for level in self.included_levels:
             for location in level.locations.values():
                 if location.name not in self.used_locations:
@@ -200,23 +207,39 @@ class D3DWorld(World):
                     goal_counts["Exit"] += 1
                 elif goal_secrets and location.type == "sector":
                     goal_counts["Secret"] += 1
+                elif goal_bosses and location.type == "exit" and level.has_boss:
+                    goal_counts["Boss"] += 1
 
         goal_percentage = self.get_option("goal_percentage")
         if goal_percentage < 100:
-            goal_counts["Exit"] = math.ceil(
-                0.01 * goal_percentage * goal_counts["Exit"]
-            )
-            goal_counts["Secret"] = math.ceil(
-                0.01 * goal_percentage * goal_counts["Secret"]
-            )
+            for goal_type in ("Exit", "Secret", "Boss"):
+                goal_counts[goal_type] = math.ceil(
+                    0.01 * goal_percentage * goal_counts[goal_type]
+                )
 
         self.slot_data["goal"] = {
             self.item_name_to_id["Exit"]: goal_counts["Exit"],
             self.item_name_to_id["Secret"]: goal_counts["Secret"],
+            self.item_name_to_id["Boss"]: goal_counts["Boss"],
         }
-        self.multiworld.completion_condition[self.player] = self.rules.count(
-            "Exit", goal_counts["Exit"]
-        ) & self.rules.count("Secret", goal_counts["Secret"])
+        self.multiworld.completion_condition[self.player] = (
+            self.rules.count("Exit", goal_counts["Exit"])
+            & self.rules.count("Secret", goal_counts["Secret"])
+            & self.rules.count("Boss", goal_counts["Boss"])
+        )
+
+    WEAPON_NAMES = (
+        "Pistol",
+        "Shotgun",
+        "Chaingun",
+        "RPG",
+        "Pipebomb",
+        "Shrinker",
+        "Devastator",
+        "Tripmine",
+        "Freezethrower",
+        "Expander",
+    )
 
     def create_item(self, item: str) -> D3DItem:
         item_def = all_items.get(item)
@@ -241,30 +264,38 @@ class D3DWorld(World):
         if difficulty == self.options.difficulty.option_extreme:
             ratios = {
                 "Nothing": 50,
-                "Pity Heal": 150,
+                "Pity Heal": 100,
                 "Medpak": 30,
-                "Armor": 15,
-                "Atomic Health": 5,
+                "Armor": 10,
+                "Atomic Health": 12,
+                "Holo Duke": 7,
+                "Chaingun Ammo": 3,
+                "RPG Ammo": 3,
+                "Devastator Ammo": 3,
+                "Ego Boost": 2,
+                "Sturdy Armor": 2,
+                "First Aid Kit": 2,
                 # Oh, you got lucky!
                 "Shrinker Capacity": 1,
                 "Expander Capacity": 1,
-                "First Aid Kit": 2,
+                "RPG Capacity": 1,
             }
         elif difficulty == self.options.difficulty.option_hard:
             ratios = {
                 "Pity Heal": 20,
                 "Medpak": 40,
-                "Armor": 40,
-                "Atomic Health": 20,
-                "RPG Capacity": 2,
-                "Chaingun Capacity": 3,
-                "Shrinker Capacity": 2,
-                "Expander Capacity": 2,
+                "Armor": 30,
+                "Atomic Health": 30,
                 "First Aid Kit": 8,
                 "Protective Boots": 4,
+                "Ego Boost": 4,
+                "Sturdy Armor": 4,
                 # And some lucky additions!
+                "RPG Capacity": 2,
+                "Chaingun Capacity": 2,
+                "Shrinker Capacity": 2,
+                "Devastator Capacity": 2,
                 "Steroids Capacity": 1,
-                "Devastator Capacity": 1,
                 "Jetpack Capacity": 1,
             }
         elif difficulty == self.options.difficulty.option_medium:
@@ -273,7 +304,9 @@ class D3DWorld(World):
                 "Armor": 20,
                 "Atomic Health": 20,
                 "Pistol Capacity": 5,
-                "RPG Capacity": 2,
+                "Ego Boost": 5,
+                "Sturdy Armor": 5,
+                "RPG Capacity": 3,
                 "Chaingun Capacity": 3,
                 "Shrinker Capacity": 2,
                 "Expander Capacity": 2,
@@ -289,6 +322,8 @@ class D3DWorld(World):
             ratios = {
                 "Armor": 20,
                 "Atomic Health": 30,
+                "Ego Boost": 9,
+                "Sturdy Armor": 9,
                 "Pistol Capacity": 4,
                 "RPG Capacity": 4,
                 "Chaingun Capacity": 2,
@@ -412,51 +447,85 @@ class D3DWorld(World):
         ]
         return required_list, useful_list
 
-    def useful_items_per_difficulty(self) -> List[D3DItem]:
-        difficulty = self.get_option("difficulty")
-        if difficulty == self.options.difficulty.option_extreme:
-            # Laughable, did you think you'd get anything?
+    # Tuples of starting max and target max
+    DIFF_TO_MAX_MAPPING = {
+        Difficulty.option_easy: {
+            "Pistol": (200, 400),
+            "Shotgun": (25, 60),
+            "Chaingun": (150, 500),
+            "RPG": (10, 40),
+            "Pipebomb": (10, 25),
+            "Shrinker": (10, 40),
+            "Devastator": (20, 150),
+            "Tripmine": (5, 15),
+            "Freezethrower": (50, 250),
+            "Expander": (30, 100),
+        },
+        Difficulty.option_medium: {
+            "Pistol": (120, 300),
+            "Shotgun": (20, 45),
+            "Chaingun": (100, 350),
+            "RPG": (5, 30),
+            "Pipebomb": (5, 15),
+            "Shrinker": (5, 20),
+            "Devastator": (15, 100),
+            "Tripmine": (3, 10),
+            "Freezethrower": (40, 180),
+            "Expander": (20, 75),
+        },
+        Difficulty.option_hard: {
+            "Pistol": (80, 200),
+            "Shotgun": (10, 25),
+            "Chaingun": (75, 200),
+            "RPG": (3, 20),
+            "Pipebomb": (2, 10),
+            "Shrinker": (3, 10),
+            "Devastator": (10, 75),
+            "Tripmine": (1, 5),
+            "Freezethrower": (30, 125),
+            "Expander": (15, 60),
+        },
+        Difficulty.option_extreme: {
+            "Pistol": (48, 125),
+            "Shotgun": (7, 15),
+            "Chaingun": (50, 140),
+            "RPG": (2, 15),
+            "Pipebomb": (1, 5),
+            "Shrinker": (1, 5),
+            "Devastator": (10, 60),
+            "Tripmine": (1, 3),
+            "Freezethrower": (20, 90),
+            "Expander": (10, 45),
+        },
+    }
+
+    def useful_items_per_difficulty(self, available_slots: int) -> List[D3DItem]:
+        if available_slots <= 0:
+            # Out of space already, can abort
             return []
-        elif difficulty == self.options.difficulty.option_hard:
-            # Provide some ammo capacity
-            ret_items = {
-                "Pistol Capacity": 2,
-                "Shotgun Capacity": 2,
-                "Chaingun Capacity": 2,
-                "RPG Capacity": 2,
-                "Pipebomb Capacity": 1,
-                "Shrinker Capacity": 0,
-                "Devastator Capacity": 3,
-                "Tripmine Capacity": 2,
-                "Freezethrower Capacity": 3,
-                "Expander Capacity": 0,
-            }
-        elif difficulty == self.options.difficulty.option_medium:
-            ret_items = {
-                "Pistol Capacity": 4,
-                "Shotgun Capacity": 4,
-                "Chaingun Capacity": 3,
-                "RPG Capacity": 5,
-                "Pipebomb Capacity": 4,
-                "Shrinker Capacity": 2,
-                "Devastator Capacity": 5,
-                "Tripmine Capacity": 4,
-                "Freezethrower Capacity": 5,
-                "Expander Capacity": 2,
-            }
-        else:
-            ret_items = {
-                "Pistol Capacity": 7,
-                "Shotgun Capacity": 7,
-                "Chaingun Capacity": 5,
-                "RPG Capacity": 10,
-                "Pipebomb Capacity": 6,
-                "Shrinker Capacity": 5,
-                "Devastator Capacity": 10,
-                "Tripmine Capacity": 5,
-                "Freezethrower Capacity": 8,
-                "Expander Capacity": 5,
-            }
+
+        ret_items = {}
+        # We want about 35% of remaining slots to be filled with ammo expansions, so calculated the amount we get
+        # for each of the 10 weapons
+        expansions_per_weapon = math.ceil(available_slots * 0.035)
+        for weapon in self.WEAPON_NAMES:
+            start, target = self.DIFF_TO_MAX_MAPPING.get(
+                self.get_option("difficulty"), self.options.difficulty.option_medium
+            )[weapon]
+            self.slot_data["settings"]["maximum"][weapon.lower()] = start
+            difference = target - start
+            if difference <= 0:
+                continue
+            capacity_per = math.ceil(float(difference) / expansions_per_weapon)
+            count = math.ceil(float(difference) / capacity_per)
+            # configure the capacity for each upgrade dynamically
+            self.define_dynamic_item_props(
+                f"{weapon} Capacity",
+                {"capacity": capacity_per, "ammo": math.ceil(capacity_per / 2.0)},
+            )
+            # and add the right count to our pool
+            ret_items[f"{weapon} Capacity"] = count
+
         # Is there a good comprehension for this?
         ret = []
         for key, count in ret_items.items():
@@ -470,14 +539,18 @@ class D3DWorld(World):
         )  # Stuff that should be in the world if there's enough locations
         used_locations = self.used_locations.copy()
         # Place goal items and level key cards
+        # ToDo remove this code duplications
         goal_exits = self.get_option("goal") in {
             self.options.goal.option_beat_all_levels,
-            self.options.goal.option_both,
+            self.options.goal.option_all,
         }
         goal_secrets = self.get_option("goal") in {
             self.options.goal.option_collect_all_secrets,
-            self.options.goal.option_both,
+            self.options.goal.option_all,
         }
+        goal_bosses = (
+            self.get_option("goal") == self.options.goal.option_beat_all_bosses
+        )
         for level in self.included_levels:
             for location in level.locations.values():
                 if (
@@ -497,6 +570,16 @@ class D3DWorld(World):
                     self.multiworld.get_location(
                         location.name, self.player
                     ).place_locked_item(self.create_item("Secret"))
+                    used_locations.remove(location.name)
+                elif (
+                    goal_bosses
+                    and location.name in self.used_locations
+                    and location.type == "exit"
+                    and level.has_boss
+                ):
+                    self.multiworld.get_location(
+                        location.name, self.player
+                    ).place_locked_item(self.create_item("Boss"))
                     used_locations.remove(location.name)
             # create and fill event items
             for event in level.events:
@@ -542,10 +625,12 @@ class D3DWorld(World):
 
         # Add one copy of each remaining weapon to the pool
         useful_items += self.create_item_list(
-            ["Shotgun", "Chaingun", "Shrinker", "Freezethrower", "Microwave Expander"]
+            ["Shotgun", "Chaingun", "Shrinker", "Freezethrower", "Expander"]
         )
 
-        useful_items += self.useful_items_per_difficulty()
+        # count out remaining slots left to be filled
+        open_slots = len(used_locations) - (len(itempool) + len(useful_items))
+        useful_items += self.useful_items_per_difficulty(open_slots)
 
         if len(itempool) + len(useful_items) > len(used_locations):
             discarded = len(itempool) + len(useful_items) - len(used_locations)

@@ -166,7 +166,7 @@ class Rules(object):
         difficulty_map = {"easy": 0, "medium": 1, "hard": 2, "extreme": 3}
         self.difficulty = (
             lambda difficulty: self.true
-            if difficulty_map.get(difficulty, 0) <= world.get_option("difficulty")
+            if difficulty_map.get(difficulty, 0) <= world.get_option("logic_difficulty")
             else self.false
         )
 

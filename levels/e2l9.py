@@ -48,6 +48,7 @@ class E2L9(D3DLevel):
         {"id": 0, "name": "Exit", "type": "exit"},
     ]
     must_dive = True
+    has_boss = True
 
     def main_region(self) -> Region:
         r = self.rules

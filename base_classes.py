@@ -61,6 +61,9 @@ class D3DLevel(object):
     keys: List[str]
     events: List[str] = []
     must_dive: bool = False  # If the level has locations locked behind diving. Determines progression status for Scuba
+    has_boss: bool = (
+        False  # If the level awards a boss token in the appropriate goal settings
+    )
 
     def __init__(self):
         self.world: Optional["D3DWorld"] = None
