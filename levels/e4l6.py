@@ -13,13 +13,13 @@ class E4L6(D3DLevel):
         {"id": 26, "name": "Firetruck Devastator", "type": "sprite"},
         {"id": 81, "name": "Container Pipebombs", "type": "sprite"},
         {"id": 84, "name": "Blue Vent Shrinker", "type": "sprite"},
-        {"id": 145, "name": "Conveyer Upper Red Key Card", "type": "sprite"},
+        {"id": 145, "name": "Red Key Card", "type": "sprite"},
         {"id": 206, "name": "Red Chaingun", "type": "sprite"},
         {"id": 209, "name": "Red Armor", "type": "sprite"},
         {"id": 210, "name": "Red Medkit", "type": "sprite"},
         {"id": 217, "name": "Red Pipebombs", "type": "sprite"},
-        {"id": 266, "name": "Red Tripbomb 1", "type": "sprite"},
-        {"id": 267, "name": "Red Tripbomb 2", "type": "sprite"},
+        {"id": 266, "name": "Red Tripmine 1", "type": "sprite"},
+        {"id": 267, "name": "Red Tripmine 2", "type": "sprite"},
         {"id": 277, "name": "Front Holo Duke", "type": "sprite"},
         {"id": 279, "name": "Red Atomic Health", "type": "sprite"},
         {"id": 281, "name": "Blue Freezethrower", "type": "sprite"},
@@ -38,19 +38,20 @@ class E4L6(D3DLevel):
         {"id": 353, "name": "Locker Secret Atomic Health", "type": "sprite"},
         {"id": 464, "name": "Blue Atomic Health", "type": "sprite"},
         {"id": 530, "name": "Firetruck Atomic Health", "type": "sprite"},
-        {"id": 534, "name": "Locker Blue Key Card", "type": "sprite"},
+        {"id": 534, "name": "Blue Key Card", "type": "sprite"},
         {"id": 590, "name": "Red Devastator", "type": "sprite"},
         {"id": 635, "name": "Paw Shotgun", "type": "sprite"},
         {"id": 665, "name": "Blue Conveyer Atomic Health", "type": "sprite"},
         {"id": 672, "name": "Locker Secret Medkit", "type": "sprite"},
-        {"id": 724, "name": "Red Area Yellow Key Card", "type": "sprite"},
+        {"id": 724, "name": "Yellow Key Card", "type": "sprite"},
         {"id": 750, "name": "Front Vent Pipebombs", "type": "sprite"},
-        {"id": 185, "name": "Locker Secret", "type": "sector"},
-        {"id": 250, "name": "Blue Vent Secret", "type": "sector"},
-        {"id": 302, "name": "Firetruck Secret", "type": "sector"},
-        {"id": 317, "name": "Front Vent Secret", "type": "sector"},
+        {"id": 185, "name": "Secret Locker", "type": "sector"},
+        {"id": 250, "name": "Secret Blue Vent", "type": "sector"},
+        {"id": 302, "name": "Secret Firetruck", "type": "sector"},
+        {"id": 317, "name": "Secret Front Vent", "type": "sector"},
         {"id": 0, "name": "Exit", "type": "exit"},
     ]
+
     def main_region(self) -> Region:
         r = self.rules
         ret = self.region(
@@ -65,7 +66,7 @@ class E4L6(D3DLevel):
             [
                 "Container Pipebombs",
                 "Firetruck Atomic Health",
-                "Firetruck Secret",
+                "Secret Firetruck",
                 "Firetruck Protective Boots",
                 "Firetruck Devastator",
                 "Container Pipebombs",
@@ -80,9 +81,8 @@ class E4L6(D3DLevel):
             ],
         )
         # Can grab the item by jumping and sr40ing towards the item
-        self.connect(ret, paw_secret, r.can_crouch |
-                     r.difficulty("hard") & r.jump)
-        
+        self.connect(ret, paw_secret, r.can_crouch | r.difficulty("hard") & r.jump)
+
         behind_counter = self.region(
             "Behind Counter",
             [
@@ -90,8 +90,8 @@ class E4L6(D3DLevel):
                 "Basement RPG",
                 "Locker Steroids",
                 "Locker Armor",
-                "Locker Blue Key Card",
-                "Locker Secret",
+                "Blue Key Card",
+                "Secret Locker",
                 "Locker Secret Atomic Health",
             ],
         )
@@ -104,13 +104,12 @@ class E4L6(D3DLevel):
             ],
         )
         # Can grab the item by jumping towards the item
-        self.connect(ret, front_vent, r.can_crouch |
-                     r.difficulty("hard") & r.jump)
-        
+        self.connect(ret, front_vent, r.can_crouch | r.difficulty("hard") & r.jump)
+
         front_vent_secret = self.region(
-            "Front Vent Secret",
+            "Secret Front Vent",
             [
-                "Front Vent Secret",
+                "Secret Front Vent",
             ],
         )
         self.connect(ret, front_vent_secret, r.can_crouch & r.jump)
@@ -130,11 +129,12 @@ class E4L6(D3DLevel):
             ],
         )
         # Can grab the item by jumping towards the hole, easier than others
-        self.connect(behind_counter, locker_secret_grate, r.explosives &
-                    (r.can_crouch | 
-                    (r.difficulty("medium") & r.jump)
-                    ))
-        
+        self.connect(
+            behind_counter,
+            locker_secret_grate,
+            r.explosives & (r.can_crouch | (r.difficulty("medium") & r.jump)),
+        )
+
         blue_key_area = self.region(
             "Blue Key Area",
             [
@@ -147,9 +147,9 @@ class E4L6(D3DLevel):
         self.connect(behind_counter, blue_key_area, self.blue_key)
 
         blue_vent_secret = self.region(
-            "Blue Vent Secret",
+            "Secret Blue Vent",
             [
-                "Blue Vent Secret",
+                "Secret Blue Vent",
                 "Blue Vent Shrinker",
             ],
         )
@@ -179,36 +179,39 @@ class E4L6(D3DLevel):
             ],
         )
         # Can get up by clipping on the post bag and sr50ing over to conveyer
-        self.connect(blue_key_area, blue_desk, r.jump |
-                     r.difficulty("medium"))
-        
+        self.connect(blue_key_area, blue_desk, r.jump | r.difficulty("medium"))
+
         conveyer_upper = self.region(
             "Blue Conveyer Upper",
             [
                 "Conveyer Upper Night Vision Goggles",
                 "MP Conveyer Upper Jetpack",
                 "Conveyer Upper Medkit",
-                "Conveyer Upper Red Key Card",
+                "Red Key Card",
             ],
         )
-        self.connect(blue_desk, conveyer_upper, 
-                     (r.jump & r.difficulty("medium")|
-                     (r.difficulty("hard") & r.can_crouch) |
-                     (r.jump & r.can_crouch)
-                     ))
-        
+        self.connect(
+            blue_desk,
+            conveyer_upper,
+            (
+                r.jump & r.difficulty("medium")
+                | (r.difficulty("hard") & r.can_crouch)
+                | (r.jump & r.can_crouch)
+            ),
+        )
+
         red_key_area = self.region(
             "Red Key Area",
             [
-                "Red Tripbomb 1",
-                "Red Tripbomb 2",
+                "Red Tripmine 1",
+                "Red Tripmine 2",
                 "Red Chaingun",
                 "Red Armor",
                 "Red Medkit",
                 "Red Pipebombs",
                 "Red Devastator",
-                "Red Area Yellow Key Card",
-                "Red Atomic Health", 
+                "Yellow Key Card",
+                "Red Atomic Health",
             ],
         )
         self.connect(blue_key_area, red_key_area, self.red_key & r.jump & r.can_crouch)
@@ -220,3 +223,4 @@ class E4L6(D3DLevel):
             ],
         )
         self.connect(red_key_area, yellow_key_area, self.yellow_key)
+        return ret

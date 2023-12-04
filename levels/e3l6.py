@@ -7,7 +7,7 @@ class E3L6(D3DLevel):
     name = "Rabid Transit"
     levelnum = 5
     volumenum = 2
-    keys = ["Red", "Blue"]
+    keys = ["Blue", "Red"]
     location_defs = [
         {"id": 1, "name": "Track Steroids", "type": "sprite"},
         {"id": 8, "name": "Red Key Card", "type": "sprite"},

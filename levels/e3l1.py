@@ -7,7 +7,7 @@ class E3L1(D3DLevel):
     name = "Raw Meat"
     levelnum = 0
     volumenum = 2
-    keys = ["Red", "Blue"]
+    keys = ["Blue", "Red"]
     location_defs = [
         {"id": 78, "name": "Booth Jetpack", "type": "sprite"},
         {"id": 115, "name": "Start Ledge Chaingun", "type": "sprite"},

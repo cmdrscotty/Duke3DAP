@@ -7,7 +7,7 @@ class E3L3(D3DLevel):
     name = "Flood Zone"
     levelnum = 2
     volumenum = 2
-    keys = ["Red", "Blue", "Yellow"]
+    keys = ["Blue", "Red", "Yellow"]
     location_defs = [
         {"id": 1, "mp": True, "name": "MP 1 Jetpack", "type": "sprite"},
         {"id": 23, "name": "Water Surface Night Vision Goggles", "type": "sprite"},

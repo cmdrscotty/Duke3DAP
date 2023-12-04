@@ -18,9 +18,9 @@ class E4L7(D3DLevel):
         {"id": 84, "name": "Front Upper Atomic Health", "type": "sprite"},
         {"id": 110, "name": "Crusher RPG", "type": "sprite"},
         {"id": 112, "name": "Crusher Medkit", "type": "sprite"},
-        {"id": 165, "name": "Front Upper Blue Key Card", "type": "sprite"},
-        {"id": 166, "name": "Cola Tripbomb 1", "type": "sprite"},
-        {"id": 167, "name": "Cola Tripbomb 2", "type": "sprite"},
+        {"id": 165, "name": "Blue Key Card", "type": "sprite"},
+        {"id": 166, "name": "Cola Tripmine 1", "type": "sprite"},
+        {"id": 167, "name": "Cola Tripmine 2", "type": "sprite"},
         {"id": 170, "name": "Blue Devastator", "type": "sprite"},
         {"id": 176, "name": "Outside Pipebombs", "type": "sprite"},
         {"id": 177, "name": "Front Chaingun", "type": "sprite"},
@@ -32,14 +32,15 @@ class E4L7(D3DLevel):
         {"id": 322, "name": "Blue Medkit", "type": "sprite"},
         {"id": 331, "name": "Front Steroids", "type": "sprite"},
         {"id": 365, "mp": True, "name": "MP Blue Jetpack", "type": "sprite"},
-        {"id": 372, "name": "Blue Area Red Key Card", "type": "sprite"},
+        {"id": 372, "name": "Red Key Card", "type": "sprite"},
         {"id": 420, "name": "Blue Shotgun", "type": "sprite"},
         {"id": 591, "name": "Blue Apt. RPG", "type": "sprite"},
-        {"id": 65, "name": "Blue Secret", "type": "sector"},
-        {"id": 232, "name": "Crate Secret", "type": "sector"},
-        {"id": 265, "name": "Blue Apt. Secret", "type": "sector"},
+        {"id": 65, "name": "Secret Blue Area", "type": "sector"},
+        {"id": 232, "name": "Secret Crate", "type": "sector"},
+        {"id": 265, "name": "Secret Blue Appartment", "type": "sector"},
         {"id": 0, "name": "Exit", "type": "exit"},
     ]
+
     def main_region(self) -> Region:
         r = self.rules
         ret = self.region(
@@ -59,8 +60,8 @@ class E4L7(D3DLevel):
             [
                 "Front Upper Armor",
                 "Front Upper Atomic Health",
-                "Front Upper Blue Key Card",
-                "Crate Secret",
+                "Blue Key Card",
+                "Secret Crate",
                 "Crate Freezethrower",
             ],
         )
@@ -72,42 +73,41 @@ class E4L7(D3DLevel):
                 "Blue Medkit",
                 "Blue Shotgun",
                 "MP Blue Jetpack",
-                "Blue Area Red Key Card",
+                "Red Key Card",
                 "Blue Holo Duke",
                 "Blue Devastator",
                 "Blue Atomic Health",
-                "Blue Apt. Secret",
+                "Secret Blue Appartment",
                 "Blue Apt. RPG",
                 "MP Blue Apt. Jetpack",
                 "Blue Apt. Pipebombs",
             ],
         )
         # One way, cant go back without crouching
-        self.connect(ret, blue_key_area, (self.blue_key & r.jump) |
-                     (r.crouch_jump & r.steroids))
-        
+        self.connect(
+            ret, blue_key_area, (self.blue_key & r.jump) | (r.crouch_jump & r.steroids)
+        )
+
         blue_dive = self.region(
             "Blue Dive Area",
             [
                 "Blue Night Vision Goggles",
-                "Cola Tripbomb 1",
-                "Cola Tripbomb 2",
+                "Cola Tripmine 1",
+                "Cola Tripmine 2",
             ],
         )
         # Crouchjump through window skips dive and jetpack requirement
-        self.connect(blue_key_area, blue_dive, r.can_dive |
-                     r.crouch_jump)
-        
+        self.connect(blue_key_area, blue_dive, r.can_dive | r.crouch_jump)
+
         blue_secret = self.region(
-            "Blue Secret",
+            "Secret Blue Area",
             [
                 "Blue Secret Shrinker",
-                "Blue Secret",
+                "Secret Blue Area",
             ],
         )
         # Clip on top of trashcan and strafe around to secret
-        self.connect(blue_dive, blue_secret, r.jump |
-                     (r.difficulty("Hard")))
+        self.connect(blue_dive, blue_secret, r.jump | (r.difficulty("Hard")))
 
         dive_crusher = self.region(
             "Dive Crusher",
@@ -126,3 +126,4 @@ class E4L7(D3DLevel):
             ],
         )
         self.connect(blue_dive, red_key_area, self.red_key)
+        return ret

@@ -20,9 +20,9 @@ class E4L3(D3DLevel):
         {"id": 122, "mp": True, "name": "MP Outside Shotgun", "type": "sprite"},
         {"id": 126, "mp": True, "name": "MP Behind boxes RPG", "type": "sprite"},
         {"id": 130, "name": "Shop Corridor Devastator", "type": "sprite"},
-        {"id": 131, "name": "Blue Fruit Tripbomb 1", "type": "sprite"},
-        {"id": 132, "name": "Blue Fruit Tripbomb 2", "type": "sprite"},
-        {"id": 133, "name": "Blue Fruit Tripbomb 3", "type": "sprite"},
+        {"id": 131, "name": "Blue Fruit Tripmine 1", "type": "sprite"},
+        {"id": 132, "name": "Blue Fruit Tripmine 2", "type": "sprite"},
+        {"id": 133, "name": "Blue Fruit Tripmine 3", "type": "sprite"},
         {"id": 134, "name": "Storage Upper Atomic Health", "type": "sprite"},
         {"id": 139, "name": "Shop Corridor Medkit", "type": "sprite"},
         {"id": 148, "name": "Crate Shotgun", "type": "sprite"},
@@ -30,9 +30,9 @@ class E4L3(D3DLevel):
         {"id": 194, "name": "Warehouse Upper Atomic Health", "type": "sprite"},
         {"id": 228, "name": "Exploding Box Chaingun", "type": "sprite"},
         {"id": 264, "name": "Blue Vent Atomic Health", "type": "sprite"},
-        {"id": 307, "name": "Behind boxes Blue Key Card", "type": "sprite"},
-        {"id": 377, "name": "Blue Seal Yellow Key Card", "type": "sprite"},
-        {"id": 396, "name": "Manager Office Red Key Card", "type": "sprite"},
+        {"id": 307, "name": "Blue Key Card", "type": "sprite"},
+        {"id": 377, "name": "Yellow Key Card", "type": "sprite"},
+        {"id": 396, "name": "Red Key Card", "type": "sprite"},
         {"id": 426, "name": "Manager Office Pipebombs", "type": "sprite"},
         {"id": 442, "name": "Blue Fruit Armor", "type": "sprite"},
         {"id": 445, "name": "Warehouse Night Vision Goggles", "type": "sprite"},
@@ -43,13 +43,13 @@ class E4L3(D3DLevel):
         {"id": 542, "name": "Trash Comp Medkit", "type": "sprite"},
         {"id": 547, "name": "Red Storage Steroids", "type": "sprite"},
         {"id": 549, "name": "Trash Comp Protective Boots", "type": "sprite"},
-        {"id": 70, "name": "Exploding Box Secret", "type": "sector"},
-        {"id": 176, "name": "Shop Corridor Secret", "type": "sector"},
-        {"id": 274, "name": "Yellow Cashier Secret", "type": "sector"},
-        {"id": 344, "name": "Storage Upper Secret", "type": "sector"},
-        {"id": 349, "name": "Openable Box Secret", "type": "sector"},
-        {"id": 362, "name": "Trash Comp Secret", "type": "sector"},
-        {"id": 365, "name": "Red Storage Secret", "type": "sector"},
+        {"id": 70, "name": "Secret Exploding Box", "type": "sector"},
+        {"id": 176, "name": "Secret Shop Corridor", "type": "sector"},
+        {"id": 274, "name": "Secret Yellow Cashier", "type": "sector"},
+        {"id": 344, "name": "Secret Storage Upper", "type": "sector"},
+        {"id": 349, "name": "Secret Openable Box", "type": "sector"},
+        {"id": 362, "name": "Secret Trash Comp", "type": "sector"},
+        {"id": 365, "name": "Secret Red Storage", "type": "sector"},
         {"id": 0, "name": "Exit", "type": "exit"},
     ]
 
@@ -64,8 +64,7 @@ class E4L3(D3DLevel):
 
         over_fence = self.region(
             "Over fence",
-            [
-            ],
+            [],
         )
         # Can sr50 over the fence around the corner
         self.connect(ret, over_fence, r.difficulty("hard") | r.jump)
@@ -76,7 +75,7 @@ class E4L3(D3DLevel):
                 "Crate Shotgun",
             ],
         )
-        self.connect(over_fence, over_fence_container, r.jump)   
+        self.connect(over_fence, over_fence_container, r.jump)
 
         over_fence_warehouse = self.region(
             "Over fence warehouse",
@@ -99,10 +98,10 @@ class E4L3(D3DLevel):
         shop_inside = self.region(
             "Shop Inside",
             [
-                "Shop Corridor Secret",
+                "Secret Shop Corridor",
                 "Shop Corridor Devastator",
                 "Shop Corridor Medkit",
-                "Openable Box Secret",
+                "Secret Openable Box",
                 "Openable Box Armor",
             ],
         )
@@ -113,7 +112,7 @@ class E4L3(D3DLevel):
             "Behind boxes",
             [
                 "MP Behind boxes RPG",
-                "Behind boxes Blue Key Card",
+                "Blue Key Card",
             ],
         )
         self.connect(shop_inside, behind_boxes, r.jump)
@@ -129,7 +128,7 @@ class E4L3(D3DLevel):
         exploding_box = self.region(
             "Exploding Box",
             [
-                "Exploding Box Secret",
+                "Secret Exploding Box",
                 "Exploding Box Chaingun",
             ],
         )
@@ -139,18 +138,18 @@ class E4L3(D3DLevel):
             "Blue Fruit Area",
             [
                 "Blue Fruit Armor",
-                "Blue Fruit Tripbomb 1",
-                "Blue Fruit Tripbomb 2",
-                "Blue Fruit Tripbomb 3",
+                "Blue Fruit Tripmine 1",
+                "Blue Fruit Tripmine 2",
+                "Blue Fruit Tripmine 3",
             ],
         )
         # Can diagonal walk up in corner, easier with sprint?
         # Extreme difficulty strat needs to be double checked
-        #| r.difficulty("extreme"))
-        self.connect(shop_blue, blue_fruits, 
-                     r.jump |
-                     r.difficulty("hard") & r.can_sprint)
-                     
+        # | r.difficulty("extreme"))
+        self.connect(
+            shop_blue, blue_fruits, r.jump | r.difficulty("hard") & r.can_sprint
+        )
+
         blue_upper = self.region(
             "Shop Blue Key Area Vent",
             [
@@ -158,7 +157,7 @@ class E4L3(D3DLevel):
                 "Blue Top Crate RPG",
                 "MP Blue Vent Shrinker",
                 "MP Blue Seal Chaingun",
-                "Blue Seal Yellow Key Card", 
+                "Yellow Key Card",
             ],
         )
         self.connect(shop_blue, blue_upper, r.jump)
@@ -175,17 +174,16 @@ class E4L3(D3DLevel):
             "Yellow Key Cashier Area",
             [
                 "Manager Office Pipebombs",
-                "Manager Office Red Key Card",
+                "Red Key Card",
             ],
         )
         # Can climb up to crates over the crack, permanently gone if blown up
         self.connect(yellow_cashier, manager_upper, r.jump | r.difficulty("medium"))
-        
 
         yellow_cashier_secret = self.region(
-            "Yellow Cashier Secret",
+            "Secret Yellow Cashier",
             [
-                "Yellow Cashier Secret",
+                "Secret Yellow Cashier",
                 "Yellow Cashier Devastator",
             ],
         )
@@ -197,7 +195,7 @@ class E4L3(D3DLevel):
                 "Red Storage Holo Duke",
                 "MP Red Storage Shotgun",
                 "Red Storage Steroids",
-                "Red Storage Secret",
+                "Secret Red Storage",
             ],
         )
         self.connect(shop_blue, storage_red, self.red_key)
@@ -206,22 +204,23 @@ class E4L3(D3DLevel):
             "Red Key Storage Upper Area",
             [
                 "Storage Upper Atomic Health",
-                "Storage Upper Secret",
+                "Secret Storage Upper",
                 "Storage Upper Freezethrower",
                 "Storage Upper Pipebombs",
                 "Storage Upper Night Vision Goggles",
             ],
         )
-        self.connect(storage_red, storage_red_upper ,self.red_key)
+        self.connect(storage_red, storage_red_upper, self.red_key)
 
         trash_compactor = self.region(
             "Trash Compactor",
             [
                 "Trash Comp Protective Boots",
                 "Trash Comp Medkit",
-                "Trash Comp Secret",
+                "Secret Trash Comp",
                 "Exit",
             ],
         )
         # Jump to door opening button
         self.connect(storage_red, trash_compactor, r.jump)
+        return ret

@@ -7,7 +7,7 @@ class E3L2(D3DLevel):
     name = "Bank Roll"
     levelnum = 1
     volumenum = 2
-    keys = ["Red", "Blue"]
+    keys = ["Blue", "Red"]
     location_defs = [
         {"id": 54, "name": "Top of Gears Protective Boots", "type": "sprite"},
         {"id": 66, "name": "Start Pipebombs", "type": "sprite"},

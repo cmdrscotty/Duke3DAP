@@ -18,8 +18,8 @@ class E4L5(D3DLevel):
         {"id": 92, "name": "Graffiti RPG", "type": "sprite"},
         {"id": 123, "name": "Yellow Atomic Health", "type": "sprite"},
         {"id": 142, "mp": True, "name": "MP Yellow Shotgun", "type": "sprite"},
-        {"id": 196, "name": "Basement Tripbomb 1", "type": "sprite"},
-        {"id": 197, "name": "Basement Tripbomb 2", "type": "sprite"},
+        {"id": 196, "name": "Basement Tripmine 1", "type": "sprite"},
+        {"id": 197, "name": "Basement Tripmine 2", "type": "sprite"},
         {"id": 198, "name": "Basement Freezethrower", "type": "sprite"},
         {"id": 211, "name": "Basement Jetpack", "type": "sprite"},
         {"id": 260, "name": "Upstairs RPG", "type": "sprite"},
@@ -27,7 +27,7 @@ class E4L5(D3DLevel):
         {"id": 266, "name": "Bookshelf Atomic Health", "type": "sprite"},
         {"id": 267, "name": "Red Steroids", "type": "sprite"},
         {"id": 268, "name": "Poster Medkit", "type": "sprite"},
-        {"id": 363, "name": "Security Blue Key Card", "type": "sprite"},
+        {"id": 363, "name": "Blue Key Card", "type": "sprite"},
         {"id": 441, "name": "Telephone Atomic Health", "type": "sprite"},
         {"id": 528, "name": "Bookshelf Chaingun 1", "type": "sprite"},
         {"id": 529, "name": "Bookshelf Chaingun 2", "type": "sprite"},
@@ -35,7 +35,7 @@ class E4L5(D3DLevel):
         {"id": 613, "name": "Start Shotgun", "type": "sprite"},
         {"id": 618, "name": "Start Chaingun", "type": "sprite"},
         {"id": 717, "name": "Basement Blue Pipebombs", "type": "sprite"},
-        {"id": 751, "name": "Red Yellow Key Card", "type": "sprite"},
+        {"id": 751, "name": "Yellow Key Card", "type": "sprite"},
         {"id": 767, "mp": True, "name": "MP Hangout Jetpack", "type": "sprite"},
         {"id": 768, "name": "Yellow Shrinker", "type": "sprite"},
         {"id": 771, "name": "Start Armor", "type": "sprite"},
@@ -44,15 +44,16 @@ class E4L5(D3DLevel):
         {"id": 812, "mp": True, "name": "MP Security Armor", "type": "sprite"},
         {"id": 813, "mp": True, "name": "MP Security Shotgun", "type": "sprite"},
         {"id": 841, "name": "Unreachable Holo Duke", "type": "sprite"},
-        {"id": 854, "name": "Basement Blue Red Key Card", "type": "sprite"},
-        {"id": 5, "name": "Telephone Secret", "type": "sector"},
-        {"id": 56, "name": "Poster Secret", "type": "sector"},
-        {"id": 123, "name": "Bookshelf Secret", "type": "sector"},
-        {"id": 465, "name": "Graffiti Secret", "type": "sector"},
-        {"id": 469, "name": "Basement Secret", "type": "sector"},
+        {"id": 854, "name": "Red Key Card", "type": "sprite"},
+        {"id": 5, "name": "Secret Telephone", "type": "sector"},
+        {"id": 56, "name": "Secret Poster", "type": "sector"},
+        {"id": 123, "name": "Secret Bookshelf", "type": "sector"},
+        {"id": 465, "name": "Secret Graffiti", "type": "sector"},
+        {"id": 469, "name": "Secret Basement", "type": "sector"},
         {"id": 0, "name": "Exit", "type": "exit"},
         {"id": 11, "name": "Secret Exit", "type": "exit"},
     ]
+
     def main_region(self) -> Region:
         r = self.rules
         ret = self.region(
@@ -65,9 +66,9 @@ class E4L5(D3DLevel):
             ],
         )
         tele_secret = self.region(
-            "Telephone Secret",
+            "Secret Telephone",
             [
-                "Telephone Secret",
+                "Secret Telephone",
                 "Telephone Atomic Health",
             ],
         )
@@ -75,9 +76,9 @@ class E4L5(D3DLevel):
         self.connect(ret, tele_secret, r.jump)
 
         graffiti_secret = self.region(
-            "Graffiti Secret",
+            "Secret Graffiti",
             [
-                "Graffiti Secret",
+                "Secret Graffiti",
                 "Graffiti Steroids",
                 "Graffiti Freezethrower",
                 "Graffiti Devastator",
@@ -91,23 +92,23 @@ class E4L5(D3DLevel):
             [
                 "Basement Pipebombs",
                 "Basement Jetpack",
-                "Basement Tripbomb 1",
-                "Basement Tripbomb 2",
+                "Basement Tripmine 1",
+                "Basement Tripmine 2",
                 "Basement Freezethrower",
                 "Basement Atomic Health",
-                "Basement Secret",
+                "Secret Basement",
                 "Upstairs RPG",
                 "Upstairs Medkit",
                 "Upstairs Night Vision Goggles",
-                "Security Blue Key Card",
+                "Blue Key Card",
             ],
         )
         # Can walk off the stairs on top of the, a bit tricky without sprint
         # Other entry leads through manhole cover
-        self.connect(ret, past_car, r.can_sprint | 
-                     r.difficulty("medium") |
-                     r.explosives)
-        
+        self.connect(
+            ret, past_car, r.can_sprint | r.difficulty("medium") | r.explosives
+        )
+
         security_mons_upper = self.region(
             "Security Monitors Upper",
             [
@@ -118,15 +119,16 @@ class E4L5(D3DLevel):
         )
         # Can diagonal walk into security monitors and use crouch to clip up
         # Requires difficult sr50 without sprint
-        self.connect(past_car, security_mons_upper, 
-                     r.can_sprint & r.difficulty("medium") | 
-                     r.difficulty("hard") |
-                     r.jump)
-        
+        self.connect(
+            past_car,
+            security_mons_upper,
+            r.can_sprint & r.difficulty("medium") | r.difficulty("hard") | r.jump,
+        )
+
         blue_key_area = self.region(
             "Blue Key Area",
             [
-                "Bookshelf Secret",
+                "Secret Bookshelf",
                 "Bookshelf Atomic Health",
                 "Bookshelf Chaingun 1",
                 "Bookshelf Chaingun 2",
@@ -139,12 +141,13 @@ class E4L5(D3DLevel):
             "Basement Blue Area",
             [
                 "Basement Blue Pipebombs",
-                "Basement Blue Red Key Card",
+                "Red Key Card",
             ],
         )
-        self.connect(past_car, basement_blue_area, self.blue_key |
-                     r.crouch_jump & r.steroids)
-        
+        self.connect(
+            past_car, basement_blue_area, self.blue_key | r.crouch_jump & r.steroids
+        )
+
         red_key_area = self.region(
             "Red Key Area",
             [
@@ -157,7 +160,7 @@ class E4L5(D3DLevel):
         poster_secret = self.region(
             "Poster Secret Area",
             [
-                "Poster Secret",
+                "Secret Poster",
                 "Poster Medkit",
             ],
         )
@@ -191,5 +194,6 @@ class E4L5(D3DLevel):
         )
         self.connect(yellow_key_area, hangout_room, r.jump)
 
-        # This location is unreachable behind a wall thats supposed to blow up:
+        # This location is unreachable behind a wall that's supposed to blow up:
         # {"id": 841, "name": "Unreachable Holo Duke", "type": "sprite"},
+        return ret

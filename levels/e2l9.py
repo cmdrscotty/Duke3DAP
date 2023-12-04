@@ -7,7 +7,7 @@ class E2L9(D3DLevel):
     name = "Overlord"
     levelnum = 8
     volumenum = 1
-    keys = ["Red"]
+    keys = []
     location_defs = [
         {"id": 7, "name": "7 RPG", "type": "sprite"},
         {"id": 8, "name": "8 Armor", "type": "sprite"},

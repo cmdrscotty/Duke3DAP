@@ -105,7 +105,7 @@ class E4(D3DEpisode):
         E4L10(),
         E4L11(),
     ]
-    maxlevel = 0
+    maxlevel = 11
     bosslevel = 9
 
 

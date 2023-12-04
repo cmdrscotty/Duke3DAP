@@ -7,7 +7,7 @@ class E2L8(D3DLevel):
     name = "Dark Side"
     levelnum = 7
     volumenum = 1
-    keys = ["Red"]
+    keys = ["Blue", "Yellow"]
     location_defs = [
         {"id": 42, "name": "42 Pipebombs", "type": "sprite"},
         {"id": 156, "name": "156 Atomic Health", "type": "sprite"},

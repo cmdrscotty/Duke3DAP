@@ -20,7 +20,7 @@ class E4L9(D3DLevel):
         {"id": 223, "name": "Barracks Steroids", "type": "sprite"},
         {"id": 229, "name": "TV Chaingun", "type": "sprite"},
         {"id": 261, "name": "Yellow Pipebombs", "type": "sprite"},
-        {"id": 504, "name": "Scan Room Blue Key Card", "type": "sprite"},
+        {"id": 504, "name": "Blue Key Card", "type": "sprite"},
         {"id": 626, "name": "Yellow Upper Pipebombs", "type": "sprite"},
         {"id": 834, "name": "Crate Protective Boots", "type": "sprite"},
         {"id": 960, "name": "Upper Deck Steroids", "type": "sprite"},
@@ -37,8 +37,8 @@ class E4L9(D3DLevel):
         {"id": 976, "name": "Upper Deck Shotgun", "type": "sprite"},
         {"id": 977, "name": "Low Deck Chaingun", "type": "sprite"},
         {"id": 980, "name": "Upper Deck Shrinker", "type": "sprite"},
-        {"id": 983, "name": "Upper Deck Tripbomb 1", "type": "sprite"},
-        {"id": 984, "name": "Upper Deck Tripbomb 2", "type": "sprite"},
+        {"id": 983, "name": "Upper Deck Tripmine 1", "type": "sprite"},
+        {"id": 984, "name": "Upper Deck Tripmine 2", "type": "sprite"},
         {"id": 988, "name": "Crate Freezethrower", "type": "sprite"},
         {"id": 989, "name": "Crate Devastator", "type": "sprite"},
         {"id": 992, "name": "Scan Room  Night Vision Goggles", "type": "sprite"},
@@ -52,8 +52,8 @@ class E4L9(D3DLevel):
         {"id": 1010, "name": "Fire Atomic Health", "type": "sprite"},
         {"id": 1011, "name": "Next to Crusher Chaingun", "type": "sprite"},
         {"id": 1012, "name": "Next to Crusher Shotgun", "type": "sprite"},
-        {"id": 1021, "name": "Captains Red Key Card", "type": "sprite"},
-        {"id": 1022, "name": "Big Crate Yellow Key Card", "type": "sprite"},
+        {"id": 1021, "name": "Red Key Card", "type": "sprite"},
+        {"id": 1022, "name": "Yellow Key Card", "type": "sprite"},
         {"id": 1058, "name": "Yellow Atomic Health", "type": "sprite"},
         {"id": 1081, "name": "Yellow Protective Boots", "type": "sprite"},
         {"id": 1082, "name": "Yellow Steroids", "type": "sprite"},
@@ -65,20 +65,19 @@ class E4L9(D3DLevel):
         {"id": 1183, "name": "Dive Secret Night Vision Goggles", "type": "sprite"},
         {"id": 1184, "name": "Dive Secret Armor", "type": "sprite"},
         {"id": 1185, "name": "1185 Shotgun", "type": "sprite"},
-        {"id": 347, "name": "Crate Secret", "type": "sector"},
-        {"id": 718, "name": "TV Secret", "type": "sector"},
-        {"id": 761, "name": "Captains Secret", "type": "sector"},
-        {"id": 795, "name": "Dive Secret", "type": "sector"},
-        {"id": 800, "name": "Kitchen Secret", "type": "sector"},
+        {"id": 347, "name": "Secret Crate", "type": "sector"},
+        {"id": 718, "name": "Secret TV", "type": "sector"},
+        {"id": 761, "name": "Secret Captains Cabin", "type": "sector"},
+        {"id": 795, "name": "Secret Dive", "type": "sector"},
+        {"id": 800, "name": "Secret Kitchen", "type": "sector"},
         {"id": 0, "name": "Exit", "type": "exit"},
     ]
+
     def main_region(self) -> Region:
         r = self.rules
         ret = self.region(
             self.name,
-            [
-
-            ],
+            [],
         )
 
         outside_dive = self.region(
@@ -87,7 +86,7 @@ class E4L9(D3DLevel):
                 "Outside Dive RPG",
                 "MP Outside Dive Jetpack 1",
                 "MP Outside Dive Jetpack 2",
-                "Dive Secret",
+                "Secret Dive",
                 "Dive Secret Chaingun",
                 "Dive Secret Steroids",
                 "Dive Secret Night Vision Goggles",
@@ -114,9 +113,9 @@ class E4L9(D3DLevel):
                 "Upper Deck Atomic Health 2",
                 "Upper Deck Shotgun",
                 "Upper Deck Shrinker",
-                "Upper Deck Tripbomb 1",
-                "Upper Deck Tripbomb 2",
-                "Scan Room Blue Key Card",
+                "Upper Deck Tripmine 1",
+                "Upper Deck Tripmine 2",
+                "Blue Key Card",
                 "Scan Room RPG",
                 "Scan Room  Night Vision Goggles",
                 "Crate Freezethrower",
@@ -139,21 +138,19 @@ class E4L9(D3DLevel):
         blue_key_lower = self.region(
             "Blue Key Lower Area",
             [
-                "Kitchen Secret",
+                "Secret Kitchen",
                 "Kitchen Medkit",
                 "Captains Armor",
             ],
         )
-        self.connect(blue_key_area,blue_key_lower, r.can_crouch)
-
-                        
+        self.connect(blue_key_area, blue_key_lower, r.can_crouch)
 
         blue_key_upper = self.region(
             "Blue Key Upper Area",
             [
                 "Captains Night Vision Goggles",
-                "Captains Red Key Card",
-                "Captains Secret",
+                "Red Key Card",
+                "Secret Captains Cabin",
                 "Captains Shrinker",
                 "Captains Atomic Health 1",
                 "Captains Atomic Health 2",
@@ -167,9 +164,8 @@ class E4L9(D3DLevel):
                 "Fire Atomic Health",
             ],
         )
-        self.connect(blue_key_area, red_key_area ,self.red_key |
-                     r.crouch_jump)
-        
+        self.connect(blue_key_area, red_key_area, self.red_key | r.crouch_jump)
+
         red_upper = self.region(
             "Red Upper Area",
             [
@@ -180,7 +176,7 @@ class E4L9(D3DLevel):
                 "Fire Atomic Health",
                 "Next to Crusher Chaingun",
                 "Next to Crusher Shotgun",
-                "Big Crate Yellow Key Card",
+                "Yellow Key Card",
             ],
         )
         self.connect(red_key_area, red_upper, r.jump)
@@ -195,12 +191,12 @@ class E4L9(D3DLevel):
                 "Yellow Protective Boots",
             ],
         )
-        self.connect(blue_key_area, yellow_key_area ,self.yellow_key)
+        self.connect(blue_key_area, yellow_key_area, self.yellow_key)
 
         crate_secret = self.region(
-            "Crate Secret",
+            "Secret Crate",
             [
-                "Crate Secret",
+                "Secret Crate",
                 "Crate RPG",
                 "MP Crate Jetpack",
                 "Crate Protective Boots",
@@ -214,8 +210,8 @@ class E4L9(D3DLevel):
                 "Yellow Underwater Atomic Health",
             ],
         )
-        self.connect(yellow_key_area,yellow_underwater, r.can_dive)
-        
+        self.connect(yellow_key_area, yellow_underwater, r.can_dive)
+
         yellow_upper = self.region(
             "Yellow Upper Area",
             [
@@ -233,3 +229,4 @@ class E4L9(D3DLevel):
             ],
         )
         self.connect(yellow_upper, yellow_final, r.can_dive)
+        return ret

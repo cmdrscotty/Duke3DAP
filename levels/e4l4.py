@@ -12,9 +12,14 @@ class E4L4(D3DLevel):
         {"id": 6, "name": "Blue Boat RPG", "type": "sprite"},
         {"id": 9, "name": "Blue Boat Chaingun", "type": "sprite"},
         {"id": 19, "name": "Blue Upper Protective Boots", "type": "sprite"},
-        {"id": 56, "name": "Red Area Hidden Red Key Card", "type": "sprite"},
+        {"id": 56, "name": "Red Key Card", "type": "sprite"},
         {"id": 101, "name": "Blue Upper 2 Pipebombs", "type": "sprite"},
-        {"id": 184, "mp": True, "name": "MP Boat Top Protective Boots", "type": "sprite"},
+        {
+            "id": 184,
+            "mp": True,
+            "name": "MP Boat Top Protective Boots",
+            "type": "sprite",
+        },
         {"id": 190, "name": "Castle Pipebombs", "type": "sprite"},
         {"id": 191, "name": "Castle Jetpack", "type": "sprite"},
         {"id": 200, "name": "Castle Holo Duke", "type": "sprite"},
@@ -37,25 +42,25 @@ class E4L4(D3DLevel):
         {"id": 238, "name": "Red Area Back RPG", "type": "sprite"},
         {"id": 245, "name": "Upper Main Atomic Health", "type": "sprite"},
         {"id": 246, "name": "Ticket Booth Shotgun", "type": "sprite"},
-        {"id": 445, "name": "Pool Price Blue Key Card", "type": "sprite"},
+        {"id": 445, "name": "Blue Key Card", "type": "sprite"},
         {"id": 634, "name": "Blue Upper Armor", "type": "sprite"},
-        {"id": 656, "name": "Castle Dive Tripbomb 1", "type": "sprite"},
-        {"id": 657, "name": "Castle Dive Tripbomb 2", "type": "sprite"},
+        {"id": 656, "name": "Castle Dive Tripmine 1", "type": "sprite"},
+        {"id": 657, "name": "Castle Dive Tripmine 2", "type": "sprite"},
         {"id": 668, "name": "Castle Dive Scuba Gear", "type": "sprite"},
         {"id": 694, "name": "Sky Secret Atomic Health", "type": "sprite"},
         {"id": 755, "name": "Blue Boat Shrinker", "type": "sprite"},
-        {"id": 90, "name": "Red Area Hidden Room Secret", "type": "sector"},
-        {"id": 193, "name": "Red Explosion Secret", "type": "sector"},
-        {"id": 200, "name": "Sky Secret", "type": "sector"},
-        {"id": 336, "name": "Prison Secret", "type": "sector"},
+        {"id": 90, "name": "Secret Red Area Hidden Room", "type": "sector"},
+        {"id": 193, "name": "Secret Red Explosion", "type": "sector"},
+        {"id": 200, "name": "Secret Sky", "type": "sector"},
+        {"id": 336, "name": "Secret Prison", "type": "sector"},
         {"id": 0, "name": "Exit", "type": "exit"},
     ]
+
     def main_region(self) -> Region:
         r = self.rules
         ret = self.region(
             self.name,
-            [
-            ],
+            [],
         )
 
         ticket_booth = self.region(
@@ -96,7 +101,7 @@ class E4L4(D3DLevel):
         pool_price = self.region(
             "Pool Price Area",
             [
-                "Pool Price Blue Key Card",
+                "Blue Key Card",
             ],
         )
         # Can sr50 from the rotating boats onto the price pillar
@@ -104,15 +109,14 @@ class E4L4(D3DLevel):
 
         red_area = self.region(
             "Red Key Area",
-            [
-            ],
+            [],
         )
         self.connect(ret, red_area, self.red_key)
 
         red_secret = self.region(
             "Red Secret",
             [
-                "Red Explosion Secret",
+                "Secret Red Explosion",
             ],
         )
         self.connect(red_area, red_secret, r.explosives)
@@ -124,15 +128,14 @@ class E4L4(D3DLevel):
             ],
         )
         self.connect(red_area, red_area_back, r.jump)
-        
 
         red_area_hidden = self.region(
             "Red Area Hidden Room",
             [
-                "Red Area Hidden Room Secret",
+                "Secret Red Area Hidden Room",
                 "Red Area Hidden Night Vision Goggles",
                 "Red Area Hidden Armor",
-                "Red Area Hidden Red Key Card",
+                "Red Key Card",
             ],
         )
         self.connect(red_area, red_area_hidden, r.jump & r.can_crouch)
@@ -157,9 +160,10 @@ class E4L4(D3DLevel):
             ],
         )
         # Can sr50 jump up using the sign
-        self.connect(blue_area, blue_upper_start, r.jump &
-                     (r.difficulty("hard") | r.can_sprint))
-        
+        self.connect(
+            blue_area, blue_upper_start, r.jump & (r.difficulty("hard") | r.can_sprint)
+        )
+
         blue_upper = self.region(
             "Blue Upper Area",
             [
@@ -172,7 +176,7 @@ class E4L4(D3DLevel):
         prison_secret = self.region(
             "Prison Secret Area",
             [
-                "Prison Secret",
+                "Secret Prison",
             ],
         )
         self.connect(blue_area, prison_secret, r.explosives & r.jump)
@@ -180,8 +184,8 @@ class E4L4(D3DLevel):
         castle_dive = self.region(
             "Castle Dive Area",
             [
-                "Castle Dive Tripbomb 1",
-                "Castle Dive Tripbomb 2",
+                "Castle Dive Tripmine 1",
+                "Castle Dive Tripmine 2",
                 "Castle Dive Scuba Gear",
                 "Inside Boat Shrinker",
             ],
@@ -216,10 +220,11 @@ class E4L4(D3DLevel):
         sky_secret = self.region(
             "Sky Secret Area",
             [
-                "Sky Secret",
+                "Secret Sky",
                 "Sky Secret Atomic Health",
             ],
         )
 
         # Only requires around 30 jetpack i believe
         self.connect(blue_area, sky_secret, r.jetpack(50))
+        return ret

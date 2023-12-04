@@ -7,7 +7,7 @@ class E3L11(D3DLevel):
     name = "Freeway"
     levelnum = 10
     volumenum = 2
-    keys = ["Red", "Blue"]
+    keys = ["Blue", "Red"]
     location_defs = [
         {"id": 20, "name": "Conveyor Control Armor", "type": "sprite"},
         {"id": 21, "name": "Conveyor Night Vision Goggles", "type": "sprite"},

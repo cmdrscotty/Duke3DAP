@@ -7,7 +7,7 @@ class E2L7(D3DLevel):
     name = "Lunar Reactor"
     levelnum = 6
     volumenum = 1
-    keys = ["Red"]
+    keys = ["Blue", "Red", "Yellow"]
     location_defs = [
         {"id": 5, "name": "5 Steroids", "type": "sprite"},
         {"id": 39, "name": "39 Night Vision Goggles", "type": "sprite"},

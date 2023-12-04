@@ -7,18 +7,18 @@ class E4L2(D3DLevel):
     name = "Duke-Burger"
     levelnum = 1
     volumenum = 3
-    keys = ["Blue","Red"]
+    keys = ["Blue", "Red"]
     location_defs = [
-        {"id": 59, "name": "Slaughterhouse Tripbomb", "type": "sprite"},
+        {"id": 59, "name": "Slaughterhouse Tripmine", "type": "sprite"},
         {"id": 75, "name": "Conveyer Upper RPG", "type": "sprite"},
         {"id": 98, "name": "Kitchen Vent Pipebombs", "type": "sprite"},
         {"id": 101, "name": "Kitchen Vent Steroids", "type": "sprite"},
         {"id": 102, "name": "Kitchen Vent Medkit", "type": "sprite"},
         {"id": 125, "name": "Inside DB  Freezethrower", "type": "sprite"},
         {"id": 140, "name": "Dog Kennel Pipebombs", "type": "sprite"},
-        {"id": 150, "name": "Manager Room Tripbomb 1", "type": "sprite"},
-        {"id": 151, "name": "Manager Room Tripbomb 2", "type": "sprite"},
-        {"id": 198, "name": "Kitchen Red Key Card", "type": "sprite"},
+        {"id": 150, "name": "Manager Room Tripmine 1", "type": "sprite"},
+        {"id": 151, "name": "Manager Room Tripmine 2", "type": "sprite"},
+        {"id": 198, "name": "Red Key Card", "type": "sprite"},
         {"id": 217, "name": "Manager Room Armor", "type": "sprite"},
         {"id": 354, "name": "Kitchen Fryer Armor", "type": "sprite"},
         {"id": 355, "name": "Slaughterhouse Vent Medkit", "type": "sprite"},
@@ -31,13 +31,13 @@ class E4L2(D3DLevel):
         {"id": 563, "mp": True, "name": "MP Outside Sign Holo Duke", "type": "sprite"},
         {"id": 595, "name": "Slaughterhouse Devastator", "type": "sprite"},
         {"id": 663, "name": "Outside Sign Shrinker", "type": "sprite"},
-        {"id": 664, "name": "Outside Sign Blue Key Card", "type": "sprite"},
+        {"id": 664, "name": "Blue Key Card", "type": "sprite"},
         {"id": 679, "name": "Kitchen Back Night Vision Goggles", "type": "sprite"},
         {"id": 748, "name": "Kitchen Back Freezethrower", "type": "sprite"},
-        {"id": 102, "name": "Dog Kennel Secret", "type": "sector"},
-        {"id": 311, "name": "Kitchen Vent Secret", "type": "sector"},
-        {"id": 313, "name": "Conveyer Upper Secret", "type": "sector"},
-        {"id": 321, "name": "Kitchen Back Secret", "type": "sector"},
+        {"id": 102, "name": "Secret Dog Kennel", "type": "sector"},
+        {"id": 311, "name": "Secret Kitchen Vent", "type": "sector"},
+        {"id": 313, "name": "Secret Conveyer Upper", "type": "sector"},
+        {"id": 321, "name": "Secret Kitchen Back", "type": "sector"},
         {"id": 0, "name": "Exit", "type": "exit"},
     ]
 
@@ -57,23 +57,26 @@ class E4L2(D3DLevel):
             [
                 "Outside Sign Shrinker",
                 "MP Outside Sign Holo Duke",
-                "Outside Sign Blue Key Card",
+                "Blue Key Card",
             ],
         )
 
-        kitchen_secret  = self.region(
+        kitchen_secret = self.region(
             "Kitchen Vent",
             [
                 "Kitchen Vent Pipebombs",
                 "Kitchen Vent Steroids",
                 "Kitchen Vent Medkit",
-                "Kitchen Vent Secret",
+                "Secret Kitchen Vent",
             ],
         )
         # Can enter without crouch but cant exit, maybe hard difficulty?
-        self.connect(ret, kitchen_secret, (r.jump & r.difficulty("medium")) | 
-                     (self.blue_key & r.jump))
-        
+        self.connect(
+            ret,
+            kitchen_secret,
+            (r.jump & r.difficulty("medium")) | (self.blue_key & r.jump),
+        )
+
         inside_db_front = self.region(
             "Inside DB Front",
             [
@@ -84,15 +87,15 @@ class E4L2(D3DLevel):
         inside_db_kitchen = self.region(
             "Inside DB Kitchen",
             [
-                "Kitchen Red Key Card",
+                "Red Key Card",
                 "Kitchen Shotgun",
             ],
         )
-        
+
         # Can jump in through kitchen secret or go in from outside
         self.connect(ret, inside_db_front, self.blue_key)
         self.connect(kitchen_secret, inside_db_kitchen, r.can_crouch)
-        # Outside path requires shrinker to get to kitchen area, 
+        # Outside path requires shrinker to get to kitchen area,
         # glitched logic allows jumpclip, only relevant if somebody plays easy+glitched
         self.connect(inside_db_front, inside_db_kitchen, r.crouch_jump | r.can_shrink)
 
@@ -104,7 +107,7 @@ class E4L2(D3DLevel):
         )
         # This one can be gotten by diagonal walking + crouch tap instead of having jump
         self.connect(inside_db_kitchen, kitchen_corner, r.can_crouch | r.jump)
-        
+
         kitchen_fryer = self.region(
             "Kitchen Fryer",
             [
@@ -114,14 +117,18 @@ class E4L2(D3DLevel):
         self.connect(inside_db_kitchen, kitchen_fryer, r.jump)
 
         kitchen_back_secret = self.region(
-            "Kitchen Back Secret",
+            "Secret Kitchen Back",
             [
                 "Kitchen Back Freezethrower",
-                "Kitchen Back Secret",
+                "Secret Kitchen Back",
             ],
         )
         # Can jump instead of duck to activate switch at desk
-        self.connect(inside_db_kitchen, kitchen_back_secret, (r.jump & r.difficulty("medium")) | r.jump & r.can_crouch)
+        self.connect(
+            inside_db_kitchen,
+            kitchen_back_secret,
+            (r.jump & r.difficulty("medium")) | r.jump & r.can_crouch,
+        )
 
         kitchen_back_crate = self.region(
             "Kitchen Back Crate",
@@ -152,7 +159,7 @@ class E4L2(D3DLevel):
         conveyers = self.region(
             "Slaughterhouse Conveyers",
             [
-                "Slaughterhouse Tripbomb",
+                "Slaughterhouse Tripmine",
             ],
         )
         self.connect(slaughterhouse, conveyers, r.difficulty("medium") | r.explosives)
@@ -160,16 +167,16 @@ class E4L2(D3DLevel):
         conveyers_upper = self.region(
             "Slaughterhouse Conveyers Upper",
             [
-                "Conveyer Upper Secret",
+                "Secret Conveyer Upper",
                 "Conveyer Upper RPG",
             ],
         )
         self.connect(conveyers, conveyers_upper, r.jump)
 
         dog_kennel = self.region(
-            "Dog Kennel Secret",
+            "Secret Dog Kennel",
             [
-                "Dog Kennel Secret",
+                "Secret Dog Kennel",
                 "Dog Kennel Pipebombs",
             ],
         )
@@ -178,9 +185,9 @@ class E4L2(D3DLevel):
         manager_room = self.region(
             "Manager Room",
             [
-                "Manager Room Tripbomb 1",
-                "Manager Room Tripbomb 2",
-                "Exit", 
+                "Manager Room Tripmine 1",
+                "Manager Room Tripmine 2",
+                "Exit",
             ],
         )
         self.connect(conveyers_upper, manager_room)
@@ -192,3 +199,4 @@ class E4L2(D3DLevel):
             ],
         )
         self.connect(manager_room, manager_room_cabinet, r.jump)
+        return ret

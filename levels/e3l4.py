@@ -8,7 +8,7 @@ class E3L4(D3DLevel):
     name = "L.A. Rumble"
     levelnum = 3
     volumenum = 2
-    keys = ["Red", "Blue"]
+    keys = ["Blue", "Red"]
     location_defs = [
         {"id": 59, "name": "Red Key Card", "type": "sprite"},
         {"id": 82, "name": "Abortion Clinic Atomic Health", "type": "sprite"},

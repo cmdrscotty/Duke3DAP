@@ -7,7 +7,7 @@ class E3L5(D3DLevel):
     name = "Movie Set"
     levelnum = 4
     volumenum = 2
-    keys = ["Red", "Blue", "Yellow"]
+    keys = ["Blue", "Red", "Yellow"]
     location_defs = [
         {"id": 0, "name": "Control Room Night Vision Goggles", "type": "sprite"},
         {"id": 9, "name": "Moon Landing Atomic Health", "type": "sprite"},

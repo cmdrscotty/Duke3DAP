@@ -42,13 +42,13 @@ class E4L10(D3DLevel):
         {"id": 701, "mp": True, "name": "MP Lobby Shotgun 5", "type": "sprite"},
         {"id": 702, "mp": True, "name": "MP Lobby Shotgun 2", "type": "sprite"},
         {"id": 776, "name": "Blue Medkit", "type": "sprite"},
-        {"id": 789, "name": "L-Side Dive Blue Key Card", "type": "sprite"},
-        {"id": 823, "name": "R-Side Dive Red Key Card", "type": "sprite"},
+        {"id": 789, "name": "Blue Key Card", "type": "sprite"},
+        {"id": 823, "name": "Red Key Card", "type": "sprite"},
         {"id": 824, "name": "R-Side Dive Atomic Health", "type": "sprite"},
         {"id": 825, "name": "R-Side Dive Armor", "type": "sprite"},
         {"id": 840, "name": "L-Side Armor", "type": "sprite"},
         {"id": 841, "name": "R-Side Armor", "type": "sprite"},
-        {"id": 842, "name": "Red Room Yellow Key Card", "type": "sprite"},
+        {"id": 842, "name": "Yellow Key Card", "type": "sprite"},
         {"id": 844, "name": "Yellow Steroids", "type": "sprite"},
         {"id": 852, "name": "Yellow Dive Atomic Health 2", "type": "sprite"},
         {"id": 859, "mp": True, "name": "MP Pillar 1 Chaingun", "type": "sprite"},
@@ -67,15 +67,16 @@ class E4L10(D3DLevel):
         {"id": 933, "name": "DukeTag RPG 1", "type": "sprite"},
         {"id": 934, "name": "DukeTag RPG 2", "type": "sprite"},
         {"id": 964, "name": "R-Side Vent Pipebombs", "type": "sprite"},
-        {"id": 65, "name": "Pillar 1 Secret", "type": "sector"},
-        {"id": 67, "name": "Pillar 2 Secret", "type": "sector"},
-        {"id": 70, "name": "Pillar 3 Secret", "type": "sector"},
-        {"id": 72, "name": "Pillar 4 Secret", "type": "sector"},
-        {"id": 197, "name": "L-Side Vent Secret", "type": "sector"},
-        {"id": 357, "name": "R-Side Vent Secret", "type": "sector"},
-        {"id": 630, "name": "Queen Secret", "type": "sector"},
+        {"id": 65, "name": "Secret Pillar 1", "type": "sector"},
+        {"id": 67, "name": "Secret Pillar 2", "type": "sector"},
+        {"id": 70, "name": "Secret Pillar 3", "type": "sector"},
+        {"id": 72, "name": "Secret Pillar 4", "type": "sector"},
+        {"id": 197, "name": "Secret L-Side Vent", "type": "sector"},
+        {"id": 357, "name": "Secret R-Side Vent", "type": "sector"},
+        {"id": 630, "name": "Secret Queens Chamber", "type": "sector"},
         {"id": 0, "name": "Exit", "type": "exit"},
     ]
+
     def main_region(self) -> Region:
         r = self.rules
         ret = self.region(
@@ -113,7 +114,7 @@ class E4L10(D3DLevel):
             "L-Side Upper",
             [
                 "L-Side Vent Pipebombs",
-                "L-Side Vent Secret",
+                "Secret L-Side Vent",
                 "L-Side Armor",
             ],
         )
@@ -124,7 +125,7 @@ class E4L10(D3DLevel):
             [
                 "L-Side Dive Armor",
                 "L-Side Dive Atomic Health",
-                "L-Side Dive Blue Key Card",
+                "Blue Key Card",
             ],
         )
         self.connect(ret, lside_dive, r.dive(1000))
@@ -136,14 +137,14 @@ class E4L10(D3DLevel):
             ],
         )
         self.connect(ret, blue_key_room, r.jump & self.blue_key)
-        
+
         rside = self.region(
             "Right Side",
             [
                 "R-Side Protective Boots",
                 "R-Side RPG",
                 "R-Side Devastator",
-                "R-Side Vent Secret",
+                "Secret R-Side Vent",
                 "R-Side Vent Pipebombs",
             ],
         )
@@ -160,24 +161,24 @@ class E4L10(D3DLevel):
         pillar_secrets = self.region(
             "Pillar Secrets",
             [
-                "Pillar 1 Secret",
+                "Secret Pillar 1",
                 "MP Pillar 1 Chaingun",
-                "Pillar 2 Secret",
+                "Secret Pillar 2",
                 "MP Pillar 2 Chaingun",
-                "Pillar 3 Secret",
+                "Secret Pillar 3",
                 "MP Pillar 3 Chaingun",
-                "Pillar 4 Secret",
+                "Secret Pillar 4",
                 "MP Pillar 4 Chaingun",
             ],
         )
         # 50 might also be enough but very tight
         self.connect(ret, pillar_secrets, r.jetpack(75))
-        
+
         red_key_room = self.region(
             "Red Key Room",
             [
                 "Red Medkit",
-                "Red Room Yellow Key Card",
+                "Yellow Key Card",
             ],
         )
         self.connect(rside, red_key_room, r.jetpack & self.red_key)
@@ -185,29 +186,32 @@ class E4L10(D3DLevel):
         rside_dive = self.region(
             "Red Dive",
             [
-                "R-Side Dive Jetpack", 
-                "R-Side Dive Red Key Card", 
+                "R-Side Dive Jetpack",
+                "Red Key Card",
                 "R-Side Dive Atomic Health",
                 "R-Side Dive Armor",
             ],
         )
         self.connect(rside, rside_dive, r.dive(1000))
-        
+
         yellow_key_room = self.region(
             "Yellow Key Room",
             [
                 "Yellow Steroids",
             ],
         )
-        self.connect(red_key_room, yellow_key_room, self.yellow_key & r.jetpack(150) |
-                     (r.crouch_jump & r.steroids))
+        self.connect(
+            red_key_room,
+            yellow_key_room,
+            self.yellow_key & r.jetpack(150) | (r.crouch_jump & r.steroids),
+        )
 
         yellow_dive = self.region(
             "Yellow Dive",
             [
                 "Yellow Dive Atomic Health 1",
                 "Yellow Dive Atomic Health 2",
-                "Queen Secret",
+                "Secret Queens Chamber",
                 "Queen Medkit",
                 "Queen Atomic Health",
                 "Queen Armor",
@@ -220,6 +224,7 @@ class E4L10(D3DLevel):
         # {"id": 933, "name": "DukeTag RPG 1", "type": "sprite"},
         # {"id": 934, "name": "DukeTag RPG 2", "type": "sprite"},
         # R-Side MP Only {"id": 150, "name": "R-Side Protective Boots", "type": "sprite"},
-        # R-Side MP Only 
+        # R-Side MP Only
         # L-Side MP Only {"id": 151, "name": "L-Side Protective Boots", "type": "sprite"},
         # L-Side MP Only {"id": 624, "name": "L-Side Jetpack", "type": "sprite"},
+        return ret

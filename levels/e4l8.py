@@ -14,7 +14,7 @@ class E4L8(D3DLevel):
         {"id": 344, "name": "Control Freezethrower", "type": "sprite"},
         {"id": 351, "name": "Control Armor", "type": "sprite"},
         {"id": 352, "name": "Control Shotgun", "type": "sprite"},
-        {"id": 386, "name": "Control Blue Key Card", "type": "sprite"},
+        {"id": 386, "name": "Blue Key Card", "type": "sprite"},
         {"id": 456, "name": "Homer Atomic Health", "type": "sprite"},
         {"id": 479, "name": "Explosion Lower Medkit", "type": "sprite"},
         {"id": 532, "name": "Explosion Lower Devastator", "type": "sprite"},
@@ -30,20 +30,20 @@ class E4L8(D3DLevel):
         {"id": 734, "name": "Storage Steroids", "type": "sprite"},
         {"id": 735, "name": "Explosion Lower Protective Boots", "type": "sprite"},
         {"id": 761, "name": "Blue Dive Atomic Health", "type": "sprite"},
-        {"id": 762, "name": "Blue Dive Yellow Key Card", "type": "sprite"},
+        {"id": 762, "name": "Yellow Key Card", "type": "sprite"},
         {"id": 827, "name": "Blue Upper Shrinker", "type": "sprite"},
         {"id": 830, "name": "Blue Chaingun", "type": "sprite"},
         {"id": 834, "name": "Blue Secret RPG", "type": "sprite"},
-        {"id": 835, "name": "Storage Tripbomb 1", "type": "sprite"},
-        {"id": 836, "name": "Storage Tripbomb 2", "type": "sprite"},
-        {"id": 854, "name": "Bookshelf Red Key Card", "type": "sprite"},
+        {"id": 835, "name": "Storage Tripmine 1", "type": "sprite"},
+        {"id": 836, "name": "Storage Tripmine 2", "type": "sprite"},
+        {"id": 854, "name": "Red Key Card", "type": "sprite"},
         {"id": 863, "name": "Explosion Lower Scuba Gear", "type": "sprite"},
         {"id": 864, "mp": True, "name": "MP Explosion RPG", "type": "sprite"},
         {"id": 868, "mp": True, "name": "MP Outside Freezethrower", "type": "sprite"},
-        {"id": 105, "name": "Explosion Lower Secret", "type": "sector"},
-        {"id": 116, "name": "Homer Secret", "type": "sector"},
-        {"id": 234, "name": "Blue Secret", "type": "sector"},
-        {"id": 240, "name": "Blue Upper Secret", "type": "sector"},
+        {"id": 105, "name": "Secret Explosion Lower", "type": "sector"},
+        {"id": 116, "name": "Secret Homer", "type": "sector"},
+        {"id": 234, "name": "Secret Blue Area", "type": "sector"},
+        {"id": 240, "name": "Secret Blue Upper", "type": "sector"},
         {"id": 0, "name": "Exit", "type": "exit"},
     ]
 
@@ -65,7 +65,7 @@ class E4L8(D3DLevel):
                 "Warehouse Shotgun",
                 "Warehouse Vent Night Vision Goggles",
                 "Explosion Chaingun",
-                "Homer Secret",
+                "Secret Homer",
                 "Homer Atomic Health",
                 "MP Explosion RPG",
             ],
@@ -78,7 +78,7 @@ class E4L8(D3DLevel):
                 "Explosion Lower Atomic Health",
                 "Explosion Lower Pipebombs",
                 "Explosion Lower Scuba Gear",
-                "Explosion Lower Secret",
+                "Secret Explosion Lower",
                 "Explosion Lower Medkit",
                 "Explosion Lower Devastator",
                 "Explosion Lower Holo Duke",
@@ -91,8 +91,8 @@ class E4L8(D3DLevel):
             "Storage Upper Area",
             [
                 "Storage Steroids",
-                "Storage Tripbomb 1",
-                "Storage Tripbomb 2",
+                "Storage Tripmine 1",
+                "Storage Tripmine 2",
             ],
         )
         self.connect(expl_lower, upper_storage, r.jump)
@@ -104,15 +104,15 @@ class E4L8(D3DLevel):
                 "Control Freezethrower",
                 "Control Armor",
                 "Control Shotgun",
-                "Control Blue Key Card", 
+                "Blue Key Card",
             ],
         )
         self.connect(expl_lower, control_room)
-        
+
         blue_key_area = self.region(
             "Blue Key Area",
             [
-                "Blue Secret",
+                "Secret Blue Area",
                 "Blue Secret RPG",
                 "Blue Chaingun",
             ],
@@ -122,26 +122,24 @@ class E4L8(D3DLevel):
         blue_upper = self.region(
             "Blue Key Upper Area",
             [
-                "Blue Upper Secret",
+                "Secret Blue Upper",
                 "Blue Upper Shrinker",
             ],
         )
-        self.connect(blue_key_area, blue_upper ,r.jetpack(75))
+        self.connect(blue_key_area, blue_upper, r.jetpack(75))
 
         blue_dive = self.region(
             "Blue Dive Area",
             [
                 "Blue Dive Atomic Health",
-                "Blue Dive Yellow Key Card",
+                "Yellow Key Card",
             ],
         )
-        self.connect(blue_key_area, blue_dive ,r.can_dive)
+        self.connect(blue_key_area, blue_dive, r.can_dive)
 
         yellow_key_area = self.region(
             "Yellow Key Area",
-            [
-
-            ],
+            [],
         )
         self.connect(control_room, yellow_key_area, self.yellow_key)
 
@@ -149,12 +147,11 @@ class E4L8(D3DLevel):
             "Office Bookshelf",
             [
                 "MP Bookshelf Jetpack",
-                "Bookshelf Red Key Card",
+                "Red Key Card",
             ],
         )
         # Can clip up the bookshelf by using the door
-        self.connect(yellow_key_area, yellow_bookshelf, r.jump |
-                     r.difficulty("Hard"))
+        self.connect(yellow_key_area, yellow_bookshelf, r.jump | r.difficulty("Hard"))
 
         red_key_area = self.region(
             "Red Key Area",
@@ -162,4 +159,7 @@ class E4L8(D3DLevel):
                 "Exit",
             ],
         )
-        self.connect(yellow_key_area, red_key_area, self.red_key & r.can_crouch & r.jump)
+        self.connect(
+            yellow_key_area, red_key_area, self.red_key & r.can_crouch & r.jump
+        )
+        return ret

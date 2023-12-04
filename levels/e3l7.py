@@ -7,7 +7,7 @@ class E3L7(D3DLevel):
     name = "Fahrenheit"
     levelnum = 6
     volumenum = 2
-    keys = ["Red", "Blue", "Yellow"]
+    keys = ["Blue", "Red", "Yellow"]
     location_defs = [
         {"id": 39, "name": "Pool Shotgun", "type": "sprite"},
         {"id": 60, "name": "Building Night Vision Goggles", "type": "sprite"},
