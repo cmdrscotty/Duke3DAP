@@ -51,7 +51,7 @@ class D3DWorld(World):
         # Add the id checksum of our location and item ids for consistency check with clients
         self.slot_data: Dict[str, Any] = {
             "checksum": self.id_checksum,
-            "settings": {},
+            "settings": {"dynamic": {}},
         }
         self.rules: Optional[Rules] = None
         # Filled later from options
@@ -96,6 +96,28 @@ class D3DWorld(World):
         if len(episode.levels) > 0:
             self.starting_levels.append(episode.levels[0])
 
+    def define_dynamic_item_props(self, item_name: str, new_props: Dict[str, Any]):
+        """
+        Creates a dynamic item definition entry with updated props.
+
+        This is useful for dynamically scaling numeric values of items based on difficulty settings
+        """
+        item = all_items[item_name]
+        item_data = {
+            "name": item.name,
+            "type": item.type,
+        }
+        if item.persistent:
+            item_data["persistent"] = True
+        if item.unique:
+            item_data["unique"] = True
+        if item.silent:
+            item_data["silent"] = True
+        item_data.update(**item.props)
+        item_data.update(**new_props)
+
+        self.slot_data["settings"]["dynamic"][str(item.ap_id)] = item_data
+
     def generate_early(self) -> None:
         # difficulty settings
         self.fuel_per_pickup = {
@@ -103,12 +125,24 @@ class D3DWorld(World):
             "Scuba Gear": self.get_option("fuel_per_scuba_gear"),
             "Steroids": self.get_option("fuel_per_steroids"),
         }
-        self.slot_data["settings"]["invinc"] = {
-            # Index by invnum so they can be matched in-game
-            0: self.fuel_per_pickup["Steroids"],
-            2: self.fuel_per_pickup["Scuba Gear"],
-            4: self.fuel_per_pickup["Jetpack"],
-        }
+        self.define_dynamic_item_props(
+            "Jetpack", {"capacity": self.fuel_per_pickup["Jetpack"]}
+        )
+        self.define_dynamic_item_props(
+            "Jetpack Capacity", {"capacity": self.fuel_per_pickup["Jetpack"]}
+        )
+        self.define_dynamic_item_props(
+            "Scuba Gear", {"capacity": self.fuel_per_pickup["Scuba Gear"]}
+        )
+        self.define_dynamic_item_props(
+            "Scuba Gear Capacity", {"capacity": self.fuel_per_pickup["Scuba Gear"]}
+        )
+        self.define_dynamic_item_props(
+            "Steroids", {"capacity": self.fuel_per_pickup["Steroids"]}
+        )
+        self.define_dynamic_item_props(
+            "Steroids Capacity", {"capacity": self.fuel_per_pickup["Steroids"]}
+        )
 
         # Configure rules
         self.rules = Rules(self)
@@ -126,10 +160,12 @@ class D3DWorld(World):
                 self.multiworld.start_inventory[self.player].value[level.map] = 1
         self.slot_data["settings"]["difficulty"] = self.get_option("skill_level")
         if self.get_option("unlock_abilities"):
-            self.slot_data["settings"]["lock_crouch"] = True
-            self.slot_data["settings"]["lock_jump"] = True
-            self.slot_data["settings"]["lock_run"] = True
-            self.slot_data["settings"]["lock_dive"] = True
+            self.slot_data["settings"]["lock"] = {
+                "crouch": True,
+                "jump": True,
+                "run": True,
+                "dive": True,
+            }
         self.slot_data["settings"]["no_save"] = not self.get_option("allow_saving")
 
     def create_regions(self):

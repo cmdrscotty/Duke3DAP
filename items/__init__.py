@@ -82,7 +82,7 @@ junk_items = {
         "Pity Heal",
         net_id(403),
         "health",
-        {"heal": 1},
+        {"heal": 1, "overheal": True},
     ),
 }
 
@@ -390,7 +390,6 @@ inventory_items = {
         {
             "invnum": 0,
             "capacity": 40,
-            "dynamic": True,
         },  # use capacity from slot data if configured
         persistent=True,
         unique=True,
@@ -403,7 +402,6 @@ inventory_items = {
         {
             "invnum": 0,
             "capacity": 40,
-            "dynamic": True,
         },  # use capacity from slot data if configured
         persistent=True,
     ),
@@ -419,8 +417,15 @@ inventory_items = {
     "Armor": ItemDef(
         "Armor",
         net_id(301),
-        "inventory",
-        {"invnum": 1, "capacity": 40, "max_capacity": 100},
+        "armor",
+        {"capacity": 40},
+    ),
+    "Sturdy Armor": ItemDef(
+        "Sturdy Armor",
+        net_id(321),
+        "armor",
+        {"capacity": 2, "maxcapacity": 2},
+        persistent=True,
     ),
     "Scuba Gear": ItemDef(
         "Scuba Gear",
@@ -429,7 +434,6 @@ inventory_items = {
         {
             "invnum": 2,
             "capacity": 400,
-            "dynamic": True,
         },  # use capacity from slot data if configured
         persistent=True,
         unique=True,
@@ -442,7 +446,6 @@ inventory_items = {
         {
             "invnum": 2,
             "capacity": 400,
-            "dynamic": True,
         },  # use capacity from slot data if configured
         persistent=True,
     ),
@@ -452,7 +455,6 @@ inventory_items = {
         "progressive",
         {"items": [302, 322]},
         persistent=True,
-        unique=True,
         progression=True,
         silent=True,
     ),
@@ -469,7 +471,6 @@ inventory_items = {
         {
             "invnum": 4,
             "capacity": 100,
-            "dynamic": True,
         },  # use capacity from slot data if configured
         persistent=True,
         unique=True,
@@ -482,7 +483,6 @@ inventory_items = {
         {
             "invnum": 4,
             "capacity": 100,
-            "dynamic": True,
         },  # use capacity from slot data if configured
         persistent=True,
         progression=True,
@@ -493,7 +493,6 @@ inventory_items = {
         "progressive",
         {"items": [304, 324]},
         persistent=True,
-        unique=True,
         progression=True,
         silent=True,
     ),
@@ -566,10 +565,13 @@ abilities = {
 
 healing_items = {
     "Atomic Health": ItemDef(
-        "Atomic Health", net_id(400), "health", {"heal": 50, "capacity": 200}
+        "Atomic Health", net_id(400), "health", {"heal": 50, "overheal": True}
     ),
     "Medpak": ItemDef("Medpak", net_id(401), "health", {"heal": 30}),
     "Bandage": ItemDef("Bandage", net_id(402), "health", {"heal": 10}),
+    "Ego Boost": ItemDef(
+        "Ego Boost", net_id(403), "health", {"heal": 2, "capacity": 2}, persistent=True
+    ),
 }
 
 all_items: Dict[str, ItemDef] = {

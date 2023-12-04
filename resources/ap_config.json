@@ -2,7 +2,7 @@
   "game": "Duke Nukem 3D",
   "name": "Duke Nukem 3D",
   "game_id": 1,
-  "checksum": "ff0d4b03971c3073b32977156d5cf6bf2ef3814c345b9dca56306a5d9d7ea73d",
+  "checksum": "d641352740cf54e85c14f40730dae26820325e2570a5d8843ab342daa0e1fd18",
   "episodes": {
     "E1": {
       "name": "L.A. Meltdown",
@@ -7273,15 +7273,12 @@
       "persistent": true,
       "unique": true,
       "invnum": 0,
-      "capacity": 40,
-      "dynamic": true
+      "capacity": 40
     },
     "301": {
       "name": "Armor",
-      "type": "inventory",
-      "invnum": 1,
-      "capacity": 40,
-      "max_capacity": 100
+      "type": "armor",
+      "capacity": 40
     },
     "302": {
       "name": "Scuba Gear",
@@ -7289,8 +7286,7 @@
       "persistent": true,
       "unique": true,
       "invnum": 2,
-      "capacity": 400,
-      "dynamic": true
+      "capacity": 400
     },
     "303": {
       "name": "Holo Duke",
@@ -7304,8 +7300,7 @@
       "persistent": true,
       "unique": true,
       "invnum": 4,
-      "capacity": 100,
-      "dynamic": true
+      "capacity": 100
     },
     "307": {
       "name": "Night Vision Goggles",
@@ -7333,24 +7328,28 @@
       "type": "invcapacity",
       "persistent": true,
       "invnum": 0,
-      "capacity": 40,
-      "dynamic": true
+      "capacity": 40
+    },
+    "321": {
+      "name": "Sturdy Armor",
+      "type": "armor",
+      "persistent": true,
+      "capacity": 2,
+      "maxcapacity": 2
     },
     "322": {
       "name": "Scuba Gear Capacity",
       "type": "invcapacity",
       "persistent": true,
       "invnum": 2,
-      "capacity": 400,
-      "dynamic": true
+      "capacity": 400
     },
     "324": {
       "name": "Jetpack Capacity",
       "type": "invcapacity",
       "persistent": true,
       "invnum": 4,
-      "capacity": 100,
-      "dynamic": true
+      "capacity": 100
     },
     "340": {
       "name": "Progressive Steroids",
@@ -7366,7 +7365,6 @@
       "name": "Progressive Scuba Gear",
       "type": "progressive",
       "persistent": true,
-      "unique": true,
       "silent": true,
       "items": [
         302,
@@ -7377,7 +7375,6 @@
       "name": "Progressive Jetpack",
       "type": "progressive",
       "persistent": true,
-      "unique": true,
       "silent": true,
       "items": [
         304,
@@ -7416,7 +7413,7 @@
       "name": "Atomic Health",
       "type": "health",
       "heal": 50,
-      "capacity": 200
+      "overheal": true
     },
     "401": {
       "name": "Medpak",
@@ -7429,9 +7426,11 @@
       "heal": 10
     },
     "403": {
-      "name": "Pity Heal",
+      "name": "Ego Boost",
       "type": "health",
-      "heal": 1
+      "persistent": true,
+      "heal": 2,
+      "capacity": 2
     },
     "1600": {
       "name": "E1L1 Automap",

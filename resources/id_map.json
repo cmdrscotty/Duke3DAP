@@ -1648,6 +1648,7 @@
     "Steroids Capacity": 320,
     "Progressive Steroids": 340,
     "Armor": 301,
+    "Sturdy Armor": 321,
     "Scuba Gear": 302,
     "Scuba Gear Capacity": 322,
     "Progressive Scuba Gear": 342,
@@ -1821,7 +1822,8 @@
     "E4L11 Yellow Key Card": 1876,
     "Atomic Health": 400,
     "Medpak": 401,
-    "Bandage": 402
+    "Bandage": 402,
+    "Ego Boost": 403
   },
-  "checksum": "ff0d4b03971c3073b32977156d5cf6bf2ef3814c345b9dca56306a5d9d7ea73d"
+  "checksum": "d641352740cf54e85c14f40730dae26820325e2570a5d8843ab342daa0e1fd18"
 }
