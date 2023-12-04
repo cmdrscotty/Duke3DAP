@@ -52,20 +52,20 @@ class E1L4(D3DLevel):
         {"name": "Sewage Secret Alcove Atomic Health 1", "id": 1079, "type": "sprite"},
         {"name": "Sewage Secret Alcove Atomic Health 2", "id": 1080, "type": "sprite"},
         {"name": "Canyon RPG", "id": 1085, "type": "sprite"},
-        {"name": "Submarine Return Cave 1", "id": 88, "type": "sector"},
-        {"name": "Submarine Return Cave 2", "id": 89, "type": "sector"},
-        {"name": "Submarine Return Cave 3", "id": 90, "type": "sector"},
-        {"name": "Waterfall Secret Teleporter", "id": 184, "type": "sector"},
-        {"name": "Underwater Secret Cave", "id": 267, "type": "sector"},
-        {"name": "Guard Tower", "id": 274, "type": "sector"},
+        {"name": "Secret Submarine Return Cave 1", "id": 88, "type": "sector"},
+        {"name": "Secret Submarine Return Cave 2", "id": 89, "type": "sector"},
+        {"name": "Secret Submarine Return Cave 3", "id": 90, "type": "sector"},
+        {"name": "Secret Waterfall Secret Teleporter", "id": 184, "type": "sector"},
+        {"name": "Secret Underwater Secret Cave", "id": 267, "type": "sector"},
+        {"name": "Secret Guard Tower", "id": 274, "type": "sector"},
         {"name": "Secret Alcove near Blue Key Card", "id": 330, "type": "sector"},
-        {"name": "Sewage Secret Alcove", "id": 331, "type": "sector"},
-        {"name": "Toxic Waste Belt Hidden Alcove", "id": 418, "type": "sector"},
-        {"name": "Canyon Secret Wall", "id": 421, "type": "sector"},
-        {"name": "Top of Submarine", "id": 430, "type": "sector"},
-        {"name": "Left Cylinder", "id": 435, "type": "sector"},
-        {"name": "Canyon Dark Cave", "id": 453, "type": "sector"},
-        {"name": "Secret Exit Area", "id": 465, "type": "sector"},
+        {"name": "Secret Sewage Alcove", "id": 331, "type": "sector"},
+        {"name": "Secret Toxic Waste Belt Hidden Alcove", "id": 418, "type": "sector"},
+        {"name": "Secret Canyon Wall", "id": 421, "type": "sector"},
+        {"name": "Secret Top of Submarine", "id": 430, "type": "sector"},
+        {"name": "Secret Left Cylinder", "id": 435, "type": "sector"},
+        {"name": "Secret Canyon Dark Cave", "id": 453, "type": "sector"},
+        {"name": "Sewer Breakable Wall", "id": 465, "type": "sector"},
         {"name": "Exit", "id": 0, "type": "exit"},
         {"name": "Secret Exit", "id": 6, "type": "exit"},
     ]
@@ -95,7 +95,7 @@ class E1L4(D3DLevel):
         submarine_secret = self.region(
             "Submarine Secret",
             [
-                "Top of Submarine",
+                "Secret Top of Submarine",
                 "Submarine Medkit",
                 "Submarine Atomic Health)",
                 "Submarine Armor",
@@ -110,7 +110,7 @@ class E1L4(D3DLevel):
                 "Underwater Secret Atomic Health",
                 "Underwater Secret Pipebombs 2",
                 "Underwater Secret Pipebombs 1",
-                "Underwater Secret Cave",
+                "Secret Underwater Secret Cave",
             ],
         )
         self.connect(submarine, underwater_cave, r.explosives)
@@ -118,12 +118,12 @@ class E1L4(D3DLevel):
         facility = self.region(
             "Waste Facility",
             [
-                "Guard Tower",
+                "Secret Guard Tower",
                 "Guard Tower Chaingun",
                 "Toxic Waste Belt Scuba Gear",
                 "Shotgun near Red Key Card",
                 "Red Key Card",
-                "Toxic Waste Belt Hidden Alcove",
+                "Secret Toxic Waste Belt Hidden Alcove",
                 "Cylinders Armor",
                 "Right Cylinder Atomic Health",
             ],
@@ -133,14 +133,14 @@ class E1L4(D3DLevel):
         cylinders = self.region(
             "Waste Storage Cylinders",
             [
-                "Left Cylinder",
+                "Secret Left Cylinder",
                 "Left Cylinder Atomic Health 2",
                 "Left Cylinder Atomic Health 1",
             ],
         )
         self.connect(facility, cylinders, r.jump)
         # Can't touch the sector with just jetpack
-        self.restrict("Left Cylinder", r.can_jump)
+        self.restrict("Secret Left Cylinder", r.can_jump)
 
         flooded_area = self.region(
             "Flooded Area",
@@ -178,31 +178,35 @@ class E1L4(D3DLevel):
             [
                 "Underwater Gate",
                 "Canyon RPG",
-                "Canyon Secret Wall",
+                "Secret Canyon Wall",
                 "Canyon Secret Scuba Gear",
             ],
         )
         self.connect(flooded_area, canyon_far, r.can_sprint or r.jump)
         self.restrict("Canyon Secret Scuba Gear", r.can_crouch)
-        self.restrict("Canyon Secret Wall", r.can_crouch)
+        self.restrict("Secret Canyon Wall", r.can_crouch)
 
         canyon_return1 = self.region(
-            "Canyon Return Path 1", ["Submarine Return Cave 1"]
+            "Canyon Return Path 1", ["Secret Submarine Return Cave 1"]
         )
         self.connect(canyon_far, canyon_return1, r.explosives)
         canyon_return2 = self.region(
             "Canyon Return Path 2",
-            ["Submarine Return Cave 2", "Submarine Return Cave Atomic Health"],
+            ["Secret Submarine Return Cave 2", "Submarine Return Cave Atomic Health"],
         )
         self.connect(canyon_return1, canyon_return2, r.explosives_count(2))
         canyon_return3 = self.region(
-            "Canyon Return Path 1", ["Submarine Return Cave 3"]
+            "Canyon Return Path 1", ["Secret Submarine Return Cave 3"]
         )
         self.connect(canyon_return2, canyon_return3, r.explosives_count(3))
 
         canyon_dark_area = self.region(
             "Canyon Dark Area",
-            ["Canyon Dark Cave", "Canyon Dark Cave Medkit", "Canyon Dark Cave Shotgun"],
+            [
+                "Secret Canyon Dark Cave",
+                "Canyon Dark Cave Medkit",
+                "Canyon Dark Cave Shotgun",
+            ],
         )
         self.connect(flooded_area, canyon_dark_area, r.jump)
 
@@ -230,10 +234,10 @@ class E1L4(D3DLevel):
         )
 
         top_of_waterfall = self.region(
-            "Top of Waterfall", ["Waterfall Secret Teleporter"]
+            "Top of Waterfall", ["Secret Waterfall Secret Teleporter"]
         )
         self.connect(deep_water, top_of_waterfall, third_dive)
-        self.restrict("Waterfall Secret Teleporter", r.explosives)
+        self.restrict("Secret Waterfall Secret Teleporter", r.explosives)
 
         moving_platforms = self.region("Moving Platforms", ["Underwater Gate RPG"])
         # Drops down a waterfall, one-way only this way around
@@ -244,7 +248,7 @@ class E1L4(D3DLevel):
             [
                 "MP Sewage Chaingun",
                 "Sewage Atomic Health",
-                "Sewage Secret Alcove",
+                "Secret Sewage Alcove",
                 "Sewage Secret Alcove Atomic Health 1",
                 "Sewage Secret Alcove Atomic Health 2",
                 "Sewage Protective Boots",
@@ -255,7 +259,7 @@ class E1L4(D3DLevel):
         )  # There might be a way to get off the water fall without jump
 
         secret_exit = self.region(
-            "Secret Exit Area", ["Secret Exit Area", "Secret Exit"]
+            "Sewer Breakable Wall", ["Sewer Breakable Wall", "Secret Exit"]
         )
         self.connect(top_of_sewer, secret_exit, r.explosives)
 

@@ -163,18 +163,12 @@ class Rules(object):
 
         self.steroids = HasGroupRule("Steroids")
 
-        class Difficulty(Rule):
-            difficulty_map = {"easy": 0, "medium": 1, "hard": 2, "extreme": 3}
-
-            def __init__(self, difficulty: str):
-                self.difficulty = difficulty
-
-            def __call__(self, state: CollectionState) -> bool:
-                return self.difficulty_map.get(self.difficulty, 0) <= world.get_option(
-                    "difficulty"
-                )
-
-        self.difficulty = Difficulty
+        difficulty_map = {"easy": 0, "medium": 1, "hard": 2, "extreme": 3}
+        self.difficulty = (
+            lambda difficulty: self.true
+            if difficulty_map.get(difficulty, 0) <= world.get_option("difficulty")
+            else self.false
+        )
 
         self.explosives = self.has_group("Explosives")
         # This is technically not correct because some of them provide more capacity, so this is stricter than it
@@ -191,5 +185,30 @@ class Rules(object):
             self.glitched & self.can_jump & self.can_crouch & self.can_sprint
         )
 
+        # Some simplifications for progressive items
+        self.rpg = self.has_group("RPG")
+        self.pipebomb = self.has_group("Pipebomb")
+        self.devastator = self.has_group("Devastator")
+        self.tripmine = self.has_group("Tripmine")
+
         # General Stuff
         self.level = lambda level_cls: HasRule(level_cls.unlock)
+
+        # Boss kill logic, difficulty dependant
+        self.can_kill_boss_1 = (
+            self.rpg
+        )  # Enough RPG Ammo for a kill in the room, ToDo better logic
+        self.can_kill_boss_2 = self.true
+        # can jump on goal post and have boss suicide on splash damage, or blimp spawns enough ammo
+        self.can_kill_boss_3 = (
+            self.rpg
+            | self.devastator
+            | (
+                self.difficulty("medium")
+                & (
+                    (self.can_jump & (self.can_sprint | self.steroids))
+                    | self.jetpack(50)
+                )
+            )
+        )
+        self.can_kill_boss_4 = self.true

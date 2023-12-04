@@ -28,7 +28,7 @@ class E3L1(D3DLevel):
         {"id": 543, "name": "Start Pool Pipebombs", "type": "sprite"},
         {"id": 561, "name": "Sink Atomic Health", "type": "sprite"},
         {"id": 564, "name": "Kitchen Armor", "type": "sprite"},
-        {"id": 569, "name": "Kitchen Vent Tripbomb", "type": "sprite"},
+        {"id": 569, "name": "Kitchen Vent Tripmine", "type": "sprite"},
         {"id": 570, "name": "Sushi Belt Night Vision Goggles", "type": "sprite"},
         {"id": 574, "mp": True, "name": "MP Garage Door Shotgun", "type": "sprite"},
         {"id": 575, "mp": True, "name": "MP Booth Chaingun", "type": "sprite"},
@@ -151,7 +151,7 @@ class E3L1(D3DLevel):
                 "Sushi Belt Steroids",
                 "Stove Jetpack",
                 "Sink Atomic Health",
-                "Kitchen Vent Tripbomb",
+                "Kitchen Vent Tripmine",
             ],
         )
         self.connect(

@@ -225,3 +225,4 @@ class D3DEpisode(object):
     volumenum: int
     levels: List[D3DLevel]
     maxlevel: int
+    bosslevel: int

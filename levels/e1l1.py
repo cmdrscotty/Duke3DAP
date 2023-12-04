@@ -37,14 +37,14 @@ class E1L1(D3DLevel):
         {"name": "Projector Steroids", "id": 595, "type": "sprite"},
         {"name": "Elevator Pipebombs", "id": 632, "type": "sprite"},
         {"name": "Jetpack above Exit", "id": 633, "type": "sprite"},
-        {"name": "Secret: Behind the Screen", "id": 149, "type": "sector"},
-        {"name": "Secret: Projector Hidden Room", "id": 154, "type": "sector"},
-        {"name": "Secret: Hidden Apartment", "id": 197, "type": "sector"},
-        {"name": "Secret: Projector Security Room", "id": 211, "type": "sector"},
-        {"name": "Secret: Behind Poster", "id": 238, "type": "sector"},
-        {"name": "Secret: Cash Register Alcove", "id": 241, "type": "sector"},
-        {"name": "Secret: Bachelor Apartment", "id": 249, "type": "sector"},
-        {"name": "Secret: Below Billboard", "id": 290, "type": "sector"},
+        {"name": "Secret Behind the Screen", "id": 149, "type": "sector"},
+        {"name": "Secret Projector Hidden Room", "id": 154, "type": "sector"},
+        {"name": "Secret Hidden Apartment", "id": 197, "type": "sector"},
+        {"name": "Secret Projector Security Room", "id": 211, "type": "sector"},
+        {"name": "Secret Behind Poster", "id": 238, "type": "sector"},
+        {"name": "Secret Cash Register Alcove", "id": 241, "type": "sector"},
+        {"name": "Secret Bachelor Apartment", "id": 249, "type": "sector"},
+        {"name": "Secret Below Billboard", "id": 290, "type": "sector"},
         {"name": "Exit", "id": 0, "type": "exit"},
     ]
 
@@ -61,8 +61,8 @@ class E1L1(D3DLevel):
                 "Red Key Card",
                 "Projector Steroids",
                 "Toilet Medkit",
-                "Secret: Cash Register Alcove",
-                "Secret: Projector Security Room",
+                "Secret Cash Register Alcove",
+                "Secret Projector Security Room",
                 "Arcade Holo Duke",
                 "MP Entrance Chaingun",
                 "Vent Holo Duke",
@@ -76,9 +76,9 @@ class E1L1(D3DLevel):
                 "Billboard RPG",
                 "Outside Ledge Atomic Health",
                 "Poster Steroids",
-                "Secret: Hidden Apartment",
-                "Secret: Behind Poster",
-                "Secret: Below Billboard",
+                "Secret Hidden Apartment",
+                "Secret Behind Poster",
+                "Secret Below Billboard",
             ],
         )
         self.connect(ret, apartment, r.jump)
@@ -90,7 +90,7 @@ class E1L1(D3DLevel):
                 "Elevator Pipebombs",
                 "Projector Atomic Health",
                 "Projector Secret RPG",
-                "Secret: Projector Hidden Room",
+                "Secret Projector Hidden Room",
             ],
         )
         self.connect(ret, cinema_ledges, r.jump)
@@ -117,7 +117,7 @@ class E1L1(D3DLevel):
                 "Bachelor Pipebombs",
                 "Bachelor Shotgun",
                 "Bachelor Chaingun",
-                "Secret: Bachelor Apartment",
+                "Secret Bachelor Apartment",
             ],
         )
         self.connect(exit_ledge, bachelor_secret, r.jump)
@@ -125,7 +125,7 @@ class E1L1(D3DLevel):
         behind_screen = self.region(
             "Behind the Screen",
             [
-                "Secret: Behind the Screen",
+                "Secret Behind the Screen",
                 "Jetpack behind Screen",
                 "MP Chaingun behind Screen",
             ],

@@ -13,13 +13,13 @@ except ImportError:
 from BaseClasses import ItemClassification, MultiWorld, Region
 from worlds.AutoWorld import World
 
+from . import resources
 from .base_classes import D3DItem, D3DLevel, LocationDef
 from .id import GAME_ID, local_id, net_id
 from .items import all_items, item_groups
 from .levels import all_episodes
 from .options import Duke3DOptions
 from .rules import Rules
-from . import resources
 
 with files(resources).joinpath("id_map.json").open() as id_file:
     game_ids = json.load(id_file)
@@ -30,7 +30,7 @@ class D3DWorld(World):
     Duke Nukem 3D Randomizer
     """
 
-    game = "Duke3D"
+    game = "Duke Nukem 3D"
     build_game_id = GAME_ID
     game_full_name = "Duke Nukem 3D"
     item_name_to_id = {
@@ -557,6 +557,7 @@ class D3DWorld(World):
                 self.item_name_to_id[item]
                 for item in self.multiworld.start_inventory[self.player].value.keys()
             ],
+            "seed": str(self.multiworld.seed),
         }
 
         with io.open(

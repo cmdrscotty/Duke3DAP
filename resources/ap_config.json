@@ -1,8 +1,8 @@
 {
-  "game": "Duke3D",
+  "game": "Duke Nukem 3D",
   "name": "Duke Nukem 3D",
   "game_id": 1,
-  "checksum": "79caadc5fb839767ef2ed26084ebfd58ea9999a6ab71e75cd763b8b29cffb579",
+  "checksum": "cb75e57daf00fe80ec72cd22b59273ce9e3cfb06c90b8a01c6cd3fcf52effcee",
   "episodes": {
     "E1": {
       "name": "L.A. Meltdown",
@@ -348,35 +348,35 @@
       "sectors": {
         "149": {
           "id": 1800,
-          "name": "Secret: Behind the Screen"
+          "name": "Secret Behind the Screen"
         },
         "154": {
           "id": 1801,
-          "name": "Secret: Projector Hidden Room"
+          "name": "Secret Projector Hidden Room"
         },
         "197": {
           "id": 1802,
-          "name": "Secret: Hidden Apartment"
+          "name": "Secret Hidden Apartment"
         },
         "211": {
           "id": 1803,
-          "name": "Secret: Projector Security Room"
+          "name": "Secret Projector Security Room"
         },
         "238": {
           "id": 1804,
-          "name": "Secret: Behind Poster"
+          "name": "Secret Behind Poster"
         },
         "241": {
           "id": 1805,
-          "name": "Secret: Cash Register Alcove"
+          "name": "Secret Cash Register Alcove"
         },
         "249": {
           "id": 1806,
-          "name": "Secret: Bachelor Apartment"
+          "name": "Secret Bachelor Apartment"
         },
         "290": {
           "id": 1807,
-          "name": "Secret: Below Billboard"
+          "name": "Secret Below Billboard"
         }
       },
       "exits": {
@@ -517,35 +517,35 @@
       "sectors": {
         "91": {
           "id": 1808,
-          "name": "Strip Club Vents"
+          "name": "Secret Strip Club Vents"
         },
         "107": {
           "id": 1809,
-          "name": "Hidden Ledge behind Curtains"
+          "name": "Secret Hidden Ledge behind Curtains"
         },
         "158": {
           "id": 1810,
-          "name": "Pornography Store Corner"
+          "name": "Secret Pornography Store Corner"
         },
         "161": {
           "id": 1811,
-          "name": "Pornography Store Shelves"
+          "name": "Secret Pornography Store Shelves"
         },
         "172": {
           "id": 1812,
-          "name": "Pornography Store Dark Area"
+          "name": "Secret Pornography Store Dark Area"
         },
         "177": {
           "id": 1813,
-          "name": "Behind Strippers"
+          "name": "Secret Behind Strippers"
         },
         "187": {
           "id": 1814,
-          "name": "Attic Hidden Compartment"
+          "name": "Secret Attic Hidden Compartment"
         },
         "218": {
           "id": 1815,
-          "name": "Sewers"
+          "name": "Secret Sewers"
         }
       },
       "exits": {
@@ -698,43 +698,43 @@
       "sectors": {
         "76": {
           "id": 1816,
-          "name": "Courtyard Tunnel"
+          "name": "Secret Courtyard Tunnel"
         },
         "296": {
           "id": 1817,
-          "name": "Electric Chair"
+          "name": "Secret Electric Chair"
         },
         "304": {
           "id": 1818,
-          "name": "Chapel Rafters"
+          "name": "Secret Chapel Rafters"
         },
         "317": {
           "id": 1819,
-          "name": "Chapel Window"
+          "name": "Secret Chapel Window"
         },
         "379": {
           "id": 1820,
-          "name": "Behind Bed"
+          "name": "Secret Behind Bed"
         },
         "387": {
           "id": 1821,
-          "name": "Submarine Engine Room"
+          "name": "Secret Submarine Engine Room"
         },
         "393": {
           "id": 1822,
-          "name": "Submarine Gate Hidden Alcove"
+          "name": "Secret Submarine Gate Hidden Alcove"
         },
         "401": {
           "id": 1823,
-          "name": "Breakable Canyon Wall"
+          "name": "Secret Breakable Canyon Wall"
         },
         "424": {
           "id": 1824,
-          "name": "Control Room Right Alcove"
+          "name": "Secret Control Room Right Alcove"
         },
         "426": {
           "id": 1825,
-          "name": "Control Room Left Alcove"
+          "name": "Secret Control Room Left Alcove"
         }
       },
       "exits": {
@@ -906,27 +906,27 @@
       "sectors": {
         "88": {
           "id": 1826,
-          "name": "Submarine Return Cave 1"
+          "name": "Secret Submarine Return Cave 1"
         },
         "89": {
           "id": 1827,
-          "name": "Submarine Return Cave 2"
+          "name": "Secret Submarine Return Cave 2"
         },
         "90": {
           "id": 1828,
-          "name": "Submarine Return Cave 3"
+          "name": "Secret Submarine Return Cave 3"
         },
         "184": {
           "id": 1829,
-          "name": "Waterfall Secret Teleporter"
+          "name": "Secret Waterfall Secret Teleporter"
         },
         "267": {
           "id": 1830,
-          "name": "Underwater Secret Cave"
+          "name": "Secret Underwater Secret Cave"
         },
         "274": {
           "id": 1831,
-          "name": "Guard Tower"
+          "name": "Secret Guard Tower"
         },
         "330": {
           "id": 1832,
@@ -934,31 +934,31 @@
         },
         "331": {
           "id": 1833,
-          "name": "Sewage Secret Alcove"
+          "name": "Secret Sewage Alcove"
         },
         "418": {
           "id": 1834,
-          "name": "Toxic Waste Belt Hidden Alcove"
+          "name": "Secret Toxic Waste Belt Hidden Alcove"
         },
         "421": {
           "id": 1835,
-          "name": "Canyon Secret Wall"
+          "name": "Secret Canyon Wall"
         },
         "430": {
           "id": 1836,
-          "name": "Top of Submarine"
+          "name": "Secret Top of Submarine"
         },
         "435": {
           "id": 1837,
-          "name": "Left Cylinder"
+          "name": "Secret Left Cylinder"
         },
         "453": {
           "id": 1838,
-          "name": "Canyon Dark Cave"
+          "name": "Secret Canyon Dark Cave"
         },
         "465": {
           "id": 1839,
-          "name": "Secret Exit Area"
+          "name": "Sewer Breakable Wall"
         }
       },
       "exits": {
@@ -1194,23 +1194,23 @@
       "sectors": {
         "7": {
           "id": 1840,
-          "name": "Red Waterfall Passage"
+          "name": "Secret Red Waterfall Passage"
         },
         "21": {
           "id": 1841,
-          "name": "Dancing Shaman"
+          "name": "Secret Dancing Shaman"
         },
         "257": {
           "id": 1842,
-          "name": "Top of Spaceship"
+          "name": "Secret Top of Spaceship"
         },
         "354": {
           "id": 1843,
-          "name": "Fire Pit Hidden Wall"
+          "name": "Secret Fire Pit Hidden Wall"
         },
         "440": {
           "id": 1844,
-          "name": "Fire Pit Teleporter"
+          "name": "Secret Fire Pit Teleporter"
         },
         "441": {
           "id": 1845,
@@ -1350,19 +1350,19 @@
       "sectors": {
         "218": {
           "id": 1846,
-          "name": "Sewer Computers"
+          "name": "Secret Sewer Computers"
         },
         "224": {
           "id": 1847,
-          "name": "Toxic Waste Pool"
+          "name": "Secret Toxic Waste Pool"
         },
         "277": {
           "id": 1848,
-          "name": "Dark Room Ceiling Vent"
+          "name": "Secret Dark Room Ceiling Vent"
         },
         "327": {
           "id": 1849,
-          "name": "Gate Room Wall"
+          "name": "Secret Gate Room Wall"
         }
       },
       "exits": {
@@ -1494,11 +1494,11 @@
       "sectors": {
         "110": {
           "id": 1850,
-          "name": "Behind Waterfall 1"
+          "name": "Secret Behind Waterfall 1"
         },
         "111": {
           "id": 1851,
-          "name": "Behind Waterfall 2"
+          "name": "Secret Behind Waterfall 2"
         }
       },
       "exits": {}
@@ -1507,7 +1507,7 @@
       "sprites": {
         "31": {
           "id": 246,
-          "name": "Night Vision Goggles behind Red Key Card"
+          "name": "Underwater Night Vision Goggles"
         },
         "40": {
           "id": 247,
@@ -1515,15 +1515,15 @@
         },
         "54": {
           "id": 248,
-          "name": "Armor near Shrinker"
+          "name": "Elevator Armor"
         },
         "58": {
           "id": 249,
-          "name": "Secret Shrinker"
+          "name": "Elevator Shrinker"
         },
         "60": {
           "id": 250,
-          "name": "MP Underwater Passage Freezethrower"
+          "name": "MP Elevator Corner Freezethrower"
         },
         "69": {
           "id": 251,
@@ -1587,19 +1587,19 @@
         },
         "374": {
           "id": 266,
-          "name": "Chaingun behind Red Key Card"
+          "name": "Underwater Chaingun"
         },
         "385": {
           "id": 267,
-          "name": "MP Attic Tripbomb 1"
+          "name": "MP Attic Tripmine 1"
         },
         "386": {
           "id": 268,
-          "name": "MP Attic Tripbomb 2"
+          "name": "MP Attic Tripmine 2"
         },
         "387": {
           "id": 269,
-          "name": "MP Attic Tripbomb 3"
+          "name": "MP Attic Tripmine 3"
         },
         "396": {
           "id": 270,
@@ -1619,33 +1619,33 @@
         },
         "448": {
           "id": 274,
-          "name": "Start Hidden Wall Atomic Health"
+          "name": "Monitor Wall Atomic Health"
         }
       },
       "sectors": {
         "4": {
           "id": 1852,
-          "name": "Top Floor"
+          "name": "Secret Top Floor"
         },
         "275": {
           "id": 1853,
-          "name": "Hidden Alcove near Start"
+          "name": "Secret Timed Alcove"
         },
         "304": {
           "id": 1854,
-          "name": "Underwater Passage"
+          "name": "Secret Elevator Corner"
         },
         "321": {
           "id": 1855,
-          "name": "Ventilation Shaft"
+          "name": "Secret Ventilation Shaft"
         },
         "334": {
           "id": 1856,
-          "name": "Shrinker Room"
+          "name": "Secret Shrinker Room"
         },
         "354": {
           "id": 1857,
-          "name": "Hidden Wall near Start"
+          "name": "Secret Monitor Wall"
         }
       },
       "exits": {
@@ -1683,7 +1683,7 @@
         },
         "130": {
           "id": 281,
-          "name": "MP Freezethrower behind Yellow Door"
+          "name": "MP Control Room Freezethrower"
         },
         "132": {
           "id": 282,
@@ -1711,7 +1711,7 @@
         },
         "264": {
           "id": 288,
-          "name": "Scuba Gear"
+          "name": "Beta Scuba Gear"
         },
         "266": {
           "id": 289,
@@ -1727,23 +1727,23 @@
         },
         "285": {
           "id": 292,
-          "name": "Medkit"
+          "name": "Beta Medkit"
         },
         "325": {
           "id": 293,
-          "name": "Steroids"
+          "name": "Beta Steroids"
         },
         "390": {
           "id": 294,
-          "name": "Armory Tripbomb 1"
+          "name": "Armory Tripmine 1"
         },
         "391": {
           "id": 295,
-          "name": "Armory Tripbomb 2"
+          "name": "Armory Tripmine 2"
         },
         "392": {
           "id": 296,
-          "name": "Armory Tripbomb 3"
+          "name": "Armory Tripmine 3"
         },
         "410": {
           "id": 297,
@@ -1763,7 +1763,7 @@
         },
         "549": {
           "id": 301,
-          "name": "Pipebombs behind Yellow Door"
+          "name": "Control Room Pipebombs"
         },
         "579": {
           "id": 302,
@@ -1773,23 +1773,23 @@
       "sectors": {
         "142": {
           "id": 1858,
-          "name": "EDF Logo"
+          "name": "Secret EDF Logo"
         },
         "153": {
           "id": 1859,
-          "name": "Force Field Control Wall"
+          "name": "Secret Force Field Control Wall"
         },
         "155": {
           "id": 1860,
-          "name": "Hidden Screen Room 1"
+          "name": "Secret Hidden Screen Room 1"
         },
         "156": {
           "id": 1861,
-          "name": "Hidden Screen Room 2"
+          "name": "Secret Hidden Screen Room 2"
         },
         "248": {
           "id": 1862,
-          "name": "Wall Panel"
+          "name": "Secret Wall Panel"
         }
       },
       "exits": {
@@ -1839,7 +1839,7 @@
         },
         "162": {
           "id": 312,
-          "name": "Engine Room Tripbomb"
+          "name": "Engine Room Tripmine"
         },
         "177": {
           "id": 313,
@@ -1945,11 +1945,11 @@
       "sectors": {
         "42": {
           "id": 1863,
-          "name": "Bridge"
+          "name": "Secret Enterprise Bridge"
         },
         "297": {
           "id": 1864,
-          "name": "Ready Room"
+          "name": "Secret Really Ready Room"
         }
       },
       "exits": {
@@ -1963,225 +1963,225 @@
       "sprites": {
         "3": {
           "id": 338,
-          "name": "3 Freezethrower"
+          "name": "Timed Room Freezethrower"
         },
         "13": {
           "id": 339,
-          "name": "13 Armor"
+          "name": "Column Armor"
         },
         "18": {
           "id": 340,
-          "name": "18 Night Vision Goggles"
+          "name": "Start Night Vision Goggles"
         },
         "19": {
           "id": 341,
-          "name": "19 Night Vision Goggles"
+          "name": "First Level Night Vision Goggles"
         },
         "20": {
           "id": 342,
-          "name": "20 Night Vision Goggles"
+          "name": "Reactor Night Vision Goggles"
         },
         "46": {
           "id": 343,
-          "name": "46 Chaingun"
+          "name": "Top Floor Chaingun"
         },
         "54": {
           "id": 344,
-          "name": "MP 54 Holo Duke"
+          "name": "MP Reactor Holo Duke"
         },
         "111": {
           "id": 345,
-          "name": "111 Atomic Health"
+          "name": "Start Atomic Health"
         },
         "135": {
           "id": 346,
-          "name": "135 Tripbomb"
+          "name": "Pistons Tripmine 1"
         },
         "136": {
           "id": 347,
-          "name": "136 Tripbomb"
+          "name": "Pistons Tripmine 2"
         },
         "139": {
           "id": 348,
-          "name": "139 Protective Boots"
+          "name": "Pistons Protective Boots"
         },
         "142": {
           "id": 349,
-          "name": "142 Atomic Health"
+          "name": "Top Ledge Atomic Health 1"
         },
         "143": {
           "id": 350,
-          "name": "143 Atomic Health"
+          "name": "Top Ledge Atomic Health 2"
         },
         "158": {
           "id": 351,
-          "name": "158 Devastator"
+          "name": "Red Room Devastator"
         },
         "159": {
           "id": 352,
-          "name": "159 Atomic Health"
+          "name": "Top Floor Atomic Health"
         },
         "167": {
           "id": 353,
-          "name": "167 Medkit"
+          "name": "Top Floor Medkit"
         },
         "210": {
           "id": 354,
-          "name": "210 Armor"
+          "name": "Start Armor"
         },
         "253": {
           "id": 355,
-          "name": "253 Jetpack"
+          "name": "Top Ledge Jetpack"
         },
         "696": {
           "id": 356,
-          "name": "696 Atomic Health"
+          "name": "Vents Atomic Health"
         },
         "715": {
           "id": 357,
-          "name": "715 Shotgun"
+          "name": "Shotgun behind Babe"
         },
         "718": {
           "id": 358,
-          "name": "718 Medkit"
+          "name": "Pistons Medkit"
         },
         "720": {
           "id": 359,
-          "name": "720 Tripbomb"
+          "name": "Pistons Tripmine 3"
         },
         "721": {
           "id": 360,
-          "name": "721 Night Vision Goggles"
+          "name": "Pistons Night Vision Goggles"
         },
         "722": {
           "id": 361,
-          "name": "722 Chaingun"
+          "name": "Pistons Chaingun"
         },
         "739": {
           "id": 362,
-          "name": "739 Shrinker"
+          "name": "First Level Shrinker"
         },
         "750": {
           "id": 363,
-          "name": "750 Pipebombs"
+          "name": "Underwater Pipebombs 1"
         },
         "751": {
           "id": 364,
-          "name": "751 Pipebombs"
+          "name": "Underwater Pipebombs 2"
         },
         "756": {
           "id": 365,
-          "name": "756 RPG"
+          "name": "Start RPG"
         },
         "759": {
           "id": 366,
-          "name": "MP 759 Jetpack"
+          "name": "MP Floor Jetpack 1"
         },
         "760": {
           "id": 367,
-          "name": "MP 760 Jetpack"
+          "name": "MP Floor Jetpack 2"
         },
         "761": {
           "id": 368,
-          "name": "MP 761 Jetpack"
+          "name": "MP Floor Jetpack 3"
         },
         "762": {
           "id": 369,
-          "name": "MP 762 Jetpack"
+          "name": "MP Floor Jetpack 4"
         },
         "790": {
           "id": 370,
-          "name": "790 Atomic Health"
+          "name": "Pistons Atomic Health 1"
         },
         "791": {
           "id": 371,
-          "name": "791 Atomic Health"
+          "name": "Pistons Atomic Health 2"
         },
         "792": {
           "id": 372,
-          "name": "792 Pipebombs"
+          "name": "Pistons Tunnel Pipebombs 1"
         },
         "793": {
           "id": 373,
-          "name": "793 Pipebombs"
+          "name": "Pistons Tunnel Pipebombs 2"
         },
         "835": {
           "id": 374,
-          "name": "835 Shotgun"
+          "name": "Top Floor Shotgun"
         },
         "836": {
           "id": 375,
-          "name": "MP 836 RPG"
+          "name": "MP Floor RPG"
         },
         "837": {
           "id": 376,
-          "name": "MP 837 Devastator"
+          "name": "MP Floor Devastator"
         },
         "838": {
           "id": 377,
-          "name": "838 Tripbomb"
+          "name": "Slime Hallway Tripmine 1"
         },
         "839": {
           "id": 378,
-          "name": "839 Tripbomb"
+          "name": "Slime Hallway Tripmine 2"
         },
         "867": {
           "id": 379,
-          "name": "MP 867 Pipebombs"
+          "name": "MP Reactor Pipebombs"
         },
         "870": {
           "id": 380,
-          "name": "MP 870 Protective Boots"
+          "name": "MP Floor Protective Boots 1"
         },
         "871": {
           "id": 381,
-          "name": "MP 871 Protective Boots"
+          "name": "MP Floor Protective Boots 2"
         },
         "872": {
           "id": 382,
-          "name": "MP 872 Protective Boots"
+          "name": "MP Floor Protective Boots 3"
         },
         "873": {
           "id": 383,
-          "name": "MP 873 Protective Boots"
+          "name": "MP Floor Protective Boots 4"
         },
         "874": {
           "id": 384,
-          "name": "874 Steroids"
+          "name": "Red Room Steroids"
         },
         "875": {
           "id": 385,
-          "name": "875 Steroids"
+          "name": "Pistons Ledge Steroids"
         }
       },
       "sectors": {
         "317": {
           "id": 1865,
-          "name": "Secret 1"
+          "name": "Secret Top of Vents"
         },
         "374": {
           "id": 1866,
-          "name": "Secret 2"
+          "name": "Secret Pistons Tunnel"
         },
         "378": {
           "id": 1867,
-          "name": "Secret 3"
+          "name": "Secret Pistons Tunnel Ledge"
         },
         "384": {
           "id": 1868,
-          "name": "Secret 4"
+          "name": "Secret Pistons Chamber"
         },
         "405": {
           "id": 1869,
-          "name": "Secret 5"
+          "name": "Secret Column"
         },
         "409": {
           "id": 1870,
-          "name": "Secret 6"
+          "name": "Secret Timed Blade Room"
         },
         "416": {
           "id": 1871,
-          "name": "Secret 7"
+          "name": "Secret Vents Wall"
         }
       },
       "exits": {
@@ -2195,129 +2195,129 @@
       "sprites": {
         "71": {
           "id": 386,
-          "name": "71 RPG"
+          "name": "Vent RPG"
         },
         "85": {
           "id": 387,
-          "name": "85 Armor"
+          "name": "Vent Armor"
         },
         "90": {
           "id": 388,
-          "name": "MP 90 Freezethrower"
+          "name": "MP Center Room Freezethrower"
         },
         "94": {
           "id": 389,
-          "name": "94 Pipebombs"
+          "name": "Slime Room Pipebombs"
         },
         "95": {
           "id": 390,
-          "name": "95 Tripbomb"
+          "name": "Monitors Tripmine 1"
         },
         "96": {
           "id": 391,
-          "name": "96 Tripbomb"
+          "name": "Monitors Tripmine 2"
         },
         "97": {
           "id": 392,
-          "name": "MP 97 Pipebombs"
+          "name": "MP Center Room Pipebombs"
         },
         "110": {
           "id": 393,
-          "name": "110 Blue Key Card"
+          "name": "Blue Key Card"
         },
         "299": {
           "id": 394,
-          "name": "299 Red Key Card"
+          "name": "Red Key Card"
         },
         "317": {
           "id": 395,
-          "name": "317 Atomic Health"
+          "name": "Blastdoor Hole Atomic Health"
         },
         "346": {
           "id": 396,
-          "name": "346 Devastator"
+          "name": "Slime Room Devastator"
         },
         "365": {
           "id": 397,
-          "name": "365 Chaingun"
+          "name": "Start Chaingun"
         },
         "366": {
           "id": 398,
-          "name": "366 Medkit"
+          "name": "Start Medkit"
         },
         "367": {
           "id": 399,
-          "name": "367 Holo Duke"
+          "name": "Corridor Holo Duke"
         },
         "369": {
           "id": 400,
-          "name": "MP 369 Shrinker"
+          "name": "MP Battlelord Shrinker"
         },
         "370": {
           "id": 401,
-          "name": "370 Medkit"
+          "name": "Center Room Medkit"
         },
         "372": {
           "id": 402,
-          "name": "372 Shotgun"
+          "name": "Start Shotgun"
         },
         "373": {
           "id": 403,
-          "name": "373 Steroids"
+          "name": "Ramp Steroids"
         },
         "376": {
           "id": 404,
-          "name": "MP 376 Jetpack"
+          "name": "MP Large Door Jetpack"
         },
         "377": {
           "id": 405,
-          "name": "377 Pipebombs"
+          "name": "Slime Room Pipebombs 2"
         },
         "378": {
           "id": 406,
-          "name": "378 Atomic Health"
+          "name": "Monitors Atomic Health"
         },
         "384": {
           "id": 407,
-          "name": "384 Atomic Health"
+          "name": "Hallway Alcove Atomic Health"
         },
         "386": {
           "id": 408,
-          "name": "MP 386 RPG"
+          "name": "MP Exit RPG"
         },
         "426": {
           "id": 409,
-          "name": "426 Night Vision Goggles"
+          "name": "Ramp Night Vision Goggles"
         },
         "427": {
           "id": 410,
-          "name": "427 Night Vision Goggles"
+          "name": "Slime Room Night Vision Goggles"
         },
         "428": {
           "id": 411,
-          "name": "428 Night Vision Goggles"
+          "name": "Large Door Night Vision Goggles"
         },
         "429": {
           "id": 412,
-          "name": "429 Armor"
+          "name": "Start Armor"
         }
       },
       "sectors": {
         "136": {
           "id": 1872,
-          "name": "Secret 1"
+          "name": "Secret Hallway Alcove"
         },
         "185": {
           "id": 1873,
-          "name": "Secret 2"
+          "name": "Secret Blastdoor Hole"
         },
         "225": {
           "id": 1874,
-          "name": "Secret 3"
+          "name": "Secret Vent"
         },
         "238": {
           "id": 1875,
-          "name": "Secret 4"
+          "name": "Secret Monitors"
         }
       },
       "exits": {
@@ -2325,7 +2325,7 @@
           "id": 1711,
           "name": "Exit"
         },
-        "9": {
+        "10": {
           "id": 1712,
           "name": "Secret Exit"
         }
@@ -2431,11 +2431,11 @@
         },
         "567": {
           "id": 437,
-          "name": "567 Tripbomb"
+          "name": "567 Tripmine"
         },
         "568": {
           "id": 438,
-          "name": "568 Tripbomb"
+          "name": "568 Tripmine"
         },
         "607": {
           "id": 439,
@@ -2531,7 +2531,7 @@
         },
         "120": {
           "id": 451,
-          "name": "120 Tripbomb"
+          "name": "120 Tripmine"
         },
         "128": {
           "id": 452,
@@ -2555,7 +2555,7 @@
         },
         "148": {
           "id": 457,
-          "name": "148 Tripbomb"
+          "name": "148 Tripmine"
         },
         "149": {
           "id": 458,
@@ -2611,11 +2611,11 @@
         },
         "994": {
           "id": 471,
-          "name": "994 Tripbomb"
+          "name": "994 Tripmine"
         },
         "995": {
           "id": 472,
-          "name": "995 Tripbomb"
+          "name": "995 Tripmine"
         },
         "1028": {
           "id": 473,
@@ -2623,11 +2623,11 @@
         },
         "1029": {
           "id": 474,
-          "name": "1029 Tripbomb"
+          "name": "1029 Tripmine"
         },
         "1030": {
           "id": 475,
-          "name": "1030 Tripbomb"
+          "name": "1030 Tripmine"
         },
         "1040": {
           "id": 476,
@@ -2767,7 +2767,7 @@
         },
         "361": {
           "id": 500,
-          "name": "361 Tripbomb"
+          "name": "361 Tripmine"
         },
         "363": {
           "id": 501,
@@ -2887,7 +2887,7 @@
         },
         "1007": {
           "id": 530,
-          "name": "1007 Tripbomb"
+          "name": "1007 Tripmine"
         },
         "1008": {
           "id": 531,
@@ -2895,7 +2895,7 @@
         },
         "1009": {
           "id": 532,
-          "name": "1009 Tripbomb"
+          "name": "1009 Tripmine"
         },
         "1016": {
           "id": 533,
@@ -2949,7 +2949,7 @@
           "id": 1715,
           "name": "Exit"
         },
-        "10": {
+        "11": {
           "id": 1716,
           "name": "Secret Exit"
         }
@@ -2999,15 +2999,15 @@
         },
         "69": {
           "id": 547,
-          "name": "69 Tripbomb"
+          "name": "69 Tripmine"
         },
         "70": {
           "id": 548,
-          "name": "70 Tripbomb"
+          "name": "70 Tripmine"
         },
         "71": {
           "id": 549,
-          "name": "71 Tripbomb"
+          "name": "71 Tripmine"
         },
         "73": {
           "id": 550,
@@ -3250,7 +3250,7 @@
         },
         "111": {
           "id": 600,
-          "name": "111 Tripbomb"
+          "name": "111 Tripmine"
         },
         "112": {
           "id": 601,
@@ -3377,7 +3377,7 @@
         },
         "569": {
           "id": 629,
-          "name": "Kitchen Vent Tripbomb"
+          "name": "Kitchen Vent Tripmine"
         },
         "570": {
           "id": 630,
@@ -3461,125 +3461,130 @@
       "sprites": {
         "54": {
           "id": 640,
-          "name": "54 Protective Boots"
+          "name": "Top of Gears Protective Boots"
         },
         "66": {
           "id": 641,
-          "name": "66 Pipebombs"
+          "name": "Start Pipebombs"
         },
         "85": {
           "id": 642,
-          "name": "85 Atomic Health"
+          "name": "Vending Machine Atomic Health"
         },
         "96": {
           "id": 643,
-          "name": "96 Chaingun"
+          "name": "ATM Chaingun"
         },
         "106": {
           "id": 644,
-          "name": "106 Pipebombs"
+          "name": "Pillar Pipebombs"
         },
         "223": {
           "id": 645,
-          "name": "223 Holo Duke"
+          "name": "Bank Phone Holo Duke"
+        },
+        "264": {
+          "id": 646,
+          "name": "Dumpster Trashcan Steroids",
+          "type": "trashcan"
         },
         "265": {
-          "id": 646,
-          "name": "265 Medkit"
+          "id": 647,
+          "name": "Dumpster Medkit"
         },
         "354": {
-          "id": 647,
-          "name": "354 Jetpack"
+          "id": 648,
+          "name": "Top of Gears Jetpack"
         },
         "355": {
-          "id": 648,
-          "name": "355 Red Key Card"
+          "id": 649,
+          "name": "Red Key Card"
         },
         "424": {
-          "id": 649,
-          "name": "424 Shotgun"
+          "id": 650,
+          "name": "Start Shotgun"
         },
         "425": {
-          "id": 650,
-          "name": "425 RPG"
+          "id": 651,
+          "name": "Start Ledge RPG"
         },
         "440": {
-          "id": 651,
-          "name": "440 Blue Key Card"
+          "id": 652,
+          "name": "Blue Key Card"
         },
         "484": {
-          "id": 652,
-          "name": "484 Devastator"
+          "id": 653,
+          "name": "Office Painting Devastator"
         },
         "503": {
-          "id": 653,
-          "name": "503 Jetpack"
+          "id": 654,
+          "name": "Bank Painting Jetpack"
         },
         "506": {
-          "id": 654,
-          "name": "506 Steroids"
+          "id": 655,
+          "name": "Office Steroids"
         },
         "507": {
-          "id": 655,
-          "name": "507 Freezethrower"
+          "id": 656,
+          "name": "Office Entrance Freezethrower"
         },
         "511": {
-          "id": 656,
-          "name": "511 Shrinker"
+          "id": 657,
+          "name": "Switch Shrinker"
         },
         "512": {
-          "id": 657,
-          "name": "512 Pipebombs"
+          "id": 658,
+          "name": "Office Entrance Pipebombs"
         },
         "516": {
-          "id": 658,
-          "name": "516 Armor"
+          "id": 659,
+          "name": "Office Ledge Armor"
         },
         "517": {
-          "id": 659,
-          "name": "517 Atomic Health"
+          "id": 660,
+          "name": "Office Far Ledge Atomic Health"
         },
         "518": {
-          "id": 660,
-          "name": "518 Tripbomb"
+          "id": 661,
+          "name": "Office Far Ledge Tripmine 1"
         },
         "519": {
-          "id": 661,
-          "name": "519 Tripbomb"
+          "id": 662,
+          "name": "Office Far Ledge Tripmine 2"
         },
         "533": {
-          "id": 662,
-          "name": "533 Medkit"
+          "id": 663,
+          "name": "Exit Medkit"
         },
         "537": {
-          "id": 663,
-          "name": "537 Protective Boots"
+          "id": 664,
+          "name": "Gear Protective Boots"
         },
         "539": {
-          "id": 664,
-          "name": "539 Atomic Health"
+          "id": 665,
+          "name": "Gear Atomic Health"
         }
       },
       "sectors": {
         "17": {
           "id": 1909,
-          "name": "Secret 1"
+          "name": "Secret Bank Phone"
         },
         "119": {
           "id": 1910,
-          "name": "Secret 2"
+          "name": "Secret ATM"
         },
         "190": {
           "id": 1911,
-          "name": "Secret 3"
+          "name": "Secret Office Painting"
         },
         "208": {
           "id": 1912,
-          "name": "Secret 4"
+          "name": "Secret Bank Painting"
         },
         "235": {
           "id": 1913,
-          "name": "Secret 5"
+          "name": "Secret Gears Breakable Wall"
         }
       },
       "exits": {
@@ -3592,178 +3597,178 @@
     "E3L3": {
       "sprites": {
         "1": {
-          "id": 665,
+          "id": 666,
           "name": "MP 1 Jetpack"
         },
         "23": {
-          "id": 666,
-          "name": "23 Night Vision Goggles"
+          "id": 667,
+          "name": "Water Surface Night Vision Goggles"
         },
         "24": {
-          "id": 667,
-          "name": "24 Night Vision Goggles"
+          "id": 668,
+          "name": "Canyon Night Vision Goggles"
         },
         "42": {
-          "id": 668,
-          "name": "MP 42 Jetpack"
+          "id": 669,
+          "name": "MP Canyon Pillars Jetpack"
         },
         "50": {
-          "id": 669,
-          "name": "50 Jetpack"
+          "id": 670,
+          "name": "Canyon Wall Jetpack"
         },
         "63": {
-          "id": 670,
-          "name": "MP 63 Jetpack"
+          "id": 671,
+          "name": "MP Hidden Cave Jetpack"
         },
         "70": {
-          "id": 671,
-          "name": "70 Freezethrower"
+          "id": 672,
+          "name": "Sunken Building Freezethrower"
         },
         "71": {
-          "id": 672,
-          "name": "71 Tripbomb"
+          "id": 673,
+          "name": "Inside Building Tripmine 1"
         },
         "72": {
-          "id": 673,
-          "name": "72 Tripbomb"
+          "id": 674,
+          "name": "Inside Building Tripmine 2"
         },
         "73": {
-          "id": 674,
-          "name": "73 Shrinker"
+          "id": 675,
+          "name": "Building Ledge Shrinker"
         },
         "95": {
-          "id": 675,
-          "name": "95 Holo Duke"
+          "id": 676,
+          "name": "Inside Building Holo Duke"
         },
         "96": {
-          "id": 676,
-          "name": "MP 96 Chaingun"
+          "id": 677,
+          "name": "MP Chaingun near Red Door"
         },
         "97": {
-          "id": 677,
-          "name": "MP 97 Devastator"
+          "id": 678,
+          "name": "MP Building Ledge Devastator"
         },
         "98": {
-          "id": 678,
-          "name": "MP 98 Shotgun"
+          "id": 679,
+          "name": "MP Inside Building Shotgun"
         },
         "114": {
-          "id": 679,
-          "name": "114 Atomic Health"
+          "id": 680,
+          "name": "Exit Atomic Health"
         },
         "168": {
-          "id": 680,
-          "name": "168 Chaingun"
+          "id": 681,
+          "name": "Sunken Building Chaingun"
         },
         "171": {
-          "id": 681,
-          "name": "171 Blue Key Card"
+          "id": 682,
+          "name": "Blue Key Card"
         },
         "172": {
-          "id": 682,
-          "name": "172 Atomic Health"
+          "id": 683,
+          "name": "Underwater Atomic Health"
         },
         "174": {
-          "id": 683,
-          "name": "174 Armor"
+          "id": 684,
+          "name": "Underwater Armor"
         },
         "175": {
-          "id": 684,
-          "name": "175 Scuba Gear"
+          "id": 685,
+          "name": "Hidden Cave Scuba Gear"
         },
         "178": {
-          "id": 685,
-          "name": "178 Scuba Gear"
+          "id": 686,
+          "name": "Start Scuba Gear"
         },
         "190": {
-          "id": 686,
-          "name": "190 Atomic Health"
+          "id": 687,
+          "name": "Canyon Atomic Health"
         },
         "193": {
-          "id": 687,
-          "name": "193 Devastator"
+          "id": 688,
+          "name": "Hidden Cave Devastator"
         },
         "200": {
-          "id": 688,
-          "name": "200 Medkit"
+          "id": 689,
+          "name": "Inside Building Medkit"
         },
         "204": {
-          "id": 689,
-          "name": "204 RPG"
+          "id": 690,
+          "name": "Start RPG"
         },
         "223": {
-          "id": 690,
-          "name": "223 Atomic Health"
+          "id": 691,
+          "name": "Sign Top Atomic Health"
         },
         "234": {
-          "id": 691,
-          "name": "234 Pipebombs"
+          "id": 692,
+          "name": "Inside Building Pipebombs"
         },
         "254": {
-          "id": 692,
-          "name": "254 Shotgun"
+          "id": 693,
+          "name": "Underwater Shotgun"
         },
         "256": {
-          "id": 693,
-          "name": "256 Pipebombs"
+          "id": 694,
+          "name": "Top of Building Pipebombs"
         },
         "313": {
-          "id": 694,
-          "name": "313 Steroids"
+          "id": 695,
+          "name": "Inside Building Steroids"
         },
         "372": {
-          "id": 695,
-          "name": "372 Atomic Health"
+          "id": 696,
+          "name": "Building Ledge Atomic Health"
         },
         "387": {
-          "id": 696,
-          "name": "387 Medkit"
+          "id": 697,
+          "name": "Sunken Building Medkit"
         },
         "392": {
-          "id": 697,
-          "name": "392 Yellow Key Card"
+          "id": 698,
+          "name": "Yellow Key Card"
         },
         "407": {
-          "id": 698,
-          "name": "407 Red Key Card"
+          "id": 699,
+          "name": "Red Key Card"
         },
         "448": {
-          "id": 699,
-          "name": "MP 448 Scuba Gear"
+          "id": 700,
+          "name": "MP Canyon Pillars Scuba Gear"
         },
         "449": {
-          "id": 700,
-          "name": "MP 449 Armor"
+          "id": 701,
+          "name": "MP Sunken Building Armor"
         },
         "450": {
-          "id": 701,
-          "name": "MP 450 RPG"
+          "id": 702,
+          "name": "MP Underwater RPG"
         },
         "465": {
-          "id": 702,
-          "name": "465 Chaingun"
+          "id": 703,
+          "name": "Canyon Alcove Chaingun"
         }
       },
       "sectors": {
         "178": {
           "id": 1914,
-          "name": "Secret 1"
+          "name": "Secret Hidden Cave"
         },
         "221": {
           "id": 1915,
-          "name": "Secret 2"
+          "name": "Secret Building Canyon Wall"
         },
         "222": {
           "id": 1916,
-          "name": "Secret 3"
+          "name": "Secret Empty Ledge"
         },
         "232": {
           "id": 1917,
-          "name": "Secret 4"
+          "name": "Secret Canyon Alcove Window"
         },
         "259": {
           "id": 1918,
-          "name": "Secret 5"
+          "name": "Secret Hard Hat Area"
         }
       },
       "exits": {
@@ -3776,150 +3781,150 @@
     "E3L4": {
       "sprites": {
         "59": {
-          "id": 703,
-          "name": "59 Red Key Card"
+          "id": 704,
+          "name": "Red Key Card"
         },
         "82": {
-          "id": 704,
-          "name": "82 Atomic Health"
+          "id": 705,
+          "name": "Abortion Clinic Atomic Health"
         },
         "114": {
-          "id": 705,
-          "name": "114 Shrinker"
+          "id": 706,
+          "name": "Billboard Shrinker"
         },
         "135": {
-          "id": 706,
-          "name": "135 Medkit"
+          "id": 707,
+          "name": "Elevator Lobby Medkit"
         },
         "136": {
-          "id": 707,
-          "name": "136 Devastator"
+          "id": 708,
+          "name": "Elevator Shaft Devastator"
         },
         "137": {
-          "id": 708,
-          "name": "137 Night Vision Goggles"
+          "id": 709,
+          "name": "Abortion Clinic Night Vision Goggles"
         },
         "244": {
-          "id": 709,
-          "name": "244 Steroids"
+          "id": 710,
+          "name": "Abortion Clinic Steroids"
         },
         "247": {
-          "id": 710,
-          "name": "MP 247 Shotgun"
+          "id": 711,
+          "name": "MP Streets Shotgun"
         },
         "248": {
-          "id": 711,
-          "name": "248 Pipebombs"
+          "id": 712,
+          "name": "Hooker Pipebombs"
         },
         "274": {
-          "id": 712,
-          "name": "274 Chaingun"
+          "id": 713,
+          "name": "Street Ledge Chaingun"
         },
         "275": {
-          "id": 713,
-          "name": "275 Shotgun"
+          "id": 714,
+          "name": "Streets Shotgun"
         },
         "276": {
-          "id": 714,
-          "name": "276 RPG"
+          "id": 715,
+          "name": "Office RPG"
         },
         "277": {
-          "id": 715,
-          "name": "277 Atomic Health"
+          "id": 716,
+          "name": "Billboard Atomic Health 1"
         },
         "283": {
-          "id": 716,
-          "name": "283 RPG"
+          "id": 717,
+          "name": "Street Ledge RPG"
         },
         "336": {
-          "id": 717,
-          "name": "336 Atomic Health"
+          "id": 718,
+          "name": "Billboard Atomic Health 2"
         },
         "339": {
-          "id": 718,
-          "name": "339 Jetpack"
+          "id": 719,
+          "name": "Office Jetpack"
         },
         "391": {
-          "id": 719,
-          "name": "391 Medkit"
+          "id": 720,
+          "name": "Tower Top Medkit"
         },
         "442": {
-          "id": 720,
-          "name": "442 Pipebombs"
+          "id": 721,
+          "name": "Sewer Pipebombs"
         },
         "458": {
-          "id": 721,
-          "name": "458 Armor"
+          "id": 722,
+          "name": "Street Ledge Armor"
         },
         "468": {
-          "id": 722,
-          "name": "468 Holo Duke"
+          "id": 723,
+          "name": "Office Holo Duke"
         },
         "475": {
-          "id": 723,
-          "name": "475 Blue Key Card"
+          "id": 724,
+          "name": "Blue Key Card"
         },
         "500": {
-          "id": 724,
-          "name": "MP 500 Jetpack"
+          "id": 725,
+          "name": "MP Billboard Jetpack"
         },
         "501": {
-          "id": 725,
-          "name": "MP 501 Jetpack"
+          "id": 726,
+          "name": "MP Street Ledge Jetpack"
         },
         "502": {
-          "id": 726,
-          "name": "MP 502 RPG"
+          "id": 727,
+          "name": "MP Tower Top RPG"
         },
         "503": {
-          "id": 727,
-          "name": "MP 503 Chaingun"
+          "id": 728,
+          "name": "MP Elevator Top Chaingun"
         },
         "506": {
-          "id": 728,
-          "name": "506 Freezethrower"
+          "id": 729,
+          "name": "Sewer Walls Freezethrower"
         },
         "507": {
-          "id": 729,
-          "name": "MP 507 Atomic Health"
+          "id": 730,
+          "name": "MP Abortion Clinic Atomic Health"
         },
         "508": {
-          "id": 730,
-          "name": "MP 508 Jetpack"
+          "id": 731,
+          "name": "MP Abortion Clinic Jetpack"
         },
         "509": {
-          "id": 731,
-          "name": "MP 509 Pipebombs"
+          "id": 732,
+          "name": "MP Abortion Clinic Pipebombs"
         },
         "511": {
-          "id": 732,
-          "name": "511 Tripbomb"
+          "id": 733,
+          "name": "Street Ledge Tripmine 1"
         },
         "512": {
-          "id": 733,
-          "name": "512 Tripbomb"
+          "id": 734,
+          "name": "Street Ledge Tripmine 2"
         },
         "513": {
-          "id": 734,
-          "name": "513 Freezethrower"
+          "id": 735,
+          "name": "Streets Ledge Freezethrower"
         },
         "515": {
-          "id": 735,
-          "name": "515 Medkit"
+          "id": 736,
+          "name": "Street Ledge Medkit"
         }
       },
       "sectors": {
         "166": {
           "id": 1919,
-          "name": "Secret 1"
+          "name": "Secret Sewer Walls"
         },
         "195": {
           "id": 1920,
-          "name": "Secret 2"
+          "name": "Secret Office Painting"
         },
         "205": {
           "id": 1921,
-          "name": "Secret 3"
+          "name": "Secret Abortion Clinic Counter"
         }
       },
       "exits": {
@@ -3932,154 +3937,154 @@
     "E3L5": {
       "sprites": {
         "0": {
-          "id": 736,
-          "name": "0 Night Vision Goggles"
+          "id": 737,
+          "name": "Control Room Night Vision Goggles"
         },
         "9": {
-          "id": 737,
-          "name": "9 Atomic Health"
+          "id": 738,
+          "name": "Moon Landing Atomic Health"
         },
         "24": {
-          "id": 738,
-          "name": "24 Night Vision Goggles"
+          "id": 739,
+          "name": "Vending Machine Night Vision Goggles"
         },
         "39": {
-          "id": 739,
-          "name": "39 Night Vision Goggles"
+          "id": 740,
+          "name": "Spacecraft Night Vision Goggles"
         },
         "40": {
-          "id": 740,
-          "name": "40 Atomic Health"
+          "id": 741,
+          "name": "Earth Vent Atomic Health"
         },
         "41": {
-          "id": 741,
-          "name": "41 Jetpack"
+          "id": 742,
+          "name": "Earth Jetpack"
         },
         "43": {
-          "id": 742,
-          "name": "43 Freezethrower"
+          "id": 743,
+          "name": "3DRealms Freezethrower"
         },
         "47": {
-          "id": 743,
-          "name": "47 Medkit"
+          "id": 744,
+          "name": "Subway Medkit"
         },
         "51": {
-          "id": 744,
-          "name": "51 Atomic Health"
+          "id": 745,
+          "name": "3DRealms Atomic Health"
         },
         "61": {
-          "id": 745,
-          "name": "61 Medkit"
+          "id": 746,
+          "name": "Studio Medkit"
         },
         "71": {
-          "id": 746,
-          "name": "71 Yellow Key Card"
+          "id": 747,
+          "name": "Yellow Key Card"
         },
         "80": {
-          "id": 747,
-          "name": "80 Atomic Health"
+          "id": 748,
+          "name": "Crate Atomic Health"
         },
         "81": {
-          "id": 748,
-          "name": "81 Devastator"
+          "id": 749,
+          "name": "Crate Devastator"
         },
         "105": {
-          "id": 749,
-          "name": "105 Red Key Card"
+          "id": 750,
+          "name": "Red Key Card"
         },
         "170": {
-          "id": 750,
-          "name": "170 Chaingun"
+          "id": 751,
+          "name": "Moon Landing Chaingun"
         },
         "257": {
-          "id": 751,
-          "name": "257 Armor"
+          "id": 752,
+          "name": "Beta Armor"
         },
         "258": {
-          "id": 752,
-          "name": "258 Blue Key Card"
+          "id": 753,
+          "name": "Blue Key Card"
         },
         "261": {
-          "id": 753,
-          "name": "261 Holo Duke"
+          "id": 754,
+          "name": "Beta Holo Duke"
         },
         "267": {
-          "id": 754,
-          "name": "267 Shotgun"
+          "id": 755,
+          "name": "Subway Shotgun"
         },
         "268": {
-          "id": 755,
-          "name": "268 Medkit"
+          "id": 756,
+          "name": "Booth Medkit"
         },
         "364": {
-          "id": 756,
-          "name": "364 Atomic Health"
+          "id": 757,
+          "name": "Spacecraft Wall Atomic Health"
         },
         "367": {
-          "id": 757,
-          "name": "367 RPG"
+          "id": 758,
+          "name": "Spacecraft RPG"
         },
         "371": {
-          "id": 758,
-          "name": "371 Steroids"
+          "id": 759,
+          "name": "Crash Site Steroids"
         },
         "380": {
-          "id": 759,
-          "name": "380 Pipebombs"
+          "id": 760,
+          "name": "Studio Pipebombs"
         },
         "415": {
-          "id": 760,
-          "name": "415 Pipebombs"
+          "id": 761,
+          "name": "Streets Pipebombs"
         },
         "416": {
-          "id": 761,
-          "name": "416 Tripbomb"
+          "id": 762,
+          "name": "Control Room Tripmine 1"
         },
         "417": {
-          "id": 762,
-          "name": "417 Tripbomb"
+          "id": 763,
+          "name": "Control Room Tripmine 2"
         },
         "418": {
-          "id": 763,
-          "name": "418 Shrinker"
+          "id": 764,
+          "name": "Earth Shrinker"
         },
         "424": {
-          "id": 764,
-          "name": "424 Atomic Health"
+          "id": 765,
+          "name": "Vending Machine Atomic Health 1"
         },
         "425": {
-          "id": 765,
-          "name": "425 Atomic Health"
+          "id": 766,
+          "name": "Vending Machine Atomic Health 2"
         },
         "426": {
-          "id": 766,
-          "name": "426 Atomic Health"
+          "id": 767,
+          "name": "Vending Machine Atomic Health 3"
         },
         "480": {
-          "id": 767,
-          "name": "480 Jetpack"
+          "id": 768,
+          "name": "Moon Landing Jetpack"
         },
         "487": {
-          "id": 768,
-          "name": "487 Chaingun"
+          "id": 769,
+          "name": "Subway Chaingun"
         }
       },
       "sectors": {
         "88": {
           "id": 1922,
-          "name": "Secret 1"
+          "name": "Secret Earth Screen"
         },
         "149": {
           "id": 1923,
-          "name": "Secret 2"
+          "name": "Secret Crate"
         },
         "183": {
           "id": 1924,
-          "name": "Secret 3"
+          "name": "Secret Vending Machine"
         },
         "195": {
           "id": 1925,
-          "name": "Secret 4"
+          "name": "Secret 3DRealms"
         }
       },
       "exits": {
@@ -4087,7 +4092,7 @@
           "id": 1724,
           "name": "Exit"
         },
-        "9": {
+        "10": {
           "id": 1725,
           "name": "Secret Exit"
         }
@@ -4096,146 +4101,146 @@
     "E3L6": {
       "sprites": {
         "1": {
-          "id": 769,
-          "name": "1 Steroids"
+          "id": 770,
+          "name": "Track Steroids"
         },
         "8": {
-          "id": 770,
-          "name": "8 Red Key Card"
+          "id": 771,
+          "name": "Red Key Card"
         },
         "20": {
-          "id": 771,
-          "name": "20 Freezethrower"
+          "id": 772,
+          "name": "Blue Key Freezethrower"
         },
         "21": {
-          "id": 772,
-          "name": "21 Pipebombs"
+          "id": 773,
+          "name": "Library Pipebombs"
         },
         "53": {
-          "id": 773,
-          "name": "53 Atomic Health"
+          "id": 774,
+          "name": "Vending Machine Atomic Health"
         },
         "91": {
-          "id": 774,
-          "name": "91 Shrinker"
+          "id": 775,
+          "name": "Underwater Shrinker"
         },
         "92": {
-          "id": 775,
-          "name": "92 Atomic Health"
+          "id": 776,
+          "name": "Bookshelf Atomic Health"
         },
         "140": {
-          "id": 776,
-          "name": "140 Devastator"
+          "id": 777,
+          "name": "Track Devastator"
         },
         "283": {
-          "id": 777,
-          "name": "283 Night Vision Goggles"
+          "id": 778,
+          "name": "Magazine Store Night Vision Goggles"
         },
         "296": {
-          "id": 778,
-          "name": "296 Blue Key Card"
+          "id": 779,
+          "name": "Blue Key Card"
         },
         "333": {
-          "id": 779,
-          "name": "333 Shotgun"
+          "id": 780,
+          "name": "Entrance Shotgun"
         },
         "334": {
-          "id": 780,
-          "name": "334 Chaingun"
+          "id": 781,
+          "name": "Poster Chaingun"
         },
         "339": {
-          "id": 781,
-          "name": "339 Holo Duke"
+          "id": 782,
+          "name": "Magazine Holo Duke"
         },
         "342": {
-          "id": 782,
-          "name": "342 Pipebombs"
+          "id": 783,
+          "name": "Entrance Pipebombs"
         },
         "361": {
-          "id": 783,
-          "name": "361 Armor"
+          "id": 784,
+          "name": "Blue Key Armor"
         },
         "362": {
-          "id": 784,
-          "name": "362 Medkit"
+          "id": 785,
+          "name": "Blue Key Medkit"
         },
         "364": {
-          "id": 785,
-          "name": "364 Atomic Health"
+          "id": 786,
+          "name": "Blue Door Atomic Health"
         },
         "365": {
-          "id": 786,
-          "name": "365 Chaingun"
+          "id": 787,
+          "name": "Train Chaingun"
         },
         "366": {
-          "id": 787,
-          "name": "366 Atomic Health"
+          "id": 788,
+          "name": "Train Atomic Health"
         },
         "367": {
-          "id": 788,
-          "name": "367 RPG"
+          "id": 789,
+          "name": "Train RPG"
         },
         "368": {
-          "id": 789,
-          "name": "368 Medkit"
+          "id": 790,
+          "name": "Train Medkit"
         },
         "385": {
-          "id": 790,
-          "name": "385 Tripbomb"
+          "id": 791,
+          "name": "Blue Door Tripmine 1"
         },
         "386": {
-          "id": 791,
-          "name": "386 Tripbomb"
+          "id": 792,
+          "name": "Blue Door Tripmine 2"
         },
         "387": {
-          "id": 792,
-          "name": "387 Tripbomb"
+          "id": 793,
+          "name": "Blue Door Tripmine 3"
         },
         "388": {
-          "id": 793,
-          "name": "388 Tripbomb"
+          "id": 794,
+          "name": "Blue Door Tripmine 4"
         },
         "389": {
-          "id": 794,
-          "name": "389 Tripbomb"
+          "id": 795,
+          "name": "Blue Door Tripmine 5"
         },
         "411": {
-          "id": 795,
-          "name": "MP 411 Night Vision Goggles"
+          "id": 796,
+          "name": "MP Blue Door Night Vision Goggles"
         },
         "429": {
-          "id": 796,
-          "name": "429 Devastator"
+          "id": 797,
+          "name": "Alien Base Devastator"
         },
         "472": {
-          "id": 797,
-          "name": "472 Atomic Health"
+          "id": 798,
+          "name": "Track Atomic Health"
         }
       },
       "sectors": {
         "6": {
           "id": 1926,
-          "name": "Secret 1"
+          "name": "Secret Post Box Wall"
         },
         "132": {
           "id": 1927,
-          "name": "Secret 2"
+          "name": "Secret Poster"
         },
         "149": {
           "id": 1928,
-          "name": "Secret 3"
+          "name": "Secret Bookshelves"
         },
         "163": {
           "id": 1929,
-          "name": "Secret 4"
+          "name": "Secret Magazines"
         },
         "172": {
           "id": 1930,
-          "name": "Secret 5"
+          "name": "Secret Alien Base"
         },
         "182": {
           "id": 1931,
-          "name": "Secret 6"
+          "name": "Secret Track Wall"
         }
       },
       "exits": {
@@ -4248,130 +4253,130 @@
     "E3L7": {
       "sprites": {
         "39": {
-          "id": 798,
-          "name": "39 Shotgun"
+          "id": 799,
+          "name": "Pool Shotgun"
         },
         "60": {
-          "id": 799,
-          "name": "60 Night Vision Goggles"
+          "id": 800,
+          "name": "Building Night Vision Goggles"
         },
         "77": {
-          "id": 800,
-          "name": "MP 77 Jetpack"
+          "id": 801,
+          "name": "MP Broadcast Jetpack"
         },
         "80": {
-          "id": 801,
-          "name": "80 Freezethrower"
+          "id": 802,
+          "name": "Building Freezethrower"
         },
         "88": {
-          "id": 802,
-          "name": "88 Medkit"
+          "id": 803,
+          "name": "Fire Station Medkit"
         },
         "89": {
-          "id": 803,
-          "name": "89 Holo Duke"
+          "id": 804,
+          "name": "Fire Truck Holo Duke"
         },
         "134": {
-          "id": 804,
-          "name": "134 Blue Key Card"
+          "id": 805,
+          "name": "Blue Key Card"
         },
         "192": {
-          "id": 805,
-          "name": "192 Medkit"
+          "id": 806,
+          "name": "Window Medkit"
         },
         "202": {
-          "id": 806,
-          "name": "202 Armor"
+          "id": 807,
+          "name": "Passage Armor"
         },
         "203": {
-          "id": 807,
-          "name": "MP 203 Jetpack"
+          "id": 808,
+          "name": "MP Crates Jetpack"
         },
         "259": {
-          "id": 808,
-          "name": "259 Atomic Health"
+          "id": 809,
+          "name": "Crates Atomic Health"
         },
         "268": {
-          "id": 809,
-          "name": "268 Pipebombs"
+          "id": 810,
+          "name": "Pool Ledge Pipebombs"
         },
         "294": {
-          "id": 810,
-          "name": "294 Devastator"
+          "id": 811,
+          "name": "Broadcast Devastator"
         },
         "295": {
-          "id": 811,
-          "name": "295 Red Key Card"
+          "id": 812,
+          "name": "Red Key Card"
         },
         "299": {
-          "id": 812,
-          "name": "299 Chaingun"
+          "id": 813,
+          "name": "Set Chaingun"
         },
         "334": {
-          "id": 813,
-          "name": "334 Medkit"
+          "id": 814,
+          "name": "Wine Rack Medkit"
         },
         "335": {
-          "id": 814,
-          "name": "335 Steroids"
+          "id": 815,
+          "name": "Building Steroids"
         },
         "344": {
-          "id": 815,
-          "name": "344 Shrinker"
+          "id": 816,
+          "name": "Pool Shrinker"
         },
         "347": {
-          "id": 816,
-          "name": "347 Tripbomb"
+          "id": 817,
+          "name": "Broadcast Tripmine"
         },
         "348": {
-          "id": 817,
-          "name": "348 Tripbomb"
+          "id": 818,
+          "name": "Building Tripmine"
         },
         "368": {
-          "id": 818,
-          "name": "368 RPG"
+          "id": 819,
+          "name": "Exit RPG"
         },
         "422": {
-          "id": 819,
-          "name": "422 Medkit"
+          "id": 820,
+          "name": "Pool Medkit"
         },
         "426": {
-          "id": 820,
-          "name": "426 RPG"
+          "id": 821,
+          "name": "Fire Station RPG"
         },
         "429": {
-          "id": 821,
-          "name": "429 Atomic Health"
+          "id": 822,
+          "name": "Fire Station Atomic Health"
         },
         "430": {
-          "id": 822,
-          "name": "430 Atomic Health"
+          "id": 823,
+          "name": "Curtain Atomic Health"
         },
         "431": {
-          "id": 823,
-          "name": "431 Shotgun"
+          "id": 824,
+          "name": "Broadcast Shotgun"
         },
         "432": {
-          "id": 824,
-          "name": "432 Yellow Key Card"
+          "id": 825,
+          "name": "Yellow Key Card"
         }
       },
       "sectors": {
         "111": {
           "id": 1932,
-          "name": "Secret 1"
+          "name": "Secret Broadcast"
         },
         "133": {
           "id": 1933,
-          "name": "Secret 2"
+          "name": "Secret Wine Rack"
         },
         "176": {
           "id": 1934,
-          "name": "Secret 3"
+          "name": "Secret Painting"
         },
         "179": {
           "id": 1935,
-          "name": "Secret 4"
+          "name": "Secret Curtain"
         }
       },
       "exits": {
@@ -4384,158 +4389,163 @@
     "E3L8": {
       "sprites": {
         "85": {
-          "id": 825,
-          "name": "85 Atomic Health"
+          "id": 826,
+          "name": "Shark Tank Atomic Health"
         },
         "86": {
-          "id": 826,
-          "name": "86 Scuba Gear"
+          "id": 827,
+          "name": "Shark Tank Scuba Gear 2"
         },
         "99": {
-          "id": 827,
-          "name": "99 Night Vision Goggles"
+          "id": 828,
+          "name": "Hallway Night Vision Goggles"
         },
         "152": {
-          "id": 828,
-          "name": "152 Shrinker"
+          "id": 829,
+          "name": "Hotel Room Vent Shrinker"
         },
         "172": {
-          "id": 829,
-          "name": "172 Yellow Key Card"
+          "id": 830,
+          "name": "Yellow Key Card"
         },
         "175": {
-          "id": 830,
-          "name": "175 RPG"
+          "id": 831,
+          "name": "Toilet RPG"
         },
         "182": {
-          "id": 831,
-          "name": "182 Pipebombs"
+          "id": 832,
+          "name": "Dive Board Pipebombs"
         },
         "285": {
-          "id": 832,
-          "name": "285 Atomic Health"
+          "id": 833,
+          "name": "Toilet Atomic Health"
         },
         "355": {
-          "id": 833,
-          "name": "355 Steroids"
+          "id": 834,
+          "name": "Outside Vent Steroids"
         },
         "358": {
-          "id": 834,
-          "name": "358 Devastator"
+          "id": 835,
+          "name": "Apartment Devastator"
         },
         "372": {
-          "id": 835,
-          "name": "372 Blue Key Card"
+          "id": 836,
+          "name": "Blue Key Card"
+        },
+        "386": {
+          "id": 837,
+          "name": "Trashcan Pipebombs",
+          "type": "trashcan"
         },
         "392": {
-          "id": 836,
-          "name": "392 Medkit"
+          "id": 838,
+          "name": "Dumpster Medkit"
         },
         "395": {
-          "id": 837,
-          "name": "395 Chaingun"
+          "id": 839,
+          "name": "Dumpster Chaingun"
         },
         "397": {
-          "id": 838,
-          "name": "397 Shotgun"
+          "id": 840,
+          "name": "Ledge Shotgun"
         },
         "423": {
-          "id": 839,
-          "name": "423 Atomic Health"
+          "id": 841,
+          "name": "Streets Atomic Health 1"
         },
         "460": {
-          "id": 840,
-          "name": "460 Armor"
+          "id": 842,
+          "name": "Hotel Room Armor"
         },
         "478": {
-          "id": 841,
-          "name": "478 Tripbomb"
+          "id": 843,
+          "name": "Corner Tripmine 1"
         },
         "479": {
-          "id": 842,
-          "name": "479 Tripbomb"
+          "id": 844,
+          "name": "Corner Tripmine 2"
         },
         "564": {
-          "id": 843,
-          "name": "564 Atomic Health"
+          "id": 845,
+          "name": "Streets Atomic Health 2"
         },
         "575": {
-          "id": 844,
-          "name": "575 Pipebombs"
+          "id": 846,
+          "name": "Shark Tank Pipebombs"
         },
         "576": {
-          "id": 845,
-          "name": "576 Medkit"
+          "id": 847,
+          "name": "Shark Tank Medkit"
         },
         "577": {
-          "id": 846,
-          "name": "577 Holo Duke"
+          "id": 848,
+          "name": "Viewpoint Holo Duke"
         },
         "592": {
-          "id": 847,
-          "name": "592 Scuba Gear"
+          "id": 849,
+          "name": "Shark Tank Scuba Gear 1"
         },
         "596": {
-          "id": 848,
-          "name": "596 Holo Duke"
+          "id": 850,
+          "name": "Wine Rack Holo Duke"
         },
         "657": {
-          "id": 849,
-          "name": "657 Night Vision Goggles"
+          "id": 851,
+          "name": "Lobby Night Vision Goggles"
         },
         "663": {
-          "id": 850,
-          "name": "663 Armor"
+          "id": 852,
+          "name": "Lobby Armor"
         },
         "667": {
-          "id": 851,
-          "name": "667 Medkit"
+          "id": 853,
+          "name": "Lobby Medkit"
         },
         "684": {
-          "id": 852,
-          "name": "MP 684 Jetpack"
+          "id": 854,
+          "name": "MP Lobby Jetpack"
         },
         "685": {
-          "id": 853,
-          "name": "MP 685 Armor"
+          "id": 855,
+          "name": "MP Staircase Armor"
         },
         "688": {
-          "id": 854,
-          "name": "MP 688 Chaingun"
+          "id": 856,
+          "name": "MP Streets Chaingun"
         },
         "690": {
-          "id": 855,
-          "name": "MP 690 Freezethrower"
+          "id": 857,
+          "name": "MP Hallway Freezethrower"
         },
         "725": {
-          "id": 856,
-          "name": "725 Freezethrower"
+          "id": 858,
+          "name": "Shark Tank Freezethrower"
         },
         "769": {
-          "id": 857,
-          "name": "769 Atomic Health"
+          "id": 859,
+          "name": "Indiana Jones Atomic Health"
         },
         "823": {
-          "id": 858,
-          "name": "823 Pipebombs"
+          "id": 860,
+          "name": "Exit Pipebombs"
         },
         "827": {
-          "id": 859,
-          "name": "827 Freezethrower"
+          "id": 861,
+          "name": "Jungle Freezethrower"
         }
       },
       "sectors": {
         "138": {
           "id": 1936,
-          "name": "Secret 1"
+          "name": "Secret Shark Tank"
         },
         "155": {
           "id": 1937,
-          "name": "Secret 2"
+          "name": "Secret Wine Rack"
         },
         "284": {
           "id": 1938,
-          "name": "Secret 3"
+          "name": "Secret Indiana Jones"
         }
       },
       "exits": {
@@ -4543,7 +4553,7 @@
           "id": 1728,
           "name": "Exit"
         },
-        "9": {
+        "11": {
           "id": 1729,
           "name": "Secret Exit"
         }
@@ -4552,152 +4562,152 @@
     "E3L9": {
       "sprites": {
         "1": {
-          "id": 860,
-          "name": "MP 1 Armor"
+          "id": 862,
+          "name": "MP Floor Armor"
         },
         "12": {
-          "id": 861,
-          "name": "MP 12 Shotgun"
+          "id": 863,
+          "name": "MP Ledge Shotgun"
         },
         "13": {
-          "id": 862,
-          "name": "13 Pipebombs"
+          "id": 864,
+          "name": "Floor Pipebombs 1"
         },
         "14": {
-          "id": 863,
-          "name": "14 Pipebombs"
+          "id": 865,
+          "name": "Floor Pipebombs 2"
         },
         "15": {
-          "id": 864,
-          "name": "15 Pipebombs"
+          "id": 866,
+          "name": "Floor Pipebombs 3"
         },
         "16": {
-          "id": 865,
-          "name": "16 Pipebombs"
+          "id": 867,
+          "name": "Floor Pipebombs 4"
         },
         "17": {
-          "id": 866,
-          "name": "17 Shrinker"
+          "id": 868,
+          "name": "Ledge Shrinker 1"
         },
         "18": {
-          "id": 867,
-          "name": "MP 18 Chaingun"
+          "id": 869,
+          "name": "MP Floor Chaingun"
         },
         "19": {
-          "id": 868,
-          "name": "MP 19 Freezethrower"
+          "id": 870,
+          "name": "MP Floor Freezethrower"
         },
         "20": {
-          "id": 869,
-          "name": "MP 20 RPG"
+          "id": 871,
+          "name": "MP Floor RPG"
         },
         "21": {
-          "id": 870,
-          "name": "MP 21 Devastator"
+          "id": 872,
+          "name": "MP Floor Devastator"
         },
         "23": {
-          "id": 871,
-          "name": "23 Shrinker"
+          "id": 873,
+          "name": "Ledge Shrinker 2"
         },
         "24": {
-          "id": 872,
-          "name": "24 Night Vision Goggles"
+          "id": 874,
+          "name": "Ledge Night Vision Goggles 1"
         },
         "25": {
-          "id": 873,
-          "name": "25 Holo Duke"
+          "id": 875,
+          "name": "Ledge Holo Duke"
         },
         "45": {
-          "id": 874,
-          "name": "45 Chaingun"
+          "id": 876,
+          "name": "Ledge Chaingun"
         },
         "46": {
-          "id": 875,
-          "name": "46 Jetpack"
+          "id": 877,
+          "name": "Ledge Jetpack"
         },
         "47": {
-          "id": 876,
-          "name": "47 RPG"
+          "id": 878,
+          "name": "Ledge RPG"
         },
         "48": {
-          "id": 877,
-          "name": "48 Freezethrower"
+          "id": 879,
+          "name": "Ledge Freezethrower"
         },
         "49": {
-          "id": 878,
-          "name": "49 Shotgun"
+          "id": 880,
+          "name": "Ledge Shotgun"
         },
         "50": {
-          "id": 879,
-          "name": "50 Devastator"
+          "id": 881,
+          "name": "Ledge Devastator"
         },
         "51": {
-          "id": 880,
-          "name": "51 Steroids"
+          "id": 882,
+          "name": "Floor Steroids 1"
         },
         "52": {
-          "id": 881,
-          "name": "52 Steroids"
+          "id": 883,
+          "name": "Floor Steroids 2"
         },
         "85": {
-          "id": 882,
-          "name": "MP 85 Jetpack"
+          "id": 884,
+          "name": "MP Ledge Jetpack 1"
         },
         "86": {
-          "id": 883,
-          "name": "MP 86 Jetpack"
+          "id": 885,
+          "name": "MP Ledge Jetpack 2"
         },
         "87": {
-          "id": 884,
-          "name": "87 Night Vision Goggles"
+          "id": 886,
+          "name": "Floor Night Vision Goggles"
         },
         "88": {
-          "id": 885,
-          "name": "MP 88 Chaingun"
+          "id": 887,
+          "name": "MP Ledge Chaingun"
         },
         "89": {
-          "id": 886,
-          "name": "MP 89 Pipebombs"
+          "id": 888,
+          "name": "MP Ledge Pipebombs"
         },
         "90": {
-          "id": 887,
-          "name": "MP 90 Devastator"
+          "id": 889,
+          "name": "MP Ledge Devastator"
         },
         "91": {
-          "id": 888,
-          "name": "MP 91 RPG"
+          "id": 890,
+          "name": "MP Ledge RPG"
         },
         "92": {
-          "id": 889,
-          "name": "MP 92 Shrinker"
+          "id": 891,
+          "name": "MP Ledge Shrinker"
         },
         "93": {
-          "id": 890,
-          "name": "MP 93 Freezethrower"
+          "id": 892,
+          "name": "MP Ledge Freezethrower"
         },
         "94": {
-          "id": 891,
-          "name": "94 Medkit"
+          "id": 893,
+          "name": "Floor Medkit"
         },
         "95": {
-          "id": 892,
-          "name": "95 Night Vision Goggles"
+          "id": 894,
+          "name": "Ledge Night Vision Goggles 2"
         },
         "104": {
-          "id": 893,
-          "name": "104 Atomic Health"
+          "id": 895,
+          "name": "Floor Atomic Health 1"
         },
         "105": {
-          "id": 894,
-          "name": "105 Atomic Health"
+          "id": 896,
+          "name": "Floor Atomic Health 2"
         },
         "106": {
-          "id": 895,
-          "name": "106 Atomic Health"
+          "id": 897,
+          "name": "Floor Atomic Health 3"
         },
         "107": {
-          "id": 896,
-          "name": "107 Atomic Health"
+          "id": 898,
+          "name": "Floor Atomic Health 4"
         }
       },
       "sectors": {},
@@ -4711,110 +4721,110 @@
     "E3L10": {
       "sprites": {
         "0": {
-          "id": 897,
-          "name": "0 Shotgun"
+          "id": 899,
+          "name": "Beta Shotgun"
         },
         "3": {
-          "id": 898,
-          "name": "3 Shotgun"
+          "id": 900,
+          "name": "Alpha Shotgun"
         },
         "13": {
-          "id": 899,
-          "name": "13 Tripbomb"
+          "id": 901,
+          "name": "Delta Tripmine 1"
         },
         "14": {
-          "id": 900,
-          "name": "14 Tripbomb"
+          "id": 902,
+          "name": "Delta Tripmine 2"
         },
         "15": {
-          "id": 901,
-          "name": "15 Tripbomb"
+          "id": 903,
+          "name": "Delta Tripmine 3"
         },
         "16": {
-          "id": 902,
-          "name": "16 Armor"
+          "id": 904,
+          "name": "Alpha Armor"
         },
         "17": {
-          "id": 903,
-          "name": "17 Night Vision Goggles"
+          "id": 905,
+          "name": "Beta Night Vision Goggles"
         },
         "18": {
-          "id": 904,
-          "name": "18 Medkit"
+          "id": 906,
+          "name": "Beta Medkit"
         },
         "21": {
-          "id": 905,
-          "name": "21 Jetpack"
+          "id": 907,
+          "name": "Gamma Jetpack"
         },
         "30": {
-          "id": 906,
-          "name": "30 Pipebombs"
+          "id": 908,
+          "name": "Delta Pipebombs 1"
         },
         "31": {
-          "id": 907,
-          "name": "31 Pipebombs"
+          "id": 909,
+          "name": "Delta Pipebombs 2"
         },
         "38": {
-          "id": 908,
-          "name": "38 Freezethrower"
+          "id": 910,
+          "name": "Exit Freezethrower"
         },
         "209": {
-          "id": 909,
-          "name": "209 RPG"
+          "id": 911,
+          "name": "Brick RPG"
         },
         "210": {
-          "id": 910,
-          "name": "210 Armor"
+          "id": 912,
+          "name": "Brick Armor"
         },
         "251": {
-          "id": 911,
-          "name": "251 Chaingun"
+          "id": 913,
+          "name": "Desert Chaingun"
         },
         "276": {
-          "id": 912,
-          "name": "276 Shrinker"
+          "id": 914,
+          "name": "White Shrinker"
         },
         "282": {
-          "id": 913,
-          "name": "282 Devastator"
+          "id": 915,
+          "name": "Green Devastator"
         },
         "283": {
-          "id": 914,
-          "name": "283 Steroids"
+          "id": 916,
+          "name": "Alpha Steroids"
         },
         "290": {
-          "id": 915,
-          "name": "290 Holo Duke"
+          "id": 917,
+          "name": "Delta Holo Duke"
         },
         "314": {
-          "id": 916,
-          "name": "314 Atomic Health"
+          "id": 918,
+          "name": "Exit Atomic Health 1"
         },
         "315": {
-          "id": 917,
-          "name": "315 Atomic Health"
+          "id": 919,
+          "name": "Exit Atomic Health 2"
         },
         "316": {
-          "id": 918,
-          "name": "316 Atomic Health"
+          "id": 920,
+          "name": "Exit Atomic Health 3"
         }
       },
       "sectors": {
         "148": {
           "id": 1939,
-          "name": "Secret 1"
+          "name": "Secret Delta"
         },
         "156": {
           "id": 1940,
-          "name": "Secret 2"
+          "name": "Secret Alpha"
         },
         "164": {
           "id": 1941,
-          "name": "Secret 3"
+          "name": "Secret Beta"
         },
         "172": {
           "id": 1942,
-          "name": "Secret 4"
+          "name": "Secret Gamma"
         }
       },
       "exits": {
@@ -4827,146 +4837,156 @@
     "E3L11": {
       "sprites": {
         "20": {
-          "id": 919,
-          "name": "20 Armor"
+          "id": 921,
+          "name": "Conveyor Control Armor"
         },
         "21": {
-          "id": 920,
-          "name": "21 Night Vision Goggles"
+          "id": 922,
+          "name": "Conveyor Night Vision Goggles"
         },
         "24": {
-          "id": 921,
-          "name": "24 Pipebombs"
+          "id": 923,
+          "name": "Streets Pipebombs"
         },
         "33": {
-          "id": 922,
-          "name": "33 Shotgun"
+          "id": 924,
+          "name": "Underwater Shotgun"
         },
         "61": {
-          "id": 923,
-          "name": "61 Tripbomb"
+          "id": 925,
+          "name": "Sewer Tripmine 1"
         },
         "62": {
-          "id": 924,
-          "name": "62 Tripbomb"
+          "id": 926,
+          "name": "Sewer Tripmine 2"
         },
         "72": {
-          "id": 925,
-          "name": "72 Steroids"
+          "id": 927,
+          "name": "Streets Steroids"
         },
         "73": {
-          "id": 926,
-          "name": "73 Steroids"
+          "id": 928,
+          "name": "Ledge Steroids"
         },
         "81": {
-          "id": 927,
-          "name": "81 Pipebombs"
+          "id": 929,
+          "name": "Conveyor Control Pipebombs"
+        },
+        "210": {
+          "id": 930,
+          "name": "Trashcan Atomic Health",
+          "type": "trashcan"
         },
         "211": {
-          "id": 928,
-          "name": "211 Jetpack"
+          "id": 931,
+          "name": "Toppled Building Jetpack"
+        },
+        "304": {
+          "id": 932,
+          "name": "Trashcan Shotgun",
+          "type": "trashcan"
         },
         "361": {
-          "id": 929,
-          "name": "361 RPG"
+          "id": 933,
+          "name": "Underwater RPG"
         },
         "363": {
-          "id": 930,
-          "name": "363 Atomic Health"
+          "id": 934,
+          "name": "Underwater Atomic Health"
         },
         "364": {
-          "id": 931,
-          "name": "364 Armor"
+          "id": 935,
+          "name": "Sewer Armor"
         },
         "366": {
-          "id": 932,
-          "name": "366 Devastator"
+          "id": 936,
+          "name": "Streets Devastator"
         },
         "367": {
-          "id": 933,
-          "name": "367 Medkit"
+          "id": 937,
+          "name": "Ledge Medkit"
         },
         "372": {
-          "id": 934,
-          "name": "372 Night Vision Goggles"
+          "id": 938,
+          "name": "Ledge Night Vision Goggles"
         },
         "376": {
-          "id": 935,
-          "name": "376 Atomic Health"
+          "id": 939,
+          "name": "Office Ledge Atomic Health 1"
         },
         "377": {
-          "id": 936,
-          "name": "377 Atomic Health"
+          "id": 940,
+          "name": "Office Ledge Atomic Health 2"
         },
         "378": {
-          "id": 937,
-          "name": "378 Medkit"
+          "id": 941,
+          "name": "Streets Medkit"
         },
         "379": {
-          "id": 938,
-          "name": "379 Armor"
+          "id": 942,
+          "name": "Streets Armor"
         },
         "381": {
-          "id": 939,
-          "name": "381 Chaingun"
+          "id": 943,
+          "name": "Office Chaingun"
         },
         "384": {
-          "id": 940,
-          "name": "384 Pipebombs"
+          "id": 944,
+          "name": "Office Pipebombs"
         },
         "386": {
-          "id": 941,
-          "name": "386 RPG"
+          "id": 945,
+          "name": "Terminator RPG"
         },
         "387": {
-          "id": 942,
-          "name": "387 Freezethrower"
+          "id": 946,
+          "name": "Conveyor Freezethrower"
         },
         "388": {
-          "id": 943,
-          "name": "388 Shrinker"
+          "id": 947,
+          "name": "Bedroom Shrinker"
         },
         "390": {
-          "id": 944,
-          "name": "390 Freezethrower"
+          "id": 948,
+          "name": "Bathroom Freezethrower"
         },
         "394": {
-          "id": 945,
-          "name": "394 Shotgun"
+          "id": 949,
+          "name": "Dumpster Shotgun"
         },
         "399": {
-          "id": 946,
-          "name": "MP 399 Jetpack"
+          "id": 950,
+          "name": "MP Underwater Jetpack"
         },
         "463": {
-          "id": 947,
-          "name": "463 Blue Key Card"
+          "id": 951,
+          "name": "Blue Key Card"
         },
         "465": {
-          "id": 948,
-          "name": "465 Red Key Card"
+          "id": 952,
+          "name": "Red Key Card"
         }
       },
       "sectors": {
         "120": {
           "id": 1943,
-          "name": "Secret 1"
+          "name": "Secret Bookshelf"
         },
         "148": {
           "id": 1944,
-          "name": "Secret 2"
+          "name": "Secret Office Spawn Room"
         },
         "229": {
           "id": 1945,
-          "name": "Secret 3"
+          "name": "Secret Conveyor Control Room"
         },
         "242": {
           "id": 1946,
-          "name": "Secret 4"
+          "name": "Secret Bedroom Window"
         },
         "246": {
           "id": 1947,
-          "name": "Secret 5"
+          "name": "Secret Bathroom"
         }
       },
       "exits": {
@@ -4979,115 +4999,115 @@
     "E4L1": {
       "sprites": {
         "4": {
-          "id": 949,
-          "name": "4 Tripbomb"
+          "id": 953,
+          "name": "4 Tripmine"
         },
         "47": {
-          "id": 950,
+          "id": 954,
           "name": "47 Freezethrower"
         },
         "53": {
-          "id": 951,
+          "id": 955,
           "name": "53 Night Vision Goggles"
         },
         "54": {
-          "id": 952,
+          "id": 956,
           "name": "54 Holo Duke"
         },
         "56": {
-          "id": 953,
+          "id": 957,
           "name": "56 Pipebombs"
         },
         "135": {
-          "id": 954,
+          "id": 958,
           "name": "135 Red Key Card"
         },
         "136": {
-          "id": 955,
+          "id": 959,
           "name": "136 Blue Key Card"
         },
         "149": {
-          "id": 956,
-          "name": "149 Tripbomb"
+          "id": 960,
+          "name": "149 Tripmine"
         },
         "150": {
-          "id": 957,
-          "name": "150 Tripbomb"
+          "id": 961,
+          "name": "150 Tripmine"
         },
         "151": {
-          "id": 958,
+          "id": 962,
           "name": "151 Pipebombs"
         },
         "152": {
-          "id": 959,
+          "id": 963,
           "name": "MP 152 Steroids"
         },
         "170": {
-          "id": 960,
+          "id": 964,
           "name": "170 Atomic Health"
         },
         "192": {
-          "id": 961,
+          "id": 965,
           "name": "192 Atomic Health"
         },
         "373": {
-          "id": 962,
+          "id": 966,
           "name": "373 RPG"
         },
         "407": {
-          "id": 963,
+          "id": 967,
           "name": "407 Medkit"
         },
         "419": {
-          "id": 964,
+          "id": 968,
           "name": "419 Armor"
         },
         "539": {
-          "id": 965,
+          "id": 969,
           "name": "539 Shotgun"
         },
         "540": {
-          "id": 966,
+          "id": 970,
           "name": "540 Chaingun"
         },
         "544": {
-          "id": 967,
+          "id": 971,
           "name": "MP 544 Shotgun"
         },
         "545": {
-          "id": 968,
+          "id": 972,
           "name": "MP 545 Chaingun"
         },
         "562": {
-          "id": 969,
+          "id": 973,
           "name": "562 Pipebombs"
         },
         "563": {
-          "id": 970,
+          "id": 974,
           "name": "563 Atomic Health"
         },
         "633": {
-          "id": 971,
+          "id": 975,
           "name": "633 Shrinker"
         },
         "634": {
-          "id": 972,
+          "id": 976,
           "name": "634 Armor"
         },
         "655": {
-          "id": 973,
+          "id": 977,
           "name": "655 Devastator"
         },
         "674": {
-          "id": 974,
+          "id": 978,
           "name": "674 Pipebombs"
         },
         "839": {
-          "id": 975,
+          "id": 979,
           "name": "839 Steroids"
         },
         "840": {
-          "id": 976,
+          "id": 980,
           "name": "840 Jetpack"
         }
       },
@@ -5131,103 +5151,103 @@
     "E4L2": {
       "sprites": {
         "59": {
-          "id": 977,
-          "name": "59 Tripbomb"
+          "id": 981,
+          "name": "59 Tripmine"
         },
         "75": {
-          "id": 978,
+          "id": 982,
           "name": "75 RPG"
         },
         "98": {
-          "id": 979,
+          "id": 983,
           "name": "98 Pipebombs"
         },
         "101": {
-          "id": 980,
+          "id": 984,
           "name": "101 Steroids"
         },
         "102": {
-          "id": 981,
+          "id": 985,
           "name": "102 Medkit"
         },
         "125": {
-          "id": 982,
+          "id": 986,
           "name": "125 Freezethrower"
         },
         "140": {
-          "id": 983,
+          "id": 987,
           "name": "140 Pipebombs"
         },
         "150": {
-          "id": 984,
-          "name": "150 Tripbomb"
+          "id": 988,
+          "name": "150 Tripmine"
         },
         "151": {
-          "id": 985,
-          "name": "151 Tripbomb"
+          "id": 989,
+          "name": "151 Tripmine"
         },
         "198": {
-          "id": 986,
+          "id": 990,
           "name": "198 Red Key Card"
         },
         "217": {
-          "id": 987,
+          "id": 991,
           "name": "217 Armor"
         },
         "354": {
-          "id": 988,
+          "id": 992,
           "name": "354 Armor"
         },
         "355": {
-          "id": 989,
+          "id": 993,
           "name": "355 Medkit"
         },
         "413": {
-          "id": 990,
+          "id": 994,
           "name": "413 Atomic Health"
         },
         "414": {
-          "id": 991,
+          "id": 995,
           "name": "414 Pipebombs"
         },
         "416": {
-          "id": 992,
+          "id": 996,
           "name": "MP 416 RPG"
         },
         "417": {
-          "id": 993,
+          "id": 997,
           "name": "417 Shotgun"
         },
         "418": {
-          "id": 994,
+          "id": 998,
           "name": "418 Chaingun"
         },
         "423": {
-          "id": 995,
+          "id": 999,
           "name": "423 Steroids"
         },
         "563": {
-          "id": 996,
+          "id": 1000,
           "name": "MP 563 Holo Duke"
         },
         "595": {
-          "id": 997,
+          "id": 1001,
           "name": "595 Devastator"
         },
         "663": {
-          "id": 998,
+          "id": 1002,
           "name": "663 Shrinker"
         },
         "664": {
-          "id": 999,
+          "id": 1003,
           "name": "664 Blue Key Card"
         },
         "679": {
-          "id": 1000,
+          "id": 1004,
           "name": "679 Night Vision Goggles"
         },
         "748": {
-          "id": 1001,
+          "id": 1005,
           "name": "748 Freezethrower"
         }
       },
@@ -5259,139 +5279,139 @@
     "E4L3": {
       "sprites": {
         "18": {
-          "id": 1002,
+          "id": 1006,
           "name": "MP 18 Chaingun"
         },
         "21": {
-          "id": 1003,
+          "id": 1007,
           "name": "21 Pipebombs"
         },
         "32": {
-          "id": 1004,
+          "id": 1008,
           "name": "32 Armor"
         },
         "39": {
-          "id": 1005,
+          "id": 1009,
           "name": "39 Freezethrower"
         },
         "40": {
-          "id": 1006,
+          "id": 1010,
           "name": "40 Pipebombs"
         },
         "41": {
-          "id": 1007,
+          "id": 1011,
           "name": "41 Night Vision Goggles"
         },
         "116": {
-          "id": 1008,
+          "id": 1012,
           "name": "MP 116 Shrinker"
         },
         "121": {
-          "id": 1009,
+          "id": 1013,
           "name": "121 RPG"
         },
         "122": {
-          "id": 1010,
+          "id": 1014,
           "name": "MP 122 Shotgun"
         },
         "126": {
-          "id": 1011,
+          "id": 1015,
           "name": "MP 126 RPG"
         },
         "130": {
-          "id": 1012,
+          "id": 1016,
           "name": "130 Devastator"
         },
         "131": {
-          "id": 1013,
-          "name": "131 Tripbomb"
+          "id": 1017,
+          "name": "131 Tripmine"
         },
         "132": {
-          "id": 1014,
-          "name": "132 Tripbomb"
+          "id": 1018,
+          "name": "132 Tripmine"
         },
         "133": {
-          "id": 1015,
-          "name": "133 Tripbomb"
+          "id": 1019,
+          "name": "133 Tripmine"
         },
         "134": {
-          "id": 1016,
+          "id": 1020,
           "name": "134 Atomic Health"
         },
         "139": {
-          "id": 1017,
+          "id": 1021,
           "name": "139 Medkit"
         },
         "148": {
-          "id": 1018,
+          "id": 1022,
           "name": "148 Shotgun"
         },
         "158": {
-          "id": 1019,
+          "id": 1023,
           "name": "158 Devastator"
         },
         "194": {
-          "id": 1020,
+          "id": 1024,
           "name": "194 Atomic Health"
         },
         "228": {
-          "id": 1021,
+          "id": 1025,
           "name": "228 Chaingun"
         },
         "264": {
-          "id": 1022,
+          "id": 1026,
           "name": "264 Atomic Health"
         },
         "307": {
-          "id": 1023,
+          "id": 1027,
           "name": "307 Blue Key Card"
         },
         "377": {
-          "id": 1024,
+          "id": 1028,
           "name": "377 Yellow Key Card"
         },
         "396": {
-          "id": 1025,
+          "id": 1029,
           "name": "396 Red Key Card"
         },
         "426": {
-          "id": 1026,
+          "id": 1030,
           "name": "426 Pipebombs"
         },
         "442": {
-          "id": 1027,
+          "id": 1031,
           "name": "442 Armor"
         },
         "445": {
-          "id": 1028,
+          "id": 1032,
           "name": "445 Night Vision Goggles"
         },
         "446": {
-          "id": 1029,
+          "id": 1033,
           "name": "MP 446 Jetpack"
         },
         "451": {
-          "id": 1030,
+          "id": 1034,
           "name": "MP 451 Shotgun"
         },
         "452": {
-          "id": 1031,
+          "id": 1035,
           "name": "452 Holo Duke"
         },
         "492": {
-          "id": 1032,
+          "id": 1036,
           "name": "492 Steroids"
         },
         "542": {
-          "id": 1033,
+          "id": 1037,
           "name": "542 Medkit"
         },
         "547": {
-          "id": 1034,
+          "id": 1038,
           "name": "547 Steroids"
         },
         "549": {
-          "id": 1035,
+          "id": 1039,
           "name": "549 Protective Boots"
         }
       },
@@ -5435,143 +5455,143 @@
     "E4L4": {
       "sprites": {
         "6": {
-          "id": 1036,
+          "id": 1040,
           "name": "6 RPG"
         },
         "9": {
-          "id": 1037,
+          "id": 1041,
           "name": "9 Chaingun"
         },
         "19": {
-          "id": 1038,
+          "id": 1042,
           "name": "19 Protective Boots"
         },
         "56": {
-          "id": 1039,
+          "id": 1043,
           "name": "56 Red Key Card"
         },
         "101": {
-          "id": 1040,
+          "id": 1044,
           "name": "101 Pipebombs"
         },
         "184": {
-          "id": 1041,
+          "id": 1045,
           "name": "MP 184 Protective Boots"
         },
         "190": {
-          "id": 1042,
+          "id": 1046,
           "name": "190 Pipebombs"
         },
         "191": {
-          "id": 1043,
+          "id": 1047,
           "name": "191 Jetpack"
         },
         "200": {
-          "id": 1044,
+          "id": 1048,
           "name": "200 Holo Duke"
         },
         "204": {
-          "id": 1045,
+          "id": 1049,
           "name": "204 Night Vision Goggles"
         },
         "205": {
-          "id": 1046,
+          "id": 1050,
           "name": "205 Holo Duke"
         },
         "210": {
-          "id": 1047,
+          "id": 1051,
           "name": "210 Pipebombs"
         },
         "213": {
-          "id": 1048,
+          "id": 1052,
           "name": "MP 213 Medkit"
         },
         "214": {
-          "id": 1049,
+          "id": 1053,
           "name": "214 Night Vision Goggles"
         },
         "215": {
-          "id": 1050,
+          "id": 1054,
           "name": "215 Armor"
         },
         "218": {
-          "id": 1051,
+          "id": 1055,
           "name": "218 Steroids"
         },
         "220": {
-          "id": 1052,
+          "id": 1056,
           "name": "220 Medkit"
         },
         "229": {
-          "id": 1053,
+          "id": 1057,
           "name": "229 Shrinker"
         },
         "230": {
-          "id": 1054,
+          "id": 1058,
           "name": "230 Freezethrower"
         },
         "231": {
-          "id": 1055,
+          "id": 1059,
           "name": "231 Atomic Health"
         },
         "232": {
-          "id": 1056,
+          "id": 1060,
           "name": "232 RPG"
         },
         "233": {
-          "id": 1057,
+          "id": 1061,
           "name": "233 Devastator"
         },
         "234": {
-          "id": 1058,
+          "id": 1062,
           "name": "234 Chaingun"
         },
         "235": {
-          "id": 1059,
+          "id": 1063,
           "name": "235 Shotgun"
         },
         "236": {
-          "id": 1060,
+          "id": 1064,
           "name": "236 Chaingun"
         },
         "238": {
-          "id": 1061,
+          "id": 1065,
           "name": "238 RPG"
         },
         "245": {
-          "id": 1062,
+          "id": 1066,
           "name": "245 Atomic Health"
         },
         "246": {
-          "id": 1063,
+          "id": 1067,
           "name": "246 Shotgun"
         },
         "445": {
-          "id": 1064,
+          "id": 1068,
           "name": "445 Blue Key Card"
         },
         "634": {
-          "id": 1065,
+          "id": 1069,
           "name": "634 Armor"
         },
         "656": {
-          "id": 1066,
-          "name": "656 Tripbomb"
+          "id": 1070,
+          "name": "656 Tripmine"
         },
         "657": {
-          "id": 1067,
-          "name": "657 Tripbomb"
+          "id": 1071,
+          "name": "657 Tripmine"
         },
         "668": {
-          "id": 1068,
+          "id": 1072,
           "name": "668 Scuba Gear"
         },
         "694": {
-          "id": 1069,
+          "id": 1073,
           "name": "694 Atomic Health"
         },
         "755": {
-          "id": 1070,
+          "id": 1074,
           "name": "755 Shrinker"
         }
       },
@@ -5603,147 +5623,147 @@
     "E4L5": {
       "sprites": {
         "61": {
-          "id": 1071,
+          "id": 1075,
           "name": "61 Pipebombs"
         },
         "76": {
-          "id": 1072,
+          "id": 1076,
           "name": "76 Atomic Health"
         },
         "79": {
-          "id": 1073,
+          "id": 1077,
           "name": "79 Steroids"
         },
         "80": {
-          "id": 1074,
+          "id": 1078,
           "name": "80 Steroids"
         },
         "90": {
-          "id": 1075,
+          "id": 1079,
           "name": "90 Freezethrower"
         },
         "91": {
-          "id": 1076,
+          "id": 1080,
           "name": "91 Devastator"
         },
         "92": {
-          "id": 1077,
+          "id": 1081,
           "name": "92 RPG"
         },
         "123": {
-          "id": 1078,
+          "id": 1082,
           "name": "123 Atomic Health"
         },
         "142": {
-          "id": 1079,
+          "id": 1083,
           "name": "MP 142 Shotgun"
         },
         "196": {
-          "id": 1080,
-          "name": "196 Tripbomb"
+          "id": 1084,
+          "name": "196 Tripmine"
         },
         "197": {
-          "id": 1081,
-          "name": "197 Tripbomb"
+          "id": 1085,
+          "name": "197 Tripmine"
         },
         "198": {
-          "id": 1082,
+          "id": 1086,
           "name": "198 Freezethrower"
         },
         "211": {
-          "id": 1083,
+          "id": 1087,
           "name": "211 Jetpack"
         },
         "260": {
-          "id": 1084,
+          "id": 1088,
           "name": "260 RPG"
         },
         "264": {
-          "id": 1085,
+          "id": 1089,
           "name": "264 Medkit"
         },
         "266": {
-          "id": 1086,
+          "id": 1090,
           "name": "266 Atomic Health"
         },
         "267": {
-          "id": 1087,
+          "id": 1091,
           "name": "267 Steroids"
         },
         "268": {
-          "id": 1088,
+          "id": 1092,
           "name": "268 Medkit"
         },
         "363": {
-          "id": 1089,
+          "id": 1093,
           "name": "363 Blue Key Card"
         },
         "441": {
-          "id": 1090,
+          "id": 1094,
           "name": "441 Atomic Health"
         },
         "528": {
-          "id": 1091,
+          "id": 1095,
           "name": "528 Chaingun"
         },
         "529": {
-          "id": 1092,
+          "id": 1096,
           "name": "529 Chaingun"
         },
         "530": {
-          "id": 1093,
+          "id": 1097,
           "name": "530 Chaingun"
         },
         "613": {
-          "id": 1094,
+          "id": 1098,
           "name": "613 Shotgun"
         },
         "618": {
-          "id": 1095,
+          "id": 1099,
           "name": "618 Chaingun"
         },
         "717": {
-          "id": 1096,
+          "id": 1100,
           "name": "717 Pipebombs"
         },
         "751": {
-          "id": 1097,
+          "id": 1101,
           "name": "751 Yellow Key Card"
         },
         "767": {
-          "id": 1098,
+          "id": 1102,
           "name": "MP 767 Jetpack"
         },
         "768": {
-          "id": 1099,
+          "id": 1103,
           "name": "768 Shrinker"
         },
         "771": {
-          "id": 1100,
+          "id": 1104,
           "name": "771 Armor"
         },
         "773": {
-          "id": 1101,
+          "id": 1105,
           "name": "773 Night Vision Goggles"
         },
         "811": {
-          "id": 1102,
+          "id": 1106,
           "name": "811 Pipebombs"
         },
         "812": {
-          "id": 1103,
+          "id": 1107,
           "name": "MP 812 Armor"
         },
         "813": {
-          "id": 1104,
+          "id": 1108,
           "name": "MP 813 Shotgun"
         },
         "841": {
-          "id": 1105,
+          "id": 1109,
           "name": "841 Holo Duke"
         },
         "854": {
-          "id": 1106,
+          "id": 1110,
           "name": "854 Red Key Card"
         }
       },
@@ -5774,7 +5794,7 @@
           "id": 1737,
           "name": "Exit"
         },
-        "10": {
+        "11": {
           "id": 1738,
           "name": "Secret Exit"
         }
@@ -5783,147 +5803,147 @@
     "E4L6": {
       "sprites": {
         "25": {
-          "id": 1107,
+          "id": 1111,
           "name": "25 Protective Boots"
         },
         "26": {
-          "id": 1108,
+          "id": 1112,
           "name": "26 Devastator"
         },
         "81": {
-          "id": 1109,
+          "id": 1113,
           "name": "81 Pipebombs"
         },
         "84": {
-          "id": 1110,
+          "id": 1114,
           "name": "84 Shrinker"
         },
         "145": {
-          "id": 1111,
+          "id": 1115,
           "name": "145 Red Key Card"
         },
         "206": {
-          "id": 1112,
+          "id": 1116,
           "name": "206 Chaingun"
         },
         "209": {
-          "id": 1113,
+          "id": 1117,
           "name": "209 Armor"
         },
         "210": {
-          "id": 1114,
+          "id": 1118,
           "name": "210 Medkit"
         },
         "217": {
-          "id": 1115,
+          "id": 1119,
           "name": "217 Pipebombs"
         },
         "266": {
-          "id": 1116,
-          "name": "266 Tripbomb"
+          "id": 1120,
+          "name": "266 Tripmine"
         },
         "267": {
-          "id": 1117,
-          "name": "267 Tripbomb"
+          "id": 1121,
+          "name": "267 Tripmine"
         },
         "277": {
-          "id": 1118,
+          "id": 1122,
           "name": "277 Holo Duke"
         },
         "279": {
-          "id": 1119,
+          "id": 1123,
           "name": "279 Atomic Health"
         },
         "281": {
-          "id": 1120,
+          "id": 1124,
           "name": "281 Freezethrower"
         },
         "284": {
-          "id": 1121,
+          "id": 1125,
           "name": "284 Steroids"
         },
         "286": {
-          "id": 1122,
+          "id": 1126,
           "name": "286 Armor"
         },
         "287": {
-          "id": 1123,
+          "id": 1127,
           "name": "287 Shotgun"
         },
         "288": {
-          "id": 1124,
+          "id": 1128,
           "name": "288 Pipebombs"
         },
         "290": {
-          "id": 1125,
+          "id": 1129,
           "name": "290 Devastator"
         },
         "291": {
-          "id": 1126,
+          "id": 1130,
           "name": "291 Night Vision Goggles"
         },
         "293": {
-          "id": 1127,
+          "id": 1131,
           "name": "293 Steroids"
         },
         "294": {
-          "id": 1128,
+          "id": 1132,
           "name": "294 Armor"
         },
         "295": {
-          "id": 1129,
+          "id": 1133,
           "name": "MP 295 Jetpack"
         },
         "296": {
-          "id": 1130,
+          "id": 1134,
           "name": "296 Medkit"
         },
         "305": {
-          "id": 1131,
+          "id": 1135,
           "name": "305 Chaingun"
         },
         "306": {
-          "id": 1132,
+          "id": 1136,
           "name": "306 RPG"
         },
         "353": {
-          "id": 1133,
+          "id": 1137,
           "name": "353 Atomic Health"
         },
         "464": {
-          "id": 1134,
+          "id": 1138,
           "name": "464 Atomic Health"
         },
         "530": {
-          "id": 1135,
+          "id": 1139,
           "name": "530 Atomic Health"
         },
         "534": {
-          "id": 1136,
+          "id": 1140,
           "name": "534 Blue Key Card"
         },
         "590": {
-          "id": 1137,
+          "id": 1141,
           "name": "590 Devastator"
         },
         "635": {
-          "id": 1138,
+          "id": 1142,
           "name": "635 Shotgun"
         },
         "665": {
-          "id": 1139,
+          "id": 1143,
           "name": "665 Atomic Health"
         },
         "672": {
-          "id": 1140,
+          "id": 1144,
           "name": "672 Medkit"
         },
         "724": {
-          "id": 1141,
+          "id": 1145,
           "name": "724 Yellow Key Card"
         },
         "750": {
-          "id": 1142,
+          "id": 1146,
           "name": "750 Pipebombs"
         }
       },
@@ -5955,107 +5975,107 @@
     "E4L7": {
       "sprites": {
         "8": {
-          "id": 1143,
+          "id": 1147,
           "name": "8 Scuba Gear"
         },
         "29": {
-          "id": 1144,
+          "id": 1148,
           "name": "29 Holo Duke"
         },
         "34": {
-          "id": 1145,
+          "id": 1149,
           "name": "34 Freezethrower"
         },
         "35": {
-          "id": 1146,
+          "id": 1150,
           "name": "MP 35 Jetpack"
         },
         "37": {
-          "id": 1147,
+          "id": 1151,
           "name": "37 Pipebombs"
         },
         "83": {
-          "id": 1148,
+          "id": 1152,
           "name": "83 Armor"
         },
         "84": {
-          "id": 1149,
+          "id": 1153,
           "name": "84 Atomic Health"
         },
         "110": {
-          "id": 1150,
+          "id": 1154,
           "name": "110 RPG"
         },
         "112": {
-          "id": 1151,
+          "id": 1155,
           "name": "112 Medkit"
         },
         "165": {
-          "id": 1152,
+          "id": 1156,
           "name": "165 Blue Key Card"
         },
         "166": {
-          "id": 1153,
-          "name": "166 Tripbomb"
+          "id": 1157,
+          "name": "166 Tripmine"
         },
         "167": {
-          "id": 1154,
-          "name": "167 Tripbomb"
+          "id": 1158,
+          "name": "167 Tripmine"
         },
         "170": {
-          "id": 1155,
+          "id": 1159,
           "name": "170 Devastator"
         },
         "176": {
-          "id": 1156,
+          "id": 1160,
           "name": "176 Pipebombs"
         },
         "177": {
-          "id": 1157,
+          "id": 1161,
           "name": "177 Chaingun"
         },
         "186": {
-          "id": 1158,
+          "id": 1162,
           "name": "186 Protective Boots"
         },
         "195": {
-          "id": 1159,
+          "id": 1163,
           "name": "195 Shrinker"
         },
         "207": {
-          "id": 1160,
+          "id": 1164,
           "name": "MP 207 Shotgun"
         },
         "216": {
-          "id": 1161,
+          "id": 1165,
           "name": "216 Atomic Health"
         },
         "245": {
-          "id": 1162,
+          "id": 1166,
           "name": "245 Night Vision Goggles"
         },
         "322": {
-          "id": 1163,
+          "id": 1167,
           "name": "322 Medkit"
         },
         "331": {
-          "id": 1164,
+          "id": 1168,
           "name": "331 Steroids"
         },
         "365": {
-          "id": 1165,
+          "id": 1169,
           "name": "MP 365 Jetpack"
         },
         "372": {
-          "id": 1166,
+          "id": 1170,
           "name": "372 Red Key Card"
         },
         "420": {
-          "id": 1167,
+          "id": 1171,
           "name": "420 Shotgun"
         },
         "591": {
-          "id": 1168,
+          "id": 1172,
           "name": "591 RPG"
         }
       },
@@ -6083,127 +6103,127 @@
     "E4L8": {
       "sprites": {
         "313": {
-          "id": 1169,
+          "id": 1173,
           "name": "313 Night Vision Goggles"
         },
         "323": {
-          "id": 1170,
+          "id": 1174,
           "name": "MP 323 Jetpack"
         },
         "344": {
-          "id": 1171,
+          "id": 1175,
           "name": "344 Freezethrower"
         },
         "351": {
-          "id": 1172,
+          "id": 1176,
           "name": "351 Armor"
         },
         "352": {
-          "id": 1173,
+          "id": 1177,
           "name": "352 Shotgun"
         },
         "386": {
-          "id": 1174,
+          "id": 1178,
           "name": "386 Blue Key Card"
         },
         "456": {
-          "id": 1175,
+          "id": 1179,
           "name": "456 Atomic Health"
         },
         "479": {
-          "id": 1176,
+          "id": 1180,
           "name": "479 Medkit"
         },
         "532": {
-          "id": 1177,
+          "id": 1181,
           "name": "532 Devastator"
         },
         "533": {
-          "id": 1178,
+          "id": 1182,
           "name": "533 Atomic Health"
         },
         "538": {
-          "id": 1179,
+          "id": 1183,
           "name": "538 Pipebombs"
         },
         "613": {
-          "id": 1180,
+          "id": 1184,
           "name": "613 Armor"
         },
         "614": {
-          "id": 1181,
+          "id": 1185,
           "name": "614 Atomic Health"
         },
         "648": {
-          "id": 1182,
+          "id": 1186,
           "name": "648 Chaingun"
         },
         "713": {
-          "id": 1183,
+          "id": 1187,
           "name": "713 Pipebombs"
         },
         "714": {
-          "id": 1184,
+          "id": 1188,
           "name": "714 Shotgun"
         },
         "724": {
-          "id": 1185,
+          "id": 1189,
           "name": "724 Holo Duke"
         },
         "733": {
-          "id": 1186,
+          "id": 1190,
           "name": "733 Medkit"
         },
         "734": {
-          "id": 1187,
+          "id": 1191,
           "name": "734 Steroids"
         },
         "735": {
-          "id": 1188,
+          "id": 1192,
           "name": "735 Protective Boots"
         },
         "761": {
-          "id": 1189,
+          "id": 1193,
           "name": "761 Atomic Health"
         },
         "762": {
-          "id": 1190,
+          "id": 1194,
           "name": "762 Yellow Key Card"
         },
         "827": {
-          "id": 1191,
+          "id": 1195,
           "name": "827 Shrinker"
         },
         "830": {
-          "id": 1192,
+          "id": 1196,
           "name": "830 Chaingun"
         },
         "834": {
-          "id": 1193,
+          "id": 1197,
           "name": "834 RPG"
         },
         "835": {
-          "id": 1194,
-          "name": "835 Tripbomb"
+          "id": 1198,
+          "name": "835 Tripmine"
         },
         "836": {
-          "id": 1195,
-          "name": "836 Tripbomb"
+          "id": 1199,
+          "name": "836 Tripmine"
         },
         "854": {
-          "id": 1196,
+          "id": 1200,
           "name": "854 Red Key Card"
         },
         "863": {
-          "id": 1197,
+          "id": 1201,
           "name": "863 Scuba Gear"
         },
         "864": {
-          "id": 1198,
+          "id": 1202,
           "name": "MP 864 RPG"
         },
         "868": {
-          "id": 1199,
+          "id": 1203,
           "name": "MP 868 Freezethrower"
         }
       },
@@ -6235,227 +6255,227 @@
     "E4L9": {
       "sprites": {
         "10": {
-          "id": 1200,
+          "id": 1204,
           "name": "10 Medkit"
         },
         "65": {
-          "id": 1201,
+          "id": 1205,
           "name": "65 Atomic Health"
         },
         "185": {
-          "id": 1202,
+          "id": 1206,
           "name": "185 Atomic Health"
         },
         "211": {
-          "id": 1203,
+          "id": 1207,
           "name": "211 Shrinker"
         },
         "214": {
-          "id": 1204,
+          "id": 1208,
           "name": "214 Atomic Health"
         },
         "215": {
-          "id": 1205,
+          "id": 1209,
           "name": "215 Atomic Health"
         },
         "216": {
-          "id": 1206,
+          "id": 1210,
           "name": "216 Night Vision Goggles"
         },
         "217": {
-          "id": 1207,
+          "id": 1211,
           "name": "217 Armor"
         },
         "223": {
-          "id": 1208,
+          "id": 1212,
           "name": "223 Steroids"
         },
         "229": {
-          "id": 1209,
+          "id": 1213,
           "name": "229 Chaingun"
         },
         "261": {
-          "id": 1210,
+          "id": 1214,
           "name": "261 Pipebombs"
         },
         "504": {
-          "id": 1211,
+          "id": 1215,
           "name": "504 Blue Key Card"
         },
         "626": {
-          "id": 1212,
+          "id": 1216,
           "name": "626 Pipebombs"
         },
         "834": {
-          "id": 1213,
+          "id": 1217,
           "name": "834 Protective Boots"
         },
         "960": {
-          "id": 1214,
+          "id": 1218,
           "name": "960 Steroids"
         },
         "961": {
-          "id": 1215,
+          "id": 1219,
           "name": "961 Medkit"
         },
         "962": {
-          "id": 1216,
+          "id": 1220,
           "name": "962 RPG"
         },
         "964": {
-          "id": 1217,
+          "id": 1221,
           "name": "964 RPG"
         },
         "967": {
-          "id": 1218,
+          "id": 1222,
           "name": "967 Atomic Health"
         },
         "968": {
-          "id": 1219,
+          "id": 1223,
           "name": "968 Atomic Health"
         },
         "969": {
-          "id": 1220,
+          "id": 1224,
           "name": "969 Scuba Gear"
         },
         "970": {
-          "id": 1221,
+          "id": 1225,
           "name": "MP 970 Jetpack"
         },
         "971": {
-          "id": 1222,
+          "id": 1226,
           "name": "MP 971 Jetpack"
         },
         "972": {
-          "id": 1223,
+          "id": 1227,
           "name": "MP 972 Jetpack"
         },
         "973": {
-          "id": 1224,
+          "id": 1228,
           "name": "973 Armor"
         },
         "976": {
-          "id": 1225,
+          "id": 1229,
           "name": "976 Shotgun"
         },
         "977": {
-          "id": 1226,
+          "id": 1230,
           "name": "977 Chaingun"
         },
         "980": {
-          "id": 1227,
+          "id": 1231,
           "name": "980 Shrinker"
         },
         "983": {
-          "id": 1228,
-          "name": "983 Tripbomb"
+          "id": 1232,
+          "name": "983 Tripmine"
         },
         "984": {
-          "id": 1229,
-          "name": "984 Tripbomb"
+          "id": 1233,
+          "name": "984 Tripmine"
         },
         "988": {
-          "id": 1230,
+          "id": 1234,
           "name": "988 Freezethrower"
         },
         "989": {
-          "id": 1231,
+          "id": 1235,
           "name": "989 Devastator"
         },
         "992": {
-          "id": 1232,
+          "id": 1236,
           "name": "992 Night Vision Goggles"
         },
         "994": {
-          "id": 1233,
+          "id": 1237,
           "name": "994 RPG"
         },
         "995": {
-          "id": 1234,
+          "id": 1238,
           "name": "MP 995 Jetpack"
         },
         "996": {
-          "id": 1235,
+          "id": 1239,
           "name": "996 Atomic Health"
         },
         "997": {
-          "id": 1236,
+          "id": 1240,
           "name": "997 Holo Duke"
         },
         "1007": {
-          "id": 1237,
+          "id": 1241,
           "name": "1007 Pipebombs"
         },
         "1008": {
-          "id": 1238,
+          "id": 1242,
           "name": "1008 Pipebombs"
         },
         "1009": {
-          "id": 1239,
+          "id": 1243,
           "name": "1009 Armor"
         },
         "1010": {
-          "id": 1240,
+          "id": 1244,
           "name": "1010 Atomic Health"
         },
         "1011": {
-          "id": 1241,
+          "id": 1245,
           "name": "1011 Chaingun"
         },
         "1012": {
-          "id": 1242,
+          "id": 1246,
           "name": "1012 Shotgun"
         },
         "1021": {
-          "id": 1243,
+          "id": 1247,
           "name": "1021 Red Key Card"
         },
         "1022": {
-          "id": 1244,
+          "id": 1248,
           "name": "1022 Yellow Key Card"
         },
         "1058": {
-          "id": 1245,
+          "id": 1249,
           "name": "1058 Atomic Health"
         },
         "1081": {
-          "id": 1246,
+          "id": 1250,
           "name": "1081 Protective Boots"
         },
         "1082": {
-          "id": 1247,
+          "id": 1251,
           "name": "1082 Steroids"
         },
         "1111": {
-          "id": 1248,
+          "id": 1252,
           "name": "1111 Atomic Health"
         },
         "1118": {
-          "id": 1249,
+          "id": 1253,
           "name": "1118 Atomic Health"
         },
         "1173": {
-          "id": 1250,
+          "id": 1254,
           "name": "MP 1173 Jetpack"
         },
         "1181": {
-          "id": 1251,
+          "id": 1255,
           "name": "1181 Chaingun"
         },
         "1182": {
-          "id": 1252,
+          "id": 1256,
           "name": "1182 Steroids"
         },
         "1183": {
-          "id": 1253,
+          "id": 1257,
           "name": "1183 Night Vision Goggles"
         },
         "1184": {
-          "id": 1254,
+          "id": 1258,
           "name": "1184 Armor"
         },
         "1185": {
-          "id": 1255,
+          "id": 1259,
           "name": "1185 Shotgun"
         }
       },
@@ -6491,235 +6511,235 @@
     "E4L10": {
       "sprites": {
         "29": {
-          "id": 1256,
+          "id": 1260,
           "name": "29 Jetpack"
         },
         "150": {
-          "id": 1257,
+          "id": 1261,
           "name": "150 Protective Boots"
         },
         "151": {
-          "id": 1258,
+          "id": 1262,
           "name": "151 Protective Boots"
         },
         "260": {
-          "id": 1259,
+          "id": 1263,
           "name": "260 Atomic Health"
         },
         "297": {
-          "id": 1260,
+          "id": 1264,
           "name": "MP 297 Shotgun"
         },
         "298": {
-          "id": 1261,
+          "id": 1265,
           "name": "MP 298 Shotgun"
         },
         "299": {
-          "id": 1262,
+          "id": 1266,
           "name": "MP 299 Shotgun"
         },
         "300": {
-          "id": 1263,
+          "id": 1267,
           "name": "MP 300 Shotgun"
         },
         "312": {
-          "id": 1264,
+          "id": 1268,
           "name": "312 Pipebombs"
         },
         "315": {
-          "id": 1265,
+          "id": 1269,
           "name": "315 Pipebombs"
         },
         "316": {
-          "id": 1266,
+          "id": 1270,
           "name": "316 Pipebombs"
         },
         "331": {
-          "id": 1267,
+          "id": 1271,
           "name": "331 Medkit"
         },
         "332": {
-          "id": 1268,
+          "id": 1272,
           "name": "332 Atomic Health"
         },
         "333": {
-          "id": 1269,
+          "id": 1273,
           "name": "333 Armor"
         },
         "337": {
-          "id": 1270,
+          "id": 1274,
           "name": "337 Scuba Gear"
         },
         "338": {
-          "id": 1271,
+          "id": 1275,
           "name": "338 Protective Boots"
         },
         "374": {
-          "id": 1272,
+          "id": 1276,
           "name": "374 Armor"
         },
         "375": {
-          "id": 1273,
+          "id": 1277,
           "name": "375 Atomic Health"
         },
         "388": {
-          "id": 1274,
+          "id": 1278,
           "name": "MP 388 Devastator"
         },
         "424": {
-          "id": 1275,
+          "id": 1279,
           "name": "424 Medkit"
         },
         "453": {
-          "id": 1276,
+          "id": 1280,
           "name": "453 RPG"
         },
         "561": {
-          "id": 1277,
+          "id": 1281,
           "name": "561 Jetpack"
         },
         "579": {
-          "id": 1278,
+          "id": 1282,
           "name": "579 RPG"
         },
         "613": {
-          "id": 1279,
+          "id": 1283,
           "name": "MP 613 Shotgun"
         },
         "614": {
-          "id": 1280,
+          "id": 1284,
           "name": "MP 614 Shotgun"
         },
         "615": {
-          "id": 1281,
+          "id": 1285,
           "name": "615 Shotgun"
         },
         "616": {
-          "id": 1282,
+          "id": 1286,
           "name": "MP 616 Shotgun"
         },
         "624": {
-          "id": 1283,
+          "id": 1287,
           "name": "624 Jetpack"
         },
         "669": {
-          "id": 1284,
+          "id": 1288,
           "name": "MP 669 Devastator"
         },
         "686": {
-          "id": 1285,
+          "id": 1289,
           "name": "686 Pipebombs"
         },
         "701": {
-          "id": 1286,
+          "id": 1290,
           "name": "MP 701 Shotgun"
         },
         "702": {
-          "id": 1287,
+          "id": 1291,
           "name": "MP 702 Shotgun"
         },
         "776": {
-          "id": 1288,
+          "id": 1292,
           "name": "776 Medkit"
         },
         "789": {
-          "id": 1289,
+          "id": 1293,
           "name": "789 Blue Key Card"
         },
         "823": {
-          "id": 1290,
+          "id": 1294,
           "name": "823 Red Key Card"
         },
         "824": {
-          "id": 1291,
+          "id": 1295,
           "name": "824 Atomic Health"
         },
         "825": {
-          "id": 1292,
+          "id": 1296,
           "name": "825 Armor"
         },
         "840": {
-          "id": 1293,
+          "id": 1297,
           "name": "840 Armor"
         },
         "841": {
-          "id": 1294,
+          "id": 1298,
           "name": "841 Armor"
         },
         "842": {
-          "id": 1295,
+          "id": 1299,
           "name": "842 Yellow Key Card"
         },
         "844": {
-          "id": 1296,
+          "id": 1300,
           "name": "844 Steroids"
         },
         "852": {
-          "id": 1297,
+          "id": 1301,
           "name": "852 Atomic Health"
         },
         "859": {
-          "id": 1298,
+          "id": 1302,
           "name": "MP 859 Chaingun"
         },
         "860": {
-          "id": 1299,
+          "id": 1303,
           "name": "MP 860 Chaingun"
         },
         "861": {
-          "id": 1300,
+          "id": 1304,
           "name": "MP 861 Chaingun"
         },
         "862": {
-          "id": 1301,
+          "id": 1305,
           "name": "MP 862 Chaingun"
         },
         "891": {
-          "id": 1302,
+          "id": 1306,
           "name": "891 Pipebombs"
         },
         "892": {
-          "id": 1303,
+          "id": 1307,
           "name": "892 Pipebombs"
         },
         "893": {
-          "id": 1304,
+          "id": 1308,
           "name": "893 Pipebombs"
         },
         "894": {
-          "id": 1305,
+          "id": 1309,
           "name": "MP 894 Chaingun"
         },
         "895": {
-          "id": 1306,
+          "id": 1310,
           "name": "MP 895 Chaingun"
         },
         "896": {
-          "id": 1307,
+          "id": 1311,
           "name": "896 Chaingun"
         },
         "897": {
-          "id": 1308,
+          "id": 1312,
           "name": "897 Chaingun"
         },
         "903": {
-          "id": 1309,
+          "id": 1313,
           "name": "903 Devastator"
         },
         "904": {
-          "id": 1310,
+          "id": 1314,
           "name": "904 Devastator"
         },
         "933": {
-          "id": 1311,
+          "id": 1315,
           "name": "933 RPG"
         },
         "934": {
-          "id": 1312,
+          "id": 1316,
           "name": "934 RPG"
         },
         "964": {
-          "id": 1313,
+          "id": 1317,
           "name": "964 Pipebombs"
         }
       },
@@ -6763,143 +6783,143 @@
     "E4L11": {
       "sprites": {
         "50": {
-          "id": 1314,
+          "id": 1318,
           "name": "50 Atomic Health"
         },
         "90": {
-          "id": 1315,
+          "id": 1319,
           "name": "90 Pipebombs"
         },
         "94": {
-          "id": 1316,
+          "id": 1320,
           "name": "MP 94 Pipebombs"
         },
         "109": {
-          "id": 1317,
+          "id": 1321,
           "name": "MP 109 Chaingun"
         },
         "112": {
-          "id": 1318,
+          "id": 1322,
           "name": "MP 112 Steroids"
         },
         "198": {
-          "id": 1319,
+          "id": 1323,
           "name": "198 Devastator"
         },
         "234": {
-          "id": 1320,
+          "id": 1324,
           "name": "234 Night Vision Goggles"
         },
         "252": {
-          "id": 1321,
+          "id": 1325,
           "name": "252 Night Vision Goggles"
         },
         "254": {
-          "id": 1322,
+          "id": 1326,
           "name": "254 Pipebombs"
         },
         "258": {
-          "id": 1323,
+          "id": 1327,
           "name": "258 Holo Duke"
         },
         "275": {
-          "id": 1324,
+          "id": 1328,
           "name": "275 Pipebombs"
         },
         "294": {
-          "id": 1325,
-          "name": "294 Tripbomb"
+          "id": 1329,
+          "name": "294 Tripmine"
         },
         "295": {
-          "id": 1326,
-          "name": "295 Tripbomb"
+          "id": 1330,
+          "name": "295 Tripmine"
         },
         "297": {
-          "id": 1327,
+          "id": 1331,
           "name": "297 Holo Duke"
         },
         "298": {
-          "id": 1328,
+          "id": 1332,
           "name": "298 Atomic Health"
         },
         "299": {
-          "id": 1329,
+          "id": 1333,
           "name": "299 Steroids"
         },
         "300": {
-          "id": 1330,
-          "name": "300 Tripbomb"
+          "id": 1334,
+          "name": "300 Tripmine"
         },
         "301": {
-          "id": 1331,
+          "id": 1335,
           "name": "301 Medkit"
         },
         "302": {
-          "id": 1332,
+          "id": 1336,
           "name": "MP 302 Atomic Health"
         },
         "304": {
-          "id": 1333,
+          "id": 1337,
           "name": "304 Armor"
         },
         "306": {
-          "id": 1334,
+          "id": 1338,
           "name": "306 Shotgun"
         },
         "308": {
-          "id": 1335,
+          "id": 1339,
           "name": "308 Atomic Health"
         },
         "311": {
-          "id": 1336,
+          "id": 1340,
           "name": "311 Blue Key Card"
         },
         "335": {
-          "id": 1337,
+          "id": 1341,
           "name": "335 Chaingun"
         },
         "469": {
-          "id": 1338,
+          "id": 1342,
           "name": "469 Red Key Card"
         },
         "513": {
-          "id": 1339,
+          "id": 1343,
           "name": "513 Armor"
         },
         "558": {
-          "id": 1340,
+          "id": 1344,
           "name": "558 Jetpack"
         },
         "560": {
-          "id": 1341,
+          "id": 1345,
           "name": "560 Shrinker"
         },
         "561": {
-          "id": 1342,
+          "id": 1346,
           "name": "MP 561 Jetpack"
         },
         "568": {
-          "id": 1343,
+          "id": 1347,
           "name": "568 RPG"
         },
         "584": {
-          "id": 1344,
+          "id": 1348,
           "name": "584 Shotgun"
         },
         "610": {
-          "id": 1345,
+          "id": 1349,
           "name": "610 Medkit"
         },
         "637": {
-          "id": 1346,
+          "id": 1350,
           "name": "637 Scuba Gear"
         },
         "656": {
-          "id": 1347,
+          "id": 1351,
           "name": "656 Freezethrower"
         },
         "690": {
-          "id": 1348,
+          "id": 1352,
           "name": "690 Yellow Key Card"
         }
       },
@@ -8144,12 +8164,12 @@
       "volumenum": 1
     },
     "1818": {
-      "name": "E2L4 Red Key Card",
+      "name": "E2L5 Blue Key Card",
       "type": "key",
       "persistent": true,
       "unique": true,
-      "flags": 2,
-      "levelnum": 3,
+      "flags": 1,
+      "levelnum": 4,
       "volumenum": 1
     },
     "1819": {
@@ -8243,6 +8263,15 @@
       "volumenum": 2
     },
     "1829": {
+      "name": "E3L2 Blue Key Card",
+      "type": "key",
+      "persistent": true,
+      "unique": true,
+      "flags": 1,
+      "levelnum": 1,
+      "volumenum": 2
+    },
+    "1830": {
       "name": "E3L3 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8251,7 +8280,25 @@
       "levelnum": 2,
       "volumenum": 2
     },
-    "1830": {
+    "1831": {
+      "name": "E3L3 Blue Key Card",
+      "type": "key",
+      "persistent": true,
+      "unique": true,
+      "flags": 1,
+      "levelnum": 2,
+      "volumenum": 2
+    },
+    "1832": {
+      "name": "E3L3 Yellow Key Card",
+      "type": "key",
+      "persistent": true,
+      "unique": true,
+      "flags": 4,
+      "levelnum": 2,
+      "volumenum": 2
+    },
+    "1833": {
       "name": "E3L4 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8260,7 +8307,16 @@
       "levelnum": 3,
       "volumenum": 2
     },
-    "1831": {
+    "1834": {
+      "name": "E3L4 Blue Key Card",
+      "type": "key",
+      "persistent": true,
+      "unique": true,
+      "flags": 1,
+      "levelnum": 3,
+      "volumenum": 2
+    },
+    "1835": {
       "name": "E3L5 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8269,7 +8325,25 @@
       "levelnum": 4,
       "volumenum": 2
     },
-    "1832": {
+    "1836": {
+      "name": "E3L5 Blue Key Card",
+      "type": "key",
+      "persistent": true,
+      "unique": true,
+      "flags": 1,
+      "levelnum": 4,
+      "volumenum": 2
+    },
+    "1837": {
+      "name": "E3L5 Yellow Key Card",
+      "type": "key",
+      "persistent": true,
+      "unique": true,
+      "flags": 4,
+      "levelnum": 4,
+      "volumenum": 2
+    },
+    "1838": {
       "name": "E3L6 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8278,7 +8352,16 @@
       "levelnum": 5,
       "volumenum": 2
     },
-    "1833": {
+    "1839": {
+      "name": "E3L6 Blue Key Card",
+      "type": "key",
+      "persistent": true,
+      "unique": true,
+      "flags": 1,
+      "levelnum": 5,
+      "volumenum": 2
+    },
+    "1840": {
       "name": "E3L7 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8287,34 +8370,43 @@
       "levelnum": 6,
       "volumenum": 2
     },
-    "1834": {
-      "name": "E3L8 Red Key Card",
+    "1841": {
+      "name": "E3L7 Blue Key Card",
       "type": "key",
       "persistent": true,
       "unique": true,
-      "flags": 2,
+      "flags": 1,
+      "levelnum": 6,
+      "volumenum": 2
+    },
+    "1842": {
+      "name": "E3L7 Yellow Key Card",
+      "type": "key",
+      "persistent": true,
+      "unique": true,
+      "flags": 4,
+      "levelnum": 6,
+      "volumenum": 2
+    },
+    "1843": {
+      "name": "E3L8 Blue Key Card",
+      "type": "key",
+      "persistent": true,
+      "unique": true,
+      "flags": 1,
       "levelnum": 7,
       "volumenum": 2
     },
-    "1835": {
-      "name": "E3L9 Red Key Card",
+    "1844": {
+      "name": "E3L8 Yellow Key Card",
       "type": "key",
       "persistent": true,
       "unique": true,
-      "flags": 2,
-      "levelnum": 8,
+      "flags": 4,
+      "levelnum": 7,
       "volumenum": 2
     },
-    "1836": {
-      "name": "E3L10 Red Key Card",
-      "type": "key",
-      "persistent": true,
-      "unique": true,
-      "flags": 2,
-      "levelnum": 9,
-      "volumenum": 2
-    },
-    "1837": {
+    "1845": {
       "name": "E3L11 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8323,7 +8415,16 @@
       "levelnum": 10,
       "volumenum": 2
     },
-    "1838": {
+    "1846": {
+      "name": "E3L11 Blue Key Card",
+      "type": "key",
+      "persistent": true,
+      "unique": true,
+      "flags": 1,
+      "levelnum": 10,
+      "volumenum": 2
+    },
+    "1847": {
       "name": "E4L1 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8332,7 +8433,7 @@
       "levelnum": 0,
       "volumenum": 3
     },
-    "1839": {
+    "1848": {
       "name": "E4L2 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8341,7 +8442,7 @@
       "levelnum": 1,
       "volumenum": 3
     },
-    "1840": {
+    "1849": {
       "name": "E4L3 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8350,7 +8451,7 @@
       "levelnum": 2,
       "volumenum": 3
     },
-    "1841": {
+    "1850": {
       "name": "E4L4 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8359,7 +8460,7 @@
       "levelnum": 3,
       "volumenum": 3
     },
-    "1842": {
+    "1851": {
       "name": "E4L5 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8368,7 +8469,7 @@
       "levelnum": 4,
       "volumenum": 3
     },
-    "1843": {
+    "1852": {
       "name": "E4L6 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8377,7 +8478,7 @@
       "levelnum": 5,
       "volumenum": 3
     },
-    "1844": {
+    "1853": {
       "name": "E4L7 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8386,7 +8487,7 @@
       "levelnum": 6,
       "volumenum": 3
     },
-    "1845": {
+    "1854": {
       "name": "E4L8 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8395,7 +8496,7 @@
       "levelnum": 7,
       "volumenum": 3
     },
-    "1846": {
+    "1855": {
       "name": "E4L9 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8404,7 +8505,7 @@
       "levelnum": 8,
       "volumenum": 3
     },
-    "1847": {
+    "1856": {
       "name": "E4L10 Red Key Card",
       "type": "key",
       "persistent": true,
@@ -8413,7 +8514,7 @@
       "levelnum": 9,
       "volumenum": 3
     },
-    "1848": {
+    "1857": {
       "name": "E4L11 Red Key Card",
       "type": "key",
       "persistent": true,
