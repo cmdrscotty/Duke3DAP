@@ -116,6 +116,7 @@ class E4L2(D3DLevel):
         )
         # Can be grabbed by diagonal walking into the corner, very specific.
         # TODO: Extreme for now until I figure out a good setup
+        # TODO: Might be possible to sr50 over with sprint
         self.connect(inside_db_kitchen, kitchen_fryer, r.difficulty("extreme") | r.jump)
 
         kitchen_back_secret = self.region(

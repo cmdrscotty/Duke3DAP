@@ -106,22 +106,27 @@ class E4L4(D3DLevel):
                 "Blue Key Card",
             ],
         )
-        # Can sr50 from the rotating boats onto the price pillar
-        self.connect(ret, pool_price, r.difficulty("hard") | r.jump)
+        # Can maybe sr50 from the rotating boats onto the price pillar
+        self.connect(ret, pool_price, r.jump)
 
         blue_area = self.region(
             "Blue Key Area",
             [],
         )
-        self.connect(ret, blue_area, self.blue_key)
+        # Need to cross the bridge to open the blue key area, sr50 jump on hard
+        self.connect(ret, blue_area, self.blue_key & 
+                    ((r.difficulty("hard") & r.can_jump) | 
+                    (r.can_sprint & r.jump) |
+                    r.jetpack(50))
+                    )
 
         blue_secret = self.region(
             "Blue Secret",
             [
-                "Secret Red Explosion",
+                "Secret Blue Explosion",
             ],
         )
-        self.connect(blue_area, blue_secret, r.explosives)
+        self.connect(blue_area, blue_secret, r.explosives & r.jump)
 
         blue_area_back = self.region(
             "Blue Area Behind Targets",
@@ -137,7 +142,7 @@ class E4L4(D3DLevel):
                 "Secret Blue Area Hidden Room",
                 "Blue Area Hidden Night Vision Goggles",
                 "Blue Area Hidden Armor",
-                "Blue Key Card",
+                "Red Key Card",
             ],
         )
         self.connect(blue_area, blue_area_hidden, r.jump & r.can_crouch)
@@ -163,7 +168,8 @@ class E4L4(D3DLevel):
         )
         # Can sr50 jump up using the sign
         self.connect(
-            red_area, red_upper_start, r.jump & (r.difficulty("hard") | r.can_sprint)
+            red_area, red_upper_start, r.jump |
+            (r.can_jump & (r.difficulty("hard") | r.can_sprint))
         )
 
         red_upper = self.region(
@@ -201,7 +207,7 @@ class E4L4(D3DLevel):
                 "Boat Top Freezethrower",
             ],
         )
-        self.connect(red_area, boat_top, r.jump)
+        self.connect(red_area, boat_top, r.jetpack(50) | r.can_dive)
 
         castle = self.region(
             "Castle",
@@ -217,7 +223,11 @@ class E4L4(D3DLevel):
                 "Exit",
             ],
         )
-        self.connect(red_area, castle, r.jump)
+        # Switch for castle door can be activated from the outside
+        self.connect(red_area, castle, (r.difficulty("medium") & r.can_jump) |
+                     r.jetpack(50))
+        # The other option is the button on top of the boat
+        self.connect(boat_top, castle, r.true)
 
         sky_secret = self.region(
             "Sky Secret Area",
@@ -226,7 +236,6 @@ class E4L4(D3DLevel):
                 "Sky Secret Atomic Health",
             ],
         )
-
         # Only requires around 30 jetpack i believe
         self.connect(red_area, sky_secret, r.jetpack(50))
         return ret
