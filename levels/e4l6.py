@@ -69,7 +69,6 @@ class E4L6(D3DLevel):
                 "Secret Firetruck",
                 "Firetruck Protective Boots",
                 "Firetruck Devastator",
-                "Container Pipebombs",
             ],
         )
         self.connect(ret, start_upper, r.jump)
@@ -80,8 +79,8 @@ class E4L6(D3DLevel):
                 "Paw Shotgun",
             ],
         )
-        # Can grab the item by jumping and sr40ing towards the item
-        self.connect(ret, paw_secret, r.can_crouch | r.difficulty("hard") & r.jump)
+        # Can grab the item by jumping and sr40ing towards the opening
+        self.connect(ret, paw_secret, r.can_crouch | r.difficulty("hard") & r.can_jump)
 
         behind_counter = self.region(
             "Behind Counter",
@@ -103,8 +102,8 @@ class E4L6(D3DLevel):
                 "Front Vent Pipebombs",
             ],
         )
-        # Can grab the item by jumping towards the item
-        self.connect(ret, front_vent, r.can_crouch | r.difficulty("hard") & r.jump)
+        # Can grab the item by jumping towards the vent
+        self.connect(ret, front_vent, (r.can_crouch & r.jump) | (r.difficulty("hard") & r.can_jump))
 
         front_vent_secret = self.region(
             "Secret Front Vent",
@@ -128,11 +127,11 @@ class E4L6(D3DLevel):
                 "Locker Secret Medkit",
             ],
         )
-        # Can grab the item by jumping towards the hole, easier than others
+        # Can grab the item by strafing into the wall and jumping TODO: maybe medium
         self.connect(
             behind_counter,
             locker_secret_grate,
-            r.explosives & (r.can_crouch | (r.difficulty("medium") & r.jump)),
+            r.explosives & (r.can_crouch | (r.difficulty("hard") & r.can_jump)),
         )
 
         blue_key_area = self.region(
@@ -170,7 +169,8 @@ class E4L6(D3DLevel):
                 "Blue Conveyer Atomic Health",
             ],
         )
-        self.connect(blue_key_area, conveyer_ducking, r.can_crouch)
+        # Can actually get in here by flying up with jetpack and dropping as makeshift crouch
+        self.connect(blue_key_area, conveyer_ducking, r.can_crouch | r.difficulty("hard") & r.jetpack(50))
 
         blue_desk = self.region(
             "Blue Desk",
@@ -179,7 +179,8 @@ class E4L6(D3DLevel):
             ],
         )
         # Can get up by clipping on the post bag and sr50ing over to conveyer
-        self.connect(blue_key_area, blue_desk, r.jump | r.difficulty("medium"))
+        # Hard difficulty because tank can blow up mailbag
+        self.connect(blue_key_area, blue_desk, r.jump | r.difficulty("hard"))
 
         conveyer_upper = self.region(
             "Blue Conveyer Upper",
@@ -191,7 +192,7 @@ class E4L6(D3DLevel):
             ],
         )
         self.connect(
-            blue_desk,
+            blue_key_area,
             conveyer_upper,
             (
                 r.jump & r.difficulty("medium")
