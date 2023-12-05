@@ -14,7 +14,7 @@ class E4L2(D3DLevel):
         {"id": 98, "name": "Kitchen Vent Pipebombs", "type": "sprite"},
         {"id": 101, "name": "Kitchen Vent Steroids", "type": "sprite"},
         {"id": 102, "name": "Kitchen Vent Medkit", "type": "sprite"},
-        {"id": 125, "name": "Inside DB  Freezethrower", "type": "sprite"},
+        {"id": 125, "name": "Inside DB Freezethrower", "type": "sprite"},
         {"id": 140, "name": "Dog Kennel Pipebombs", "type": "sprite"},
         {"id": 150, "name": "Manager Room Tripmine 1", "type": "sprite"},
         {"id": 151, "name": "Manager Room Tripmine 2", "type": "sprite"},
@@ -75,14 +75,14 @@ class E4L2(D3DLevel):
         self.connect(
             ret,
             kitchen_secret,
-            (r.jump & r.difficulty("medium")) | (self.blue_key & r.jump),
+            (r.can_jump & r.difficulty("medium")) | r.jetpack(50) | (self.blue_key & r.jump),
         )
 
         inside_db_front = self.region(
             "Inside DB Front",
             [
                 "MP Inside DB RPG",
-                "Inside DB  Freezethrower",
+                "Inside DB Freezethrower",  
             ],
         )
         inside_db_kitchen = self.region(
@@ -97,7 +97,7 @@ class E4L2(D3DLevel):
         self.connect(ret, inside_db_front, self.blue_key)
         self.connect(kitchen_secret, inside_db_kitchen, r.can_crouch)
         # Outside path requires shrinker to get to kitchen area,
-        # glitched logic allows jumpclip, only relevant if somebody plays easy+glitched
+        # Glitched logic allows jumpclip through shrinker path  
         self.connect(inside_db_front, inside_db_kitchen, r.crouch_jump | r.can_shrink)
 
         kitchen_corner = self.region(
@@ -106,8 +106,9 @@ class E4L2(D3DLevel):
                 "Kitchen Corner Chaingun",
             ],
         )
-        # This one can be gotten by diagonal walking + crouch tap instead of having jump
-        self.connect(inside_db_kitchen, kitchen_corner, r.can_crouch | r.jump)
+        # This one can be gotten by diagonal walking onto the counter instead of having jump
+        # Hard difficulty because if certain entities are destroyed it wont work anymore
+        self.connect(inside_db_kitchen, kitchen_corner, r.difficulty("hard") | r.jump)
 
         kitchen_fryer = self.region(
             "Kitchen Fryer",
@@ -115,7 +116,9 @@ class E4L2(D3DLevel):
                 "Kitchen Fryer Armor",
             ],
         )
-        self.connect(inside_db_kitchen, kitchen_fryer, r.jump)
+        # Can be grabbed by diagonal walking into the corner, very specific
+        # Alternatively get on the corner counter and sr50 over
+        self.connect(inside_db_kitchen, kitchen_fryer, r.difficulty("hard") | r.jump)
 
         kitchen_back_secret = self.region(
             "Secret Kitchen Back",
@@ -124,7 +127,9 @@ class E4L2(D3DLevel):
                 "Secret Kitchen Back",
             ],
         )
-        # Can jump instead of duck to activate switch at desk
+        # Can jump/jetpack instead of duck to activate switch at desk
+        # TODO: Extreme logic: Use enforcer to clip on topmost box for secret
+        # r.jetpack(100) & r.difficulty("extreme") < 100 jetpack just to be nice
         self.connect(
             inside_db_kitchen,
             kitchen_back_secret,

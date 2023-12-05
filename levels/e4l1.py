@@ -70,7 +70,6 @@ class E4L1(D3DLevel):
                 "Secret Barracks Bed",
                 "Barracks Bed Steroids",
                 "Barracks Bed Jetpack",
-                "Blue Key Card",
                 "Bathroom Chaingun",
                 "Secret Kitchen Freezer",
                 "Kitchen Freezer Freezethrower",
@@ -79,9 +78,20 @@ class E4L1(D3DLevel):
                 "Cave Atomic Health",
                 "Briefing Room Pipebombs",
                 "Briefing Room Armor",
+                "MP Outside Area Ledge Shotgun",
+                "MP Outside Area Ledge Chaingun",
             ],
         )
 
+        bathroom_key = self.region(
+            "Behind Briefing Room Desk",
+            [
+                "Blue Key Card",
+            ],
+        )
+        # Door Clipping never stops
+        self.connect(ret, bathroom_key, r.jump | r.difficulty("hard"))
+        
         behind_desk = self.region(
             "Behind Briefing Room Desk",
             [
@@ -95,8 +105,6 @@ class E4L1(D3DLevel):
             "Upper Canyon Ledge",
             [
                 "MP Upper Canyon Ledge Steroids",
-                "MP Outside Area Ledge Shotgun",
-                "MP Outside Area Ledge Chaingun",
                 "Upper Canyon Ledge Holo Duke",
                 "Upper Canyon Ledge Pipebombs",
                 "Secret Upper Canyon Ledge",
@@ -139,7 +147,9 @@ class E4L1(D3DLevel):
                 "Kitchen Conveyer Atomic Health",
             ],
         )
-        self.connect(ret, kitchen_conveyer, r.jump | r.can_dive)
+        # Door clipping strikes again
+        self.connect(ret, kitchen_conveyer, r.jump | r.can_dive |
+                     r.difficulty("hard"))
 
         blue_key_area = self.region(
             "Blue Key Room",
