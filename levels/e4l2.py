@@ -117,7 +117,6 @@ class E4L2(D3DLevel):
             ],
         )
         # Can be grabbed by diagonal walking into the corner, very specific
-        # Alternatively get on the corner counter and sr50 over
         self.connect(inside_db_kitchen, kitchen_fryer, r.difficulty("hard") | r.jump)
 
         kitchen_back_secret = self.region(
