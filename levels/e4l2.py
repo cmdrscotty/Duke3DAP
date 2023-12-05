@@ -72,11 +72,9 @@ class E4L2(D3DLevel):
             ],
         )
         # Can enter without crouch but cant exit, maybe hard difficulty?
-        self.connect(
-            ret,
-            kitchen_secret,
-            (r.can_jump & r.difficulty("medium")) | r.jetpack(50) | (self.blue_key & r.jump),
-        )
+        self.connect(ret,kitchen_secret, (r.can_jump & r.difficulty("medium")) | 
+                     r.jetpack(50)
+                    )
 
         inside_db_front = self.region(
             "Inside DB Front",
@@ -93,7 +91,7 @@ class E4L2(D3DLevel):
             ],
         )
 
-        # Can jump in through kitchen secret or go in from outside
+        # Can go in through kitchen secret or go in the normal way
         self.connect(ret, inside_db_front, self.blue_key)
         self.connect(kitchen_secret, inside_db_kitchen, r.can_crouch)
         # Outside path requires shrinker to get to kitchen area,
@@ -116,8 +114,9 @@ class E4L2(D3DLevel):
                 "Kitchen Fryer Armor",
             ],
         )
-        # Can be grabbed by diagonal walking into the corner, very specific
-        self.connect(inside_db_kitchen, kitchen_fryer, r.difficulty("hard") | r.jump)
+        # Can be grabbed by diagonal walking into the corner, very specific.
+        # TODO: Extreme for now until I figure out a good setup
+        self.connect(inside_db_kitchen, kitchen_fryer, r.difficulty("extreme") | r.jump)
 
         kitchen_back_secret = self.region(
             "Secret Kitchen Back",

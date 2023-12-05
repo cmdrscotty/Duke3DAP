@@ -147,20 +147,32 @@ class E4L3(D3DLevel):
         # Extreme difficulty strat needs to be double checked
         # | r.difficulty("extreme"))
         self.connect(
-            shop_blue, blue_fruits, r.jump | r.difficulty("hard") & r.can_sprint
+            shop_blue, blue_fruits, r.jump | (r.difficulty("hard") & r.can_sprint)
         )
 
-        blue_upper = self.region(
-            "Shop Blue Key Area Vent",
+        blue_vent_front = self.region(
+            "Shop Blue Key Area Vent Front",
             [
-                "Blue Vent Atomic Health",
-                "Blue Top Crate RPG",
                 "MP Blue Vent Shrinker",
                 "MP Seal Chaingun",
                 "Yellow Key Card",
             ],
         )
-        self.connect(shop_blue, blue_upper, r.jump)
+        # This one is accessable with just jetpack
+        # Can also drop in the other vent to grab one item
+        # Hard logic can require using the jetpack drop as a makeshift crouch to get into the other vent
+        self.connect(shop_blue, blue_vent_front, r.can_jump | 
+                     (r.jetpack(50) & r.difficulty("hard"))
+                     )
+
+        blue_vent_back = self.region(
+            "Shop Blue Key Area Vent Back",
+            [
+                "Blue Top Crate RPG",
+                "Blue Vent Atomic Health",
+            ],
+        )
+        self.connect(shop_blue, blue_vent_back, r.jump)
 
         yellow_cashier = self.region(
             "Yellow Key Cashier Area",
@@ -177,8 +189,8 @@ class E4L3(D3DLevel):
                 "Red Key Card",
             ],
         )
-        # Can climb up to crates over the crack, permanently gone if blown up
-        self.connect(yellow_cashier, manager_upper, r.jump | r.difficulty("medium"))
+        # Can climb up to crates over the crack, permanently gone if blown up, hard because missable
+        self.connect(yellow_cashier, manager_upper, r.jump | r.difficulty("hard"))
 
         yellow_cashier_secret = self.region(
             "Secret Yellow Cashier",
@@ -221,6 +233,8 @@ class E4L3(D3DLevel):
                 "Exit",
             ],
         )
-        # Jump to door opening button
-        self.connect(storage_red, trash_compactor, r.jump)
+        # Jump to door opening button or jetpack on top of pig cops head
+        self.connect(storage_red, trash_compactor, r.can_jump |
+                     (r.jetpack(50) & r.difficulty("hard"))
+                    )
         return ret
