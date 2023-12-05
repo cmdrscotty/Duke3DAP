@@ -72,8 +72,8 @@ class E4L5(D3DLevel):
                 "Telephone Atomic Health",
             ],
         )
-        # one way, cant go back without crouching
-        self.connect(ret, tele_secret, r.jump)
+        # Item can be barely grabbed without getting stuck
+        self.connect(ret, tele_secret, r.can_jump)
 
         graffiti_secret = self.region(
             "Secret Graffiti",
@@ -106,7 +106,7 @@ class E4L5(D3DLevel):
         # Can walk off the stairs on top of the, a bit tricky without sprint
         # Other entry leads through manhole cover
         self.connect(
-            ret, past_car, r.can_sprint | r.difficulty("medium") | r.explosives
+            ret, past_car, r.can_sprint | r.difficulty("medium") | r.explosives | r.jump
         )
 
         security_mons_upper = self.region(
@@ -165,7 +165,7 @@ class E4L5(D3DLevel):
             ],
         )
         # Strafe up the terminal on the right to get into the poster secret
-        self.connect(red_key_area, poster_secret, r.jump | r.difficulty("medium"))
+        self.connect(red_key_area, poster_secret, r.jump | r.difficulty("hard"))
 
         yellow_key_area = self.region(
             "Yellow Key Area",
