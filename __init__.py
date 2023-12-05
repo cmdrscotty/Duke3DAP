@@ -348,102 +348,53 @@ class D3DWorld(World):
     def create_item_list(self, item_list: List[str]) -> List[D3DItem]:
         return [self.create_item(item) for item in item_list]
 
-    # ToDo there has to be a way to reduce code duplication for these
-    def generate_jetpack(self) -> Tuple[List[D3DItem], List[D3DItem]]:
-        difficulty = self.get_option("difficulty")
-        if difficulty == self.options.difficulty.option_extreme:
-            required = 200
-            total = 200
-        elif difficulty == self.options.difficulty.option_hard:
-            required = 200
-            total = 300
-        elif difficulty == self.options.difficulty.option_medium:
-            required = 300
-            total = 500
-        else:
-            required = 400
-            total = 800
-        required_cnt = math.ceil(float(required) / self.fuel_per_pickup["Jetpack"])
-        total_cnt = math.ceil(float(total) / self.fuel_per_pickup["Jetpack"])
+    DIFF_TO_REQ_MAPPING = {
+        Difficulty.option_easy: {
+            "Jetpack": (400, 800),
+            "Scuba Gear": (2000, 3500),
+            "Steroids": (150, 300),
+        },
+        Difficulty.option_medium: {
+            "Jetpack": (300, 500),
+            "Scuba Gear": (1250, 2000),
+            "Steroids": (100, 200),
+        },
+        Difficulty.option_hard: {
+            "Jetpack": (200, 300),
+            "Scuba Gear": (400, 1000),
+            "Steroids": (50, 50),
+        },
+        Difficulty.option_extreme: {
+            "Jetpack": (200, 200),
+            "Scuba Gear": (400, 400),
+            "Steroids": (50, 50),
+        },
+    }
 
-        # One base item and rest is capacity
-        required_list = [self.create_item("Jetpack")] + [
-            self.create_item("Jetpack Capacity") for _ in range(required_cnt - 1)
+    def generate_inventories(
+        self, inv_type: str
+    ) -> Tuple[List[D3DItem], List[D3DItem]]:
+        required, total = self.DIFF_TO_REQ_MAPPING.get(
+            self.get_option("difficulty"), self.options.difficulty.option_medium
+        )[inv_type]
+
+        required_cnt = math.ceil(float(required) / self.fuel_per_pickup[inv_type])
+        total_cnt = math.ceil(float(total) / self.fuel_per_pickup[inv_type])
+
+        # One base item and rest is capacity, unless we have progressive inventories
+        progressive = self.get_option("progressive_inventories")
+        if progressive:
+            main_name = f"Progressive {inv_type}"
+            cap_name = main_name
+        else:
+            main_name = inv_type
+            cap_name = f"{inv_type} Capacity"
+        required_list = [self.create_item(main_name)] + [
+            self.create_item(cap_name) for _ in range(required_cnt - 1)
         ]
         # Fill pool with capacity up to total amount
         useful_list = [
-            self.create_item("Jetpack Capacity")
-            for _ in range(total_cnt - len(required_list))
-        ]
-        return required_list, useful_list
-
-    def generate_scuba_gear(self) -> Tuple[List[D3DItem], List[D3DItem]]:
-        difficulty = self.get_option("difficulty")
-        if difficulty == self.options.difficulty.option_extreme:
-            required = 400
-            total = 400
-        elif difficulty == self.options.difficulty.option_hard:
-            required = 400
-            total = 1000
-        elif difficulty == self.options.difficulty.option_medium:
-            required = 1250
-            total = 2000
-        else:
-            required = 2000
-            total = 3500
-        required_cnt = math.ceil(float(required) / self.fuel_per_pickup["Scuba Gear"])
-        total_cnt = math.ceil(float(total) / self.fuel_per_pickup["Scuba Gear"])
-
-        # One base item and rest is capacity
-        required_list = [self.create_item("Scuba Gear")] + [
-            self.create_item("Scuba Gear Capacity") for _ in range(required_cnt - 1)
-        ]
-        # Fill pool with capacity up to total amount
-        useful_list = [
-            self.create_item("Scuba Gear Capacity")
-            for _ in range(total_cnt - len(required_list))
-        ]
-        # If no level requires diving we just place all of them in the useful list, as we don't care if they
-        # get discarded for seeds with very restricted available location slots
-        need_dive = False
-        for level in self.included_levels:
-            if level.must_dive:
-                need_dive = True
-                break
-        if need_dive:
-            return required_list, useful_list
-        else:
-            return [], required_list + useful_list
-
-    def generate_steroids(self) -> Tuple[List[D3DItem], List[D3DItem]]:
-        difficulty = self.get_option("difficulty")
-        if difficulty == self.options.difficulty.option_extreme:
-            required = 0
-            total = 0
-        elif difficulty == self.options.difficulty.option_hard:
-            required = 0
-            total = 50
-        elif difficulty == self.options.difficulty.option_medium:
-            required = 100
-            total = 200
-        else:
-            required = 150
-            total = 300
-        required_cnt = math.ceil(float(required) / self.fuel_per_pickup["Steroids"])
-        total_cnt = math.ceil(float(total) / self.fuel_per_pickup["Steroids"])
-
-        # Always need at least one in glitched logic!
-        if self.get_option("glitch_logic") and required_cnt == 0:
-            required_cnt = 1
-
-        # One base item and rest is capacity
-        required_list = [self.create_item("Steroids")] + [
-            self.create_item("Steroids Capacity") for _ in range(required_cnt - 1)
-        ]
-        # Fill pool with capacity up to total amount
-        useful_list = [
-            self.create_item("Steroids Capacity")
-            for _ in range(total_cnt - len(required_list))
+            self.create_item(cap_name) for _ in range(total_cnt - len(required_list))
         ]
         return required_list, useful_list
 
@@ -524,7 +475,10 @@ class D3DWorld(World):
                 {"capacity": capacity_per, "ammo": math.ceil(capacity_per / 2.0)},
             )
             # and add the right count to our pool
-            ret_items[f"{weapon} Capacity"] = count
+            if self.get_option("progressive_weapons"):
+                ret_items[f"Progressive {weapon}"] = count
+            else:
+                ret_items[f"{weapon} Capacity"] = count
 
         # Is there a good comprehension for this?
         ret = []
@@ -602,18 +556,40 @@ class D3DWorld(World):
                 ]
             )
 
-        # ToDo support progressive items via toggle
         # Add progression items
-        # Need access to at least 3 explosive weapons for some checks, and they might all have max capacity 1 (!)
-        itempool += self.create_item_list(["RPG", "Pipebomb", "Tripmine", "Devastator"])
+        progressive_weapons = self.get_option("progressive_weapons")
+        # Place explosive weapons into the required itempool
+        if progressive_weapons:
+            itempool += self.create_item_list(
+                [
+                    "Progressive RPG",
+                    "Progressive Pipebomb",
+                    "Progressive Tripmine",
+                    "Progressive Devastator",
+                ]
+            )
+        else:
+            itempool += self.create_item_list(
+                ["RPG", "Pipebomb", "Tripmine", "Devastator"]
+            )
         # Get progression inventory based on difficulty settings
-        required, useful = self.generate_jetpack()
+        required, useful = self.generate_inventories("Jetpack")
         itempool += required
         useful_items += useful
-        required, useful = self.generate_scuba_gear()
-        itempool += required
+        required, useful = self.generate_inventories("Scuba Gear")
+        # If no level requires diving we just place all of them in the useful list, as we don't care if they
+        # get discarded for seeds with very restricted available location slots
+        need_dive = False
+        for level in self.included_levels:
+            if level.must_dive:
+                need_dive = True
+                break
+        if need_dive:
+            itempool += required
+        else:
+            useful_items += required
         useful_items += useful
-        required, useful = self.generate_steroids()
+        required, useful = self.generate_inventories("Steroids")
         itempool += required
         useful_items += useful
 
@@ -624,9 +600,20 @@ class D3DWorld(World):
             )
 
         # Add one copy of each remaining weapon to the pool
-        useful_items += self.create_item_list(
-            ["Shotgun", "Chaingun", "Shrinker", "Freezethrower", "Expander"]
-        )
+        if progressive_weapons:
+            useful_items += self.create_item_list(
+                [
+                    "Progressive Shotgun",
+                    "Progressive Chaingun",
+                    "Progressive Shrinker",
+                    "Progressive Freezethrower",
+                    "Progressive Expander",
+                ]
+            )
+        else:
+            useful_items += self.create_item_list(
+                ["Shotgun", "Chaingun", "Shrinker", "Freezethrower", "Expander"]
+            )
 
         # count out remaining slots left to be filled
         open_slots = len(used_locations) - (len(itempool) + len(useful_items))

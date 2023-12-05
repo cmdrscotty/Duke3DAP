@@ -163,6 +163,26 @@ class FuelPerSteroids(NamedRange):
     default = 40
 
 
+class ProgressiveWeapons(Toggle):
+    """
+    Replace weapon unlocks and ammunition capacity upgrades with progressive versions.
+    This greatly increases access to weapons to your world.
+    """
+
+    display_name = "Progressive Weapons"
+    default = False
+
+
+class ProgressiveInventories(Toggle):
+    """
+    Replace Jetpack, Scuba Gear and Steroid unlocks and their capacity upgrades with progressive versions.
+    This increases access to their abilities in your world.
+    """
+
+    display_name = "Progressive Inventory"
+    default = False
+
+
 @dataclass
 class Duke3DOptions(PerGameCommonOptions):
     difficulty: Difficulty
@@ -183,3 +203,5 @@ class Duke3DOptions(PerGameCommonOptions):
     fuel_per_jetpack: FuelPerJetpack
     fuel_per_scuba_gear: FuelPerScubaGear
     fuel_per_steroids: FuelPerSteroids
+    progressive_weapons: ProgressiveWeapons
+    progressive_inventories: ProgressiveInventories

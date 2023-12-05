@@ -2,7 +2,7 @@
   "game": "Duke Nukem 3D",
   "name": "Duke Nukem 3D",
   "game_id": 1,
-  "checksum": "8d72edb7ca65eb2db52048e61e808a5385dc8b7ebba71a5d526e26cf99f2c420",
+  "checksum": "97975093077512158464195918c607ae5dbae67882cfacb268a461ca724bd8c9",
   "episodes": {
     "E1": {
       "name": "L.A. Meltdown",
@@ -7138,6 +7138,15 @@
       "weaponnum": 11,
       "capacity": 3,
       "ammo": 2
+    },
+    "241": {
+      "name": "Progressive Pistol",
+      "type": "progressive",
+      "persistent": true,
+      "silent": true,
+      "items": [
+        221
+      ]
     },
     "242": {
       "name": "Progressive Shotgun",
