@@ -94,11 +94,19 @@ class E1L2(D3DLevel):
                 "MP Outside Ledge Jetpack",
                 "Outside Ledge Armor",
                 "Pornography Store Atomic Health",
+            ],
+        )
+        self.connect(streets, streets_ledge, r.jump)
+
+        store_corner = self.region(
+            "Pornogrpahy Store Corner",
+            [
                 "Pornography Store Corner Holo Duke",
                 "Secret Pornography Store Corner",
             ],
         )
-        self.connect(streets, streets_ledge, r.jump)
+        # can't fit up with jetpack
+        self.connect(streets, store_corner, r.can_jump)
 
         strip_club = self.region(
             "Strip Club",

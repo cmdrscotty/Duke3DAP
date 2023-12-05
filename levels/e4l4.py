@@ -9,11 +9,11 @@ class E4L4(D3DLevel):
     volumenum = 3
     keys = ["Red", "Blue"]
     location_defs = [
-        {"id": 6, "name": "Blue Boat RPG", "type": "sprite"},
-        {"id": 9, "name": "Blue Boat Chaingun", "type": "sprite"},
-        {"id": 19, "name": "Blue Upper Protective Boots", "type": "sprite"},
+        {"id": 6, "name": "Red Boat RPG", "type": "sprite"},
+        {"id": 9, "name": "Red Boat Chaingun", "type": "sprite"},
+        {"id": 19, "name": "Red Upper Protective Boots", "type": "sprite"},
         {"id": 56, "name": "Red Key Card", "type": "sprite"},
-        {"id": 101, "name": "Blue Upper 2 Pipebombs", "type": "sprite"},
+        {"id": 101, "name": "Red Upper 2 Pipebombs", "type": "sprite"},
         {
             "id": 184,
             "mp": True,
@@ -23,12 +23,12 @@ class E4L4(D3DLevel):
         {"id": 190, "name": "Castle Pipebombs", "type": "sprite"},
         {"id": 191, "name": "Castle Jetpack", "type": "sprite"},
         {"id": 200, "name": "Castle Holo Duke", "type": "sprite"},
-        {"id": 204, "name": "Blue Auction Night Vision Goggles", "type": "sprite"},
-        {"id": 205, "name": "Blue Upper 2 Holo Duke", "type": "sprite"},
+        {"id": 204, "name": "Red Auction Night Vision Goggles", "type": "sprite"},
+        {"id": 205, "name": "Red Upper 2 Holo Duke", "type": "sprite"},
         {"id": 210, "name": "Upper Main Pipebombs", "type": "sprite"},
-        {"id": 213, "mp": True, "name": "MP Blue Key Medkit", "type": "sprite"},
-        {"id": 214, "name": "Red Area Hidden Night Vision Goggles", "type": "sprite"},
-        {"id": 215, "name": "Red Area Hidden Armor", "type": "sprite"},
+        {"id": 213, "mp": True, "name": "MP Red Key Medkit", "type": "sprite"},
+        {"id": 214, "name": "Blue Area Hidden Night Vision Goggles", "type": "sprite"},
+        {"id": 215, "name": "Blue Area Hidden Armor", "type": "sprite"},
         {"id": 218, "name": "Pool Steroids", "type": "sprite"},
         {"id": 220, "name": "Pool Medkit", "type": "sprite"},
         {"id": 229, "name": "Inside Boat Shrinker", "type": "sprite"},
@@ -39,18 +39,18 @@ class E4L4(D3DLevel):
         {"id": 234, "name": "Castle Chaingun", "type": "sprite"},
         {"id": 235, "name": "Castle Shotgun", "type": "sprite"},
         {"id": 236, "name": "Upper Pool Chaingun", "type": "sprite"},
-        {"id": 238, "name": "Red Area Back RPG", "type": "sprite"},
+        {"id": 238, "name": "Blue Area Back RPG", "type": "sprite"},
         {"id": 245, "name": "Upper Main Atomic Health", "type": "sprite"},
         {"id": 246, "name": "Ticket Booth Shotgun", "type": "sprite"},
         {"id": 445, "name": "Blue Key Card", "type": "sprite"},
-        {"id": 634, "name": "Blue Upper Armor", "type": "sprite"},
+        {"id": 634, "name": "Red Upper Armor", "type": "sprite"},
         {"id": 656, "name": "Castle Dive Tripmine 1", "type": "sprite"},
         {"id": 657, "name": "Castle Dive Tripmine 2", "type": "sprite"},
         {"id": 668, "name": "Castle Dive Scuba Gear", "type": "sprite"},
         {"id": 694, "name": "Sky Secret Atomic Health", "type": "sprite"},
-        {"id": 755, "name": "Blue Boat Shrinker", "type": "sprite"},
-        {"id": 90, "name": "Secret Red Area Hidden Room", "type": "sector"},
-        {"id": 193, "name": "Secret Red Explosion", "type": "sector"},
+        {"id": 755, "name": "Red Boat Shrinker", "type": "sprite"},
+        {"id": 90, "name": "Secret Blue Area Hidden Room", "type": "sector"},
+        {"id": 193, "name": "Secret Blue Explosion", "type": "sector"},
         {"id": 200, "name": "Secret Sky", "type": "sector"},
         {"id": 336, "name": "Secret Prison", "type": "sector"},
         {"id": 0, "name": "Exit", "type": "exit"},
@@ -108,71 +108,71 @@ class E4L4(D3DLevel):
         # Can sr50 from the rotating boats onto the price pillar
         self.connect(ret, pool_price, r.difficulty("hard") | r.jump)
 
-        red_area = self.region(
-            "Red Key Area",
+        blue_area = self.region(
+            "Blue Key Area",
             [],
         )
-        self.connect(ret, red_area, self.red_key)
+        self.connect(ret, blue_area, self.blue_key)
 
-        red_secret = self.region(
-            "Red Secret",
+        blue_secret = self.region(
+            "Blue Secret",
             [
                 "Secret Red Explosion",
             ],
         )
-        self.connect(red_area, red_secret, r.explosives)
+        self.connect(blue_area, blue_secret, r.explosives)
 
-        red_area_back = self.region(
-            "Red Area Behind Targets",
+        blue_area_back = self.region(
+            "Blue Area Behind Targets",
             [
-                "Red Area Back RPG",
+                "Blue Area Back RPG",
             ],
         )
-        self.connect(red_area, red_area_back, r.jump)
+        self.connect(blue_area, blue_area_back, r.jump)
 
-        red_area_hidden = self.region(
-            "Red Area Hidden Room",
+        blue_area_hidden = self.region(
+            "Blue Area Hidden Room",
             [
-                "Secret Red Area Hidden Room",
-                "Red Area Hidden Night Vision Goggles",
-                "Red Area Hidden Armor",
-                "Red Key Card",
+                "Secret Blue Area Hidden Room",
+                "Blue Area Hidden Night Vision Goggles",
+                "Blue Area Hidden Armor",
+                "Blue Key Card",
             ],
         )
-        self.connect(red_area, red_area_hidden, r.jump & r.can_crouch)
+        self.connect(blue_area, blue_area_hidden, r.jump & r.can_crouch)
 
-        blue_area = self.region(
-            "Blue Key Area",
+        red_area = self.region(
+            "Red Key Area",
             [
-                "MP Blue Key Medkit",
-                "Blue Boat RPG",
-                "Blue Boat Chaingun",
-                "Blue Boat Shrinker",
-                "Blue Auction Night Vision Goggles",
+                "MP Red Key Medkit",
+                "Red Boat RPG",
+                "Red Boat Chaingun",
+                "Red Boat Shrinker",
+                "Red Auction Night Vision Goggles",
             ],
         )
-        self.connect(main_upper, blue_area, self.blue_key)
+        self.connect(main_upper, red_area, self.red_key)
 
-        blue_upper_start = self.region(
-            "Blue Upper Area Start",
+        red_upper_start = self.region(
+            "Red Upper Area Start",
             [
-                "Blue Upper Armor",
-                "Blue Upper Protective Boots",
+                "Red Upper Armor",
+                "Red Upper Protective Boots",
             ],
         )
         # Can sr50 jump up using the sign
         self.connect(
-            blue_area, blue_upper_start, r.jump & (r.difficulty("hard") | r.can_sprint)
+            red_area, red_upper_start, r.jump & (r.difficulty("hard") | r.can_sprint)
         )
 
-        blue_upper = self.region(
-            "Blue Upper Area",
+        red_upper = self.region(
+            "Red Upper Area",
             [
-                "Blue Upper 2 Pipebombs",
-                "Blue Upper 2 Holo Duke",
+                "Red Upper 2 Pipebombs",
+                "Red Upper 2 Holo Duke",
             ],
         )
-        self.connect(blue_area, blue_upper, r.jump)
+        self.connect(red_area, red_upper, r.jump)
 
         prison_secret = self.region(
             "Prison Secret Area",
@@ -180,7 +180,7 @@ class E4L4(D3DLevel):
                 "Secret Prison",
             ],
         )
-        self.connect(blue_area, prison_secret, r.explosives & r.jump)
+        self.connect(red_area, prison_secret, r.explosives & r.jump)
 
         castle_dive = self.region(
             "Castle Dive Area",
@@ -191,7 +191,7 @@ class E4L4(D3DLevel):
                 "Inside Boat Shrinker",
             ],
         )
-        self.connect(blue_area, castle_dive, r.can_dive)
+        self.connect(red_area, castle_dive, r.can_dive)
 
         boat_top = self.region(
             "Boat Top",
@@ -200,7 +200,7 @@ class E4L4(D3DLevel):
                 "Boat Top Freezethrower",
             ],
         )
-        self.connect(blue_area, boat_top, r.jump)
+        self.connect(red_area, boat_top, r.jump)
 
         castle = self.region(
             "Castle",
@@ -216,7 +216,7 @@ class E4L4(D3DLevel):
                 "Exit",
             ],
         )
-        self.connect(blue_area, castle, r.jump)
+        self.connect(red_area, castle, r.jump)
 
         sky_secret = self.region(
             "Sky Secret Area",
@@ -227,5 +227,5 @@ class E4L4(D3DLevel):
         )
 
         # Only requires around 30 jetpack i believe
-        self.connect(blue_area, sky_secret, r.jetpack(50))
+        self.connect(red_area, sky_secret, r.jetpack(50))
         return ret

@@ -86,7 +86,7 @@ class E4L8(D3DLevel):
                 "Explosion Lower Protective Boots",
             ],
         )
-        self.connect(front_upper, expl_lower, r.can_crouch)
+        self.connect(front_upper, expl_lower, r.can_crouch & r.can_dive)
 
         upper_storage = self.region(
             "Storage Upper Area",

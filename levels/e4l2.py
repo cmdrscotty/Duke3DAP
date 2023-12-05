@@ -128,7 +128,7 @@ class E4L2(D3DLevel):
         self.connect(
             inside_db_kitchen,
             kitchen_back_secret,
-            (r.jump & r.difficulty("medium")) | r.jump & r.can_crouch,
+            (r.can_jump & r.difficulty("medium")) | r.can_jump & r.can_crouch,
         )
 
         kitchen_back_crate = self.region(

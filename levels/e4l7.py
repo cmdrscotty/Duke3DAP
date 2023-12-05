@@ -75,11 +75,19 @@ class E4L7(D3DLevel):
                 "Front Upper Armor",
                 "Front Upper Atomic Health",
                 "Blue Key Card",
+            ],
+        )
+        self.connect(ret, front_upper, r.jump)
+
+        crate_secret = self.region(
+            "Crate Secret",
+            [
                 "Secret Crate",
                 "Crate Freezethrower",
             ],
         )
-        self.connect(ret, front_upper, r.jump)
+        # can't fit with just jetpack
+        self.connect(ret, crate_secret, r.can_jump)
 
         blue_key_area = self.region(
             "Blue Key Area",
