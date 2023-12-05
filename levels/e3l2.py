@@ -69,8 +69,7 @@ class E3L2(D3DLevel):
         )
         self.restrict(
             "Start Ledge RPG",
-            r.jetpack(50)
-            | (r.can_jump & (r.can_sprint | r.steroids))
+            r.jetpack(50) | (r.can_jump & (r.can_sprint | r.steroids))
             # need specifically an enforcer to jump up
             | (r.difficulty("hard") & r.can_jump),
         )
