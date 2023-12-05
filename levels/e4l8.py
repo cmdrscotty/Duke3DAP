@@ -47,6 +47,7 @@ class E4L8(D3DLevel):
         {"id": 0, "name": "Exit", "type": "exit"},
     ]
     must_dive = True
+    events = ["Meltdown"]
 
     def main_region(self) -> Region:
         r = self.rules
@@ -131,10 +132,7 @@ class E4L8(D3DLevel):
 
         blue_dive = self.region(
             "Blue Dive Area",
-            [
-                "Blue Dive Atomic Health",
-                "Yellow Key Card",
-            ],
+            ["Blue Dive Atomic Health", "Yellow Key Card", "Meltdown"],
         )
         self.connect(blue_key_area, blue_dive, r.can_dive)
 
@@ -161,6 +159,8 @@ class E4L8(D3DLevel):
             ],
         )
         self.connect(
-            yellow_key_area, red_key_area, self.red_key & r.can_crouch & r.jump
+            yellow_key_area,
+            red_key_area,
+            self.red_key & r.can_crouch & r.jump & self.event("Meltdown"),
         )
         return ret
