@@ -72,15 +72,15 @@ class E4L2(D3DLevel):
             ],
         )
         # Can enter without crouch but cant exit, maybe hard difficulty?
-        self.connect(ret,kitchen_secret, (r.can_jump & r.difficulty("medium")) | 
-                     r.jetpack(50)
-                    )
+        self.connect(
+            ret, kitchen_secret, (r.can_jump & r.difficulty("medium")) | r.jetpack(50)
+        )
 
         inside_db_front = self.region(
             "Inside DB Front",
             [
                 "MP Inside DB RPG",
-                "Inside DB Freezethrower",  
+                "Inside DB Freezethrower",
             ],
         )
         inside_db_kitchen = self.region(
@@ -95,7 +95,7 @@ class E4L2(D3DLevel):
         self.connect(ret, inside_db_front, self.blue_key)
         self.connect(kitchen_secret, inside_db_kitchen, r.can_crouch)
         # Outside path requires shrinker to get to kitchen area,
-        # Glitched logic allows jumpclip through shrinker path  
+        # Glitched logic allows jumpclip through shrinker path
         self.connect(inside_db_front, inside_db_kitchen, r.crouch_jump | r.can_shrink)
 
         kitchen_corner = self.region(

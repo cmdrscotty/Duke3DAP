@@ -161,9 +161,11 @@ class E4L3(D3DLevel):
         # This one is accessable with just jetpack
         # Can also drop in the other vent to grab one item
         # Hard logic can require using the jetpack drop as a makeshift crouch to get into the other vent
-        self.connect(shop_blue, blue_vent_front, r.can_jump | 
-                     (r.jetpack(50) & r.difficulty("hard"))
-                     )
+        self.connect(
+            shop_blue,
+            blue_vent_front,
+            r.can_jump | (r.jetpack(50) & r.difficulty("hard")),
+        )
 
         blue_vent_back = self.region(
             "Shop Blue Key Area Vent Back",
@@ -234,7 +236,9 @@ class E4L3(D3DLevel):
             ],
         )
         # Jump to door opening button or jetpack on top of pig cops head
-        self.connect(storage_red, trash_compactor, r.can_jump |
-                     (r.jetpack(50) & r.difficulty("hard"))
-                    )
+        self.connect(
+            storage_red,
+            trash_compactor,
+            r.can_jump | (r.jetpack(50) & r.difficulty("hard")),
+        )
         return ret

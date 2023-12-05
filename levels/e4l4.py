@@ -114,11 +114,16 @@ class E4L4(D3DLevel):
             [],
         )
         # Need to cross the bridge to open the blue key area, sr50 jump on hard
-        self.connect(ret, blue_area, self.blue_key & 
-                    ((r.difficulty("hard") & r.can_jump) | 
-                    (r.can_sprint & r.jump) |
-                    r.jetpack(50))
-                    )
+        self.connect(
+            ret,
+            blue_area,
+            self.blue_key
+            & (
+                (r.difficulty("hard") & r.can_jump)
+                | (r.can_sprint & r.jump)
+                | r.jetpack(50)
+            ),
+        )
 
         blue_secret = self.region(
             "Blue Secret",
@@ -168,8 +173,9 @@ class E4L4(D3DLevel):
         )
         # Can sr50 jump up using the sign
         self.connect(
-            red_area, red_upper_start, r.jump |
-            (r.can_jump & (r.difficulty("hard") | r.can_sprint))
+            red_area,
+            red_upper_start,
+            r.jump | (r.can_jump & (r.difficulty("hard") | r.can_sprint)),
         )
 
         red_upper = self.region(
@@ -224,8 +230,9 @@ class E4L4(D3DLevel):
             ],
         )
         # Switch for castle door can be activated from the outside
-        self.connect(red_area, castle, (r.difficulty("medium") & r.can_jump) |
-                     r.jetpack(50))
+        self.connect(
+            red_area, castle, (r.difficulty("medium") & r.can_jump) | r.jetpack(50)
+        )
         # The other option is the button on top of the boat
         self.connect(boat_top, castle, r.true)
 

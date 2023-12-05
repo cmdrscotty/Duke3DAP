@@ -91,7 +91,7 @@ class E4L1(D3DLevel):
         )
         # Door Clipping never stops
         self.connect(ret, bathroom_key, r.jump | r.difficulty("hard"))
-        
+
         behind_desk = self.region(
             "Behind Briefing Room Desk",
             [
@@ -148,8 +148,7 @@ class E4L1(D3DLevel):
             ],
         )
         # Door clipping strikes again
-        self.connect(ret, kitchen_conveyer, r.jump | r.can_dive |
-                     r.difficulty("hard"))
+        self.connect(ret, kitchen_conveyer, r.jump | r.can_dive | r.difficulty("hard"))
 
         blue_key_area = self.region(
             "Blue Key Room",
