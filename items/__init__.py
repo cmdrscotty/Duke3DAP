@@ -103,6 +103,15 @@ weapons = {
         {"weaponnum": 1, "capacity": 20, "ammo": 10},
         persistent=True,
     ),
+    # This just exists for consistent code, it doesn't do anything special right now
+    "Progressive Pistol": ItemDef(
+        "Progressive Pistol",
+        net_id(241),
+        "progressive",
+        {"items": [221]},
+        silent=True,
+        persistent=True,
+    ),
     "Pistol Ammo": ItemDef(
         "Pistol Ammo",
         net_id(261),
@@ -190,6 +199,7 @@ weapons = {
         {"items": [204, 224]},
         silent=True,
         persistent=True,
+        progression=True,
     ),
     "RPG Ammo": ItemDef(
         "RPG Ammo",
@@ -220,6 +230,7 @@ weapons = {
         {"items": [205, 225]},
         silent=True,
         persistent=True,
+        progression=True,
     ),
     "Pipebomb Ammo": ItemDef(
         "Pipebomb Ammo",
@@ -279,6 +290,7 @@ weapons = {
         {"items": [207, 227]},
         silent=True,
         persistent=True,
+        progression=True,
     ),
     "Devastator Ammo": ItemDef(
         "Devastator Ammo",
@@ -309,6 +321,7 @@ weapons = {
         {"items": [208, 228]},
         silent=True,
         persistent=True,
+        progression=True,
     ),
     "Tripmines": ItemDef(
         "Tripmines",
@@ -526,9 +539,16 @@ inventory_items = {
     ),
 }
 
-item_groups["Jetpack"] = {"Jetpack", "Jetpack Capacity", "Progressive Jetpack"}
-item_groups["Steroids"] = {"Steroids", "Steroids Jetpack"}
-item_groups["Scuba Gear"] = {
+item_groups["Jetpack"] = {"Jetpack", "Progressive Jetpack"}
+item_groups["Jetpack Capacity"] = {"Jetpack", "Jetpack Capacity", "Progressive Jetpack"}
+item_groups["Steroids"] = {"Steroids", "Progressive Steroids"}
+item_groups["Steroids Capacity"] = {
+    "Steroids",
+    "Steroids Capacity",
+    "Progressive Steroids",
+}
+item_groups["Scuba Gear"] = {"Scuba Gear", "Progressive Scuba Gear"}
+item_groups["Scuba Gear Capacity"] = {
     "Scuba Gear",
     "Scuba Gear Capacity",
     "Progressive Scuba Gear",

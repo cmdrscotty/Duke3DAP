@@ -1610,6 +1610,7 @@
     "Secret": 101,
     "Boss": 102,
     "Pistol Capacity": 221,
+    "Progressive Pistol": 241,
     "Pistol Ammo": 261,
     "Shotgun": 202,
     "Shotgun Capacity": 222,
@@ -1828,5 +1829,5 @@
     "Bandage": 402,
     "Ego Boost": 403
   },
-  "checksum": "8d72edb7ca65eb2db52048e61e808a5385dc8b7ebba71a5d526e26cf99f2c420"
+  "checksum": "97975093077512158464195918c607ae5dbae67882cfacb268a461ca724bd8c9"
 }

@@ -113,11 +113,7 @@ class Rules(object):
         if world.get_option("unlock_abilities"):
             self.can_jump = HasRule("Jump")
             self.can_crouch = HasRule("Crouch")
-            self.can_dive = (
-                HasRule("Dive")
-                | HasRule("Scuba Gear")
-                | HasRule("Progressive Scuba Gear")
-            )
+            self.can_dive = HasRule("Dive") | HasGroupRule("Scuba Gear")
             self.can_sprint = HasRule("Sprint")
         else:
             self.can_jump = self.true
@@ -136,8 +132,8 @@ class Rules(object):
                 )
 
             def __call__(self, state: CollectionState) -> bool:
-                return state.has("Jetpack", player) and state.has_group(
-                    "Jetpack", player, self.required
+                return state.has_group("Jetpack", player) and state.has_group(
+                    "Jetpack Capacity", player, self.required
                 )
 
         self.jetpack = CanJetPack
@@ -153,7 +149,7 @@ class Rules(object):
                 )
 
             def __call__(self, state: CollectionState) -> bool:
-                return state.has_group("Scuba Gear", player, self.required)
+                return state.has_group("Scuba Gear Capacity", player, self.required)
 
         if world.get_option("unlock_abilities"):
             self.dive = lambda fuel: self.can_dive & CanDiveTo(fuel)
