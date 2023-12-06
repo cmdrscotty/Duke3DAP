@@ -125,7 +125,8 @@ class E4L9(D3DLevel):
                 "Low Deck Holo Duke",
             ],
         )
-        self.connect(ship_deck, upper_deck, r.jump)
+        # Without jetpack requires enemy jump or sr50 to get over outside gap
+        self.connect(ship_deck, upper_deck, r.jetpack(50) | (r.difficulty("hard") & r.can_jump))
         # Can't get up there with just jetpack, but it might be possible to just grab it anyway at the right angle
         self.restrict("Crate Freezethrower", r.can_jump)
 
@@ -156,12 +157,19 @@ class E4L9(D3DLevel):
                 "Captains Shrinker",
                 "Captains Atomic Health 1",
                 "Captains Atomic Health 2",
+            ],
+        )
+        self.connect(blue_key_area, blue_key_upper, r.jump)
+
+        tv_secret_area = self.region(
+            "TV Secret Area",
+            [
                 "Secret TV",
                 "TV Chaingun",
                 "TV Timed Shotgun",
             ],
         )
-        self.connect(blue_key_area, blue_key_upper, r.jump)
+        self.connect(blue_key_area, tv_secret_area, r.can_jump)
 
         red_key_area = self.region(
             "Red Key Area",
@@ -169,7 +177,8 @@ class E4L9(D3DLevel):
                 "Fire Atomic Health",
             ],
         )
-        self.connect(blue_key_area, red_key_area, self.red_key | r.crouch_jump)
+        # Special roid clip that doesnt require jump to pull off
+        self.connect(blue_key_area, red_key_area, self.red_key | (r.difficulty("hard") & r.can_sprint & r.steroids))
 
         red_upper = self.region(
             "Red Upper Area",
