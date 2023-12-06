@@ -12,7 +12,7 @@ class E4L7(D3DLevel):
         {"id": 8, "name": "Crusher Scuba Gear", "type": "sprite"},
         {"id": 29, "name": "Blue Holo Duke", "type": "sprite"},
         {"id": 34, "name": "Crate Freezethrower", "type": "sprite"},
-        {"id": 35, "mp": True, "name": "MP Blue Apt. Jetpack", "type": "sprite"},
+        {"id": 35, "mp": True, "name": "MP Front Jetpack", "type": "sprite"},
         {"id": 37, "name": "Blue Apt. Pipebombs", "type": "sprite"},
         {
             "name": "Printer Trashcan Pipebombs",
@@ -99,11 +99,6 @@ class E4L7(D3DLevel):
                 "Blue Holo Duke",
                 "Blue Devastator",
                 "Blue Atomic Health",
-                "Secret Blue Appartment",
-                "Blue Apt. Trashcan Devastator",
-                "Blue Apt. RPG",
-                "MP Blue Apt. Jetpack",
-                "Blue Apt. Pipebombs",
             ],
         )
         # One way, cant go back without crouching
@@ -111,16 +106,35 @@ class E4L7(D3DLevel):
             ret, blue_key_area, (self.blue_key & r.jump) | (r.crouch_jump & r.steroids)
         )
 
+        blue_apt = self.region(
+            "Blue Apt.",
+            [
+                "Secret Blue Appartment",
+                "Blue Apt. RPG",
+                "Blue Apt. Pipebombs",
+                "Blue Apt. Trashcan Devastator",
+            ],
+        )
+        # SR50 jump possible for reaching the apartment
+        self.connect(blue_key_area, blue_apt, (r.difficulty("Hard") & r.can_jump) | r.jump)
+
         blue_dive = self.region(
             "Blue Dive Area",
             [
                 "Blue Night Vision Goggles",
-                "Cola Tripmine 1",
-                "Cola Tripmine 2",
             ],
         )
         # Crouchjump through window skips dive and jetpack requirement
         self.connect(blue_key_area, blue_dive, r.can_dive | r.crouch_jump)
+
+        cola_machine = self.region(
+            "Blue Dive Area",
+            [
+                "Cola Tripmine 1",
+                "Cola Tripmine 2",
+            ],
+        )
+        self.connect(blue_dive, cola_machine, r.jump)
 
         blue_secret = self.region(
             "Secret Blue Area",
