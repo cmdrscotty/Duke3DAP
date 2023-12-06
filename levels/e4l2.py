@@ -197,6 +197,11 @@ class E4L2(D3DLevel):
         )
         self.connect(conveyers_upper, manager_room)
 
+        # Alternate path by blowing up office wall from the outside
+        self.connect(
+            ret, manager_room, r.difficulty("extreme") & r.pipebomb & r.can_crouch
+        )
+
         manager_room_cabinet = self.region(
             "Manager Room Cabinet",
             [
