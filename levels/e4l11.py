@@ -145,7 +145,7 @@ class E4L11(D3DLevel):
             ],
         )
         # Walk + roids is tight, requires around 175 steroids
-        self.connect(blue_key_area, hidden_wall, (r.can_sprint | r.jump | r.steroids(200)))
+        self.connect(blue_key_area, hidden_wall, (r.can_sprint | r.jump | r.steroids))
 
         elevator_drop = self.region(
             "Elevator Drop",
