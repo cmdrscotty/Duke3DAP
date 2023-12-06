@@ -177,12 +177,14 @@ class E4L1(D3DLevel):
             ],
         )
         # Triggering the tripmines requires 100 health and precise movement
-        # Without saving this would need to be extreme logic
+        # Without saving this would probably need to be extreme logic
         self.connect(
             janitor_closet,
             mission_impossible,
             r.can_jump & (r.explosives | (r.can_sprint & r.difficulty("hard"))),
         )
+        # Alternate path by jump-crouching near elevator by briefing room
+        self.connect(ret, mission_impossible, (r.difficulty("hard") & r.crouch_jump & r.steroids))
 
         exit_region = self.region(
             "Exit Region",
