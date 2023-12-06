@@ -128,11 +128,16 @@ class E4L8(D3DLevel):
                 "Blue Upper Shrinker",
             ],
         )
+        # 75 is generous, 60 could be enough
         self.connect(blue_key_area, blue_upper, r.jetpack(75))
 
         blue_dive = self.region(
             "Blue Dive Area",
-            ["Blue Dive Atomic Health", "Yellow Key Card", "Meltdown"],
+            [
+                "Blue Dive Atomic Health", 
+                "Yellow Key Card", 
+                "Meltdown"
+            ],
         )
         self.connect(blue_key_area, blue_dive, r.can_dive)
 
