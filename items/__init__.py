@@ -325,7 +325,7 @@ weapons = {
     ),
     "Tripmines": ItemDef(
         "Tripmines",
-        net_id(267),
+        net_id(268),
         "ammo",
         {"weaponnum": 8, "ammo": 3},
     ),
