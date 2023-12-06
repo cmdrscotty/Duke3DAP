@@ -123,7 +123,12 @@ class E4L3(D3DLevel):
                 "MP Shop Blue Jetpack",
             ],
         )
-        self.connect(shop_inside, shop_blue, self.blue_key)
+        # Alternate path by clip-blowing up the boxes with the devastator
+        self.connect(
+            shop_inside,
+            shop_blue,
+            self.blue_key | (r.difficulty("extreme") & r.devastator & r.can_crouch),
+        )
 
         exploding_box = self.region(
             "Exploding Box",
@@ -241,4 +246,8 @@ class E4L3(D3DLevel):
             trash_compactor,
             r.can_jump | (r.jetpack(50) & r.difficulty("hard")),
         )
+
+        # Shoot devestator through wall, leads straight to the exit by blowing up the secret
+        self.connect(shop_blue, trash_compactor, r.difficulty("extreme") & r.devastator)
+
         return ret
