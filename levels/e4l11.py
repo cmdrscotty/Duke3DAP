@@ -122,27 +122,21 @@ class E4L11(D3DLevel):
                 "MP Blue Chaingun",
             ],
         )
-        self.connect(second_area, blue_key_area, self.blue_key)
+        # Clip through wall where sectors overlap
+        self.connect(second_area, blue_key_area, self.blue_key | (r.difficulty("hard") & r.crouch_jump & r.steroids))
 
         blue_upper = self.region(
             "Blue Upper Area",
-            [
-                "Blue Holo Duke",
-            ],
-        )
-        self.connect(blue_key_area, blue_upper, r.jump)
-
-        secret_symbol = self.region(
-            "Secret Symbol",
             [
                 "Secret Symbol",
                 "Symbol Atomic Health",
                 "Secret Corner",
                 "Corner Steroids",
+                "Blue Holo Duke",
             ],
         )
         # jetpack can't get onto the ledge for the trigger
-        self.connect(blue_key_area, secret_symbol, r.can_jump)
+        self.connect(blue_key_area, blue_upper, r.can_jump)
 
         hidden_wall = self.region(
             "Blue Hidden Wall",
@@ -150,8 +144,8 @@ class E4L11(D3DLevel):
                 "Blue Medkit",
             ],
         )
-        # Maybe walk + roids is also possible?
-        self.connect(blue_key_area, hidden_wall, (r.can_sprint | r.jump))
+        # Walk + roids is tight, requires around 175 steroids
+        self.connect(blue_key_area, hidden_wall, (r.can_sprint | r.jump | r.steroids(200)))
 
         elevator_drop = self.region(
             "Elevator Drop",
@@ -162,6 +156,7 @@ class E4L11(D3DLevel):
         )
         # Can fall right onto the medkit
         # Jetpack can be avoided but leaves the player at 25 health
+        # Medium difficulty allows the player to escape the elevator pit
         self.connect(
             blue_key_area,
             elevator_drop,
@@ -188,7 +183,8 @@ class E4L11(D3DLevel):
                 "Lake Pipebombs",
             ],
         )
-        self.connect(past_elevator, lake_secret, r.explosives)
+        # Can shoot pipebomb on the floor to trigger explosion, hard because missable
+        self.connect(past_elevator, lake_secret, r.explosives | r.difficulty("hard"))
         self.connect(lake_secret, bridge_secret)
 
         alien_table = self.region(
@@ -197,7 +193,7 @@ class E4L11(D3DLevel):
                 "Table Freezethrower",
             ],
         )
-        # Can sr50 on this without jump by using the pillar
+        # Can sr50 on this without jump by using the pillar base
         self.connect(past_elevator, alien_table, r.difficulty("hard") | r.jump)
 
         alien_freezer = self.region(
@@ -243,8 +239,11 @@ class E4L11(D3DLevel):
                 "Red Shotgun",
             ],
         )
+        # This clip is possible with steroids and duck only
+        # Clip on the switch by ducking, then roid+duck to squeeze into the red key area
         self.connect(
-            past_elevator, red_key_area, self.red_key | r.crouch_jump & r.steroids
+            past_elevator, red_key_area, self.red_key |
+            (r.difficulty("hard") & r.can_crouch & r.steroids)
         )
 
         red_table = self.region(
