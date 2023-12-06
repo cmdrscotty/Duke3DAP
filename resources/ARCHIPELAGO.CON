@@ -12,6 +12,10 @@ Sprites and quotes 5120 - 5375 are reserved for AP usage.
 define AP_ITEM 5120
 define AP_PROG 5140
 define AP_PROCESSOR 5200
+define AP_NO_JUMP 5210
+define AP_NO_CROUCH 5211
+define AP_NO_SPRINT 5212
+define AP_NO_DIVE 5213
 
 define AP_RETRIEVEDISTANCE 844
 
