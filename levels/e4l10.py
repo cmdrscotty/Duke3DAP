@@ -76,6 +76,7 @@ class E4L10(D3DLevel):
         {"id": 630, "name": "Secret Queens Chamber", "type": "sector"},
         {"id": 0, "name": "Exit", "type": "exit"},
     ]
+    events = ["Red Switch", "Blue Switch"]
     has_boss = True
 
     def main_region(self) -> Region:
@@ -135,6 +136,7 @@ class E4L10(D3DLevel):
             "Blue Key Room",
             [
                 "Blue Medkit",
+                "Blue Switch",
             ],
         )
         self.connect(ret, blue_key_room, r.jump & self.blue_key)
@@ -149,6 +151,8 @@ class E4L10(D3DLevel):
         )
         # 22 jetpack until here minimum
         self.connect(blue_key_room, rside)
+        # Can enter right side by pushing buttons through wall cover
+        self.connect(ret, rside, r.difficulty("hard"))
 
         rside_upper = self.region(
             "Right Side Upper",
@@ -181,6 +185,7 @@ class E4L10(D3DLevel):
             [
                 "Red Medkit",
                 "Yellow Key Card",
+                "Red Switch",
             ],
         )
         # 33 jetpack to here
@@ -207,7 +212,7 @@ class E4L10(D3DLevel):
         self.connect(
             red_key_room,
             yellow_key_room,
-            self.yellow_key
+            (self.yellow_key
             & (
                 r.can_jump
                 | r.jetpack(300)
@@ -215,7 +220,8 @@ class E4L10(D3DLevel):
                 | (r.difficulty("hard") & r.jetpack(200))
                 | (r.difficulty("hard") & r.can_sprint & r.jetpack(150))
             )
-            | (r.crouch_jump & r.steroids),
+            | (r.crouch_jump & r.steroids)
+            ) & self.event("Red Switch") & self.event("Blue Switch"),
         )
 
         yellow_dive = self.region(
