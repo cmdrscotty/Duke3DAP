@@ -2,7 +2,7 @@
   "game": "Duke Nukem 3D",
   "name": "Duke Nukem 3D",
   "game_id": 1,
-  "checksum": "97975093077512158464195918c607ae5dbae67882cfacb268a461ca724bd8c9",
+  "checksum": "dc815e41baf6cea1a2f2f5e79e0475decac56c6682bcb2566cb6ae24a7d21ef6",
   "episodes": {
     "E1": {
       "name": "L.A. Meltdown",
@@ -318,7 +318,7 @@
         },
         "530": {
           "id": 22,
-          "name": "MP Entrance Chaingun"
+          "name": "MP Apartment Chaingun"
         },
         "532": {
           "id": 23,
@@ -5164,7 +5164,7 @@
         },
         "125": {
           "id": 984,
-          "name": "Inside DB  Freezethrower"
+          "name": "Inside DB Freezethrower"
         },
         "140": {
           "id": 985,
@@ -5448,15 +5448,15 @@
       "sprites": {
         "6": {
           "id": 1038,
-          "name": "Blue Boat RPG"
+          "name": "Red Boat RPG"
         },
         "9": {
           "id": 1039,
-          "name": "Blue Boat Chaingun"
+          "name": "Red Boat Chaingun"
         },
         "19": {
           "id": 1040,
-          "name": "Blue Upper Protective Boots"
+          "name": "Red Upper Protective Boots"
         },
         "56": {
           "id": 1041,
@@ -5464,7 +5464,7 @@
         },
         "101": {
           "id": 1042,
-          "name": "Blue Upper 2 Pipebombs"
+          "name": "Red Upper 2 Pipebombs"
         },
         "184": {
           "id": 1043,
@@ -5484,11 +5484,11 @@
         },
         "204": {
           "id": 1047,
-          "name": "Blue Auction Night Vision Goggles"
+          "name": "Red Auction Night Vision Goggles"
         },
         "205": {
           "id": 1048,
-          "name": "Blue Upper 2 Holo Duke"
+          "name": "Red Upper 2 Holo Duke"
         },
         "210": {
           "id": 1049,
@@ -5496,15 +5496,15 @@
         },
         "213": {
           "id": 1050,
-          "name": "MP Blue Key Medkit"
+          "name": "MP Red Key Medkit"
         },
         "214": {
           "id": 1051,
-          "name": "Red Area Hidden Night Vision Goggles"
+          "name": "Blue Area Hidden Night Vision Goggles"
         },
         "215": {
           "id": 1052,
-          "name": "Red Area Hidden Armor"
+          "name": "Blue Area Hidden Armor"
         },
         "218": {
           "id": 1053,
@@ -5548,7 +5548,7 @@
         },
         "238": {
           "id": 1063,
-          "name": "Red Area Back RPG"
+          "name": "Blue Area Back RPG"
         },
         "245": {
           "id": 1064,
@@ -5564,7 +5564,7 @@
         },
         "634": {
           "id": 1067,
-          "name": "Blue Upper Armor"
+          "name": "Red Upper Armor"
         },
         "656": {
           "id": 1068,
@@ -5584,17 +5584,17 @@
         },
         "755": {
           "id": 1072,
-          "name": "Blue Boat Shrinker"
+          "name": "Red Boat Shrinker"
         }
       },
       "sectors": {
         "90": {
           "id": 1966,
-          "name": "Secret Red Area Hidden Room"
+          "name": "Secret Blue Area Hidden Room"
         },
         "193": {
           "id": 1967,
-          "name": "Secret Red Explosion"
+          "name": "Secret Blue Explosion"
         },
         "200": {
           "id": 1968,
@@ -5980,7 +5980,7 @@
         },
         "35": {
           "id": 1148,
-          "name": "MP Blue Apt. Jetpack"
+          "name": "MP Front Jetpack"
         },
         "37": {
           "id": 1149,
@@ -7275,6 +7275,12 @@
       "ammo": 10
     },
     "267": {
+      "name": "Devastator Ammo",
+      "type": "ammo",
+      "weaponnum": 7,
+      "ammo": 25
+    },
+    "268": {
       "name": "Tripmines",
       "type": "ammo",
       "weaponnum": 8,

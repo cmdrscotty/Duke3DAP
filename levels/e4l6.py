@@ -103,7 +103,11 @@ class E4L6(D3DLevel):
             ],
         )
         # Can grab the item by jumping towards the vent
-        self.connect(ret, front_vent, (r.can_crouch & r.jump) | (r.difficulty("hard") & r.can_jump))
+        self.connect(
+            ret,
+            front_vent,
+            (r.can_crouch & r.jump) | (r.difficulty("hard") & r.can_jump),
+        )
 
         front_vent_secret = self.region(
             "Secret Front Vent",
@@ -170,7 +174,11 @@ class E4L6(D3DLevel):
             ],
         )
         # Can actually get in here by flying up with jetpack and dropping as makeshift crouch
-        self.connect(blue_key_area, conveyer_ducking, r.can_crouch | r.difficulty("hard") & r.jetpack(50))
+        self.connect(
+            blue_key_area,
+            conveyer_ducking,
+            r.can_crouch | r.difficulty("hard") & r.jetpack(50),
+        )
 
         blue_desk = self.region(
             "Blue Desk",

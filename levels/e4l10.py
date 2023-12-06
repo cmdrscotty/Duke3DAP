@@ -213,16 +213,19 @@ class E4L10(D3DLevel):
         self.connect(
             red_key_room,
             yellow_key_room,
-            (self.yellow_key
-            & (
-                r.can_jump
-                | r.jetpack(300)
-                | (r.can_sprint & r.jetpack(250))
-                | (r.difficulty("hard") & r.jetpack(200))
-                | (r.difficulty("hard") & r.can_sprint & r.jetpack(150))
+            (
+                self.yellow_key
+                & (
+                    r.can_jump
+                    | r.jetpack(300)
+                    | (r.can_sprint & r.jetpack(250))
+                    | (r.difficulty("hard") & r.jetpack(200))
+                    | (r.difficulty("hard") & r.can_sprint & r.jetpack(150))
+                )
+                | (r.crouch_jump & r.steroids)
             )
-            | (r.crouch_jump & r.steroids)
-            ) & self.event("Red Switch") & self.event("Blue Switch"),
+            & self.event("Red Switch")
+            & self.event("Blue Switch"),
         )
 
         yellow_dive = self.region(

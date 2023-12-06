@@ -116,7 +116,9 @@ class E4L7(D3DLevel):
             ],
         )
         # SR50 jump possible for reaching the apartment
-        self.connect(blue_key_area, blue_apt, (r.difficulty("hard") & r.can_jump) | r.jump)
+        self.connect(
+            blue_key_area, blue_apt, (r.difficulty("hard") & r.can_jump) | r.jump
+        )
 
         blue_dive = self.region(
             "Blue Dive Area",

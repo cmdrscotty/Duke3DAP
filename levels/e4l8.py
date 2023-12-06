@@ -133,11 +133,7 @@ class E4L8(D3DLevel):
 
         blue_dive = self.region(
             "Blue Dive Area",
-            [
-                "Blue Dive Atomic Health", 
-                "Yellow Key Card", 
-                "Meltdown"
-            ],
+            ["Blue Dive Atomic Health", "Yellow Key Card", "Meltdown"],
         )
         self.connect(blue_key_area, blue_dive, r.can_dive)
 

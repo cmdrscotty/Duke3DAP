@@ -18,7 +18,7 @@ from .base_classes import D3DItem, D3DLevel, LocationDef
 from .id import GAME_ID, local_id, net_id
 from .items import all_items, item_groups
 from .levels import all_episodes
-from .options import Duke3DOptions, Difficulty
+from .options import Difficulty, Duke3DOptions
 from .rules import Rules
 
 with files(resources).joinpath("id_map.json").open() as id_file:
