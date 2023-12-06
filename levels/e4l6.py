@@ -148,6 +148,8 @@ class E4L6(D3DLevel):
             ],
         )
         self.connect(behind_counter, blue_key_area, self.blue_key)
+        # Alternative path by pipebombing the MAIL door
+        self.connect(ret, blue_key_area, r.can_crouch & r.pipebomb)
 
         blue_vent_secret = self.region(
             "Secret Blue Vent",
@@ -231,5 +233,10 @@ class E4L6(D3DLevel):
                 "Exit",
             ],
         )
-        self.connect(red_key_area, yellow_key_area, self.yellow_key)
+        self.connect(
+            red_key_area,
+            yellow_key_area,
+            self.yellow_key
+            | (r.difficulty("extreme") & r.steroids & r.can_jump & r.tripmine),
+        )
         return ret
