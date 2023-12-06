@@ -77,6 +77,7 @@ class E4L10(D3DLevel):
         {"id": 0, "name": "Exit", "type": "exit"},
     ]
     events = ["Red Switch", "Blue Switch"]
+    must_dive = True
     has_boss = True
 
     def main_region(self) -> Region:

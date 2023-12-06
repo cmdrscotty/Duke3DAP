@@ -72,6 +72,7 @@ class E4L9(D3DLevel):
         {"id": 800, "name": "Secret Kitchen", "type": "sector"},
         {"id": 0, "name": "Exit", "type": "exit"},
     ]
+    must_dive = True
 
     def main_region(self) -> Region:
         r = self.rules
