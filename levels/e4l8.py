@@ -155,7 +155,7 @@ class E4L8(D3DLevel):
             ],
         )
         # Can clip up the bookshelf by using the door
-        self.connect(yellow_key_area, yellow_bookshelf, r.jump | r.difficulty("Hard"))
+        self.connect(yellow_key_area, yellow_bookshelf, r.jump | r.difficulty("hard"))
 
         red_key_area = self.region(
             "Red Key Area",

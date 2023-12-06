@@ -116,7 +116,7 @@ class E4L7(D3DLevel):
             ],
         )
         # SR50 jump possible for reaching the apartment
-        self.connect(blue_key_area, blue_apt, (r.difficulty("Hard") & r.can_jump) | r.jump)
+        self.connect(blue_key_area, blue_apt, (r.difficulty("hard") & r.can_jump) | r.jump)
 
         blue_dive = self.region(
             "Blue Dive Area",
@@ -144,7 +144,7 @@ class E4L7(D3DLevel):
             ],
         )
         # Clip on top of trashcan and strafe around to secret
-        self.connect(blue_dive, blue_secret, r.jump | (r.difficulty("Hard")))
+        self.connect(blue_dive, blue_secret, r.jump | (r.difficulty("hard")))
 
         dive_crusher = self.region(
             "Dive Crusher",
