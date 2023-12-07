@@ -237,6 +237,12 @@ class E4L6(D3DLevel):
             red_key_area,
             yellow_key_area,
             self.yellow_key
-            | (r.difficulty("extreme") & r.steroids & r.can_jump & r.tripmine),
+            | (
+                r.difficulty("extreme")
+                & r.steroids
+                & r.can_sprint
+                & r.can_jump
+                & r.tripmine
+            ),
         )
         return ret

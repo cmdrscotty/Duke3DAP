@@ -184,7 +184,11 @@ class E4L1(D3DLevel):
             r.can_jump & (r.explosives | (r.can_sprint & r.difficulty("hard"))),
         )
         # Alternate path by jump-crouching near elevator by briefing room
-        self.connect(ret, mission_impossible, (r.difficulty("hard") & r.crouch_jump & r.steroids))
+        self.connect(
+            ret,
+            mission_impossible,
+            (r.difficulty("extreme") & r.crouch_jump & r.steroids),
+        )
 
         exit_region = self.region(
             "Exit Region",

@@ -123,7 +123,11 @@ class E4L11(D3DLevel):
             ],
         )
         # Clip through wall where sectors overlap
-        self.connect(second_area, blue_key_area, self.blue_key | (r.difficulty("hard") & r.crouch_jump & r.steroids))
+        self.connect(
+            second_area,
+            blue_key_area,
+            self.blue_key | (r.difficulty("hard") & r.crouch_jump & r.steroids),
+        )
 
         blue_upper = self.region(
             "Blue Upper Area",
@@ -242,8 +246,9 @@ class E4L11(D3DLevel):
         # This clip is possible with steroids and duck only
         # Clip on the switch by ducking, then roid+duck to squeeze into the red key area
         self.connect(
-            past_elevator, red_key_area, self.red_key |
-            (r.difficulty("hard") & r.can_crouch & r.steroids)
+            past_elevator,
+            red_key_area,
+            self.red_key | (r.difficulty("hard") & r.can_crouch & r.steroids),
         )
 
         red_table = self.region(
@@ -262,6 +267,16 @@ class E4L11(D3DLevel):
             ],
         )
         # Featuring the best use of tripmines ever
-        self.connect(past_elevator, yellow_key_area, self.yellow_key |
-                    (r.difficulty("hard") & r.steroids & r.can_jump & r.tripmine))
+        self.connect(
+            past_elevator,
+            yellow_key_area,
+            self.yellow_key
+            | (
+                r.difficulty("hard")
+                & r.steroids
+                & r.can_sprint
+                & r.can_jump
+                & r.tripmine
+            ),
+        )
         return ret

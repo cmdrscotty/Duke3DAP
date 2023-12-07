@@ -165,7 +165,8 @@ class E1L3(D3DLevel):
 
         courtyard = self.region("Courtyard")
         self.add_locations(["MP Courtyard Medkit", "Red Key Card"], courtyard)
-        self.connect(control_room, courtyard, self.yellow_key)
+        # Can also just kick the yellow door to open it
+        self.connect(control_room, courtyard, self.yellow_key | r.difficulty("hard"))
 
         courtyard_ledge = self.region(
             "Courtyard Ledge",
@@ -228,4 +229,13 @@ class E1L3(D3DLevel):
             ],
         )
         self.connect(dock, submarine, r.can_dive)
+
+        # Roid clip into the cell from courtyard
+        self.connect(
+            courtyard_ledge,
+            dock,
+            (r.difficulty("extreme") & r.steroids & r.can_sprint & r.can_jump)
+            | (r.difficulty("hard") & r.jetpack(50) & r.steroids & r.can_sprint),
+        )
+
         return ret

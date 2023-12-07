@@ -226,7 +226,10 @@ class E1L5(D3DLevel):
         )
         # Big drop, can't get back
         self.connect(ship_entrance, spaceship, r.true)
-        # Not sure if the Exit button clip works on Rednukem or is only in Megaton physics
-        self.restrict("Exit", r.can_kill_boss_1)
+        # Clip to DM exit near boss drop
+        self.restrict(
+            "Exit",
+            r.can_kill_boss_1 | (r.difficulty("extreme") & r.steroids & r.can_jump),
+        )
 
         return ret

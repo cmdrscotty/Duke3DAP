@@ -279,4 +279,11 @@ class E1L4(D3DLevel):
         self.connect(top_of_sewer, moving_platforms, second_dive)
         self.connect(moving_platforms, top_of_waterfall, r.jetpack(100))
         self.connect(top_of_waterfall, deep_water, second_dive)
+
+        # Clip to the secret teleporter, extreme difficulty because of obscurity
+        self.connect(
+            canyon_dark_area,
+            exit_area,
+            r.steroids & r.can_jump & r.can_sprint & r.difficulty("extreme"),
+        )
         return ret
