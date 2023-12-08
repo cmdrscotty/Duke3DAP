@@ -113,9 +113,24 @@ class E2L3(D3DLevel):
         self.connect(ret, control_room, self.yellow_key)
 
         reactor = self.region("Reactor", ["Exit"])
-        self.connect(ret, reactor, self.event("Disable Forcefield") | r.crouch_jump)
+        self.connect(
+            ret,
+            reactor,
+            self.event("Disable Forcefield")
+            | (
+                r.difficulty("hard")
+                & r.glitched
+                & r.can_sprint
+                & r.can_jump
+                & (r.tripmine | r.can_crouch)
+            ),
+        )
         reactor_top = self.region(
             "Reactor Top", ["Reactor Atomic Health 1", "Reactor Atomic Health 2"]
         )
-        self.connect(reactor, reactor_top, r.jetpack(50) | r.crouch_jump)
+        self.connect(
+            reactor,
+            reactor_top,
+            r.jetpack(50) | (r.difficulty("hard") & r.glitched & r.can_jump),
+        )
         return ret

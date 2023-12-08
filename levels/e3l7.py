@@ -92,9 +92,7 @@ class E3L7(D3DLevel):
             ["Fire Station RPG", "Fire Station Atomic Health", "Yellow Key Card"],
         )
         # This one doesn't even require sprinting speed to clip into
-        self.connect(
-            plaza, fire_station, r.explosives | r.glitched & r.can_jump & r.can_crouch
-        )
+        self.connect(plaza, fire_station, r.explosives | (r.can_jump & r.can_crouch))
 
         broadcast = self.region(
             "Broadcast Building",
@@ -114,6 +112,10 @@ class E3L7(D3DLevel):
         broadcast_top = self.region("Top of Broadcast Building", ["Broadcast Shotgun"])
         self.connect(
             plaza, broadcast_top, r.jetpack(50) | (r.difficulty("medium") & r.can_jump)
+        )
+        # Roid crouch-clip to get inside the building from the top
+        self.connect(
+            broadcast_top, broadcast, r.crouch_jump & r.steroids & r.difficulty("hard")
         )
         self.connect(broadcast, broadcast_top, r.true)
         return ret

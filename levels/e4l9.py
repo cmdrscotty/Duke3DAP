@@ -142,6 +142,13 @@ class E4L9(D3DLevel):
             ],
         )
         self.connect(upper_deck, blue_key_area, self.blue_key)
+        # Alternate path to blue key area through roid clip
+        self.connect(
+            outside_dive,
+            blue_key_area,
+            (r.difficulty("hard") & r.steroids & r.can_jump & r.can_crouch)
+            | (r.difficulty("hard") & r.steroids & r.can_sprint & r.can_crouch),
+        )
 
         blue_key_lower = self.region(
             "Blue Key Lower Area",
@@ -212,7 +219,12 @@ class E4L9(D3DLevel):
                 "Yellow Protective Boots",
             ],
         )
-        self.connect(blue_key_area, yellow_key_area, self.yellow_key)
+        # Caught trippin
+        self.connect(
+            blue_key_area,
+            yellow_key_area,
+            self.yellow_key | (r.difficulty("extreme") & r.can_jump & r.tripmine),
+        )
 
         crate_secret = self.region(
             "Secret Crate",

@@ -112,23 +112,27 @@ class E2L5(D3DLevel):
         center_room = self.region(
             "Center Room", ["MP Center Room Freezethrower", "Center Room Medkit"]
         )
-        self.connect(ret, center_room, self.blue_key | (r.crouch_jump & r.steroids))
+        self.connect(
+            ret, center_room, self.blue_key | (r.glitched & r.can_crouch & r.steroids)
+        )
 
         center_room_top = self.region(
             "Center Room Top", ["MP Center Room Pipebombs", "MP Exit RPG", "Exit"]
         )
         # Can hop onto an enemy jumping off the ledge, but this is giga cursed to time
+        # center_room_top: (r.difficulty("extreme") & r.can_jump)
+        # secret_exit: (r.difficulty("hard") & r.can_jump)
         self.connect(
             center_room,
             center_room_top,
-            self.blue_key | r.jetpack(50) | (r.difficulty("extreme") & r.can_jump),
+            self.blue_key | r.jetpack(50),
         )
 
         secret_exit = self.region("Secret Exit Area", ["Secret Exit"])
         self.connect(
             center_room,
             secret_exit,
-            r.jetpack(50) | (r.difficulty("hard") & r.can_jump),
+            r.jetpack(50),
         )
         #
         self.connect(

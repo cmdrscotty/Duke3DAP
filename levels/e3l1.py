@@ -128,14 +128,17 @@ class E3L1(D3DLevel):
                 "Secret Wine Cabinet",
             ],
         )
-        # don't think the easy wall sign clip works without steroids
-        # but the teleporter to the karaoke stage can be survived without steroids, it's just quite precise
         self.connect(
             ret,
             club_room,
             self.blue_key
-            | (r.crouch_jump & r.steroids)
-            | (r.difficulty("medium") & r.crouch_jump),
+            | (
+                r.difficulty("medium")
+                & (
+                    (r.glitched & r.steroids & r.can_crouch & r.can_sprint)
+                    | r.crouch_jump
+                )
+            ),
         )
 
         sushi_belt_cupboard = self.region(

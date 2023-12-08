@@ -138,7 +138,12 @@ class E2L2(D3DLevel):
             "Control Room",
             ["Control Room Pipebombs", "MP Control Room Freezethrower", "Lower Walls"],
         )
-        self.connect(ret, control_room, self.yellow_key)
+        # Jumping is basically clipping
+        self.connect(
+            ret,
+            control_room,
+            self.yellow_key | (r.difficulty("hard") & r.can_jump & r.glitched),
+        )
 
         back_cave = self.region(
             "Overgrown Passage",

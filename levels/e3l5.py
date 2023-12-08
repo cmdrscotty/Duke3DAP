@@ -107,7 +107,12 @@ class E3L5(D3DLevel):
             ],
         )
         # might be possible to do without steroids
-        self.connect(ret, studio_floor, self.blue_key | (r.crouch_jump & r.steroids))
+        self.connect(
+            ret,
+            studio_floor,
+            self.blue_key
+            | (r.glitched & r.difficulty("medium") & r.steroids & r.can_crouch),
+        )
 
         studio_ledges = self.region(
             "Studio Ledges",

@@ -67,7 +67,21 @@ class E1L1(D3DLevel):
                 "Vent Holo Duke",
             ],
         )
-        self.restrict("Vent Holo Duke", r.jump & r.explosives)
+        # sr50 down from the top of the vent and hold crouch as you fall to make it on top
+        self.restrict(
+            "Vent Holo Duke",
+            r.explosives
+            & (
+                r.jump
+                | (
+                    r.can_crouch
+                    & (
+                        r.difficulty("extreme")
+                        | (r.difficulty("medium") & r.can_sprint)
+                    )
+                )
+            ),
+        )
 
         apartment = self.region(
             "Apartments",

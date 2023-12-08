@@ -84,7 +84,10 @@ class E1L3(D3DLevel):
         self.add_locations(
             ["Secret Electric Chair", "Electric Chair Shotgun"], electric_chair
         )
-        self.connect(ret, electric_chair, r.can_crouch)
+        # Sometimes a jump is also a crouch
+        self.connect(
+            ret, electric_chair, r.can_crouch | (r.difficulty("medium") & r.can_jump)
+        )
 
         hallway = self.region(
             "Main Hallway",
@@ -166,7 +169,11 @@ class E1L3(D3DLevel):
         courtyard = self.region("Courtyard")
         self.add_locations(["MP Courtyard Medkit", "Red Key Card"], courtyard)
         # Can also just kick the yellow door to open it
-        self.connect(control_room, courtyard, self.yellow_key | r.difficulty("hard"))
+        self.connect(
+            control_room,
+            courtyard,
+            self.yellow_key | (r.glitched & r.difficulty("easy")),
+        )
 
         courtyard_ledge = self.region(
             "Courtyard Ledge",
@@ -230,12 +237,22 @@ class E1L3(D3DLevel):
         )
         self.connect(dock, submarine, r.can_dive)
 
-        # Roid clip into the cell from courtyard
+        # Roid clip into the cell from courtyard and shoot pipebombs for explosion
         self.connect(
             courtyard_ledge,
             dock,
-            (r.difficulty("extreme") & r.steroids & r.can_sprint & r.can_jump)
-            | (r.difficulty("hard") & r.jetpack(50) & r.steroids & r.can_sprint),
+            r.glitched
+            & (
+                (r.difficulty("hard") & r.steroids & r.crouch_jump)
+                | (
+                    r.difficulty("hard")
+                    & r.jetpack(50)
+                    & r.steroids
+                    # removed because sr50 works too TODO: maybe extreme
+                    # & r.can_sprint
+                    & r.can_crouch
+                )
+            ),
         )
 
         return ret
