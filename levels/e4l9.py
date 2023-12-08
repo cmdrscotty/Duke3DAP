@@ -187,17 +187,11 @@ class E4L9(D3DLevel):
             ],
         )
         # Another roid clip that doesnt require jump to pull off
+        # Maybe possible with only r.can_sprint & r.can_crouch
         self.connect(
             blue_key_area,
             red_key_area,
-            self.red_key
-            | (
-                r.difficulty("hard")
-                & r.can_sprint
-                & r.steroids
-                & r.can_crouch
-                & r.glitched
-            ),
+            self.red_key | (r.difficulty("hard") & r.crouch_jump & r.steroids),
         )
 
         red_upper = self.region(

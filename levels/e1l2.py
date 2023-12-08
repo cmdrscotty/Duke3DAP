@@ -86,7 +86,7 @@ class E1L2(D3DLevel):
                 "Blue Key Card",
             ],
         )
-        self.connect(ret, streets, r.can_crouch)
+        self.connect(ret, streets, r.can_crouch | r.can_jump)
 
         streets_ledge = self.region(
             "Streets Ledge",

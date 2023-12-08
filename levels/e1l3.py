@@ -146,11 +146,15 @@ class E1L3(D3DLevel):
             "Control Room Top",
             ["Unlock Cell Blocks"],
         )
-        # Can jump on a pigcop to get up
+        # Can jump on a pigcop to get up, either sprint past explosives or blow em up
         self.connect(
             control_room,
             control_room_top,
-            self.red_key | r.jetpack(50) | (r.difficulty("medium") & r.can_jump),
+            self.red_key
+            | (
+                (r.explosives | ((r.can_sprint | r.steroids) & r.difficulty("hard")))
+                & (r.jetpack(50) | (r.difficulty("medium") & r.can_jump))
+            ),
         )
 
         control_room_ledges = self.region(
