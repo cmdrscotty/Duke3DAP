@@ -90,7 +90,7 @@ class E2L5(D3DLevel):
             ret,
             hallway_alcove,
             r.jetpack(50)
-            | r.can_jump & (r.difficulty("medium") | r.can_sprint & r.steroids),
+            | r.can_jump & (r.difficulty("hard") | r.can_sprint & r.steroids),
         )
 
         battlelord_room = self.region(

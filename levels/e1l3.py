@@ -172,7 +172,7 @@ class E1L3(D3DLevel):
         self.connect(
             control_room,
             courtyard,
-            self.yellow_key | (r.glitched & r.difficulty("easy")),
+            self.yellow_key | r.glitched,
         )
 
         courtyard_ledge = self.region(
@@ -215,7 +215,7 @@ class E1L3(D3DLevel):
         # Can just walk in from the sub area
         self.connect(dock, courtyard, r.true)
         # Don't think this does anything yet, but better mark it down if we ever find an early sub clip or something
-        self.connect(courtyard, control_room, self.yellow_key)
+        self.connect(courtyard, control_room, self.yellow_key | r.glitched)
 
         dock_secret = self.region(
             "Submarine Dock Door Secret",

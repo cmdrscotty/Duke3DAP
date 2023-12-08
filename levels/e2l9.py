@@ -117,8 +117,8 @@ class E2L9(D3DLevel):
                 "Exit",
             ],
         )
-        # Why fight when you can just press the exit button
-        self.restrict("Exit", r.can_kill_boss_2 | r.glitched)
+        # Why fight when you can just press the exit button, requires jumping to press
+        self.restrict("Exit", r.can_kill_boss_2 | (r.glitched & r.can_jump))
         self.connect(vents, overlord_chamber, r.true)
 
         overlord_tunnel = self.region(

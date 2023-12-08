@@ -114,10 +114,12 @@ class E4L2(D3DLevel):
                 "Kitchen Fryer Armor",
             ],
         )
-        # Can be grabbed by diagonal walking into the corner, very specific.
-        # TODO: Extreme for now until I figure out a good setup
-        # TODO: Might be possible to sr50 over with sprint
-        self.connect(inside_db_kitchen, kitchen_fryer, r.difficulty("extreme") | r.jump)
+        # TODO: Can maybe be grabbed by diagonal walking into the corner?
+        self.connect(
+            inside_db_kitchen,
+            kitchen_fryer,
+            r.jump | (r.difficulty("hard") & r.can_sprint),
+        )
 
         kitchen_back_secret = self.region(
             "Secret Kitchen Back",
@@ -128,7 +130,7 @@ class E4L2(D3DLevel):
         )
         # Can jump/jetpack instead of duck to activate switch at desk
         # TODO: Extreme logic: Use enforcer to clip on topmost box for secret
-        # r.jetpack(100) & r.difficulty("extreme") < 100 jetpack just to be nice
+        # r.jetpack(100) & r.difficulty("extreme") 100 jetpack just to be nice and allow more attempts
         self.connect(
             inside_db_kitchen,
             kitchen_back_secret,
@@ -198,8 +200,11 @@ class E4L2(D3DLevel):
         self.connect(conveyers_upper, manager_room)
 
         # Alternate path by blowing up office wall from the outside
+        # Medium difficulty because its obscure
         self.connect(
-            ret, manager_room, r.difficulty("extreme") & r.pipebomb & r.can_crouch
+            ret,
+            manager_room,
+            r.difficulty("medium") & r.pipebomb & r.can_crouch & r.glitched,
         )
 
         manager_room_cabinet = self.region(

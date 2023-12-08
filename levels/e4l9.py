@@ -146,8 +146,7 @@ class E4L9(D3DLevel):
         self.connect(
             outside_dive,
             blue_key_area,
-            (r.difficulty("hard") & r.steroids & r.can_jump & r.can_crouch)
-            | (r.difficulty("hard") & r.steroids & r.can_sprint & r.can_crouch),
+            r.glitched & r.difficulty("medium") & r.steroids & r.can_crouch,
         )
 
         blue_key_lower = self.region(
@@ -187,12 +186,18 @@ class E4L9(D3DLevel):
                 "Fire Atomic Health",
             ],
         )
-        # Special roid clip that doesnt require jump to pull off
+        # Another roid clip that doesnt require jump to pull off
         self.connect(
             blue_key_area,
             red_key_area,
             self.red_key
-            | (r.difficulty("hard") & r.can_sprint & r.steroids & r.can_crouch),
+            | (
+                r.difficulty("hard")
+                & r.can_sprint
+                & r.steroids
+                & r.can_crouch
+                & r.glitched
+            ),
         )
 
         red_upper = self.region(
@@ -223,7 +228,8 @@ class E4L9(D3DLevel):
         self.connect(
             blue_key_area,
             yellow_key_area,
-            self.yellow_key | (r.difficulty("extreme") & r.can_jump & r.tripmine),
+            self.yellow_key
+            | (r.difficulty("extreme") & r.can_jump & r.tripmine & r.glitched),
         )
 
         crate_secret = self.region(

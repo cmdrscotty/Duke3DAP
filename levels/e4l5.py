@@ -103,10 +103,10 @@ class E4L5(D3DLevel):
                 "Blue Key Card",
             ],
         )
-        # Can walk off the stairs on top of the, a bit tricky without sprint
+        # Can walk off the stairs on top, a bit tricky without sprint
         # Other entry leads through manhole cover
         self.connect(
-            ret, past_car, r.can_sprint | r.difficulty("medium") | r.explosives | r.jump
+            ret, past_car, r.can_sprint | r.difficulty("hard") | r.explosives | r.jump
         )
 
         security_mons_upper = self.region(
@@ -145,7 +145,9 @@ class E4L5(D3DLevel):
             ],
         )
         self.connect(
-            past_car, basement_blue_area, self.blue_key | r.crouch_jump & r.steroids
+            past_car,
+            basement_blue_area,
+            self.blue_key | (r.difficulty("medium") & r.crouch_jump & r.steroids),
         )
 
         red_key_area = self.region(

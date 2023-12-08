@@ -126,7 +126,8 @@ class E4L11(D3DLevel):
         self.connect(
             second_area,
             blue_key_area,
-            self.blue_key | (r.difficulty("hard") & r.crouch_jump & r.steroids),
+            self.blue_key
+            | (r.difficulty("hard") & r.glitched & r.can_crouch & r.steroids),
         )
 
         blue_upper = self.region(
@@ -248,7 +249,8 @@ class E4L11(D3DLevel):
         self.connect(
             past_elevator,
             red_key_area,
-            self.red_key | (r.difficulty("hard") & r.can_crouch & r.steroids),
+            self.red_key
+            | (r.difficulty("hard") & r.can_crouch & r.steroids & r.glitched),
         )
 
         red_table = self.region(
@@ -266,7 +268,7 @@ class E4L11(D3DLevel):
                 "Exit",
             ],
         )
-        # Featuring the best use of tripmines ever
+        # Featuring one of the best uses of tripmines ever
         self.connect(
             past_elevator,
             yellow_key_area,
@@ -277,6 +279,7 @@ class E4L11(D3DLevel):
                 & r.can_sprint
                 & r.can_jump
                 & r.tripmine
+                & r.glitched
             ),
         )
         return ret

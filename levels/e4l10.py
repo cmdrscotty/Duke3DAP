@@ -152,7 +152,7 @@ class E4L10(D3DLevel):
         )
         # 22 jetpack until here minimum
         self.connect(blue_key_room, rside)
-        # Can enter right side by pushing buttons through wall cover
+        # Can enter right side by pushing buttons through wall cover, hard for obscurity
         self.connect(ret, rside, r.difficulty("hard"))
 
         rside_upper = self.region(

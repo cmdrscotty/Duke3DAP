@@ -265,7 +265,7 @@ class E1L4(D3DLevel):
 
         exit_area = self.region("Exit Area", ["Exit"])
         # Secret teleporter in canyon wall
-        self.connect(flooded_area, exit_area, r.jump & r.glitched)
+        self.connect(flooded_area, exit_area, r.jump)
         self.connect(
             secret_exit,
             exit_area,

@@ -148,8 +148,12 @@ class E4L6(D3DLevel):
             ],
         )
         self.connect(behind_counter, blue_key_area, self.blue_key)
-        # Alternative path by pipebombing the MAIL door
-        self.connect(ret, blue_key_area, r.can_crouch & r.pipebomb)
+        # Alternative path by pipebombing the MAIL door, medium for obscurity
+        self.connect(
+            ret,
+            blue_key_area,
+            r.can_crouch & r.pipebomb & r.glitched & r.difficulty("medium"),
+        )
 
         blue_vent_secret = self.region(
             "Secret Blue Vent",
@@ -225,6 +229,8 @@ class E4L6(D3DLevel):
                 "Red Atomic Health",
             ],
         )
+        # Shrink clip exists here, very tight unshrink window to clip through the door
+        # TODO: Extreme difficulty?
         self.connect(blue_key_area, red_key_area, self.red_key & r.jump & r.can_crouch)
 
         yellow_key_area = self.region(
@@ -243,6 +249,7 @@ class E4L6(D3DLevel):
                 & r.can_sprint
                 & r.can_jump
                 & r.tripmine
+                & r.glitched
             ),
         )
         return ret

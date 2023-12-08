@@ -95,8 +95,11 @@ class E2L2(D3DLevel):
                 "Hidden Screen Room Armor",
             ],
         )
+        # Able to clip up the corner with mouse movement and diagonal strafing
         self.connect(
-            ret, hidden_screen_room, r.jump | (r.difficulty("hard") & r.can_sprint)
+            ret,
+            hidden_screen_room,
+            r.jump | (r.difficulty("hard") & r.can_sprint) | r.difficulty("extreme"),
         )
 
         early_ledges = self.region(
@@ -121,7 +124,9 @@ class E2L2(D3DLevel):
             | (
                 r.glitched
                 # bit tricky to clip in, so give more jetpack leniency at lower difficulties
-                & ((r.difficulty("medium") & r.jetpack(100)) | r.jetpack(200))
+                # TODO: find a way to somewhat reliably clip with jetpack and no sprint
+                # & ((r.difficulty("medium") & r.jetpack(100)) | r.jetpack(200))
+                & (r.difficulty("medium") & (r.can_sprint | r.steroids))
             ),
         )
         # Cursed cumulative jetpack logic
@@ -138,12 +143,7 @@ class E2L2(D3DLevel):
             "Control Room",
             ["Control Room Pipebombs", "MP Control Room Freezethrower", "Lower Walls"],
         )
-        # Jumping is basically clipping
-        self.connect(
-            ret,
-            control_room,
-            self.yellow_key | (r.difficulty("hard") & r.can_jump & r.glitched),
-        )
+        self.connect(ret, control_room, self.yellow_key)
 
         back_cave = self.region(
             "Overgrown Passage",

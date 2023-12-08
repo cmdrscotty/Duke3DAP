@@ -127,7 +127,7 @@ class E4L3(D3DLevel):
         self.connect(
             shop_inside,
             shop_blue,
-            self.blue_key | (r.difficulty("extreme") & r.devastator & r.can_crouch),
+            self.blue_key | (r.difficulty("hard") & r.devastator & r.glitched),
         )
 
         exploding_box = self.region(
@@ -248,6 +248,8 @@ class E4L3(D3DLevel):
         )
 
         # Shoot devestator through wall, leads straight to the exit by blowing up the secret
-        self.connect(shop_blue, trash_compactor, r.difficulty("extreme") & r.devastator)
+        self.connect(
+            shop_blue, trash_compactor, r.difficulty("hard") & r.devastator & r.glitched
+        )
 
         return ret

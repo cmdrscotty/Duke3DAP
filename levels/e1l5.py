@@ -113,9 +113,7 @@ class E1L5(D3DLevel):
         self.connect(
             ret,
             blue_gate,
-            self.blue_key
-            | (r.glitched & r.difficulty("medium") & r.crouch_jump)
-            | r.jetpack(50),
+            self.blue_key | (r.difficulty("hard") & r.crouch_jump) | r.jetpack(50),
         )
 
         fault_trigger = self.region(
@@ -229,7 +227,8 @@ class E1L5(D3DLevel):
         # Clip to DM exit near boss drop
         self.restrict(
             "Exit",
-            r.can_kill_boss_1 | (r.difficulty("extreme") & r.steroids & r.can_jump),
+            r.can_kill_boss_1
+            | (r.glitched & r.difficulty("hard") & r.steroids & r.can_jump),
         )
 
         return ret

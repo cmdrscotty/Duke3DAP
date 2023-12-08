@@ -187,7 +187,7 @@ class E4L1(D3DLevel):
         self.connect(
             ret,
             mission_impossible,
-            (r.difficulty("extreme") & r.crouch_jump & r.steroids),
+            (r.difficulty("hard") & r.crouch_jump & r.steroids),
         )
 
         exit_region = self.region(

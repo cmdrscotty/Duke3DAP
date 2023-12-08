@@ -176,7 +176,9 @@ class E2L8(D3DLevel):
             "Reactor Control Ledge", ["Reactor Control Armor", "Yellow Key Card"]
         )
         # can get pushed up by enemies after explosion, but a bit annoying
-        self.connect(top_of_hub, reactor_control_ledge, r.jump | r.difficulty("hard"))
+        self.connect(
+            top_of_hub, reactor_control_ledge, r.jump | r.difficulty("extreme")
+        )
 
         beta_transport = self.region(
             "Beta Transport",
