@@ -2,7 +2,7 @@
   "game": "Duke Nukem 3D",
   "name": "Duke Nukem 3D",
   "game_id": 1,
-  "checksum": "dc815e41baf6cea1a2f2f5e79e0475decac56c6682bcb2566cb6ae24a7d21ef6",
+  "checksum": "37e2d7a384a0c61a0c38532eed3c88fa3dc96f8c3b2b90b4fe2c577bdf1e6fc6",
   "episodes": {
     "E1": {
       "name": "L.A. Meltdown",
@@ -7392,6 +7392,13 @@
         320
       ]
     },
+    "341": {
+      "name": "Heavy Armor",
+      "type": "armor",
+      "persistent": true,
+      "capacity": 5,
+      "maxcapacity": 5
+    },
     "342": {
       "name": "Progressive Scuba Gear",
       "type": "progressive",
@@ -7462,6 +7469,111 @@
       "persistent": true,
       "heal": 2,
       "capacity": 2
+    },
+    "404": {
+      "name": "Buff Up",
+      "type": "health",
+      "persistent": true,
+      "heal": 5,
+      "capacity": 5
+    },
+    "500": {
+      "name": "Celebration Trap",
+      "type": "trap",
+      "silent": true,
+      "trap": "celebrate",
+      "duration": 450,
+      "grace": 1500
+    },
+    "501": {
+      "name": "Shrink Trap",
+      "type": "trap",
+      "silent": true,
+      "trap": "shrink",
+      "duration": 250,
+      "grace": 2000
+    },
+    "502": {
+      "name": "Death Trap",
+      "type": "trap",
+      "silent": true,
+      "trap": "death",
+      "duration": 1,
+      "grace": 5000
+    },
+    "503": {
+      "name": "Appreciation Trap",
+      "type": "trap",
+      "silent": true,
+      "trap": "credits",
+      "duration": 600,
+      "grace": 2000
+    },
+    "504": {
+      "name": "Paranoia Trap",
+      "type": "trap",
+      "silent": true,
+      "trap": "nothing",
+      "duration": 1,
+      "grace": 1700
+    },
+    "505": {
+      "name": "Battlelord Trap",
+      "type": "trap",
+      "silent": true,
+      "trap": "spawn",
+      "sprite": 2630,
+      "amount": 1,
+      "duration": 1,
+      "grace": 200
+    },
+    "506": {
+      "name": "Caffeine Trap",
+      "type": "trap",
+      "silent": true,
+      "trap": "hyperspeed",
+      "duration": 300,
+      "grace": 2000
+    },
+    "507": {
+      "name": "Octabrain Trap",
+      "type": "trap",
+      "silent": true,
+      "trap": "spawn",
+      "sprite": 1820,
+      "amount": 2,
+      "duration": 1,
+      "grace": 200
+    },
+    "508": {
+      "name": "Lizard Trap",
+      "type": "trap",
+      "silent": true,
+      "trap": "spawn",
+      "sprite": 1725,
+      "amount": 8,
+      "duration": 1,
+      "grace": 200
+    },
+    "509": {
+      "name": "Busted!",
+      "type": "trap",
+      "silent": true,
+      "trap": "spawn",
+      "sprite": 2000,
+      "amount": 3,
+      "duration": 1,
+      "grace": 200
+    },
+    "510": {
+      "name": "Ooze Trap",
+      "type": "trap",
+      "silent": true,
+      "trap": "spawn",
+      "sprite": 2370,
+      "amount": 14,
+      "duration": 1,
+      "grace": 200
     },
     "1600": {
       "name": "E1L1 Automap",

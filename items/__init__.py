@@ -449,6 +449,13 @@ inventory_items = {
         {"capacity": 2, "maxcapacity": 2},
         persistent=True,
     ),
+    "Heavy Armor": ItemDef(
+        "Heavy Armor",
+        net_id(341),
+        "armor",
+        {"capacity": 5, "maxcapacity": 5},
+        persistent=True,
+    ),
     "Scuba Gear": ItemDef(
         "Scuba Gear",
         net_id(302),
@@ -602,6 +609,89 @@ healing_items = {
     "Ego Boost": ItemDef(
         "Ego Boost", net_id(403), "health", {"heal": 2, "capacity": 2}, persistent=True
     ),
+    "Buff Up": ItemDef(
+        "Buff Up", net_id(404), "health", {"heal": 5, "capacity": 5}, persistent=True
+    ),
+}
+
+traps = {
+    "Celebration Trap": ItemDef(
+        "Celebration Trap",
+        net_id(500),
+        "trap",
+        {"trap": "celebrate", "duration": 450, "grace": 1500},
+        silent=True,
+    ),
+    "Shrink Trap": ItemDef(
+        "Shrink Trap",
+        net_id(501),
+        "trap",
+        {"trap": "shrink", "duration": 250, "grace": 2000},
+        silent=True,
+    ),
+    "Death Trap": ItemDef(
+        "Death Trap",
+        net_id(502),
+        "trap",
+        {"trap": "death", "duration": 1, "grace": 5000},
+        silent=True,
+    ),
+    "Appreciation Trap": ItemDef(
+        "Appreciation Trap",
+        net_id(503),
+        "trap",
+        {"trap": "credits", "duration": 600, "grace": 2000},
+        silent=True,
+    ),
+    "Paranoia Trap": ItemDef(
+        "Paranoia Trap",
+        net_id(504),
+        "trap",
+        {"trap": "nothing", "duration": 1, "grace": 1700},
+        silent=True,
+    ),
+    "Battlelord Trap": ItemDef(
+        "Battlelord Trap",
+        net_id(505),
+        "trap",
+        {"trap": "spawn", "sprite": 2630, "amount": 1, "duration": 1, "grace": 200},
+        silent=True,
+    ),
+    "Caffeine Trap": ItemDef(
+        "Caffeine Trap",
+        net_id(506),
+        "trap",
+        {"trap": "hyperspeed", "duration": 300, "grace": 2000},
+        silent=True,
+    ),
+    "Octabrain Trap": ItemDef(
+        "Octabrain Trap",
+        net_id(507),
+        "trap",
+        {"trap": "spawn", "sprite": 1820, "amount": 2, "duration": 1, "grace": 200},
+        silent=True,
+    ),
+    "Lizard Trap": ItemDef(
+        "Lizard Trap",
+        net_id(508),
+        "trap",
+        {"trap": "spawn", "sprite": 1725, "amount": 8, "duration": 1, "grace": 200},
+        silent=True,
+    ),
+    "Busted!": ItemDef(
+        "Busted!",
+        net_id(509),
+        "trap",
+        {"trap": "spawn", "sprite": 2000, "amount": 3, "duration": 1, "grace": 200},
+        silent=True,
+    ),
+    "Ooze Trap": ItemDef(
+        "Ooze Trap",
+        net_id(510),
+        "trap",
+        {"trap": "spawn", "sprite": 2370, "amount": 14, "duration": 1, "grace": 200},
+        silent=True,
+    ),
 }
 
 all_items: Dict[str, ItemDef] = {
@@ -612,4 +702,5 @@ all_items: Dict[str, ItemDef] = {
     **abilities,
     **dynamic_level_items,
     **healing_items,
+    **traps,
 }

@@ -1653,6 +1653,7 @@
     "Progressive Steroids": 340,
     "Armor": 301,
     "Sturdy Armor": 321,
+    "Heavy Armor": 341,
     "Scuba Gear": 302,
     "Scuba Gear Capacity": 322,
     "Progressive Scuba Gear": 342,
@@ -1827,7 +1828,19 @@
     "Atomic Health": 400,
     "Medpak": 401,
     "Bandage": 402,
-    "Ego Boost": 403
+    "Ego Boost": 403,
+    "Buff Up": 404,
+    "Celebration Trap": 500,
+    "Shrink Trap": 501,
+    "Death Trap": 502,
+    "Appreciation Trap": 503,
+    "Paranoia Trap": 504,
+    "Battlelord Trap": 505,
+    "Caffeine Trap": 506,
+    "Octabrain Trap": 507,
+    "Lizard Trap": 508,
+    "Busted!": 509,
+    "Ooze Trap": 510
   },
-  "checksum": "dc815e41baf6cea1a2f2f5e79e0475decac56c6682bcb2566cb6ae24a7d21ef6"
+  "checksum": "37e2d7a384a0c61a0c38532eed3c88fa3dc96f8c3b2b90b4fe2c577bdf1e6fc6"
 }

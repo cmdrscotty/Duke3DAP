@@ -54,8 +54,7 @@ actor AP_PROG
 enda
 
 actor AP_PROCESSOR
-  ifp palive
-    {
-      approcessqueue
-    }
+  ifp palive approcessqueue
+  else
+    ifp pshrunk approcessqueue
 enda

@@ -248,6 +248,8 @@ class D3DWorld(World):
             if item_def.progression
             else ItemClassification.useful
             if item_def.persistent
+            else ItemClassification.trap
+            if item_def.type == "trap"
             else ItemClassification.filler
         )
         ret = D3DItem(item, classification, self.item_name_to_id[item], self.player)
