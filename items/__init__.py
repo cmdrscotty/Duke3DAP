@@ -122,7 +122,7 @@ weapons = {
         "Shotgun",
         net_id(202),
         "weapon",
-        {"weaponnum": 2, "ammo": 10},
+        {"weaponnum": 2, "ammo": 15},
         persistent=True,
         unique=True,
     ),
@@ -145,13 +145,13 @@ weapons = {
         "Shotgun Ammo",
         net_id(262),
         "ammo",
-        {"weaponnum": 2, "ammo": 10},
+        {"weaponnum": 2, "ammo": 15},
     ),
     "Chaingun": ItemDef(
         "Chaingun",
         net_id(203),
         "weapon",
-        {"weaponnum": 3, "ammo": 50},
+        {"weaponnum": 3, "ammo": 75},
         persistent=True,
         unique=True,
     ),
@@ -174,7 +174,7 @@ weapons = {
         "Chaingun Ammo",
         net_id(263),
         "ammo",
-        {"weaponnum": 3, "ammo": 100},
+        {"weaponnum": 3, "ammo": 150},
     ),
     "RPG": ItemDef(
         "RPG",
@@ -211,7 +211,7 @@ weapons = {
         "Pipebomb",
         net_id(205),
         "weapon",
-        {"weaponnum": 5, "ammo": 2},
+        {"weaponnum": 5, "ammo": 4},
         persistent=True,
         unique=True,
         progression=True,
@@ -236,13 +236,13 @@ weapons = {
         "Pipebomb Ammo",
         net_id(265),
         "ammo",
-        {"weaponnum": 5, "ammo": 5},
+        {"weaponnum": 5, "ammo": 10},
     ),
     "Shrinker": ItemDef(
         "Shrinker",
         net_id(206),
         "weapon",
-        {"weaponnum": 6, "ammo": 2},
+        {"weaponnum": 6, "ammo": 3},
         persistent=True,
         unique=True,
     ),
@@ -271,7 +271,7 @@ weapons = {
         "Devastator",
         net_id(207),
         "weapon",
-        {"weaponnum": 7, "ammo": 10},
+        {"weaponnum": 7, "ammo": 15},
         persistent=True,
         unique=True,
         progression=True,
@@ -296,13 +296,13 @@ weapons = {
         "Devastator Ammo",
         net_id(267),
         "ammo",
-        {"weaponnum": 7, "ammo": 25},
+        {"weaponnum": 7, "ammo": 50},
     ),
     "Tripmine": ItemDef(
         "Tripmine",
         net_id(208),
         "weapon",
-        {"weaponnum": 8, "ammo": 1},
+        {"weaponnum": 8, "ammo": 2},
         persistent=True,
         unique=True,
         progression=True,
@@ -327,13 +327,13 @@ weapons = {
         "Tripmines",
         net_id(268),
         "ammo",
-        {"weaponnum": 8, "ammo": 3},
+        {"weaponnum": 8, "ammo": 5},
     ),
     "Freezethrower": ItemDef(
         "Freezethrower",
         net_id(209),
         "weapon",
-        {"weaponnum": 9, "ammo": 20},
+        {"weaponnum": 9, "ammo": 25},
         persistent=True,
         unique=True,
     ),
@@ -362,7 +362,7 @@ weapons = {
         "Expander",
         net_id(211),
         "weapon",
-        {"weaponnum": 11, "ammo": 2},
+        {"weaponnum": 11, "ammo": 15},
         persistent=True,
         unique=True,
     ),
@@ -385,7 +385,7 @@ weapons = {
         "Expander Ammo",
         net_id(271),
         "ammo",
-        {"weaponnum": 11, "ammo": 5},
+        {"weaponnum": 11, "ammo": 35},
     ),
 }
 
@@ -694,6 +694,14 @@ traps = {
     ),
 }
 
+# These don't have defined values and exist solely to be replaced by unique, seed specifically generated items
+dynamic_items = {
+    f"Dynamic{i +1}": ItemDef(
+        f"Dynamic{i + 1}", net_id(600 + i), "filler", {}, silent=True
+    )
+    for i in range(16)
+}
+
 all_items: Dict[str, ItemDef] = {
     **junk_items,
     **goal_items,
@@ -703,4 +711,5 @@ all_items: Dict[str, ItemDef] = {
     **dynamic_level_items,
     **healing_items,
     **traps,
+    **dynamic_items,
 }

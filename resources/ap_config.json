@@ -2,7 +2,7 @@
   "game": "Duke Nukem 3D",
   "name": "Duke Nukem 3D",
   "game_id": 1,
-  "checksum": "37e2d7a384a0c61a0c38532eed3c88fa3dc96f8c3b2b90b4fe2c577bdf1e6fc6",
+  "checksum": "3e43f301636cd1f3d34427fe70dae9593159d7cdb8b16acad1ab4a4c0b55f679",
   "episodes": {
     "E1": {
       "name": "L.A. Meltdown",
@@ -6993,7 +6993,7 @@
       "persistent": true,
       "unique": true,
       "weaponnum": 2,
-      "ammo": 10
+      "ammo": 15
     },
     "203": {
       "name": "Chaingun",
@@ -7001,7 +7001,7 @@
       "persistent": true,
       "unique": true,
       "weaponnum": 3,
-      "ammo": 50
+      "ammo": 75
     },
     "204": {
       "name": "RPG",
@@ -7017,7 +7017,7 @@
       "persistent": true,
       "unique": true,
       "weaponnum": 5,
-      "ammo": 2
+      "ammo": 4
     },
     "206": {
       "name": "Shrinker",
@@ -7025,7 +7025,7 @@
       "persistent": true,
       "unique": true,
       "weaponnum": 6,
-      "ammo": 2
+      "ammo": 3
     },
     "207": {
       "name": "Devastator",
@@ -7033,7 +7033,7 @@
       "persistent": true,
       "unique": true,
       "weaponnum": 7,
-      "ammo": 10
+      "ammo": 15
     },
     "208": {
       "name": "Tripmine",
@@ -7041,7 +7041,7 @@
       "persistent": true,
       "unique": true,
       "weaponnum": 8,
-      "ammo": 1
+      "ammo": 2
     },
     "209": {
       "name": "Freezethrower",
@@ -7049,7 +7049,7 @@
       "persistent": true,
       "unique": true,
       "weaponnum": 9,
-      "ammo": 20
+      "ammo": 25
     },
     "211": {
       "name": "Expander",
@@ -7057,7 +7057,7 @@
       "persistent": true,
       "unique": true,
       "weaponnum": 11,
-      "ammo": 2
+      "ammo": 15
     },
     "221": {
       "name": "Pistol Capacity",
@@ -7248,13 +7248,13 @@
       "name": "Shotgun Ammo",
       "type": "ammo",
       "weaponnum": 2,
-      "ammo": 10
+      "ammo": 15
     },
     "263": {
       "name": "Chaingun Ammo",
       "type": "ammo",
       "weaponnum": 3,
-      "ammo": 100
+      "ammo": 150
     },
     "264": {
       "name": "RPG Ammo",
@@ -7266,7 +7266,7 @@
       "name": "Pipebomb Ammo",
       "type": "ammo",
       "weaponnum": 5,
-      "ammo": 5
+      "ammo": 10
     },
     "266": {
       "name": "Shrinker Ammo",
@@ -7278,13 +7278,13 @@
       "name": "Devastator Ammo",
       "type": "ammo",
       "weaponnum": 7,
-      "ammo": 25
+      "ammo": 50
     },
     "268": {
       "name": "Tripmines",
       "type": "ammo",
       "weaponnum": 8,
-      "ammo": 3
+      "ammo": 5
     },
     "269": {
       "name": "Freezethrower Ammo",
@@ -7296,7 +7296,7 @@
       "name": "Expander Ammo",
       "type": "ammo",
       "weaponnum": 11,
-      "ammo": 5
+      "ammo": 35
     },
     "300": {
       "name": "Steroids",
@@ -7574,6 +7574,86 @@
       "amount": 14,
       "duration": 1,
       "grace": 200
+    },
+    "600": {
+      "name": "Dynamic1",
+      "type": "filler",
+      "silent": true
+    },
+    "601": {
+      "name": "Dynamic2",
+      "type": "filler",
+      "silent": true
+    },
+    "602": {
+      "name": "Dynamic3",
+      "type": "filler",
+      "silent": true
+    },
+    "603": {
+      "name": "Dynamic4",
+      "type": "filler",
+      "silent": true
+    },
+    "604": {
+      "name": "Dynamic5",
+      "type": "filler",
+      "silent": true
+    },
+    "605": {
+      "name": "Dynamic6",
+      "type": "filler",
+      "silent": true
+    },
+    "606": {
+      "name": "Dynamic7",
+      "type": "filler",
+      "silent": true
+    },
+    "607": {
+      "name": "Dynamic8",
+      "type": "filler",
+      "silent": true
+    },
+    "608": {
+      "name": "Dynamic9",
+      "type": "filler",
+      "silent": true
+    },
+    "609": {
+      "name": "Dynamic10",
+      "type": "filler",
+      "silent": true
+    },
+    "610": {
+      "name": "Dynamic11",
+      "type": "filler",
+      "silent": true
+    },
+    "611": {
+      "name": "Dynamic12",
+      "type": "filler",
+      "silent": true
+    },
+    "612": {
+      "name": "Dynamic13",
+      "type": "filler",
+      "silent": true
+    },
+    "613": {
+      "name": "Dynamic14",
+      "type": "filler",
+      "silent": true
+    },
+    "614": {
+      "name": "Dynamic15",
+      "type": "filler",
+      "silent": true
+    },
+    "615": {
+      "name": "Dynamic16",
+      "type": "filler",
+      "silent": true
     },
     "1600": {
       "name": "E1L1 Automap",

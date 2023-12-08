@@ -90,15 +90,60 @@ class D3DWorld(World):
     def get_option(self, option_name: str) -> Any:
         return getattr(self.multiworld, option_name)[self.player].value
 
-    def include_episode(self, episode_shorthand: str):
-        """
-        Adds levels for a selected episode option
-        """
-        episode_id = int(episode_shorthand[-1]) - 1
-        episode = all_episodes[episode_id]
-        self.included_levels += episode.levels[: episode.maxlevel]
-        if len(episode.levels) > 0:
-            self.starting_levels.append(episode.levels[0])
+    def calculate_levels(self):
+        level_count = self.get_option("level_count")
+        # total number of starting levels to include, based on the total count
+        if level_count < 6:
+            start_count = 1
+        elif level_count < 14:
+            start_count = 2
+        elif level_count < 24:
+            start_count = 3
+        else:
+            start_count = 4
+        shuffle_start = self.get_option("shuffle_starting_levels")
+        goal_bosses = (
+            self.get_option("goal") == self.options.goal.option_beat_all_bosses
+        )
+
+        level_candidates = []
+
+        # Shuffle episodes so we pick random start levels if the start count is lower than the
+        episode_options = [1, 2, 3, 4]
+        self.multiworld.random.shuffle(episode_options)
+        for episode_id in episode_options:
+            if self.get_option(f"episode{episode_id}"):
+                episode = all_episodes[episode_id - 1]
+                if not shuffle_start and len(self.starting_levels) < start_count:
+                    # add the first level to the starting levels, and the rest into the randomize pool
+                    self.starting_levels.append(episode.levels[0])
+                    self.included_levels.append(episode.levels[0])
+                    episode_pool = episode.levels[1 : episode.maxlevel]
+                else:
+                    episode_pool = episode.levels[: episode.maxlevel]
+                # If our goal is to kill bosses, include the boss levels!
+                if goal_bosses:
+                    for level in episode_pool:
+                        if level.has_boss:
+                            self.included_levels.append(level)
+                # extend our candidate pool to pull from with all remaining eligible levels
+                level_candidates.extend(
+                    [
+                        level
+                        for level in episode_pool
+                        if level not in self.included_levels
+                    ]
+                )
+        # randomize the levels so we can pull from them
+        self.multiworld.random.shuffle(level_candidates)
+        # if we have random starting levels, sample them from the start of the shuffled list
+        # this conveniently excludes boss levels from being immediately unlocked in all bosses mode!
+        if shuffle_start:
+            self.starting_levels = level_candidates[:start_count]
+        # and then fill the included levels to the desired count
+        self.included_levels.extend(
+            level_candidates[: level_count - len(self.included_levels)]
+        )
 
     def define_dynamic_item_props(self, item_name: str, new_props: Dict[str, Any]):
         """
@@ -152,9 +197,7 @@ class D3DWorld(World):
         self.rules = Rules(self)
 
         # Generate level pool
-        for episode_option in ("episode1", "episode2", "episode3", "episode4"):
-            if self.get_option(episode_option):
-                self.include_episode(episode_option)
+        self.calculate_levels()
 
         # Initial level unlocks
         for level in self.starting_levels:
@@ -259,14 +302,15 @@ class D3DWorld(World):
         return D3DItem(event_name, ItemClassification.progression, None, self.player)
 
     def get_filler_item_name(self) -> str:
+        # This should never be required with the item pool calculations, so we don't need any junk ratio logic here
         return "Nothing"
 
     def create_junk(self, count: int) -> List[D3DItem]:
         difficulty = self.get_option("difficulty")
         if difficulty == self.options.difficulty.option_extreme:
             ratios = {
-                "Nothing": 50,
-                "Pity Heal": 100,
+                "Nothing": 40,
+                "Pity Heal": 80,
                 "Medpak": 30,
                 "Armor": 10,
                 "Atomic Health": 12,
@@ -275,12 +319,27 @@ class D3DWorld(World):
                 "RPG Ammo": 3,
                 "Devastator Ammo": 3,
                 "Ego Boost": 2,
+                "Buff Up": 1,
                 "Sturdy Armor": 2,
+                "Heavy Armor": 1,
                 "First Aid Kit": 2,
                 # Oh, you got lucky!
                 "Shrinker Capacity": 1,
                 "Expander Capacity": 1,
                 "RPG Capacity": 1,
+            }
+            trap_ratios = {
+                "Celebration Trap": 4,
+                "Shrink Trap": 4,
+                "Death Trap": 6,
+                "Appreciation Trap": 2,
+                "Paranoia Trap": 0,
+                "Battlelord Trap": 6,
+                "Caffeine Trap": 5,
+                "Octabrain Trap": 2,
+                "Lizard Trap": 6,
+                "Busted!": 7,
+                "Ooze Trap": 0,
             }
         elif difficulty == self.options.difficulty.option_hard:
             ratios = {
@@ -290,8 +349,10 @@ class D3DWorld(World):
                 "Atomic Health": 30,
                 "First Aid Kit": 8,
                 "Protective Boots": 4,
-                "Ego Boost": 4,
-                "Sturdy Armor": 4,
+                "Ego Boost": 5,
+                "Buff Up": 3,
+                "Sturdy Armor": 5,
+                "Heavy Armor": 3,
                 # And some lucky additions!
                 "RPG Capacity": 2,
                 "Chaingun Capacity": 2,
@@ -300,6 +361,19 @@ class D3DWorld(World):
                 "Steroids Capacity": 1,
                 "Jetpack Capacity": 1,
             }
+            trap_ratios = {
+                "Celebration Trap": 3,
+                "Shrink Trap": 3,
+                "Death Trap": 4,
+                "Appreciation Trap": 4,
+                "Paranoia Trap": 2,
+                "Battlelord Trap": 3,
+                "Caffeine Trap": 7,
+                "Octabrain Trap": 4,
+                "Lizard Trap": 4,
+                "Busted!": 4,
+                "Ooze Trap": 2,
+            }
         elif difficulty == self.options.difficulty.option_medium:
             ratios = {
                 "Medpak": 20,
@@ -307,7 +381,9 @@ class D3DWorld(World):
                 "Atomic Health": 20,
                 "Pistol Capacity": 5,
                 "Ego Boost": 5,
+                "Buff Up": 7,
                 "Sturdy Armor": 5,
+                "Heavy Armor": 7,
                 "RPG Capacity": 3,
                 "Chaingun Capacity": 3,
                 "Shrinker Capacity": 2,
@@ -320,12 +396,27 @@ class D3DWorld(World):
                 "Jetpack Capacity": 1,
                 "Scuba Gear Capacity": 1,
             }
+            trap_ratios = {
+                "Celebration Trap": 3,
+                "Shrink Trap": 2,
+                "Death Trap": 2,
+                "Appreciation Trap": 3,
+                "Paranoia Trap": 4,
+                "Battlelord Trap": 2,
+                "Caffeine Trap": 5,
+                "Octabrain Trap": 3,
+                "Lizard Trap": 3,
+                "Busted!": 2,
+                "Ooze Trap": 6,
+            }
         else:
             ratios = {
                 "Armor": 20,
                 "Atomic Health": 30,
-                "Ego Boost": 9,
-                "Sturdy Armor": 9,
+                "Ego Boost": 3,
+                "Buff Up": 14,
+                "Sturdy Armor": 3,
+                "Heavy Armor": 14,
                 "Pistol Capacity": 4,
                 "RPG Capacity": 4,
                 "Chaingun Capacity": 2,
@@ -338,13 +429,34 @@ class D3DWorld(World):
                 "Jetpack Capacity": 2,
                 "Scuba Gear Capacity": 2,
             }
-        # create sample list
+            trap_ratios = {
+                "Celebration Trap": 4,
+                "Shrink Trap": 3,
+                "Death Trap": 0,
+                "Appreciation Trap": 4,
+                "Paranoia Trap": 8,
+                "Battlelord Trap": 0,
+                "Caffeine Trap": 5,
+                "Octabrain Trap": 2,
+                "Lizard Trap": 3,
+                "Busted!": 1,
+                "Ooze Trap": 10,
+            }
+        # create sample lists
         pool = []
         for key, value in ratios.items():
             pool += [key] * value
+        trap_pool = []
+        for key, value in trap_ratios.items():
+            trap_pool += [key] * value
         # and just generate items at the appropriate ratios
+        trap_count = math.floor((self.get_option("trap_percentage") / 100.0) * count)
         return [
-            self.create_item(self.multiworld.random.choice(pool)) for _ in range(count)
+            self.create_item(self.multiworld.random.choice(pool))
+            for _ in range(count - trap_count)
+        ] + [
+            self.create_item(self.multiworld.random.choice(trap_pool))
+            for _ in range(trap_count)
         ]
 
     def create_item_list(self, item_list: List[str]) -> List[D3DItem]:

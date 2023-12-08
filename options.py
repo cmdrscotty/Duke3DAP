@@ -130,10 +130,32 @@ class Episode3(Toggle):
 
 
 class Episode4(Toggle):
-    """Include Episode 4: Hollywood Holocaust in the randomizer"""
+    """Include Episode 4: The Birth in the randomizer"""
 
     display_name = "The Birth"
     default = True
+
+
+class LevelCount(NamedRange):
+    """
+    Number of maps that should be included in the shuffle. Maps are picked from the enabled episodes. If this count
+    exceeds the maximum number of levels in those episodes, all of them will be included.
+    """
+
+    display_name = "Level Count"
+    range_start = 2
+    range_end = 40
+    default = 40
+    special_range_names: {
+        "all": 40,
+    }
+
+
+class ShuffleStartingLevels(Toggle):
+    """If enabled will pick levels unlocked by default at random instead of the first of each episode"""
+
+    display_name = "Shuffle Starting Levels"
+    default = False
 
 
 class FuelPerJetpack(NamedRange):
@@ -183,6 +205,15 @@ class ProgressiveInventories(Toggle):
     default = False
 
 
+class TrapPercentage(NamedRange):
+    """Percentage of filler items that should be traps"""
+
+    display_name = "Trap Percentage"
+    range_start = 0
+    range_end = 90
+    default = 15
+
+
 @dataclass
 class Duke3DOptions(PerGameCommonOptions):
     difficulty: Difficulty
@@ -200,8 +231,11 @@ class Duke3DOptions(PerGameCommonOptions):
     episode2: Episode2
     episode3: Episode3
     episode4: Episode4
+    level_count: LevelCount
+    shuffle_starting_levels: ShuffleStartingLevels
     fuel_per_jetpack: FuelPerJetpack
     fuel_per_scuba_gear: FuelPerScubaGear
     fuel_per_steroids: FuelPerSteroids
     progressive_weapons: ProgressiveWeapons
     progressive_inventories: ProgressiveInventories
+    trap_percentage: TrapPercentage

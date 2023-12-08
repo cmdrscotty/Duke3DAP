@@ -1840,7 +1840,23 @@
     "Octabrain Trap": 507,
     "Lizard Trap": 508,
     "Busted!": 509,
-    "Ooze Trap": 510
+    "Ooze Trap": 510,
+    "Dynamic1": 600,
+    "Dynamic2": 601,
+    "Dynamic3": 602,
+    "Dynamic4": 603,
+    "Dynamic5": 604,
+    "Dynamic6": 605,
+    "Dynamic7": 606,
+    "Dynamic8": 607,
+    "Dynamic9": 608,
+    "Dynamic10": 609,
+    "Dynamic11": 610,
+    "Dynamic12": 611,
+    "Dynamic13": 612,
+    "Dynamic14": 613,
+    "Dynamic15": 614,
+    "Dynamic16": 615
   },
-  "checksum": "37e2d7a384a0c61a0c38532eed3c88fa3dc96f8c3b2b90b4fe2c577bdf1e6fc6"
+  "checksum": "3e43f301636cd1f3d34427fe70dae9593159d7cdb8b16acad1ab4a4c0b55f679"
 }
