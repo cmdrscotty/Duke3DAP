@@ -68,10 +68,8 @@ class E1L2(D3DLevel):
 
     def main_region(self) -> Region:
         r = self.rules
-        ret = self.region(self.name)
-
-        streets = self.region(
-            "Streets",
+        ret = self.region(
+            self.name,
             [
                 "Secret Pornography Store Shelves",
                 "Pornography Store Shelves Armor",
@@ -86,7 +84,6 @@ class E1L2(D3DLevel):
                 "Blue Key Card",
             ],
         )
-        self.connect(ret, streets, r.can_crouch | r.can_jump)
 
         streets_ledge = self.region(
             "Streets Ledge",
@@ -96,7 +93,7 @@ class E1L2(D3DLevel):
                 "Pornography Store Atomic Health",
             ],
         )
-        self.connect(streets, streets_ledge, r.jump)
+        self.connect(ret, streets_ledge, r.jump)
 
         store_corner = self.region(
             "Pornogrpahy Store Corner",
@@ -106,7 +103,7 @@ class E1L2(D3DLevel):
             ],
         )
         # can't fit up with jetpack
-        self.connect(streets, store_corner, r.can_jump)
+        self.connect(ret, store_corner, r.can_jump)
 
         strip_club = self.region(
             "Strip Club",
@@ -118,7 +115,7 @@ class E1L2(D3DLevel):
             ],
         )
         self.restrict("Red Key Card", r.can_crouch)
-        self.connect(streets, strip_club, self.yellow_key)
+        self.connect(ret, strip_club, self.yellow_key)
 
         sewers = self.region(
             "Sewers",
@@ -139,7 +136,7 @@ class E1L2(D3DLevel):
             "Construction Site", ["Construction Site Medkit", "Yellow Key Card"]
         )
         self.connect(
-            streets,
+            ret,
             construction_site,
             (self.blue_key | (r.glitched & r.can_crouch)) & r.jump,
         )  # Can press button from outside
