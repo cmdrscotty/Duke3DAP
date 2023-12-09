@@ -56,8 +56,9 @@ class E3L10(D3DLevel):
                 "Brick Armor",
             ],
         )
-        # All of this would be walkable if we could clip into the red pipe at the start
-        self.connect(ret, centers, r.jump)
+        self.connect(
+            ret, centers, r.jump | (r.difficulty("medium") & r.steroids & r.can_sprint)
+        )
 
         corners = self.region(
             "Corners",

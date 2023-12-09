@@ -191,7 +191,15 @@ class E4L9(D3DLevel):
         self.connect(
             blue_key_area,
             red_key_area,
-            self.red_key | (r.difficulty("hard") & r.crouch_jump & r.steroids),
+            self.red_key
+            | (r.difficulty("hard") & r.crouch_jump & r.steroids)
+            | (
+                r.difficulty("extreme")
+                & r.glitched
+                & r.can_sprint
+                & r.can_crouch
+                & r.steroids
+            ),
         )
 
         red_upper = self.region(

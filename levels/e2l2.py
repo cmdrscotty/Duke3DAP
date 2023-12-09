@@ -122,11 +122,15 @@ class E2L2(D3DLevel):
             waterfall,
             self.event("Lower Walls")
             | (
-                r.glitched
-                # bit tricky to clip in, so give more jetpack leniency at lower difficulties
                 # TODO: find a way to somewhat reliably clip with jetpack and no sprint
+                # without sprint the clip is very inconsistent
                 # & ((r.difficulty("medium") & r.jetpack(100)) | r.jetpack(200))
-                & (r.difficulty("medium") & (r.can_sprint | r.steroids))
+                # current strats are: corner-crouch and jump-clip through the door
+                r.glitched
+                & (
+                    (r.difficulty("hard") & (r.can_sprint | r.steroids))
+                    | (r.difficulty("extreme") & r.can_jump)
+                )
             ),
         )
         # Cursed cumulative jetpack logic
