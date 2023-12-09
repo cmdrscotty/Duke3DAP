@@ -116,14 +116,7 @@ class E2L3(D3DLevel):
         self.connect(
             ret,
             reactor,
-            self.event("Disable Forcefield")
-            | (
-                r.difficulty("hard")
-                & r.glitched
-                & r.can_sprint
-                & r.can_jump
-                & (r.tripmine | r.can_crouch)
-            ),
+            self.event("Disable Forcefield") | (r.difficulty("hard") & r.crouch_jump),
         )
         reactor_top = self.region(
             "Reactor Top", ["Reactor Atomic Health 1", "Reactor Atomic Health 2"]

@@ -163,7 +163,18 @@ class E3L1(D3DLevel):
         )  # there might be a way to clip up the ledges
 
         garage = self.region("Garage", ["Exit"])
-        # clip to here from the pool only works in Megaton, I think
-        self.connect(club_room, garage, self.red_key)
+        # Tripclip never disappoints
+        self.connect(
+            club_room,
+            garage,
+            self.red_key
+            | (
+                r.difficulty("extreme")
+                & r.glitched
+                & r.steroids
+                & r.tripmine
+                & r.can_jump
+            ),
+        )
         self.restrict("Exit", r.jump)
         return ret
