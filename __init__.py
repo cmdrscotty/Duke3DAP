@@ -126,6 +126,9 @@ class D3DWorld(World):
                     for level in episode_pool:
                         if level.has_boss:
                             self.included_levels.append(level)
+                # If E1L7 is enabled, add it in
+                if episode_id == 1 and self.get_option("include_e1l7"):
+                    episode_pool.append(episode.levels[-1])
                 # extend our candidate pool to pull from with all remaining eligible levels
                 level_candidates.extend(
                     [
@@ -261,9 +264,12 @@ class D3DWorld(World):
                 )
 
         self.slot_data["goal"] = {
-            self.item_name_to_id["Exit"]: goal_counts["Exit"],
-            self.item_name_to_id["Secret"]: goal_counts["Secret"],
-            self.item_name_to_id["Boss"]: goal_counts["Boss"],
+            "Exit": {"id": self.item_name_to_id["Exit"], "count": goal_counts["Exit"]},
+            "Secret": {
+                "id": self.item_name_to_id["Secret"],
+                "count": goal_counts["Secret"],
+            },
+            "Boss": {"id": self.item_name_to_id["Boss"], "count": goal_counts["Boss"]},
         }
         self.multiworld.completion_condition[self.player] = (
             self.rules.count("Exit", goal_counts["Exit"])

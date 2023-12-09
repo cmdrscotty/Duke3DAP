@@ -107,12 +107,18 @@ class IncludeMultiplayerItems(Toggle):
     default = False
 
 
-# ToDo find a way to generate this dynamically from the episodes list
 class Episode1(Toggle):
     """Include Episode 1: Hollywood Holocaust in the randomizer"""
 
     display_name = "Use Episode 1"
     default = True
+
+
+class IncludeE1L7(Toggle):
+    """If enabled will include the dukematch only level E1L7 Faces of Evil in Episode 1"""
+
+    display_name = "Include E1L7"
+    default = False
 
 
 class Episode2(Toggle):
@@ -228,6 +234,7 @@ class Duke3DOptions(PerGameCommonOptions):
     include_mp_items: IncludeMultiplayerItems
     include_secrets: IncludeSecrets
     episode1: Episode1
+    include_e1l7: IncludeE1L7
     episode2: Episode2
     episode3: Episode3
     episode4: Episode4

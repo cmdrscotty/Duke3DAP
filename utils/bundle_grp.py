@@ -80,6 +80,7 @@ def generate_ap_config(all_ids: dict):
                 "name": level.name,
                 "levelnum": level.levelnum,
                 "unlock": local_id(all_items[level.unlock].ap_id),
+                "boss": level.has_boss,
             }
             level_locations = {"sprites": {}, "sectors": {}, "exits": {}}
             for location in sorted(level.locations.values(), key=lambda x: x.game_id):

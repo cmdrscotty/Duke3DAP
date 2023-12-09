@@ -11,37 +11,44 @@
         "E1L1": {
           "name": "Hollywood Holocaust",
           "levelnum": 0,
-          "unlock": 1700
+          "unlock": 1700,
+          "boss": false
         },
         "E1L2": {
           "name": "Red Light District",
           "levelnum": 1,
-          "unlock": 1701
+          "unlock": 1701,
+          "boss": false
         },
         "E1L3": {
           "name": "Death Row",
           "levelnum": 2,
-          "unlock": 1702
+          "unlock": 1702,
+          "boss": false
         },
         "E1L4": {
           "name": "Toxic Dump",
           "levelnum": 3,
-          "unlock": 1703
+          "unlock": 1703,
+          "boss": false
         },
         "E1L5": {
           "name": "The Abyss",
           "levelnum": 4,
-          "unlock": 1704
+          "unlock": 1704,
+          "boss": true
         },
         "E1L6": {
           "name": "Launch Facility",
           "levelnum": 5,
-          "unlock": 1705
+          "unlock": 1705,
+          "boss": false
         },
         "E1L7": {
           "name": "Faces of Death",
           "levelnum": 6,
-          "unlock": 1706
+          "unlock": 1706,
+          "boss": false
         }
       }
     },
@@ -52,57 +59,68 @@
         "E2L1": {
           "name": "Spaceport",
           "levelnum": 0,
-          "unlock": 1707
+          "unlock": 1707,
+          "boss": false
         },
         "E2L2": {
           "name": "Incubator",
           "levelnum": 1,
-          "unlock": 1708
+          "unlock": 1708,
+          "boss": false
         },
         "E2L3": {
           "name": "Warp Factor",
           "levelnum": 2,
-          "unlock": 1709
+          "unlock": 1709,
+          "boss": false
         },
         "E2L4": {
           "name": "Fusion Station",
           "levelnum": 3,
-          "unlock": 1710
+          "unlock": 1710,
+          "boss": false
         },
         "E2L5": {
           "name": "Occupied Territory",
           "levelnum": 4,
-          "unlock": 1711
+          "unlock": 1711,
+          "boss": false
         },
         "E2L6": {
           "name": "Tiberius Station",
           "levelnum": 5,
-          "unlock": 1712
+          "unlock": 1712,
+          "boss": false
         },
         "E2L7": {
           "name": "Lunar Reactor",
           "levelnum": 6,
-          "unlock": 1713
+          "unlock": 1713,
+          "boss": false
         },
         "E2L8": {
           "name": "Dark Side",
           "levelnum": 7,
-          "unlock": 1714
+          "unlock": 1714,
+          "boss": false
         },
         "E2L9": {
           "name": "Overlord",
           "levelnum": 8,
-          "unlock": 1715
+          "unlock": 1715,
+          "boss": true
         },
         "E2L10": {
           "name": "Spin Cycle",
           "levelnum": 9,
-          "unlock": 1716
+          "unlock": 1716,
+          "boss": false
         },
         "E2L11": {
           "name": "Lunatic Fringe",
           "levelnum": 10,
-          "unlock": 1717
+          "unlock": 1717,
+          "boss": false
         }
       }
     },
@@ -113,57 +131,68 @@
         "E3L1": {
           "name": "Raw Meat",
           "levelnum": 0,
-          "unlock": 1718
+          "unlock": 1718,
+          "boss": false
         },
         "E3L2": {
           "name": "Bank Roll",
           "levelnum": 1,
-          "unlock": 1719
+          "unlock": 1719,
+          "boss": false
         },
         "E3L3": {
           "name": "Flood Zone",
           "levelnum": 2,
-          "unlock": 1720
+          "unlock": 1720,
+          "boss": false
         },
         "E3L4": {
           "name": "L.A. Rumble",
           "levelnum": 3,
-          "unlock": 1721
+          "unlock": 1721,
+          "boss": false
         },
         "E3L5": {
           "name": "Movie Set",
           "levelnum": 4,
-          "unlock": 1722
+          "unlock": 1722,
+          "boss": false
         },
         "E3L6": {
           "name": "Rabid Transit",
           "levelnum": 5,
-          "unlock": 1723
+          "unlock": 1723,
+          "boss": false
         },
         "E3L7": {
           "name": "Fahrenheit",
           "levelnum": 6,
-          "unlock": 1724
+          "unlock": 1724,
+          "boss": false
         },
         "E3L8": {
           "name": "Hotel Hell",
           "levelnum": 7,
-          "unlock": 1725
+          "unlock": 1725,
+          "boss": false
         },
         "E3L9": {
           "name": "Stadium",
           "levelnum": 8,
-          "unlock": 1726
+          "unlock": 1726,
+          "boss": true
         },
         "E3L10": {
           "name": "Tier Drops",
           "levelnum": 9,
-          "unlock": 1727
+          "unlock": 1727,
+          "boss": false
         },
         "E3L11": {
           "name": "Freeway",
           "levelnum": 10,
-          "unlock": 1728
+          "unlock": 1728,
+          "boss": false
         }
       }
     },
@@ -174,57 +203,68 @@
         "E4L1": {
           "name": "It's Impossible",
           "levelnum": 0,
-          "unlock": 1729
+          "unlock": 1729,
+          "boss": false
         },
         "E4L2": {
           "name": "Duke-Burger",
           "levelnum": 1,
-          "unlock": 1730
+          "unlock": 1730,
+          "boss": false
         },
         "E4L3": {
           "name": "Shop-N-Bag",
           "levelnum": 2,
-          "unlock": 1731
+          "unlock": 1731,
+          "boss": false
         },
         "E4L4": {
           "name": "Babe Land",
           "levelnum": 3,
-          "unlock": 1732
+          "unlock": 1732,
+          "boss": false
         },
         "E4L5": {
           "name": "Pigsty",
           "levelnum": 4,
-          "unlock": 1733
+          "unlock": 1733,
+          "boss": false
         },
         "E4L6": {
           "name": "Going Postal",
           "levelnum": 5,
-          "unlock": 1734
+          "unlock": 1734,
+          "boss": false
         },
         "E4L7": {
           "name": "XXX-Stacy",
           "levelnum": 6,
-          "unlock": 1735
+          "unlock": 1735,
+          "boss": false
         },
         "E4L8": {
           "name": "Critical Mass",
           "levelnum": 7,
-          "unlock": 1736
+          "unlock": 1736,
+          "boss": false
         },
         "E4L9": {
           "name": "Derelict",
           "levelnum": 8,
-          "unlock": 1737
+          "unlock": 1737,
+          "boss": false
         },
         "E4L10": {
           "name": "The Queen",
           "levelnum": 9,
-          "unlock": 1738
+          "unlock": 1738,
+          "boss": true
         },
         "E4L11": {
           "name": "Area 51",
           "levelnum": 10,
-          "unlock": 1739
+          "unlock": 1739,
+          "boss": false
         }
       }
     }
