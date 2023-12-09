@@ -179,7 +179,9 @@ class E4L10(D3DLevel):
             ],
         )
         # 50 might also be enough but very tight
-        self.connect(ret, pillar_secrets, r.jetpack(75))
+        self.connect(
+            ret, pillar_secrets, r.jetpack(75) | (r.difficulty("hard") & r.can_jump)
+        )
 
         red_key_room = self.region(
             "Red Key Room",

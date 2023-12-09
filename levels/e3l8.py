@@ -70,14 +70,22 @@ class E3L8(D3DLevel):
         entrance_ledges = self.region(
             "Entrance Ledges",
             [
-                "Dumpster Chaingun",
-                "Dumpster Medkit",
                 "Ledge Shotgun",
                 "Blue Key Card",
                 "Outside Vent Steroids",
             ],
         )
         self.connect(ret, entrance_ledges, r.jump)
+        dumpster = self.region(
+            "Dumpster",
+            [
+                "Dumpster Chaingun",
+                "Dumpster Medkit",
+            ],
+        )
+        # Can step on a pigcops head using debris on the floor
+        self.connect(ret, dumpster, r.jump | (r.difficulty("hard")))
+
         self.connect(
             entrance_ledges,
             stadium_elevator,

@@ -72,7 +72,7 @@ class E2L3(D3DLevel):
         )
         self.restrict("Blue Key Card", r.can_crouch)
         # Can walk on top of a flying trooper. Not fun, but possible
-        self.restrict("Engine Room Armor", r.jump | r.difficulty("hard"))
+        self.restrict("Engine Room Armor", r.jump)
 
         wings = self.region(
             "Outer Wings",
@@ -131,6 +131,6 @@ class E2L3(D3DLevel):
         self.connect(
             reactor,
             reactor_top,
-            r.jetpack(50) | (r.difficulty("hard") & r.glitched & r.can_jump),
+            r.jetpack(50) | (r.difficulty("hard") & r.glitched),
         )
         return ret

@@ -94,16 +94,17 @@ class E3L1(D3DLevel):
                 "Hallway Poster Shrinker",
             ],
         )
-        self.connect(
-            ret, starting_ledges, r.jump
-        )  # Might be able to wiggle around the corner to the pit?
+        # Can get on these by stepping up over enemies
+        self.connect(ret, starting_ledges, r.jump | r.difficulty("hard"))
 
         booth_backroom = self.region(
             "Booth Backroom", ["Backrooms Switch", "Booth Backroom Steroids"]
         )
         self.connect(
-            ret, booth_backroom, r.can_crouch & r.jump
-        )  # can get in with just jetpack but we're stuck then
+            ret,
+            booth_backroom,
+            r.can_crouch & r.jump | (r.difficulty("medium") & r.can_jump),
+        )  # can get in with just jetpack but we're stuck then, possible to clip in and out with jump
 
         hatch_room = self.region(
             "Hatching Room",
