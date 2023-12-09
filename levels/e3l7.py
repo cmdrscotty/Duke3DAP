@@ -62,11 +62,13 @@ class E3L7(D3DLevel):
         self.restrict("Exit", r.jump & r.explosives)
 
         plaza = self.region("Plaza", ["Passage Armor", "Fire Station Medkit"])
-        # pretty tricky jump off a flying lizard trooper
+        # pretty tricky jump off a flying lizard trooper TODO: decide if no-sprint variant should be included
         self.connect(
             ret,
             plaza,
-            self.blue_key | r.jetpack(50) | (r.difficulty("hard") & r.can_jump),
+            self.blue_key
+            | r.jetpack(50)
+            | (r.difficulty("hard") & r.can_jump & r.can_sprint),
         )
 
         plaza_ledges = self.region(
