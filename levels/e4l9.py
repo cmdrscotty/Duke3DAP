@@ -231,7 +231,13 @@ class E4L9(D3DLevel):
             blue_key_area,
             yellow_key_area,
             self.yellow_key
-            | (r.difficulty("extreme") & r.can_jump & r.tripmine & r.glitched),
+            | (
+                r.difficulty("extreme")
+                & r.can_jump
+                & r.tripmine
+                & r.glitched
+                & (r.can_sprint | r.steroids)
+            ),
         )
 
         crate_secret = self.region(

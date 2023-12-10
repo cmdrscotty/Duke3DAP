@@ -105,12 +105,19 @@ class E3L2(D3DLevel):
         )  # Can run off the ledge, timing is a bit tricky with steroids + no run
 
         bank = self.region("Bank Entrance", ["Switch Shrinker"])
-        # Very difficult trip clip
+        # Difficult trip clip
         self.connect(
             ret,
             bank,
             self.blue_key
-            | (r.difficulty("extreme") & r.glitched & r.can_sprint & r.tripmine),
+            | (
+                r.difficulty("extreme")
+                & r.glitched
+                & r.can_jump
+                & r.can_sprint
+                & r.steroids
+                & r.tripmine
+            ),
         )
 
         bank_secrets = self.region(

@@ -122,12 +122,28 @@ class E4L11(D3DLevel):
                 "MP Blue Chaingun",
             ],
         )
-        # Clip through wall where sectors overlap
+        # Clip through wall where sectors overlap or tripclip blue door
         self.connect(
             second_area,
             blue_key_area,
             self.blue_key
-            | (r.difficulty("hard") & r.glitched & r.can_crouch & r.steroids),
+            | (
+                r.difficulty("hard")
+                & r.glitched
+                & r.can_crouch
+                & r.steroids
+                & r.can_sprint
+            )
+            | (
+                r.difficulty("extreme")
+                & r.glitched
+                & r.can_jump
+                & r.can_sprint
+                & r.steroids
+                & r.tripmine
+                & False
+                # TODO: Find out how to do this tripclip reliably
+            ),
         )
 
         blue_upper = self.region(
@@ -268,7 +284,7 @@ class E4L11(D3DLevel):
                 "Exit",
             ],
         )
-        # Featuring one of the best uses of tripmines ever
+        # Tripclip goes nuclear
         self.connect(
             past_elevator,
             yellow_key_area,

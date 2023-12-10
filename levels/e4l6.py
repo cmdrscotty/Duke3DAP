@@ -239,6 +239,7 @@ class E4L6(D3DLevel):
                 "Exit",
             ],
         )
+        # Tripclips solve everything
         self.connect(
             red_key_area,
             yellow_key_area,

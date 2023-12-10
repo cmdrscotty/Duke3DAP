@@ -171,7 +171,7 @@ class E3L1(D3DLevel):
             | (
                 r.difficulty("extreme")
                 & r.glitched
-                & r.steroids
+                & (r.steroids | r.can_sprint)
                 & r.tripmine
                 & r.can_jump
             ),
