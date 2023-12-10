@@ -17,7 +17,7 @@ from . import resources
 from .base_classes import D3DItem, D3DLevel, LocationDef
 from .id import GAME_ID, local_id, net_id
 from .items import all_items, item_groups
-from .levels import all_episodes
+from .levels import all_episodes, all_levels
 from .options import Difficulty, Duke3DOptions
 from .rules import Rules
 
@@ -794,3 +794,12 @@ class D3DWorld(World):
             encoding="utf-8",
         ) as out_file:
             out_file.write(json.dumps(out))
+
+    # Used to supply the Universal Tracker with level shuffle data
+    def interpret_slot_data(self, slot_data: Dict[str, Any]):
+        menu_region = self.multiworld.get_region("Menu", self.player)
+        unlocklist = slot_data["levels"]
+        for level in all_levels:
+            if self.item_name_to_id[level.unlock] in unlocklist:
+                level_region = level.create_region(self)
+                menu_region.connect(level_region, None, self.rules.level(level))
