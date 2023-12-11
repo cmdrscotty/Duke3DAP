@@ -147,7 +147,20 @@ class E2L2(D3DLevel):
             "Control Room",
             ["Control Room Pipebombs", "MP Control Room Freezethrower", "Lower Walls"],
         )
-        self.connect(ret, control_room, self.yellow_key)
+        # Only a few tripclip resistant doors left
+        self.connect(
+            ret,
+            control_room,
+            self.yellow_key
+            | (
+                r.difficulty("extreme")
+                & r.glitched
+                & r.can_jump
+                & r.can_sprint
+                & r.steroids
+                & r.tripmine
+            ),
+        )
 
         back_cave = self.region(
             "Overgrown Passage",

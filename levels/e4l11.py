@@ -141,8 +141,6 @@ class E4L11(D3DLevel):
                 & r.can_sprint
                 & r.steroids
                 & r.tripmine
-                & False
-                # TODO: Find out how to do this tripclip reliably
             ),
         )
 
