@@ -76,7 +76,11 @@ class E3L5(D3DLevel):
         )
         # This is so easy I refuse to classify it as glitched
         self.connect(
-            ret, subway_entrance, self.event("Gate Control") | (r.can_crouch & r.jump)
+            ret,
+            subway_entrance,
+            self.event("Gate Control")
+            | (r.can_crouch & r.jump)
+            | (r.jetpack & r.can_crouch & r.difficulty("medium")),
         )
 
         start_ledges = self.region(
@@ -111,7 +115,21 @@ class E3L5(D3DLevel):
             ret,
             studio_floor,
             self.blue_key
-            | (r.glitched & r.difficulty("medium") & r.steroids & r.can_crouch),
+            | (
+                r.glitched
+                & r.difficulty("medium")
+                & r.steroids
+                & r.can_sprint
+                & r.can_crouch
+            )
+            | (
+                r.glitched
+                & r.difficulty("extreme")
+                & r.steroids
+                & r.can_sprint
+                & r.can_jump
+                & r.tripmine
+            ),
         )
 
         studio_ledges = self.region(
@@ -134,7 +152,19 @@ class E3L5(D3DLevel):
                 "Spacecraft Night Vision Goggles",
             ],
         )
-        self.connect(studio_floor, space_craft, self.yellow_key)
+        self.connect(
+            studio_floor,
+            space_craft,
+            self.yellow_key
+            | (
+                r.glitched
+                & r.difficulty("extreme")
+                & r.steroids
+                & r.can_sprint
+                & r.can_jump
+                & r.tripmine
+            ),
+        )
 
         earth_secret = self.region(
             "Behind the Earth Screen",

@@ -223,13 +223,26 @@ class E4L3(D3DLevel):
             "Red Key Storage Upper Area",
             [
                 "Storage Upper Atomic Health",
+            ],
+        )
+        self.connect(storage_red, storage_red_upper, r.jump)
+
+        storage_red_secret = self.region(
+            "Red Key Storage Secret Area",
+            [
                 "Secret Storage Upper",
                 "Storage Upper Freezethrower",
                 "Storage Upper Pipebombs",
                 "Storage Upper Night Vision Goggles",
             ],
         )
-        self.connect(storage_red, storage_red_upper, self.red_key)
+        # Possible to use enemies to jetpack into the tighter space,
+        # 100 jetpack to make it less harsh
+        self.connect(
+            storage_red,
+            storage_red_secret,
+            r.jetpack(100) & r.difficulty("hard") | r.can_jump,
+        )
 
         trash_compactor = self.region(
             "Trash Compactor",
