@@ -80,7 +80,7 @@ class E3L5(D3DLevel):
             subway_entrance,
             self.event("Gate Control")
             | (r.can_crouch & r.jump)
-            | (r.jetpack & r.can_crouch & r.difficulty("medium")),
+            | (r.jetpack(50) & r.can_crouch & r.difficulty("medium")),
         )
 
         start_ledges = self.region(
