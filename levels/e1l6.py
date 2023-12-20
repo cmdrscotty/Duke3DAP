@@ -120,8 +120,7 @@ class E1L6(D3DLevel):
                 "Sewer Protective Boots",
             ],
         )
-        self.connect(
-            rocket_pit, sewer_ledge, r.jump
-        )  # Just out of reach again, might be able to clip up
+        # Can clip up the slope by walking into the corner of it
+        self.connect(rocket_pit, sewer_ledge, r.jump | r.difficulty("medium"))
 
         return ret

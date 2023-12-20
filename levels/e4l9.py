@@ -146,7 +146,11 @@ class E4L9(D3DLevel):
         self.connect(
             outside_dive,
             blue_key_area,
-            r.glitched & r.difficulty("medium") & r.steroids & r.can_crouch,
+            r.glitched
+            & r.difficulty("medium")
+            & (
+                (r.steroids & (r.can_crouch | r.can_jump)) | (r.can_sprint & r.can_jump)
+            ),
         )
 
         blue_key_lower = self.region(

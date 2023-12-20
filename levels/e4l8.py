@@ -119,7 +119,13 @@ class E4L8(D3DLevel):
                 "Blue Chaingun",
             ],
         )
-        self.connect(control_room, blue_key_area, self.blue_key)
+        # Not many doors left to tripclip past
+        self.connect(
+            control_room,
+            blue_key_area,
+            self.blue_key
+            | (r.glitched & r.steroids & r.can_sprint & r.can_jump & r.tripmine),
+        )
 
         blue_upper = self.region(
             "Blue Key Upper Area",
