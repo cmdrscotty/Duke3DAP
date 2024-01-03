@@ -607,10 +607,10 @@ healing_items = {
     "Medpak": ItemDef("Medpak", net_id(401), "health", {"heal": 30}),
     "Bandage": ItemDef("Bandage", net_id(402), "health", {"heal": 10}),
     "Ego Boost": ItemDef(
-        "Ego Boost", net_id(403), "health", {"heal": 2, "capacity": 2}, persistent=True
+        "Ego Boost", net_id(404), "health", {"heal": 2, "capacity": 2}, persistent=True
     ),
     "Buff Up": ItemDef(
-        "Buff Up", net_id(404), "health", {"heal": 5, "capacity": 5}, persistent=True
+        "Buff Up", net_id(405), "health", {"heal": 5, "capacity": 5}, persistent=True
     ),
 }
 

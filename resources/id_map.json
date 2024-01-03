@@ -1828,8 +1828,8 @@
     "Atomic Health": 400,
     "Medpak": 401,
     "Bandage": 402,
-    "Ego Boost": 403,
-    "Buff Up": 404,
+    "Ego Boost": 404,
+    "Buff Up": 405,
     "Celebration Trap": 500,
     "Shrink Trap": 501,
     "Death Trap": 502,
@@ -1858,5 +1858,5 @@
     "Dynamic15": 614,
     "Dynamic16": 615
   },
-  "checksum": "3e43f301636cd1f3d34427fe70dae9593159d7cdb8b16acad1ab4a4c0b55f679"
+  "checksum": "e6554dca47a7650f57d1c0a240c65edc0db10b97f29d6390d061af0aa519d90b"
 }
