@@ -31,7 +31,12 @@ class E4L6(D3DLevel):
         {"id": 291, "name": "Conveyer Upper Night Vision Goggles", "type": "sprite"},
         {"id": 293, "name": "Blue Steroids", "type": "sprite"},
         {"id": 294, "name": "Blue Armor", "type": "sprite"},
-        {"id": 295, "mp": True, "name": "MP Conveyer Upper Jetpack", "type": "sprite"},
+        {
+            "id": 295,
+            "density": 5,
+            "name": "MP Conveyer Upper Jetpack",
+            "type": "sprite",
+        },
         {"id": 296, "name": "Conveyer Upper Medkit", "type": "sprite"},
         {"id": 305, "name": "Locker Crate Chaingun", "type": "sprite"},
         {"id": 306, "name": "Basement RPG", "type": "sprite"},

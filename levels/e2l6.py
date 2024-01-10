@@ -39,7 +39,7 @@ class E2L6(D3DLevel):
         {"id": 608, "name": "Corridor Wall Night Vision Goggles", "type": "sprite"},
         {
             "id": 609,
-            "mp": True,
+            "density": 5,
             "name": "MP Toilet Night Vision Goggles",
             "type": "sprite",
         },

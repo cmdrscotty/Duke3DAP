@@ -9,7 +9,7 @@ class E2L2(D3DLevel):
     volumenum = 1
     keys = ["Yellow"]
     location_defs = [
-        {"name": "MP Underwater Jetpack", "id": 34, "type": "sprite", "mp": True},
+        {"name": "MP Underwater Jetpack", "id": 34, "type": "sprite", "density": 5},
         {"name": "Overgrown Passage Jetpack", "id": 67, "type": "sprite"},
         {"name": "Wall Panel Freezethrower", "id": 69, "type": "sprite"},
         {"name": "Underwater Devastator", "id": 82, "type": "sprite"},
@@ -19,7 +19,7 @@ class E2L2(D3DLevel):
             "name": "MP Control Room Freezethrower",
             "id": 130,
             "type": "sprite",
-            "mp": True,
+            "density": 5,
         },
         {"name": "EDF Logo Medkit", "id": 132, "type": "sprite"},
         {"name": "Pool Steroids", "id": 133, "type": "sprite"},

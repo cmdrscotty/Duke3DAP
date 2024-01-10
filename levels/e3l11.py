@@ -48,7 +48,7 @@ class E3L11(D3DLevel):
         {"id": 388, "name": "Bedroom Shrinker", "type": "sprite"},
         {"id": 390, "name": "Bathroom Freezethrower", "type": "sprite"},
         {"id": 394, "name": "Dumpster Shotgun", "type": "sprite"},
-        {"id": 399, "mp": True, "name": "MP Underwater Jetpack", "type": "sprite"},
+        {"id": 399, "density": 5, "name": "MP Underwater Jetpack", "type": "sprite"},
         {"id": 463, "name": "Blue Key Card", "type": "sprite"},
         {"id": 465, "name": "Red Key Card", "type": "sprite"},
         {"id": 120, "name": "Secret Bookshelf", "type": "sector"},

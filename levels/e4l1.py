@@ -21,7 +21,7 @@ class E4L1(D3DLevel):
         {"id": 151, "name": "Upper Canyon Ledge Pipebombs", "type": "sprite"},
         {
             "id": 152,
-            "mp": True,
+            "density": 5,
             "name": "MP Upper Canyon Ledge Steroids",
             "type": "sprite",
         },
@@ -34,13 +34,13 @@ class E4L1(D3DLevel):
         {"id": 540, "name": "Bathroom Chaingun", "type": "sprite"},
         {
             "id": 544,
-            "mp": True,
+            "density": 5,
             "name": "MP Outside Area Ledge Shotgun",
             "type": "sprite",
         },
         {
             "id": 545,
-            "mp": True,
+            "density": 5,
             "name": "MP Outside Area Ledge Chaingun",
             "type": "sprite",
         },

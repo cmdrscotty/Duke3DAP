@@ -33,12 +33,22 @@ class LocationDef:
     name: str
     type: str  # "exit", "sprite", "sector
     game_id: int  # Sprite number, sector number or exit lotag
-    mp_only: bool = False
     sprite_type: str = ""  # additional data for sprites
     density: int = 0  # defines what density settings it appears in. Higher values require more locations enabled
     x: int = 0
     y: int = 0
     z: int = 0
+
+
+# Density levels:
+# 0: Iconic locations - Always included
+# 1: Balanced with secrets - Default density with location checks at secret areas. Handpicked for interesting places to
+#    visit.
+# 2: Balanced without secrets - Default density with no checks at secret areas. Includes additional pickups in (most)
+#    secret areas to account for missing checks from the area itself
+# 3: Dense - More checks, including some nearby duplicates
+# 4: All - All single player locations, can sometimes have big clusters in single spot
+# 5: MP Only - Additional items that normally only spawn in MP only deathmatch locations
 
 
 @dataclass(frozen=True)
@@ -81,7 +91,7 @@ class D3DLevel(object):
                 name=loc_name,
                 type=loc_def["type"],
                 game_id=loc_def["id"],
-                mp_only=loc_def.get("mp", False),
+                density=loc_def.get("density", 0),
                 sprite_type=loc_def.get("sprite_type"),
             )
         return ret

@@ -107,6 +107,21 @@ class IncludeSecrets(Toggle):
     default = False
 
 
+class LocationDensity(Choice):
+    """Choose the amount of vanilla pickup spots that get converted into location checks. Higher values may create
+    an item density that is (potentially much) higher than other Archipelago games"""
+
+    display_name = "Location Density"
+    option_iconic = 0
+    option_balanced = 1
+    # 2 is reserved internally for balanced with secrets disabled as checks. It is implicitly selected as a variant
+    # of balanced based on other options
+    option_dense = 3
+    option_all = 4
+    option_include_mp_only_pickups = 5
+    default = 1
+
+
 class IncludeMultiplayerItems(Toggle):
     """Add location checks for multiplayer only item spawns"""
 
@@ -239,7 +254,7 @@ class Duke3DOptions(PerGameCommonOptions):
     area_maps: AreaMaps
     goal: Goal
     goal_percentage: GoalPercentage
-    include_mp_items: IncludeMultiplayerItems
+    location_density: LocationDensity
     include_secrets: IncludeSecrets
     episode1: Episode1
     include_e1l7: IncludeE1L7

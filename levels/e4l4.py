@@ -16,7 +16,7 @@ class E4L4(D3DLevel):
         {"id": 101, "name": "Red Upper 2 Pipebombs", "type": "sprite"},
         {
             "id": 184,
-            "mp": True,
+            "density": 5,
             "name": "MP Boat Top Protective Boots",
             "type": "sprite",
         },
@@ -26,7 +26,7 @@ class E4L4(D3DLevel):
         {"id": 204, "name": "Red Auction Night Vision Goggles", "type": "sprite"},
         {"id": 205, "name": "Red Upper 2 Holo Duke", "type": "sprite"},
         {"id": 210, "name": "Upper Main Pipebombs", "type": "sprite"},
-        {"id": 213, "mp": True, "name": "MP Red Key Medkit", "type": "sprite"},
+        {"id": 213, "density": 5, "name": "MP Red Key Medkit", "type": "sprite"},
         {"id": 214, "name": "Blue Area Hidden Night Vision Goggles", "type": "sprite"},
         {"id": 215, "name": "Blue Area Hidden Armor", "type": "sprite"},
         {"id": 218, "name": "Pool Steroids", "type": "sprite"},

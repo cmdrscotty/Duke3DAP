@@ -12,8 +12,8 @@ class E1L7(D3DLevel):
     keys = ["Blue"]
     location_defs = [
         # Don't think there's a way to get in here in single player for these two items
-        {"name": "MP Side Room Devastator", "id": 0, "type": "sprite", "mp": True},
-        {"name": "MP Side Room RPG", "id": 1, "type": "sprite", "mp": True},
+        {"name": "MP Side Room Devastator", "id": 0, "type": "sprite", "density": 5},
+        {"name": "MP Side Room RPG", "id": 1, "type": "sprite", "density": 5},
         {"name": "Waterfall 2 Atomic Health", "id": 21, "type": "sprite"},
         {"name": "Waterfall 2 Armor", "id": 22, "type": "sprite"},
         {"name": "Waterfall 1 Armor", "id": 23, "type": "sprite"},

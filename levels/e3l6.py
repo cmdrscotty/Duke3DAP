@@ -37,7 +37,7 @@ class E3L6(D3DLevel):
         {"id": 389, "name": "Blue Door Tripmine 5", "type": "sprite"},
         {
             "id": 411,
-            "mp": True,
+            "density": 5,
             "name": "MP Blue Door Night Vision Goggles",
             "type": "sprite",
         },

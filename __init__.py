@@ -56,6 +56,7 @@ class D3DWorld(World):
         self.rules: Optional[Rules] = None
         # Filled later from options
         self.fuel_per_pickup: Dict[str, int] = {}
+        self._target_density: Optional[int] = None
 
         super().__init__(world, player)
 
@@ -67,13 +68,32 @@ class D3DWorld(World):
     def net_id(cls, short_id: int) -> int:
         return net_id(short_id)
 
+    @property
+    def target_density(self) -> int:
+        """
+        Cached version of _target_density, so we don't constantly calculate it
+        """
+        if self._target_density is None:
+            density = self.get_option("location_density")
+            if density == self.options.location_density.option_balanced:
+                # bump up the value by 1 if secret areas are not enabled
+                if not self.get_option("include_secrets") and self.get_option(
+                    "goal"
+                ) in (
+                    self.options.goal.option_beat_all_levels,
+                    self.options.goal.option_beat_all_bosses,
+                ):
+                    density += 1
+            self._target_density = density
+        return self._target_density
+
     def use_location(self, location: Optional[LocationDef] = None) -> bool:
         """
         Specify if a certain location should be included, based on world settings
         """
         if location is None:
             return False
-        if location.mp_only and not self.get_option("include_mp_items"):
+        if location.density > self.target_density:
             return False
         if (
             location.type == "sector"
