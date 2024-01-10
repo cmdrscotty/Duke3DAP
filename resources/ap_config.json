@@ -2,7 +2,7 @@
   "game": "Duke Nukem 3D",
   "name": "Duke Nukem 3D",
   "game_id": 1,
-  "checksum": "e6554dca47a7650f57d1c0a240c65edc0db10b97f29d6390d061af0aa519d90b",
+  "checksum": "7a07d48e435464fe131845bdd6f849188a8ddd5b2536648e8df536d054ad6dce",
   "episodes": {
     "E1": {
       "name": "L.A. Meltdown",
@@ -7486,6 +7486,20 @@
       "persistent": true,
       "unique": true,
       "enables": "run"
+    },
+    "354": {
+      "name": "Open",
+      "type": "ability",
+      "persistent": true,
+      "unique": true,
+      "enables": "open"
+    },
+    "355": {
+      "name": "Use",
+      "type": "ability",
+      "persistent": true,
+      "unique": true,
+      "enables": "use"
     },
     "400": {
       "name": "Atomic Health",

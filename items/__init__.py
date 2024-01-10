@@ -598,6 +598,24 @@ abilities = {
         unique=True,
         progression=True,
     ),
+    "Open": ItemDef(
+        "Open",
+        net_id(354),
+        "ability",
+        {"enables": "open"},
+        persistent=True,
+        unique=True,
+        progression=True,
+    ),
+    "Use": ItemDef(
+        "Use",
+        net_id(355),
+        "ability",
+        {"enables": "use"},
+        persistent=True,
+        unique=True,
+        progression=True,
+    ),
 }
 
 healing_items = {

@@ -120,6 +120,12 @@ class Rules(object):
             self.can_crouch = self.true
             self.can_sprint = self.true
             self.can_dive = self.true
+        if world.get_option("unlock_interact"):
+            self.can_open = HasRule("Open")
+            self.can_use = HasRule("Use")
+        else:
+            self.can_open = self.true
+            self.can_use = self.true
         self.can_shrink = (
             self.true
         )  # Might make this an ability at some point, a bit narrow in scope

@@ -676,6 +676,9 @@ class D3DWorld(World):
                 ]
             )
 
+        if self.get_option("unlock_interact"):
+            itempool += self.create_item_list(["Open", "Use"])
+
         # Add progression items
         progressive_weapons = self.get_option("progressive_weapons")
         # Place explosive weapons into the required itempool

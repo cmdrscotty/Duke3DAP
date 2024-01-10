@@ -51,6 +51,13 @@ class UnlockAbilities(Toggle):
     default = True
 
 
+class UnlockInteract(Toggle):
+    """Unlock Using buttons and Opening doors as items"""
+
+    display_name = "Unlock Interaction"
+    default = False
+
+
 class AllowSaving(Toggle):
     """Enables saving to store mid level progress. If disabled, levels always have to be played from the start"""
 
@@ -227,6 +234,7 @@ class Duke3DOptions(PerGameCommonOptions):
     glitch_logic: GlitchLogic
     skill_level: SkillLevel
     unlock_abilities: UnlockAbilities
+    unlock_interact: UnlockInteract
     allow_saving: AllowSaving
     area_maps: AreaMaps
     goal: Goal

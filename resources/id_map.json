@@ -1668,6 +1668,8 @@
     "Dive": 351,
     "Crouch": 352,
     "Sprint": 353,
+    "Open": 354,
+    "Use": 355,
     "E1L1 Automap": 1600,
     "E1L1 Unlock": 1700,
     "E1L1 Red Key Card": 1800,
@@ -1858,5 +1860,5 @@
     "Dynamic15": 614,
     "Dynamic16": 615
   },
-  "checksum": "e6554dca47a7650f57d1c0a240c65edc0db10b97f29d6390d061af0aa519d90b"
+  "checksum": "7a07d48e435464fe131845bdd6f849188a8ddd5b2536648e8df536d054ad6dce"
 }
