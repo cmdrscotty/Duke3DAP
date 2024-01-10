@@ -229,13 +229,23 @@ class D3DWorld(World):
             if self.get_option("area_maps") == self.options.area_maps.option_start_with:
                 self.multiworld.start_inventory[self.player].value[level.map] = 1
         self.slot_data["settings"]["difficulty"] = self.get_option("skill_level")
+        self.slot_data["settings"]["lock"] = {}
         if self.get_option("unlock_abilities"):
-            self.slot_data["settings"]["lock"] = {
-                "crouch": True,
-                "jump": True,
-                "run": True,
-                "dive": True,
-            }
+            self.slot_data["settings"]["lock"].update(
+                {
+                    "crouch": True,
+                    "jump": True,
+                    "run": True,
+                    "dive": True,
+                }
+            )
+        if self.get_option("unlock_interact"):
+            self.slot_data["settings"]["lock"].update(
+                {
+                    "open": True,
+                    "use": True,
+                }
+            )
         self.slot_data["settings"]["no_save"] = not self.get_option("allow_saving")
 
     def create_regions(self):
