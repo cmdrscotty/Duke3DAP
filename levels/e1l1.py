@@ -9,39 +9,59 @@ class E1L1(D3DLevel):
     volumenum = 0
     keys = ["Red"]
     location_defs = [
-        {"name": "Exit Ledge Night Vision Goggles", "id": 25, "type": "sprite"},
-        {"name": "Bachelor RPG", "id": 26, "type": "sprite"},
-        {"name": "Bachelor Pipebombs", "id": 27, "type": "sprite"},
-        {"name": "Elevator Night Vision", "id": 40, "type": "sprite"},
-        {"name": "Bachelor Shotgun", "id": 44, "type": "sprite"},
-        {"name": "Bachelor Chaingun", "id": 45, "type": "sprite"},
+        {
+            "name": "Exit Ledge Night Vision Goggles",
+            "id": 25,
+            "type": "sprite",
+            "density": 1,
+        },
+        {"name": "Bachelor RPG", "id": 26, "type": "sprite", "density": 2},
+        {"name": "Bachelor Pipebombs", "id": 27, "type": "sprite", "density": 2},
+        {"name": "Elevator Night Vision", "id": 40, "type": "sprite", "density": 0},
+        {"name": "Bachelor Shotgun", "id": 44, "type": "sprite", "density": 4},
+        {"name": "Bachelor Chaingun", "id": 45, "type": "sprite", "density": 4},
         {"name": "MP Start Shotgun", "id": 81, "type": "sprite", "density": 5},
-        {"name": "Billboard RPG", "id": 82, "type": "sprite"},
+        {"name": "Billboard RPG", "id": 82, "type": "sprite", "density": 2},
         {
             "name": "MP Chaingun behind Screen",
             "id": 111,
             "type": "sprite",
             "density": 5,
         },
-        {"name": "Outside Ledge Atomic Health", "id": 170, "type": "sprite"},
-        {"name": "Cash Register Atomic Health", "id": 209, "type": "sprite"},
-        {"name": "Arcade Holo Duke", "id": 297, "type": "sprite"},
-        {"name": "Cash Register Shotgun", "id": 337, "type": "sprite"},
-        {"name": "Toilet Medkit", "id": 376, "type": "sprite"},
-        {"name": "Projector Atomic Health", "id": 400, "type": "sprite"},
-        {"name": "Vent Holo Duke", "id": 411, "type": "sprite"},
+        {
+            "name": "Outside Ledge Atomic Health",
+            "id": 170,
+            "type": "sprite",
+            "density": 3,
+        },
+        {
+            "name": "Cash Register Atomic Health",
+            "id": 209,
+            "type": "sprite",
+            "density": 0,
+        },
+        {"name": "Arcade Holo Duke", "id": 297, "type": "sprite", "density": 0},
+        {"name": "Cash Register Shotgun", "id": 337, "type": "sprite", "density": 3},
+        {"name": "Toilet Medkit", "id": 376, "type": "sprite", "density": 3},
+        {"name": "Projector Atomic Health", "id": 400, "type": "sprite", "density": 4},
+        {"name": "Vent Holo Duke", "id": 411, "type": "sprite", "density": 1},
         {"name": "MP Exit Shotgun", "id": 421, "type": "sprite", "density": 5},
-        {"name": "Projector Secret RPG", "id": 431, "type": "sprite"},
-        {"name": "Jetpack behind Screen", "id": 447, "type": "sprite"},
-        {"name": "Red Key Card", "id": 451, "type": "sprite"},
-        {"name": "Poster Steroids", "id": 527, "type": "sprite"},
+        {"name": "Projector Secret RPG", "id": 431, "type": "sprite", "density": 2},
+        {"name": "Jetpack behind Screen", "id": 447, "type": "sprite", "density": 2},
+        {"name": "Red Key Card", "id": 451, "type": "sprite", "density": 0},
+        {"name": "Poster Steroids", "id": 527, "type": "sprite", "density": 2},
         {"name": "MP Apartment Chaingun", "id": 530, "type": "sprite", "density": 5},
-        {"name": "Cinema Armor", "id": 532, "type": "sprite"},
+        {"name": "Cinema Armor", "id": 532, "type": "sprite", "density": 0},
         {"name": "MP Red Door Pipebombs", "id": 535, "type": "sprite", "density": 5},
-        {"name": "Cash Register Alcove Armor", "id": 546, "type": "sprite"},
-        {"name": "Projector Steroids", "id": 595, "type": "sprite"},
-        {"name": "Elevator Pipebombs", "id": 632, "type": "sprite"},
-        {"name": "Jetpack above Exit", "id": 633, "type": "sprite"},
+        {
+            "name": "Cash Register Alcove Armor",
+            "id": 546,
+            "type": "sprite",
+            "density": 2,
+        },
+        {"name": "Projector Steroids", "id": 595, "type": "sprite", "density": 4},
+        {"name": "Elevator Pipebombs", "id": 632, "type": "sprite", "density": 3},
+        {"name": "Jetpack above Exit", "id": 633, "type": "sprite", "density": 0},
         {"name": "Secret Behind the Screen", "id": 149, "type": "sector"},
         {"name": "Secret Projector Hidden Room", "id": 154, "type": "sector"},
         {"name": "Secret Hidden Apartment", "id": 197, "type": "sector"},
@@ -59,17 +79,32 @@ class E1L1(D3DLevel):
             self.name,
             [
                 "MP Start Shotgun",
+            ],
+        )
+
+        cinema = self.region(
+            "Cinema",
+            [
                 "Cinema Armor",
-                "Cash Register Alcove Armor",
-                "Cash Register Shotgun",
-                "Cash Register Atomic Health",
+            ],
+        )
+        self.connect(ret, cinema, r.can_open)
+
+        projector_room = self.region(
+            "Projector Room",
+            [
                 "Red Key Card",
                 "Projector Steroids",
+            ],
+        )
+        self.connect(cinema, projector_room, r.can_open | r.jetpack(50))
+
+        toilet_vent = self.region(
+            "Toilet Vent",
+            [
                 "Toilet Medkit",
-                "Secret Cash Register Alcove",
-                "Secret Projector Security Room",
-                "Arcade Holo Duke",
                 "Vent Holo Duke",
+                "Secret Projector Security Room",
             ],
         )
         # sr50 down from the top of the vent and hold crouch as you fall to make it on top
@@ -87,6 +122,37 @@ class E1L1(D3DLevel):
                 )
             ),
         )
+        self.connect(cinema, toilet_vent, r.jump)
+
+        cash_register = self.region(
+            "Cash Register",
+            [
+                "Cash Register Shotgun",
+                "Cash Register Atomic Health",
+            ],
+        )
+        self.connect(cinema, cash_register, r.can_open)
+
+        cash_register_secret = self.region(
+            "Cash Register Secret",
+            [
+                "Secret Cash Register Alcove",
+                "Cash Register Alcove Armor",
+            ],
+        )
+        self.connect(
+            cinema, cash_register_secret, r.can_use & (r.jetpack(50) | r.can_open)
+        )
+
+        arcade = self.region("Arcade", ["Arcade Holo Duke"])
+        self.connect(cinema, arcade, r.can_open)
+        self.restrict("Arcade Holo Duke", r.can_use)
+
+        exit_connector = self.region(
+            "Exit Connector",
+            ["MP Red Door Pipebombs"],
+        )
+        self.connect(arcade, exit_connector, self.red_key & r.can_open)
 
         apartment = self.region(
             "Apartments",
@@ -102,17 +168,24 @@ class E1L1(D3DLevel):
         )
         self.connect(ret, apartment, r.jump)
 
-        cinema_ledges = self.region(
-            "Cinema Ledges",
+        projector_ledges = self.region(
+            "Projector Ledges",
             [
-                "Elevator Night Vision",
-                "Elevator Pipebombs",
                 "Projector Atomic Health",
                 "Projector Secret RPG",
                 "Secret Projector Hidden Room",
             ],
         )
-        self.connect(ret, cinema_ledges, r.jump)
+        self.connect(projector_room, projector_ledges, r.jump)
+
+        elevator_alcove = self.region(
+            "Elevator Alcove",
+            [
+                "Elevator Night Vision",
+                "Elevator Pipebombs",
+            ],
+        )
+        self.connect(cinema, elevator_alcove, r.jump & r.can_open)
 
         exit_ledge = self.region(
             "Exit Ledge",
@@ -120,14 +193,16 @@ class E1L1(D3DLevel):
                 "Exit Ledge Night Vision Goggles",
                 "Exit",
                 "MP Exit Shotgun",
-                "MP Red Door Pipebombs",
             ],
         )
         self.connect(
             ret,
             exit_ledge,
-            (r.difficulty("medium") & r.jump) | r.jetpack(50) | self.red_key,
+            (r.difficulty("medium") & r.jump) | r.jetpack(50),
         )
+        self.restrict("Exit", r.can_use)
+        self.connect(exit_connector, exit_ledge, r.can_open)
+        self.connect(exit_ledge, exit_connector, r.can_open)
 
         bachelor_secret = self.region(
             "Bachelor Apartment",
@@ -152,10 +227,12 @@ class E1L1(D3DLevel):
         self.connect(
             exit_ledge, behind_screen, r.difficulty("medium")
         )  # Can just walk off the ledge
-        self.connect(ret, behind_screen, (r.can_jump & r.explosives) | r.jetpack(50))
+        self.connect(
+            projector_room, behind_screen, (r.can_jump & r.explosives & r.can_use)
+        )
+        self.connect(ret, behind_screen, r.jetpack(50))
 
-        top_of_building = self.region(f"Top of Building")
-        self.add_locations(["Jetpack above Exit"], top_of_building)
+        top_of_building = self.region(f"Top of Building", ["Jetpack above Exit"])
         self.connect(ret, top_of_building, r.jetpack(200))
         self.connect(exit_ledge, top_of_building, r.crouch_jump)  # glitched logic
         return ret
