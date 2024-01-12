@@ -9,46 +9,97 @@ class E1L2(D3DLevel):
     volumenum = 0
     keys = ["Blue", "Red", "Yellow"]
     location_defs = [
-        {"name": "Blue Key Card", "id": 27, "type": "sprite"},
-        {"name": "Sewers Jetpack", "id": 51, "type": "sprite"},
-        {"name": "Sewers Night Vision Goggles", "id": 52, "type": "sprite"},
-        {"name": "Sewers Steroids", "id": 53, "type": "sprite"},
-        {"name": "Sewers Holo Duke", "id": 54, "type": "sprite"},
-        {"name": "Vent Pipebombs", "id": 63, "type": "sprite"},
+        {"name": "Blue Key Card", "id": 27, "type": "sprite", "density": 0},
+        {"name": "Sewers Jetpack", "id": 51, "type": "sprite", "density": 2},
+        {
+            "name": "Sewers Night Vision Goggles",
+            "id": 52,
+            "type": "sprite",
+            "density": 4,
+        },
+        {"name": "Sewers Steroids", "id": 53, "type": "sprite", "density": 4},
+        {"name": "Sewers Holo Duke", "id": 54, "type": "sprite", "density": 4},
+        {"name": "Vent Pipebombs", "id": 63, "type": "sprite", "density": 4},
         {
             "name": "MP Steroids outside Strip Floor",
             "id": 120,
             "type": "sprite",
             "density": 5,
         },
-        {"name": "Night Vision Goggles behind Curtains", "id": 170, "type": "sprite"},
-        {"name": "Strippers Chaingun", "id": 174, "type": "sprite"},
-        {"name": "Yellow Key Card", "id": 179, "type": "sprite"},
-        {"name": "Dark Area Atomic Health", "id": 183, "type": "sprite"},
-        {"name": "Toilets Night Vision Goggles", "id": 186, "type": "sprite"},
-        {"name": "Pornography Store Shelves Pipebombs", "id": 188, "type": "sprite"},
-        {"name": "Pornography Store Shelves Armor", "id": 189, "type": "sprite"},
-        {"name": "Video Booth RPG", "id": 192, "type": "sprite"},
-        {"name": "Pornography Store Corner Holo Duke", "id": 208, "type": "sprite"},
-        {"name": "Red Key Card", "id": 249, "type": "sprite"},
-        {"name": "Sewers Atomic Health", "id": 260, "type": "sprite"},
-        {"name": "Sewers Pipebombs", "id": 265, "type": "sprite"},
-        {"name": "Attic Medkit", "id": 278, "type": "sprite"},
+        {
+            "name": "Night Vision Goggles behind Curtains",
+            "id": 170,
+            "type": "sprite",
+            "density": 2,
+        },
+        {"name": "Strippers Chaingun", "id": 174, "type": "sprite", "density": 2},
+        {"name": "Yellow Key Card", "id": 179, "type": "sprite", "density": 0},
+        {"name": "Dark Area Atomic Health", "id": 183, "type": "sprite", "density": 2},
+        {
+            "name": "Toilets Night Vision Goggles",
+            "id": 186,
+            "type": "sprite",
+            "density": 0,
+        },
+        {
+            "name": "Pornography Store Shelves Pipebombs",
+            "id": 188,
+            "type": "sprite",
+            "density": 2,
+        },
+        {
+            "name": "Pornography Store Shelves Armor",
+            "id": 189,
+            "type": "sprite",
+            "density": 4,
+        },
+        {"name": "Video Booth RPG", "id": 192, "type": "sprite", "density": 3},
+        {
+            "name": "Pornography Store Corner Holo Duke",
+            "id": 208,
+            "type": "sprite",
+            "density": 2,
+        },
+        {"name": "Red Key Card", "id": 249, "type": "sprite", "density": 0},
+        {"name": "Sewers Atomic Health", "id": 260, "type": "sprite", "density": 0},
+        {"name": "Sewers Pipebombs", "id": 265, "type": "sprite", "density": 3},
+        {"name": "Attic Medkit", "id": 278, "type": "sprite", "density": 2},
         {"name": "MP Outside Ledge Jetpack", "id": 366, "type": "sprite", "density": 5},
-        {"name": "Outside Ledge Armor", "id": 367, "type": "sprite"},
-        {"name": "Strip Club Entrance Shotgun", "id": 391, "type": "sprite"},
+        {"name": "Outside Ledge Armor", "id": 367, "type": "sprite", "density": 1},
+        {
+            "name": "Strip Club Entrance Shotgun",
+            "id": 391,
+            "type": "sprite",
+            "density": 0,
+        },
         {
             "name": "Video Booth Steroids",
             "id": 407,
             "type": "sprite",
             "sprite_type": "trashcan",
+            "density": 1,
         },
-        {"name": "Chaingun near Blue Key Card", "id": 442, "type": "sprite"},
-        {"name": "Vent Atomic Health", "id": 497, "type": "sprite"},
-        {"name": "Pornography Store Shotgun", "id": 515, "type": "sprite"},
+        {
+            "name": "Chaingun near Blue Key Card",
+            "id": 442,
+            "type": "sprite",
+            "density": 3,
+        },
+        {"name": "Vent Atomic Health", "id": 497, "type": "sprite", "density": 2},
+        {
+            "name": "Pornography Store Shotgun",
+            "id": 515,
+            "type": "sprite",
+            "density": 1,
+        },
         {"name": "MP Bar RPG", "id": 751, "type": "sprite", "density": 5},
-        {"name": "Pornography Store Atomic Health", "id": 822, "type": "sprite"},
-        {"name": "Construction Site Medkit", "id": 823, "type": "sprite"},
+        {
+            "name": "Pornography Store Atomic Health",
+            "id": 822,
+            "type": "sprite",
+            "density": 4,
+        },
+        {"name": "Construction Site Medkit", "id": 823, "type": "sprite", "density": 3},
         {
             "name": "MP DukeTag Outside Ledge Spawn Pipebombs",
             "id": 824,
@@ -68,8 +119,15 @@ class E1L2(D3DLevel):
 
     def main_region(self) -> Region:
         r = self.rules
-        ret = self.region(
-            self.name,
+
+        ret = self.region(self.name)
+
+        streets = self.region("Streets")
+        # can duck into the ground with jetpack even without crouch
+        self.connect(ret, streets, r.can_open | r.can_crouch | r.jetpack(50))
+
+        store = self.region(
+            "Pornography Store",
             [
                 "Secret Pornography Store Shelves",
                 "Pornography Store Shelves Armor",
@@ -80,30 +138,37 @@ class E1L2(D3DLevel):
                 "Video Booth Steroids",
                 "Video Booth RPG",
                 "Toilets Night Vision Goggles",
-                "Chaingun near Blue Key Card",
-                "Blue Key Card",
+                "Pornography Store Atomic Health",
             ],
         )
+        self.connect(streets, store, r.can_open)
+        self.restrict("Pornography Store Atomic Health", r.jump)
+        self.restrict("Toilets Night Vision Goggles", r.can_use)
+
+        apartment = self.region(
+            "Apartment", ["Chaingun near Blue Key Card", "Blue Key Card"]
+        )
+        self.connect(streets, apartment, r.jetpack(50))
+        self.restrict("Blue Key Card", r.can_open)
 
         streets_ledge = self.region(
             "Streets Ledge",
             [
                 "MP Outside Ledge Jetpack",
                 "Outside Ledge Armor",
-                "Pornography Store Atomic Health",
             ],
         )
         self.connect(ret, streets_ledge, r.jump)
 
         store_corner = self.region(
-            "Pornogrpahy Store Corner",
+            "Pornography Store Corner",
             [
                 "Pornography Store Corner Holo Duke",
                 "Secret Pornography Store Corner",
             ],
         )
         # can't fit up with jetpack
-        self.connect(ret, store_corner, r.can_jump)
+        self.connect(ret, store_corner, r.can_open & r.can_jump)
 
         strip_club = self.region(
             "Strip Club",
@@ -114,8 +179,8 @@ class E1L2(D3DLevel):
                 "Red Key Card",
             ],
         )
-        self.restrict("Red Key Card", r.can_crouch)
-        self.connect(ret, strip_club, self.yellow_key)
+        self.restrict("Red Key Card", r.can_crouch & r.can_open)
+        self.connect(ret, strip_club, self.yellow_key & r.can_open)
 
         sewers = self.region(
             "Sewers",
@@ -130,7 +195,7 @@ class E1L2(D3DLevel):
             ],
         )
         # One way connection only
-        self.connect(strip_club, sewers, r.true)
+        self.connect(strip_club, sewers, r.can_open)
 
         construction_site = self.region(
             "Construction Site", ["Construction Site Medkit", "Yellow Key Card"]
@@ -138,7 +203,7 @@ class E1L2(D3DLevel):
         self.connect(
             ret,
             construction_site,
-            (self.blue_key | (r.glitched & r.can_crouch)) & r.jump,
+            (self.blue_key | (r.glitched & r.can_crouch & r.can_use)) & r.jump,
         )  # Can press button from outside
 
         # Can get to sewers, but the unlock for the door is on the other side only, so no connection to strip club
@@ -147,7 +212,7 @@ class E1L2(D3DLevel):
         self.connect(
             strip_club,
             construction_site,
-            r.difficulty("medium")
+            r.difficulty("hard")
             & ((r.devastator & r.jetpack(50)) | r.tripmine & r.jetpack(100)),
         )
 
@@ -159,23 +224,43 @@ class E1L2(D3DLevel):
                 "Vent Pipebombs",
                 "Secret Behind Strippers",
                 "Strippers Chaingun",
-                "Secret Hidden Ledge behind Curtains",
-                "Night Vision Goggles behind Curtains",
-                "Attic Medkit",
-                "Secret Attic Hidden Compartment",
-                "Exit",
             ],
         )
         # Can't do anything in this without jumping, but does not require crouch to enter the vent
-        self.connect(strip_club, dance_floor, self.red_key & r.jump)
-        # Need to be able to run or jetpack to reach ledge
-        self.restrict(
-            "Secret Hidden Ledge behind Curtains",
-            r.can_sprint | r.jetpack(50),
+        self.connect(strip_club, dance_floor, self.red_key & r.can_open & r.jump)
+
+        curtain_ledge = self.region(
+            "Ledge behind Curtain",
+            [
+                "Secret Hidden Ledge behind Curtains",
+                "Night Vision Goggles behind Curtains",
+            ],
         )
-        self.restrict(
-            "Night Vision Goggles behind Curtains",
-            r.can_sprint | r.jetpack(50),
+        self.connect(
+            strip_club,
+            curtain_ledge,
+            (r.difficulty("medium") & r.can_jump) | r.jetpack(50),
         )
+
+        # This level has a cutscene exit trigger, so we don't need Use to trigger it!
+        attic = self.region(
+            "Attic",
+            [
+                "Exit",
+            ],
+        )
+        self.connect(attic, curtain_ledge, r.can_sprint)
+        self.connect(
+            strip_club,
+            attic,
+            (r.difficulty("medium") & r.can_jump)
+            | (r.can_use & r.can_jump)
+            | r.jetpack(50),
+        )
+
+        attic_secret = self.region(
+            "Attic Compartment", ["Attic Medkit", "Secret Attic Hidden Compartment"]
+        )
+        self.connect(attic, attic_secret, r.can_open)
 
         return ret
