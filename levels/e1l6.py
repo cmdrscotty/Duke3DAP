@@ -9,35 +9,65 @@ class E1L6(D3DLevel):
     volumenum = 0
     keys = ["Blue", "Red"]
     location_defs = [
-        {"name": "Rocket Jetpack", "id": 0, "type": "sprite"},
-        {"name": "Toxic Waste Pool Shotgun", "id": 123, "type": "sprite"},
-        {"name": "Start Protective Boots", "id": 124, "type": "sprite"},
-        {"name": "Outside Rocket Night Vision Goggles", "id": 385, "type": "sprite"},
-        {"name": "Dark Room RPG", "id": 395, "type": "sprite"},
-        {"name": "Dark Room Pipebombs 1", "id": 397, "type": "sprite"},
-        {"name": "Dark Room Pipebombs 2", "id": 398, "type": "sprite"},
-        {"name": "Spiral Chaingun", "id": 406, "type": "sprite"},
-        {"name": "Dark Room Atomic Health", "id": 410, "type": "sprite"},
-        {"name": "Blue Key Card", "id": 518, "type": "sprite"},
-        {"name": "Red Key Card", "id": 539, "type": "sprite"},
-        {"name": "Sewer Computers Atomic Health 1", "id": 561, "type": "sprite"},
-        {"name": "Sewer Computers Atomic Health 2", "id": 562, "type": "sprite"},
-        {"name": "Sewer Computers Atomic Health 3", "id": 563, "type": "sprite"},
-        {"name": "Sewer Protective Boots", "id": 567, "type": "sprite"},
-        {"name": "Dark Room Medkit", "id": 575, "type": "sprite"},
-        {"name": "Toxic Waste Pool Atomic Health 2", "id": 588, "type": "sprite"},
-        {"name": "Toxic Waste Pool Atomic Health 1", "id": 589, "type": "sprite"},
+        {"name": "Rocket Jetpack", "id": 0, "type": "sprite", "density": 0},
+        {"name": "Toxic Waste Pool Shotgun", "id": 123, "type": "sprite", "density": 0},
+        {"name": "Start Protective Boots", "id": 124, "type": "sprite", "density": 0},
+        {
+            "name": "Outside Rocket Night Vision Goggles",
+            "id": 385,
+            "type": "sprite",
+            "density": 1,
+        },
+        {"name": "Dark Room RPG", "id": 395, "type": "sprite", "density": 3},
+        {"name": "Dark Room Pipebombs 1", "id": 397, "type": "sprite", "density": 3},
+        {"name": "Dark Room Pipebombs 2", "id": 398, "type": "sprite", "density": 4},
+        {"name": "Spiral Chaingun", "id": 406, "type": "sprite", "density": 3},
+        {"name": "Dark Room Atomic Health", "id": 410, "type": "sprite", "density": 0},
+        {"name": "Blue Key Card", "id": 518, "type": "sprite", "density": 0},
+        {"name": "Red Key Card", "id": 539, "type": "sprite", "density": 0},
+        {
+            "name": "Sewer Computers Atomic Health 1",
+            "id": 561,
+            "type": "sprite",
+            "density": 2,
+        },
+        {
+            "name": "Sewer Computers Atomic Health 2",
+            "id": 562,
+            "type": "sprite",
+            "density": 4,
+        },
+        {
+            "name": "Sewer Computers Atomic Health 3",
+            "id": 563,
+            "type": "sprite",
+            "density": 4,
+        },
+        {"name": "Sewer Protective Boots", "id": 567, "type": "sprite", "density": 0},
+        {"name": "Dark Room Medkit", "id": 575, "type": "sprite", "density": 1},
+        {
+            "name": "Toxic Waste Pool Atomic Health 2",
+            "id": 588,
+            "type": "sprite",
+            "density": 4,
+        },
+        {
+            "name": "Toxic Waste Pool Atomic Health 1",
+            "id": 589,
+            "type": "sprite",
+            "density": 2,
+        },
         {"name": "MP Spiral Holo Duke", "id": 625, "type": "sprite", "density": 5},
-        {"name": "Vent Pipebombs", "id": 642, "type": "sprite"},
-        {"name": "Launch Room Steroids", "id": 643, "type": "sprite"},
-        {"name": "Start Armor", "id": 647, "type": "sprite"},
+        {"name": "Vent Pipebombs", "id": 642, "type": "sprite", "density": 2},
+        {"name": "Launch Room Steroids", "id": 643, "type": "sprite", "density": 3},
+        {"name": "Start Armor", "id": 647, "type": "sprite", "density": 1},
         {"name": "MP Start Steroids", "id": 690, "type": "sprite", "density": 5},
         {"name": "MP Rocket Pit Pipebombs", "id": 691, "type": "sprite", "density": 5},
         {"name": "MP Toxic Waste Pool RPG", "id": 692, "type": "sprite", "density": 5},
         {"name": "MP Rocket Chaingun", "id": 693, "type": "sprite", "density": 5},
         {"name": "MP Gate Room Shotgun", "id": 696, "type": "sprite", "density": 5},
-        {"name": "Launch Room Holo Duke", "id": 697, "type": "sprite"},
-        {"name": "Gate Room Armor", "id": 707, "type": "sprite"},
+        {"name": "Launch Room Holo Duke", "id": 697, "type": "sprite", "density": 1},
+        {"name": "Gate Room Armor", "id": 707, "type": "sprite", "density": 2},
         {"name": "MP Start Jetpack", "id": 726, "type": "sprite", "density": 5},
         {"name": "Secret Sewer Computers", "id": 218, "type": "sector"},
         {"name": "Secret Toxic Waste Pool", "id": 224, "type": "sector"},
@@ -46,6 +76,7 @@ class E1L6(D3DLevel):
         {"name": "Exit", "id": 0, "type": "exit"},
     ]
     must_dive = True
+    events = ["Ready Rocket"]
 
     def main_region(self) -> Region:
         r = self.rules
@@ -57,6 +88,13 @@ class E1L6(D3DLevel):
                 "MP Start Steroids",
                 "Start Protective Boots",
                 "Start Armor",
+            ],
+        )
+        self.restrict("Start Protective Boots", r.can_open)
+
+        past_forcefield = self.region(
+            "Past Forcefield",
+            [
                 "Spiral Chaingun",
                 "MP Spiral Holo Duke",
                 "Blue Key Card",
@@ -67,6 +105,7 @@ class E1L6(D3DLevel):
                 "Dark Room Atomic Health",
             ],
         )
+        self.connect(ret, past_forcefield, r.can_use)
         self.restrict("Dark Room Atomic Health", r.can_sprint | r.jump)
 
         waste_pool = self.region(
@@ -79,27 +118,52 @@ class E1L6(D3DLevel):
                 "MP Toxic Waste Pool RPG",
             ],
         )
-        self.connect(ret, waste_pool, r.can_dive)
+        self.connect(past_forcefield, waste_pool, r.can_dive)
 
         vent = self.region(
             "Dark Room Vent", ["Secret Dark Room Ceiling Vent", "Vent Pipebombs"]
         )
         # Plenty of lizard troopers to jump on
-        self.connect(ret, vent, r.jetpack(50) | (r.difficulty("medium") & r.can_jump))
+        self.connect(
+            past_forcefield, vent, r.jetpack(50) | (r.difficulty("medium") & r.can_jump)
+        )
+
+        gate_corridor = self.region(
+            "Gate Corridor",
+            [
+                "MP Gate Room Shotgun",
+                "Red Key Card",
+            ],
+        )
+        # need to open door or get up through window, but need to lure an enemy from far to jump on them
+        self.connect(
+            past_forcefield,
+            gate_corridor,
+            self.blue_key
+            & (r.can_open | r.jetpack(50) | (r.difficulty("hard") & r.can_jump)),
+        )
+
+        gate_secret = self.region(
+            "Gate Room Secret", ["Secret Gate Room Wall", "Gate Room Armor"]
+        )
+        self.connect(gate_corridor, gate_secret, r.can_open)
 
         launch_pad = self.region(
             "Launch Pad",
             [
-                "MP Gate Room Shotgun",
-                "Red Key Card",
-                "Secret Gate Room Wall",
-                "Gate Room Armor",
                 "Outside Rocket Night Vision Goggles",
-                "Rocket Jetpack",
-                "MP Rocket Chaingun",
             ],
         )
-        self.connect(ret, launch_pad, self.blue_key | r.crouch_jump)
+        self.connect(gate_corridor, launch_pad, r.true)
+        self.connect(past_forcefield, launch_pad, r.crouch_jump)
+        self.connect(launch_pad, gate_corridor, r.true)
+
+        rocket = self.region(
+            "Rocket",
+            ["Rocket Jetpack", "MP Rocket Chaingun", "Ready Rocket"],
+        )
+        self.connect(launch_pad, rocket, r.can_open)
+        self.restrict("Ready Rocket", self.red_key)
 
         launch_room = self.region(
             "Launch Room", ["Launch Room Steroids", "Launch Room Holo Duke"]
@@ -108,19 +172,29 @@ class E1L6(D3DLevel):
 
         rocket_pit = self.region("Rocket Pit", ["MP Rocket Pit Pipebombs", "Exit"])
         # Need to get out of the launch room again. Might be possible to activate this from outside somehow?
-        self.connect(launch_room, rocket_pit, self.red_key & r.jump)
+        self.connect(
+            launch_room, rocket_pit, self.event("Ready Rocket") & r.can_use & r.jump
+        )
+        self.restrict("Exit", r.can_use)
 
         sewer_ledge = self.region(
             "Sewer Ledge",
             [
-                "Secret Sewer Computers",
-                "Sewer Computers Atomic Health 1",
-                "Sewer Computers Atomic Health 2",
-                "Sewer Computers Atomic Health 3",
                 "Sewer Protective Boots",
             ],
         )
         # Can clip up the slope by walking into the corner of it
         self.connect(rocket_pit, sewer_ledge, r.jump | r.difficulty("medium"))
+
+        sewer_secret = self.region(
+            "Sewer Ledge Secret",
+            [
+                "Secret Sewer Computers",
+                "Sewer Computers Atomic Health 1",
+                "Sewer Computers Atomic Health 2",
+                "Sewer Computers Atomic Health 3",
+            ],
+        )
+        self.connect(sewer_ledge, sewer_secret, r.can_open)
 
         return ret
