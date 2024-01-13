@@ -219,21 +219,38 @@ class E1L3(D3DLevel):
         )
         self.connect(hallway, control_room, self.blue_key & r.can_open)
 
+        control_room_center = self.region("Control Room Center")
+        # can wiggle through window
+        self.connect(control_room, control_room_center, r.true)
+        # this transition only matters if we come from the vent, so add the jetpack requirements from that on top
+        self.connect(
+            control_room_center,
+            control_room,
+            r.can_open | r.glitch_kick | r.jetpack(200),
+        )
+
         control_room_top = self.region(
             "Control Room Top",
             ["Unlock Cell Blocks", "Control Room Chaingun"],
         )
         # Doors automatically open when using key!
-        self.connect(control_room, control_room_top, self.red_key)
+        self.connect(control_room_center, control_room_top, self.red_key)
         self.connect(control_room_top, control_vent, r.jump)
         # Can easily clip up corner
         self.restrict("Control Room Chaingun", r.jump | r.difficulty("medium"))
         self.restrict("Unlock Cell Blocks", r.can_open & r.can_use)
+        # Okay, I lied earlier. We can get into the vent proper if we are not on a jetpack. This requires
+        # abusing a liztrooper to push you, but they are notoriously annoying to get into the vent
+        # It is technically possible with just jumping on one, but the most reliable idea is to just float in with
+        # a jetpack and hope the trooper follows you
+        self.connect(
+            control_vent, control_room_top, r.difficulty("extreme") & r.jetpack(180)
+        )
 
         control_room_bridge = self.region("Control Room Outside Bridge")
         # Can jump on a pigcop to get up, either sprint past explosives or blow em up to get inside
         self.connect(
-            control_room,
+            control_room_center,
             control_room_bridge,
             r.jetpack(50) | (r.difficulty("medium") & r.can_jump),
         )
@@ -243,11 +260,15 @@ class E1L3(D3DLevel):
             r.can_open
             & (r.explosives | ((r.can_sprint | r.steroids) & r.difficulty("hard"))),
         )
+        # Seem to always get squished without steroids
         self.connect(
             control_room_top,
             control_room_bridge,
-            r.can_open
-            & (r.explosives | ((r.can_sprint | r.steroids) & r.difficulty("hard"))),
+            (
+                r.can_open
+                & (r.explosives | ((r.can_sprint | r.steroids) & r.difficulty("hard")))
+            )
+            | (r.crouch_jump & r.steroids),
         )
 
         control_room_ledges = self.region(
@@ -265,7 +286,7 @@ class E1L3(D3DLevel):
         self.add_locations(["MP Courtyard Medkit", "Red Key Card"], courtyard)
         # Can also just kick the yellow door to open it
         self.connect(
-            control_room,
+            control_room_center,
             courtyard,
             (self.yellow_key & r.can_open) | r.glitch_kick,
         )
