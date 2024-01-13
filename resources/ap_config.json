@@ -2,7 +2,7 @@
   "game": "Duke Nukem 3D",
   "name": "Duke Nukem 3D",
   "game_id": 1,
-  "checksum": "c1138f02dd1d0e7b24728fdd5dfc04d5f3ebe62c6c01c21d9d5ba7fc96702b23",
+  "checksum": "9d7ff75b81784d1f179f785628981cf4dbea2bcde88c93f4788a7e99da6b2c6b",
   "episodes": {
     "E1": {
       "name": "L.A. Meltdown",
@@ -1504,7 +1504,7 @@
         },
         "234": {
           "id": 239,
-          "name": "Main Room RPG"
+          "name": "Water Tank RPG"
         },
         "235": {
           "id": 240,

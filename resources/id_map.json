@@ -295,7 +295,7 @@
     "E1L7 Water Tank Devastator": 236,
     "E1L7 Water Tank Freezethrower": 237,
     "E1L7 Water Tank Chaingun": 238,
-    "E1L7 Main Room RPG": 239,
+    "E1L7 Water Tank RPG": 239,
     "E1L7 Water Tank Jetpack": 240,
     "E1L7 Water Tank Tripmine 1": 241,
     "E1L7 Water Tank Tripmine 2": 242,
@@ -1860,5 +1860,5 @@
     "Dynamic15": 614,
     "Dynamic16": 615
   },
-  "checksum": "c1138f02dd1d0e7b24728fdd5dfc04d5f3ebe62c6c01c21d9d5ba7fc96702b23"
+  "checksum": "9d7ff75b81784d1f179f785628981cf4dbea2bcde88c93f4788a7e99da6b2c6b"
 }
