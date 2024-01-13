@@ -110,8 +110,8 @@ class E3L6(D3DLevel):
                 "Alien Base Devastator",
             ],
         )
-        # Can auto kick the door open. Pretty sure that's a glitch
-        self.connect(ret, blue_door, self.blue_key | r.glitched)
+        # Can auto kick the door open because it's a multi-part door connected as a switch
+        self.connect(ret, blue_door, self.blue_key | r.glitch_kick)
         self.restrict("Secret Post Box Wall", r.jump)
 
         library = self.region("Library", ["Library Pipebombs"])

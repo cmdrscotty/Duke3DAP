@@ -186,6 +186,10 @@ class Rules(object):
         self.crouch_jump = (
             self.glitched & self.can_jump & self.can_crouch & self.can_sprint
         )
+        # Kicks can activate walls with a lotag set, which is the case for multi-part doors. This allows bypassing
+        # some lock checks
+        # Kicks still require Use to activate switches
+        self.glitch_kick = self.glitched & self.can_use
 
         # Some simplifications for progressive items
         self.rpg = self.has_group("RPG")

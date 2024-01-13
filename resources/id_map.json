@@ -80,12 +80,12 @@
     "E1L3 Control Room Secret Atomic Health": 60,
     "E1L3 Control Room Vent Armor": 61,
     "E1L3 Gallery Medkit": 62,
-    "E1L3 Cell Black 01 Broken Wall Atomic Health": 63,
+    "E1L3 Cell Block 01 Broken Wall Atomic Health": 63,
     "E1L3 Electric Chair Shotgun": 64,
     "E1L3 Control Room Secret Pipebombs": 65,
     "E1L3 Submarine Gate Scuba Gear": 66,
     "E1L3 Gear Room Atomic Health": 67,
-    "E1L3 Cell BLock 01 RPG": 68,
+    "E1L3 Cell Block 01 RPG": 68,
     "E1L3 MP Courtyard Medkit": 69,
     "E1L3 Yellow Key Card": 70,
     "E1L3 Courtyard Tunnel Atomic Health 1": 71,
@@ -1860,5 +1860,5 @@
     "Dynamic15": 614,
     "Dynamic16": 615
   },
-  "checksum": "7a07d48e435464fe131845bdd6f849188a8ddd5b2536648e8df536d054ad6dce"
+  "checksum": "c1138f02dd1d0e7b24728fdd5dfc04d5f3ebe62c6c01c21d9d5ba7fc96702b23"
 }

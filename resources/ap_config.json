@@ -2,7 +2,7 @@
   "game": "Duke Nukem 3D",
   "name": "Duke Nukem 3D",
   "game_id": 1,
-  "checksum": "7a07d48e435464fe131845bdd6f849188a8ddd5b2536648e8df536d054ad6dce",
+  "checksum": "c1138f02dd1d0e7b24728fdd5dfc04d5f3ebe62c6c01c21d9d5ba7fc96702b23",
   "episodes": {
     "E1": {
       "name": "L.A. Meltdown",
@@ -611,7 +611,7 @@
         },
         "185": {
           "id": 63,
-          "name": "Cell Black 01 Broken Wall Atomic Health"
+          "name": "Cell Block 01 Broken Wall Atomic Health"
         },
         "236": {
           "id": 64,
@@ -631,7 +631,7 @@
         },
         "411": {
           "id": 68,
-          "name": "Cell BLock 01 RPG"
+          "name": "Cell Block 01 RPG"
         },
         "413": {
           "id": 69,
