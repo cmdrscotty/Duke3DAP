@@ -219,15 +219,21 @@ class E1L5(D3DLevel):
         # Can pick it up pushing into the pillar from the back left at just the right angle
         self.restrict("Blue Key Card", r.jump | r.difficulty("medium"))
         self.restrict("Earthquake Night Vision Goggles", r.jump)
-        self.restrict("Start Protective Boots", r.can_open)
+        # Tripclip
+        self.restrict(
+            "Start Protective Boots",
+            r.can_open | (r.glitched & r.tripmine & r.can_jump & r.sprint & r.steroids),
+        )
 
         blue_gate = self.region("Beyond Blue Key Gate", ["Pipebombs near Blue Gate"])
         # Gate opens automatically, no Open required
         # Crouch jump has a reliable setup, very hard to time without one
+        # Easier path is just to trooper hop around the outside on hard difficulty
+        # which removes any need for glitched
         self.connect(
             ret,
             blue_gate,
-            self.blue_key | (r.difficulty("hard") & r.crouch_jump) | r.jetpack(50),
+            self.blue_key | r.difficulty("hard") | r.jetpack(50),
         )
 
         fault_trigger = self.region(
@@ -263,8 +269,8 @@ class E1L5(D3DLevel):
         self.connect(fault_trigger, beyond_fault, self.event("Earthquake"))
         # can clip through, skipping the hand trigger
         self.restrict("Fire Pit RPG", (r.jump & r.can_use) | r.crouch_jump)
-        # Can't find a SR50 setup for this without sprint speed
-        self.restrict("Waterfall Chaingun", r.jump | r.sprint)
+        # Can sr50 or sprint onto the waterfall alcove
+        self.restrict("Waterfall Chaingun", r.jump | r.sr50)
 
         fault_doors = self.region(
             "Doors after Earthquake",
@@ -347,7 +353,8 @@ class E1L5(D3DLevel):
                 "Secret Dancing Shaman",
             ],
         )
-        self.connect(red_waterfall, shaman_secret, r.can_use)
+        # Can clip through the right side lava waterfall
+        self.connect(red_waterfall, shaman_secret, r.can_use | r.crouch_jump)
 
         ship_entrance = self.region(
             "Ship Entrance",
@@ -377,7 +384,10 @@ class E1L5(D3DLevel):
         self.connect(
             ship_entrance,
             top_of_spaceship,
-            r.can_open | r.jetpack(250) | (r.jetpack(200) & r.difficulty("medium")),
+            r.can_open
+            | r.jetpack(250)
+            | (r.jetpack(200) & r.difficulty("medium"))
+            | r.fast_crouch_jump,
         )
 
         spaceship = self.region(
@@ -397,7 +407,11 @@ class E1L5(D3DLevel):
         self.connect(ship_entrance, spaceship, r.can_open)
         # Clip to DM exit near boss drop
         self.restrict(
-            "Exit", r.can_kill_boss_1 | (r.difficulty("hard") & r.fast_crouch_jump)
+            "Exit",
+            r.can_kill_boss_1
+            | (r.glitched & r.difficulty("hard") & r.steroids & r.can_jump),
         )
+        self.restrict("Spaceship Shaft RPG", r.jump)
+        self.restrict("Spaceship Shaft Chaingun", r.jump)
 
         return ret
