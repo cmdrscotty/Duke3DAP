@@ -106,7 +106,7 @@ class E1L6(D3DLevel):
             ],
         )
         self.connect(ret, past_forcefield, r.can_use)
-        self.restrict("Dark Room Atomic Health", r.sprint | r.jump)
+        self.restrict("Dark Room Atomic Health", r.sr50 | r.jump)
 
         waste_pool = self.region(
             "Secret Toxic Waste Pool",
@@ -128,8 +128,10 @@ class E1L6(D3DLevel):
             past_forcefield, vent, r.jetpack(50) | (r.difficulty("medium") & r.can_jump)
         )
 
-        gate_corridor = self.region(
-            "Gate Corridor",
+        gate_corridor = self.region("Gate Corridor")
+
+        gate_corridor_room = self.region(
+            "Gate Corridor Room",
             [
                 "MP Gate Room Shotgun",
                 "Red Key Card",
@@ -137,10 +139,19 @@ class E1L6(D3DLevel):
         )
         # need to open door or get up through window, but need to lure an enemy from far to jump on them
         self.connect(
+            gate_corridor,
+            gate_corridor_room,
+            r.can_open
+            | r.jetpack(50)
+            | (
+                (r.difficulty("extreme") | (r.sprint & r.difficulty("hard")))
+                & r.can_jump
+            ),
+        )
+        self.connect(
             past_forcefield,
             gate_corridor,
-            self.blue_key
-            & (r.can_open | r.jetpack(50) | (r.difficulty("hard") & r.can_jump)),
+            self.blue_key | r.crouch_jump,
         )
 
         gate_secret = self.region(
@@ -154,7 +165,7 @@ class E1L6(D3DLevel):
                 "Outside Rocket Night Vision Goggles",
             ],
         )
-        self.connect(gate_corridor, launch_pad, r.true)
+        self.connect(gate_corridor_room, launch_pad, r.true)
         self.connect(past_forcefield, launch_pad, r.crouch_jump)
         self.connect(launch_pad, gate_corridor, r.true)
 
@@ -168,7 +179,11 @@ class E1L6(D3DLevel):
         launch_room = self.region(
             "Launch Room", ["Launch Room Steroids", "Launch Room Holo Duke"]
         )
-        self.connect(launch_pad, launch_room, r.can_crouch)
+        self.connect(
+            launch_pad,
+            launch_room,
+            r.can_crouch | (r.difficulty("hard") & r.jetpack(50)),
+        )
 
         rocket_pit = self.region("Rocket Pit", ["MP Rocket Pit Pipebombs", "Exit"])
         # Need to get out of the launch room again. Might be possible to activate this from outside somehow?
@@ -195,6 +210,11 @@ class E1L6(D3DLevel):
                 "Sewer Computers Atomic Health 3",
             ],
         )
-        self.connect(sewer_ledge, sewer_secret, r.can_open)
+        self.connect(
+            sewer_ledge,
+            sewer_secret,
+            r.can_open
+            | (r.glitched & r.can_sprint & r.steroids & r.can_jump & r.tripmine),
+        )
 
         return ret
