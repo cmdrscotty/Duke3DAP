@@ -409,7 +409,7 @@ class E1L5(D3DLevel):
         self.restrict(
             "Exit",
             r.can_kill_boss_1
-            | (r.glitched & r.difficulty("hard") & r.steroids & r.can_jump),
+            | (r.glitched & r.difficulty("hard") & r.fast_sprint & r.can_jump),
         )
         self.restrict("Spaceship Shaft RPG", r.jump)
         self.restrict("Spaceship Shaft Chaingun", r.jump)
