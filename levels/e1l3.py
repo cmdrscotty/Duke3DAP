@@ -182,7 +182,7 @@ class E1L3(D3DLevel):
             "Behind Chapel Altar", ["Secret Chapel Window", "Chapel Chaingun"]
         )
         # Crouchjump through the left side
-        self.connect(altar, behind_altar, r.can_use | (r.crouch_jump & r.steroids))
+        self.connect(altar, behind_altar, r.can_use | r.fast_crouch_jump)
 
         gears = self.region(
             "Gear Room",
