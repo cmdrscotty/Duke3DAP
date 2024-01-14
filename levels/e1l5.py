@@ -233,7 +233,7 @@ class E1L5(D3DLevel):
         self.connect(
             ret,
             blue_gate,
-            self.blue_key | r.difficulty("hard") | r.jetpack(50),
+            self.blue_key | (r.difficulty("hard") & r.can_jump) | r.jetpack(50),
         )
 
         fault_trigger = self.region(
