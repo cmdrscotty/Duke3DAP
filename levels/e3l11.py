@@ -9,48 +9,75 @@ class E3L11(D3DLevel):
     volumenum = 2
     keys = ["Blue", "Red"]
     location_defs = [
-        {"id": 20, "name": "Conveyor Control Armor", "type": "sprite"},
-        {"id": 21, "name": "Conveyor Night Vision Goggles", "type": "sprite"},
-        {"id": 24, "name": "Streets Pipebombs", "type": "sprite"},
-        {"id": 33, "name": "Underwater Shotgun", "type": "sprite"},
-        {"id": 61, "name": "Sewer Tripmine 1", "type": "sprite"},
-        {"id": 62, "name": "Sewer Tripmine 2", "type": "sprite"},
-        {"id": 72, "name": "Streets Steroids", "type": "sprite"},
-        {"id": 73, "name": "Ledge Steroids", "type": "sprite"},
-        {"id": 81, "name": "Conveyor Control Pipebombs", "type": "sprite"},
+        {"id": 20, "name": "Conveyor Control Armor", "type": "sprite", "density": 4},
+        {
+            "id": 21,
+            "name": "Conveyor Night Vision Goggles",
+            "type": "sprite",
+            "density": 3,
+        },
+        {"id": 24, "name": "Streets Pipebombs", "type": "sprite", "density": 4},
+        {"id": 33, "name": "Underwater Shotgun", "type": "sprite", "density": 3},
+        {"id": 61, "name": "Sewer Tripmine 1", "type": "sprite", "density": 4},
+        {"id": 62, "name": "Sewer Tripmine 2", "type": "sprite", "density": 4},
+        {"id": 72, "name": "Streets Steroids", "type": "sprite", "density": 3},
+        {"id": 73, "name": "Ledge Steroids", "type": "sprite", "density": 3},
+        {
+            "id": 81,
+            "name": "Conveyor Control Pipebombs",
+            "type": "sprite",
+            "density": 2,
+        },
         {
             "id": 210,
             "name": "Trashcan Atomic Health",
             "type": "sprite",
             "sprite_type": "trashcan",
+            "density": 4,
         },
-        {"id": 211, "name": "Toppled Building Jetpack", "type": "sprite"},
+        {"id": 211, "name": "Toppled Building Jetpack", "type": "sprite", "density": 0},
         {
             "id": 304,
             "name": "Trashcan Shotgun",
             "type": "sprite",
             "sprite_type": "trashcan",
+            "density": 3,
         },
-        {"id": 361, "name": "Underwater RPG", "type": "sprite"},
-        {"id": 363, "name": "Underwater Atomic Health", "type": "sprite"},
-        {"id": 364, "name": "Sewer Armor", "type": "sprite"},
-        {"id": 366, "name": "Streets Devastator", "type": "sprite"},
-        {"id": 367, "name": "Ledge Medkit", "type": "sprite"},
-        {"id": 372, "name": "Ledge Night Vision Goggles", "type": "sprite"},
-        {"id": 376, "name": "Office Ledge Atomic Health 1", "type": "sprite"},
-        {"id": 377, "name": "Office Ledge Atomic Health 2", "type": "sprite"},
-        {"id": 378, "name": "Streets Medkit", "type": "sprite"},
-        {"id": 379, "name": "Streets Armor", "type": "sprite"},
-        {"id": 381, "name": "Office Chaingun", "type": "sprite"},
-        {"id": 384, "name": "Office Pipebombs", "type": "sprite"},
-        {"id": 386, "name": "Terminator RPG", "type": "sprite"},
-        {"id": 387, "name": "Conveyor Freezethrower", "type": "sprite"},
-        {"id": 388, "name": "Bedroom Shrinker", "type": "sprite"},
-        {"id": 390, "name": "Bathroom Freezethrower", "type": "sprite"},
-        {"id": 394, "name": "Dumpster Shotgun", "type": "sprite"},
-        {"id": 399, "density": 5, "name": "MP Underwater Jetpack", "type": "sprite"},
-        {"id": 463, "name": "Blue Key Card", "type": "sprite"},
-        {"id": 465, "name": "Red Key Card", "type": "sprite"},
+        {"id": 361, "name": "Underwater RPG", "type": "sprite", "density": 0},
+        {"id": 363, "name": "Underwater Atomic Health", "type": "sprite", "density": 1},
+        {"id": 364, "name": "Sewer Armor", "type": "sprite", "density": 1},
+        {"id": 366, "name": "Streets Devastator", "type": "sprite", "density": 0},
+        {"id": 367, "name": "Ledge Medkit", "type": "sprite", "density": 1},
+        {
+            "id": 372,
+            "name": "Ledge Night Vision Goggles",
+            "type": "sprite",
+            "density": 1,
+        },
+        {
+            "id": 376,
+            "name": "Office Ledge Atomic Health 1",
+            "type": "sprite",
+            "density": 1,
+        },
+        {
+            "id": 377,
+            "name": "Office Ledge Atomic Health 2",
+            "type": "sprite",
+            "density": 4,
+        },
+        {"id": 378, "name": "Streets Medkit", "type": "sprite", "density": 4},
+        {"id": 379, "name": "Streets Armor", "type": "sprite", "density": 1},
+        {"id": 381, "name": "Office Chaingun", "type": "sprite", "density": 2},
+        {"id": 384, "name": "Office Pipebombs", "type": "sprite", "density": 3},
+        {"id": 386, "name": "Terminator RPG", "type": "sprite", "density": 1},
+        {"id": 387, "name": "Conveyor Freezethrower", "type": "sprite", "density": 4},
+        {"id": 388, "name": "Bedroom Shrinker", "type": "sprite", "density": 2},
+        {"id": 390, "name": "Bathroom Freezethrower", "type": "sprite", "density": 2},
+        {"id": 394, "name": "Dumpster Shotgun", "type": "sprite", "density": 3},
+        {"id": 399, "name": "MP Underwater Jetpack", "type": "sprite", "density": 5},
+        {"id": 463, "name": "Blue Key Card", "type": "sprite", "density": 0},
+        {"id": 465, "name": "Red Key Card", "type": "sprite", "density": 0},
         {"id": 120, "name": "Secret Bookshelf", "type": "sector"},
         {"id": 148, "name": "Secret Office Spawn Room", "type": "sector"},
         {"id": 229, "name": "Secret Conveyor Control Room", "type": "sector"},
@@ -96,7 +123,7 @@ class E3L11(D3DLevel):
             ],
         )
         self.connect(sewer, streets, r.jump | r.explosives)
-        self.restrict("Exit", self.red_key)
+        self.restrict("Exit", self.red_key & r.can_open)
 
         streets_far_ledge = self.region("High Ledge", ["Ledge Steroids"])
         # enemy jump
@@ -122,13 +149,21 @@ class E3L11(D3DLevel):
         hidden_bedroom = self.region(
             "Hidden Bedroom", ["Secret Bedroom Window", "Bedroom Shrinker"]
         )
-        self.connect(streets, hidden_bedroom, r.jump)
+        self.connect(
+            streets,
+            hidden_bedroom,
+            r.jump & (r.can_open | r.glitched & r.can_crouch & r.fast_sprint),
+        )
 
         hidden_bathroom = self.region(
             "Hidden Bathroom", ["Secret Bathroom", "Bathroom Freezethrower"]
         )
         self.connect(hidden_bedroom, hidden_bathroom, r.explosives)
-        self.connect(streets_explosive_ledge, hidden_bathroom, r.jump)
+        self.connect(
+            streets_explosive_ledge,
+            hidden_bathroom,
+            r.jump & (r.can_open | r.glitched & r.can_crouch & r.fast_sprint),
+        )
 
         conveyor_room = self.region(
             "Conveyor Room",
@@ -142,7 +177,9 @@ class E3L11(D3DLevel):
                 "Terminator RPG",
             ],
         )
-        self.connect(streets, conveyor_room, self.blue_key | r.jetpack(50))
+        self.connect(
+            streets, conveyor_room, (self.blue_key & r.can_open) | r.jetpack(50)
+        )
         self.restrict("Terminator RPG", r.can_crouch)
 
         office = self.region(
@@ -155,9 +192,10 @@ class E3L11(D3DLevel):
                 "Office Ledge Atomic Health 2",
             ],
         )
-        self.connect(toppled_building, office, r.jump)
+        # can just walk off
+        self.connect(toppled_building, office, r.true)
         self.restrict("Office Pipebombs", r.jump)
-        self.restrict("Secret Bookshelf", r.can_crouch)
+        self.restrict("Secret Bookshelf", r.can_crouch & r.can_open)
 
         spawn_room = self.region(
             "Office Spawn Room", ["Secret Office Spawn Room", "Office Chaingun"]
