@@ -239,7 +239,7 @@ class E1L3(D3DLevel):
         self.connect(control_room_top, control_vent, r.jump)
         # Can easily clip up corner
         self.restrict("Control Room Chaingun", r.jump | r.difficulty("medium"))
-        self.restrict("Unlock Cell Blocks", (r.can_open | r.glitch_kick) & r.can_use)
+        self.restrict("Unlock Cell Blocks", r.can_open & r.can_use)
         # Okay, I lied earlier. We can get into the vent proper if we are not on a jetpack. This requires
         # abusing a liztrooper to push you, but they are notoriously annoying to get into the vent
         # It is technically possible with just jumping on one, but the most reliable idea is to just float in with
