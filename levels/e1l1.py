@@ -115,10 +115,7 @@ class E1L1(D3DLevel):
                 r.jump
                 | (
                     r.can_crouch
-                    & (
-                        r.difficulty("extreme")
-                        | (r.difficulty("medium") & r.can_sprint)
-                    )
+                    & (r.difficulty("extreme") | (r.difficulty("medium") & r.sprint))
                 )
             ),
         )

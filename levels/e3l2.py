@@ -108,7 +108,7 @@ class E3L2(D3DLevel):
         )
         self.restrict(
             "Start Ledge RPG",
-            r.jetpack(50) | (r.can_jump & (r.can_sprint | r.steroids))
+            r.jetpack(50) | (r.can_jump & r.sprint)
             # need specifically an enforcer to jump up
             | (r.difficulty("hard") & r.can_jump),
         )
@@ -128,7 +128,7 @@ class E3L2(D3DLevel):
             ],
         )
         self.connect(
-            office, far_ledge, r.jump | r.can_sprint | r.steroids
+            office, far_ledge, r.jump | r.sprint
         )  # Can maybe SR50 the gap from the other ledge
 
         office_ledges = self.region(
@@ -148,8 +148,8 @@ class E3L2(D3DLevel):
             ret,
             atm,
             # need double sprint speed to clip without squishing
-            (r.can_open | r.glitched & r.can_sprint & r.steroids & r.can_crouch)
-            & (r.jump | (r.difficulty("medium") & (r.can_sprint | r.steroids))),
+            (r.can_open | r.glitched & r.fast_sprint & r.can_crouch)
+            & (r.jump | (r.difficulty("medium") & r.sprint)),
         )  # Can run off the ledge, timing is a bit tricky with steroids + no run
 
         bank = self.region("Bank Entrance")
@@ -162,8 +162,7 @@ class E3L2(D3DLevel):
                 r.difficulty("extreme")
                 & r.glitched
                 & r.can_jump
-                & r.can_sprint
-                & r.steroids
+                & r.fast_sprint
                 & r.tripmine
             ),
         )
@@ -190,12 +189,7 @@ class E3L2(D3DLevel):
             r.jump
             & (
                 r.can_open
-                | (
-                    r.glitched
-                    & r.difficulty("hard")
-                    & r.can_crouch
-                    & (r.can_sprint | r.steroids)
-                )
+                | (r.glitched & r.difficulty("hard") & r.can_crouch & r.sprint)
             ),
         )
 
@@ -220,11 +214,7 @@ class E3L2(D3DLevel):
             top_of_gears,
             r.can_open
             | r.jetpack(100)
-            | r.glitched
-            & (
-                (r.difficulty("medium") & (r.can_sprint | r.steroids))
-                | r.difficulty("hard")
-            ),
+            | r.glitched & ((r.difficulty("medium") & r.sprint) | r.difficulty("hard")),
         )
 
         gears_secret = self.region(

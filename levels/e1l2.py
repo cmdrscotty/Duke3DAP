@@ -249,7 +249,7 @@ class E1L2(D3DLevel):
                 "Exit",
             ],
         )
-        self.connect(attic, curtain_ledge, r.can_sprint)
+        self.connect(attic, curtain_ledge, r.sr50 & r.can_jump)
         self.connect(
             strip_club,
             attic,

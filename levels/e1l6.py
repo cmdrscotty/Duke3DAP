@@ -106,7 +106,7 @@ class E1L6(D3DLevel):
             ],
         )
         self.connect(ret, past_forcefield, r.can_use)
-        self.restrict("Dark Room Atomic Health", r.can_sprint | r.jump)
+        self.restrict("Dark Room Atomic Health", r.sprint | r.jump)
 
         waste_pool = self.region(
             "Secret Toxic Waste Pool",

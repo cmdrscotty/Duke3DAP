@@ -190,11 +190,7 @@ class E1L4(D3DLevel):
         self.connect(
             submarine,
             blue_key_alcove,
-            r.can_open
-            & (
-                r.jetpack(50)
-                | r.can_jump & (r.can_sprint | r.steroids | r.difficulty("hard"))
-            ),
+            r.can_open & (r.jetpack(50) | (r.can_jump & r.sr50)),
         )
 
         submarine_secret = self.region(
@@ -207,11 +203,7 @@ class E1L4(D3DLevel):
             ],
         )
         # Can run off the Blue Key Card ledge, but requires sprint speed or SR50
-        self.connect(
-            submarine,
-            submarine_secret,
-            r.can_sprint | r.jump | r.steroids | r.difficulty("hard"),
-        )
+        self.connect(submarine, submarine_secret, r.jump | r.sr50)
 
         underwater_cave = self.region(
             "Submarine Secret",
@@ -292,11 +284,7 @@ class E1L4(D3DLevel):
             ["Underwater Gate", "Canyon RPG"],
         )
         # need SR50 without sprint speed to cross
-        self.connect(
-            flooded_area,
-            canyon_far,
-            r.can_sprint | r.jump | r.steroids | r.difficulty("hard"),
-        )
+        self.connect(flooded_area, canyon_far, r.jump | r.sr50)
 
         canyon_alcove = self.region(
             "Canyon Alcove", ["Secret Canyon Wall", "Canyon Secret Scuba Gear"]

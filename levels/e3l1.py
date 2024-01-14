@@ -93,9 +93,7 @@ class E3L1(D3DLevel):
             "Start Ledge", ["Start Ledge Chaingun", "Start Ledge Atomic Health"]
         )
         # Can't seem to make this with SR50 only, can lure liztrooper to step up, easy manip
-        self.connect(
-            ret, start_ledge, r.can_sprint | r.steroids | r.jump | r.difficulty("hard")
-        )
+        self.connect(ret, start_ledge, r.sprint | r.jump | r.difficulty("hard"))
 
         start_pool = self.region(
             "Start Pool", ["Start Pool Holo Duke", "Start Pool Pipebombs"]
@@ -119,7 +117,7 @@ class E3L1(D3DLevel):
         self.connect(
             ret,
             hallway_sign,
-            (r.can_open & r.jump) | (r.crouch_jump & r.steroids & r.difficulty("hard")),
+            (r.can_open & r.jump) | (r.fast_crouch_jump & r.difficulty("hard")),
         )
 
         hallway_poster = self.region(
@@ -172,10 +170,7 @@ class E3L1(D3DLevel):
             (self.blue_key & r.can_open)
             | (
                 r.difficulty("medium")
-                & (
-                    (r.glitched & r.steroids & r.can_crouch & r.can_sprint)
-                    | r.crouch_jump
-                )
+                & ((r.glitched & r.fast_sprint & r.can_crouch) | r.crouch_jump)
             ),
         )
 
@@ -228,7 +223,7 @@ class E3L1(D3DLevel):
             | (
                 r.difficulty("extreme")
                 & r.glitched
-                & (r.steroids | r.can_sprint)
+                & r.sprint
                 & r.tripmine
                 & r.can_jump
             ),

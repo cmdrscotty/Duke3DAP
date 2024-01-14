@@ -264,7 +264,7 @@ class E1L5(D3DLevel):
         # can clip through, skipping the hand trigger
         self.restrict("Fire Pit RPG", (r.jump & r.can_use) | r.crouch_jump)
         # Can't find a SR50 setup for this without sprint speed
-        self.restrict("Waterfall Chaingun", r.jump | r.can_sprint | r.steroids)
+        self.restrict("Waterfall Chaingun", r.jump | r.sprint)
 
         fault_doors = self.region(
             "Doors after Earthquake",
@@ -306,9 +306,7 @@ class E1L5(D3DLevel):
         self.connect(
             beyond_fault,
             fire_pit_ledge,
-            r.jump
-            | (r.can_sprint & (r.steroids | r.difficulty("hard")))
-            | (r.steroids & r.difficulty("extreme")),
+            r.jump | r.fast_sprint | (r.difficulty("hard") & r.sprint),
         )
 
         shrinker_ledge = self.region(
@@ -399,9 +397,7 @@ class E1L5(D3DLevel):
         self.connect(ship_entrance, spaceship, r.can_open)
         # Clip to DM exit near boss drop
         self.restrict(
-            "Exit",
-            r.can_kill_boss_1
-            | (r.glitched & r.difficulty("hard") & r.steroids & r.can_jump),
+            "Exit", r.can_kill_boss_1 | (r.difficulty("hard") & r.fast_crouch_jump)
         )
 
         return ret

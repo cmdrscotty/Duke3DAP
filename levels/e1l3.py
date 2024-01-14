@@ -140,7 +140,9 @@ class E1L3(D3DLevel):
         # Can walk onto the window, shoot the button, and get into the lowering sector without crouch or opening
         # the door
         self.connect(
-            ret, electric_chair, r.difficulty("medium") | (r.can_crouch & r.can_open)
+            ret,
+            electric_chair,
+            r.difficulty("medium") | (r.can_crouch & (r.can_open | r.jump)),
         )
 
         hallway = self.region(
@@ -159,7 +161,7 @@ class E1L3(D3DLevel):
         self.connect(
             ret,
             hallway,
-            r.difficulty("hard") | (r.jump & (r.difficulty("medium") | r.can_open)),
+            r.difficulty("hard") | (r.difficulty("medium") & r.sprint) | r.jump,
         )
         # need open to turn bed, doesn't even matter how we get into the cell
         self.restrict("Secret Behind Bed", r.can_crouch & r.can_open)
@@ -173,9 +175,7 @@ class E1L3(D3DLevel):
         self.connect(
             hallway,
             altar,
-            r.jump
-            | r.difficulty("extreme")
-            | (r.difficulty("hard") & (r.steroids | r.can_sprint)),
+            r.jump | r.difficulty("extreme") | (r.difficulty("hard") & r.sprint),
         )
 
         behind_altar = self.region(
@@ -257,18 +257,14 @@ class E1L3(D3DLevel):
         self.connect(
             control_room_bridge,
             control_room_top,
-            r.can_open
-            & (r.explosives | ((r.can_sprint | r.steroids) & r.difficulty("hard"))),
+            r.can_open & (r.explosives | (r.sprint & r.difficulty("hard"))),
         )
         # Seem to always get squished without steroids
         self.connect(
             control_room_top,
             control_room_bridge,
-            (
-                r.can_open
-                & (r.explosives | ((r.can_sprint | r.steroids) & r.difficulty("hard")))
-            )
-            | (r.crouch_jump & r.steroids),
+            (r.can_open & (r.explosives | (r.sprint & r.difficulty("hard"))))
+            | r.fast_crouch_jump,
         )
 
         control_room_ledges = self.region(
@@ -333,7 +329,8 @@ class E1L3(D3DLevel):
         self.connect(
             courtyard_ledge,
             cell_block_01_room,
-            r.crouch_jump & (r.steroids | r.jetpack(50)) & r.difficulty("hard"),
+            ((r.crouch_jump & r.jetpack(50)) | r.fast_crouch_jump)
+            & r.difficulty("hard"),
         )
 
         cell_block_02_room = self.region(
@@ -360,7 +357,8 @@ class E1L3(D3DLevel):
         self.connect(
             courtyard_ledge,
             dock_tunnel,
-            r.crouch_jump & (r.steroids | r.jetpack(50)) & r.difficulty("hard"),
+            ((r.crouch_jump & r.jetpack(50)) | r.fast_crouch_jump)
+            & r.difficulty("hard"),
         )
 
         dock = self.region("Submarine Dock", ["Submarine Gate Scuba Gear"])
