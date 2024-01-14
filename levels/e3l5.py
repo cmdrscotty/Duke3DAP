@@ -144,7 +144,18 @@ class E3L5(D3DLevel):
 
         studio_floor_storage = self.region("Studio Floor Storage")
         # might be possible to do without steroids
-        self.connect(ret, studio_floor_storage, self.blue_key & r.can_open)
+        self.connect(
+            ret,
+            studio_floor_storage,
+            (self.blue_key & r.can_open)
+            | (
+                r.glitched
+                & r.difficulty("extreme")
+                & r.fast_sprint
+                & r.can_jump
+                & r.tripmine
+            ),
+        )
 
         studio_floor_set = self.region(
             "Studio Floor Set",

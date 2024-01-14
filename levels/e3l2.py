@@ -186,11 +186,7 @@ class E3L2(D3DLevel):
         self.connect(
             bank,
             bank_painting,
-            r.jump
-            & (
-                r.can_open
-                | (r.glitched & r.difficulty("hard") & r.can_crouch & r.sprint)
-            ),
+            r.jump & (r.can_open | (r.glitched & r.can_crouch & r.sprint)),
         )
 
         bank_backroom = self.region("Bank Backroom", ["Switch Shrinker"])
