@@ -88,7 +88,8 @@ class E1L1(D3DLevel):
                 "Cinema Armor",
             ],
         )
-        self.connect(ret, cinema, r.can_open)
+        # Enter from outside via explosives through window and kicking the door
+        self.connect(ret, cinema, r.can_open | (r.explosives & r.glitch_kick))
 
         projector_room = self.region(
             "Projector Room",
@@ -119,7 +120,8 @@ class E1L1(D3DLevel):
                 )
             ),
         )
-        self.connect(cinema, toilet_vent, r.jump)
+        # Access also possible from projector room with can_open
+        self.connect(cinema, toilet_vent, r.jump | r.can_open)
 
         cash_register = self.region(
             "Cash Register",

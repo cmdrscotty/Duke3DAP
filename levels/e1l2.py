@@ -141,9 +141,17 @@ class E1L2(D3DLevel):
                 "Pornography Store Atomic Health",
             ],
         )
-        self.connect(streets, store, r.can_open)
+        self.connect(streets, store, r.can_open | r.glitch_kick)
         self.restrict("Pornography Store Atomic Health", r.jump)
-        self.restrict("Toilets Night Vision Goggles", r.can_use)
+        self.restrict(
+            "Toilets Night Vision Goggles", r.can_use & (r.can_open | r.explosives)
+        )
+        self.restrict("Video Booth RPG", r.can_open)
+        self.restrict("Video Booth Steroids", r.can_open)
+        self.restrict("Pornography Store Shelves Armor", r.can_open)
+        self.restrict("Pornography Store Shelves Pipebombs", r.can_open)
+        self.restrict("Dark Area Atomic Health", r.can_open)
+        self.restrict("Secret Pornography Store Dark Area", r.can_open)
 
         apartment = self.region(
             "Apartment", ["Chaingun near Blue Key Card", "Blue Key Card"]
@@ -249,7 +257,7 @@ class E1L2(D3DLevel):
                 "Exit",
             ],
         )
-        self.connect(attic, curtain_ledge, r.sr50 & r.can_jump)
+        self.connect(attic, curtain_ledge, (r.sr50 & r.can_jump) | r.jetpack(50))
         self.connect(
             strip_club,
             attic,

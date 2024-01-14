@@ -232,6 +232,8 @@ class E1L4(D3DLevel):
         # This is a hard Use and Open check currently with no known bypass, so we don't break down
         # the logic beyond this point in full detail for now
         self.connect(submarine, facility, self.blue_key & r.can_open)
+        self.restrict("Red Key Card", r.can_open)
+        self.restrict("Secret Toxic Waste Belt Hidden Alcove", r.can_open)
 
         cylinders = self.region(
             "Waste Storage Cylinders",
@@ -343,7 +345,10 @@ class E1L4(D3DLevel):
             "Top of Waterfall", ["Secret Waterfall Secret Teleporter"]
         )
         self.connect(deep_water, top_of_waterfall, third_dive)
-        self.restrict("Secret Waterfall Secret Teleporter", r.explosives)
+        self.restrict(
+            "Secret Waterfall Secret Teleporter",
+            r.explosives | (r.jetpack(50) & (r.can_sprint | r.difficulty("hard"))),
+        )
 
         moving_platforms = self.region("Moving Platforms", ["Underwater Gate RPG"])
         # Drops down a waterfall, one-way only this way around
