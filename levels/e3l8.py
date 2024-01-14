@@ -9,47 +9,63 @@ class E3L8(D3DLevel):
     volumenum = 2
     keys = ["Blue", "Yellow"]
     location_defs = [
-        {"id": 85, "name": "Shark Tank Atomic Health", "type": "sprite"},
-        {"id": 86, "name": "Shark Tank Scuba Gear 2", "type": "sprite"},
-        {"id": 99, "name": "Hallway Night Vision Goggles", "type": "sprite"},
-        {"id": 152, "name": "Hotel Room Vent Shrinker", "type": "sprite"},
-        {"id": 172, "name": "Yellow Key Card", "type": "sprite"},
-        {"id": 175, "name": "Toilet RPG", "type": "sprite"},
-        {"id": 182, "name": "Dive Board Pipebombs", "type": "sprite"},
-        {"id": 285, "name": "Toilet Atomic Health", "type": "sprite"},
-        {"id": 355, "name": "Outside Vent Steroids", "type": "sprite"},
-        {"id": 358, "name": "Apartment Devastator", "type": "sprite"},
-        {"id": 372, "name": "Blue Key Card", "type": "sprite"},
+        {"id": 85, "name": "Shark Tank Atomic Health", "type": "sprite", "density": 1},
+        {"id": 86, "name": "Shark Tank Scuba Gear 2", "type": "sprite", "density": 4},
+        {
+            "id": 99,
+            "name": "Hallway Night Vision Goggles",
+            "type": "sprite",
+            "density": 3,
+        },
+        {"id": 152, "name": "Hotel Room Vent Shrinker", "type": "sprite", "density": 0},
+        {"id": 172, "name": "Yellow Key Card", "type": "sprite", "density": 0},
+        {"id": 175, "name": "Toilet RPG", "type": "sprite", "density": 0},
+        {"id": 182, "name": "Dive Board Pipebombs", "type": "sprite", "density": 0},
+        {"id": 285, "name": "Toilet Atomic Health", "type": "sprite", "density": 1},
+        {"id": 355, "name": "Outside Vent Steroids", "type": "sprite", "density": 4},
+        {"id": 358, "name": "Apartment Devastator", "type": "sprite", "density": 3},
+        {"id": 372, "name": "Blue Key Card", "type": "sprite", "density": 0},
         {
             "id": 386,
             "name": "Trashcan Pipebombs",
             "type": "sprite",
             "sprite_type": "trashcan",
+            "density": 3,
         },
-        {"id": 392, "name": "Dumpster Medkit", "type": "sprite"},
-        {"id": 395, "name": "Dumpster Chaingun", "type": "sprite"},
-        {"id": 397, "name": "Ledge Shotgun", "type": "sprite"},
-        {"id": 423, "name": "Streets Atomic Health 1", "type": "sprite"},
-        {"id": 460, "name": "Hotel Room Armor", "type": "sprite"},
-        {"id": 478, "name": "Corner Tripmine 1", "type": "sprite"},
-        {"id": 479, "name": "Corner Tripmine 2", "type": "sprite"},
-        {"id": 564, "name": "Streets Atomic Health 2", "type": "sprite"},
-        {"id": 575, "name": "Shark Tank Pipebombs", "type": "sprite"},
-        {"id": 576, "name": "Shark Tank Medkit", "type": "sprite"},
-        {"id": 577, "name": "Viewpoint Holo Duke", "type": "sprite"},
-        {"id": 592, "name": "Shark Tank Scuba Gear 1", "type": "sprite"},
-        {"id": 596, "name": "Wine Rack Holo Duke", "type": "sprite"},
-        {"id": 657, "name": "Lobby Night Vision Goggles", "type": "sprite"},
-        {"id": 663, "name": "Lobby Armor", "type": "sprite"},
-        {"id": 667, "name": "Lobby Medkit", "type": "sprite"},
-        {"id": 684, "density": 5, "name": "MP Lobby Jetpack", "type": "sprite"},
-        {"id": 685, "density": 5, "name": "MP Staircase Armor", "type": "sprite"},
-        {"id": 688, "density": 5, "name": "MP Streets Chaingun", "type": "sprite"},
-        {"id": 690, "density": 5, "name": "MP Hallway Freezethrower", "type": "sprite"},
-        {"id": 725, "name": "Shark Tank Freezethrower", "type": "sprite"},
-        {"id": 769, "name": "Indiana Jones Atomic Health", "type": "sprite"},
-        {"id": 823, "name": "Exit Pipebombs", "type": "sprite"},
-        {"id": 827, "name": "Jungle Freezethrower", "type": "sprite"},
+        {"id": 392, "name": "Dumpster Medkit", "type": "sprite", "density": 0},
+        {"id": 395, "name": "Dumpster Chaingun", "type": "sprite", "density": 4},
+        {"id": 397, "name": "Ledge Shotgun", "type": "sprite", "density": 3},
+        {"id": 423, "name": "Streets Atomic Health 1", "type": "sprite", "density": 0},
+        {"id": 460, "name": "Hotel Room Armor", "type": "sprite", "density": 3},
+        {"id": 478, "name": "Corner Tripmine 1", "type": "sprite", "density": 1},
+        {"id": 479, "name": "Corner Tripmine 2", "type": "sprite", "density": 4},
+        {"id": 564, "name": "Streets Atomic Health 2", "type": "sprite", "density": 4},
+        {"id": 575, "name": "Shark Tank Pipebombs", "type": "sprite", "density": 4},
+        {"id": 576, "name": "Shark Tank Medkit", "type": "sprite", "density": 2},
+        {"id": 577, "name": "Viewpoint Holo Duke", "type": "sprite", "density": 3},
+        {"id": 592, "name": "Shark Tank Scuba Gear 1", "type": "sprite", "density": 4},
+        {"id": 596, "name": "Wine Rack Holo Duke", "type": "sprite", "density": 2},
+        {
+            "id": 657,
+            "name": "Lobby Night Vision Goggles",
+            "type": "sprite",
+            "density": 1,
+        },
+        {"id": 663, "name": "Lobby Armor", "type": "sprite", "density": 3},
+        {"id": 667, "name": "Lobby Medkit", "type": "sprite", "density": 1},
+        {"id": 684, "name": "MP Lobby Jetpack", "type": "sprite", "density": 5},
+        {"id": 685, "name": "MP Staircase Armor", "type": "sprite", "density": 5},
+        {"id": 688, "name": "MP Streets Chaingun", "type": "sprite", "density": 5},
+        {"id": 690, "name": "MP Hallway Freezethrower", "type": "sprite", "density": 5},
+        {"id": 725, "name": "Shark Tank Freezethrower", "type": "sprite", "density": 3},
+        {
+            "id": 769,
+            "name": "Indiana Jones Atomic Health",
+            "type": "sprite",
+            "density": 2,
+        },
+        {"id": 823, "name": "Exit Pipebombs", "type": "sprite", "density": 0},
+        {"id": 827, "name": "Jungle Freezethrower", "type": "sprite", "density": 3},
         {"id": 138, "name": "Secret Shark Tank", "type": "sector"},
         {"id": 155, "name": "Secret Wine Rack", "type": "sector"},
         {"id": 284, "name": "Secret Indiana Jones", "type": "sector"},
@@ -66,6 +82,7 @@ class E3L8(D3DLevel):
         stadium_elevator = self.region("Stadium Elevator", ["Exit", "Exit Pipebombs"])
         # sure we can clip up somehow as well
         self.connect(ret, stadium_elevator, r.jump & r.pipebomb)
+        self.restrict("Exit Pipebombs", r.can_use)
 
         entrance_ledges = self.region(
             "Entrance Ledges",
@@ -97,14 +114,22 @@ class E3L8(D3DLevel):
             [
                 "Toilet RPG",
                 "Lobby Medkit",
-                "MP Lobby Jetpack",
-                "Lobby Night Vision Goggles",
                 "MP Streets Chaingun",
                 "Lobby Armor",
             ],
         )
-        self.restrict("Lobby Armor", r.jump)
-        self.connect(ret, hotel_lobby, self.blue_key)
+        self.restrict("Lobby Armor", r.jump & r.can_open)
+        self.restrict(
+            "Lobby Medkit",
+            r.can_open | r.glitched & r.can_crouch & r.jump & r.fast_sprint,
+        )
+        # This would be so nice to bypass somehow
+        self.connect(ret, hotel_lobby, self.blue_key & r.can_open)
+
+        lobby_side_room = self.region(
+            "Lobby Side Room", ["MP Lobby Jetpack", "Lobby Night Vision Goggles"]
+        )
+        self.connect(hotel_lobby, lobby_side_room, r.can_use)
 
         streets_ledge = self.region(
             "Streets Ledge", ["Streets Atomic Health 1", "Streets Atomic Health 2"]
@@ -120,6 +145,25 @@ class E3L8(D3DLevel):
         upstairs = self.region(
             "Hotel Upstairs",
             [
+                "Hallway Night Vision Goggles",
+                "MP Hallway Freezethrower",
+                "Jungle Freezethrower",
+                "Secret Exit",
+                "Secret Indiana Jones",
+            ],
+        )
+        # can clip up from the broken reception tv
+        self.connect(
+            hotel_lobby, upstairs, (self.yellow_key & r.can_open) | r.crouch_jump
+        )
+        # can walk out through exploding wall
+        self.connect(upstairs, streets_ledge, r.true)
+        self.restrict("Secret Exit", r.can_use)
+        self.restrict("Secret Indiana Jones", r.can_use)
+
+        upstairs_doors = self.region(
+            "Upstairs Doors",
+            [
                 "MP Staircase Armor",
                 "Secret Wine Rack",
                 "Wine Rack Holo Duke",
@@ -127,25 +171,30 @@ class E3L8(D3DLevel):
                 "Shark Tank Scuba Gear 1",
                 "Shark Tank Pipebombs",
                 "Shark Tank Medkit",
-                "Hotel Room Armor",
-                "Hallway Night Vision Goggles",
-                "MP Hallway Freezethrower",
-                "Jungle Freezethrower",
-                "Secret Exit",
-                "Secret Indiana Jones",
-                "Corner Tripmine 1",
-                "Corner Tripmine 2",
             ],
         )
-        # can clip up from the broken reception tv
-        self.connect(hotel_lobby, upstairs, self.yellow_key | r.crouch_jump)
-        # can walk out through exploding wall
-        self.connect(upstairs, streets_ledge, r.true)
+        self.connect(upstairs, upstairs_doors, r.can_open)
+
+        left_hotel_room = self.region("Left Hotel Room")
+        self.connect(upstairs, left_hotel_room, r.can_open)
+        self.connect(hotel_lobby, left_hotel_room, r.fast_crouch_jump)
+
+        right_hotel_room = self.region("Right Hotel Room", ["Hotel Room Armor"])
+        self.connect(upstairs, right_hotel_room, r.can_open)
+
+        room_vent = self.region("Hotel Room Vent", ["Hotel Room Vent Shrinker"])
+        self.connect(left_hotel_room, room_vent, r.jump)
+        self.connect(room_vent, left_hotel_room, r.can_crouch)
+        self.connect(room_vent, right_hotel_room, r.can_crouch)
+
+        upstairs_corner = self.region(
+            "Upstairs Corner", ["Corner Tripmine 1", "Corner Tripmine 2"]
+        )
+        self.connect(upstairs, upstairs_corner, r.can_use)
 
         upstairs_ledges = self.region(
             "Upstairs Ledges",
             [
-                "Hotel Room Vent Shrinker",
                 "Indiana Jones Atomic Health",
                 "Dive Board Pipebombs",
                 "Viewpoint Holo Duke",
@@ -153,16 +202,18 @@ class E3L8(D3DLevel):
             ],
         )
         self.connect(upstairs, upstairs_ledges, r.jump)
+        self.restrict("Indiana Jones Atomic Health", r.can_use)
 
         shark_tank = self.region(
             "Shark Tank",
-            [
-                "Shark Tank Atomic Health",
-                "Shark Tank Scuba Gear 2",
-                "Shark Tank Freezethrower",
-            ],
+            ["Shark Tank Freezethrower"],
         )
         self.connect(upstairs, shark_tank, r.can_dive & r.jump)
+
+        shark_tank_wall = self.region(
+            "Shark Tank Wall", ["Shark Tank Atomic Health", "Shark Tank Scuba Gear 2"]
+        )
+        self.connect(shark_tank, shark_tank_wall, r.can_use)
 
         pool = self.region("Inside Pool", ["Toilet Atomic Health"])
         # There might be a different way to get here, maybe?
