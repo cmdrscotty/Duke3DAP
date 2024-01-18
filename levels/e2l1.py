@@ -161,6 +161,8 @@ class E2L1(D3DLevel):
         self.connect(middle_floor, shrinker_secret, r.can_open)
 
         self.connect(past_first_forcefield, middle_floor, self.blue_key & r.can_open)
+        # Tripmine Clip + Glitch Kick can be used to get past the doors leading to the exit
+        # Sadly need can_open to get to middle floor (for now)
         self.restrict("Exit", self.red_key & r.can_open & r.can_use)
         self.restrict("Middle Floor Jetpack", r.jump)
 

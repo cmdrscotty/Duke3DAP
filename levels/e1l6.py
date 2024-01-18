@@ -213,7 +213,14 @@ class E1L6(D3DLevel):
         self.connect(
             sewer_ledge,
             sewer_secret,
-            r.can_open | (r.glitched & r.fast_sprint & r.can_jump & r.tripmine),
+            r.can_open
+            | (
+                r.glitched
+                & r.tripmine
+                & r.fast_sprint
+                & r.can_jump
+                & r.difficulty("extreme")
+            ),
         )
 
         return ret

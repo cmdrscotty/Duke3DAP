@@ -222,7 +222,14 @@ class E1L5(D3DLevel):
         # Tripclip
         self.restrict(
             "Start Protective Boots",
-            r.can_open | (r.glitched & r.tripmine & r.can_jump & r.sprint & r.steroids),
+            r.can_open
+            | (
+                r.glitched
+                & r.tripmine
+                & r.fast_sprint
+                & r.can_jump
+                & r.difficulty("extreme")
+            ),
         )
 
         blue_gate = self.region("Beyond Blue Key Gate", ["Pipebombs near Blue Gate"])
