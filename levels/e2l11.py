@@ -9,31 +9,51 @@ class E2L11(D3DLevel):
     volumenum = 1
     keys = []
     location_defs = [
-        {"id": 28, "name": "Center Ring Shrinker", "type": "sprite"},
-        {"id": 58, "name": "Top Ledge Devastator", "type": "sprite"},
+        {"id": 28, "name": "Center Ring Shrinker", "type": "sprite", "density": 0},
+        {"id": 58, "name": "Top Ledge Devastator", "type": "sprite", "density": 0},
         {
             "id": 63,
-            "density": 5,
             "name": "MP Center Ring Night Vision Goggles",
             "type": "sprite",
+            "density": 5,
         },
-        {"id": 92, "name": "Bottom Ring Holo Duke", "type": "sprite"},
-        {"id": 93, "name": "Center Ring RPG", "type": "sprite"},
-        {"id": 96, "name": "Bottom Ring Armor", "type": "sprite"},
-        {"id": 99, "density": 5, "name": "MP Center Ring Jetpack", "type": "sprite"},
-        {"id": 102, "name": "Center Ring Atomic Health", "type": "sprite"},
-        {"id": 104, "name": "Top Ledge Pipebombs", "type": "sprite"},
-        {"id": 109, "name": "Center Ring Steroids", "type": "sprite"},
-        {"id": 111, "name": "Bottom Ring Tripmine", "type": "sprite"},
-        {"id": 112, "name": "Top Ledge Medkit", "type": "sprite"},
-        {"id": 113, "density": 5, "name": "MP Top Ledge Shrinker", "type": "sprite"},
-        {"id": 115, "name": "Center Ring Chaingun", "type": "sprite"},
-        {"id": 123, "name": "Bottom Ring Shotgun", "type": "sprite"},
-        {"id": 124, "name": "Bottom Ring Freezethrower", "type": "sprite"},
+        {"id": 92, "name": "Bottom Ring Holo Duke", "type": "sprite", "density": 0},
+        {"id": 93, "name": "Center Ring RPG", "type": "sprite", "density": 0},
+        {"id": 96, "name": "Bottom Ring Armor", "type": "sprite", "density": 0},
+        {"id": 99, "name": "MP Center Ring Jetpack", "type": "sprite", "density": 5},
+        {
+            "id": 102,
+            "name": "Center Ring Atomic Health",
+            "type": "sprite",
+            "density": 0,
+        },
+        {"id": 104, "name": "Top Ledge Pipebombs", "type": "sprite", "density": 3},
+        {"id": 109, "name": "Center Ring Steroids", "type": "sprite", "density": 3},
+        {"id": 111, "name": "Bottom Ring Tripmine", "type": "sprite", "density": 4},
+        {"id": 112, "name": "Top Ledge Medkit", "type": "sprite", "density": 4},
+        {"id": 113, "name": "MP Top Ledge Shrinker", "type": "sprite", "density": 5},
+        {"id": 115, "name": "Center Ring Chaingun", "type": "sprite", "density": 0},
+        {"id": 123, "name": "Bottom Ring Shotgun", "type": "sprite", "density": 4},
+        {
+            "id": 124,
+            "name": "Bottom Ring Freezethrower",
+            "type": "sprite",
+            "density": 0,
+        },
         {"id": 125, "name": "Bottom Ring Shotgun", "type": "sprite"},
-        {"id": 127, "name": "Center Ring Pipebombs", "type": "sprite"},
-        {"id": 180, "name": "Center Top Atomic Health 1", "type": "sprite"},
-        {"id": 181, "name": "Center Top Atomic Health 2", "type": "sprite"},
+        {"id": 127, "name": "Center Ring Pipebombs", "type": "sprite", "density": 3},
+        {
+            "id": 180,
+            "name": "Center Top Atomic Health 1",
+            "type": "sprite",
+            "density": 3,
+        },
+        {
+            "id": 181,
+            "name": "Center Top Atomic Health 2",
+            "type": "sprite",
+            "density": 4,
+        },
         {"id": 0, "name": "Exit", "type": "exit"},
     ]
 
@@ -41,6 +61,11 @@ class E2L11(D3DLevel):
         r = self.rules
         ret = self.region(
             self.name,
+            [],
+        )
+
+        past_door = self.region(
+            "Past Door",
             [
                 "Top Ledge Devastator",
                 "Top Ledge Pipebombs",
@@ -54,6 +79,7 @@ class E2L11(D3DLevel):
                 "Bottom Ring Shotgun",
             ],
         )
+        self.connect(ret, past_door, r.can_use)
 
         center_ring = self.region(
             "Center Top Ring",
@@ -71,7 +97,7 @@ class E2L11(D3DLevel):
         )
         # can walk across a lizard trooper from the start
         self.connect(ret, center_ring, r.jump | r.difficulty("medium"))
-        self.restrict("Exit", r.can_shrink | r.crouch_jump)
+        self.restrict("Exit", r.can_use & (r.can_shrink | r.crouch_jump))
 
         center_top = self.region(
             "Center Top Platform",
