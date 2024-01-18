@@ -10,37 +10,77 @@ class E2L9(D3DLevel):
     keys = []
     location_defs = [
         {"id": 7, "name": "Timed Wall RPG", "type": "sprite"},
-        {"id": 8, "name": "Control Room Armor", "type": "sprite"},
-        {"id": 9, "name": "Waterfall Armor", "type": "sprite"},
-        {"id": 10, "name": "Vents Pipebombs 1", "type": "sprite"},
-        {"id": 12, "name": "Overlord Tunnel Medkit", "type": "sprite"},
-        {"id": 13, "name": "Broken Wall Medkit", "type": "sprite"},
-        {"id": 14, "name": "Waterfall Night Vision Goggles", "type": "sprite"},
-        {"id": 15, "name": "Waterfall Scuba Gear", "type": "sprite"},
-        {"id": 16, "name": "Hidden Wall Atomic Health", "type": "sprite"},
-        {"id": 39, "name": "Hidden Wall Armor", "type": "sprite"},
-        {"id": 69, "name": "Waterfall Tripmine", "type": "sprite"},
-        {"id": 70, "name": "Overlord Tripmine 1", "type": "sprite"},
-        {"id": 71, "name": "Overlord Tripmine 2", "type": "sprite"},
-        {"id": 73, "name": "Overlord Atomic Health", "type": "sprite"},
-        {"id": 78, "name": "Combination Lock Scuba Gear", "type": "sprite"},
-        {"id": 81, "name": "Control Room Night Vision Goggles", "type": "sprite"},
-        {"id": 83, "name": "Control Room Chaingun", "type": "sprite"},
-        {"id": 84, "name": "Vents Center Atomic Health", "type": "sprite"},
-        {"id": 86, "name": "Waterfall Atomic Health", "type": "sprite"},
-        {"id": 93, "name": "Waterfall Shrinker", "type": "sprite"},
-        {"id": 94, "name": "Overlord Tunnel Devastator", "type": "sprite"},
-        {"id": 96, "name": "Waterfall RPG", "type": "sprite"},
-        {"id": 100, "name": "Reactor Freezethrower", "type": "sprite"},
-        {"id": 102, "name": "Start Underwater Shotgun", "type": "sprite"},
-        {"id": 104, "name": "Start Underwater Atomic Health", "type": "sprite"},
-        {"id": 159, "name": "Vents Pipebombs 2", "type": "sprite"},
-        {"id": 395, "name": "Waterfall Holo Duke", "type": "sprite"},
-        {"id": 396, "name": "Overlord Tunnel Jetpack", "type": "sprite"},
-        {"id": 413, "name": "Timed Wall Medkit", "type": "sprite"},
-        {"id": 415, "name": "Timed Wall Atomic Health", "type": "sprite"},
-        {"id": 424, "name": "Waterfall Wall Pipebombs 1", "type": "sprite"},
-        {"id": 425, "name": "Waterfall Wall Pipebombs 2", "type": "sprite"},
+        {"id": 8, "name": "Control Room Armor", "type": "sprite", "density": 4},
+        {"id": 9, "name": "Waterfall Armor", "type": "sprite", "density": 4},
+        {"id": 10, "name": "Vents Pipebombs 1", "type": "sprite", "density": 3},
+        {"id": 12, "name": "Overlord Tunnel Medkit", "type": "sprite", "density": 3},
+        {"id": 13, "name": "Broken Wall Medkit", "type": "sprite", "density": 3},
+        {
+            "id": 14,
+            "name": "Waterfall Night Vision Goggles",
+            "type": "sprite",
+            "density": 4,
+        },
+        {"id": 15, "name": "Waterfall Scuba Gear", "type": "sprite", "density": 3},
+        {"id": 16, "name": "Hidden Wall Atomic Health", "type": "sprite", "density": 2},
+        {"id": 39, "name": "Hidden Wall Armor", "type": "sprite", "density": 3},
+        {"id": 69, "name": "Waterfall Tripmine", "type": "sprite", "density": 3},
+        {"id": 70, "name": "Overlord Tripmine 1", "type": "sprite", "density": 3},
+        {"id": 71, "name": "Overlord Tripmine 2", "type": "sprite", "density": 4},
+        {"id": 73, "name": "Overlord Atomic Health", "type": "sprite", "density": 0},
+        {
+            "id": 78,
+            "name": "Combination Lock Scuba Gear",
+            "type": "sprite",
+            "density": 3,
+        },
+        {
+            "id": 81,
+            "name": "Control Room Night Vision Goggles",
+            "type": "sprite",
+            "density": 3,
+        },
+        {"id": 83, "name": "Control Room Chaingun", "type": "sprite", "density": 0},
+        {
+            "id": 84,
+            "name": "Vents Center Atomic Health",
+            "type": "sprite",
+            "density": 0,
+        },
+        {"id": 86, "name": "Waterfall Atomic Health", "type": "sprite", "density": 0},
+        {"id": 93, "name": "Waterfall Shrinker", "type": "sprite", "density": 0},
+        {
+            "id": 94,
+            "name": "Overlord Tunnel Devastator",
+            "type": "sprite",
+            "density": 3,
+        },
+        {"id": 96, "name": "Waterfall RPG", "type": "sprite", "density": 0},
+        {"id": 100, "name": "Reactor Freezethrower", "type": "sprite", "density": 0},
+        {"id": 102, "name": "Start Underwater Shotgun", "type": "sprite", "density": 0},
+        {
+            "id": 104,
+            "name": "Start Underwater Atomic Health",
+            "type": "sprite",
+            "density": 0,
+        },
+        {"id": 159, "name": "Vents Pipebombs 2", "type": "sprite", "density": 4},
+        {"id": 395, "name": "Waterfall Holo Duke", "type": "sprite", "density": 0},
+        {"id": 396, "name": "Overlord Tunnel Jetpack", "type": "sprite", "density": 0},
+        {"id": 413, "name": "Timed Wall Medkit", "type": "sprite", "density": 3},
+        {"id": 415, "name": "Timed Wall Atomic Health", "type": "sprite", "density": 2},
+        {
+            "id": 424,
+            "name": "Waterfall Wall Pipebombs 1",
+            "type": "sprite",
+            "density": 2,
+        },
+        {
+            "id": 425,
+            "name": "Waterfall Wall Pipebombs 2",
+            "type": "sprite",
+            "density": 3,
+        },
         {"id": 203, "name": "Secret Hidden Reactor Wall", "type": "sector"},
         {"id": 219, "name": "Secret Timed Overlord Wall", "type": "sector"},
         {"id": 225, "name": "Secret Waterfall Wall", "type": "sector"},
@@ -74,12 +114,17 @@ class E2L9(D3DLevel):
             ],
         )
         self.restrict("Waterfall Holo Duke", r.dive(100))
+        self.restrict("Start Underwater Atomic Health", r.can_use)
 
         reactor = self.region(
             "Reactor",
             ["Reactor Freezethrower", "Secret Timed Reactor Wall", "Timed Wall RPG"],
         )
-        self.connect(ret, reactor, r.jump)
+        self.connect(
+            ret,
+            reactor,
+            (r.jump & r.can_use) | (r.jetpack(50) & r.difficulty("medium")),
+        )
 
         waterfall_wall = self.region(
             "Waterfall Wall",
@@ -103,7 +148,7 @@ class E2L9(D3DLevel):
             ],
         )
         # It's slow, but going via waterfall room gets you in with no sprint requirements
-        self.connect(ret, vents, r.jump)
+        self.connect(ret, vents, r.jump & (r.sr50 | r.can_use))
 
         overlord_chamber = self.region(
             "Overlord Chamber",

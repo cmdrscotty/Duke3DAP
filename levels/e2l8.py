@@ -9,65 +9,105 @@ class E2L8(D3DLevel):
     volumenum = 1
     keys = ["Blue", "Yellow"]
     location_defs = [
-        {"id": 42, "name": "Overlord Pool Pipebombs", "type": "sprite"},
-        {"id": 156, "name": "Beta Wall Atomic Health 1", "type": "sprite"},
-        {"id": 157, "name": "Beta Wall Atomic Health 2", "type": "sprite"},
-        {"id": 203, "name": "Overlord Pool Shrinker", "type": "sprite"},
-        {"id": 206, "name": "Hatching Pipebombs", "type": "sprite"},
-        {"id": 207, "name": "Surface Pipebombs", "type": "sprite"},
-        {"id": 211, "name": "Spacesuit RPG", "type": "sprite"},
-        {"id": 212, "name": "Outlook Devastator", "type": "sprite"},
-        {"id": 226, "name": "Beta Armor", "type": "sprite"},
-        {"id": 242, "name": "Beta Pipebombs", "type": "sprite"},
-        {"id": 247, "name": "Reactor Control Armor", "type": "sprite"},
-        {"id": 251, "name": "Babes Shotgun", "type": "sprite"},
-        {"id": 257, "name": "Gamma Vent Atomic Health", "type": "sprite"},
-        {"id": 261, "name": "Gamma Medkit", "type": "sprite"},
-        {"id": 265, "name": "Top of Hub Chaingun", "type": "sprite"},
+        {"id": 42, "name": "Overlord Pool Pipebombs", "type": "sprite", "density": 4},
+        {
+            "id": 156,
+            "name": "Beta Wall Atomic Health 1",
+            "type": "sprite",
+            "density": 2,
+        },
+        {
+            "id": 157,
+            "name": "Beta Wall Atomic Health 2",
+            "type": "sprite",
+            "density": 3,
+        },
+        {"id": 203, "name": "Overlord Pool Shrinker", "type": "sprite", "density": 3},
+        {"id": 206, "name": "Hatching Pipebombs", "type": "sprite", "density": 0},
+        {"id": 207, "name": "Surface Pipebombs", "type": "sprite", "density": 0},
+        {"id": 211, "name": "Spacesuit RPG", "type": "sprite", "density": 3},
+        {"id": 212, "name": "Outlook Devastator", "type": "sprite", "density": 4},
+        {"id": 226, "name": "Beta Armor", "type": "sprite", "density": 0},
+        {"id": 242, "name": "Beta Pipebombs", "type": "sprite", "density": 0},
+        {"id": 247, "name": "Reactor Control Armor", "type": "sprite", "density": 3},
+        {"id": 251, "name": "Babes Shotgun", "type": "sprite", "density": 0},
+        {"id": 257, "name": "Gamma Vent Atomic Health", "type": "sprite", "density": 3},
+        {"id": 261, "name": "Gamma Medkit", "type": "sprite", "density": 0},
+        {"id": 265, "name": "Top of Hub Chaingun", "type": "sprite", "density": 0},
         {"id": 266, "name": "Hub Crate RPG", "type": "sprite"},
-        {"id": 269, "name": "Reactor Control Devastator", "type": "sprite"},
-        {"id": 342, "name": "Hub Atomic Health 1", "type": "sprite"},
-        {"id": 343, "name": "Hub Atomic Health 2", "type": "sprite"},
-        {"id": 347, "name": "Alpha Lab Armor", "type": "sprite"},
-        {"id": 348, "name": "Alpha Lab Atomic Health", "type": "sprite"},
-        {"id": 359, "name": "Waste Pool Pipebombs", "type": "sprite"},
-        {"id": 361, "name": "Alpha Lab Tripmine", "type": "sprite"},
-        {"id": 363, "name": "Alpha Lab Pipebombs", "type": "sprite"},
-        {"id": 364, "name": "Alpha Lab Medkit", "type": "sprite"},
-        {"id": 372, "name": "Start Shotgun", "type": "sprite"},
-        {"id": 374, "name": "Crumbling Canyon Atomic Health", "type": "sprite"},
-        {"id": 375, "name": "Crumbling Canyon Chaingun", "type": "sprite"},
-        {"id": 406, "density": 5, "name": "MP Tank Chaingun", "type": "sprite"},
-        {"id": 407, "name": "Tank Shrinker", "type": "sprite"},
-        {"id": 520, "name": "Blue Key Card", "type": "sprite"},
-        {"id": 790, "name": "Hub Freezethrower", "type": "sprite"},
-        {"id": 797, "name": "Hub Armor", "type": "sprite"},
-        {"id": 801, "name": "Alpha Wall Devastator", "type": "sprite"},
-        {"id": 836, "density": 5, "name": "MP Tank RPG", "type": "sprite"},
-        {"id": 837, "name": "Alpha Pipebombs", "type": "sprite"},
-        {"id": 843, "name": "Yellow Key Card", "type": "sprite"},
-        {"id": 932, "name": "Start Armor", "type": "sprite"},
-        {"id": 952, "name": "Outlook Night Vision Goggles", "type": "sprite"},
-        {"id": 953, "name": "Alpha Lab Steroids", "type": "sprite"},
-        {"id": 954, "name": "Alpha Lab Holo Duke", "type": "sprite"},
-        {"id": 955, "name": "Reactor Control Protective Boots", "type": "sprite"},
-        {"id": 989, "name": "Top of Hub Night Vision Goggles", "type": "sprite"},
-        {"id": 990, "name": "Top of Hub Armor", "type": "sprite"},
-        {"id": 991, "density": 5, "name": "MP Start Jetpack", "type": "sprite"},
-        {"id": 992, "density": 5, "name": "MP Surface Atomic Health", "type": "sprite"},
-        {"id": 993, "density": 5, "name": "MP Surface Atomic Health", "type": "sprite"},
-        {"id": 994, "density": 5, "name": "MP Surface Steroids", "type": "sprite"},
-        {"id": 995, "density": 5, "name": "MP Surface Jetpack", "type": "sprite"},
-        {"id": 996, "density": 5, "name": "MP Surface Shrinker", "type": "sprite"},
-        {"id": 997, "density": 5, "name": "MP Surface RPG", "type": "sprite"},
-        {"id": 998, "density": 5, "name": "MP Surface Freezethrower", "type": "sprite"},
-        {"id": 1007, "name": "Gamma Tripmine 1", "type": "sprite"},
-        {"id": 1008, "name": "Gamma Shrinker", "type": "sprite"},
-        {"id": 1009, "name": "Gamma Tripmine 2", "type": "sprite"},
-        {"id": 1016, "name": "Outlook Atomic Health", "type": "sprite"},
-        {"id": 1017, "name": "Babes Pipebombs 1", "type": "sprite"},
-        {"id": 1018, "name": "Babes Pipebombs 2", "type": "sprite"},
-        {"id": 1019, "name": "Babes Pipebombs 3", "type": "sprite"},
+        {
+            "id": 269,
+            "name": "Reactor Control Devastator",
+            "type": "sprite",
+            "density": 0,
+        },
+        {"id": 342, "name": "Hub Atomic Health 1", "type": "sprite", "density": 2},
+        {"id": 343, "name": "Hub Atomic Health 2", "type": "sprite", "density": 3},
+        {"id": 347, "name": "Alpha Lab Armor", "type": "sprite", "density": 3},
+        {"id": 348, "name": "Alpha Lab Atomic Health", "type": "sprite", "density": 0},
+        {"id": 359, "name": "Waste Pool Pipebombs", "type": "sprite", "density": 0},
+        {"id": 361, "name": "Alpha Lab Tripmine", "type": "sprite", "density": 4},
+        {"id": 363, "name": "Alpha Lab Pipebombs", "type": "sprite", "density": 3},
+        {"id": 364, "name": "Alpha Lab Medkit", "type": "sprite", "density": 0},
+        {"id": 372, "name": "Start Shotgun", "type": "sprite", "density": 4},
+        {
+            "id": 374,
+            "name": "Crumbling Canyon Atomic Health",
+            "type": "sprite",
+            "density": 4,
+        },
+        {
+            "id": 375,
+            "name": "Crumbling Canyon Chaingun",
+            "type": "sprite",
+            "density": 0,
+        },
+        {"id": 406, "name": "MP Tank Chaingun", "type": "sprite", "density": 5},
+        {"id": 407, "name": "Tank Shrinker", "type": "sprite", "density": 0},
+        {"id": 520, "name": "Blue Key Card", "type": "sprite", "density": 0},
+        {"id": 790, "name": "Hub Freezethrower", "type": "sprite", "density": 3},
+        {"id": 797, "name": "Hub Armor", "type": "sprite", "density": 4},
+        {"id": 801, "name": "Alpha Wall Devastator", "type": "sprite", "density": 2},
+        {"id": 836, "name": "MP Tank RPG", "type": "sprite", "density": 5},
+        {"id": 837, "name": "Alpha Pipebombs", "type": "sprite", "density": 4},
+        {"id": 843, "name": "Yellow Key Card", "type": "sprite", "density": 0},
+        {"id": 932, "name": "Start Armor", "type": "sprite", "density": 0},
+        {
+            "id": 952,
+            "name": "Outlook Night Vision Goggles",
+            "type": "sprite",
+            "density": 4,
+        },
+        {"id": 953, "name": "Alpha Lab Steroids", "type": "sprite", "density": 0},
+        {"id": 954, "name": "Alpha Lab Holo Duke", "type": "sprite", "density": 3},
+        {
+            "id": 955,
+            "name": "Reactor Control Protective Boots",
+            "type": "sprite",
+            "density": 4,
+        },
+        {
+            "id": 989,
+            "name": "Top of Hub Night Vision Goggles",
+            "type": "sprite",
+            "density": 0,
+        },
+        {"id": 990, "name": "Top of Hub Armor", "type": "sprite", "density": 4},
+        {"id": 991, "name": "MP Start Jetpack", "type": "sprite", "density": 5},
+        {"id": 992, "name": "MP Surface Atomic Health", "type": "sprite", "density": 5},
+        {"id": 993, "name": "MP Surface Atomic Health", "type": "sprite", "density": 5},
+        {"id": 994, "name": "MP Surface Steroids", "type": "sprite", "density": 5},
+        {"id": 995, "name": "MP Surface Jetpack", "type": "sprite", "density": 5},
+        {"id": 996, "name": "MP Surface Shrinker", "type": "sprite", "density": 5},
+        {"id": 997, "name": "MP Surface RPG", "type": "sprite", "density": 5},
+        {"id": 998, "name": "MP Surface Freezethrower", "type": "sprite", "density": 5},
+        {"id": 1007, "name": "Gamma Tripmine 1", "type": "sprite", "density": 3},
+        {"id": 1008, "name": "Gamma Shrinker", "type": "sprite", "density": 2},
+        {"id": 1009, "name": "Gamma Tripmine 2", "type": "sprite", "density": 4},
+        {"id": 1016, "name": "Outlook Atomic Health", "type": "sprite", "density": 0},
+        {"id": 1017, "name": "Babes Pipebombs 1", "type": "sprite", "density": 2},
+        {"id": 1018, "name": "Babes Pipebombs 2", "type": "sprite", "density": 3},
+        {"id": 1019, "name": "Babes Pipebombs 3", "type": "sprite", "density": 4},
         {"id": 352, "name": "Secret Babes Wall", "type": "sector"},
         {"id": 579, "name": "Secret Alpha Lab Tanks", "type": "sector"},
         {"id": 647, "name": "Secret Hub Monitor", "type": "sector"},
@@ -84,6 +124,10 @@ class E2L8(D3DLevel):
         r = self.rules
         ret = self.region(
             self.name,
+            [],
+        )
+        past_door = self.region(
+            "Past Door",
             [
                 "MP Start Jetpack",
                 "Start Armor",
@@ -96,6 +140,15 @@ class E2L8(D3DLevel):
                 "Alpha Pipebombs",
                 "Crumbling Canyon Atomic Health",
                 "Crumbling Canyon Chaingun",
+            ],
+        )
+        self.connect(ret, past_door, r.can_open)
+        # can collect the items, but not the secret trigger
+        self.restrict("Secret Hub Monitor", r.can_crouch)
+
+        alpha_transport = self.region(
+            "Alpha Transport",
+            [
                 "Alpha Lab Steroids",
                 "Alpha Lab Tripmine",
                 "Alpha Lab Medkit",
@@ -104,18 +157,17 @@ class E2L8(D3DLevel):
                 "Secret Alpha Lab Tanks",
             ],
         )
-        # can collect the items, but not the secret trigger
-        self.restrict("Secret Hub Monitor", r.can_crouch)
+        self.connect(past_door, alpha_transport, r.can_use)
 
         alpha_wall = self.region(
             "Alpha Wall", ["Secret Alpha Cracked Wall", "Alpha Wall Devastator"]
         )
-        self.connect(ret, alpha_wall, r.explosives)
+        self.connect(past_door, alpha_wall, r.explosives)
 
         alpha_lab_tanks = self.region(
             "Alpha Lab Tanks", ["MP Tank Chaingun", "MP Tank RPG", "Tank Shrinker"]
         )
-        self.connect(ret, alpha_lab_tanks, r.can_dive)
+        self.connect(past_door, alpha_lab_tanks, r.can_dive)
 
         alpha_lab_backroom = self.region(
             "Alpha Lab Backroom",
@@ -126,7 +178,7 @@ class E2L8(D3DLevel):
                 "Waste Pool Pipebombs",
             ],
         )
-        self.connect(ret, alpha_lab_backroom, r.jump)
+        self.connect(past_door, alpha_lab_backroom, r.jump)
         self.restrict("Waste Pool Pipebombs", r.can_dive)
 
         top_of_hub = self.region(
@@ -138,15 +190,10 @@ class E2L8(D3DLevel):
                 "Top of Hub Chaingun",
                 "Gamma Tripmine 1",
                 "Gamma Tripmine 2",
-                "Gamma Medkit",
-                "Gamma Vent Atomic Health",  # can just walk in from below
-                "Babes Shotgun",
-                "Reactor Control Protective Boots",
-                "Reactor Control Devastator",
             ],
         )
         self.connect(
-            ret,
+            past_door,
             top_of_hub,
             self.blue_key | r.jetpack(50) | (r.difficulty("medium") & r.can_jump),
         )
@@ -155,6 +202,18 @@ class E2L8(D3DLevel):
             r.jetpack(50)
             | (r.can_jump & (r.can_sprint | r.steroids | r.difficulty("medium"))),
         )
+
+        gamma_transport = self.region(
+            "Gamma Transport",
+            [
+                "Gamma Medkit",
+                "Gamma Vent Atomic Health",  # can just walk in from below
+                "Babes Shotgun",
+                "Reactor Control Protective Boots",
+                "Reactor Control Devastator",
+            ],
+        )
+        self.connect(past_door, gamma_transport, r.can_use)
 
         gamma_secret = self.region(
             "Gamma Transport Secret", ["Secret Gamma Monitor", "Gamma Shrinker"]
@@ -180,10 +239,17 @@ class E2L8(D3DLevel):
             top_of_hub, reactor_control_ledge, r.jump | r.difficulty("extreme")
         )
 
+        beta_pre_transport = self.region(
+            "Beta Pre-Transport",
+            [
+                "Beta Pipebombs",
+            ],
+        )
+        self.connect(past_door, beta_pre_transport, self.yellow_key)
+
         beta_transport = self.region(
             "Beta Transport",
             [
-                "Beta Pipebombs",
                 "Secret Beta Transport Wall",
                 "Beta Wall Atomic Health 1",
                 "Beta Wall Atomic Health 2",
@@ -202,7 +268,8 @@ class E2L8(D3DLevel):
                 "Surface Pipebombs",
             ],
         )
-        self.connect(ret, beta_transport, self.yellow_key)
+
+        self.connect(beta_pre_transport, beta_transport, r.can_use)
 
         final_area = self.region(
             "Final Area",
@@ -215,10 +282,11 @@ class E2L8(D3DLevel):
         )
         # can use surrounding enemies to blow up wall, but it's annoying to set up
         self.connect(beta_transport, final_area, r.explosives | r.difficulty("hard"))
-        self.restrict("Exit", r.can_dive)
+        self.restrict("Exit", r.can_dive & r.can_use)
 
         secret_exit = self.region(
             "Overlord Overhang", ["Secret Overlord Overhang", "Secret Exit"]
         )
         self.connect(final_area, secret_exit, r.jump)
+        self.restrict("Secret Exit", r.can_use)
         return ret

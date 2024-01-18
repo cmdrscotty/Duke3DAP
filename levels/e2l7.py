@@ -9,41 +9,86 @@ class E2L7(D3DLevel):
     volumenum = 1
     keys = ["Blue", "Red", "Yellow"]
     location_defs = [
-        {"id": 5, "name": "Toilet Steroids", "type": "sprite"},
-        {"id": 39, "name": "Start Night Vision Goggles", "type": "sprite"},
-        {"id": 50, "name": "Trash Compactor Atomic Health 1", "type": "sprite"},
-        {"id": 51, "name": "Trash Compactor Atomic Health 2", "type": "sprite"},
-        {"id": 77, "name": "Reactor RPG", "type": "sprite"},
-        {"id": 78, "name": "Reactor Lookout Shotgun", "type": "sprite"},
-        {"id": 109, "name": "Canyon Cave Armor", "type": "sprite"},
-        {"id": 111, "name": "Canyon Cave Atomic Health", "type": "sprite"},
-        {"id": 120, "name": "Toilet Tripmine", "type": "sprite"},
-        {"id": 128, "name": "Canyon Floor Jetpack", "type": "sprite"},
-        {"id": 129, "name": "Reactor Vent Pipebombs", "type": "sprite"},
-        {"id": 132, "name": "Slime Holo Duke", "type": "sprite"},
-        {"id": 142, "name": "Slime Freezethrower", "type": "sprite"},
-        {"id": 147, "name": "Luke Skywalker Shrinker", "type": "sprite"},
-        {"id": 148, "name": "Crew Quarters Tripmine", "type": "sprite"},
-        {"id": 149, "name": "Crew Quarters Armor", "type": "sprite"},
-        {"id": 154, "name": "Crew Quarters Pipebombs", "type": "sprite"},
-        {"id": 158, "name": "Blue Vent Atomic Health", "type": "sprite"},
-        {"id": 160, "name": "Crew Quarters Chaingun", "type": "sprite"},
-        {"id": 164, "name": "Yellow Door Vent Atomic Health", "type": "sprite"},
-        {"id": 165, "name": "Toilet Medkit", "type": "sprite"},
-        {"id": 175, "name": "Vent Devastator", "type": "sprite"},
-        {"id": 213, "name": "Toilet RPG", "type": "sprite"},
-        {"id": 882, "name": "Red Key Card", "type": "sprite"},
-        {"id": 883, "name": "Blue Key Card", "type": "sprite"},
-        {"id": 954, "name": "Start Shotgun", "type": "sprite"},
-        {"id": 983, "name": "Yellow Key Card", "type": "sprite"},
-        {"id": 992, "name": "Slime Night Vision Goggles", "type": "sprite"},
-        {"id": 994, "name": "Reactor Stairs Tripmine", "type": "sprite"},
-        {"id": 995, "name": "Reactor Lookout Tripmine", "type": "sprite"},
-        {"id": 1028, "name": "Reactor Lookout Night Vision Goggles", "type": "sprite"},
-        {"id": 1029, "name": "Reactor Ledge Tripmine 1", "type": "sprite"},
-        {"id": 1030, "name": "Reactor Ledge Tripmine 2", "type": "sprite"},
-        {"id": 1040, "name": "Slime Protective Boots", "type": "sprite"},
-        {"id": 1042, "name": "Reactor Atomic Health", "type": "sprite"},
+        {"id": 5, "name": "Toilet Steroids", "type": "sprite", "density": 3},
+        {
+            "id": 39,
+            "name": "Start Night Vision Goggles",
+            "type": "sprite",
+            "density": 0,
+        },
+        {
+            "id": 50,
+            "name": "Trash Compactor Atomic Health 1",
+            "type": "sprite",
+            "density": 2,
+        },
+        {
+            "id": 51,
+            "name": "Trash Compactor Atomic Health 2",
+            "type": "sprite",
+            "density": 3,
+        },
+        {"id": 77, "name": "Reactor RPG", "type": "sprite", "density": 0},
+        {"id": 78, "name": "Reactor Lookout Shotgun", "type": "sprite", "density": 0},
+        {"id": 109, "name": "Canyon Cave Armor", "type": "sprite", "density": 3},
+        {
+            "id": 111,
+            "name": "Canyon Cave Atomic Health",
+            "type": "sprite",
+            "density": 2,
+        },
+        {"id": 120, "name": "Toilet Tripmine", "type": "sprite", "density": 4},
+        {"id": 128, "name": "Canyon Floor Jetpack", "type": "sprite", "density": 0},
+        {"id": 129, "name": "Reactor Vent Pipebombs", "type": "sprite", "density": 4},
+        {"id": 132, "name": "Slime Holo Duke", "type": "sprite", "density": 2},
+        {"id": 142, "name": "Slime Freezethrower", "type": "sprite", "density": 0},
+        {"id": 147, "name": "Luke Skywalker Shrinker", "type": "sprite", "density": 2},
+        {"id": 148, "name": "Crew Quarters Tripmine", "type": "sprite", "density": 4},
+        {"id": 149, "name": "Crew Quarters Armor", "type": "sprite", "density": 3},
+        {"id": 154, "name": "Crew Quarters Pipebombs", "type": "sprite", "density": 4},
+        {"id": 158, "name": "Blue Vent Atomic Health", "type": "sprite", "density": 3},
+        {"id": 160, "name": "Crew Quarters Chaingun", "type": "sprite", "density": 0},
+        {
+            "id": 164,
+            "name": "Yellow Door Vent Atomic Health",
+            "type": "sprite",
+            "density": 3,
+        },
+        {"id": 165, "name": "Toilet Medkit", "type": "sprite", "density": 3},
+        {"id": 175, "name": "Vent Devastator", "type": "sprite", "density": 0},
+        {"id": 213, "name": "Toilet RPG", "type": "sprite", "density": 4},
+        {"id": 882, "name": "Red Key Card", "type": "sprite", "density": 0},
+        {"id": 883, "name": "Blue Key Card", "type": "sprite", "density": 0},
+        {"id": 954, "name": "Start Shotgun", "type": "sprite", "density": 3},
+        {"id": 983, "name": "Yellow Key Card", "type": "sprite", "density": 0},
+        {
+            "id": 992,
+            "name": "Slime Night Vision Goggles",
+            "type": "sprite",
+            "density": 3,
+        },
+        {"id": 994, "name": "Reactor Stairs Tripmine", "type": "sprite", "density": 4},
+        {"id": 995, "name": "Reactor Lookout Tripmine", "type": "sprite", "density": 3},
+        {
+            "id": 1028,
+            "name": "Reactor Lookout Night Vision Goggles",
+            "type": "sprite",
+            "density": 4,
+        },
+        {
+            "id": 1029,
+            "name": "Reactor Ledge Tripmine 1",
+            "type": "sprite",
+            "density": 2,
+        },
+        {
+            "id": 1030,
+            "name": "Reactor Ledge Tripmine 2",
+            "type": "sprite",
+            "density": 3,
+        },
+        {"id": 1040, "name": "Slime Protective Boots", "type": "sprite", "density": 4},
+        {"id": 1042, "name": "Reactor Atomic Health", "type": "sprite", "density": 0},
         {"id": 181, "name": "Secret Trash Compactor", "type": "sector"},
         {"id": 206, "name": "Secret Slime Monitors", "type": "sector"},
         {"id": 330, "name": "Secret Luke Skywalker", "type": "sector"},
@@ -58,6 +103,11 @@ class E2L7(D3DLevel):
         r = self.rules
         ret = self.region(
             self.name,
+            [],
+        )
+
+        past_door = self.region(
+            "Past Door",
             [
                 "Start Night Vision Goggles",
                 "Start Shotgun",
@@ -69,11 +119,14 @@ class E2L7(D3DLevel):
                 "Yellow Door Vent Atomic Health",
             ],
         )
+        self.connect(ret, past_door, r.can_open)
         self.restrict("Yellow Door Vent Atomic Health", r.jump)
 
         start_vents = self.region("Vents", ["Vent Devastator"])
         # Can't actually get to the top section with just a jetpack except from the reactor core room
-        self.connect(ret, start_vents, r.can_jump | (r.jetpack(50) & self.yellow_key))
+        self.connect(
+            past_door, start_vents, r.can_jump | (r.jetpack(50) & self.yellow_key)
+        )
 
         crew_quarters = self.region(
             "Crew Quarters",
@@ -86,7 +139,7 @@ class E2L7(D3DLevel):
                 "Secret Canyon Monitors",
             ],
         )
-        self.connect(ret, crew_quarters, self.blue_key)
+        self.connect(past_door, crew_quarters, self.blue_key)
         self.restrict("Blue Vent Atomic Health", r.jump)
 
         luke_cave = self.region(
@@ -97,7 +150,7 @@ class E2L7(D3DLevel):
             ],
         )
         # can just walk off
-        self.connect(crew_quarters, luke_cave, r.true)
+        self.connect(crew_quarters, luke_cave, r.can_use)
 
         crumbling_canyon = self.region("Crumbling Canyon", ["Yellow Key Card"])
         # teleport up
@@ -116,7 +169,9 @@ class E2L7(D3DLevel):
         )
         # timing is a bit tight without sprinting
         self.connect(
-            crew_quarters, trash_compactor, r.can_sprint | r.difficulty("medium")
+            crew_quarters,
+            trash_compactor,
+            r.can_use & (r.can_sprint | r.difficulty("medium")),
         )
 
         canyon_cave = self.region(
@@ -145,7 +200,7 @@ class E2L7(D3DLevel):
         )
         # Can't squeeze in with a jump
         self.connect(crew_quarters, slime_room, r.can_crouch)
-        self.connect(ret, slime_room, self.red_key)
+        self.connect(past_door, slime_room, self.red_key)
         self.connect(slime_room, canyon_vent, r.can_crouch)
         # fly up inside the vent to get to the top, unlocking the full circle
         self.connect(canyon_vent, crew_quarters, r.jetpack(50))
@@ -175,7 +230,9 @@ class E2L7(D3DLevel):
             ],
         )
         self.restrict("Reactor Vent Pipebombs", r.jump)
-        self.connect(ret, reactor_core, self.yellow_key)
+        self.restrict("Exit", r.can_use)
+
+        self.connect(past_door, reactor_core, self.yellow_key)
         # Can get in through the vent
         self.connect(reactor_core, crew_quarters, r.jump)
 
@@ -190,4 +247,6 @@ class E2L7(D3DLevel):
             ],
         )
         self.connect(reactor_core, reactor_ledges, r.jump)
+        self.restrict("Reactor Atomic Health", r.can_use)
+
         return ret
