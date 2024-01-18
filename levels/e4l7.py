@@ -12,7 +12,7 @@ class E4L7(D3DLevel):
         {"id": 8, "name": "Crusher Scuba Gear", "type": "sprite"},
         {"id": 29, "name": "Blue Holo Duke", "type": "sprite"},
         {"id": 34, "name": "Crate Freezethrower", "type": "sprite"},
-        {"id": 35, "density": 5, "name": "MP Front Jetpack", "type": "sprite"},
+        {"id": 35, "name": "MP Front Jetpack", "type": "sprite", "density": 5},
         {"id": 37, "name": "Blue Apt. Pipebombs", "type": "sprite"},
         {
             "name": "Printer Trashcan Pipebombs",
@@ -32,12 +32,12 @@ class E4L7(D3DLevel):
         {"id": 177, "name": "Front Chaingun", "type": "sprite"},
         {"id": 186, "name": "Front Protective Boots", "type": "sprite"},
         {"id": 195, "name": "Blue Secret Shrinker", "type": "sprite"},
-        {"id": 207, "density": 5, "name": "MP Outside Shotgun", "type": "sprite"},
+        {"id": 207, "name": "MP Outside Shotgun", "type": "sprite", "density": 5},
         {"id": 216, "name": "Blue Atomic Health", "type": "sprite"},
         {"id": 245, "name": "Blue Night Vision Goggles", "type": "sprite"},
         {"id": 322, "name": "Blue Medkit", "type": "sprite"},
         {"id": 331, "name": "Front Steroids", "type": "sprite"},
-        {"id": 365, "density": 5, "name": "MP Blue Jetpack", "type": "sprite"},
+        {"id": 365, "name": "MP Blue Jetpack", "type": "sprite", "density": 5},
         {"id": 372, "name": "Red Key Card", "type": "sprite"},
         {"id": 420, "name": "Blue Shotgun", "type": "sprite"},
         {

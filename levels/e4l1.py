@@ -21,9 +21,9 @@ class E4L1(D3DLevel):
         {"id": 151, "name": "Upper Canyon Ledge Pipebombs", "type": "sprite"},
         {
             "id": 152,
-            "density": 5,
             "name": "MP Upper Canyon Ledge Steroids",
             "type": "sprite",
+            "density": 5,
         },
         {"id": 170, "name": "Cave Atomic Health", "type": "sprite"},
         {"id": 192, "name": "Final Doors Atomic Health", "type": "sprite"},
@@ -34,15 +34,15 @@ class E4L1(D3DLevel):
         {"id": 540, "name": "Bathroom Chaingun", "type": "sprite"},
         {
             "id": 544,
-            "density": 5,
             "name": "MP Outside Area Ledge Shotgun",
             "type": "sprite",
+            "density": 5,
         },
         {
             "id": 545,
-            "density": 5,
             "name": "MP Outside Area Ledge Chaingun",
             "type": "sprite",
+            "density": 5,
         },
         {"id": 562, "name": "Briefing Room Pipebombs", "type": "sprite"},
         {"id": 563, "name": "Kitchen Conveyer Atomic Health", "type": "sprite"},

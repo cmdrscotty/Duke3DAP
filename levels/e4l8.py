@@ -10,7 +10,7 @@ class E4L8(D3DLevel):
     keys = ["Red", "Blue", "Yellow"]
     location_defs = [
         {"id": 313, "name": "Warehouse Vent Night Vision Goggles", "type": "sprite"},
-        {"id": 323, "density": 5, "name": "MP Bookshelf Jetpack", "type": "sprite"},
+        {"id": 323, "name": "MP Bookshelf Jetpack", "type": "sprite", "density": 5},
         {"id": 344, "name": "Control Freezethrower", "type": "sprite"},
         {"id": 351, "name": "Control Armor", "type": "sprite"},
         {"id": 352, "name": "Control Shotgun", "type": "sprite"},
@@ -38,8 +38,8 @@ class E4L8(D3DLevel):
         {"id": 836, "name": "Storage Tripmine 2", "type": "sprite"},
         {"id": 854, "name": "Red Key Card", "type": "sprite"},
         {"id": 863, "name": "Explosion Lower Scuba Gear", "type": "sprite"},
-        {"id": 864, "density": 5, "name": "MP Explosion RPG", "type": "sprite"},
-        {"id": 868, "density": 5, "name": "MP Outside Freezethrower", "type": "sprite"},
+        {"id": 864, "name": "MP Explosion RPG", "type": "sprite", "density": 5},
+        {"id": 868, "name": "MP Outside Freezethrower", "type": "sprite", "density": 5},
         {"id": 105, "name": "Secret Explosion Lower", "type": "sector"},
         {"id": 116, "name": "Secret Homer", "type": "sector"},
         {"id": 234, "name": "Secret Blue Area", "type": "sector"},

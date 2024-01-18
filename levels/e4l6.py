@@ -33,9 +33,9 @@ class E4L6(D3DLevel):
         {"id": 294, "name": "Blue Armor", "type": "sprite"},
         {
             "id": 295,
-            "density": 5,
             "name": "MP Conveyer Upper Jetpack",
             "type": "sprite",
+            "density": 5,
         },
         {"id": 296, "name": "Conveyer Upper Medkit", "type": "sprite"},
         {"id": 305, "name": "Locker Crate Chaingun", "type": "sprite"},
