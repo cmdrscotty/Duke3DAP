@@ -1241,7 +1241,7 @@
     "E4L3 Exit": 1735,
     "E4L4 Red Boat RPG": 1038,
     "E4L4 Red Boat Chaingun": 1039,
-    "E4L4 Red Upper Protective Boots": 1040,
+    "E4L4 Red Auction Protective Boots": 1040,
     "E4L4 Red Key Card": 1041,
     "E4L4 Red Upper 2 Pipebombs": 1042,
     "E4L4 MP Boat Top Protective Boots": 1043,
@@ -1249,7 +1249,7 @@
     "E4L4 Castle Jetpack": 1045,
     "E4L4 Castle Holo Duke": 1046,
     "E4L4 Red Auction Night Vision Goggles": 1047,
-    "E4L4 Red Upper 2 Holo Duke": 1048,
+    "E4L4 Red Auction Holo Duke": 1048,
     "E4L4 Upper Main Pipebombs": 1049,
     "E4L4 MP Red Key Medkit": 1050,
     "E4L4 Blue Area Hidden Night Vision Goggles": 1051,
@@ -1860,5 +1860,5 @@
     "Dynamic15": 614,
     "Dynamic16": 615
   },
-  "checksum": "9d7ff75b81784d1f179f785628981cf4dbea2bcde88c93f4788a7e99da6b2c6b"
+  "checksum": "546ea8d4992cd340b21d56eaa3825d743adca0a017855d47660f331721238888"
 }

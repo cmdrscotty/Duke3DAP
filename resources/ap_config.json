@@ -2,7 +2,7 @@
   "game": "Duke Nukem 3D",
   "name": "Duke Nukem 3D",
   "game_id": 1,
-  "checksum": "9d7ff75b81784d1f179f785628981cf4dbea2bcde88c93f4788a7e99da6b2c6b",
+  "checksum": "546ea8d4992cd340b21d56eaa3825d743adca0a017855d47660f331721238888",
   "episodes": {
     "E1": {
       "name": "L.A. Meltdown",
@@ -5496,7 +5496,7 @@
         },
         "19": {
           "id": 1040,
-          "name": "Red Upper Protective Boots"
+          "name": "Red Auction Protective Boots"
         },
         "56": {
           "id": 1041,
@@ -5528,7 +5528,7 @@
         },
         "205": {
           "id": 1048,
-          "name": "Red Upper 2 Holo Duke"
+          "name": "Red Auction Holo Duke"
         },
         "210": {
           "id": 1049,
