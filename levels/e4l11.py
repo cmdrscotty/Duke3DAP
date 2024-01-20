@@ -9,41 +9,56 @@ class E4L11(D3DLevel):
     volumenum = 3
     keys = ["Red", "Blue", "Yellow"]
     location_defs = [
-        {"id": 50, "name": "UFO Atomic Health", "type": "sprite"},
-        {"id": 90, "name": "Vent Entrance Pipebombs", "type": "sprite"},
-        {"id": 94, "density": 5, "name": "MP Outside Pipebombs", "type": "sprite"},
-        {"id": 109, "density": 5, "name": "MP Blue Chaingun", "type": "sprite"},
-        {"id": 112, "density": 5, "name": "MP Red Steroids", "type": "sprite"},
-        {"id": 198, "name": "Elevator Drop Devastator", "type": "sprite"},
-        {"id": 234, "name": "Cave Night Vision Goggles", "type": "sprite"},
-        {"id": 252, "name": "Blue Night Vision Goggles", "type": "sprite"},
-        {"id": 254, "name": "Outside Pipebombs", "type": "sprite"},
-        {"id": 258, "name": "Crate Holo Duke", "type": "sprite"},
-        {"id": 275, "name": "Lake Pipebombs", "type": "sprite"},
-        {"id": 294, "name": "Blue Tripmine 1", "type": "sprite"},
-        {"id": 295, "name": "Blue Tripmine 2", "type": "sprite"},
-        {"id": 297, "name": "Blue Holo Duke", "type": "sprite"},
-        {"id": 298, "name": "Symbol Atomic Health", "type": "sprite"},
-        {"id": 299, "name": "Corner Steroids", "type": "sprite"},
-        {"id": 300, "name": "Blue Tripmine 3", "type": "sprite"},
-        {"id": 301, "name": "Blue Medkit", "type": "sprite"},
-        {"id": 302, "density": 5, "name": "MP Freezer Atomic Health", "type": "sprite"},
-        {"id": 304, "name": "Crate Armor", "type": "sprite"},
-        {"id": 306, "name": "Tele Cave Shotgun", "type": "sprite"},
-        {"id": 308, "name": "Vent Secret Atomic Health", "type": "sprite"},
-        {"id": 311, "name": "Blue Key Card", "type": "sprite"},
-        {"id": 335, "name": "Bunker Chaingun", "type": "sprite"},
-        {"id": 469, "name": "Red Key Card", "type": "sprite"},
-        {"id": 513, "name": "Vent Entrance Armor", "type": "sprite"},
-        {"id": 558, "name": "Conveyer Jetpack", "type": "sprite"},
-        {"id": 560, "name": "Conveyer Shrinker", "type": "sprite"},
-        {"id": 561, "density": 5, "name": "MP Cave Jetpack", "type": "sprite"},
-        {"id": 568, "name": "Bridge RPG", "type": "sprite"},
-        {"id": 584, "name": "Red Shotgun", "type": "sprite"},
-        {"id": 610, "name": "Elevator Drop Medkit", "type": "sprite"},
-        {"id": 637, "name": "Crate Scuba Gear", "type": "sprite"},
-        {"id": 656, "name": "Table Freezethrower", "type": "sprite"},
-        {"id": 690, "name": "Yellow Key Card", "type": "sprite"},
+        {"id": 50, "name": "UFO Atomic Health", "type": "sprite", "density": 2},
+        {"id": 90, "name": "Vent Entrance Pipebombs", "type": "sprite", "density": 3},
+        {"id": 94, "name": "MP Outside Pipebombs", "type": "sprite", "density": 5},
+        {"id": 109, "name": "MP Blue Chaingun", "type": "sprite", "density": 5},
+        {"id": 112, "name": "MP Red Steroids", "type": "sprite", "density": 5},
+        {"id": 198, "name": "Elevator Drop Devastator", "type": "sprite", "density": 3},
+        {
+            "id": 234,
+            "name": "Cave Night Vision Goggles",
+            "type": "sprite",
+            "density": 0,
+        },
+        {
+            "id": 252,
+            "name": "Blue Night Vision Goggles",
+            "type": "sprite",
+            "density": 0,
+        },
+        {"id": 254, "name": "Outside Pipebombs", "type": "sprite", "density": 0},
+        {"id": 258, "name": "Crate Holo Duke", "type": "sprite", "density": 0},
+        {"id": 275, "name": "Lake Pipebombs", "type": "sprite", "density": 2},
+        {"id": 294, "name": "Blue Tripmine 1", "type": "sprite", "density": 0},
+        {"id": 295, "name": "Blue Tripmine 2", "type": "sprite", "density": 3},
+        {"id": 297, "name": "Blue Holo Duke", "type": "sprite", "density": 0},
+        {"id": 298, "name": "Symbol Atomic Health", "type": "sprite", "density": 2},
+        {"id": 299, "name": "Corner Steroids", "type": "sprite", "density": 2},
+        {"id": 300, "name": "Blue Tripmine 3", "type": "sprite", "density": 4},
+        {"id": 301, "name": "Blue Medkit", "type": "sprite", "density": 0},
+        {"id": 302, "name": "MP Freezer Atomic Health", "type": "sprite", "density": 5},
+        {"id": 304, "name": "Crate Armor", "type": "sprite", "density": 3},
+        {"id": 306, "name": "Tele Cave Shotgun", "type": "sprite", "density": 0},
+        {
+            "id": 308,
+            "name": "Vent Secret Atomic Health",
+            "type": "sprite",
+            "density": 2,
+        },
+        {"id": 311, "name": "Blue Key Card", "type": "sprite", "density": 0},
+        {"id": 335, "name": "Bunker Chaingun", "type": "sprite", "density": 0},
+        {"id": 469, "name": "Red Key Card", "type": "sprite", "density": 0},
+        {"id": 513, "name": "Vent Entrance Armor", "type": "sprite", "density": 0},
+        {"id": 558, "name": "Conveyer Jetpack", "type": "sprite", "density": 0},
+        {"id": 560, "name": "Conveyer Shrinker", "type": "sprite", "density": 3},
+        {"id": 561, "name": "MP Cave Jetpack", "type": "sprite", "density": 5},
+        {"id": 568, "name": "Bridge RPG", "type": "sprite", "density": 2},
+        {"id": 584, "name": "Red Shotgun", "type": "sprite", "density": 3},
+        {"id": 610, "name": "Elevator Drop Medkit", "type": "sprite", "density": 0},
+        {"id": 637, "name": "Crate Scuba Gear", "type": "sprite", "density": 2},
+        {"id": 656, "name": "Table Freezethrower", "type": "sprite", "density": 0},
+        {"id": 690, "name": "Yellow Key Card", "type": "sprite", "density": 0},
         {"id": 50, "name": "Secret Symbol", "type": "sector"},
         {"id": 54, "name": "Secret Corner", "type": "sector"},
         {"id": 82, "name": "Secret Crate", "type": "sector"},
@@ -70,7 +85,7 @@ class E4L11(D3DLevel):
                 "Bunker Chaingun",
             ],
         )
-        self.connect(ret, second_area, r.jetpack(50) | r.explosives)
+        self.connect(ret, second_area, r.jetpack(50) | (r.explosives & r.can_open))
 
         bridge_secret = self.region(
             "Secret Bridge",
@@ -96,9 +111,15 @@ class E4L11(D3DLevel):
             [
                 "Vent Entrance Pipebombs",
                 "Blue Key Card",
-                "Tele Cave Shotgun",
+                "Tele Cave Shotgun",  # Can get this from outside
                 "Vent Entrance Armor",
             ],
+        )
+        self.restrict("Vent Entrance Pipebombs", r.can_use)
+        self.restrict("Blue Key Card", r.can_use)
+        self.restrict(
+            "Tele Cave Shotgun",
+            r.can_use | r.jetpack(50) | (r.sprint & r.can_jump & r.difficulty("hard")),
         )
         self.connect(second_area, vent_entrance, r.jump)
 
@@ -122,11 +143,36 @@ class E4L11(D3DLevel):
                 "MP Blue Chaingun",
             ],
         )
+        self.restrict("Blue Tripmine 1", r.can_open | r.crouch_jump)
+        self.restrict("Blue Tripmine 2", r.can_open | r.crouch_jump)
+        self.restrict("Blue Tripmine 3", r.can_open | r.crouch_jump)
+        self.restrict(
+            "Blue Night Vision Goggles",
+            r.can_open
+            | (
+                r.difficulty("extreme")
+                & r.glitched
+                & r.can_jump
+                & r.fast_sprint
+                & r.tripmine
+            ),
+        )
+        self.restrict(
+            "MP Blue Chaingun",
+            r.can_open
+            | (
+                r.difficulty("extreme")
+                & r.glitched
+                & r.can_jump
+                & r.fast_sprint
+                & r.tripmine
+            ),
+        )
         # Clip through wall where sectors overlap or tripclip blue door
         self.connect(
             second_area,
             blue_key_area,
-            self.blue_key
+            (self.blue_key & r.can_open)
             | (
                 r.difficulty("hard")
                 & r.glitched
@@ -138,8 +184,7 @@ class E4L11(D3DLevel):
                 r.difficulty("extreme")
                 & r.glitched
                 & r.can_jump
-                & r.can_sprint
-                & r.steroids
+                & r.fast_sprint
                 & r.tripmine
             ),
         )
@@ -154,8 +199,24 @@ class E4L11(D3DLevel):
                 "Blue Holo Duke",
             ],
         )
+        self.restrict("Secret Corner", r.can_open)
+        self.restrict("Corner Steroids", r.can_open)
         # jetpack can't get onto the ledge for the trigger
-        self.connect(blue_key_area, blue_upper, r.can_jump)
+        self.connect(
+            blue_key_area,
+            blue_upper,
+            r.can_jump
+            & (
+                r.can_open
+                | (
+                    r.difficulty("extreme")
+                    & r.glitched
+                    & r.can_jump
+                    & r.fast_sprint
+                    & r.tripmine
+                )
+            ),
+        )
 
         hidden_wall = self.region(
             "Blue Hidden Wall",
@@ -163,8 +224,8 @@ class E4L11(D3DLevel):
                 "Blue Medkit",
             ],
         )
-        # Walk + roids is tight, requires around 175 steroids
-        self.connect(blue_key_area, hidden_wall, (r.can_sprint | r.jump | r.steroids))
+        # Can sr50 on the ledge from the couch
+        self.connect(blue_key_area, hidden_wall, r.can_use & (r.sr50 | r.jump))
 
         elevator_drop = self.region(
             "Elevator Drop",
@@ -179,9 +240,21 @@ class E4L11(D3DLevel):
         self.connect(
             blue_key_area,
             elevator_drop,
-            r.difficulty("hard")
-            | r.jetpack(50)
-            | r.difficulty("medium") & (r.jump | r.jetpack),
+            (
+                r.can_open
+                | (
+                    r.glitched
+                    & r.tripmine
+                    & r.fast_sprint
+                    & r.can_jump
+                    & r.difficulty("extreme")
+                )
+            )
+            & (
+                r.difficulty("hard")
+                | r.jetpack(50)
+                | r.difficulty("medium") & (r.jump | r.jetpack)
+            ),
         )
 
         past_elevator = self.region(
@@ -192,6 +265,9 @@ class E4L11(D3DLevel):
                 "Crate Scuba Gear",
             ],
         )
+        self.restrict("Secret Crate", r.can_use)
+        self.restrict("Crate Armor", r.can_use)
+        self.restrict("Crate Scuba Gear", r.can_use)
         # Can fall from elevator into opening
         self.connect(elevator_drop, past_elevator, r.jump | r.difficulty("hard"))
 
@@ -204,7 +280,7 @@ class E4L11(D3DLevel):
         )
         # Can shoot pipebomb on the floor to trigger explosion, hard because missable
         self.connect(past_elevator, lake_secret, r.explosives | r.difficulty("hard"))
-        self.connect(lake_secret, bridge_secret)
+        self.connect(lake_secret, bridge_secret, r.can_use)
 
         alien_table = self.region(
             "Alien Table",
@@ -249,7 +325,7 @@ class E4L11(D3DLevel):
             ],
         )
 
-        self.connect(past_elevator, ufo_secret)
+        self.connect(past_elevator, ufo_secret, r.can_use)
 
         red_key_area = self.region(
             "Red Key Area",
@@ -258,13 +334,13 @@ class E4L11(D3DLevel):
                 "Red Shotgun",
             ],
         )
-        # This clip is possible with steroids and duck only
-        # Clip on the switch by ducking, then roid+duck to squeeze into the red key area
+        # This clip is possible with sprint and duck only
+        # Clip on the switch by ducking while running into the window
         self.connect(
             past_elevator,
             red_key_area,
-            self.red_key
-            | (r.difficulty("hard") & r.can_crouch & r.steroids & r.glitched),
+            (self.red_key & r.can_open)
+            | (r.difficulty("hard") & r.can_crouch & r.sprint & r.glitched),
         )
 
         red_table = self.region(
@@ -274,7 +350,7 @@ class E4L11(D3DLevel):
             ],
         )
         # Can sr50 on table
-        self.connect(red_key_area, red_table, r.difficulty("hard") | r.jump)
+        self.connect(red_key_area, red_table, r.sr50 | r.jump)
 
         yellow_key_area = self.region(
             "Yellow Key Area",
@@ -282,18 +358,23 @@ class E4L11(D3DLevel):
                 "Exit",
             ],
         )
+        self.restrict("Exit", r.can_use)
         # Tripclip goes nuclear
         self.connect(
             past_elevator,
             yellow_key_area,
-            self.yellow_key
-            | (
-                r.difficulty("hard")
-                & r.steroids
-                & r.can_sprint
-                & r.can_jump
-                & r.tripmine
-                & r.glitched
+            r.can_open
+            & r.can_use
+            & (
+                self.yellow_key
+                | (
+                    r.difficulty("hard")
+                    & r.steroids
+                    & r.can_sprint
+                    & r.can_jump
+                    & r.tripmine
+                    & r.glitched
+                )
             ),
         )
         return ret
