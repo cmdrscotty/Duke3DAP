@@ -1518,7 +1518,7 @@
     "E4L10 L-Side RPG": 1282,
     "E4L10 MP Lobby Shotgun 4": 1283,
     "E4L10 MP Lobby Shotgun 1": 1284,
-    "E4L10 Lobby Shotgun Shotgun 1": 1285,
+    "E4L10 Lobby Shotgun 1": 1285,
     "E4L10 MP Lobby Shotgun 3": 1286,
     "E4L10 DukeTag L-Side Jetpack": 1287,
     "E4L10 MP Center Devastator 2": 1288,
@@ -1860,5 +1860,5 @@
     "Dynamic15": 614,
     "Dynamic16": 615
   },
-  "checksum": "546ea8d4992cd340b21d56eaa3825d743adca0a017855d47660f331721238888"
+  "checksum": "7d61472669e580c2bb330d6df8358fdaac9d5240f8c0453857afbdac1349d032"
 }
