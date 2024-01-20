@@ -158,7 +158,7 @@ class E4L2(D3DLevel):
                 "Kitchen Fryer Armor",
             ],
         )
-        # TODO: Can maybe be grabbed by diagonal walking into the corner?
+        # TODO_LOGIC: Can maybe be grabbed by diagonal walking into the corner?
         self.connect(
             inside_db_kitchen,
             kitchen_fryer,
@@ -173,7 +173,7 @@ class E4L2(D3DLevel):
             ],
         )
         # Can jump/jetpack instead of duck to activate switch at desk
-        # TODO: Extreme logic: Use enforcer to clip on topmost box for secret
+        # TODO_LOGIC: Extreme logic: Use enforcer to clip on topmost box for secret
         # r.jetpack(100) & r.difficulty("extreme") 100 jetpack just to be nice and allow more attempts
         self.connect(
             inside_db_kitchen,

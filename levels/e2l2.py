@@ -186,7 +186,7 @@ class E2L2(D3DLevel):
             waterfall,
             self.event("Lower Walls")
             | (
-                # TODO: find a way to somewhat reliably clip with jetpack and no sprint
+                # TODO_LOGIC: find a way to somewhat reliably clip with jetpack and no sprint
                 # without sprint the clip is very inconsistent
                 # & ((r.difficulty("medium") & r.jetpack(100)) | r.jetpack(200))
                 # current strats are: corner-crouch and jump-clip through the door

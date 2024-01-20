@@ -91,7 +91,8 @@ class E3L7(D3DLevel):
         fire_truck = self.region(
             "Fire Truck", ["Fire Station Medkit", "Fire Truck Holo Duke"]
         )
-        # pretty tricky jump off a flying lizard trooper TODO: decide if no-sprint variant should be included
+        # pretty tricky jump off a flying lizard trooper
+        # TODO_LOGIC: decide if no-sprint variant should be included
         self.connect(
             start_area,
             fire_truck,

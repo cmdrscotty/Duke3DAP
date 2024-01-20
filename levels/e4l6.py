@@ -206,7 +206,8 @@ class E4L6(D3DLevel):
                 "Locker Secret Medkit",
             ],
         )
-        # Can grab the item by strafing into the wall and jumping TODO: maybe medium
+        # Can grab the item by strafing into the wall and jumping
+        # TODO_LOGIC: maybe medium
         self.connect(
             behind_lockers,
             locker_secret_grate,
@@ -324,7 +325,7 @@ class E4L6(D3DLevel):
             ],
         )
         # Shrink clip exists here, very tight unshrink window to clip through the door
-        # TODO: Extreme difficulty?
+        # TODO_LOGIC: Extreme difficulty?
         self.connect(blue_key_area, red_key_area, self.red_key & r.jump & r.can_crouch)
 
         yellow_key_area = self.region(

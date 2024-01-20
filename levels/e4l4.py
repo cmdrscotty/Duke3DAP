@@ -87,7 +87,8 @@ class E4L4(D3DLevel):
             ],
         )
         # Can use the rotating door to clip over into the ticket booth
-        # Also possible to strafe into corner and grab, TODO maybe lower difficulty
+        # Also possible to strafe into corner and grab
+        # TODO_LOGIC: maybe lower difficulty
         self.connect(ret, ticket_booth, r.difficulty("hard") | r.jump)
 
         main_upper = self.region(
