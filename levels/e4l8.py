@@ -9,35 +9,70 @@ class E4L8(D3DLevel):
     volumenum = 3
     keys = ["Red", "Blue", "Yellow"]
     location_defs = [
-        {"id": 313, "name": "Warehouse Vent Night Vision Goggles", "type": "sprite"},
+        {
+            "id": 313,
+            "name": "Warehouse Vent Night Vision Goggles",
+            "type": "sprite",
+            "density": 0,
+        },
         {"id": 323, "name": "MP Bookshelf Jetpack", "type": "sprite", "density": 5},
-        {"id": 344, "name": "Control Freezethrower", "type": "sprite"},
-        {"id": 351, "name": "Control Armor", "type": "sprite"},
-        {"id": 352, "name": "Control Shotgun", "type": "sprite"},
-        {"id": 386, "name": "Blue Key Card", "type": "sprite"},
-        {"id": 456, "name": "Homer Atomic Health", "type": "sprite"},
-        {"id": 479, "name": "Explosion Lower Medkit", "type": "sprite"},
-        {"id": 532, "name": "Explosion Lower Devastator", "type": "sprite"},
-        {"id": 533, "name": "Explosion Lower Atomic Health", "type": "sprite"},
-        {"id": 538, "name": "Explosion Lower Pipebombs", "type": "sprite"},
-        {"id": 613, "name": "Front Upper Armor", "type": "sprite"},
-        {"id": 614, "name": "Warehouse Atomic Health", "type": "sprite"},
-        {"id": 648, "name": "Explosion Chaingun", "type": "sprite"},
-        {"id": 713, "name": "Outside Pipebombs", "type": "sprite"},
-        {"id": 714, "name": "Warehouse Shotgun", "type": "sprite"},
-        {"id": 724, "name": "Explosion Lower Holo Duke", "type": "sprite"},
-        {"id": 733, "name": "Storage Medkit", "type": "sprite"},
-        {"id": 734, "name": "Storage Steroids", "type": "sprite"},
-        {"id": 735, "name": "Explosion Lower Protective Boots", "type": "sprite"},
-        {"id": 761, "name": "Blue Dive Atomic Health", "type": "sprite"},
-        {"id": 762, "name": "Yellow Key Card", "type": "sprite"},
-        {"id": 827, "name": "Blue Upper Shrinker", "type": "sprite"},
-        {"id": 830, "name": "Blue Chaingun", "type": "sprite"},
-        {"id": 834, "name": "Blue Secret RPG", "type": "sprite"},
-        {"id": 835, "name": "Storage Tripmine 1", "type": "sprite"},
-        {"id": 836, "name": "Storage Tripmine 2", "type": "sprite"},
-        {"id": 854, "name": "Red Key Card", "type": "sprite"},
-        {"id": 863, "name": "Explosion Lower Scuba Gear", "type": "sprite"},
+        {"id": 344, "name": "Control Freezethrower", "type": "sprite", "density": 0},
+        {"id": 351, "name": "Control Armor", "type": "sprite", "density": 3},
+        {"id": 352, "name": "Control Shotgun", "type": "sprite", "density": 4},
+        {"id": 386, "name": "Blue Key Card", "type": "sprite", "density": 0},
+        {"id": 456, "name": "Homer Atomic Health", "type": "sprite", "density": 2},
+        {"id": 479, "name": "Explosion Lower Medkit", "type": "sprite", "density": 2},
+        {
+            "id": 532,
+            "name": "Explosion Lower Devastator",
+            "type": "sprite",
+            "density": 0,
+        },
+        {
+            "id": 533,
+            "name": "Explosion Lower Atomic Health",
+            "type": "sprite",
+            "density": 4,
+        },
+        {
+            "id": 538,
+            "name": "Explosion Lower Pipebombs",
+            "type": "sprite",
+            "density": 0,
+        },
+        {"id": 613, "name": "Front Upper Armor", "type": "sprite", "density": 0},
+        {"id": 614, "name": "Warehouse Atomic Health", "type": "sprite", "density": 0},
+        {"id": 648, "name": "Explosion Chaingun", "type": "sprite", "density": 4},
+        {"id": 713, "name": "Outside Pipebombs", "type": "sprite", "density": 0},
+        {"id": 714, "name": "Warehouse Shotgun", "type": "sprite", "density": 3},
+        {
+            "id": 724,
+            "name": "Explosion Lower Holo Duke",
+            "type": "sprite",
+            "density": 3,
+        },
+        {"id": 733, "name": "Storage Medkit", "type": "sprite", "density": 3},
+        {"id": 734, "name": "Storage Steroids", "type": "sprite", "density": 3},
+        {
+            "id": 735,
+            "name": "Explosion Lower Protective Boots",
+            "type": "sprite",
+            "density": 4,
+        },
+        {"id": 761, "name": "Blue Dive Atomic Health", "type": "sprite", "density": 3},
+        {"id": 762, "name": "Yellow Key Card", "type": "sprite", "density": 0},
+        {"id": 827, "name": "Blue Upper Shrinker", "type": "sprite", "density": 2},
+        {"id": 830, "name": "Blue Chaingun", "type": "sprite", "density": 0},
+        {"id": 834, "name": "Blue Secret RPG", "type": "sprite", "density": 2},
+        {"id": 835, "name": "Storage Tripmine 1", "type": "sprite", "density": 4},
+        {"id": 836, "name": "Storage Tripmine 2", "type": "sprite", "density": 4},
+        {"id": 854, "name": "Red Key Card", "type": "sprite", "density": 0},
+        {
+            "id": 863,
+            "name": "Explosion Lower Scuba Gear",
+            "type": "sprite",
+            "density": 3,
+        },
         {"id": 864, "name": "MP Explosion RPG", "type": "sprite", "density": 5},
         {"id": 868, "name": "MP Outside Freezethrower", "type": "sprite", "density": 5},
         {"id": 105, "name": "Secret Explosion Lower", "type": "sector"},
@@ -56,13 +91,16 @@ class E4L8(D3DLevel):
             [
                 "Outside Pipebombs",
                 "MP Outside Freezethrower",
+                "Front Upper Armor",
             ],
         )
+        self.restrict("Outside Pipebombs", r.can_open)
+        self.restrict("MP Outside Freezethrower", r.can_open)
+        self.restrict("Front Upper Armor", r.can_open & r.jump)
 
         front_upper = self.region(
             "Front Upper",
             [
-                "Front Upper Armor",
                 "Warehouse Atomic Health",
                 "Warehouse Shotgun",
                 "Warehouse Vent Night Vision Goggles",
@@ -72,7 +110,7 @@ class E4L8(D3DLevel):
                 "MP Explosion RPG",
             ],
         )
-        self.connect(ret, front_upper, r.jump)
+        self.connect(ret, front_upper, r.jump & r.can_open & r.can_use)
 
         expl_lower = self.region(
             "Explosion Lower",
@@ -141,6 +179,8 @@ class E4L8(D3DLevel):
             "Blue Dive Area",
             ["Blue Dive Atomic Health", "Yellow Key Card", "Meltdown"],
         )
+        # Need blue keycard to escape the room
+        self.restrict("Meltdown", self.blue_key)
         self.connect(blue_key_area, blue_dive, r.can_dive)
 
         yellow_key_area = self.region(
@@ -168,6 +208,18 @@ class E4L8(D3DLevel):
         self.connect(
             yellow_key_area,
             red_key_area,
-            self.red_key & r.can_crouch & r.jump & self.event("Meltdown"),
+            r.can_crouch
+            & r.jump
+            & self.event("Meltdown")
+            & (
+                self.red_key
+                | (
+                    r.glitched
+                    & r.tripmine
+                    & r.fast_sprint
+                    & r.can_jump
+                    & r.difficulty("extreme")
+                )
+            ),
         )
         return ret
