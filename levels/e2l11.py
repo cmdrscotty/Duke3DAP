@@ -96,7 +96,7 @@ class E2L11(D3DLevel):
             ],
         )
         # can walk across a lizard trooper from the start
-        self.connect(ret, center_ring, r.jump | r.difficulty("medium"))
+        self.connect(past_door, center_ring, r.jump | r.difficulty("medium"))
         self.restrict("Exit", r.can_use & (r.can_shrink | r.crouch_jump))
 
         center_top = self.region(
