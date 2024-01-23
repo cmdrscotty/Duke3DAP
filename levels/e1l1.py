@@ -165,6 +165,11 @@ class E1L1(D3DLevel):
                 "Secret Below Billboard",
             ],
         )
+        self.restrict(
+            "Poster Steroids",
+            r.can_open
+            | (r.glitched & r.can_crouch & r.fast_sprint & r.difficulty("medium")),
+        )
         self.connect(ret, apartment, r.jump)
 
         projector_ledges = self.region(
