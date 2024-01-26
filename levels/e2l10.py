@@ -49,7 +49,7 @@ class E2L10(D3DLevel):
         ret = self.region(self.name, [loc["name"] for loc in self.location_defs])
         # Just step onto one of the enemies to cross the gap
         # Battlelords make this tricky
-        self.restrict("Exit", r.can_use & (r.jump | r.difficulty("hard")))
+        self.restrict("Exit", r.can_use & r.can_open & (r.jump | r.difficulty("hard")))
 
         self.restrict("Alpha Medkit", r.can_open)
         self.restrict("Gamma Medkit", r.can_open)
