@@ -251,11 +251,9 @@ class E4L11(D3DLevel):
                 )
             )
             & (
-                r.difficulty("hard")
-                | r.jetpack(50)
-                | r.difficulty("medium") & (r.jump | r.jetpack)
+                r.difficulty("hard") | r.jetpack(50) | (r.difficulty("medium") & r.jump)
             ),
-        )
+        ),
 
         past_elevator = self.region(
             "Past Elevator",
