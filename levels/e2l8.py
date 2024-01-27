@@ -138,8 +138,6 @@ class E2L8(D3DLevel):
                 "Hub Freezethrower",
                 "Secret Hub Monitor",
                 "Alpha Pipebombs",
-                "Crumbling Canyon Atomic Health",
-                "Crumbling Canyon Chaingun",
             ],
         )
         self.connect(ret, past_door, r.can_open)
@@ -155,6 +153,8 @@ class E2L8(D3DLevel):
                 "Alpha Lab Holo Duke",
                 "Alpha Lab Pipebombs",
                 "Secret Alpha Lab Tanks",
+                "Crumbling Canyon Atomic Health",
+                "Crumbling Canyon Chaingun",
             ],
         )
         self.connect(past_door, alpha_transport, r.can_use)
@@ -167,7 +167,7 @@ class E2L8(D3DLevel):
         alpha_lab_tanks = self.region(
             "Alpha Lab Tanks", ["MP Tank Chaingun", "MP Tank RPG", "Tank Shrinker"]
         )
-        self.connect(past_door, alpha_lab_tanks, r.can_dive)
+        self.connect(alpha_transport, alpha_lab_tanks, r.can_dive)
 
         alpha_lab_backroom = self.region(
             "Alpha Lab Backroom",
@@ -178,7 +178,7 @@ class E2L8(D3DLevel):
                 "Waste Pool Pipebombs",
             ],
         )
-        self.connect(past_door, alpha_lab_backroom, r.jump)
+        self.connect(alpha_transport, alpha_lab_backroom, r.jump)
         self.restrict("Waste Pool Pipebombs", r.can_dive)
 
         top_of_hub = self.region(
