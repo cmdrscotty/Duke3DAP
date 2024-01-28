@@ -92,11 +92,11 @@ class E3L7(D3DLevel):
             "Fire Truck", ["Fire Station Medkit", "Fire Truck Holo Duke"]
         )
         # pretty tricky jump off a flying lizard trooper
-        # TODO_LOGIC: decide if no-sprint variant should be included
+        # extreme variant requires sr50 to make the jump
         self.connect(
             start_area,
             fire_truck,
-            r.jetpack(50) | (r.difficulty("hard") & r.can_jump & r.sprint),
+            r.jetpack(50) | (r.difficulty("hard") & r.can_jump & r.sprint) | (r.difficulty("extreme") & r.can_jump),
         )
         # need an enforcer to jump over the fence
         self.connect(
@@ -108,7 +108,7 @@ class E3L7(D3DLevel):
         self.restrict("Fire Truck Holo Duke", r.jump)
         self.restrict(
             "Fire Station Medkit",
-            r.can_open | (r.glitched & r.jump & r.can_crouch & r.fast_sprint),
+            r.can_open | r.fast_crouch_jump,
         )
 
         plaza_ledges = self.region(
