@@ -108,7 +108,7 @@ class E3L7(D3DLevel):
         self.restrict("Fire Truck Holo Duke", r.jump)
         self.restrict(
             "Fire Station Medkit",
-            r.can_open | r.fast_crouch_jump,
+            r.can_open | r.crouch_jump,
         )
 
         plaza_ledges = self.region(
