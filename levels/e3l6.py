@@ -84,7 +84,7 @@ class E3L6(D3DLevel):
             ],
         )
         self.restrict("Track Devastator", r.can_open)
-        self.restrict("Vending Machine Atomic Health", r.can_open)
+        self.restrict("Vending Machine Atomic Health", r.can_use)
 
         magazine_secret = self.region(
             "Behind the Magazine Machine", ["Secret Magazines", "Magazine Holo Duke"]
