@@ -131,7 +131,7 @@ class E4L11(D3DLevel):
             ],
         )
         # 50ish for the vent and 25 for the no jump entrance to here
-        self.connect(vent_entrance, vent_secret, r.jetpack(75))
+        self.connect(vent_entrance, vent_secret, r.jetpack(75) & r.can_use),
 
         blue_key_area = self.region(
             "Blue Key Area",
