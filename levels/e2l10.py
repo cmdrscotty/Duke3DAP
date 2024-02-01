@@ -53,6 +53,7 @@ class E2L10(D3DLevel):
 
         self.restrict("Alpha Medkit", r.can_open)
         self.restrict("Gamma Medkit", r.can_open)
+        self.restrict("Gamma Night Vision Goggles", r.can_open)
         self.restrict("Beta Atomic Health", r.can_open)
         self.restrict("Alpha Armor", r.can_open)
         self.restrict("Delta Atomic Health", r.can_open)
