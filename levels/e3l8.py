@@ -82,7 +82,7 @@ class E3L8(D3DLevel):
         stadium_elevator = self.region("Stadium Elevator", ["Exit", "Exit Pipebombs"])
         # sure we can clip up somehow as well
         self.connect(ret, stadium_elevator, r.jump & r.pipebomb)
-        self.restrict("Exit Pipebombs", r.can_use)
+        self.restrict("Exit", r.can_use)
 
         entrance_ledges = self.region(
             "Entrance Ledges",
