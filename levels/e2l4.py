@@ -223,7 +223,7 @@ class E2L4(D3DLevel):
         )
         self.connect(blade_pool, first_level, r.can_open)
         # Tripclip to elevator or jetpack
-        self.connect(ret, first_level, r.jetpack(100))
+        self.connect(past_button, first_level, r.jetpack(100))
         self.connect(
             pistons,
             first_level,
