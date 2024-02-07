@@ -90,7 +90,10 @@ class E1L6(D3DLevel):
                 "Start Armor",
             ],
         )
-        self.restrict("Start Protective Boots", r.can_open)
+        self.restrict(
+            "Start Protective Boots",
+            r.can_open | (r.crouch_jump & r.difficulty("hard")),
+        )
 
         past_forcefield = self.region(
             "Past Forcefield",
