@@ -85,7 +85,14 @@ class E4L11(D3DLevel):
                 "Bunker Chaingun",
             ],
         )
-        self.connect(ret, second_area, r.jetpack(50) | (r.explosives & r.can_open))
+        # Can hop on troopers to get into the bunker
+        self.connect(
+            ret,
+            second_area,
+            r.jetpack(50)
+            | (r.explosives & r.can_open)
+            | (r.can_jump & r.difficulty("hard")),
+        )
 
         bridge_secret = self.region(
             "Secret Bridge",

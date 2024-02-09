@@ -238,21 +238,23 @@ class E4L10(D3DLevel):
             ],
         )
         # 44 jetpack to here minimum on a no jump route
+        # can clip past yellow key door with crouch + rpg
         self.connect(
             red_key_room,
             yellow_key_room,
             (
-                self.yellow_key
-                & r.can_open
+                r.can_open
                 & (
-                    (
-                        r.can_jump
-                        | r.jetpack(300)
-                        | (r.can_sprint & r.jetpack(250))
-                        | (r.difficulty("hard") & r.jetpack(200))
-                        | (r.difficulty("hard") & r.can_sprint & r.jetpack(150))
-                    )
-                    | r.fast_crouch_jump
+                    r.can_jump
+                    | r.jetpack(300)
+                    | (r.can_sprint & r.jetpack(250))
+                    | (r.difficulty("hard") & r.jetpack(200))
+                    | (r.difficulty("hard") & r.can_sprint & r.jetpack(150))
+                )
+                & (
+                    r.fast_crouch_jump
+                    | (r.glitched & r.difficulty("hard") & r.can_crouch & r.rpg)
+                    | self.yellow_key
                 )
             )
             & self.event("Red Switch")
@@ -273,7 +275,7 @@ class E4L10(D3DLevel):
         )
         # Don't need to touch water before getting here
         self.connect(yellow_key_room, yellow_dive, r.can_dive)
-        self.restrict("Exit", r.can_kill_boss_4 & r.can_use)
+        self.restrict("Exit", r.can_kill_boss_4)
         # Unreachable DukeTag MP Locations at the Start:
         # {"id": 933, "name": "DukeTag RPG 1", "type": "sprite"},
         # {"id": 934, "name": "DukeTag RPG 2", "type": "sprite"},

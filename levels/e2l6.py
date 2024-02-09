@@ -184,7 +184,7 @@ class E2L6(D3DLevel):
         self.restrict("Timed Room Atomic Health", r.jump)
 
         early_ledges = self.region("Early Ledges", ["Monitor Room Holo Duke"])
-        self.connect(entry_room, early_ledges, r.jump & r.can_crouch)
+        self.connect(entry_room, early_ledges, r.jump & r.can_crouch & r.can_open)
 
         past_door = self.region(
             "Past Door",

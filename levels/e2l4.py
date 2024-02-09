@@ -136,13 +136,20 @@ class E2L4(D3DLevel):
         )
 
         past_button = self.region(
-            self.name,
+            "Past Button",
             [
                 "Start Night Vision Goggles",
                 "Shotgun behind Babe",
                 "Start Armor",
                 "Start RPG",
                 "Start Atomic Health",
+            ],
+        )
+        self.connect(ret, past_button, r.can_use)
+
+        past_door = self.region(
+            "Past Door",
+            [
                 "MP Floor Jetpack 1",
                 "MP Floor Jetpack 2",
                 "MP Floor Jetpack 3",
@@ -155,7 +162,7 @@ class E2L4(D3DLevel):
                 "MP Floor Devastator",
             ],
         )
-        self.connect(ret, past_button, r.can_use)
+        self.connect(past_button, past_door, r.can_open)
 
         past_elevator = self.region(
             "Past Elevator",
@@ -163,7 +170,7 @@ class E2L4(D3DLevel):
                 "Pistons Protective Boots",
             ],
         )
-        self.connect(past_button, past_elevator, r.can_open)
+        self.connect(past_door, past_elevator, r.can_open)
 
         # can just use a piston to clip into the center, no crouch required
         pistons = self.region(
@@ -221,9 +228,10 @@ class E2L4(D3DLevel):
                 "Top Floor Shotgun",
             ],
         )
+        self.restrict("Column Armor", r.can_open)
         self.connect(blade_pool, first_level, r.can_open)
         # Tripclip to elevator or jetpack
-        self.connect(past_button, first_level, r.jetpack(100))
+        self.connect(past_door, first_level, r.jetpack(100) & r.can_open)
         self.connect(
             pistons,
             first_level,

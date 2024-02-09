@@ -266,9 +266,11 @@ class E4L3(D3DLevel):
                 "Yellow Cashier Devastator",
             ],
         )
-        self.connect(yellow_cashier, yellow_cashier_secret, r.jump)
+        self.connect(yellow_cashier, yellow_cashier_secret, r.jump & r.can_open)
         # Can shoot the switch from the outside
-        self.connect(ret, yellow_cashier_secret, r.difficulty("hard") & r.jump)
+        self.connect(
+            ret, yellow_cashier_secret, r.difficulty("hard") & r.jump & r.can_open
+        )
 
         storage_red = self.region(
             "Red Key Storage Area",
