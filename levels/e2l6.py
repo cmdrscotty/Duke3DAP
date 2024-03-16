@@ -216,7 +216,7 @@ class E2L6(D3DLevel):
                 "Secret Toxic Alcove 2",
             ],
         )
-        self.connect(toxic_room, toxic_alcoves, r.can_use)
+        self.connect(toxic_room, toxic_alcoves, r.can_use | (r.jump & r.can_open))
 
         toxic_dive = self.region(
             "Toxic Dive",

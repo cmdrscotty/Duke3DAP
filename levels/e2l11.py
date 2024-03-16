@@ -80,6 +80,8 @@ class E2L11(D3DLevel):
             ],
         )
         self.connect(ret, past_door, r.can_use)
+        self.restrict("Bottom Ring Holo Duke", r.can_open | r.fast_crouch_jump)
+        self.restrict("Bottom Ring Armor", r.can_open | r.fast_crouch_jump)
 
         center_ring = self.region(
             "Center Top Ring",

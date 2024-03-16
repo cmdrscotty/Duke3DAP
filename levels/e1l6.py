@@ -176,7 +176,7 @@ class E1L6(D3DLevel):
             "Rocket",
             ["Rocket Jetpack", "MP Rocket Chaingun", "Ready Rocket"],
         )
-        self.connect(launch_pad, rocket, r.can_open)
+        self.connect(launch_pad, rocket, r.can_open | r.jetpack(100))
         self.restrict("Ready Rocket", self.red_key)
 
         launch_room = self.region(

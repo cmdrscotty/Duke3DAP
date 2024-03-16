@@ -76,14 +76,15 @@ class E4L4(D3DLevel):
         r = self.rules
         ret = self.region(
             self.name,
-            [],
+            [
+                "Pool Steroids",
+            ],
         )
 
         ticket_booth = self.region(
             "Ticket Booth",
             [
                 "Ticket Booth Shotgun",
-                "Pool Steroids",
             ],
         )
         # Can use the rotating door to clip over into the ticket booth

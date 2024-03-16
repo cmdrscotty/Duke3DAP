@@ -170,6 +170,11 @@ class E1L1(D3DLevel):
             r.can_open
             | (r.glitched & r.can_crouch & r.fast_sprint & r.difficulty("medium")),
         )
+        self.restrict(
+            "Secret Behind Poster",
+            r.can_open
+            | (r.glitched & r.can_crouch & r.fast_sprint & r.difficulty("medium")),
+        )
         self.connect(ret, apartment, r.jump)
 
         projector_ledges = self.region(

@@ -218,7 +218,7 @@ class E2L8(D3DLevel):
         gamma_secret = self.region(
             "Gamma Transport Secret", ["Secret Gamma Monitor", "Gamma Shrinker"]
         )
-        self.connect(top_of_hub, gamma_secret, r.jump)
+        self.connect(gamma_transport, gamma_secret, r.jump)
 
         babes_secret = self.region(
             "Cracked Wall near Babes",
@@ -229,7 +229,7 @@ class E2L8(D3DLevel):
                 "Babes Pipebombs 3",
             ],
         )
-        self.connect(top_of_hub, babes_secret, r.jump & r.explosives)
+        self.connect(gamma_transport, babes_secret, r.jump & r.explosives)
 
         reactor_control_ledge = self.region(
             "Reactor Control Ledge", ["Reactor Control Armor", "Yellow Key Card"]

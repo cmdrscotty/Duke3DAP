@@ -148,7 +148,7 @@ class E2L9(D3DLevel):
             ],
         )
         # It's slow, but going via waterfall room gets you in with no sprint requirements
-        self.connect(ret, vents, r.jump & (r.sr50 | r.can_use))
+        self.connect(ret, vents, r.jetpack(25) | (r.can_jump & (r.sr50 | r.can_use)))
 
         overlord_chamber = self.region(
             "Overlord Chamber",

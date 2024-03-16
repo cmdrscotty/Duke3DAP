@@ -87,9 +87,12 @@ class E4L2(D3DLevel):
         )
         self.connect(ret, outside_sign, r.jump)
         self.restrict(
-            "Outside Sign Shrinker", r.can_use | (r.fast_sprint & r.can_crouch)
+            "Outside Sign Shrinker",
+            r.can_use | (r.fast_sprint & r.can_crouch & r.glitched),
         )
-        self.restrict("Blue Key Card", r.can_use | (r.fast_sprint & r.can_crouch))
+        self.restrict(
+            "Blue Key Card", r.can_use | (r.fast_sprint & r.can_crouch & r.glitched)
+        )
 
         kitchen_secret = self.region(
             "Kitchen Vent",
@@ -117,7 +120,7 @@ class E4L2(D3DLevel):
                 "Kitchen Shotgun",
             ],
         )
-
+        self.connect(inside_db_kitchen, inside_db_front, r.true)
         # Can go in through kitchen secret or go in the normal way
         self.connect(
             ret,

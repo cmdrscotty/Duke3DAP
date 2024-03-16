@@ -133,7 +133,7 @@ class E2L2(D3DLevel):
                 "Yellow Key Card",
             ],
         )
-        self.connect(ret, past_button, r.can_use)
+        self.connect(past_entrance, past_button, r.can_use)
         self.restrict("Secret EDF Logo", r.jump)
 
         hidden_screen_room = self.region(
