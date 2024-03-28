@@ -47,10 +47,17 @@ class E4L2(D3DLevel):
         },
         {
             "id": 656,
-            "name": "Burger Box Atomic Health",
+            "name": "Counter Burger Box Atomic Health",
             "type": "sprite",
-            "sprite_type": "burgerbox",
+            "sprite_type": "jollymeal",
             "density": 1,
+        },
+        {
+            "id": 657,
+            "name": "Kitchen Burger Box Atomic Health",
+            "type": "sprite",
+            "sprite_type": "jollymeal",
+            "density": 4,
         },
         {"id": 663, "name": "Outside Sign Shrinker", "type": "sprite", "density": 0},
         {"id": 664, "name": "Blue Key Card", "type": "sprite", "density": 0},
@@ -117,17 +124,18 @@ class E4L2(D3DLevel):
             "Inside DB Front",
             [
                 "MP Inside DB RPG",
-                "Burger Box Atomic Health",
+                "Counter Burger Box Atomic Health",
                 "Inside DB Freezethrower",
             ],
         )
         # Can't find a way to grab this without getting on the counter
-        self.restrict("Burger Box Atomic Health", r.jump)
+        self.restrict("Counter Burger Box Atomic Health", r.jump)
         inside_db_kitchen = self.region(
             "Inside DB Kitchen",
             [
                 "Red Key Card",
                 "Kitchen Shotgun",
+                "Kitchen Burger Box Atomic Health",
             ],
         )
         self.connect(inside_db_kitchen, inside_db_front, r.true)
