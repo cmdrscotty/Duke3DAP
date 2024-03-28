@@ -57,6 +57,18 @@ class E4L4(D3DLevel):
         {"id": 238, "name": "Blue Area Back RPG", "type": "sprite", "density": 0},
         {"id": 245, "name": "Upper Main Atomic Health", "type": "sprite", "density": 0},
         {"id": 246, "name": "Ticket Booth Shotgun", "type": "sprite", "density": 0},
+        {
+            "id": 417,
+            "name": "Duck Conveyor Atomic Health 1",
+            "type": "sprite",
+            "density": 3,
+        },
+        {
+            "id": 418,
+            "name": "Duck Conveyor Atomic Health 2",
+            "type": "sprite",
+            "density": 4,
+        },
         {"id": 445, "name": "Blue Key Card", "type": "sprite", "density": 0},
         {"id": 634, "name": "Red Upper Armor", "type": "sprite", "density": 0},
         {"id": 656, "name": "Castle Dive Tripmine 1", "type": "sprite", "density": 4},
@@ -149,6 +161,8 @@ class E4L4(D3DLevel):
             "Blue Area Behind Targets",
             [
                 "Blue Area Back RPG",
+                "Duck Conveyor Atomic Health 1",
+                "Duck Conveyor Atomic Health 2",
             ],
         )
         self.connect(blue_area, blue_area_back, r.jump)

@@ -96,7 +96,9 @@ class E3L7(D3DLevel):
         self.connect(
             start_area,
             fire_truck,
-            r.jetpack(50) | (r.difficulty("hard") & r.can_jump & r.sprint) | (r.difficulty("extreme") & r.can_jump),
+            r.jetpack(50)
+            | (r.difficulty("hard") & r.can_jump & r.sprint)
+            | (r.difficulty("extreme") & r.can_jump),
         )
         # need an enforcer to jump over the fence
         self.connect(
