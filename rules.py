@@ -164,6 +164,9 @@ class Rules(object):
             self.dive = lambda x: self.true
 
         self.steroids = HasGroupRule("Steroids")
+        # Steroids act as an alternative source for sprinting
+        self.sprint = self.can_sprint | self.steroids
+        self.fast_sprint = self.can_sprint & self.steroids
 
         difficulty_map = {"easy": 0, "medium": 1, "hard": 2, "extreme": 3}
         self.difficulty = (
@@ -171,6 +174,8 @@ class Rules(object):
             if difficulty_map.get(difficulty, 0) <= world.get_option("logic_difficulty")
             else self.false
         )
+
+        self.sr50 = self.sprint | self.difficulty("hard")
 
         self.explosives = self.has_group("Explosives")
         # This is technically not correct because some of them provide more capacity, so this is stricter than it
@@ -183,9 +188,18 @@ class Rules(object):
         else:
             self.glitched = RuleFalse()
         # Most clips require run speed
-        self.crouch_jump = (
-            self.glitched & self.can_jump & self.can_crouch & self.can_sprint
+        self.crouch_jump = self.glitched & self.can_jump & self.can_crouch & self.sprint
+        self.fast_crouch_jump = (
+            self.glitched
+            & self.can_jump
+            & self.can_crouch
+            & self.can_sprint
+            & self.steroids
         )
+        # Kicks can activate walls with a lotag set, which is the case for multi-part doors. This allows bypassing
+        # some lock checks
+        # Kicks still require Use to activate switches
+        self.glitch_kick = self.glitched & self.can_use
 
         # Some simplifications for progressive items
         self.rpg = self.has_group("RPG")
@@ -207,10 +221,7 @@ class Rules(object):
             | self.devastator
             | (
                 self.difficulty("medium")
-                & (
-                    (self.can_jump & (self.can_sprint | self.steroids))
-                    | self.jetpack(50)
-                )
+                & ((self.can_jump & self.sprint) | self.jetpack(50))
             )
         )
         # 30 RPG Ammo required. Giving the player some scuba gear requirement for this check as air can be tight

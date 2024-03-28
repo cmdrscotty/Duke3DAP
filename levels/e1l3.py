@@ -9,57 +9,110 @@ class E1L3(D3DLevel):
     volumenum = 0
     keys = ["Blue", "Red", "Yellow"]
     location_defs = [
-        {"name": "Control Room Secret Atomic Health", "id": 48, "type": "sprite"},
-        {"name": "Control Room Vent Armor", "id": 79, "type": "sprite"},
-        {"name": "Gallery Medkit", "id": 160, "type": "sprite"},
         {
-            "name": "Cell Black 01 Broken Wall Atomic Health",
+            "name": "Control Room Secret Atomic Health",
+            "id": 48,
+            "type": "sprite",
+            "density": 3,
+        },
+        {"name": "Control Room Vent Armor", "id": 79, "type": "sprite", "density": 0},
+        {"name": "Gallery Medkit", "id": 160, "type": "sprite", "density": 0},
+        {
+            "name": "Cell Block 01 Broken Wall Atomic Health",
             "id": 185,
             "type": "sprite",
+            "density": 1,
         },
-        {"name": "Electric Chair Shotgun", "id": 236, "type": "sprite"},
-        {"name": "Control Room Secret Pipebombs", "id": 269, "type": "sprite"},
-        {"name": "Submarine Gate Scuba Gear", "id": 280, "type": "sprite"},
-        {"name": "Gear Room Atomic Health", "id": 367, "type": "sprite"},
-        {"name": "Cell BLock 01 RPG", "id": 411, "type": "sprite"},
+        {"name": "Electric Chair Shotgun", "id": 236, "type": "sprite", "density": 2},
+        {
+            "name": "Control Room Secret Pipebombs",
+            "id": 269,
+            "type": "sprite",
+            "density": 2,
+        },
+        {
+            "name": "Submarine Gate Scuba Gear",
+            "id": 280,
+            "type": "sprite",
+            "density": 0,
+        },
+        {"name": "Gear Room Atomic Health", "id": 367, "type": "sprite", "density": 1},
+        {"name": "Cell Block 01 RPG", "id": 411, "type": "sprite", "density": 0},
         {"name": "MP Courtyard Medkit", "id": 413, "type": "sprite", "density": 5},
-        {"name": "Yellow Key Card", "id": 485, "type": "sprite"},
-        {"name": "Courtyard Tunnel Atomic Health 1", "id": 488, "type": "sprite"},
-        {"name": "Courtyard Tunnel Atomic Health 2", "id": 489, "type": "sprite"},
-        {"name": "Courtyard Tunnel Atomic Health 3", "id": 490, "type": "sprite"},
-        {"name": "Submarine Engine Room Medkit", "id": 504, "type": "sprite"},
-        {"name": "Underwater Pipebombs", "id": 532, "type": "sprite"},
-        {"name": "Chapel Chaingun", "id": 564, "type": "sprite"},
-        {"name": "MP Showers Shotgun", "id": 598, "type": "sprite"},
-        {"name": "Showers Protective Boots", "id": 606, "type": "sprite"},
+        {"name": "Yellow Key Card", "id": 485, "type": "sprite", "density": 0},
+        {
+            "name": "Courtyard Tunnel Atomic Health 1",
+            "id": 488,
+            "type": "sprite",
+            "density": 4,
+        },
+        {
+            "name": "Courtyard Tunnel Atomic Health 2",
+            "id": 489,
+            "type": "sprite",
+            "density": 2,
+        },
+        {
+            "name": "Courtyard Tunnel Atomic Health 3",
+            "id": 490,
+            "type": "sprite",
+            "density": 4,
+        },
+        {
+            "name": "Submarine Engine Room Medkit",
+            "id": 504,
+            "type": "sprite",
+            "density": 2,
+        },
+        {"name": "Underwater Pipebombs", "id": 532, "type": "sprite", "density": 1},
+        {"name": "Chapel Chaingun", "id": 564, "type": "sprite", "density": 2},
+        {"name": "MP Showers Shotgun", "id": 598, "type": "sprite", "density": 5},
+        {"name": "Showers Protective Boots", "id": 606, "type": "sprite", "density": 3},
         {
             "name": "Hanged Monk Atomic Health",
             "id": 642,
             "type": "sprite",
             "sprite_type": "monk",
+            "density": 1,
         },
-        {"name": "Gallery Holo Duke", "id": 672, "type": "sprite"},
-        {"name": "Chapel Rafters Armor", "id": 676, "type": "sprite"},
-        {"name": "Chapel Rafters Atomic Health", "id": 677, "type": "sprite"},
-        {"name": "Gear Room Night Vision Goggles", "id": 697, "type": "sprite"},
-        {"name": "Blue Key Card", "id": 699, "type": "sprite"},
+        {"name": "Gallery Holo Duke", "id": 672, "type": "sprite", "density": 1},
+        {"name": "Chapel Rafters Armor", "id": 676, "type": "sprite", "density": 2},
+        {
+            "name": "Chapel Rafters Atomic Health",
+            "id": 677,
+            "type": "sprite",
+            "density": 4,
+        },
+        {
+            "name": "Gear Room Night Vision Goggles",
+            "id": 697,
+            "type": "sprite",
+            "density": 3,
+        },
+        {"name": "Blue Key Card", "id": 699, "type": "sprite", "density": 0},
         {
             "name": "Submarine Gate Hidden Night Vision Goggles",
             "id": 803,
             "type": "sprite",
+            "density": 2,
         },
-        {"name": "Breakable Canyon Wall Steroids", "id": 813, "type": "sprite"},
-        {"name": "Courtyard Pipebombs", "id": 847, "type": "sprite"},
-        {"name": "Red Key Card", "id": 851, "type": "sprite"},
-        {"name": "Gear Room RPG", "id": 856, "type": "sprite"},
+        {
+            "name": "Breakable Canyon Wall Steroids",
+            "id": 813,
+            "type": "sprite",
+            "density": 2,
+        },
+        {"name": "Courtyard Pipebombs", "id": 847, "type": "sprite", "density": 3},
+        {"name": "Red Key Card", "id": 851, "type": "sprite", "density": 0},
+        {"name": "Gear Room RPG", "id": 856, "type": "sprite", "density": 4},
         {
             "name": "MP Cell Block 01 Broken Wall Holo Duke",
             "id": 870,
             "type": "sprite",
             "density": 5,
         },
-        {"name": "Control Room Chaingun", "id": 899, "type": "sprite"},
-        {"name": "Chapel Window Steroids", "id": 902, "type": "sprite"},
+        {"name": "Control Room Chaingun", "id": 899, "type": "sprite", "density": 1},
+        {"name": "Chapel Window Steroids", "id": 902, "type": "sprite", "density": 0},
         {"name": "MP Cell Block 02 Jetpack", "id": 903, "type": "sprite", "density": 5},
         {"name": "Secret Courtyard Tunnel", "id": 76, "type": "sector"},
         {"name": "Secret Electric Chair", "id": 296, "type": "sector"},
@@ -84,9 +137,12 @@ class E1L3(D3DLevel):
         self.add_locations(
             ["Secret Electric Chair", "Electric Chair Shotgun"], electric_chair
         )
-        # Sometimes a jump is also a crouch
+        # Can walk onto the window, shoot the button, and get into the lowering sector without crouch or opening
+        # the door
         self.connect(
-            ret, electric_chair, r.can_crouch | (r.difficulty("medium") & r.can_jump)
+            ret,
+            electric_chair,
+            r.difficulty("medium") | (r.can_crouch & (r.can_open | r.jump)),
         )
 
         hallway = self.region(
@@ -101,14 +157,32 @@ class E1L3(D3DLevel):
                 "Secret Behind Bed",
             ],
         )
-        self.connect(ret, hallway, r.jump)
-        self.restrict("Secret Behind Bed", r.can_crouch)
+        # Use trick above to get onto electric chair, raise platform again, then a precise SR50 gets you out
+        self.connect(
+            ret,
+            hallway,
+            r.difficulty("hard") | (r.difficulty("medium") & r.sprint) | r.jump,
+        )
+        # need open to turn bed, doesn't even matter how we get into the cell
+        self.restrict("Secret Behind Bed", r.can_crouch & r.can_open)
+        self.restrict("Gallery Holo Duke", r.can_open)
 
         altar = self.region(
             "Chapel Altar",
-            ["Chapel Window Steroids", "Secret Chapel Window", "Chapel Chaingun"],
+            ["Chapel Window Steroids"],
         )
-        self.connect(hallway, altar, r.jump)
+        # Can walk onto liztroopers from the pew to get up, might need two to line up without sprint
+        self.connect(
+            hallway,
+            altar,
+            r.jump | r.difficulty("extreme") | (r.difficulty("hard") & r.sprint),
+        )
+
+        behind_altar = self.region(
+            "Behind Chapel Altar", ["Secret Chapel Window", "Chapel Chaingun"]
+        )
+        # Crouchjump through the left side
+        self.connect(altar, behind_altar, r.can_use | r.fast_crouch_jump)
 
         gears = self.region(
             "Gear Room",
@@ -119,10 +193,14 @@ class E1L3(D3DLevel):
                 "Gear Room Atomic Health",
             ],
         )
+        # you can easily sprint clip (or a cursed SR50 clip without sprint) onto the top gear but that doesn't get us
+        # anywhere. The liztrooper clips around wildly, and it seems impossible to manipulate him as a stepping stone
+        # reliably in time before he kills you. It is possible to get to both ledges with him though!
         self.connect(hallway, gears, r.jump)
+        self.restrict("Blue Key Card", r.can_open)
+        self.restrict("Gear Room Night Vision Goggles", r.can_open)
 
         # This is a bit weird, can not jetpack up, only exit from vent
-
         control_vent = self.region(
             "Hallway Vent",
             [
@@ -140,21 +218,54 @@ class E1L3(D3DLevel):
                 "Cell Black 01 Broken Wall Atomic Health",
             ],
         )
-        self.connect(hallway, control_room, self.blue_key)
+        self.connect(hallway, control_room, self.blue_key & r.can_open)
+
+        control_room_center = self.region("Control Room Center")
+        # can wiggle through window
+        self.connect(control_room, control_room_center, r.true)
+        # this transition only matters if we come from the vent, so add the jetpack requirements from that on top
+        self.connect(
+            control_room_center,
+            control_room,
+            r.can_open | r.glitch_kick | r.jetpack(200),
+        )
 
         control_room_top = self.region(
             "Control Room Top",
-            ["Unlock Cell Blocks"],
+            ["Unlock Cell Blocks", "Control Room Chaingun"],
         )
-        # Can jump on a pigcop to get up, either sprint past explosives or blow em up
+        # Doors automatically open when using key!
+        self.connect(control_room_center, control_room_top, self.red_key)
+        self.connect(control_room_top, control_vent, r.jump)
+        # Can easily clip up corner
+        self.restrict("Control Room Chaingun", r.jump | r.difficulty("medium"))
+        self.restrict("Unlock Cell Blocks", r.can_open & r.can_use)
+        # Okay, I lied earlier. We can get into the vent proper if we are not on a jetpack. This requires
+        # abusing a liztrooper to push you, but they are notoriously annoying to get into the vent
+        # It is technically possible with just jumping on one, but the most reliable idea is to just float in with
+        # a jetpack and hope the trooper follows you
         self.connect(
-            control_room,
+            control_vent, control_room_top, r.difficulty("extreme") & r.jetpack(180)
+        )
+
+        control_room_bridge = self.region("Control Room Outside Bridge")
+        # Can jump on a pigcop to get up, either sprint past explosives or blow em up to get inside
+        self.connect(
+            control_room_center,
+            control_room_bridge,
+            r.jetpack(50) | (r.difficulty("medium") & r.can_jump),
+        )
+        self.connect(
+            control_room_bridge,
             control_room_top,
-            self.red_key
-            | (
-                (r.explosives | ((r.can_sprint | r.steroids) & r.difficulty("hard")))
-                & (r.jetpack(50) | (r.difficulty("medium") & r.can_jump))
-            ),
+            r.can_open & (r.explosives | (r.sprint & r.difficulty("hard"))),
+        )
+        # Seem to always get squished without steroids
+        self.connect(
+            control_room_top,
+            control_room_bridge,
+            (r.can_open & (r.explosives | (r.sprint & r.difficulty("hard"))))
+            | r.fast_crouch_jump,
         )
 
         control_room_ledges = self.region(
@@ -164,19 +275,17 @@ class E1L3(D3DLevel):
                 "Control Room Secret Pipebombs",
                 "Secret Control Room Right Alcove",
                 "Control Room Secret Atomic Health",
-                "Control Room Chaingun",
             ],
         )
-        self.connect(control_room_top, control_room_ledges, r.jump)
-        self.connect(control_room_top, control_vent, r.jump)
+        self.connect(control_room_bridge, control_room_ledges, r.jump & r.can_use)
 
         courtyard = self.region("Courtyard")
         self.add_locations(["MP Courtyard Medkit", "Red Key Card"], courtyard)
         # Can also just kick the yellow door to open it
         self.connect(
-            control_room,
+            control_room_center,
             courtyard,
-            self.yellow_key | r.glitched,
+            (self.yellow_key & r.can_open) | r.glitch_kick,
         )
 
         courtyard_ledge = self.region(
@@ -199,27 +308,66 @@ class E1L3(D3DLevel):
             ],
         )
         self.connect(courtyard, courtyard_canyon, r.jump & r.explosives)
-        # Technically this also gives us access to one of the cell blocks without the unlock event, but I don't see a
-        # Way that transition is possible without already having access to cell blocks otherwise right now
 
-        cell_blocks = self.region(
-            "Cell Blocks",
+        cell_block_01 = self.region(
+            "Cell Block 01",
             [
-                "MP Cell Block 02 Jetpack",
-                "Cell BLock 01 RPG",
                 "MP Cell Block 01 Broken Wall Holo Duke",
             ],
         )
-        self.connect(control_room, cell_blocks, self.event("Unlock Cell Blocks"))
+        self.connect(control_room, cell_block_01, self.event("Unlock Cell Blocks"))
+        self.connect(courtyard_canyon, cell_block_01, r.explosives_count(2))
 
-        dock = self.region("Submarine Dock")
-        self.add_locations(["Submarine Gate Scuba Gear"], cell_blocks)
+        cell_block_01_room = self.region(
+            "Cell Block 01 Far Room", ["Cell BLock 01 RPG"]
+        )
+        # this is a bit of a mess, and the logic only really ever matters if we break access into the control room
+        # without blue key
+        self.connect(cell_block_01, cell_block_01_room, r.can_use)
+        self.connect(
+            courtyard_canyon, cell_block_01_room, r.crouch_jump & r.difficulty("medium")
+        )
+        self.connect(
+            courtyard_ledge,
+            cell_block_01_room,
+            ((r.crouch_jump & r.jetpack(50)) | r.fast_crouch_jump)
+            & r.difficulty("hard"),
+        )
+
+        cell_block_02_room = self.region(
+            "Cell Block 01 Middle Room", ["MP Cell Block 02 Jetpack"]
+        )
+        self.connect(
+            control_room,
+            cell_block_02_room,
+            self.event("Unlock Cell Blocks") & r.can_use,
+        )
+        # don't think you can make this jump even with steroids and sprint
+        self.connect(courtyard, cell_block_02_room, r.explosives & r.jetpack(50))
+        # pretty sure this is entirely useless, but it's possible
+        self.connect(
+            cell_block_02_room,
+            courtyard,
+            r.glitched & r.pipebomb & r.difficulty("hard"),
+        )
+
+        dock_tunnel = self.region("Escape Tunnel to Dock")
+        self.connect(
+            control_room, dock_tunnel, self.event("Unlock Cell Blocks") & r.can_use
+        )
+        self.connect(
+            courtyard_ledge,
+            dock_tunnel,
+            ((r.crouch_jump & r.jetpack(50)) | r.fast_crouch_jump)
+            & r.difficulty("hard"),
+        )
+
+        dock = self.region("Submarine Dock", ["Submarine Gate Scuba Gear"])
         # Can shoot pipebombs to get to dock area, no explosive unlocks necessary!
-        self.connect(cell_blocks, dock, r.true)
-        # Can just walk in from the sub area
-        self.connect(dock, courtyard, r.true)
+        self.connect(dock_tunnel, dock, r.true)
+        self.connect(dock, courtyard, r.can_use)
         # Don't think this does anything yet, but better mark it down if we ever find an early sub clip or something
-        self.connect(courtyard, control_room, self.yellow_key | r.glitched)
+        self.connect(courtyard, control_room, self.yellow_key | r.glitch_kick)
 
         dock_secret = self.region(
             "Submarine Dock Door Secret",
@@ -228,35 +376,23 @@ class E1L3(D3DLevel):
                 "Submarine Gate Hidden Night Vision Goggles",
             ],
         )
-        self.connect(dock, dock_secret, r.jump)
+        # can wiggle on a pigcop or octabrain to get up
+        self.connect(dock, dock_secret, r.can_open & (r.jump | r.difficulty("hard")))
 
         submarine = self.region(
             "Submarine",
             [
                 "Underwater Pipebombs",
-                "Secret Submarine Engine Room",
-                "Submarine Engine Room Medkit",
                 "Exit",
             ],
         )
         self.connect(dock, submarine, r.can_dive)
+        self.restrict("Exit", r.can_use)
 
-        # Roid clip into the cell from courtyard and shoot pipebombs for explosion
-        self.connect(
-            courtyard_ledge,
-            dock,
-            r.glitched
-            & (
-                (r.difficulty("hard") & r.steroids & r.crouch_jump)
-                | (
-                    r.difficulty("hard")
-                    & r.jetpack(50)
-                    & r.steroids
-                    # removed because sr50 works too TODO: maybe extreme
-                    # & r.can_sprint
-                    & r.can_crouch
-                )
-            ),
+        engine_room = self.region(
+            "Submarine Engine",
+            ["Secret Submarine Engine Room", "Submarine Engine Room Medkit"],
         )
+        self.connect(submarine, engine_room, r.can_open)
 
         return ret

@@ -9,37 +9,67 @@ class E4L3(D3DLevel):
     volumenum = 3
     keys = ["Blue", "Red", "Yellow"]
     location_defs = [
-        {"id": 18, "density": 5, "name": "MP Seal Chaingun", "type": "sprite"},
-        {"id": 21, "name": "Warehouse Pipebombs", "type": "sprite"},
-        {"id": 32, "name": "Openable Box Armor", "type": "sprite"},
-        {"id": 39, "name": "Storage Upper Freezethrower", "type": "sprite"},
-        {"id": 40, "name": "Storage Upper Pipebombs", "type": "sprite"},
-        {"id": 41, "name": "Storage Upper Night Vision Goggles", "type": "sprite"},
-        {"id": 116, "density": 5, "name": "MP Blue Vent Shrinker", "type": "sprite"},
-        {"id": 121, "name": "Blue Top Crate RPG", "type": "sprite"},
-        {"id": 122, "density": 5, "name": "MP Outside Shotgun", "type": "sprite"},
-        {"id": 126, "density": 5, "name": "MP Behind boxes RPG", "type": "sprite"},
-        {"id": 130, "name": "Shop Corridor Devastator", "type": "sprite"},
-        {"id": 131, "name": "Blue Fruit Tripmine 1", "type": "sprite"},
-        {"id": 132, "name": "Blue Fruit Tripmine 2", "type": "sprite"},
-        {"id": 133, "name": "Blue Fruit Tripmine 3", "type": "sprite"},
-        {"id": 134, "name": "Storage Upper Atomic Health", "type": "sprite"},
-        {"id": 139, "name": "Shop Corridor Medkit", "type": "sprite"},
-        {"id": 148, "name": "Crate Shotgun", "type": "sprite"},
-        {"id": 158, "name": "Yellow Cashier Devastator", "type": "sprite"},
-        {"id": 194, "name": "Warehouse Upper Atomic Health", "type": "sprite"},
-        {"id": 228, "name": "Exploding Box Chaingun", "type": "sprite"},
-        {"id": 264, "name": "Blue Vent Atomic Health", "type": "sprite"},
-        {"id": 307, "name": "Blue Key Card", "type": "sprite"},
-        {"id": 377, "name": "Yellow Key Card", "type": "sprite"},
-        {"id": 396, "name": "Red Key Card", "type": "sprite"},
-        {"id": 426, "name": "Manager Office Pipebombs", "type": "sprite"},
-        {"id": 442, "name": "Blue Fruit Armor", "type": "sprite"},
-        {"id": 445, "name": "Warehouse Night Vision Goggles", "type": "sprite"},
-        {"id": 446, "density": 5, "name": "MP Shop Blue Jetpack", "type": "sprite"},
-        {"id": 451, "density": 5, "name": "MP Red Storage Shotgun", "type": "sprite"},
-        {"id": 452, "name": "Red Storage Holo Duke", "type": "sprite"},
-        {"id": 492, "name": "Manager Office Steroids", "type": "sprite"},
+        {"id": 18, "name": "MP Seal Chaingun", "type": "sprite", "density": 5},
+        {"id": 21, "name": "Warehouse Pipebombs", "type": "sprite", "density": 3},
+        {"id": 32, "name": "Openable Box Armor", "type": "sprite", "density": 2},
+        {
+            "id": 39,
+            "name": "Storage Upper Freezethrower",
+            "type": "sprite",
+            "density": 3,
+        },
+        {"id": 40, "name": "Storage Upper Pipebombs", "type": "sprite", "density": 4},
+        {
+            "id": 41,
+            "name": "Storage Upper Night Vision Goggles",
+            "type": "sprite",
+            "density": 2,
+        },
+        {"id": 116, "name": "MP Blue Vent Shrinker", "type": "sprite", "density": 5},
+        {"id": 121, "name": "Blue Top Crate RPG", "type": "sprite", "density": 0},
+        {"id": 122, "name": "MP Outside Shotgun", "type": "sprite", "density": 5},
+        {"id": 126, "name": "MP Behind boxes RPG", "type": "sprite", "density": 5},
+        {"id": 130, "name": "Shop Corridor Devastator", "type": "sprite", "density": 2},
+        {"id": 131, "name": "Blue Fruit Tripmine 1", "type": "sprite", "density": 3},
+        {"id": 132, "name": "Blue Fruit Tripmine 2", "type": "sprite", "density": 4},
+        {"id": 133, "name": "Blue Fruit Tripmine 3", "type": "sprite", "density": 4},
+        {
+            "id": 134,
+            "name": "Storage Upper Atomic Health",
+            "type": "sprite",
+            "density": 3,
+        },
+        {"id": 139, "name": "Shop Corridor Medkit", "type": "sprite", "density": 3},
+        {"id": 148, "name": "Crate Shotgun", "type": "sprite", "density": 0},
+        {
+            "id": 158,
+            "name": "Yellow Cashier Devastator",
+            "type": "sprite",
+            "density": 2,
+        },
+        {
+            "id": 194,
+            "name": "Warehouse Upper Atomic Health",
+            "type": "sprite",
+            "density": 0,
+        },
+        {"id": 228, "name": "Exploding Box Chaingun", "type": "sprite", "density": 2},
+        {"id": 264, "name": "Blue Vent Atomic Health", "type": "sprite", "density": 0},
+        {"id": 307, "name": "Blue Key Card", "type": "sprite", "density": 0},
+        {"id": 377, "name": "Yellow Key Card", "type": "sprite", "density": 0},
+        {"id": 396, "name": "Red Key Card", "type": "sprite", "density": 0},
+        {"id": 426, "name": "Manager Office Pipebombs", "type": "sprite", "density": 0},
+        {"id": 442, "name": "Blue Fruit Armor", "type": "sprite", "density": 0},
+        {
+            "id": 445,
+            "name": "Warehouse Night Vision Goggles",
+            "type": "sprite",
+            "density": 0,
+        },
+        {"id": 446, "name": "MP Shop Blue Jetpack", "type": "sprite", "density": 5},
+        {"id": 451, "name": "MP Red Storage Shotgun", "type": "sprite", "density": 5},
+        {"id": 452, "name": "Red Storage Holo Duke", "type": "sprite", "density": 0},
+        {"id": 492, "name": "Manager Office Steroids", "type": "sprite", "density": 3},
         {"id": 542, "name": "Trash Comp Medkit", "type": "sprite"},
         {"id": 547, "name": "Red Storage Steroids", "type": "sprite"},
         {"id": 549, "name": "Trash Comp Protective Boots", "type": "sprite"},
@@ -67,7 +97,7 @@ class E4L3(D3DLevel):
             [],
         )
         # Can sr50 over the fence around the corner
-        self.connect(ret, over_fence, r.difficulty("hard") | r.jump)
+        self.connect(ret, over_fence, r.sr50 | r.jump)
 
         over_fence_container = self.region(
             "Over fence container",
@@ -75,7 +105,7 @@ class E4L3(D3DLevel):
                 "Crate Shotgun",
             ],
         )
-        self.connect(over_fence, over_fence_container, r.jump)
+        self.connect(over_fence, over_fence_container, r.jump & r.can_open)
 
         over_fence_warehouse = self.region(
             "Over fence warehouse",
@@ -105,8 +135,11 @@ class E4L3(D3DLevel):
                 "Openable Box Armor",
             ],
         )
-        # Strafe on the fence and sr40/sr50 into the shop window
-        self.connect(ret, shop_inside, r.jump | r.difficulty("hard") & r.can_sprint)
+        self.restrict("Secret Openable Box", r.can_open)
+        self.restrict("Openable Box Armor", r.can_open)
+        # Strafe on the fence and sprint into the shop window
+        self.connect(ret, shop_inside, r.jump | (r.difficulty("hard") & r.sprint))
+        self.connect(shop_inside, over_fence_container, r.jump)
 
         behind_boxes = self.region(
             "Behind boxes",
@@ -127,7 +160,20 @@ class E4L3(D3DLevel):
         self.connect(
             shop_inside,
             shop_blue,
-            self.blue_key | (r.difficulty("hard") & r.devastator & r.glitched),
+            (self.blue_key & r.can_open)
+            | (r.difficulty("hard") & (r.devastator | r.rpg) & r.glitched),
+        )
+        # Tripclip from outside
+        self.connect(
+            ret,
+            shop_blue,
+            (
+                r.glitched
+                & r.tripmine
+                & r.fast_sprint
+                & r.can_jump
+                & r.difficulty("extreme")
+            ),
         )
 
         exploding_box = self.region(
@@ -187,15 +233,29 @@ class E4L3(D3DLevel):
                 "Manager Office Steroids",
             ],
         )
-        self.connect(shop_blue, yellow_cashier, self.yellow_key)
+        self.restrict("Manager Office Steroids", r.can_open)
+        self.connect(
+            shop_blue,
+            yellow_cashier,
+            self.yellow_key
+            | (
+                r.glitched
+                & r.tripmine
+                & r.fast_sprint
+                & r.can_jump
+                & r.difficulty("extreme")
+            ),
+        )
 
         manager_upper = self.region(
-            "Yellow Key Cashier Area",
+            "Manager Area",
             [
                 "Manager Office Pipebombs",
                 "Red Key Card",
             ],
         )
+        self.restrict("Manager Office Pipebombs", r.can_open)
+        self.restrict("Red Key Card", r.can_open)
         # Can climb up to crates over the crack, permanently gone if blown up, hard because missable
         self.connect(yellow_cashier, manager_upper, r.jump | r.difficulty("hard"))
 
@@ -206,7 +266,11 @@ class E4L3(D3DLevel):
                 "Yellow Cashier Devastator",
             ],
         )
-        self.connect(yellow_cashier, yellow_cashier_secret, r.jump)
+        self.connect(yellow_cashier, yellow_cashier_secret, r.jump & r.can_open)
+        # Can shoot the switch from the outside
+        self.connect(
+            ret, yellow_cashier_secret, r.difficulty("hard") & r.jump & r.can_open
+        )
 
         storage_red = self.region(
             "Red Key Storage Area",
@@ -217,6 +281,8 @@ class E4L3(D3DLevel):
                 "Secret Red Storage",
             ],
         )
+        self.restrict("Red Storage Steroids", r.can_open)
+        self.restrict("Secret Red Storage", r.can_open)
         self.connect(shop_blue, storage_red, self.red_key)
 
         storage_red_upper = self.region(
@@ -241,28 +307,37 @@ class E4L3(D3DLevel):
         self.connect(
             storage_red,
             storage_red_secret,
-            r.jetpack(100) & r.difficulty("hard") | r.can_jump,
+            r.can_open & ((r.jetpack(100) & r.difficulty("hard")) | r.can_jump),
         )
 
         trash_compactor = self.region(
             "Trash Compactor",
             [
-                "Trash Comp Protective Boots",
-                "Trash Comp Medkit",
-                "Secret Trash Comp",
                 "Exit",
             ],
         )
-        # Jump to door opening button or jetpack on top of pig cops head
+        self.restrict("Exit", r.can_use)
+        trash_compactor_secret = self.region(
+            "Trash Compactor Secret Area",
+            [
+                "Trash Comp Protective Boots",
+                "Trash Comp Medkit",
+                "Secret Trash Comp",
+            ],
+        )
+        # Can just shoot the switch from below
         self.connect(
             storage_red,
             trash_compactor,
-            r.can_jump | (r.jetpack(50) & r.difficulty("hard")),
+            r.jump | r.difficulty("medium"),
         )
-
-        # Shoot devestator through wall, leads straight to the exit by blowing up the secret
+        self.connect(trash_compactor, trash_compactor_secret, r.can_open)
+        self.connect(trash_compactor_secret, trash_compactor, r.can_open)
+        # Shoot devestator/rpg through wall, leads straight to the exit by blowing up the secret
         self.connect(
-            shop_blue, trash_compactor, r.difficulty("hard") & r.devastator & r.glitched
+            shop_blue,
+            trash_compactor_secret,
+            r.difficulty("hard") & (r.devastator | r.rpg) & r.glitched,
         )
 
         return ret

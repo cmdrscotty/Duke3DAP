@@ -10,31 +10,56 @@ class E2L2(D3DLevel):
     keys = ["Yellow"]
     location_defs = [
         {"name": "MP Underwater Jetpack", "id": 34, "type": "sprite", "density": 5},
-        {"name": "Overgrown Passage Jetpack", "id": 67, "type": "sprite"},
-        {"name": "Wall Panel Freezethrower", "id": 69, "type": "sprite"},
-        {"name": "Underwater Devastator", "id": 82, "type": "sprite"},
-        {"name": "Drone Alcove Atomic Health", "id": 99, "type": "sprite"},
-        {"name": "Hidden Screen Room Armor", "id": 103, "type": "sprite"},
+        {"name": "Overgrown Passage Jetpack", "id": 67, "type": "sprite", "density": 4},
+        {"name": "Wall Panel Freezethrower", "id": 69, "type": "sprite", "density": 3},
+        {"name": "Underwater Devastator", "id": 82, "type": "sprite", "density": 0},
+        {
+            "name": "Drone Alcove Atomic Health",
+            "id": 99,
+            "type": "sprite",
+            "density": 0,
+        },
+        {"name": "Hidden Screen Room Armor", "id": 103, "type": "sprite", "density": 2},
         {
             "name": "MP Control Room Freezethrower",
             "id": 130,
             "type": "sprite",
             "density": 5,
         },
-        {"name": "EDF Logo Medkit", "id": 132, "type": "sprite"},
-        {"name": "Pool Steroids", "id": 133, "type": "sprite"},
-        {"name": "Pool Medkit", "id": 134, "type": "sprite"},
-        {"name": "Hidden Screen Room Pipebombs", "id": 171, "type": "sprite"},
-        {"name": "Armory RPG", "id": 179, "type": "sprite"},
-        {"name": "Pipebombs behind Turret", "id": 225, "type": "sprite"},
+        {"name": "EDF Logo Medkit", "id": 132, "type": "sprite", "density": 2},
+        {"name": "Pool Steroids", "id": 133, "type": "sprite", "density": 0},
+        {"name": "Pool Medkit", "id": 134, "type": "sprite", "density": 4},
+        {
+            "name": "Hidden Screen Room Pipebombs",
+            "id": 171,
+            "type": "sprite",
+            "density": 4,
+        },
+        {"name": "Armory RPG", "id": 179, "type": "sprite", "density": 0},
+        {"name": "Pipebombs behind Turret", "id": 225, "type": "sprite", "density": 0},
         {
             "name": "Beta Scuba Gear",
             "id": 264,
             "type": "sprite",
         },  # Unused beta room of the map
-        {"name": "Force Field Control Atomic Health 1", "id": 266, "type": "sprite"},
-        {"name": "Force Field Control Atomic Health 2", "id": 267, "type": "sprite"},
-        {"name": "Force Field Control Chaingun", "id": 268, "type": "sprite"},
+        {
+            "name": "Force Field Control Atomic Health 1",
+            "id": 266,
+            "type": "sprite",
+            "density": 4,
+        },
+        {
+            "name": "Force Field Control Atomic Health 2",
+            "id": 267,
+            "type": "sprite",
+            "density": 4,
+        },
+        {
+            "name": "Force Field Control Chaingun",
+            "id": 268,
+            "type": "sprite",
+            "density": 0,
+        },
         {
             "name": "Beta Medkit",
             "id": 285,
@@ -45,15 +70,25 @@ class E2L2(D3DLevel):
             "id": 325,
             "type": "sprite",
         },  # Unused beta room of the map
-        {"name": "Armory Tripmine 1", "id": 390, "type": "sprite"},
-        {"name": "Armory Tripmine 2", "id": 391, "type": "sprite"},
-        {"name": "Armory Tripmine 3", "id": 392, "type": "sprite"},
-        {"name": "Wall Panel Holo Duke", "id": 410, "type": "sprite"},
-        {"name": "Cupboard Night Vision Goggles", "id": 432, "type": "sprite"},
-        {"name": "Yellow Key Card", "id": 524, "type": "sprite"},
-        {"name": "Start Shotgun", "id": 525, "type": "sprite"},
-        {"name": "Control Room Pipebombs", "id": 549, "type": "sprite"},
-        {"name": "Overgrown Passage Shrinker", "id": 579, "type": "sprite"},
+        {"name": "Armory Tripmine 1", "id": 390, "type": "sprite", "density": 4},
+        {"name": "Armory Tripmine 2", "id": 391, "type": "sprite", "density": 3},
+        {"name": "Armory Tripmine 3", "id": 392, "type": "sprite", "density": 0},
+        {"name": "Wall Panel Holo Duke", "id": 410, "type": "sprite", "density": 2},
+        {
+            "name": "Cupboard Night Vision Goggles",
+            "id": 432,
+            "type": "sprite",
+            "density": 0,
+        },
+        {"name": "Yellow Key Card", "id": 524, "type": "sprite", "density": 0},
+        {"name": "Start Shotgun", "id": 525, "type": "sprite", "density": 0},
+        {"name": "Control Room Pipebombs", "id": 549, "type": "sprite", "density": 0},
+        {
+            "name": "Overgrown Passage Shrinker",
+            "id": 579,
+            "type": "sprite",
+            "density": 0,
+        },
         {"name": "Secret EDF Logo", "id": 142, "type": "sector"},
         {"name": "Secret Force Field Control Wall", "id": 153, "type": "sector"},
         {"name": "Secret Hidden Screen Room 1", "id": 155, "type": "sector"},
@@ -68,9 +103,21 @@ class E2L2(D3DLevel):
         r = self.rules
         ret = self.region(
             self.name,
+            [],
+        )
+
+        past_entrance = self.region(
+            "Past entrance",
             [
                 "Start Shotgun",
-                "Hidden Screen Room Pipebombs",
+            ],
+        )
+        self.connect(ret, past_entrance, r.can_open)
+
+        past_button = self.region(
+            "Past button",
+            [
+                "Secret EDF Logo",
                 "EDF Logo Medkit",  # Can just grab this through the wall!
                 "Armory Tripmine 1",
                 "Armory Tripmine 2",
@@ -86,43 +133,60 @@ class E2L2(D3DLevel):
                 "Yellow Key Card",
             ],
         )
+        self.connect(past_entrance, past_button, r.can_use)
+        self.restrict("Secret EDF Logo", r.jump)
 
         hidden_screen_room = self.region(
             "Hidden Screen Room",
             [
                 "Secret Hidden Screen Room 1",
                 "Secret Hidden Screen Room 2",
+                "Hidden Screen Room Pipebombs",  # Can crouch-jump to this item but start requires can_open
                 "Hidden Screen Room Armor",
             ],
         )
         # Able to clip up the corner with mouse movement and diagonal strafing
         self.connect(
-            ret,
+            past_entrance,
             hidden_screen_room,
-            r.jump | (r.difficulty("hard") & r.can_sprint) | r.difficulty("extreme"),
+            r.can_open
+            & (
+                r.jump | (r.difficulty("hard") & r.can_sprint) | r.difficulty("extreme")
+            ),
         )
+
+        drone_alcove = self.region(
+            "Drone Alcove",
+            [
+                "Drone Alcove Atomic Health",
+            ],
+        )
+        self.connect(past_entrance, drone_alcove, r.crouch_jump | (r.can_use & r.jump))
 
         early_ledges = self.region(
             "Wall Compartments",
             [
-                "Drone Alcove Atomic Health",
-                "Cupboard Night Vision Goggles",
-                "Secret EDF Logo",
+                "Cupboard Night Vision Goggles",  # can_open inherited from start
             ],
         )
-        self.connect(ret, early_ledges, r.jump)
+        self.connect(past_entrance, early_ledges, r.jump)
+        # Logic past this point unchanged since open and use is already required
 
         # Can clip up to the exit switch fairly easily
         waterfall = self.region(
             "Waterfall",
             ["Pool Medkit", "Pool Steroids", "Exit", "Pipebombs behind Turret"],
         )
+        self.restrict(
+            "Exit", r.can_use & r.can_open
+        )  # Possible to tripmine clip through door after button use
+
         self.connect(
-            ret,
+            past_button,
             waterfall,
             self.event("Lower Walls")
             | (
-                # TODO: find a way to somewhat reliably clip with jetpack and no sprint
+                # TODO_LOGIC: find a way to somewhat reliably clip with jetpack and no sprint
                 # without sprint the clip is very inconsistent
                 # & ((r.difficulty("medium") & r.jetpack(100)) | r.jetpack(200))
                 # current strats are: corner-crouch and jump-clip through the door
@@ -134,6 +198,7 @@ class E2L2(D3DLevel):
             ),
         )
         # Cursed cumulative jetpack logic
+        # Can crouchjump in here but can_open is required to get here
         self.restrict(
             "Pipebombs behind Turret",
             self.event("Lower Walls") & r.jetpack(50)
@@ -149,16 +214,15 @@ class E2L2(D3DLevel):
         )
         # Only a few tripclip resistant doors left
         self.connect(
-            ret,
+            past_button,
             control_room,
             self.yellow_key
             | (
-                r.difficulty("extreme")
-                & r.glitched
-                & r.can_jump
-                & r.can_sprint
-                & r.steroids
+                r.glitched
                 & r.tripmine
+                & r.fast_sprint
+                & r.can_jump
+                & r.difficulty("extreme")
             ),
         )
 

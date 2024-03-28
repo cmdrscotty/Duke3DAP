@@ -9,49 +9,140 @@ class E1L4(D3DLevel):
     volumenum = 0
     keys = ["Blue", "Red"]
     location_defs = [
-        {"name": "Gear Room Secret Scuba Gear", "id": 59, "type": "sprite"},
-        {"name": "Gear Room Secret Armor", "id": 60, "type": "sprite"},
-        {"name": "Canyon Steroids", "id": 67, "type": "sprite"},
+        {
+            "name": "Gear Room Secret Scuba Gear",
+            "id": 59,
+            "type": "sprite",
+            "density": 2,
+        },
+        {"name": "Gear Room Secret Armor", "id": 60, "type": "sprite", "density": 4},
+        {"name": "Canyon Steroids", "id": 67, "type": "sprite", "density": 0},
         {
             "name": "Secret Alcove Holo Duke outside Submarine",
             "id": 86,
             "type": "sprite",
+            "density": 2,
         },
-        {"name": "Red Key Card", "id": 210, "type": "sprite"},
-        {"name": "Blue Key Card", "id": 247, "type": "sprite"},
-        {"name": "Guard Tower Chaingun", "id": 274, "type": "sprite"},
+        {"name": "Red Key Card", "id": 210, "type": "sprite", "density": 0},
+        {"name": "Blue Key Card", "id": 247, "type": "sprite", "density": 0},
+        {"name": "Guard Tower Chaingun", "id": 274, "type": "sprite", "density": 2},
         {"name": "MP Sewage Chaingun", "id": 293, "type": "sprite", "density": 5},
-        {"name": "Toxic Waste Belt Scuba Gear", "id": 294, "type": "sprite"},
-        {"name": "Sewage Atomic Health", "id": 301, "type": "sprite"},
-        {"name": "Gear Room Medkit", "id": 625, "type": "sprite"},
-        {"name": "Underwater Canyon Night Vision Goggles", "id": 626, "type": "sprite"},
-        {"name": "Submarine Return Cave Atomic Health", "id": 741, "type": "sprite"},
-        {"name": "Sewage Protective Boots", "id": 899, "type": "sprite"},
+        {
+            "name": "Toxic Waste Belt Scuba Gear",
+            "id": 294,
+            "type": "sprite",
+            "density": 0,
+        },
+        {"name": "Sewage Atomic Health", "id": 301, "type": "sprite", "density": 0},
+        {"name": "Gear Room Medkit", "id": 625, "type": "sprite", "density": 0},
+        {
+            "name": "Underwater Canyon Night Vision Goggles",
+            "id": 626,
+            "type": "sprite",
+            "density": 3,
+        },
+        {
+            "name": "Submarine Return Cave Atomic Health",
+            "id": 741,
+            "type": "sprite",
+            "density": 2,
+        },
+        {"name": "Sewage Protective Boots", "id": 899, "type": "sprite", "density": 1},
         {"name": "MP Waterfall Shotgun", "id": 905, "type": "sprite", "density": 5},
-        {"name": "Underwater Canyon Chaingun", "id": 913, "type": "sprite"},
-        {"name": "Underwater Gate RPG", "id": 929, "type": "sprite"},
-        {"name": "Underwater Scuba Gear", "id": 957, "type": "sprite"},
-        {"name": "RPG near Blue Key Card", "id": 962, "type": "sprite"},
-        {"name": "Underwater Secret Pipebombs 1", "id": 969, "type": "sprite"},
-        {"name": "Underwater Secret Pipebombs 2", "id": 970, "type": "sprite"},
-        {"name": "Underwater Secret Atomic Health", "id": 971, "type": "sprite"},
-        {"name": "Right Cylinder Atomic Health", "id": 987, "type": "sprite"},
-        {"name": "Underwater Medkit", "id": 988, "type": "sprite"},
-        {"name": "Cylinders Armor", "id": 991, "type": "sprite"},
-        {"name": "Underwater Hallway Holo Duke", "id": 1013, "type": "sprite"},
-        {"name": "Underwater Canyon Pipebombs", "id": 1014, "type": "sprite"},
-        {"name": "Canyon Secret Scuba Gear", "id": 1050, "type": "sprite"},
-        {"name": "Submarine Medkit", "id": 1060, "type": "sprite"},
-        {"name": "Submarine Atomic Health", "id": 1061, "type": "sprite"},
-        {"name": "Submarine Armor", "id": 1062, "type": "sprite"},
-        {"name": "Shotgun near Red Key Card", "id": 1069, "type": "sprite"},
-        {"name": "Left Cylinder Atomic Health 2", "id": 1070, "type": "sprite"},
-        {"name": "Left Cylinder Atomic Health 1", "id": 1071, "type": "sprite"},
-        {"name": "Canyon Dark Cave Shotgun", "id": 1074, "type": "sprite"},
-        {"name": "Canyon Dark Cave Medkit", "id": 1075, "type": "sprite"},
-        {"name": "Sewage Secret Alcove Atomic Health 1", "id": 1079, "type": "sprite"},
-        {"name": "Sewage Secret Alcove Atomic Health 2", "id": 1080, "type": "sprite"},
-        {"name": "Canyon RPG", "id": 1085, "type": "sprite"},
+        {
+            "name": "Underwater Canyon Chaingun",
+            "id": 913,
+            "type": "sprite",
+            "density": 1,
+        },
+        {"name": "Underwater Gate RPG", "id": 929, "type": "sprite", "density": 0},
+        {"name": "Underwater Scuba Gear", "id": 957, "type": "sprite", "density": 1},
+        {"name": "RPG near Blue Key Card", "id": 962, "type": "sprite", "density": 3},
+        {
+            "name": "Underwater Secret Pipebombs 1",
+            "id": 969,
+            "type": "sprite",
+            "density": 4,
+        },
+        {
+            "name": "Underwater Secret Pipebombs 2",
+            "id": 970,
+            "type": "sprite",
+            "density": 4,
+        },
+        {
+            "name": "Underwater Secret Atomic Health",
+            "id": 971,
+            "type": "sprite",
+            "density": 2,
+        },
+        {
+            "name": "Right Cylinder Atomic Health",
+            "id": 987,
+            "type": "sprite",
+            "density": 3,
+        },
+        {"name": "Underwater Medkit", "id": 988, "type": "sprite", "density": 3},
+        {"name": "Cylinders Armor", "id": 991, "type": "sprite", "density": 0},
+        {
+            "name": "Underwater Hallway Holo Duke",
+            "id": 1013,
+            "type": "sprite",
+            "density": 1,
+        },
+        {
+            "name": "Underwater Canyon Pipebombs",
+            "id": 1014,
+            "type": "sprite",
+            "density": 3,
+        },
+        {
+            "name": "Canyon Secret Scuba Gear",
+            "id": 1050,
+            "type": "sprite",
+            "density": 2,
+        },
+        {"name": "Submarine Medkit", "id": 1060, "type": "sprite", "density": 4},
+        {"name": "Submarine Atomic Health", "id": 1061, "type": "sprite", "density": 2},
+        {"name": "Submarine Armor", "id": 1062, "type": "sprite", "density": 4},
+        {
+            "name": "Shotgun near Red Key Card",
+            "id": 1069,
+            "type": "sprite",
+            "density": 3,
+        },
+        {
+            "name": "Left Cylinder Atomic Health 2",
+            "id": 1070,
+            "type": "sprite",
+            "density": 4,
+        },
+        {
+            "name": "Left Cylinder Atomic Health 1",
+            "id": 1071,
+            "type": "sprite",
+            "density": 2,
+        },
+        {
+            "name": "Canyon Dark Cave Shotgun",
+            "id": 1074,
+            "type": "sprite",
+            "density": 2,
+        },
+        {"name": "Canyon Dark Cave Medkit", "id": 1075, "type": "sprite", "density": 4},
+        {
+            "name": "Sewage Secret Alcove Atomic Health 1",
+            "id": 1079,
+            "type": "sprite",
+            "density": 2,
+        },
+        {
+            "name": "Sewage Secret Alcove Atomic Health 2",
+            "id": 1080,
+            "type": "sprite",
+            "density": 4,
+        },
+        {"name": "Canyon RPG", "id": 1085, "type": "sprite", "density": 0},
         {"name": "Secret Submarine Return Cave 1", "id": 88, "type": "sector"},
         {"name": "Secret Submarine Return Cave 2", "id": 89, "type": "sector"},
         {"name": "Secret Submarine Return Cave 3", "id": 90, "type": "sector"},
@@ -83,14 +174,24 @@ class E1L4(D3DLevel):
                 "Underwater Medkit",
                 "RPG near Blue Key Card",
                 "Blue Key Card",
-                "Secret Alcove Holo Duke outside Submarine",
-                "Secret Alcove near Blue Key Card",
             ],
         )
         # Can get out of the submarine in just 150 units. Relevant to note for later dive logic
         self.connect(ret, submarine, r.can_dive)
-        self.restrict("Secret Alcove Holo Duke outside Submarine", r.jump)
-        self.restrict("Secret Alcove near Blue Key Card", r.jump)
+
+        blue_key_alcove = self.region(
+            "Alcove near Blue Key Card",
+            [
+                "Secret Alcove Holo Duke outside Submarine",
+                "Secret Alcove near Blue Key Card",
+            ],
+        )
+        # jump requires SR50 without sprint speed
+        self.connect(
+            submarine,
+            blue_key_alcove,
+            r.can_open & (r.jetpack(50) | (r.can_jump & r.sr50)),
+        )
 
         submarine_secret = self.region(
             "Submarine Secret",
@@ -101,8 +202,8 @@ class E1L4(D3DLevel):
                 "Submarine Armor",
             ],
         )
-        # Can run off the Blue Key Card ledge
-        self.connect(submarine, submarine_secret, r.can_sprint or r.jump)
+        # Can run off the Blue Key Card ledge, but requires sprint speed or SR50
+        self.connect(submarine, submarine_secret, r.jump | r.sr50)
 
         underwater_cave = self.region(
             "Submarine Secret",
@@ -128,7 +229,11 @@ class E1L4(D3DLevel):
                 "Right Cylinder Atomic Health",
             ],
         )
-        self.connect(submarine, facility, self.blue_key)
+        # This is a hard Use and Open check currently with no known bypass, so we don't break down
+        # the logic beyond this point in full detail for now
+        self.connect(submarine, facility, self.blue_key & r.can_open)
+        self.restrict("Red Key Card", r.can_open)
+        self.restrict("Secret Toxic Waste Belt Hidden Alcove", r.can_open)
 
         cylinders = self.region(
             "Waste Storage Cylinders",
@@ -138,7 +243,7 @@ class E1L4(D3DLevel):
                 "Left Cylinder Atomic Health 1",
             ],
         )
-        self.connect(facility, cylinders, r.jump)
+        self.connect(facility, cylinders, r.jump & r.can_use)
         # Can't touch the sector with just jetpack
         self.restrict("Secret Left Cylinder", r.can_jump)
 
@@ -155,8 +260,11 @@ class E1L4(D3DLevel):
             facility,
             flooded_area,
             (
-                (r.can_shrink & self.red_key)
-                | r.crouch_jump
+                (
+                    (r.can_shrink & self.red_key)
+                    | (r.glitched & r.can_crouch & r.can_jump)
+                )
+                & r.can_use
                 # dive capacity logic, need 150 to exit sub at start
                 & (
                     r.dive(500)
@@ -175,16 +283,15 @@ class E1L4(D3DLevel):
 
         canyon_far = self.region(
             "Canyon Far Side",
-            [
-                "Underwater Gate",
-                "Canyon RPG",
-                "Secret Canyon Wall",
-                "Canyon Secret Scuba Gear",
-            ],
+            ["Underwater Gate", "Canyon RPG"],
         )
-        self.connect(flooded_area, canyon_far, r.can_sprint or r.jump)
-        self.restrict("Canyon Secret Scuba Gear", r.can_crouch)
-        self.restrict("Secret Canyon Wall", r.can_crouch)
+        # need SR50 without sprint speed to cross
+        self.connect(flooded_area, canyon_far, r.jump | r.sr50)
+
+        canyon_alcove = self.region(
+            "Canyon Alcove", ["Secret Canyon Wall", "Canyon Secret Scuba Gear"]
+        )
+        self.connect(canyon_far, canyon_alcove, r.can_open & r.can_crouch)
 
         canyon_return1 = self.region(
             "Canyon Return Path 1", ["Secret Submarine Return Cave 1"]
@@ -221,6 +328,7 @@ class E1L4(D3DLevel):
                 "Underwater Canyon Pipebombs",
             ],
         )
+        self.restrict("Underwater Hallway Holo Duke", r.can_use)
 
         self.connect(
             flooded_area, deep_water, self.event("Underwater Gate") & second_dive
@@ -237,35 +345,50 @@ class E1L4(D3DLevel):
             "Top of Waterfall", ["Secret Waterfall Secret Teleporter"]
         )
         self.connect(deep_water, top_of_waterfall, third_dive)
-        self.restrict("Secret Waterfall Secret Teleporter", r.explosives)
+        self.restrict(
+            "Secret Waterfall Secret Teleporter",
+            r.explosives | (r.jetpack(50) & (r.can_sprint | r.difficulty("hard"))),
+        )
 
         moving_platforms = self.region("Moving Platforms", ["Underwater Gate RPG"])
         # Drops down a waterfall, one-way only this way around
         self.connect(top_of_waterfall, moving_platforms, r.true)
+        # Need to open the shootable switch to access
+        self.restrict("Underwater Gate RPG", r.can_use)
 
         top_of_sewer = self.region(
             "Sewers Top",
             [
                 "MP Sewage Chaingun",
                 "Sewage Atomic Health",
-                "Secret Sewage Alcove",
-                "Sewage Secret Alcove Atomic Health 1",
-                "Sewage Secret Alcove Atomic Health 2",
                 "Sewage Protective Boots",
             ],
         )
+        # There might be a way to get off the water fall without jump
+        # Also need to use a button if we don't have jetpack to bypass stuff
         self.connect(
-            moving_platforms, top_of_sewer, r.jump
-        )  # There might be a way to get off the water fall without jump
+            moving_platforms, top_of_sewer, (r.can_jump & r.can_use) | r.jetpack(50)
+        )
+
+        sewage_alcove = self.region(
+            "Sewage Alcove",
+            [
+                "Secret Sewage Alcove",
+                "Sewage Secret Alcove Atomic Health 1",
+                "Sewage Secret Alcove Atomic Health 2",
+            ],
+        )
+        self.connect(top_of_sewer, sewage_alcove, r.jump)
 
         secret_exit = self.region(
             "Sewer Breakable Wall", ["Sewer Breakable Wall", "Secret Exit"]
         )
         self.connect(top_of_sewer, secret_exit, r.explosives)
+        self.restrict("Secret Exit", r.can_use)
 
         exit_area = self.region("Exit Area", ["Exit"])
         # Secret teleporter in canyon wall
-        self.connect(flooded_area, exit_area, r.jump)
+        self.connect(flooded_area, exit_area, r.jump & r.can_open)
         self.connect(
             secret_exit,
             exit_area,
@@ -279,5 +402,6 @@ class E1L4(D3DLevel):
         self.connect(top_of_sewer, moving_platforms, second_dive)
         self.connect(moving_platforms, top_of_waterfall, r.jetpack(100))
         self.connect(top_of_waterfall, deep_water, second_dive)
+        self.restrict("Exit", r.can_use)
 
         return ret

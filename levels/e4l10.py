@@ -9,64 +9,84 @@ class E4L10(D3DLevel):
     volumenum = 3
     keys = ["Red", "Blue", "Yellow"]
     location_defs = [
-        {"id": 29, "name": "R-Side Dive Jetpack", "type": "sprite"},
+        {"id": 29, "name": "R-Side Dive Jetpack", "type": "sprite", "density": 0},
         {"id": 150, "name": "DukeTag R-Side Protective Boots", "type": "sprite"},
         {"id": 151, "name": "DukeTag L-Side Protective Boots", "type": "sprite"},
-        {"id": 260, "name": "Yellow Dive Atomic Health 1", "type": "sprite"},
-        {"id": 297, "density": 5, "name": "MP Start Shotgun 1", "type": "sprite"},
-        {"id": 298, "density": 5, "name": "MP Start Shotgun 2", "type": "sprite"},
-        {"id": 299, "density": 5, "name": "MP Start Shotgun 3", "type": "sprite"},
-        {"id": 300, "density": 5, "name": "MP Start Shotgun 4", "type": "sprite"},
-        {"id": 312, "name": "L-Side Vent Pipebombs", "type": "sprite"},
-        {"id": 315, "name": "Center Pipebombs 1", "type": "sprite"},
-        {"id": 316, "name": "Center Pipebombs 2", "type": "sprite"},
-        {"id": 331, "name": "Queen Medkit", "type": "sprite"},
-        {"id": 332, "name": "Queen Atomic Health", "type": "sprite"},
-        {"id": 333, "name": "Queen Armor", "type": "sprite"},
-        {"id": 337, "name": "L-Side Scuba Gear", "type": "sprite"},
-        {"id": 338, "name": "R-Side Protective Boots", "type": "sprite"},
-        {"id": 374, "name": "L-Side Dive Armor", "type": "sprite"},
-        {"id": 375, "name": "L-Side Dive Atomic Health", "type": "sprite"},
-        {"id": 388, "density": 5, "name": "MP Center Devastator 1", "type": "sprite"},
-        {"id": 424, "name": "Red Medkit", "type": "sprite"},
-        {"id": 453, "name": "R-Side RPG", "type": "sprite"},
+        {
+            "id": 260,
+            "name": "Yellow Dive Atomic Health 1",
+            "type": "sprite",
+            "density": 3,
+        },
+        {"id": 297, "name": "MP Start Shotgun 1", "type": "sprite", "density": 5},
+        {"id": 298, "name": "MP Start Shotgun 2", "type": "sprite", "density": 5},
+        {"id": 299, "name": "MP Start Shotgun 3", "type": "sprite", "density": 5},
+        {"id": 300, "name": "MP Start Shotgun 4", "type": "sprite", "density": 5},
+        {"id": 312, "name": "L-Side Vent Pipebombs", "type": "sprite", "density": 2},
+        {"id": 315, "name": "Center Pipebombs 1", "type": "sprite", "density": 3},
+        {"id": 316, "name": "Center Pipebombs 2", "type": "sprite", "density": 4},
+        {"id": 331, "name": "Queen Medkit", "type": "sprite", "density": 3},
+        {"id": 332, "name": "Queen Atomic Health", "type": "sprite", "density": 2},
+        {"id": 333, "name": "Queen Armor", "type": "sprite", "density": 4},
+        {"id": 337, "name": "L-Side Scuba Gear", "type": "sprite", "density": 4},
+        {"id": 338, "name": "R-Side Protective Boots", "type": "sprite", "density": 4},
+        {"id": 374, "name": "L-Side Dive Armor", "type": "sprite", "density": 4},
+        {
+            "id": 375,
+            "name": "L-Side Dive Atomic Health",
+            "type": "sprite",
+            "density": 3,
+        },
+        {"id": 388, "name": "MP Center Devastator 1", "type": "sprite", "density": 5},
+        {"id": 424, "name": "Red Medkit", "type": "sprite", "density": 3},
+        {"id": 453, "name": "R-Side RPG", "type": "sprite", "density": 0},
         {"id": 561, "name": "DukeTag R-Side Jetpack", "type": "sprite"},
-        {"id": 579, "name": "L-Side RPG", "type": "sprite"},
-        {"id": 613, "density": 5, "name": "MP Lobby Shotgun 4", "type": "sprite"},
-        {"id": 614, "density": 5, "name": "MP Lobby Shotgun 1", "type": "sprite"},
-        {"id": 615, "name": "Lobby Shotgun Shotgun 1", "type": "sprite"},
-        {"id": 616, "density": 5, "name": "MP Lobby Shotgun 3", "type": "sprite"},
+        {"id": 579, "name": "L-Side RPG", "type": "sprite", "density": 0},
+        {"id": 613, "name": "MP Lobby Shotgun 4", "type": "sprite", "density": 5},
+        {"id": 614, "name": "MP Lobby Shotgun 1", "type": "sprite", "density": 5},
+        {"id": 615, "name": "Lobby Shotgun 1", "type": "sprite", "density": 0},
+        {"id": 616, "name": "MP Lobby Shotgun 3", "type": "sprite", "density": 5},
         {"id": 624, "name": "DukeTag L-Side Jetpack", "type": "sprite"},
-        {"id": 669, "density": 5, "name": "MP Center Devastator 2", "type": "sprite"},
-        {"id": 686, "name": "Lobby Pipebombs 1", "type": "sprite"},
-        {"id": 701, "density": 5, "name": "MP Lobby Shotgun 5", "type": "sprite"},
-        {"id": 702, "density": 5, "name": "MP Lobby Shotgun 2", "type": "sprite"},
-        {"id": 776, "name": "Blue Medkit", "type": "sprite"},
-        {"id": 789, "name": "Blue Key Card", "type": "sprite"},
-        {"id": 823, "name": "Red Key Card", "type": "sprite"},
-        {"id": 824, "name": "R-Side Dive Atomic Health", "type": "sprite"},
-        {"id": 825, "name": "R-Side Dive Armor", "type": "sprite"},
-        {"id": 840, "name": "L-Side Armor", "type": "sprite"},
-        {"id": 841, "name": "R-Side Armor", "type": "sprite"},
-        {"id": 842, "name": "Yellow Key Card", "type": "sprite"},
-        {"id": 844, "name": "Yellow Steroids", "type": "sprite"},
-        {"id": 852, "name": "Yellow Dive Atomic Health 2", "type": "sprite"},
-        {"id": 859, "density": 5, "name": "MP Pillar 1 Chaingun", "type": "sprite"},
-        {"id": 860, "density": 5, "name": "MP Pillar 3 Chaingun", "type": "sprite"},
-        {"id": 861, "density": 5, "name": "MP Pillar 4 Chaingun", "type": "sprite"},
-        {"id": 862, "density": 5, "name": "MP Pillar 2 Chaingun", "type": "sprite"},
-        {"id": 891, "name": "Lobby Pipebombs 4", "type": "sprite"},
-        {"id": 892, "name": "Lobby Pipebombs 2", "type": "sprite"},
-        {"id": 893, "name": "Lobby Pipebombs 3", "type": "sprite"},
-        {"id": 894, "density": 5, "name": "MP Lobby Chaingun 2", "type": "sprite"},
-        {"id": 895, "density": 5, "name": "MP Lobby Chaingun 1", "type": "sprite"},
-        {"id": 896, "name": "Lobby Chaingun 1", "type": "sprite"},
-        {"id": 897, "name": "Lobby Chaingun 2", "type": "sprite"},
-        {"id": 903, "name": "L-Side Devastator", "type": "sprite"},
-        {"id": 904, "name": "R-Side Devastator", "type": "sprite"},
+        {"id": 669, "name": "MP Center Devastator 2", "type": "sprite", "density": 5},
+        {"id": 686, "name": "Lobby Pipebombs 1", "type": "sprite", "density": 3},
+        {"id": 701, "name": "MP Lobby Shotgun 5", "type": "sprite", "density": 5},
+        {"id": 702, "name": "MP Lobby Shotgun 2", "type": "sprite", "density": 5},
+        {"id": 776, "name": "Blue Medkit", "type": "sprite", "density": 0},
+        {"id": 789, "name": "Blue Key Card", "type": "sprite", "density": 0},
+        {"id": 823, "name": "Red Key Card", "type": "sprite", "density": 0},
+        {
+            "id": 824,
+            "name": "R-Side Dive Atomic Health",
+            "type": "sprite",
+            "density": 3,
+        },
+        {"id": 825, "name": "R-Side Dive Armor", "type": "sprite", "density": 4},
+        {"id": 840, "name": "L-Side Armor", "type": "sprite", "density": 0},
+        {"id": 841, "name": "R-Side Armor", "type": "sprite", "density": 0},
+        {"id": 842, "name": "Yellow Key Card", "type": "sprite", "density": 0},
+        {"id": 844, "name": "Yellow Steroids", "type": "sprite", "density": 0},
+        {
+            "id": 852,
+            "name": "Yellow Dive Atomic Health 2",
+            "type": "sprite",
+            "density": 4,
+        },
+        {"id": 859, "name": "MP Pillar 1 Chaingun", "type": "sprite", "density": 5},
+        {"id": 860, "name": "MP Pillar 3 Chaingun", "type": "sprite", "density": 5},
+        {"id": 861, "name": "MP Pillar 4 Chaingun", "type": "sprite", "density": 5},
+        {"id": 862, "name": "MP Pillar 2 Chaingun", "type": "sprite", "density": 5},
+        {"id": 891, "name": "Lobby Pipebombs 4", "type": "sprite", "density": 4},
+        {"id": 892, "name": "Lobby Pipebombs 2", "type": "sprite", "density": 4},
+        {"id": 893, "name": "Lobby Pipebombs 3", "type": "sprite", "density": 3},
+        {"id": 894, "name": "MP Lobby Chaingun 2", "type": "sprite", "density": 5},
+        {"id": 895, "name": "MP Lobby Chaingun 1", "type": "sprite", "density": 5},
+        {"id": 896, "name": "Lobby Chaingun 1", "type": "sprite", "density": 0},
+        {"id": 897, "name": "Lobby Chaingun 2", "type": "sprite", "density": 0},
+        {"id": 903, "name": "L-Side Devastator", "type": "sprite", "density": 3},
+        {"id": 904, "name": "R-Side Devastator", "type": "sprite", "density": 3},
         {"id": 933, "name": "DukeTag RPG 1", "type": "sprite"},
         {"id": 934, "name": "DukeTag RPG 2", "type": "sprite"},
-        {"id": 964, "name": "R-Side Vent Pipebombs", "type": "sprite"},
+        {"id": 964, "name": "R-Side Vent Pipebombs", "type": "sprite", "density": 2},
         {"id": 65, "name": "Secret Pillar 1", "type": "sector"},
         {"id": 67, "name": "Secret Pillar 2", "type": "sector"},
         {"id": 70, "name": "Secret Pillar 3", "type": "sector"},
@@ -112,6 +132,9 @@ class E4L10(D3DLevel):
                 "L-Side Devastator",
             ],
         )
+        self.restrict("L-Side Scuba Gear", r.can_use)
+        self.restrict("L-Side RPG", r.can_use)
+        self.restrict("L-Side Devastator", r.can_use)
 
         lside_upper = self.region(
             "L-Side Upper",
@@ -121,7 +144,9 @@ class E4L10(D3DLevel):
                 "L-Side Armor",
             ],
         )
-        self.connect(ret, lside_upper, r.jump)
+        # Need to get inside to grab item
+        self.restrict("L-Side Armor", r.can_open | r.can_dive)
+        self.connect(ret, lside_upper, r.jump & r.can_use)
 
         lside_dive = self.region(
             "L-Side Dive",
@@ -131,7 +156,7 @@ class E4L10(D3DLevel):
                 "Blue Key Card",
             ],
         )
-        self.connect(ret, lside_dive, r.jump & r.can_dive)
+        self.connect(ret, lside_dive, r.jump & r.can_dive & r.can_use)
 
         blue_key_room = self.region(
             "Blue Key Room",
@@ -140,7 +165,7 @@ class E4L10(D3DLevel):
                 "Blue Switch",
             ],
         )
-        self.connect(ret, blue_key_room, r.jump & self.blue_key)
+        self.connect(ret, blue_key_room, r.jump & self.blue_key & r.can_open)
 
         rside = self.region(
             "Right Side",
@@ -153,7 +178,7 @@ class E4L10(D3DLevel):
         # 22 jetpack until here minimum
         self.connect(blue_key_room, rside)
         # Can enter right side by pushing buttons through wall cover, hard for obscurity
-        self.connect(ret, rside, r.difficulty("hard"))
+        self.connect(ret, rside, r.difficulty("hard") & r.can_use)
 
         rside_upper = self.region(
             "Right Side Upper",
@@ -163,6 +188,7 @@ class E4L10(D3DLevel):
                 "R-Side Vent Pipebombs",
             ],
         )
+        self.restrict("R-Side Armor", r.can_open | r.can_dive)
         self.connect(rside, rside_upper, r.jump)
 
         pillar_secrets = self.region(
@@ -192,7 +218,7 @@ class E4L10(D3DLevel):
             ],
         )
         # 33 jetpack to here
-        self.connect(rside, red_key_room, r.jump & self.red_key)
+        self.connect(rside, red_key_room, r.jump & self.red_key & r.can_open)
 
         rside_dive = self.region(
             "Red Dive",
@@ -203,7 +229,7 @@ class E4L10(D3DLevel):
                 "R-Side Dive Armor",
             ],
         )
-        self.connect(rside, rside_dive, r.jump & r.can_dive)
+        self.connect(rside, rside_dive, r.jump & r.can_dive & r.can_use)
 
         yellow_key_room = self.region(
             "Yellow Key Room",
@@ -212,11 +238,12 @@ class E4L10(D3DLevel):
             ],
         )
         # 44 jetpack to here minimum on a no jump route
+        # can clip past yellow key door with crouch + rpg
         self.connect(
             red_key_room,
             yellow_key_room,
             (
-                self.yellow_key
+                r.can_open
                 & (
                     r.can_jump
                     | r.jetpack(300)
@@ -224,7 +251,11 @@ class E4L10(D3DLevel):
                     | (r.difficulty("hard") & r.jetpack(200))
                     | (r.difficulty("hard") & r.can_sprint & r.jetpack(150))
                 )
-                | (r.crouch_jump & r.steroids)
+                & (
+                    r.fast_crouch_jump
+                    | (r.glitched & r.difficulty("hard") & r.can_crouch & r.rpg)
+                    | self.yellow_key
+                )
             )
             & self.event("Red Switch")
             & self.event("Blue Switch"),

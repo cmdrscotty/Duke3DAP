@@ -199,15 +199,21 @@ class D3DLevel(object):
 
     @property
     def red_key(self) -> Rule:
-        return self.world.rules.has(f"{self.prefix} Red Key Card")
+        return self.world.rules.can_use & self.world.rules.has(
+            f"{self.prefix} Red Key Card"
+        )
 
     @property
     def blue_key(self) -> Rule:
-        return self.world.rules.has(f"{self.prefix} Blue Key Card")
+        return self.world.rules.can_use & self.world.rules.has(
+            f"{self.prefix} Blue Key Card"
+        )
 
     @property
     def yellow_key(self) -> Rule:
-        return self.world.rules.has(f"{self.prefix} Yellow Key Card")
+        return self.world.rules.can_use & self.world.rules.has(
+            f"{self.prefix} Yellow Key Card"
+        )
 
     @property
     def unlock(self) -> str:

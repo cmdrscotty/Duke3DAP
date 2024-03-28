@@ -9,28 +9,28 @@ class E3L10(D3DLevel):
     volumenum = 2
     keys = []
     location_defs = [
-        {"id": 0, "name": "Beta Shotgun", "type": "sprite"},
-        {"id": 3, "name": "Alpha Shotgun", "type": "sprite"},
-        {"id": 13, "name": "Delta Tripmine 1", "type": "sprite"},
-        {"id": 14, "name": "Delta Tripmine 2", "type": "sprite"},
-        {"id": 15, "name": "Delta Tripmine 3", "type": "sprite"},
-        {"id": 16, "name": "Alpha Armor", "type": "sprite"},
-        {"id": 17, "name": "Beta Night Vision Goggles", "type": "sprite"},
-        {"id": 18, "name": "Beta Medkit", "type": "sprite"},
-        {"id": 21, "name": "Gamma Jetpack", "type": "sprite"},
-        {"id": 30, "name": "Delta Pipebombs 1", "type": "sprite"},
-        {"id": 31, "name": "Delta Pipebombs 2", "type": "sprite"},
-        {"id": 38, "name": "Exit Freezethrower", "type": "sprite"},
-        {"id": 209, "name": "Brick RPG", "type": "sprite"},
-        {"id": 210, "name": "Brick Armor", "type": "sprite"},
-        {"id": 251, "name": "Desert Chaingun", "type": "sprite"},
-        {"id": 276, "name": "White Shrinker", "type": "sprite"},
-        {"id": 282, "name": "Green Devastator", "type": "sprite"},
-        {"id": 283, "name": "Alpha Steroids", "type": "sprite"},
-        {"id": 290, "name": "Delta Holo Duke", "type": "sprite"},
-        {"id": 314, "name": "Exit Atomic Health 1", "type": "sprite"},
-        {"id": 315, "name": "Exit Atomic Health 2", "type": "sprite"},
-        {"id": 316, "name": "Exit Atomic Health 3", "type": "sprite"},
+        {"id": 0, "name": "Beta Shotgun", "type": "sprite", "density": 2},
+        {"id": 3, "name": "Alpha Shotgun", "type": "sprite", "density": 2},
+        {"id": 13, "name": "Delta Tripmine 1", "type": "sprite", "density": 4},
+        {"id": 14, "name": "Delta Tripmine 2", "type": "sprite", "density": 4},
+        {"id": 15, "name": "Delta Tripmine 3", "type": "sprite", "density": 4},
+        {"id": 16, "name": "Alpha Armor", "type": "sprite", "density": 4},
+        {"id": 17, "name": "Beta Night Vision Goggles", "type": "sprite", "density": 3},
+        {"id": 18, "name": "Beta Medkit", "type": "sprite", "density": 4},
+        {"id": 21, "name": "Gamma Jetpack", "type": "sprite", "density": 0},
+        {"id": 30, "name": "Delta Pipebombs 1", "type": "sprite", "density": 2},
+        {"id": 31, "name": "Delta Pipebombs 2", "type": "sprite", "density": 4},
+        {"id": 38, "name": "Exit Freezethrower", "type": "sprite", "density": 0},
+        {"id": 209, "name": "Brick RPG", "type": "sprite", "density": 1},
+        {"id": 210, "name": "Brick Armor", "type": "sprite", "density": 4},
+        {"id": 251, "name": "Desert Chaingun", "type": "sprite", "density": 3},
+        {"id": 276, "name": "White Shrinker", "type": "sprite", "density": 0},
+        {"id": 282, "name": "Green Devastator", "type": "sprite", "density": 3},
+        {"id": 283, "name": "Alpha Steroids", "type": "sprite", "density": 3},
+        {"id": 290, "name": "Delta Holo Duke", "type": "sprite", "density": 3},
+        {"id": 314, "name": "Exit Atomic Health 1", "type": "sprite", "density": 4},
+        {"id": 315, "name": "Exit Atomic Health 2", "type": "sprite", "density": 4},
+        {"id": 316, "name": "Exit Atomic Health 3", "type": "sprite", "density": 4},
         {"id": 148, "name": "Secret Delta", "type": "sector"},
         {"id": 156, "name": "Secret Alpha", "type": "sector"},
         {"id": 164, "name": "Secret Beta", "type": "sector"},
@@ -45,20 +45,26 @@ class E3L10(D3DLevel):
         centers = self.region(
             "The Rest of the Fucking Owl",
             [
-                "Exit Freezethrower",
-                "Exit Atomic Health 1",
-                "Exit Atomic Health 2",
-                "Exit Atomic Health 3",
-                "Exit",
                 "Green Devastator",
                 "Desert Chaingun",
                 "Brick RPG",
                 "Brick Armor",
             ],
         )
-        self.connect(
-            ret, centers, r.jump | (r.difficulty("medium") & r.steroids & r.can_sprint)
+        self.connect(ret, centers, r.jump | (r.difficulty("medium") & r.fast_sprint))
+
+        exit_hut = self.region(
+            "Exit Room",
+            [
+                "Exit Freezethrower",
+                "Exit Atomic Health 1",
+                "Exit Atomic Health 2",
+                "Exit Atomic Health 3",
+                "Exit",
+            ],
         )
+        self.connect(centers, exit_hut, r.can_open)
+        self.restrict("Exit", r.can_use)
 
         corners = self.region(
             "Corners",
@@ -82,5 +88,5 @@ class E3L10(D3DLevel):
                 "Secret Delta",
             ],
         )
-        self.connect(ret, corners, r.jump)
+        self.connect(ret, corners, r.jump & r.can_open)
         return ret

@@ -9,59 +9,99 @@ class E3L3(D3DLevel):
     volumenum = 2
     keys = ["Blue", "Red", "Yellow"]
     location_defs = [
-        {"id": 1, "density": 5, "name": "MP Exit Jetpack", "type": "sprite"},
-        {"id": 23, "name": "Water Surface Night Vision Goggles", "type": "sprite"},
-        {"id": 24, "name": "Canyon Night Vision Goggles", "type": "sprite"},
-        {"id": 42, "density": 5, "name": "MP Canyon Pillars Jetpack", "type": "sprite"},
-        {"id": 50, "name": "Canyon Wall Jetpack", "type": "sprite"},
-        {"id": 63, "density": 5, "name": "MP Hidden Cave Jetpack", "type": "sprite"},
-        {"id": 70, "name": "Sunken Building Freezethrower", "type": "sprite"},
-        {"id": 71, "name": "Inside Building Tripmine 1", "type": "sprite"},
-        {"id": 72, "name": "Inside Building Tripmine 2", "type": "sprite"},
-        {"id": 73, "name": "Building Ledge Shrinker", "type": "sprite"},
-        {"id": 95, "name": "Inside Building Holo Duke", "type": "sprite"},
-        {"id": 96, "density": 5, "name": "MP Chaingun near Red Door", "type": "sprite"},
+        {"id": 1, "name": "MP Exit Jetpack", "type": "sprite", "density": 5},
+        {
+            "id": 23,
+            "name": "Water Surface Night Vision Goggles",
+            "type": "sprite",
+            "density": 4,
+        },
+        {
+            "id": 24,
+            "name": "Canyon Night Vision Goggles",
+            "type": "sprite",
+            "density": 1,
+        },
+        {"id": 42, "name": "MP Canyon Pillars Jetpack", "type": "sprite", "density": 5},
+        {"id": 50, "name": "Canyon Wall Jetpack", "type": "sprite", "density": 2},
+        {"id": 63, "name": "MP Hidden Cave Jetpack", "type": "sprite", "density": 5},
+        {
+            "id": 70,
+            "name": "Sunken Building Freezethrower",
+            "type": "sprite",
+            "density": 3,
+        },
+        {
+            "id": 71,
+            "name": "Inside Building Tripmine 1",
+            "type": "sprite",
+            "density": 4,
+        },
+        {
+            "id": 72,
+            "name": "Inside Building Tripmine 2",
+            "type": "sprite",
+            "density": 4,
+        },
+        {"id": 73, "name": "Building Ledge Shrinker", "type": "sprite", "density": 4},
+        {"id": 95, "name": "Inside Building Holo Duke", "type": "sprite", "density": 3},
+        {"id": 96, "name": "MP Chaingun near Red Door", "type": "sprite", "density": 5},
         {
             "id": 97,
-            "density": 5,
             "name": "MP Building Ledge Devastator",
             "type": "sprite",
+            "density": 5,
         },
         {
             "id": 98,
-            "density": 5,
             "name": "MP Inside Building Shotgun",
             "type": "sprite",
+            "density": 5,
         },
-        {"id": 114, "name": "Exit Atomic Health", "type": "sprite"},
-        {"id": 168, "name": "Sunken Building Chaingun", "type": "sprite"},
-        {"id": 171, "name": "Blue Key Card", "type": "sprite"},
-        {"id": 172, "name": "Underwater Atomic Health", "type": "sprite"},
-        {"id": 174, "name": "Underwater Armor", "type": "sprite"},
-        {"id": 175, "name": "Hidden Cave Scuba Gear", "type": "sprite"},
-        {"id": 178, "name": "Start Scuba Gear", "type": "sprite"},
-        {"id": 190, "name": "Canyon Atomic Health", "type": "sprite"},
-        {"id": 193, "name": "Hidden Cave Devastator", "type": "sprite"},
-        {"id": 200, "name": "Inside Building Medkit", "type": "sprite"},
-        {"id": 204, "name": "Start RPG", "type": "sprite"},
-        {"id": 223, "name": "Sign Top Atomic Health", "type": "sprite"},
-        {"id": 234, "name": "Inside Building Pipebombs", "type": "sprite"},
-        {"id": 254, "name": "Underwater Shotgun", "type": "sprite"},
-        {"id": 256, "name": "Top of Building Pipebombs", "type": "sprite"},
-        {"id": 313, "name": "Inside Building Steroids", "type": "sprite"},
-        {"id": 372, "name": "Building Ledge Atomic Health", "type": "sprite"},
-        {"id": 387, "name": "Sunken Building Medkit", "type": "sprite"},
-        {"id": 392, "name": "Yellow Key Card", "type": "sprite"},
-        {"id": 407, "name": "Red Key Card", "type": "sprite"},
+        {"id": 114, "name": "Exit Atomic Health", "type": "sprite", "density": 0},
+        {"id": 168, "name": "Sunken Building Chaingun", "type": "sprite", "density": 1},
+        {"id": 171, "name": "Blue Key Card", "type": "sprite", "density": 0},
+        {"id": 172, "name": "Underwater Atomic Health", "type": "sprite", "density": 3},
+        {"id": 174, "name": "Underwater Armor", "type": "sprite", "density": 1},
+        {"id": 175, "name": "Hidden Cave Scuba Gear", "type": "sprite", "density": 3},
+        {"id": 178, "name": "Start Scuba Gear", "type": "sprite", "density": 0},
+        {"id": 190, "name": "Canyon Atomic Health", "type": "sprite", "density": 3},
+        {"id": 193, "name": "Hidden Cave Devastator", "type": "sprite", "density": 2},
+        {"id": 200, "name": "Inside Building Medkit", "type": "sprite", "density": 0},
+        {"id": 204, "name": "Start RPG", "type": "sprite", "density": 3},
+        {"id": 223, "name": "Sign Top Atomic Health", "type": "sprite", "density": 0},
+        {
+            "id": 234,
+            "name": "Inside Building Pipebombs",
+            "type": "sprite",
+            "density": 3,
+        },
+        {"id": 254, "name": "Underwater Shotgun", "type": "sprite", "density": 3},
+        {
+            "id": 256,
+            "name": "Top of Building Pipebombs",
+            "type": "sprite",
+            "density": 1,
+        },
+        {"id": 313, "name": "Inside Building Steroids", "type": "sprite", "density": 1},
+        {
+            "id": 372,
+            "name": "Building Ledge Atomic Health",
+            "type": "sprite",
+            "density": 3,
+        },
+        {"id": 387, "name": "Sunken Building Medkit", "type": "sprite", "density": 3},
+        {"id": 392, "name": "Yellow Key Card", "type": "sprite", "density": 0},
+        {"id": 407, "name": "Red Key Card", "type": "sprite", "density": 0},
         {
             "id": 448,
-            "density": 5,
             "name": "MP Canyon Pillars Scuba Gear",
             "type": "sprite",
+            "density": 5,
         },
-        {"id": 449, "density": 5, "name": "MP Sunken Building Armor", "type": "sprite"},
-        {"id": 450, "density": 5, "name": "MP Underwater RPG", "type": "sprite"},
-        {"id": 465, "name": "Canyon Alcove Chaingun", "type": "sprite"},
+        {"id": 449, "name": "MP Sunken Building Armor", "type": "sprite", "density": 5},
+        {"id": 450, "name": "MP Underwater RPG", "type": "sprite", "density": 5},
+        {"id": 465, "name": "Canyon Alcove Chaingun", "type": "sprite", "density": 2},
         {"id": 178, "name": "Secret Hidden Cave", "type": "sector"},
         {"id": 221, "name": "Secret Building Canyon Wall", "type": "sector"},
         {"id": 222, "name": "Secret Empty Ledge", "type": "sector"},
@@ -77,22 +117,24 @@ class E3L3(D3DLevel):
             self.name,
             ["Start Scuba Gear", "Start RPG", "Water Surface Night Vision Goggles"],
         )
+        # Don't think there's any way to survive a clip inside
+        self.restrict("Start Scuba Gear", r.can_open)
 
         building_ledge = self.region(
             "Building Ledge",
             ["Building Ledge Atomic Health", "Building Ledge Shrinker"],
         )
-        self.connect(ret, building_ledge, r.can_sprint & r.steroids)
+        self.connect(ret, building_ledge, r.fast_sprint)
 
         top_of_building = self.region("Top of Building", ["Top of Building Pipebombs"])
         self.connect(
             ret,
             building_ledge,
             (
-                (r.can_sprint | r.steroids & r.can_jump)
+                (r.sprint & r.can_jump)
                 | r.jetpack(50)
                 # precise but no SR50 required
-                | (r.difficulty("medium") & r.can_sprint & r.steroids)
+                | (r.difficulty("medium") & r.fast_sprint)
             ),
         )
         self.connect(top_of_building, building_ledge, r.true)
@@ -100,14 +142,18 @@ class E3L3(D3DLevel):
         building_jumps = self.region(
             "Top of Building Ledges",
             [
-                "Secret Building Canyon Wall",
-                "Canyon Wall Jetpack",
                 "Canyon Atomic Health",
                 "Canyon Night Vision Goggles",
                 "MP Building Ledge Devastator",
             ],
         )
         self.connect(top_of_building, building_jumps, r.jump)
+
+        canyon_wall = self.region(
+            "Top of Building Canyon Wall",
+            ["Secret Building Canyon Wall", "Canyon Wall Jetpack"],
+        )
+        self.connect(top_of_building, canyon_wall, r.jump & r.can_open)
 
         sunken_building_top = self.region(
             "Top of Sunken Building",
@@ -146,18 +192,21 @@ class E3L3(D3DLevel):
         self.connect(
             sunken_building_top, red_door, r.jump
         )  # 50 jetpack fuel is just enough to make it from the start
+        self.restrict("Secret Canyon Alcove Window", r.can_open | r.fast_crouch_jump)
 
         exit_area = self.region(
             "Beyond Red Door",
             ["Secret Hard Hat Area", "Exit Atomic Health", "Exit", "MP Exit Jetpack"],
         )
-        self.connect(red_door, exit_area, self.red_key)
+        self.connect(red_door, exit_area, self.red_key & r.can_open)
         self.restrict(
             "Exit Atomic Health", r.jump
         )  # even no run jetpack only has enough to cross the gap on 50
         self.restrict(
-            "MP Exit Jetpack", r.dive(50)
+            "MP Exit Jetpack", r.dive(150) | (r.difficulty("hard") & r.dive(50))
         )  # Tight, but can do the jump and dive route in 49!
+        self.restrict("Exit", r.can_use)
+        self.restrict("Secret Hard Hat Area", r.can_use)
 
         blue_door_area = self.region(
             "Beyond Blue Door",
@@ -192,15 +241,15 @@ class E3L3(D3DLevel):
                 "Inside Building Steroids",
             ],
         )
-        self.connect(top_of_building, inside_building, self.yellow_key)
+        # Just connect via the underwater office door, going from roof top requires dive anyway to do something useful
         # There might be a super precise tripmine or steroids + devastator clip, possibly?
         self.connect(
             underwater,
             inside_building,
-            self.yellow_key | r.glitched & (r.rpg | r.pipebomb),
+            (self.yellow_key & r.can_open) | r.glitched & (r.rpg | r.pipebomb),
         )
         # Can walk up, useful if has dive and yellow key but no other movement
         # This is not unrestricted because the door is still locked if we explosives clip inside!
-        self.connect(inside_building, top_of_building, self.yellow_key)
+        self.connect(inside_building, top_of_building, self.yellow_key & r.can_open)
 
         return ret

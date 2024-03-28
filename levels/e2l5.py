@@ -9,38 +9,63 @@ class E2L5(D3DLevel):
     volumenum = 1
     keys = ["Blue", "Red"]
     location_defs = [
-        {"id": 71, "name": "Vent RPG", "type": "sprite"},
-        {"id": 85, "name": "Vent Armor", "type": "sprite"},
+        {"id": 71, "name": "Vent RPG", "type": "sprite", "density": 2},
+        {"id": 85, "name": "Vent Armor", "type": "sprite", "density": 4},
         {
             "id": 90,
-            "density": 5,
             "name": "MP Center Room Freezethrower",
             "type": "sprite",
+            "density": 5,
         },
-        {"id": 94, "name": "Slime Room Pipebombs 1", "type": "sprite"},
-        {"id": 95, "name": "Monitors Tripmine 1", "type": "sprite"},
-        {"id": 96, "name": "Monitors Tripmine 2", "type": "sprite"},
-        {"id": 97, "density": 5, "name": "MP Center Room Pipebombs", "type": "sprite"},
-        {"id": 110, "name": "Blue Key Card", "type": "sprite"},
-        {"id": 299, "name": "Red Key Card", "type": "sprite"},
-        {"id": 317, "name": "Blastdoor Hole Atomic Health", "type": "sprite"},
-        {"id": 346, "name": "Slime Room Devastator", "type": "sprite"},
-        {"id": 365, "name": "Start Chaingun", "type": "sprite"},
-        {"id": 366, "name": "Start Medkit", "type": "sprite"},
-        {"id": 367, "name": "Corridor Holo Duke", "type": "sprite"},
-        {"id": 369, "density": 5, "name": "MP Battlelord Shrinker", "type": "sprite"},
-        {"id": 370, "name": "Center Room Medkit", "type": "sprite"},
-        {"id": 372, "name": "Start Shotgun", "type": "sprite"},
-        {"id": 373, "name": "Ramp Steroids", "type": "sprite"},
-        {"id": 376, "density": 5, "name": "MP Large Door Jetpack", "type": "sprite"},
-        {"id": 377, "name": "Slime Room Pipebombs 2", "type": "sprite"},
-        {"id": 378, "name": "Monitors Atomic Health", "type": "sprite"},
-        {"id": 384, "name": "Hallway Alcove Atomic Health", "type": "sprite"},
-        {"id": 386, "density": 5, "name": "MP Exit RPG", "type": "sprite"},
-        {"id": 426, "name": "Ramp Night Vision Goggles", "type": "sprite"},
-        {"id": 427, "name": "Slime Room Night Vision Goggles", "type": "sprite"},
-        {"id": 428, "name": "Large Door Night Vision Goggles", "type": "sprite"},
-        {"id": 429, "name": "Start Armor", "type": "sprite"},
+        {"id": 94, "name": "Slime Room Pipebombs 1", "type": "sprite", "density": 3},
+        {"id": 95, "name": "Monitors Tripmine 1", "type": "sprite", "density": 3},
+        {"id": 96, "name": "Monitors Tripmine 2", "type": "sprite", "density": 4},
+        {"id": 97, "name": "MP Center Room Pipebombs", "type": "sprite", "density": 5},
+        {"id": 110, "name": "Blue Key Card", "type": "sprite", "density": 0},
+        {"id": 299, "name": "Red Key Card", "type": "sprite", "density": 0},
+        {
+            "id": 317,
+            "name": "Blastdoor Hole Atomic Health",
+            "type": "sprite",
+            "density": 2,
+        },
+        {"id": 346, "name": "Slime Room Devastator", "type": "sprite", "density": 0},
+        {"id": 365, "name": "Start Chaingun", "type": "sprite", "density": 0},
+        {"id": 366, "name": "Start Medkit", "type": "sprite", "density": 4},
+        {"id": 367, "name": "Corridor Holo Duke", "type": "sprite", "density": 0},
+        {"id": 369, "name": "MP Battlelord Shrinker", "type": "sprite", "density": 5},
+        {"id": 370, "name": "Center Room Medkit", "type": "sprite", "density": 0},
+        {"id": 372, "name": "Start Shotgun", "type": "sprite", "density": 3},
+        {"id": 373, "name": "Ramp Steroids", "type": "sprite", "density": 4},
+        {"id": 376, "name": "MP Large Door Jetpack", "type": "sprite", "density": 5},
+        {"id": 377, "name": "Slime Room Pipebombs 2", "type": "sprite", "density": 4},
+        {"id": 378, "name": "Monitors Atomic Health", "type": "sprite", "density": 2},
+        {
+            "id": 384,
+            "name": "Hallway Alcove Atomic Health",
+            "type": "sprite",
+            "density": 2,
+        },
+        {"id": 386, "name": "MP Exit RPG", "type": "sprite", "density": 5},
+        {
+            "id": 426,
+            "name": "Ramp Night Vision Goggles",
+            "type": "sprite",
+            "density": 3,
+        },
+        {
+            "id": 427,
+            "name": "Slime Room Night Vision Goggles",
+            "type": "sprite",
+            "density": 4,
+        },
+        {
+            "id": 428,
+            "name": "Large Door Night Vision Goggles",
+            "type": "sprite",
+            "density": 0,
+        },
+        {"id": 429, "name": "Start Armor", "type": "sprite", "density": 4},
         {"id": 136, "name": "Secret Hallway Alcove", "type": "sector"},
         {"id": 185, "name": "Secret Blastdoor Hole", "type": "sector"},
         {"id": 225, "name": "Secret Vent", "type": "sector"},
@@ -58,6 +83,12 @@ class E2L5(D3DLevel):
                 "Start Chaingun",
                 "Start Armor",
                 "Start Medkit",
+            ],
+        )
+
+        past_door = self.region(
+            "Past Door",
+            [
                 "Secret Vent",
                 "Vent RPG",
                 "Vent Armor",
@@ -73,6 +104,7 @@ class E2L5(D3DLevel):
                 "Slime Room Night Vision Goggles",
             ],
         )
+        self.connect(ret, past_door, r.can_open)
 
         blastdoor_secret = self.region(
             "Blastdoor Hole", ["Secret Blastdoor Hole", "Blastdoor Hole Atomic Health"]
@@ -87,7 +119,7 @@ class E2L5(D3DLevel):
             ["Secret Hallway Alcove", "Hallway Alcove Atomic Health"],
         )
         self.connect(
-            ret,
+            past_door,
             hallway_alcove,
             r.jetpack(50)
             | r.can_jump & (r.difficulty("hard") | r.can_sprint & r.steroids),
@@ -96,7 +128,7 @@ class E2L5(D3DLevel):
         battlelord_room = self.region(
             "Battlelord Chamber", ["MP Battlelord Shrinker", "Blue Key Card"]
         )
-        self.connect(ret, battlelord_room, self.red_key)
+        self.connect(past_door, battlelord_room, self.red_key)
 
         battlelord_monitors = self.region(
             "Behind Monitors",
@@ -107,13 +139,20 @@ class E2L5(D3DLevel):
                 "Secret Monitors",
             ],
         )
-        self.connect(battlelord_room, battlelord_monitors, r.jump & r.can_crouch)
+        # Can just jump through the left two-way monitor to enter
+        self.connect(
+            battlelord_room,
+            battlelord_monitors,
+            (r.jump & (r.difficulty("medium") | r.can_crouch)),
+        )
 
         center_room = self.region(
             "Center Room", ["MP Center Room Freezethrower", "Center Room Medkit"]
         )
         self.connect(
-            ret, center_room, self.blue_key | (r.glitched & r.can_crouch & r.steroids)
+            past_door,
+            center_room,
+            self.blue_key | (r.glitched & r.can_crouch & r.steroids),
         )
 
         center_room_top = self.region(
@@ -143,5 +182,6 @@ class E2L5(D3DLevel):
             | (r.jump & (r.difficulty("medium") | r.can_sprint))
             | (r.can_sprint & r.steroids),
         )
-
+        self.restrict("Secret Exit", r.can_use)
+        self.restrict("Exit", r.can_use)
         return ret

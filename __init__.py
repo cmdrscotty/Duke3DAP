@@ -247,6 +247,9 @@ class D3DWorld(World):
                 }
             )
         self.slot_data["settings"]["no_save"] = not self.get_option("allow_saving")
+        self.slot_data["settings"]["steroids_duration"] = self.fuel_per_pickup[
+            "Steroids"
+        ]
 
     def create_regions(self):
         self.used_locations = set()
