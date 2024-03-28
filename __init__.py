@@ -794,43 +794,6 @@ class D3DWorld(World):
     def fill_slot_data(self) -> Dict[str, Any]:
         return self.slot_data
 
-    def generate_output(self, output_directory: str) -> None:
-        """
-        If we have a single player generation, also generate a single player .json file
-        """
-        if self.multiworld.players != 1:
-            return
-
-        out = {
-            "data_package": {
-                "data": {
-                    "games": {
-                        self.game: {
-                            "item_name_to_id": self.item_name_to_id,
-                            "location_name_to_id": self.location_name_to_id,
-                        }
-                    }
-                }
-            },
-            "slot_data": self.slot_data,
-            "location_to_item": {
-                location.address: location.item.code
-                for location in self.multiworld.get_filled_locations(self.player)
-            },
-            "start_inventory": [
-                self.item_name_to_id[item]
-                for item in self.multiworld.start_inventory[self.player].value.keys()
-            ],
-            "seed": str(self.multiworld.seed),
-        }
-
-        with io.open(
-            Path(output_directory) / f"AP_{self.multiworld.seed}.spworld",
-            "w",
-            encoding="utf-8",
-        ) as out_file:
-            out_file.write(json.dumps(out))
-
     # Used to supply the Universal Tracker with level shuffle data
     def interpret_slot_data(self, slot_data: Dict[str, Any]):
         menu_region = self.multiworld.get_region("Menu", self.player)
