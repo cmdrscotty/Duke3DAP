@@ -385,13 +385,14 @@ class D3DWorld(World):
                 "Pity Heal": 20,
                 "Medpak": 40,
                 "Armor": 30,
-                "Atomic Health": 30,
+                "Atomic Health": 28,
                 "First Aid Kit": 8,
                 "Protective Boots": 4,
                 "Ego Boost": 5,
                 "Buff Up": 3,
                 "Sturdy Armor": 5,
                 "Heavy Armor": 3,
+                "Plutonium Health": 2,
                 # And some lucky additions!
                 "RPG Capacity": 2,
                 "Chaingun Capacity": 2,
@@ -417,9 +418,10 @@ class D3DWorld(World):
             ratios = {
                 "Medpak": 20,
                 "Armor": 20,
-                "Atomic Health": 20,
+                "Atomic Health": 13,
                 "Pistol Capacity": 5,
                 "Ego Boost": 5,
+                "Plutonium Health": 5,
                 "Buff Up": 7,
                 "Sturdy Armor": 5,
                 "Heavy Armor": 7,
@@ -431,6 +433,7 @@ class D3DWorld(World):
                 "First Aid Kit": 10,
                 "Protective Boots": 5,
                 "Steroids Capacity": 3,
+                "Uranium Health": 2,
                 # And some lucky additions!
                 "Jetpack Capacity": 1,
                 "Scuba Gear Capacity": 1,
@@ -451,7 +454,9 @@ class D3DWorld(World):
         else:
             ratios = {
                 "Armor": 20,
-                "Atomic Health": 30,
+                "Atomic Health": 15,
+                "Plutonium Health": 10,
+                "Uranium Health": 5,
                 "Ego Boost": 3,
                 "Buff Up": 14,
                 "Sturdy Armor": 3,

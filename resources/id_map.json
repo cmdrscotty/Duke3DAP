@@ -1832,6 +1832,8 @@
     "Bandage": 402,
     "Ego Boost": 404,
     "Buff Up": 405,
+    "Plutonium Health": 406,
+    "Uranium Health": 407,
     "Celebration Trap": 500,
     "Shrink Trap": 501,
     "Death Trap": 502,
@@ -1860,5 +1862,5 @@
     "Dynamic15": 614,
     "Dynamic16": 615
   },
-  "checksum": "7d61472669e580c2bb330d6df8358fdaac9d5240f8c0453857afbdac1349d032"
+  "checksum": "a9a2a605f88e5095c30f18c27dad3190e3f8191142581ea7cd92f3bacc1515e1"
 }

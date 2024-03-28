@@ -630,6 +630,12 @@ healing_items = {
     "Buff Up": ItemDef(
         "Buff Up", net_id(405), "health", {"heal": 5, "capacity": 5}, persistent=True
     ),
+    "Plutonium Health": ItemDef(
+        "Plutonium Health", net_id(406), "health", {"heal": 125, "overheal": True}
+    ),
+    "Uranium Health": ItemDef(
+        "Uranium Health", net_id(407), "health", {"heal": 250, "overheal": True}
+    ),
 }
 
 traps = {
