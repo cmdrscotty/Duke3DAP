@@ -98,10 +98,17 @@ class E2L9(D3DLevel):
             [
                 "Start Underwater Shotgun",
                 "Start Underwater Atomic Health",
-                "Combination Lock Scuba Gear",
                 "Secret Hidden Reactor Wall",
                 "Hidden Wall Atomic Health",
                 "Hidden Wall Armor",
+            ],
+        )
+        self.restrict("Start Underwater Atomic Health", r.can_use)
+
+        start_ledge = self.region(
+            "Start Ledge",
+            [
+                "Combination Lock Scuba Gear",
                 "Broken Wall Medkit",
                 "Waterfall Tripmine",
                 "Waterfall Armor",
@@ -113,15 +120,17 @@ class E2L9(D3DLevel):
                 "Waterfall Atomic Health",
             ],
         )
+        # Can sometimes step up on to the ledge by strafing into the wall as you emerge from the water
+        # Marked as extreme difficulty, as it's a single attempt trick per level start and no setup exists for now
+        self.connect(ret, start_ledge, r.jump | r.difficulty("extreme"))
         self.restrict("Waterfall Holo Duke", r.dive(100))
-        self.restrict("Start Underwater Atomic Health", r.can_use)
 
         reactor = self.region(
             "Reactor",
             ["Reactor Freezethrower", "Secret Timed Reactor Wall", "Timed Wall RPG"],
         )
         self.connect(
-            ret,
+            start_ledge,
             reactor,
             (r.jump & r.can_use) | (r.jetpack(50) & r.difficulty("medium")),
         )
@@ -134,7 +143,7 @@ class E2L9(D3DLevel):
                 "Waterfall Wall Pipebombs 2",
             ],
         )
-        self.connect(ret, waterfall_wall, r.explosives)
+        self.connect(start_ledge, waterfall_wall, r.explosives)
 
         vents = self.region(
             "Ventilation Shafts",
@@ -148,7 +157,9 @@ class E2L9(D3DLevel):
             ],
         )
         # It's slow, but going via waterfall room gets you in with no sprint requirements
-        self.connect(ret, vents, r.jetpack(25) | (r.can_jump & (r.sr50 | r.can_use)))
+        self.connect(
+            start_ledge, vents, r.jetpack(25) | (r.can_jump & (r.sr50 | r.can_use))
+        )
 
         overlord_chamber = self.region(
             "Overlord Chamber",
