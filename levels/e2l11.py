@@ -33,7 +33,7 @@ class E2L11(D3DLevel):
         {"id": 112, "name": "Top Ledge Medkit", "type": "sprite", "density": 4},
         {"id": 113, "name": "MP Top Ledge Shrinker", "type": "sprite", "density": 5},
         {"id": 115, "name": "Center Ring Chaingun", "type": "sprite", "density": 0},
-        {"id": 123, "name": "Bottom Ring Shotgun", "type": "sprite", "density": 4},
+        {"id": 123, "name": "Center Ring Shotgun", "type": "sprite", "density": 4},
         {
             "id": 124,
             "name": "Bottom Ring Freezethrower",
@@ -74,9 +74,9 @@ class E2L11(D3DLevel):
                 "Bottom Ring Holo Duke",
                 "Bottom Ring Armor",
                 "Bottom Ring Tripmine",
-                "Bottom Ring Shotgun",
                 "Bottom Ring Freezethrower",
                 "Bottom Ring Shotgun",
+                "Center Ring Shotgun",
             ],
         )
         self.connect(ret, past_door, r.can_use)

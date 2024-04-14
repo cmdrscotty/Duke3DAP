@@ -129,7 +129,7 @@ class E3L3(D3DLevel):
         top_of_building = self.region("Top of Building", ["Top of Building Pipebombs"])
         self.connect(
             ret,
-            building_ledge,
+            top_of_building,
             (
                 (r.sprint & r.can_jump)
                 | r.jetpack(50)

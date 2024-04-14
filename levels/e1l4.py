@@ -206,7 +206,7 @@ class E1L4(D3DLevel):
         self.connect(submarine, submarine_secret, r.jump | r.sr50)
 
         underwater_cave = self.region(
-            "Submarine Secret",
+            "Underwater Cave",
             [
                 "Underwater Secret Atomic Health",
                 "Underwater Secret Pipebombs 2",

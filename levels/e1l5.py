@@ -262,8 +262,9 @@ class E1L5(D3DLevel):
                 "Earthquake Atomic Health 2",
                 "Ruins Staircase Shotgun",
                 "MP Fire Place RPG",
-                "MP Ruins Staircase Atomic Health",
-                "MP Ruins Staircase Armor",
+                # TODO: Test if these belongs to beyond_fault or small_ledges
+                # "MP Ruins Staircase Atomic Health",
+                # "MP Ruins Staircase Armor",
                 "Fire Pit Pipe Bombs",
                 "Fire Pit Atomic Health",
                 "Secret Fire Pit Teleporter",
