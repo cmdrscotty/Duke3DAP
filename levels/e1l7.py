@@ -95,6 +95,7 @@ class E1L7(D3DLevel):
                 "Waterfall 1 Armor",
                 "Waterfall 2 Armor",
                 "Waterfall 1 Atomic Health",
+                "Waterfall 2 Atomic Health",
             ],
         )
         # Need to jump on a battlelord to get in
