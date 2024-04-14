@@ -233,11 +233,13 @@ class E4L9(D3DLevel):
             r.glitched
             & (r.can_open | r.jetpack(50))  # elevator
             & (
-                r.fast_sprint & r.can_crouch & r.glitched & r.difficulty("extreme")
-            )  # door clip
-            & r.difficulty("hard")
+                r.can_open
+                | (r.fast_sprint & r.can_crouch & r.glitched & r.difficulty("extreme"))
+            )  # door clip if no open from elevator requirement
             & (
-                (r.steroids & (r.can_crouch | r.can_jump)) | (r.can_sprint & r.can_jump)
+                (r.steroids & (r.can_crouch | r.can_jump))
+                | (r.can_sprint & r.can_jump)
+                | (r.can_sprint & r.jetpack(50)) & r.difficulty("hard")
             ),  # clip from secret to blue key area
         )
 

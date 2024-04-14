@@ -80,8 +80,12 @@ class E3L8(D3DLevel):
         ret = self.region(self.name, ["Trashcan Pipebombs"])
 
         stadium_elevator = self.region("Stadium Elevator", ["Exit", "Exit Pipebombs"])
-        # sure we can clip up somehow as well
-        self.connect(ret, stadium_elevator, r.jump & r.pipebomb)
+        # possible to clip over with sprint speed
+        self.connect(
+            ret,
+            stadium_elevator,
+            r.pipebomb & (r.jump | (r.sprint & r.difficulty("hard"))),
+        )
         self.restrict("Exit", r.can_use)
 
         entrance_ledges = self.region(
