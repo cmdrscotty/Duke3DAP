@@ -328,11 +328,15 @@ class D3DWorld(World):
         classification = (
             ItemClassification.progression
             if item_def.progression
-            else ItemClassification.useful
-            if item_def.persistent
-            else ItemClassification.trap
-            if item_def.type == "trap"
-            else ItemClassification.filler
+            else (
+                ItemClassification.useful
+                if item_def.persistent
+                else (
+                    ItemClassification.trap
+                    if item_def.type == "trap"
+                    else ItemClassification.filler
+                )
+            )
         )
         ret = D3DItem(item, classification, self.item_name_to_id[item], self.player)
         return ret
@@ -807,3 +811,9 @@ class D3DWorld(World):
             if self.item_name_to_id[level.unlock] in unlocklist:
                 level_region = level.create_region(self)
                 menu_region.connect(level_region, None, self.rules.level(level))
+                for event in level.events:
+                    prefixed_event = f"{level.prefix} {event}"
+                    event_loc = self.multiworld.get_location(
+                        prefixed_event, self.player
+                    )
+                    event_loc.place_locked_item(self.create_event(prefixed_event))
