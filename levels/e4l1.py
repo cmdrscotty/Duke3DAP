@@ -284,7 +284,7 @@ class E4L1(D3DLevel):
         self.connect(
             janitor_closet,
             mission_impossible,
-            r.can_jump & r.can_use & (r.explosives | (r.sprint & r.difficulty("hard"))),
+            r.jump & r.can_use & (r.explosives | (r.sprint & r.difficulty("hard"))),
         )
         # Alternate path by jump-crouching near elevator by briefing room
         self.connect(
@@ -303,6 +303,11 @@ class E4L1(D3DLevel):
                 "Exit",
             ],
         )
-        self.connect(mission_impossible, exit_region, r.explosives & r.can_open)
+        # The pipebomb on the ground at the cracked door can be shot for a free explosion
+        self.connect(
+            mission_impossible,
+            exit_region,
+            r.can_open & (r.explosives | r.difficulty("medium")),
+        )
         self.restrict("Exit", r.can_use)
         return ret

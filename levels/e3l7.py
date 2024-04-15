@@ -142,7 +142,12 @@ class E3L7(D3DLevel):
             ["Fire Station RPG", "Fire Station Atomic Health", "Yellow Key Card"],
         )
         # This one doesn't even require sprinting speed to clip into
-        self.connect(fire_truck, fire_station, r.explosives | (r.jump & r.can_crouch))
+        # Its also possible to blow up the wall using the explosion from a drone enemy
+        self.connect(
+            fire_truck,
+            fire_station,
+            r.explosives | (r.jump & r.can_crouch) | r.difficulty("extreme"),
+        )
         self.restrict(
             "Yellow Key Card",
             r.can_use | r.jetpack(50) | (r.sr50 & r.can_jump),
