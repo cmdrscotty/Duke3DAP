@@ -325,19 +325,14 @@ class D3DWorld(World):
 
     def create_item(self, item: str) -> D3DItem:
         item_def = all_items.get(item)
-        classification = (
-            ItemClassification.progression
-            if item_def.progression
-            else (
-                ItemClassification.useful
-                if item_def.persistent
-                else (
-                    ItemClassification.trap
-                    if item_def.type == "trap"
-                    else ItemClassification.filler
-                )
-            )
-        )
+        if item_def.progression:
+            classification = ItemClassification.progression
+        elif item_def.persistent:
+            classification = ItemClassification.useful
+        elif item_def.type == "trap":
+            classification = ItemClassification.trap
+        else:
+            classification = ItemClassification.filler
         ret = D3DItem(item, classification, self.item_name_to_id[item], self.player)
         return ret
 
