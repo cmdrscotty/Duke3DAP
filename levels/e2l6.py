@@ -106,6 +106,21 @@ class E2L6(D3DLevel):
         r = self.rules
         ret = self.region(self.name, [])
 
+        entry_room = self.region(
+            "Entry Room",
+            [
+                "Water Fountain Pipebombs 1",
+                "Water Fountain Pipebombs 2",
+                "Secret Water Fountain Wall",
+                "Blue Key Card",
+                "Monitor Room Shotgun",
+                "Secret Vent Wall Crack",
+            ],
+        )
+        # sad, jetpack doesn't work
+        self.connect(ret, entry_room, r.can_jump)
+        self.restrict("Secret Vent Wall Crack", r.jump & r.explosives)
+
         l_armory = self.region(
             "Left Armory",
             [
@@ -126,23 +141,8 @@ class E2L6(D3DLevel):
             ],
         )
 
-        self.connect(ret, l_armory, r.can_use)
-        self.connect(ret, r_armory, r.can_use)
-
-        entry_room = self.region(
-            "Entry Room",
-            [
-                "Water Fountain Pipebombs 1",
-                "Water Fountain Pipebombs 2",
-                "Secret Water Fountain Wall",
-                "Blue Key Card",
-                "Monitor Room Shotgun",
-                "Secret Vent Wall Crack",
-            ],
-        )
-        # sad, jetpack doesn't work
-        self.connect(ret, entry_room, r.can_jump)
-        self.restrict("Secret Vent Wall Crack", r.jump & r.explosives)
+        self.connect(entry_room, l_armory, r.can_use)
+        self.connect(entry_room, r_armory, r.can_use)
 
         corridor_wall = self.region(
             "Corridor Wall",
