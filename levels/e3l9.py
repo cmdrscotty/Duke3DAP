@@ -117,5 +117,5 @@ class E3L9(D3DLevel):
                 "Ledge Night Vision Goggles 2",
             ],
         )
-        self.connect(ret, ledge, r.can_jump)
+        self.connect(ret, ledge, r.jump)
         return ret
