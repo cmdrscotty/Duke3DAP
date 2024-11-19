@@ -245,7 +245,7 @@ class E1L2(D3DLevel):
             ],
         )
         self.connect(
-            strip_club,
+            dance_floor,
             curtain_ledge,
             (r.difficulty("medium") & r.can_jump) | r.jetpack(50),
         )
@@ -259,7 +259,7 @@ class E1L2(D3DLevel):
         )
         self.connect(attic, curtain_ledge, (r.sr50 & r.can_jump) | r.jetpack(50))
         self.connect(
-            strip_club,
+            dance_floor,
             attic,
             (r.difficulty("medium") & r.can_jump)
             | (r.can_use & r.can_jump)
