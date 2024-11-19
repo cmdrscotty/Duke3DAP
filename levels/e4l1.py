@@ -203,8 +203,8 @@ class E4L1(D3DLevel):
                 "Briefing Room Shotgun",
             ],
         )
-        # Can walk over the desk with precise diagonal movement
-        self.connect(inside, behind_desk, r.jump | r.difficulty("medium"))
+        # Can walk over the desk with precise diagonal movement, hard because obscure
+        self.connect(inside, behind_desk, r.jump | r.difficulty("hard"))
 
         bathroom_secret = self.region(
             "Bathroom Secret Region",
