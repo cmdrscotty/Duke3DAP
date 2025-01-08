@@ -157,6 +157,7 @@ class E1L2(D3DLevel):
             "Apartment", ["Chaingun near Blue Key Card", "Blue Key Card"]
         )
         self.connect(streets, apartment, r.jetpack(50))
+        self.connect(store, apartment, r.can_open)
         self.restrict("Blue Key Card", r.can_open)
 
         streets_ledge = self.region(
