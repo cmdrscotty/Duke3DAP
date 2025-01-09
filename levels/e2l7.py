@@ -150,7 +150,12 @@ class E2L7(D3DLevel):
             ],
         )
         # can just walk off
-        self.connect(crew_quarters, luke_cave, r.can_use)
+        # medium diff because it requires diagonal strafe without sprint
+        self.connect(
+            crew_quarters,
+            luke_cave,
+            r.can_use & (r.difficulty("medium") | r.sprint),
+        )
 
         crumbling_canyon = self.region("Crumbling Canyon", ["Yellow Key Card"])
         # teleport up
