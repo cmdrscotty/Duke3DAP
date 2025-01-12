@@ -265,6 +265,8 @@ class E1L4(D3DLevel):
                     | (r.glitched & r.can_crouch & r.can_jump)
                 )
                 & r.can_use
+                # need sr40/sr50 to get through the maze
+                & (r.difficulty("medium") | r.sprint)
                 # dive capacity logic, need 150 to exit sub at start
                 & (
                     r.dive(500)
