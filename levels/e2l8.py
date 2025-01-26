@@ -223,7 +223,7 @@ class E2L8(D3DLevel):
                 "Reactor Control Devastator",
             ],
         )
-        self.connect(past_door, gamma_transport, r.can_use)
+        self.connect(top_of_hub, gamma_transport, r.can_use)
 
         gamma_secret = self.region(
             "Gamma Transport Secret", ["Secret Gamma Monitor", "Gamma Shrinker"]
