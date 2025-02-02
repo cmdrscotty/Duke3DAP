@@ -74,12 +74,10 @@ class D3DWorld(World):
         Cached version of _target_density, so we don't constantly calculate it
         """
         if self._target_density is None:
-            density = self.get_option("location_density")
+            density = self.options.location_density
             if density == self.options.location_density.option_balanced:
                 # bump up the value by 1 if secret areas are not enabled
-                if not self.get_option("include_secrets") and self.get_option(
-                    "goal"
-                ) in (
+                if not self.options.include_secrets and self.options.goal in (
                     self.options.goal.option_beat_all_levels,
                     self.options.goal.option_beat_all_bosses,
                 ):
@@ -97,21 +95,18 @@ class D3DWorld(World):
             return False
         if (
             location.type == "sector"
-            and self.get_option("goal")
+            and self.options.goal
             in (
                 self.options.goal.option_beat_all_levels,
                 self.options.goal.option_beat_all_bosses,
             )
-            and not self.get_option("include_secrets")
+            and not self.options.include_secrets
         ):
             return False
         return True
 
-    def get_option(self, option_name: str) -> Any:
-        return getattr(self.multiworld, option_name)[self.player].value
-
     def calculate_levels(self):
-        level_count = self.get_option("level_count")
+        level_count = self.options.level_count
         # total number of starting levels to include, based on the total count
         if level_count < 6:
             start_count = 1
@@ -121,18 +116,21 @@ class D3DWorld(World):
             start_count = 3
         else:
             start_count = 4
-        shuffle_start = self.get_option("shuffle_starting_levels")
-        goal_bosses = (
-            self.get_option("goal") == self.options.goal.option_beat_all_bosses
-        )
-
+        shuffle_start = self.options.shuffle_starting_levels
+        goal_bosses = self.options.goal == self.options.goal.option_beat_all_bosses
         level_candidates = []
 
         # Shuffle episodes so we pick random start levels if the start count is lower than the
         episode_options = [1, 2, 3, 4]
+        ep_option_reference = [
+            self.options.episode1,
+            self.options.episode2,
+            self.options.episode3,
+            self.options.episode4,
+        ]
         self.multiworld.random.shuffle(episode_options)
         for episode_id in episode_options:
-            if self.get_option(f"episode{episode_id}"):
+            if ep_option_reference[episode_id - 1]:
                 episode = all_episodes[episode_id - 1]
                 if not shuffle_start and len(self.starting_levels) < start_count:
                     # add the first level to the starting levels, and the rest into the randomize pool
@@ -147,7 +145,7 @@ class D3DWorld(World):
                         if level.has_boss:
                             self.included_levels.append(level)
                 # If E1L7 is enabled, add it in
-                if episode_id == 1 and self.get_option("include_e1l7"):
+                if episode_id == 1 and self.options.include_e1l7:
                     episode_pool.append(episode.levels[-1])
                 # extend our candidate pool to pull from with all remaining eligible levels
                 level_candidates.extend(
@@ -193,9 +191,9 @@ class D3DWorld(World):
     def generate_early(self) -> None:
         # difficulty settings
         self.fuel_per_pickup = {
-            "Jetpack": self.get_option("fuel_per_jetpack"),
-            "Scuba Gear": self.get_option("fuel_per_scuba_gear"),
-            "Steroids": self.get_option("fuel_per_steroids"),
+            "Jetpack": self.options.fuel_per_jetpack.value,
+            "Scuba Gear": self.options.fuel_per_scuba_gear.value,
+            "Steroids": self.options.fuel_per_steroids.value,
         }
         self.define_dynamic_item_props(
             "Jetpack", {"capacity": self.fuel_per_pickup["Jetpack"]}
@@ -224,13 +222,13 @@ class D3DWorld(World):
 
         # Initial level unlocks
         for level in self.starting_levels:
-            self.multiworld.start_inventory[self.player].value[level.unlock] = 1
+            self.options.start_inventory.value[level.unlock] = 1
         for level in self.included_levels:
-            if self.get_option("area_maps") == self.options.area_maps.option_start_with:
-                self.multiworld.start_inventory[self.player].value[level.map] = 1
-        self.slot_data["settings"]["difficulty"] = self.get_option("skill_level")
+            if self.options.area_maps == self.options.area_maps.option_start_with:
+                self.options.start_inventory.value[level.map] = 1
+        self.slot_data["settings"]["difficulty"] = self.options.skill_level.value
         self.slot_data["settings"]["lock"] = {}
-        if self.get_option("unlock_abilities"):
+        if self.options.unlock_abilities:
             self.slot_data["settings"]["lock"].update(
                 {
                     "crouch": True,
@@ -239,14 +237,14 @@ class D3DWorld(World):
                     "dive": True,
                 }
             )
-        if self.get_option("unlock_interact"):
+        if self.options.unlock_interact:
             self.slot_data["settings"]["lock"].update(
                 {
                     "open": True,
                     "use": True,
                 }
             )
-        self.slot_data["settings"]["no_save"] = not self.get_option("allow_saving")
+        self.slot_data["settings"]["no_save"] = not self.options.allow_saving.value
         self.slot_data["settings"]["steroids_duration"] = self.fuel_per_pickup[
             "Steroids"
         ]
@@ -266,17 +264,15 @@ class D3DWorld(World):
             self.item_name_to_id[level.unlock] for level in self.included_levels
         ]
 
-        goal_exits = self.get_option("goal") in {
+        goal_exits = self.options.goal in {
             self.options.goal.option_beat_all_levels,
             self.options.goal.option_all,
         }
-        goal_secrets = self.get_option("goal") in {
+        goal_secrets = self.options.goal in {
             self.options.goal.option_collect_all_secrets,
             self.options.goal.option_all,
         }
-        goal_bosses = (
-            self.get_option("goal") == self.options.goal.option_beat_all_bosses
-        )
+        goal_bosses = self.options.goal == self.options.goal.option_beat_all_bosses
         goal_counts = {"Exit": 0, "Secret": 0, "Boss": 0}
         for level in self.included_levels:
             for location in level.locations.values():
@@ -289,7 +285,7 @@ class D3DWorld(World):
                 elif goal_bosses and location.type == "exit" and level.has_boss:
                     goal_counts["Boss"] += 1
 
-        goal_percentage = self.get_option("goal_percentage")
+        goal_percentage = self.options.goal_percentage
         if goal_percentage < 100:
             for goal_type in ("Exit", "Secret", "Boss"):
                 goal_counts[goal_type] = math.ceil(
@@ -344,7 +340,7 @@ class D3DWorld(World):
         return "Nothing"
 
     def create_junk(self, count: int) -> List[D3DItem]:
-        difficulty = self.get_option("difficulty")
+        difficulty = self.options.difficulty
         if difficulty == self.options.difficulty.option_extreme:
             ratios = {
                 "Nothing": 40,
@@ -493,7 +489,7 @@ class D3DWorld(World):
         for key, value in trap_ratios.items():
             trap_pool += [key] * value
         # and just generate items at the appropriate ratios
-        trap_count = math.floor((self.get_option("trap_percentage") / 100.0) * count)
+        trap_count = math.floor((self.options.trap_percentage / 100.0) * count)
         return [
             self.create_item(self.multiworld.random.choice(pool))
             for _ in range(count - trap_count)
@@ -532,14 +528,14 @@ class D3DWorld(World):
         self, inv_type: str
     ) -> Tuple[List[D3DItem], List[D3DItem]]:
         required, total = self.DIFF_TO_REQ_MAPPING.get(
-            self.get_option("difficulty"), self.options.difficulty.option_medium
+            self.options.difficulty, self.options.difficulty.option_medium
         )[inv_type]
 
         required_cnt = math.ceil(float(required) / self.fuel_per_pickup[inv_type])
         total_cnt = math.ceil(float(total) / self.fuel_per_pickup[inv_type])
 
         # One base item and rest is capacity, unless we have progressive inventories
-        progressive = self.get_option("progressive_inventories")
+        progressive = self.options.progressive_inventories
         if progressive:
             main_name = f"Progressive {inv_type}"
             cap_name = main_name
@@ -618,7 +614,7 @@ class D3DWorld(World):
         expansions_per_weapon = math.ceil(available_slots * 0.035)
         for weapon in self.WEAPON_NAMES:
             start, target = self.DIFF_TO_MAX_MAPPING.get(
-                self.get_option("difficulty"), self.options.difficulty.option_medium
+                self.options.difficulty, self.options.difficulty.option_medium
             )[weapon]
             self.slot_data["settings"]["maximum"][weapon.lower()] = start
             difference = target - start
@@ -632,7 +628,7 @@ class D3DWorld(World):
                 {"capacity": capacity_per, "ammo": math.ceil(capacity_per / 2.0)},
             )
             # and add the right count to our pool
-            if self.get_option("progressive_weapons"):
+            if self.options.progressive_weapons:
                 ret_items[f"Progressive {weapon}"] = count
             else:
                 ret_items[f"{weapon} Capacity"] = count
@@ -651,17 +647,15 @@ class D3DWorld(World):
         used_locations = self.used_locations.copy()
         # Place goal items and level key cards
         # ToDo remove this code duplications
-        goal_exits = self.get_option("goal") in {
+        goal_exits = self.options.goal in {
             self.options.goal.option_beat_all_levels,
             self.options.goal.option_all,
         }
-        goal_secrets = self.get_option("goal") in {
+        goal_secrets = self.options.goal in {
             self.options.goal.option_collect_all_secrets,
             self.options.goal.option_all,
         }
-        goal_bosses = (
-            self.get_option("goal") == self.options.goal.option_beat_all_bosses
-        )
+        goal_bosses = self.options.goal == self.options.goal.option_beat_all_bosses
         for level in self.included_levels:
             for location in level.locations.values():
                 if (
@@ -701,10 +695,10 @@ class D3DWorld(World):
             itempool += [self.create_item(item) for item in level.items]
             if level.unlock not in self.multiworld.start_inventory[self.player].value:
                 itempool.append(self.create_item(level.unlock))
-            if self.get_option("area_maps") == self.options.area_maps.option_unlockable:
+            if self.options.area_maps == self.options.area_maps.option_unlockable:
                 useful_items.append(self.create_item(level.map))
 
-        if self.get_option("unlock_abilities"):
+        if self.options.unlock_abilities:
             itempool += self.create_item_list(
                 [
                     "Jump",
@@ -713,11 +707,11 @@ class D3DWorld(World):
                 ]
             )
 
-        if self.get_option("unlock_interact"):
+        if self.options.unlock_interact:
             itempool += self.create_item_list(["Open", "Use"])
 
         # Add progression items
-        progressive_weapons = self.get_option("progressive_weapons")
+        progressive_weapons = self.options.progressive_weapons
         # Place explosive weapons into the required itempool
         if progressive_weapons:
             itempool += self.create_item_list(

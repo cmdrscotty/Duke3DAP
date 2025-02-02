@@ -110,7 +110,7 @@ class Rules(object):
 
         self.count_group = CountGroupRule
 
-        if world.get_option("unlock_abilities"):
+        if world.options.unlock_abilities:
             self.can_jump = HasRule("Jump")
             self.can_crouch = HasRule("Crouch")
             self.can_dive = HasRule("Dive") | HasGroupRule("Scuba Gear")
@@ -120,7 +120,7 @@ class Rules(object):
             self.can_crouch = self.true
             self.can_sprint = self.true
             self.can_dive = self.true
-        if world.get_option("unlock_interact"):
+        if world.options.unlock_interact:
             self.can_open = HasRule("Open")
             self.can_use = HasRule("Use")
         else:
@@ -157,7 +157,7 @@ class Rules(object):
             def __call__(self, state: CollectionState) -> bool:
                 return state.has_group("Scuba Gear Capacity", player, self.required)
 
-        if world.get_option("unlock_abilities"):
+        if world.options.unlock_abilities:
             self.dive = lambda fuel: self.can_dive & CanDiveTo(fuel)
             """For chained sequences of dives, where scuba capacity matters for accessibility"""
         else:
@@ -169,9 +169,9 @@ class Rules(object):
         self.fast_sprint = self.can_sprint & self.steroids
 
         difficulty_map = {"easy": 0, "medium": 1, "hard": 2, "extreme": 3}
-        self.difficulty = (
-            lambda difficulty: self.true
-            if difficulty_map.get(difficulty, 0) <= world.get_option("logic_difficulty")
+        self.difficulty = lambda difficulty: (
+            self.true
+            if difficulty_map.get(difficulty, 0) <= world.options.logic_difficulty
             else self.false
         )
 
@@ -183,7 +183,7 @@ class Rules(object):
         self.explosives_count = lambda count: self.count_group("Explosives", count)
 
         # Glitched logic stuff
-        if world.get_option("glitch_logic"):
+        if world.options.glitch_logic:
             self.glitched = RuleTrue()
         else:
             self.glitched = RuleFalse()
