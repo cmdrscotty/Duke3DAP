@@ -81,10 +81,12 @@ class E3L8(D3DLevel):
 
         stadium_elevator = self.region("Stadium Elevator", ["Exit", "Exit Pipebombs"])
         # possible to clip over with sprint speed
+        # medium difficulty for obscure pipebomb usage
         self.connect(
             ret,
             stadium_elevator,
-            r.pipebomb & (r.jump | (r.sprint & r.difficulty("hard"))),
+            (r.pipebomb & r.difficulty("medium"))
+            & (r.jump | (r.sprint & r.difficulty("hard"))),
         )
         self.restrict("Exit", r.can_use)
 
