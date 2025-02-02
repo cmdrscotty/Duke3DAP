@@ -693,7 +693,7 @@ class D3DWorld(World):
                     prefixed_event, self.player
                 ).place_locked_item(self.create_event(prefixed_event))
             itempool += [self.create_item(item) for item in level.items]
-            if level.unlock not in self.multiworld.start_inventory[self.player].value:
+            if level.unlock not in self.options.start_inventory.value:
                 itempool.append(self.create_item(level.unlock))
             if self.options.area_maps == self.options.area_maps.option_unlockable:
                 useful_items.append(self.create_item(level.map))
