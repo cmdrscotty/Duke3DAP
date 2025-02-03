@@ -207,7 +207,7 @@ class E1L3(D3DLevel):
                 "Control Room Vent Armor",
             ],
         )
-        self.connect(hallway, control_vent, r.jetpack(50))
+        self.connect(hallway, control_vent, r.jetpack(100) & r.difficulty("hard"))
 
         control_room = self.region(
             "Control Room",
