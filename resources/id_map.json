@@ -1670,6 +1670,8 @@
     "Night Vision Goggles": 307,
     "First Aid Kit": 309,
     "Protective Boots": 310,
+	"First Aid Kit Capacity": 311,
+	"Progressive First Aid Kit": 312,
     "Jump": 350,
     "Dive": 351,
     "Crouch": 352,
