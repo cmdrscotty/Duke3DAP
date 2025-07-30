@@ -493,6 +493,8 @@ inventory_items = {
         net_id(303),
         "inventory",
         {"invnum": 3, "capacity": 600},
+        persistent=True,
+        unique=True,
     ),
     "Jetpack": ItemDef(
         "Jetpack",
@@ -531,12 +533,16 @@ inventory_items = {
         net_id(307),
         "inventory",
         {"invnum": 7, "capacity": 400, "max_capacity": 1600},
+        persistent=True,
+        unique=True,
     ),
     "First Aid Kit": ItemDef(
         "First Aid Kit",
         net_id(309),
         "inventory",
         {"invnum": 9, "capacity": 35},
+        persistent=True,
+        unique=True,
     ),
     "First Aid Kit Capacity": ItemDef(
         "First Aid Kit Capacity",
@@ -560,6 +566,7 @@ inventory_items = {
         net_id(310),
         "inventory",
         {"invnum": 10, "capacity": 100, "max_capacity": 300},
+        persistent=True,
     ),
 }
 
